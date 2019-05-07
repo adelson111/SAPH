@@ -8,7 +8,15 @@
     <h3>Cadastrar Funcionário</h3>
     <form method="post">
         {% csrf_token %}
-        {{form}}
+        Nome:{{form.nome}}
+        Email:{{form.email}}
+        Senha:{{form.senha}}
+        CPF:{{form.cpf}}
+        Cargo:{{form.cargo}}
+        Endereco:{{form.endereco}}
+        Telefone:{{form.telefone}}
+        Status:{{form.status}}
+        Foto:{{form.foto}}
         <button type="submit">Salvar</button>
     </form>
 

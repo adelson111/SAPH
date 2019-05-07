@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block main %}
+    <h1>Organizações Cadastrada</h1>
+    <ul class="list-group">
+    {% for organizacao in object_list %}
+        <li class="list-group-item">
+            <a href="{% url 'atualizar_organizacao' organizacao.pk %}">
+                Organização: {{organizacao.nome}}
+                <br>
+                CNPJ: {{organizacao.cnpj}}
+            </a>
+        </li>
+    {%endfor%}
+    </ul>
+{% endblock %}

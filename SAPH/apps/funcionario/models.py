@@ -13,7 +13,7 @@ class Funcionario(models.Model):
     telefone = models.CharField(max_length=10)
     status = models.BooleanField(default=True)
     foto = models.ImageField(upload_to='funcionarios/funcionarios_fotos', null=True, blank=True)
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True, blank=True)
 
     def __str__(self):
         return self.nome

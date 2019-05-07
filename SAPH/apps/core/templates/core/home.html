@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<h1 class="text-center">BEM-VINDO AO PORTAL SAPH</h1>
+<a class="btn btn-success text-dark" href="{% url 'cadastrar_organizacao' %}">Cadastrar Organização</a><br>
+<a class="btn btn-success text-dark" href="{% url 'listar_organizacao' %}">Atualizar Organização</a><br>
+{% endblock%}

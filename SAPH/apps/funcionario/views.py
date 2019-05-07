@@ -13,7 +13,7 @@ class FuncionarioNovo(CreateView):
     fields = [
         'nome', 'email', 'senha', 'cpf',
         'cargo', 'endereco', 'telefone',
-        'status', 'foto', 'user']
+        'status', 'foto']
 
     def form_valid(self, form):
         funcionario = form.save(commit=False)
@@ -27,6 +27,10 @@ def cadasrtrar(request):
     form = FuncionarioForm(request.POST or None, request.FILES or None)
 
     if form.is_valid():
+        funcionario = form.save(commit=False)
+        username = funcionario.cpf
+        password = funcionario.senha
+        form.instance.user = User.objects.create_user(username=username, password=password)
         form.save()
         return redirect('cadastrar_funcionario')
     return render(request, 'funcionariosForm.html', {'form':form})

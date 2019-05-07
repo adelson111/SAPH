@@ -12,6 +12,7 @@ class Funcionario(models.Model):
     endereco = models.CharField(max_length=10)
     telefone = models.CharField(max_length=10)
     status = models.BooleanField(default=True)
+    foto = models.ImageField(upload_to='funcionarios_fotos', null=True, blank=True)
     user = models.OneToOneField(User, on_delete=models.CASCADE)
 
     def __str__(self):

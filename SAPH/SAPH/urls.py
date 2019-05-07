@@ -14,10 +14,10 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from apps.setor.views import *
+from django.urls import path, include
+from apps.setor import urls as urls_setor
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('cadastrar-setor/', cadasrtra_setor),
+    path('setor/', include(urls_setor)),
 ]

@@ -11,7 +11,7 @@ class FuncionarioNovo(CreateView):
     fields = [
         'nome', 'email', 'senha', 'cpf',
         'cargo', 'endereco', 'telefone',
-        'status', 'user']
+        'status', 'foto', 'user']
 
     def form_valid(self, form):
         funcionario = form.save(commit=False)

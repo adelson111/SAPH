@@ -4,6 +4,8 @@ from django.shortcuts import render
 from django.views.generic import CreateView
 from django.contrib.auth.models import User
 from .models import Funcionario
+from django.shortcuts import render, redirect, get_object_or_404
+from .form import FuncionarioForm
 
 
 class FuncionarioNovo(CreateView):
@@ -20,3 +22,11 @@ class FuncionarioNovo(CreateView):
         funcionario.user = User.objects.create_user(username=username, password=password)
         funcionario.save()
         return super(FuncionarioNovo, self).form_valid(form)
+
+def cadasrtrar(request):
+    form = FuncionarioForm(request.POST or None, request.FILES or None)
+
+    if form.is_valid():
+        form.save()
+        return redirect('cadastrar_funcionario')
+    return render(request, 'funcionariosForm.html', {'form':form})

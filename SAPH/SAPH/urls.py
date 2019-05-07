@@ -16,8 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from apps.setor import urls as urls_setor
+from apps.funcionario import urls as urls_funcionarios
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('setor/', include(urls_setor)),
+    path('funcionario/', include(urls_funcionarios)),
 ]

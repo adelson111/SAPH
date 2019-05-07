@@ -2,22 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7b73f6c1-5db1-47d5-8794-a2f8917c2a51" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/apps/funcionario/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/funcionario/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/funcionario/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/funcionario/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/funcionario/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/organizacao/apps.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/SAPH.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/SAPH.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SAPH/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/SAPH/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SAPH/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/SAPH/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/organizacao/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/organizacao/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/organizacao/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/organizacao/form.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/setor/form.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/organizacao/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/organizacao/migrations/0002_funcionario_status.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/organizacao/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/organizacao/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/organizacao/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/setor/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/organizacao/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/organizacao/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements" beforeDir="false" afterPath="$PROJECT_DIR$/requirements" afterDir="false" />
     </list>
     <ignored path=".idea/" />
     <ignored path="../venv/" />
@@ -28,67 +23,24 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/setor/models.py">
+        <entry file="file://$PROJECT_DIR$/SAPH/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/setor/form.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
+            <state relative-caret-position="228">
+              <caret line="21" column="44" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="44" />
               <folding>
-                <element signature="e#0#34#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/organizacao/models.py">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SAPH/settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="38" column="33" selection-start-line="38" selection-start-column="33" selection-end-line="38" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/setor/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="35" selection-start-column="35" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/funcionario/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <element signature="e#0#35#0" expanded="true" />
+                <element signature="e#628#660#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/apps/setor/templates/index.html">
+        <entry file="file://$PROJECT_DIR$/SAPH/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+            <state relative-caret-position="210">
+              <caret line="35" column="34" lean-forward="true" selection-start-line="35" selection-start-column="34" selection-end-line="35" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -144,7 +96,7 @@
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
-    <navigator currentView="Scope" currentSubView="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope" proportions="" version="1">
+    <navigator proportions="" version="1">
       <showMembers ProjectPane="false" />
       <foldersAlwaysOnTop value="true" />
     </navigator>
@@ -160,24 +112,6 @@
               <item name="SAPH" type="b2602c69:ProjectViewProjectNode" />
               <item name="SAPH" type="462c0819:PsiDirectoryNode" />
               <item name="apps" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SAPH" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SAPH" type="462c0819:PsiDirectoryNode" />
-              <item name="apps" type="462c0819:PsiDirectoryNode" />
-              <item name="funcionario" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SAPH" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SAPH" type="462c0819:PsiDirectoryNode" />
-              <item name="apps" type="462c0819:PsiDirectoryNode" />
-              <item name="organizacao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SAPH" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SAPH" type="462c0819:PsiDirectoryNode" />
-              <item name="apps" type="462c0819:PsiDirectoryNode" />
-              <item name="setor" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SAPH" type="b2602c69:ProjectViewProjectNode" />
@@ -199,11 +133,6 @@
               <item name="SAPH" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="~/PycharmProjects/SAPH/SAPH" type="442cc68d:ScopeViewTreeModel$RootNode" />
               <item name="apps" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="SAPH" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="~/PycharmProjects/SAPH/SAPH" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="SAPH" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
           </expand>
           <select />
@@ -256,7 +185,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-1" width="1366" height="740" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24944155" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -269,8 +197,8 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.3293919" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.4996277" visible="true" weight="0.3277027" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5003723" side_tool="true" weight="0.3293919" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4988831" visible="true" weight="0.3277027" />
+      <window_info active="true" anchor="bottom" id="Event Log" order="9" sideWeight="0.50111693" side_tool="true" visible="true" weight="0.3277027" />
       <window_info anchor="bottom" id="Messages" order="10" />
       <window_info anchor="bottom" id="Python Console" order="11" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -318,8 +246,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SAPH/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="13" column="55" selection-start-line="13" selection-start-column="55" selection-end-line="13" selection-end-column="55" />
+        <state relative-caret-position="228">
+          <caret line="21" column="44" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="44" />
           <folding>
             <element signature="e#628#660#0" expanded="true" />
           </folding>
@@ -346,26 +274,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/organizacao/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-          <folding>
-            <element signature="e#26#61#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/organizacao/tests.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/organizacao/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="10" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/organizacao/views.py" />
+    <entry file="file://$PROJECT_DIR$/organizacao/tests.py" />
+    <entry file="file://$PROJECT_DIR$/organizacao/models.py" />
     <entry file="file://$PROJECT_DIR$/apps/funcionario/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -375,9 +286,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/organizacao/apps.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/organizacao/apps.py" />
     <entry file="file://$PROJECT_DIR$/apps/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -390,8 +299,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SAPH/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="38" column="33" selection-start-line="38" selection-start-column="33" selection-end-line="38" selection-end-column="33" />
+        <state relative-caret-position="210">
+          <caret line="35" column="34" lean-forward="true" selection-start-line="35" selection-start-column="34" selection-end-line="35" selection-end-column="34" />
         </state>
       </provider>
     </entry>

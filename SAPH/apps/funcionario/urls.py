@@ -1,9 +1,9 @@
 from django.urls import path
 
 
-from .views import cadasrtrar
+from .views import CadastrarFuncionario
 
 urlpatterns = [
-    path('cadastrar/', cadasrtrar, name="cadasrtrar"),
+    path('cadastrar-funcionario/', CadastrarFuncionario.as_view(), name="cadasrtrar_funcionario"),
 
 ]

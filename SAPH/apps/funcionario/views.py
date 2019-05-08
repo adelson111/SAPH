@@ -1,5 +1,6 @@
 from .models import Funcionario
-from django.views.generic import CreateView, UpdateView, ListView
+from django.views.generic import CreateView, UpdateView, ListView, DeleteView
+from django.urls import reverse_lazy
 
 class CadastrarFuncionario(CreateView):
     model = Funcionario
@@ -18,4 +19,10 @@ class ListarFuncionarios(ListView):
 
     def get_queryset(self):
         return Funcionario.objects.all()
+
+class ApagarFuncionario(DeleteView):
+    model = Funcionario
+    success_url = reverse_lazy('listar_funcionarios')
+
+
 

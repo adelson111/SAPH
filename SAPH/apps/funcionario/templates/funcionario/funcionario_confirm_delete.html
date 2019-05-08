@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block main %}
+    <h1>Apagar Funcionário</h1>
+
+<form method="post">
+    {% csrf_token %}
+    <p>Vai deletar esse corno? "{{ funcionario.nome }}"</p>
+    <input type="submit" value="Confirm">
+</form>
+
+{% endblock %}

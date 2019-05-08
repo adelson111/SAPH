@@ -10,7 +10,7 @@ class Funcionario(models.Model):
     senha = models.CharField(max_length=15)
     cpf = models.CharField(max_length=14)
     cargo = models.CharField(max_length=10)
-    endereco = models.CharField(max_length=10)
+    endereco = models.CharField(max_length=100)
     telefone = models.CharField(max_length=10)
     status = models.BooleanField(default=True)
     foto = models.ImageField(upload_to='funcionarios/funcionarios_fotos', null=True, blank=True)

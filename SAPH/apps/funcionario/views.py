@@ -4,11 +4,11 @@ from django.urls import reverse_lazy
 
 class CadastrarFuncionario(CreateView):
     model = Funcionario
-    fields = ['nome', 'email', 'senha', 'cpf', 'cargo', 'endereco', 'telefone', 'status', 'foto', 'user']
+    fields = ['nome', 'email', 'senha', 'cpf', 'cargo', 'endereco', 'telefone', 'status', 'foto']
 
 class AtualizarFuncionario(UpdateView):
     model = Funcionario
-    fields = ['nome', 'email', 'senha', 'cpf', 'cargo', 'endereco', 'telefone', 'status', 'foto', 'user']
+    fields = ['nome', 'email', 'senha', 'cpf', 'cargo', 'endereco', 'telefone', 'status', 'foto']
     def get_queryset(self):
         return Funcionario.objects.filter(pk=self.kwargs['pk'])
 

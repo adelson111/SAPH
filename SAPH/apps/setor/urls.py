@@ -1,7 +1,9 @@
 from django.urls import path
-from .views import cadasrtra_setor
+
+from .views import CadastrarSetor
 
 urlpatterns = [
-    path('cadastrar/', cadasrtra_setor, name="cadasrtra_setor"),
+    # path('cadastrar/', cadasrtra_setor, name="cadasrtra_setor"),
+    path('cadastrar/', CadastrarSetor.as_view(), name="cadasrtra_setor"),
 
 ]

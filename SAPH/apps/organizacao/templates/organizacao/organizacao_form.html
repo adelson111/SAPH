@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-
 {% block main %}
 <h1>Cadastrar Organização</h1>
 <form method="POST">
@@ -11,6 +10,8 @@
     Endereço:{{form.endereco}}
     <br>
     Telefone:{{form.telefone}}
+    <br>
+    Quant Niveis:{{form.numeroNivel}}
     <br>
     <button type="submit">Cadastrar</button>
 </form>

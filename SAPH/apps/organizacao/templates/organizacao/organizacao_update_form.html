@@ -6,12 +6,23 @@
     {%csrf_token%}
     Nome:{{form.nome}}
     <br>
-    CNPJ:{{form.cnpj}}
+    E-mail:{{form.email}}
     <br>
-    Endereço:{{form.endereco}}
+    Senha:{{form.senha}}
+    <br>
+    CPF:{{form.cpf}}
+    <br>
+    Cargo:{{form.cargo}}
+    <br>
+    Endereco:{{form.endereco}}
     <br>
     Telefone:{{form.telefone}}
     <br>
+    Status:{{form.status}}
+    <br>
+    Foto:{{form.foto}}
+    <br>
+    User:{{form.user}}
     <button type="submit">Cadastrar</button>
 </form>
 {% endblock%}

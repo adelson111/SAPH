@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bb3ff343-5675-4449-8ff1-dc2f4f443ad0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SAPH/.idea/SAPH.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SAPH/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SAPH/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SAPH/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SAPH/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SAPH/apps/funcionario/templates/funcionario/funcionario_update_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/SAPH/apps/funcionario/templates/funcionario/funcionario_update_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SAPH/apps/funcionario/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/SAPH/apps/funcionario/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SAPH/apps/funcionario/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/SAPH/apps/funcionario/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SAPH/apps/nivel/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/SAPH/apps/nivel/models.py" afterDir="false" />
-    </list>
+    <list default="true" id="bb3ff343-5675-4449-8ff1-dc2f4f443ad0" name="Default Changelist" comment="" />
     <ignored path=".idea/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,11 +23,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SAPH/apps/funcionario/templates/funcionario/funcionario_bloquear_funcionario.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="135">
               <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" column="10" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -48,18 +46,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="150">
               <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SAPH/apps/funcionario/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="42" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
-              <folding>
-                <element signature="e#0#28#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -171,6 +157,7 @@
         <option value="$PROJECT_DIR$/SAPH/apps/funcionario/forms.py" />
         <option value="$PROJECT_DIR$/SAPH/apps/funcionario/views.py" />
         <option value="$PROJECT_DIR$/SAPH/apps/funcionario/templates/funcionario/funcionario_bloquear_funcionario.html" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -194,32 +181,6 @@
             </path>
             <path>
               <item name="SAPH" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SAPH" type="462c0819:PsiDirectoryNode" />
-              <item name="SAPH" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SAPH" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SAPH" type="462c0819:PsiDirectoryNode" />
-              <item name="SAPH" type="462c0819:PsiDirectoryNode" />
-              <item name="apps" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SAPH" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SAPH" type="462c0819:PsiDirectoryNode" />
-              <item name="SAPH" type="462c0819:PsiDirectoryNode" />
-              <item name="apps" type="462c0819:PsiDirectoryNode" />
-              <item name="funcionario" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SAPH" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SAPH" type="462c0819:PsiDirectoryNode" />
-              <item name="SAPH" type="462c0819:PsiDirectoryNode" />
-              <item name="apps" type="462c0819:PsiDirectoryNode" />
-              <item name="nivel" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SAPH" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SAPH" type="462c0819:PsiDirectoryNode" />
               <item name="SAPH" type="462c0819:PsiDirectoryNode" />
               <item name="SAPH" type="462c0819:PsiDirectoryNode" />
             </path>
@@ -352,7 +313,14 @@
       <option name="project" value="LOCAL" />
       <updated>1557361675630</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Bloquear e desbolquear Funcionario">
+      <created>1557365681289</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1557365681289</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TodoView">
@@ -411,7 +379,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Finalizando ORGANIZAÇÃO" />
     <MESSAGE value="Adicionado a app de nivel e alterando o status para ativo no funcionairo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adicionado a app de nivel e alterando o status para ativo no funcionairo" />
+    <MESSAGE value="Bloquear e desbolquear Funcionario" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bloquear e desbolquear Funcionario" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
@@ -713,6 +682,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="10" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="10" />
         </state>
       </provider>
     </entry>

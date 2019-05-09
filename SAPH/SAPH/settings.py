@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'apps.funcionario',
     'apps.setor',
     'apps.core',
+    'apps.nivel',
 ]
 
 MIDDLEWARE = [

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<h1>Atualizar Organização</h1>
+<form method="POST">
+    {%csrf_token%}
+    Nome:{{form.nome}}
+    <br>
+    E-mail:{{form.email}}
+    <br>
+    Senha:{{form.senha}}
+    <br>
+    CPF:{{form.cpf}}
+    <br>
+    Cargo:{{form.cargo}}
+    <br>
+    Endereco:{{form.endereco}}
+    <br>
+    Telefone:{{form.telefone}}
+    <br>
+    Status:{{form.status}}
+    <br>
+    Foto:{{form.foto}}
+    <br>
+    User:{{form.user}}
+    <button type="submit">Cadastrar</button>
+</form>
+{% endblock%}

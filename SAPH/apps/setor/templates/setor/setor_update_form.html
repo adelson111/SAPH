@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<h1>Atualizar Setor</h1>
+<form method="POST">
+    {%csrf_token%}
+    Nome:{{form.nome}}
+    <br>
+    Funcionario:{{form.funcionario}}
+    <button type="submit">Cadastrar</button>
+</form>
+{% endblock%}

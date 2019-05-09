@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block main %}
+    <h1>Funcionários Cadastrados</h1>
+    <ul class="list-group">
+    {% for funcionario in object_list %}
+        <li class="list-group-item">
+            <a href="{% url 'atualizar_funcionario' funcionario.pk %}">
+                Funcionário: {{funcionario.nome}}
+                <br>
+                Telefone: {{funcionario.telefone}}
+            </a>
+            <a href="{% url 'apagar_funcionario' funcionario.pk %}">Deletar</a>
+
+        </li>
+    {%endfor%}
+    </ul>
+{% endblock %}

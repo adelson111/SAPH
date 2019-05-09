@@ -2,11 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="648a8094-e842-43ab-b31f-d29deb800789" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/SAPH.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/funcionario/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/funcionario/migrations/0002_funcionario_foto.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/funcionario/migrations/0003_auto_20190507_1639.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/funcionario/migrations/0004_auto_20190507_1834.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/funcionario/migrations/0005_auto_20190507_1835.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/funcionario/migrations/0006_auto_20190508_1840.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/funcionario/migrations/0007_auto_20190508_1853.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/funcionario/templates/funcionario/funcionario_bloquear_funcionario.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/funcionario/templates/funcionario/funcionario_func_bloqueado.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/organizacao/migrations/0002_organizacao_situacao.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/organizacao/migrations/0003_organizacao_numeronivel.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/setor/migrations/0002_setor_funcionario.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/setor/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/funcionario/templates/funcionario/funcionario_update_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/funcionario/templates/funcionario/funcionario_update_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/funcionario/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/funcionario/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/funcionario/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/funcionario/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/setor/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/setor/views.py" afterDir="false" />
     </list>
     <ignored path=".idea/" />
     <ignored path="../Untitled Folder/" />
@@ -21,6 +33,13 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/apps/core/templates/core/home.html" />
+      </list>
+    </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="width" value="1024" />
@@ -92,7 +111,7 @@
   <component name="ToolWindowManager">
     <frame x="0" y="-1" width="1366" height="740" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24944155" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24944155" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -104,7 +123,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4996277" visible="true" weight="0.3293919" />
-      <window_info active="true" anchor="bottom" id="Event Log" order="9" sideWeight="0.5003723" side_tool="true" visible="true" weight="0.3293919" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5003723" side_tool="true" visible="true" weight="0.3293919" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -124,6 +143,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/apps/nivel/views.py">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file:///usr/lib/python3.7/importlib/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-102">
+          <caret line="126" selection-start-line="126" selection-end-line="126" />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>

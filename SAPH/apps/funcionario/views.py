@@ -1,3 +1,4 @@
+from apps.funcionario.forms import FuncionarioEdit
 from .models import Funcionario
 from django.views.generic import CreateView, UpdateView, ListView, DeleteView
 from django.urls import reverse_lazy
@@ -28,6 +29,25 @@ class ListarFuncionarios(ListView):
 
     def get_queryset(self):
         return Funcionario.objects.all()
+
+
+class ListarFuncionarioBloqueado(ListView):
+    model = Funcionario
+
+
+    def get_queryset(self):
+        return Funcionario.objects.filter(ativo=False)
+
+    template_name_suffix = '_func_bloqueado'
+
+class BloquearFuncionario(UpdateView):
+    model = Funcionario
+    # fields = ['nome', 'ativo']
+    form_class = FuncionarioEdit
+    def get_queryset(self):
+        return Funcionario.objects.filter(pk=self.kwargs['pk'])
+
+    template_name_suffix = '_bloquear_funcionario'
 
 class ApagarFuncionario(DeleteView):
     model = Funcionario

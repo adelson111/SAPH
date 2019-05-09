@@ -1,19 +1,26 @@
-from django.shortcuts import render
-from apps.setor.form import SetorForm
-from django.views.generic import CreateView
+
+from django.views.generic import CreateView,UpdateView,ListView,DeleteView
+from django.urls import reverse_lazy
 
 from .models import Setor
 
-# Create your views here.
-# def cadasrtra_setor(request):
-#     dado = {}
-#     form = SetorForm(request.POST or None)
-#     dado['setores'] = Setor.objects.all()
-#     dado['form'] = form
-#     if form.is_valid():
-#         form.save()
-#     return render(request, 'index.html', dado)
-
 class CadastrarSetor(CreateView):
     model = Setor
-    fields = ['nome', 'funcionario']
+    fields = ['nome','funcionario']
+
+class AtualizarSetor(UpdateView):
+    model = Setor
+    fields = ['nome','funcionario']
+    def get_queryset(self):
+        return Setor.objects.filter(pk=self.kwargs['pk'])
+
+    template_name_suffix = '_update_form'
+
+class ListarSetor(ListView):
+    model = Setor
+    def get_queryset(self):
+        return Setor.objects.all()
+
+class ApagarSetor(DeleteView):
+    model = Setor
+    success_url = reverse_lazy('listar_funcionarios')

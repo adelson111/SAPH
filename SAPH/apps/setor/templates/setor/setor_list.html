@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block main %}
+    <h1>Setores Cadastrados</h1>
+    <ul class="list-group">
+    {% for setor in object_list %}
+        <li class="list-group-item">
+            <a href="{% url 'atualizar_setor' setor.pk %}">
+                Funcionário: {{setor.nome}}
+            </a>
+            <br>
+            <a href="{% url 'apagar_setor' setor.pk %}">Deletar</a>
+
+        </li>
+    {%endfor%}
+    </ul>
+{% endblock %}

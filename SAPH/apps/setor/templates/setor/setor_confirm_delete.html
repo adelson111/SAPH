@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block main %}
+    <h1>Apagar Setor</h1>
+
+<form method="post">
+    {% csrf_token %}
+    <p>Vai deletar? "{{ setor.nome }}"</p>
+    <input type="submit" value="Confirm">
+</form>
+
+{% endblock %}

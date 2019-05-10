@@ -6,7 +6,7 @@
     {% for setor in object_list %}
         <li class="list-group-item">
             <a href="{% url 'atualizar_setor' setor.pk %}">
-                Funcionário: {{setor.nome}}
+                Nome do Setor: {{setor.nome}}
             </a>
             <br>
             <a href="{% url 'apagar_setor' setor.pk %}">Deletar</a>

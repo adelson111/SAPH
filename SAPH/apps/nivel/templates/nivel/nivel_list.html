@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+
+{% block title %}Listar Nivel{% endblock%}
+
+{% block main %}
+<h1 class="text-center">Listar Niveis</h1>
+<ul class="list-group">
+    {% for nivel in object_list %}
+    <li class="list-group-item">
+        <a href="{% url 'atualizar_nivel' nivel.pk %}">
+            Id: {{nivel.pk}}
+            <br>
+            Funcionario: {{nivel.funcionario}}
+            <br>
+            Nivel Superior: {{nivel.nivelSuperior}}
+            <br>
+            Nivel Inferior: {{nivel.nivelInferior}}
+        </a>
+        <br>
+        <a href="{% url 'apagar_nivel' nivel.pk %}" class="btn btn-danger">Deletar</a>
+    </li>
+    {%endfor%}
+</ul>
+{% endblock%}

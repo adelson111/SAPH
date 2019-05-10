@@ -11,7 +11,7 @@
                 Telefone: {{funcionario.telefone}}
             </a>
             <a href="{% url 'apagar_funcionario' funcionario.pk %}">Deletar</a>
-
+            <a href="{% url 'bloquear_funcionario' funcionario.pk %}">Bloquear</a>
         </li>
     {%endfor%}
     </ul>

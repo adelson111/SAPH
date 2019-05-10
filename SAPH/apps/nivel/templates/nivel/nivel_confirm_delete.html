@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block main %}
+    <h1>Apagar Funcionário</h1>
+
+<form method="post">
+    {% csrf_token %}
+    <p>Vai deletar o Nivel do funcionario? {{ nivel.funcionario.nome}}</p>
+    <p>Com nivel superior {{ nivel.nivelSuperior.funcionario}}</p>
+    <p>Com nivel inferior {{ nivel.nivelInferior.funcionario}}</p>
+    <input type="submit" value="Confirm">
+</form>
+
+{% endblock %}

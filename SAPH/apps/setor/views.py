@@ -6,11 +6,11 @@ from .models import Setor
 
 class CadastrarSetor(CreateView):
     model = Setor
-    fields = ['nome','funcionario']
+    fields = ['nome','funcionario', 'nivel', 'gerente']
 
 class AtualizarSetor(UpdateView):
     model = Setor
-    fields = ['nome','funcionario']
+    fields = ['nome','funcionario', 'nivel', 'gerente']
     def get_queryset(self):
         return Setor.objects.filter(pk=self.kwargs['pk'])
 

@@ -20,3 +20,5 @@ class Setor(models.Model):
     class Meta:
         verbose_name_plural = 'Setores'
 
+    def get_absolute_url(self):
+        return reverse('cadastrar_setor')

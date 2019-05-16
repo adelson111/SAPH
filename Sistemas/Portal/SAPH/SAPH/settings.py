@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'apps.setor',
     'apps.core',
     'apps.nivel',
+    'apps.solicitacao',
 ]
 
 MIDDLEWARE = [

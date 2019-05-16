@@ -1,6 +1,6 @@
 from apps.funcionario.forms import FuncionarioEdit
 
-from Sistemas.Portal.SAPH.apps.funcionario.apps import FuncionarioConfig
+
 from Sistemas.Portal.SAPH.apps.funcionario.forms import FuncionaioPreCadastro
 from .models import Funcionario
 from django.views.generic import CreateView, UpdateView, ListView, DeleteView
@@ -73,9 +73,11 @@ class PreCadastroFuncionario(CreateView):
 
 class PreUpdateFuncionario(UpdateView):
     model = Funcionario
-    fields = ['nome', 'cpf', 'cargo', 'endereco', 'telefone', 'foto']
-
+    # fields = ['nome', 'cpf', 'cargo', 'endereco', 'telefone', 'foto']
+    form_class = FuncionarioEdit
     def get_queryset(self):
         return Funcionario.objects.filter(pk=self.kwargs['pk'])
 
     template_name_suffix = '_pre_update_funcionario'
+
+

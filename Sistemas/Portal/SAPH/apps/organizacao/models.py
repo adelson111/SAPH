@@ -16,3 +16,6 @@ class Organizacao(models.Model):
 
     def get_absolute_url(self):
         return reverse('cadasrtra_organizacao')
+
+    class Meta:
+        verbose_name_plural = 'Organizações'

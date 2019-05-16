@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<h1>Cadastrar Funcionário</h1>
+<form method="POST">
+    {%csrf_token%}
+    Tipo: {{ form1.tipo }}
+    <br>
+    Item: {{ form2.name }}
+    <br>
+
+</form>
+<button id = 'f' >Aicionar item</button>
+<button type="submit">Cadastrar</button>
+<script>
+    btn = document.getElementById('f');
+    btn.addEventListener('click',function(){
+        span = addElementInForm('span');
+        span.innerHTML = 'Item: ';
+        input = addElementInForm('input');
+        input.name = 'nome';
+        addElementInForm('br');
+    });
+    function addElementInForm(tag){
+        form = document.querySelector('form');
+        node = document.createElement(tag);
+        form.appendChild(node);
+        return node;
+    }
+</script>
+{% endblock%}

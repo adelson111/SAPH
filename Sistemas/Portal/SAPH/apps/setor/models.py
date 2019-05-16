@@ -10,7 +10,7 @@ from apps.nivel.models import Nivel
 
 class Setor(models.Model):
     nome = models.CharField(max_length=20)
-    funcionario = models.ManyToManyField(Funcionario, blank=True, null=True)
+    funcionario = models.ManyToManyField(Funcionario, blank=True)
     nivel = models.ForeignKey(Nivel, blank=True, null=True, on_delete=models.PROTECT)
     gerente = models.ForeignKey(Funcionario, blank=False, null=True, on_delete=models.SET_NULL, related_name='gerentesetor')
 

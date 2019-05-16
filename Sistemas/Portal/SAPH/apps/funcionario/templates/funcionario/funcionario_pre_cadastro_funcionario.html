@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<h1>Pre Cadastro</h1>
+<form method="POST">
+    {%csrf_token%}
+
+    E-mail:{{form.email}}
+    <br>
+    <button type="submit">Cadastrar</button>
+</form>
+{% endblock%}

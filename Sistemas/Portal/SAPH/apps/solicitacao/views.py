@@ -1,17 +1,11 @@
 
-from django.http import HttpResponseRedirect
-from django.shortcuts import render
+from django.shortcuts import render, redirect, get_object_or_404
 
 # Create your views here.
 from django.views.generic import CreateView
 
 from apps.solicitacao.form import SolicitacaoForm, ItemForm
-from apps.solicitacao.models import Solicitacao, Item
-
-
-class CadastraItem(CreateView):
-    model = Item
-    fields = ['nome']
+from apps.solicitacao.models import Item
 
 
 class CadastrarSolicitacao(CreateView):
@@ -30,16 +24,21 @@ class CadastrarSolicitacao(CreateView):
     def post(self, request, *args, **kwargs):
         nome_itens = request.POST.getlist('form1-nome')
         data_dicts = [{'nome':nome}for nome in nome_itens]
+        itens = []
         for data in data_dicts:
             formOne = self.form1(data)
             if formOne.is_valid():
-                formOne.save()
+                pk = formOne.save()
+                itens.append(get_object_or_404(Item, pk=pk.pk))
 
         formTwo = self.form2(request.POST,prefix="form2")
 
         if formTwo.is_valid():
-            formTwo.save()
-            return HttpResponseRedirect('/solicitacao/')
+            solicitacao =  formTwo.save()
+            for item in itens:
+                solicitacao.itens.add(item)
+
+            return redirect('cadasrtrar_solicitacao')
 
         return render(request, self.template_name, {
             'form1': formOne,

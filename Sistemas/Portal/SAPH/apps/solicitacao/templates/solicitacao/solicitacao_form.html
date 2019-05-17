@@ -7,14 +7,16 @@
     <div class="tipo">
         Tipo: {{ form2.tipo }}
     </div>
-    <div class="item">
-        Item: {{ form1.nome }}
+    <div class="descricao">
+        Descricao: {{ form2.descricao }}
+    </div>
+    <div class="itens">
+        Descricao: {{ form2.itens }}
     </div>
 
 
-
 </form>
-<button id = 'addItem' >Aicionar item</button>
+<a id = 'addItem' >Aicionar item</a>
 <button id = 'submit' type="submit">Cadastrar</button>
 <script>
     btnAdd = document.getElementById('addItem');

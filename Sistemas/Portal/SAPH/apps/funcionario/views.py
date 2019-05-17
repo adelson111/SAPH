@@ -1,7 +1,12 @@
-from apps.funcionario.forms import FuncionarioEdit
+
+from apps.funcionario.forms import FuncionaioPreCadastro, FuncionarioCadastra, FuncionarioEdit
+from django.core.exceptions import ObjectDoesNotExist
+from django.db import IntegrityError
+
+from django.http import HttpResponse
+from django.shortcuts import render
 
 
-from apps.funcionario.forms import FuncionaioPreCadastro
 from .models import Funcionario
 from django.views.generic import CreateView, UpdateView, ListView, DeleteView
 from django.urls import reverse_lazy
@@ -9,7 +14,14 @@ from django.contrib.auth.models import User
 
 class CadastrarFuncionario(CreateView):
     model = Funcionario
-    fields = ['nome', 'email', 'senha', 'cpf', 'cargo', 'endereco', 'telefone', 'ativo', 'foto']
+    # fields = ['nome', 'email', 'senha', 'cpf', 'cargo', 'endereco', 'telefone', 'ativo', 'foto', 'organizacao']
+    form_class = FuncionarioCadastra
+
+    def get_form_kwargs(self, *args, **kwargs):
+        kwargs = super(CadastrarFuncionario, self).get_form_kwargs()
+        # kwargs.update({'organizacao': self.request.user.funcionario.organizacao.pk})
+        kwargs.update({'organizacao': self.kwargs['pk']})
+        return kwargs
 
     def form_valid(self, form):
         funcionario = form.save(commit=False)
@@ -18,6 +30,8 @@ class CadastrarFuncionario(CreateView):
         funcionario.user = User.objects.create_user(username=username, password=password)
         funcionario.save()
         return super(CadastrarFuncionario, self).form_valid(form)
+
+    success_url = reverse_lazy('page-home')
 
 class AtualizarFuncionario(UpdateView):
     model = Funcionario
@@ -31,7 +45,8 @@ class ListarFuncionarios(ListView):
     model = Funcionario
 
     def get_queryset(self):
-        return Funcionario.objects.all()
+        # return Funcionario.objects.all()
+        return Funcionario.objects.filter(organizacao=self.request.user.funcionario.organizacao.pk)
 
 
 class ListarFuncionarioBloqueado(ListView):
@@ -39,7 +54,8 @@ class ListarFuncionarioBloqueado(ListView):
 
 
     def get_queryset(self):
-        return Funcionario.objects.filter(ativo=False)
+        # return Funcionario.objects.filter(ativo=False)
+        return Funcionario.objects.filter(ativo=False, organizacao=self.request.user.funcionario.organizacao.pk)
 
     template_name_suffix = '_func_bloqueado'
 
@@ -65,16 +81,21 @@ class PreCadastroFuncionario(CreateView):
         funcionario = form.save(commit=False)
         username = funcionario.email
         funcionario.senha = 'ifrn2018'
-        funcionario.user = User.objects.create_user(username=username, password='ifrn2018')
-        funcionario.save()
+
+        try:
+            funcionario.user = User.objects.create_user(username=username, password='ifrn2018')
+            funcionario.save()
+        except IntegrityError:
+            return HttpResponse('FUDEU')
+
         return super(PreCadastroFuncionario, self).form_valid(form)
 
     template_name_suffix = '_pre_cadastro_funcionario'
 
 class PreUpdateFuncionario(UpdateView):
     model = Funcionario
-    # fields = ['nome', 'cpf', 'cargo', 'endereco', 'telefone', 'foto']
-    form_class = FuncionarioEdit
+    fields = ['nome', 'cpf', 'cargo', 'endereco', 'telefone', 'foto']
+    # form_class = FuncionarioEd    it
     def get_queryset(self):
         return Funcionario.objects.filter(pk=self.kwargs['pk'])
 

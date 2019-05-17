@@ -19,6 +19,13 @@
 
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
     <!-- Brand -->
+
+    <a class="navbar-brand" href="#">Logo</a>
+    {% if not user.funcionario.organizacao %}
+        <a class="btn bg-info" href="{% url 'cadastrar_organizacao' %}">CADASTRAR ORGANIZAÇÃO</a>
+    {% endif%}
+    <!-- Links -->
+    <ul class="navbar-nav">
     <a class="navbar-brand" href="{% url 'page_home'%}">SAPH</a>
 
     <div class="collapse navbar-collapse" id="navb">
@@ -42,7 +49,7 @@
                     Funcionario
                 </a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="{% url 'cadasrtrar_funcionario' %}">Cadastrar</a>
+                    <a class="dropdown-item" href="{% url 'cadasrtrar_funcionario' user.funcionario.organizacao.pk %}">Cadastrar</a>
                     <a class="dropdown-item" href="{% url 'listar_funcionarios' %}">Listar</a>
                     <a class="dropdown-item" href="{% url 'listar_funcionarios_bloqueado' %}">Bloqueados</a>
                 </div>

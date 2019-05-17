@@ -1,24 +1,41 @@
 {% extends 'base.html' %}
 
 
-{% block title %}Listar Nivel{% endblock%}
+{% block title %}Níveis Cadastrados{% endblock%}
 
 {% block main %}
-<h1 class="text-center">Listar Niveis</h1>
+<div class="titulo">
+    <h2>Níveis Cadastrados</h2>
+</div>
 <ul class="list-group">
     {% for nivel in object_list %}
     <li class="list-group-item">
-        <a href="{% url 'atualizar_nivel' nivel.pk %}">
-            Id: {{nivel.pk}}
-            <br>
-            Funcionario: {{nivel.funcionario}}
-            <br>
-            Nivel Superior: {{nivel.nivelSuperior}}
-            <br>
-            Nivel Inferior: {{nivel.nivelInferior}}
-        </a>
-        <br>
-        <a href="{% url 'apagar_nivel' nivel.pk %}" class="btn btn-danger">Deletar</a>
+        <div class="row">
+            <div class="col-sm-5">
+                <div class="centralizar">
+                    <span>Responsável</span>
+                </div>
+                <span>{{nivel.funcionario}}</span>
+            </div>
+            <div class="col-sm-2">
+                <div class="centralizar">
+                    <span>Nível Superior</span>
+                </div>
+                <span>{{nivel.nivelSuperior}}</span>
+            </div>
+            <div class="col-sm-2">
+                <div class="centralizar">
+                    <span>Nível Inferior</span>
+                </div>
+                <span>{{nivel.nivelInferior}}</span>
+            </div>
+            <div class="col-sm-1 centralizar">
+                <a href="{% url 'atualizar_nivel' nivel.pk %}"><button type="button" class="btn btn-secondary">Editar</button></a>
+            </div>
+            <div class="col-sm-2 centralizar">
+                <a href="{% url 'apagar_nivel' nivel.pk %}"><button type="button" class="btn btn-secondary">Deletar</button></a>
+            </div>
+        </div>
     </li>
     {%endfor%}
 </ul>

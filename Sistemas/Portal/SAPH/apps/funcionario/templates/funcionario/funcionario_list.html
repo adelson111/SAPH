@@ -1,18 +1,26 @@
 {% extends 'base.html' %}
 
+{%block title%}Funcionários Cadastrados{%endblock%}
+
 {% block main %}
-    <h1>Funcionários Cadastrados</h1>
-    <ul class="list-group">
+<div class="titulo">
+    <h2>Funcionários Cadastrados</h2>
+</div>
+<ul class="list-group">
     {% for funcionario in object_list %}
-        <li class="list-group-item">
-            <a href="{% url 'atualizar_funcionario' funcionario.pk %}">
-                Funcionário: {{funcionario.nome}}
-                <br>
-                Telefone: {{funcionario.telefone}}
-            </a>
-            <a href="{% url 'apagar_funcionario' funcionario.pk %}">Deletar</a>
-            <a href="{% url 'bloquear_funcionario' funcionario.pk %}">Bloquear</a>
-        </li>
+    <li class="list-group-item">
+        <div class="row">
+            <div class="col-sm-9">
+                <span>{{funcionario.nome}}</span>
+            </div>
+            <div class="col-sm-1 centralizar">
+                <a href="{% url 'atualizar_funcionario' funcionario.pk %}"><button type="button" class="btn btn-secondary">Editar</button></a>
+            </div>
+            <div class="col-sm-2 centralizar">
+                <a href="{% url 'bloquear_funcionario' funcionario.pk %}"><button type="button" class="btn btn-secondary">Bloquear</button></a>
+            </div>
+        </div>
+    </li>
     {%endfor%}
-    </ul>
+</ul>
 {% endblock %}

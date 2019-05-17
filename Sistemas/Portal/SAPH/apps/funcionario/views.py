@@ -1,4 +1,11 @@
-from Sistemas.Portal.SAPH.apps.funcionario.forms import FuncionaioPreCadastro, FuncionarioCadastra, FuncionarioEdit
+
+from apps.funcionario.forms import FuncionaioPreCadastro, FuncionarioCadastra, FuncionarioEdit
+from django.core.exceptions import ObjectDoesNotExist
+from django.db import IntegrityError
+
+from django.http import HttpResponse
+from django.shortcuts import render
+
 
 from .models import Funcionario
 from django.views.generic import CreateView, UpdateView, ListView, DeleteView
@@ -24,6 +31,8 @@ class CadastrarFuncionario(CreateView):
         funcionario.save()
         return super(CadastrarFuncionario, self).form_valid(form)
 
+    success_url = reverse_lazy('page-home')
+
 class AtualizarFuncionario(UpdateView):
     model = Funcionario
     fields = ['nome', 'email', 'senha', 'cpf', 'cargo', 'endereco', 'telefone', 'ativo', 'foto']
@@ -36,7 +45,8 @@ class ListarFuncionarios(ListView):
     model = Funcionario
 
     def get_queryset(self):
-        return Funcionario.objects.all()
+        # return Funcionario.objects.all()
+        return Funcionario.objects.filter(organizacao=self.request.user.funcionario.organizacao.pk)
 
 
 class ListarFuncionarioBloqueado(ListView):
@@ -44,7 +54,8 @@ class ListarFuncionarioBloqueado(ListView):
 
 
     def get_queryset(self):
-        return Funcionario.objects.filter(ativo=False)
+        # return Funcionario.objects.filter(ativo=False)
+        return Funcionario.objects.filter(ativo=False, organizacao=self.request.user.funcionario.organizacao.pk)
 
     template_name_suffix = '_func_bloqueado'
 
@@ -70,8 +81,13 @@ class PreCadastroFuncionario(CreateView):
         funcionario = form.save(commit=False)
         username = funcionario.email
         funcionario.senha = 'ifrn2018'
-        funcionario.user = User.objects.create_user(username=username, password='ifrn2018')
-        funcionario.save()
+
+        try:
+            funcionario.user = User.objects.create_user(username=username, password='ifrn2018')
+            funcionario.save()
+        except IntegrityError:
+            return HttpResponse('FUDEU')
+
         return super(PreCadastroFuncionario, self).form_valid(form)
 
     template_name_suffix = '_pre_cadastro_funcionario'

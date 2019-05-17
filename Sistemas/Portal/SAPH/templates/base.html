@@ -18,13 +18,13 @@
 
     <a class="navbar-brand" href="#">Logo</a>
     {% if not user.funcionario.organizacao %}
-        <a class="btn bg-info" href="{% url 'cadastrar_organizacao'%}">CADASTRAR ORGANIZAÇÃO</a>
+        <a class="btn bg-info" href="{% url 'cadastrar_organizacao' %}">CADASTRAR ORGANIZAÇÃO</a>
     {% endif%}
     <!-- Links -->
     <ul class="navbar-nav">
 
         <!-- Dropdown -->
-        {%if user.funcionario.cargo == 'admin' and user.funcionario.organizacao%}
+        {%if user.funcionario.cargo == 'admin' and user.funcionario.organizacao %}
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
                 Organização

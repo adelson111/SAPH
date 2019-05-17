@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.shortcuts import redirect, render
-from django.urls import reverse
+from django.urls import reverse, reverse_lazy
 from django.template.loader import render_to_string
 from django.core.mail import send_mail
 from apps.organizacao.models import Organizacao
@@ -29,7 +29,8 @@ class Funcionario(models.Model):
         if(self.nome==None):
             return reverse('page_home')
         elif(self.nome!=None and self.cpf!=None):
-            return reverse('page_home')
+            # return reverse('cadasrtrar_funcionario')
+            return reverse_lazy('page_home')
         return reverse('page_home')
 
     # def save(self, *args, **kwargs):

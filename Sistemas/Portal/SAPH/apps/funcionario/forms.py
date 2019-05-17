@@ -13,7 +13,7 @@ class FuncionarioEdit(ModelForm):
 class FuncionaioPreCadastro(ModelForm):
     class Meta:
         model = Funcionario
-        fields = ['email']
+        fields = ['email','user']
 
 
 class FuncionarioCadastra(ModelForm):

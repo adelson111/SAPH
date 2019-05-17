@@ -4,9 +4,11 @@
 <h1>Bloquear Funcionário</h1>
 <form method="POST">
     {%csrf_token%}
-    <h2>Nome:{{form.nome}}</h2>
+    <h2>Funcionario:{{form.nome.value}}</h2>
     <br>
     <div class="custom-control custom-switch">
+        Situação
+        <br>
         {% if form.ativo.value == True %}
             <input type="checkbox" class="custom-control-input" name="ativo" id="id_ativo" checked>
         {% else %}

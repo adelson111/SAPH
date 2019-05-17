@@ -12,6 +12,5 @@ class ItemForm(ModelForm):
 class SolicitacaoForm(ModelForm):
     class Meta:
         model = Solicitacao
-        exclude = ('item',)
-        fields = ['tipo']
+        fields = ['tipo','descricao','itens']
 

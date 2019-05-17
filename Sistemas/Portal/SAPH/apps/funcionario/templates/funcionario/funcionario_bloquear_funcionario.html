@@ -14,14 +14,17 @@
         <div class="custom-control custom-switch switch">
             {% if form.ativo.value == True %}
             <input type="checkbox" class="custom-control-input" name="ativo" id="id_ativo" checked>
+            <label class="custom-control-label" for="id_ativo">Desbloqueado</label>
             {% else %}
             <input type="checkbox" class="custom-control-input" name="ativo" id="id_ativo" >
+            <label class="custom-control-label" for="id_ativo">Bloqueado</label>
             {% endif %}
-            <label class="custom-control-label" for="id_ativo">Ativo</label>
         </div>
         <div>
             <input type="submit" class="btn btn-success btn-lg form_botao_direito" name="" value="Salvar">
-            <button type="button" class="btn btn-secondary btn-lg form_botao_esquerdo">Valtar</button>
+            <a href="javascript:history.back();">
+                <button type="button" class="btn btn-secondary btn-lg form_botao_esquerdo">Valtar</button>
+            </a>
         </div>
         <br>
     </form>

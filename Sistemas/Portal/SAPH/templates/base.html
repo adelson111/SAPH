@@ -1,5 +1,5 @@
 {% load static %}
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -32,77 +32,82 @@
         <!-- Links -->
         <ul class="navbar-nav mr-auto">
 
-        <!-- Dropdown -->
-        {%if user.funcionario.cargo == 'admin' %}
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                Organização
-            </a>
-            <div class="dropdown-menu">
-                <!--<a class="dropdown-item" href="#">Cadastrar</a>-->
-                <a class="dropdown-item" href="#">Editar</a>
-            </div>
-        </li>
-        {% endif %}
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbardrop1" data-toggle="dropdown">
-                Funcionario
-            </a>
-            <div class="dropdown-menu">
-                <a class="dropdown-item" href="{% url 'cadasrtrar_funcionario' user.funcionario.organizacao.pk %}">Cadastrar</a>
-                <a class="dropdown-item" href="{% url 'listar_funcionarios' %}">Listar</a>
-                <a class="dropdown-item" href="#">Bloquear</a>
-                <a class="dropdown-item" href="#">Desbloquear</a>
-                <a class="dropdown-item" href="{% url 'listar_funcionarios_bloqueado' %}">Bloqueados</a>
-            </div>
-        </li>
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbardrop2" data-toggle="dropdown">
-                Setor
-            </a>
-            <div class="dropdown-menu">
-                <a class="dropdown-item" href="{% url 'cadastrar_setor' %}">Cadastrar</a>
-                <a class="dropdown-item" href="#">Editar</a>
-                <a class="dropdown-item" href="{% url 'listar_setor' %}">Listar</a>
-            </div>
-        </li>
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbardrop3" data-toggle="dropdown">
-                Nível
-            </a>
-            <div class="dropdown-menu">
-                <a class="dropdown-item" href="{% url 'cadastrar_nivel' %}">Cadastrar</a>
-                <a class="dropdown-item" href="#">Editar</a>
-                <a class="dropdown-item" href="{% url 'listar_nivel' %}">Listar</a>
-            </div>
-        </li>
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbardrop4" data-toggle="dropdown">
-                Solicitação
-            </a>
-            <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">Cadastrar</a>
-                <a class="dropdown-item" href="#">Editar</a>
-                <a class="dropdown-item" href="#">Listar</a>
-                <a class="dropdown-item" href="#">Cancelar</a>
-            </div>
-        </li>
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbardrop5" data-toggle="dropdown">
-                Usuário: {{user.username}}
-            </a>
-            <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">Perfil</a>
-                <a class="dropdown-item" href="{% url 'logout'%}">Logout</a>
-            </div>
-        </li>
-    </ul>
+            <!-- Dropdown -->
+            {%if user.funcionario.cargo == 'admin' %}
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    Organização
+                </a>
+                <div class="dropdown-menu">
+                    <!--<a class="dropdown-item" href="#">Cadastrar</a>-->
+                    <a class="dropdown-item" href="#">Editar</a>
+                </div>
+            </li>
+            {% endif %}
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop1" data-toggle="dropdown">
+                    Funcionario
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="{% url 'cadasrtrar_funcionario' user.funcionario.organizacao.pk %}">Cadastrar</a>
+                    <a class="dropdown-item" href="{% url 'listar_funcionarios' %}">Listar</a>
+                    <a class="dropdown-item" href="{% url 'listar_funcionarios_bloqueado' %}">Bloqueados</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop2" data-toggle="dropdown">
+                    Setor
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="{% url 'cadastrar_setor' %}">Cadastrar</a>
+                    <a class="dropdown-item" href="{% url 'listar_setor' %}">Listar</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop3" data-toggle="dropdown">
+                    Nível
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="{% url 'cadastrar_nivel' %}">Cadastrar</a>
+                    <a class="dropdown-item" href="{% url 'listar_nivel' %}">Listar</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop4" data-toggle="dropdown">
+                    Solicitação
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Cadastrar</a>
+                    <a class="dropdown-item" href="#">Editar</a>
+                    <a class="dropdown-item" href="#">Listar</a>
+                    <a class="dropdown-item" href="#">Cancelar</a>
+                </div>
+            </li>
+
+        </ul>
+        <div class="my-2 my-lg-0">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop5" data-toggle="dropdown">
+                        <img src="" class="rounded-circle" alt="Imagem do usuário">
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Perfil</a>
+                        <a class="dropdown-item" href="{% url 'logout'%}">Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
 </nav>
+
 {% endif %}
 <br>
 <div class="container">
     {%block main%}
     {%endblock%}
 </div>
+
 </body>
 </html>

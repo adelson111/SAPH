@@ -14,6 +14,7 @@ urlpatterns = [
     path('atualizar-funcionario/<int:pk>/', AtualizarFuncionario.as_view(), name="atualizar_funcionario"),
     path('pre-atualizar-funcionario/<int:pk>/', PreUpdateFuncionario.as_view(), name="pre_atualizar_funcionario"),
 
+    # Não terá apagar
     path('apagar-funcionario/<int:pk>/', ApagarFuncionario.as_view(), name="apagar_funcionario"),
 
     path('bloquear-funcionario/<int:pk>/', BloquearFuncionario.as_view(), name="bloquear_funcionario"),

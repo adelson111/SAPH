@@ -1,25 +1,31 @@
 {% extends 'base.html' %}
 
 {% block main %}
-<h1>Cadastrar Funcionário</h1>
+<h1>Cadastrar Solicitação</h1>
 <form method="POST">
     {%csrf_token%}
-    Tipo: {{ form1.tipo }}
-    <br>
-    Item: {{ form2.name }}
-    <br>
+    <div class="tipo">
+        Tipo: {{ form2.tipo }}
+    </div>
+    <div class="item">
+        Item: {{ form1.nome }}
+    </div>
+
+
 
 </form>
-<button id = 'f' >Aicionar item</button>
-<button type="submit">Cadastrar</button>
+<button id = 'addItem' >Aicionar item</button>
+<button id = 'submit' type="submit">Cadastrar</button>
 <script>
-    btn = document.getElementById('f');
-    btn.addEventListener('click',function(){
-        span = addElementInForm('span');
-        span.innerHTML = 'Item: ';
-        input = addElementInForm('input');
-        input.name = 'nome';
-        addElementInForm('br');
+    btnAdd = document.getElementById('addItem');
+    btnAdd.addEventListener('click',function(){
+        div = addElementInForm('div');
+        div.class = 'item';
+        div.innerHTML = 'Item: {{ form1.nome }}';
+    });
+    btnSubmit = document.getElementById('submit');
+    btnSubmit.addEventListener('click',function(){
+        document.querySelector('form').submit();
     });
     function addElementInForm(tag){
         form = document.querySelector('form');

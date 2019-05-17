@@ -129,3 +129,19 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+
+STATICFILES_DIRS = [
+    'statics',
+]
+LOGIN_REDIRECT_URL = 'page_home'
+LOGOUT_REDIRECT_URL = 'page_home'
+
+
+EMAIL_HOST = 'mail.msdevelopment.com.br'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'teste@msdevelopment.com.br' #my gmail username
+EMAIL_HOST_PASSWORD = 'saph@2019' #my gmail password
+EMAIL_USE_TLS = False
+
+

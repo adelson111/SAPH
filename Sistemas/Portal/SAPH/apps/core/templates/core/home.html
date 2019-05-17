@@ -2,6 +2,10 @@
 
 {% block main %}
 <h1 class="text-center">BEM-VINDO AO PORTAL SAPH</h1>
+{% if not user.username %}
+    <a class="btn bg-success btn-outline-light btn-round mr-2 my-sm-0" href="{% url 'login'%}">Login</a>
+{% endif %}
+
 <ul class="list-group">
     <li class="list-group-item">
         <a class="btn btn-success text-dark" href="{% url 'cadastrar_organizacao' %}">Cadastrar Organização</a>

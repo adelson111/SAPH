@@ -1,11 +1,17 @@
 from django import forms
+from django.forms import ModelForm
 
-from apps.solicitacao.models import Item
+from apps.solicitacao.models import Item, Solicitacao
 
 
-class ItemForm(forms.Form):
-    name = forms.CharField(max_length=30)
+class ItemForm(ModelForm):
+    class Meta:
+        model = Item
+        fields = ['nome']
 
-class SolicitacaoForm(forms.Form):
-    tipo = forms.CharField(max_length=25)
-    item = forms.ModelMultipleChoiceField(queryset=Item.objects.all())
+class SolicitacaoForm(ModelForm):
+    class Meta:
+        model = Solicitacao
+        exclude = ('item',)
+        fields = ['tipo']
+

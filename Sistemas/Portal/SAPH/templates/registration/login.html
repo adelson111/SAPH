@@ -1,0 +1,22 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block title %}Login{% endblock %}
+{% block main%}
+<div class="box">
+    <h2>Login</h2>
+    <form method="POST">
+            {% csrf_token %}
+        <div class="inputBox">
+            <input type="text" name="username" required id="id_username">
+            <label>E-mail</label>
+        </div>
+        <div class="inputBox">
+            <input type="password" name="password" required id="id_password">
+            <label>Senha</label>
+        </div>
+        <input type="submit" name="" value="Entrar">
+        <br>
+        <a href="{% url 'pre_cadasrtrar_funcionario'%}">Cadastra-se</a>
+    </form>
+</div>
+{% endblock %}

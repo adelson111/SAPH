@@ -28,11 +28,16 @@ class CadastrarSolicitacao(CreateView):
         })
 
     def post(self, request, *args, **kwargs):
-        formOne = self.form1(request.POST,prefix="form1")
+        nome_itens = request.POST.getlist('form1-nome')
+        data_dicts = [{'nome':nome}for nome in nome_itens]
+        for data in data_dicts:
+            formOne = self.form1(data)
+            if formOne.is_valid():
+                formOne.save()
+
         formTwo = self.form2(request.POST,prefix="form2")
 
-        if formOne.is_valid() and formTwo.is_valid():
-            formOne.save()
+        if formTwo.is_valid():
             formTwo.save()
             return HttpResponseRedirect('/solicitacao/')
 

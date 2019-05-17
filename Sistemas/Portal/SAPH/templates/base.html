@@ -9,10 +9,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="{% static '/css/estilo_login.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/css/responsivo.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/css/estilo_formulario.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/css/posicionamento.css' %}">
     <title>{%block title%}{%endblock%}</title>
 </head>
 <body>
 {% if user.username %}
+
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
     <!-- Brand -->
 
@@ -22,27 +26,30 @@
     {% endif%}
     <!-- Links -->
     <ul class="navbar-nav">
+    <a class="navbar-brand" href="{% url 'page_home'%}">SAPH</a>
+
+    <div class="collapse navbar-collapse" id="navb">
+        <!-- Links -->
+        <ul class="navbar-nav mr-auto">
 
         <!-- Dropdown -->
-        {%if user.funcionario.cargo == 'admin' and user.funcionario.organizacao %}
+        {%if user.funcionario.cargo == 'admin' %}
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
                 Organização
             </a>
             <div class="dropdown-menu">
-                {% if not user.funcionario.organizacao %}
-                    <a class="dropdown-item" href="#">Cadastrar</a>
-                {% endif %}
+                <!--<a class="dropdown-item" href="#">Cadastrar</a>-->
                 <a class="dropdown-item" href="#">Editar</a>
             </div>
         </li>
-
+        {% endif %}
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbardrop1" data-toggle="dropdown">
                 Funcionario
             </a>
             <div class="dropdown-menu">
-                <a class="dropdown-item" href="{% url 'cadasrtrar_funcionario' user.funcionario.organizacao.pk  %}">Cadastrar</a>
+                <a class="dropdown-item" href="{% url 'cadasrtrar_funcionario' user.funcionario.organizacao.pk %}">Cadastrar</a>
                 <a class="dropdown-item" href="{% url 'listar_funcionarios' %}">Listar</a>
                 <a class="dropdown-item" href="#">Bloquear</a>
                 <a class="dropdown-item" href="#">Desbloquear</a>
@@ -80,7 +87,6 @@
                 <a class="dropdown-item" href="#">Cancelar</a>
             </div>
         </li>
-        {% endif %}
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbardrop5" data-toggle="dropdown">
                 Usuário: {{user.username}}

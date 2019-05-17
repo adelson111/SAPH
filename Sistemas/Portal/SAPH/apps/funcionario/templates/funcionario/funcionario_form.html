@@ -1,58 +1,56 @@
 {% extends 'base.html' %}
 
 {% block main %}
-<h1>Cadastrar Funcionário</h1>
-<form method="POST">
-    {%csrf_token%}
-    <div class="form-group">
-        <label for="id_nome">Nome:</label>
-        <input type="text" class="form-control" id="id_nome" placeholder="Nome" name="nome" required>
-        <!--<div class="valid-feedback">Valid.</div>-->
-        <!--<div class="invalid-feedback">Please fill out this field.</div>-->
-    </div>
-    <div class="form-group">
-        <label for="id_email">E-mail:</label>
-        <input type="text" class="form-control" id="id_email" placeholder="E-mail" name="email" required>
-        <!--<div class="valid-feedback">Valid.</div >-->
-        <!--<div class="invalid-feedback">Please fill out this field.</div>-->
-    </div>
-    <div class="form-group">
-        <label for="id_cpf">CPF:</label>
-        <input type="text" class="form-control" id="id_cpf" placeholder="CPF" name="cpf" required>
-        <!--<div class="valid-feedback">Valid.</div>-->
-        <!--<div class="invalid-feedback">Please fill out this field.</div>-->
-    </div>
-    <div class="form-group">
-        <label for="id_cargo">Cargo:</label>
-        <input type="text" class="form-control" id="id_cargo" placeholder="Cargo" name="cargo" required>
-        <!--<div class="valid-feedback">Valid.</div>-->
-        <!--<div class="invalid-feedback">Please fill out this field.</div>-->
-    </div>
-    <div class="form-group">
-        <label for="id_endereco">Endereço:</label>
-        <input type="text" class="form-control" id="id_endereco" placeholder="Endereço" name="endereco" required>
-        <!--<div class="valid-feedback">Valid.</div>-->
-        <!--<div class="invalid-feedback">Please fill out this field.</div>-->
-    </div>
-    <div class="form-group">
-        <label for="id_telefone">Telefone:</label>
-        <input type="text" class="form-control" id="id_telefone" placeholder="Telefone" name="telefone" required>
-        <!--<div class="valid-feedback">Valid.</div>-->
-        <!--<div class="invalid-feedback">Please fill out this field.</div>-->
-    </div>
-    <div class="custom-file">
-        <input type="file" class="custom-file-input" accept="image/*" name="foto" id="id_foto">
-        <label class="custom-file-label" for="id_foto">Choose file</label>
-    </div>
-    <!--{{form}}-->
-    <div class="form-group">
-        <label for="id_telefone">Empressa:</label>
-        <select name="organizacao" class="custom-select mb-3" id="id_organizacao">
-            <option value="16" selected>Empresa: MSDEVELOPMENT, CNPJ4545454546</option>
-        </select>
-    </div>
-    <br>
+<div class="titulo">
+    <h2>Cadastrar Funcionário</h2>
+</div>
+<div class="form">
+    <form method="POST">
+        {% csrf_token %}
+        <div class="inputBox">
+            <input type="text" name="nome" required>
+            <label>Nome</label>
+        </div>
+        <div class="inputBox">
+            <input type="email" name="email" required>
+            <label>E-mail</label>
+        </div>
+        <div class="inputBox">
+            <input type="password" name="senha" required>
+            <label>Senha</label>
+        </div>
+        <div class="inputBox">
+            <input type="text" name="cpf" required>
+            <label>CPF</label>
+        </div>
+        <div class="inputBox">
+            <input type="text" name="cargo" required>
+            <label>Cargo</label>
+        </div>
+        <div class="inputBox">
+            <input type="text" name="endereco" required>
+            <label>Endereço</label>
+        </div>
+        <div class="inputBox">
+            <input type="text" name="telefone" required>
+            <label>Telefone</label>
+        </div>
+        <div class="form_ativo">
+            <label>Ativo</label>
+            <input type="checkbox" name="ativo" checked required>
+        </div>
+        <div class="form_foto">
+            <label>Foto</label>
+            <input type="file" name="foto">
+        </div>
+        <div class="form_botao_direito">
+            <input type="submit" class="btn btn-success btn-lg" name="" value="Cadastrar">
+        </div>
+        <br>
+    </form>
+</div>
 
-    <button type="submit">Cadastrar</button>
-</form>
+
+
+
 {% endblock%}

@@ -1,22 +1,47 @@
 {% extends 'base.html' %}
 
+{%block title%}Atualizar Organização{%endblock%}
+
 {% block main %}
-<h1>Atualizar Organização</h1>
-<form method="POST">
-    {%csrf_token%}
-    Nome:{{form.nome}}
-    <br>
-    CNPJ:{{form.cnpj}}
-    <br>
-    Endereco:{{form.endereco}}
-    <br>
-    Telefone:{{form.telefone}}
-    <br>
-    Situação:{{form.situacao}}
-    <br>
-    Quantidade Nivel:{{form.numeroNivel}}
-    <br>
-    <button type="submit" class="btn btn-warning">Cadastrar</button>
-    <a href="{%url 'page_home'%}" class="btn btn-dark text-light">Home</a>
-</form>
+<div class="titulo">
+    <h2>Atualizar Organização</h2>
+</div>
+<div class="form">
+    <form method="POST">
+        {% csrf_token %}
+        <div class="inputBox">
+            <input type="text" name="nome" value="{{form.nome.value}}" required>
+            <label>Nome</label>
+        </div>
+        <div class="inputBox">
+            <input type="text" name="cnpj" value="{{form.cnpj.value}}" required>
+            <label>CNPj</label>
+        </div>
+        <div class="inputBox">
+            <input type="text" name="endereco" value="{{form.endereco.value}}" required>
+            <label>Endereço</label>
+        </div>
+        <div class="inputBox">
+            <input type="text" name="telefone" value="{{form.telefone.value}}" required>
+            <label>Telefone</label>
+        </div>
+        <div class="custom-control custom-switch switch">
+            {% if form.situacao.value == True %}
+            <input type="checkbox" class="custom-control-input" name="ativo" id="id_ativo" checked>
+            {% else %}
+            <input type="checkbox" class="custom-control-input" name="ativo" id="id_ativo" >
+            {% endif %}
+            <label class="custom-control-label" for="id_ativo">Situação</label>
+        </div>
+        <div class="inputBox">
+            <input type="text" name="numeroNivel" value="{{form.numeroNivel.value}}" required>
+            <label>Quantidade de Níveis</label>
+        </div>
+        <div>
+            <input type="submit" class="btn btn-success btn-lg form_botao_direito" name="" value="Salvar">
+            <button type="button" class="btn btn-secondary btn-lg form_botao_esquerdo">Valtar</button>
+        </div>
+        <br>
+    </form>
+</div>
 {% endblock%}

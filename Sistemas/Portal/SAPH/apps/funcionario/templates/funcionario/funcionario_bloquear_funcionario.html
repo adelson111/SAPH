@@ -1,22 +1,32 @@
 {% extends 'base.html' %}
 
+{%block title%}Bloquear Funcionário{%endblock%}
+
 {% block main %}
-<h1>Bloquear Funcionário</h1>
-<form method="POST">
-    {%csrf_token%}
-    <h2>Nome:{{form.nome}}</h2>
-    <br>
-    <div class="custom-control custom-switch">
-        {% if form.ativo.value == True %}
+<div class="titulo">
+    <h2>Bloquear Funcionário</h2>
+</div>
+<div class="form">
+    <form method="POST">
+        {% csrf_token %}
+        <div>
+            <label>Nome:</label>
+            <span>{{form.nome.value}}</span>
+        </div>
+        <div class="custom-control custom-switch">
+            {% if form.ativo.value == True %}
             <input type="checkbox" class="custom-control-input" name="ativo" id="id_ativo" checked>
-        {% else %}
+            {% else %}
             <input type="checkbox" class="custom-control-input" name="ativo" id="id_ativo" >
-        {% endif %}
-        <label class="custom-control-label" for="id_ativo">Ativo</label>
-    </div>
-<!--    <input type="checkbox" name="ativo" id="id_ativo">-->
-<!--    Ativo:{{form.ativo}}-->
-    <br>
-    <button type="submit">Cadastrar</button>
-</form>
+            {% endif %}
+            <label class="custom-control-label" for="id_ativo">Ativo</label>
+        </div>
+        <div>
+            <input type="submit" class="btn btn-success btn-lg form_botao_direito" name="" value="Salvar">
+            <button type="button" class="btn btn-secondary btn-lg form_botao_esquerdo">Valtar</button>
+        </div>
+        <br>
+    </form>
+</div>
+
 {% endblock%}

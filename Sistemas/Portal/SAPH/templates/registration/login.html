@@ -1,22 +1,25 @@
 {% extends 'base.html'%}
 {% load static %}
-{% block title %}Login{% endblock %}
+{% block title %}Entrar{% endblock %}
 {% block main%}
 <div class="box">
-    <h2>Login</h2>
+    <h2>Entar</h2>
     <form method="POST">
-            {% csrf_token %}
+        {% csrf_token %}
         <div class="inputBox">
-            <input type="text" name="username" required id="id_username">
+            <input type="email" name="username" required id="id_username">
             <label>E-mail</label>
         </div>
         <div class="inputBox">
             <input type="password" name="password" required id="id_password">
             <label>Senha</label>
         </div>
-        <input type="submit" name="" value="Entrar">
-        <br>
-        <a href="{% url 'pre_cadasrtrar_funcionario'%}">Cadastra-se</a>
+        <div>
+            <input class="btn btn-primary form_botao_direito" type="submit" name="" value="Entrar">
+            <a href="{% url 'pre_cadasrtrar_funcionario'%}">
+                <button type="button" class="btn btn-link form_botao_esquerdo">Criar Conta</button>
+            </a>
+        </div>
     </form>
 </div>
 {% endblock %}

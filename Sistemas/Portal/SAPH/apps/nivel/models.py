@@ -15,3 +15,5 @@ class Nivel(models.Model):
 
     def get_absolute_url(self):
         return reverse('cadastrar_nivel')
+    class Meta:
+        verbose_name_plural = 'Niveis'

@@ -15,4 +15,11 @@ class Organizacao(models.Model):
         return 'Empresa: '+ self.nome + ', CNPJ' + self.cnpj
 
     def get_absolute_url(self):
+<<<<<<< HEAD
         return reverse('page_home')
+=======
+        return reverse('cadasrtra_organizacao')
+
+    class Meta:
+        verbose_name_plural = 'Organizações'
+>>>>>>> def4624272e11c5ab84d76d6cb7c4800d0f23d8f

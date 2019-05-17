@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<h1>Cadastrar Solicitação</h1>
+<form method="POST">
+    {%csrf_token%}
+    <div class="tipo">
+        Tipo: {{ form2.tipo }}
+    </div>
+    <div class="item">
+        Item: {{ form1.nome }}
+    </div>
+
+
+
+</form>
+<button id = 'addItem' >Aicionar item</button>
+<button id = 'submit' type="submit">Cadastrar</button>
+<script>
+    btnAdd = document.getElementById('addItem');
+    btnAdd.addEventListener('click',function(){
+        div = addElementInForm('div');
+        div.class = 'item';
+        div.innerHTML = 'Item: {{ form1.nome }}';
+    });
+    btnSubmit = document.getElementById('submit');
+    btnSubmit.addEventListener('click',function(){
+        document.querySelector('form').submit();
+    });
+    function addElementInForm(tag){
+        form = document.querySelector('form');
+        node = document.createElement(tag);
+        form.appendChild(node);
+        return node;
+    }
+</script>
+{% endblock%}

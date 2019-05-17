@@ -1,7 +1,5 @@
-
-
-
 from Sistemas.Portal.SAPH.apps.funcionario.forms import FuncionaioPreCadastro, FuncionarioCadastra, FuncionarioEdit
+
 from .models import Funcionario
 from django.views.generic import CreateView, UpdateView, ListView, DeleteView
 from django.urls import reverse_lazy

@@ -5,6 +5,7 @@
 {% if not user.username %}
     <a class="btn bg-success btn-outline-light btn-round mr-2 my-sm-0" href="{% url 'login'%}">Login</a>
 {% endif %}
+<<<<<<< HEAD
 <!--<ul class="list-group">-->
     <!--<li class="list-group-item">-->
         <!--<a class="btn btn-success text-dark" href="{% url 'cadastrar_organizacao' %}">Cadastrar Organização</a>-->
@@ -37,5 +38,43 @@
         <!--<a class="btn btn-success text-dark" href="{% url 'listar_nivel' %}">Listar Niveis</a>-->
     <!--</li>-->
 <!--</ul>-->
+=======
+
+<ul class="list-group">
+    <li class="list-group-item">
+        <a class="btn btn-success text-dark" href="{% url 'cadastrar_organizacao' %}">Cadastrar Organização</a>
+    </li>
+    <li class="list-group-item">
+        <a class="btn btn-success text-dark" href="{% url 'listar_organizacao' %}">Atualizar Organização</a>
+    </li>
+    <li class="list-group-item">
+        <a class="btn btn-success text-dark" href="{% url 'cadasrtrar_funcionario' %}">Cadastrar Funcionário</a>
+    </li>
+    <li class="list-group-item">
+        <a class="btn btn-success text-dark" href="{% url 'listar_funcionarios' %}">Atualizar Funcionário</a>
+    </li>
+    <li class="list-group-item">
+        <a class="btn btn-success text-dark" href="{% url 'listar_funcionarios' %}">Listar Funcionário</a>
+    </li>
+    <li class="list-group-item">
+        <a class="btn btn-success text-dark" href="{% url 'listar_funcionarios_bloqueado' %}">Funcionário Bloqueados</a>
+    </li>
+    <li class="list-group-item">
+        <a class="btn btn-success text-dark" href="{% url 'cadastrar_setor' %}">Cadastrar Setor</a>
+    </li>
+    <li class="list-group-item">
+        <a class="btn btn-success text-dark" href="{% url 'listar_setor' %}">Atualizar Setor</a>
+    </li>
+    <li class="list-group-item">
+        <a class="btn btn-success text-dark" href="{% url 'cadastrar_nivel' %}">Cadastrar Nivel</a>
+    </li>
+    <li class="list-group-item">
+        <a class="btn btn-success text-dark" href="{% url 'listar_nivel' %}">Listar Niveis</a>
+    </li>
+    <li class="list-group-item">
+        <a class="btn btn-success text-dark" href="{% url 'cadasrtrar_solicitacao' %}">Cadastrar Solicitação</a>
+    </li>
+</ul>
+>>>>>>> def4624272e11c5ab84d76d6cb7c4800d0f23d8f
 
 {% endblock%}

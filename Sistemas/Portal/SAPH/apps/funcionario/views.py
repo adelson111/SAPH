@@ -1,7 +1,7 @@
-from apps.funcionario.forms import FuncionarioEdit
 
 
-from Sistemas.Portal.SAPH.apps.funcionario.forms import FuncionaioPreCadastro
+
+from Sistemas.Portal.SAPH.apps.funcionario.forms import FuncionaioPreCadastro, FuncionarioCadastra, FuncionarioEdit
 from .models import Funcionario
 from django.views.generic import CreateView, UpdateView, ListView, DeleteView
 from django.urls import reverse_lazy
@@ -9,7 +9,14 @@ from django.contrib.auth.models import User
 
 class CadastrarFuncionario(CreateView):
     model = Funcionario
-    fields = ['nome', 'email', 'senha', 'cpf', 'cargo', 'endereco', 'telefone', 'ativo', 'foto']
+    # fields = ['nome', 'email', 'senha', 'cpf', 'cargo', 'endereco', 'telefone', 'ativo', 'foto', 'organizacao']
+    form_class = FuncionarioCadastra
+
+    def get_form_kwargs(self, *args, **kwargs):
+        kwargs = super(CadastrarFuncionario, self).get_form_kwargs()
+        # kwargs.update({'organizacao': self.request.user.funcionario.organizacao.pk})
+        kwargs.update({'organizacao': self.kwargs['pk']})
+        return kwargs
 
     def form_valid(self, form):
         funcionario = form.save(commit=False)
@@ -73,8 +80,8 @@ class PreCadastroFuncionario(CreateView):
 
 class PreUpdateFuncionario(UpdateView):
     model = Funcionario
-    # fields = ['nome', 'cpf', 'cargo', 'endereco', 'telefone', 'foto']
-    form_class = FuncionarioEdit
+    fields = ['nome', 'cpf', 'cargo', 'endereco', 'telefone', 'foto']
+    # form_class = FuncionarioEd    it
     def get_queryset(self):
         return Funcionario.objects.filter(pk=self.kwargs['pk'])
 

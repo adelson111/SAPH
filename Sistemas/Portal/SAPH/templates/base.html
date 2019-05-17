@@ -15,29 +15,34 @@
 {% if user.username %}
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
     <!-- Brand -->
-    <a class="navbar-brand" href="#">Logo</a>
 
+    <a class="navbar-brand" href="#">Logo</a>
+    {% if not user.funcionario.organizacao %}
+        <a class="btn bg-info" href="{% url 'cadastrar_organizacao'%}">CADASTRAR ORGANIZAÇÃO</a>
+    {% endif%}
     <!-- Links -->
     <ul class="navbar-nav">
 
         <!-- Dropdown -->
-        {%if user.funcionario.cargo == 'admin' %}
+        {%if user.funcionario.cargo == 'admin' and user.funcionario.organizacao%}
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
                 Organização
             </a>
             <div class="dropdown-menu">
-                <!--<a class="dropdown-item" href="#">Cadastrar</a>-->
+                {% if not user.funcionario.organizacao %}
+                    <a class="dropdown-item" href="#">Cadastrar</a>
+                {% endif %}
                 <a class="dropdown-item" href="#">Editar</a>
             </div>
         </li>
-        {% endif %}
+
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbardrop1" data-toggle="dropdown">
                 Funcionario
             </a>
             <div class="dropdown-menu">
-                <a class="dropdown-item" href="{% url 'cadasrtrar_funcionario' %}">Cadastrar</a>
+                <a class="dropdown-item" href="{% url 'cadasrtrar_funcionario' user.funcionario.organizacao.pk  %}">Cadastrar</a>
                 <a class="dropdown-item" href="{% url 'listar_funcionarios' %}">Listar</a>
                 <a class="dropdown-item" href="#">Bloquear</a>
                 <a class="dropdown-item" href="#">Desbloquear</a>
@@ -75,6 +80,7 @@
                 <a class="dropdown-item" href="#">Cancelar</a>
             </div>
         </li>
+        {% endif %}
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbardrop5" data-toggle="dropdown">
                 Usuário: {{user.username}}

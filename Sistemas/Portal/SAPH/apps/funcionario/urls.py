@@ -7,7 +7,8 @@ from .views import CadastrarFuncionario, \
     BloquearFuncionario, PreCadastroFuncionario, PreUpdateFuncionario
 
 urlpatterns = [
-    path('cadastrar-funcionario/', CadastrarFuncionario.as_view(), name="cadasrtrar_funcionario"),
+    # path('cadastrar-funcionario/', CadastrarFuncionario.as_view(), name="cadasrtrar_funcionario"),
+    path('cadastrar-funcionario/<int:pk>/', CadastrarFuncionario.as_view(), name="cadasrtrar_funcionario"),
     path('pre-cadastro-funcionario/', PreCadastroFuncionario.as_view(), name="pre_cadasrtrar_funcionario"),
 
     path('atualizar-funcionario/<int:pk>/', AtualizarFuncionario.as_view(), name="atualizar_funcionario"),

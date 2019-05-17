@@ -12,7 +12,7 @@ class Organizacao(models.Model):
     numeroNivel = models.CharField(max_length=2)
 
     def __str__(self):
-        return self.cnpj
+        return 'Empresa: '+ self.nome + ', CNPJ' + self.cnpj
 
     def get_absolute_url(self):
-        return reverse('cadasrtra_organizacao')
+        return reverse('page_home')

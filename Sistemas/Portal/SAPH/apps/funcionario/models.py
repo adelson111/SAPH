@@ -4,6 +4,7 @@ from django.shortcuts import redirect, render
 from django.urls import reverse
 from django.template.loader import render_to_string
 from django.core.mail import send_mail
+from apps.organizacao.models import Organizacao
 # Create your models here.
 
 
@@ -19,7 +20,7 @@ class Funcionario(models.Model):
     ativo = models.BooleanField(default=True)
     foto = models.ImageField(upload_to='funcionarios/funcionarios_fotos', null=True, blank=True)
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=True, blank=True)
-    # organizacao = models.ForeignKey(Organizacao, on_delete=models.CASCADE, related_name="organizacao")
+    organizacao = models.ForeignKey(Organizacao, on_delete=models.CASCADE, null=True, blank=True, related_name="organizacao")
 
     def __str__(self):
         return self.email
@@ -29,22 +30,22 @@ class Funcionario(models.Model):
             return reverse('page_home')
         elif(self.nome!=None and self.cpf!=None):
             return reverse('page_home')
-        return reverse('cadasrtrar_funcionario')
+        return reverse('page_home')
 
-    def save(self, *args, **kwargs):
-        super(Funcionario, self).save(*args, **kwargs)
-        if(self.nome==None):
-            data = {'pk': self.pk, 'email': self.email}
-            # plain_text = render_to_string('clientes/email/novo_aluno.txt', data)
-            html_email = render_to_string('funcionario/email/func_novo.html', data)
-            # if not self.status:
-            send_mail(
-                'Novo Cliente Cadastrado',
-                #'O seu pre-cadastro %s foi realizado' % self.first_name,
-                # plain_text,
-                from_email='teste@msdevelopment.com.br',
-                message='sasas',
-                recipient_list=[self.email],
-                html_message=html_email,
-                fail_silently=False,
-                )
+    # def save(self, *args, **kwargs):
+    #     super(Funcionario, self).save(*args, **kwargs)
+    #     if(self.nome==None):
+    #         data = {'pk': self.pk, 'email': self.email}
+    #         # plain_text = render_to_string('clientes/email/novo_aluno.txt', data)
+    #         html_email = render_to_string('funcionario/email/func_novo.html', data)
+    #         # if not self.status:
+    #         send_mail(
+    #             'Novo Cliente Cadastrado',
+    #             #'O seu pre-cadastro %s foi realizado' % self.first_name,
+    #             # plain_text,
+    #             from_email='teste@msdevelopment.com.br',
+    #             message='sasas',
+    #             recipient_list=[self.email],
+    #             html_message=html_email,
+    #             fail_silently=False,
+    #             )

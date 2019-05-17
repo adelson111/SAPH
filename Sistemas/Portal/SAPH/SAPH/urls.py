@@ -19,6 +19,7 @@ from apps.organizacao import urls as urls_organizacao
 from apps.setor import urls as urls_setor
 from apps.nivel import urls as urls_nivel
 from apps.core import urls as urls_core
+from apps.solicitacao import urls as urls_solicitacao
 from apps.funcionario import urls as urls_funcionarios
 
 urlpatterns = [
@@ -28,5 +29,6 @@ urlpatterns = [
     path('setor/', include(urls_setor)),
     path('nivel/', include(urls_nivel)),
     path('funcionario/', include(urls_funcionarios)),
+    path('solicitacao/',include(urls_solicitacao)),
     path('accounts/', include('django.contrib.auth.urls')),
 ]

@@ -1,18 +1,39 @@
 {% extends 'base.html' %}
+
+{%block title%}Cadastrar Organização{%endblock%}
+
 {% block main %}
-<h1>Cadastrar Organização</h1>
-<form method="POST">
-    {%csrf_token%}
-    Nome:{{form.nome}}
-    <br>
-    CNPJ:{{form.cnpj}}
-    <br>
-    Endereço:{{form.endereco}}
-    <br>
-    Telefone:{{form.telefone}}
-    <br>
-    Quant Niveis:{{form.numeroNivel}}
-    <br>
-    <button type="submit">Cadastrar</button>
-</form>
+
+<div class="titulo">
+    <h2>Cadastrar Organização</h2>
+</div>
+<div class="form">
+    <form method="POST">
+        {% csrf_token %}
+        <div class="inputBox">
+            <input type="text" name="nome" required>
+            <label>Nome</label>
+        </div>
+        <div class="inputBox">
+            <input type="text" name="cnpj" required>
+            <label>CNPJ</label>
+        </div>
+        <div class="inputBox">
+            <input type="text" name="endereco" required>
+            <label>Endereço</label>
+        </div>
+        <div class="inputBox">
+            <input type="text" name="telefone" required>
+            <label>Telefone</label>
+        </div>
+        <div class="inputBox">
+            <input type="text" name="numeroNivel" required>
+            <label>Qantidade de níveis</label>
+        </div>
+        <div class="form_botao_direito">
+            <input type="submit" class="btn btn-success btn-lg" name="" value="Cadastrar">
+        </div>
+        <br>
+    </form>
+</div>
 {% endblock%}

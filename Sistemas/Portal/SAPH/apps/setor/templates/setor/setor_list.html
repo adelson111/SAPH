@@ -1,17 +1,27 @@
 {% extends 'base.html' %}
 
-{% block main %}
-    <h1>Setores Cadastrados</h1>
-    <ul class="list-group">
-    {% for setor in object_list %}
-        <li class="list-group-item">
-            <a href="{% url 'atualizar_setor' setor.pk %}">
-                Nome do Setor: {{setor.nome}}
-            </a>
-            <br>
-            <a href="{% url 'apagar_setor' setor.pk %}">Deletar</a>
+{%block title%}Setores Cadastrados{%endblock%}
 
-        </li>
+{% block main %}
+<div class="titulo">
+    <h2>Setores Cadastrados</h2>
+</div>
+<ul class="list-group">
+    {% for setor in object_list %}
+    <li class="list-group-item">
+        <div class="row">
+            <div class="col-sm-9">
+                <span>{{setor.nome}}</span>
+            </div>
+            <div class="col-sm-1 centralizar">
+                <a href="{% url 'atualizar_setor' setor.pk %}"><button type="button" class="btn btn-secondary">Editar</button></a>
+            </div>
+            <div class="col-sm-2 centralizar">
+                <a href="{% url 'apagar_setor' setor.pk %}"><button type="button" class="btn btn-secondary">Deletar</button></a>
+            </div>
+        </div>
+    </li>
     {%endfor%}
-    </ul>
+</ul>
+
 {% endblock %}

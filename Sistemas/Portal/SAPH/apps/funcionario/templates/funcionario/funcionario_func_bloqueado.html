@@ -8,15 +8,6 @@
 </div>
 <ul class="list-group">
     {% for funcionario in object_list %}
-    <li class="list-group-item">
-        <a href="{% url 'atualizar_funcionario' funcionario.pk %}">
-            Funcionário: {{funcionario.nome}}
-            <br>
-            Telefone: {{funcionario.telefone}}
-        </a>
-        <a href="{% url 'apagar_funcionario' funcionario.pk %}">Deletar</a>
-
-    </li>
 
     <li class="list-group-item">
         <div class="row">

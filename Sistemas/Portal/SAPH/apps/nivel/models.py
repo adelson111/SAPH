@@ -11,7 +11,7 @@ class Nivel(models.Model):
 
 
     def __str__(self):
-        return "Chefe do Nível: "+ self.funcionario.nome
+        return self.funcionario.email
 
     def get_absolute_url(self):
         return reverse('cadastrar_nivel')

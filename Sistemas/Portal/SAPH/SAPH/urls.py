@@ -29,6 +29,6 @@ urlpatterns = [
     path('setor/', include(urls_setor)),
     path('nivel/', include(urls_nivel)),
     path('funcionario/', include(urls_funcionarios)),
-    path('solicitacao/',include(urls_solicitacao)),
+    path('solicitacao/', include(urls_solicitacao)),
     path('accounts/', include('django.contrib.auth.urls')),
 ]

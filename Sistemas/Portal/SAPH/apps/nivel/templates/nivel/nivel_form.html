@@ -1,15 +1,45 @@
 {% extends 'base.html' %}
 
 
-{% block title %}Cadastrar Nivel{% endblock%}
+{% block title %}Cadastrar Nível{% endblock%}
 
 {% block main %}
-<h1 class="text-center">Cadastrar Nivel</h1>
-<form method="POST">
-    {%csrf_token%}
-    Nivel Superior:{{form.nivelSuperior}}<br>
-    Nivel Inferior:{{form.nivelInferior}}<br>
-    Funcionario :{{form.funcionario}}<br>
-    <button type="submit" class="btn btn-success">Salvar</button>
-</form>
+<div class="titulo">
+    <h2>Cadastrar Nível</h2>
+</div>
+<div class="form">
+    <form method="POST">
+        {% csrf_token %}
+        <div>
+            <label>Nível Superior</label>
+            <select name="nivelSuperior" class="custom-select">
+                {% for f in form.nivelSuperior %}
+                <option value="">{{f}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div>
+            <label class="select">Nível Inferior</label>
+            <select name="nivelInferior" class="custom-select">
+                {% for f in form.nivelInferior %}
+                <option value="">{{f}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div>
+            <label class="select">Funcionário</label>
+            <select name="funcionario" class="custom-select">
+                {% for f in form.funcionario %}
+                <option value="">{{f}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form_botao_direito">
+            <input type="submit" class="btn btn-success btn-lg" name="" value="Cadastrar">
+        </div>
+        <br>
+    </form>
+</div>
+
+
 {% endblock%}

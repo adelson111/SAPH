@@ -1,0 +1,78 @@
+.form {
+    width: 70%;
+    margin: auto;
+}
+
+.form h2{
+	margin:0 0 30px;
+	padding:0;
+	color: #000;
+	text-align: center;
+}
+
+.form .inputBox{
+	position: relative;
+}
+
+.form .inputBox input{
+	width: 100%;
+	padding: 10px 0;
+	font-size: 16px;
+	color: #000;
+	letter-spacing: 1px;
+	margin-bottom: 30px;
+	border: none;
+	border-bottom: 1px solid #000;
+	outline: none;
+	background: transparent;
+}
+
+.form .inputBox label{
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 10px 0;
+	font-size: 16px;
+	color: #343a40;
+	letter-spacing: 1px;
+	pointer-events:none;
+	transition: .5s;
+}
+
+.form .inputBox input:focus ~ label,
+.form .inputBox input:valid ~ label{
+	top: -20px;
+	left: 0;
+	color: #03a9f4;
+	font-size: 12px;
+}
+
+.form_ativo label {
+    padding-right: 1%;
+}
+
+.form_foto {
+    margin-top: 2%;
+}
+
+.form_foto label {
+    padding-right: 1%;
+}
+
+.form_botao_direito {
+    margin-top: 3%;
+    float: right;
+}
+
+.form_botao_esquerdo {
+    margin-top: 3%;
+    float: left;
+}
+
+.switch {
+    padding-bottom: 2%;
+}
+
+.select {
+    margin-top: 3%;
+}

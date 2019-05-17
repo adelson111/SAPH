@@ -1,28 +1,58 @@
 {% extends 'base.html' %}
 
-{% block main %}
-<h1>Cadastrar Funcionário</h1>
-<form method="POST">
-    {%csrf_token%}
-    Nome:{{form.nome}}
-    <br>
-    E-mail:{{form.email}}
-    <br>
-    Senha:{{form.senha}}
-    <br>
-    CPF:{{form.cpf}}
-    <br>
-    Cargo:{{form.cargo}}
-    <br>
-    Endereco:{{form.endereco}}
-    <br>
-    Telefone:{{form.telefone}}
-    <br>
-    Ativo:{{form.ativo}}
-    <br>
-    Foto:{{form.foto}}
-    <br>
+{%block title%}Cadastrar Funcinário{%endblock%}
 
-    <button type="submit">Cadastrar</button>
-</form>
+{% block main %}
+<div class="titulo">
+    <h2>Cadastrar Funcionário</h2>
+</div>
+<div class="form">
+    <form method="POST">
+        {% csrf_token %}
+        <div class="inputBox">
+            <input type="text" name="nome" required>
+            <label>Nome</label>
+        </div>
+        <div class="inputBox">
+            <input type="email" name="email" required>
+            <label>E-mail</label>
+        </div>
+        <div class="inputBox">
+            <input type="password" name="senha" required>
+            <label>Senha</label>
+        </div>
+        <div class="inputBox">
+            <input type="text" name="cpf" required>
+            <label>CPF</label>
+        </div>
+        <div class="inputBox">
+            <input type="text" name="cargo" required>
+            <label>Cargo</label>
+        </div>
+        <div class="inputBox">
+            <input type="text" name="endereco" required>
+            <label>Endereço</label>
+        </div>
+        <div class="inputBox">
+            <input type="text" name="telefone" required>
+            <label>Telefone</label>
+        </div>
+        <div class="form_ativo">
+            <label>Ativo</label>
+            <input type="checkbox" name="ativo" checked required>
+        </div>
+        <div class="form_foto">
+            <label>Foto</label>
+            <input type="file" name="foto">
+        </div>
+        <div class="form_botao_direito">
+            <input type="submit" class="btn btn-success btn-lg" name="" value="Cadastrar">
+        </div>
+        <br>
+    </form>
+</div>
+
+
+
+
 {% endblock%}

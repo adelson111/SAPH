@@ -1,17 +1,37 @@
 {% extends 'base.html' %}
 
+{%block title%}Atualizar Funcionário{%endblock%}
+
 {% block main %}
-<h1>Atualizar Funcionário</h1>
-<form method="POST">
-    {%csrf_token%}
-    Nome:{{form.nome}}
-    <br>
-    cpf:{{form.cpf}}
-    <br>
-    Endereço:{{form.endereco}}
-    <br>
-    Telefone:{{form.telefone}}
-    <br>
-    <button type="submit">Cadastrar</button>
-</form>
+<div class="titulo">
+    <h2>Atualizar Funcionário</h2>
+</div>
+<div class="form">
+    <form method="POST">
+        {% csrf_token %}
+        <div class="inputBox">
+            <input type="text" name="nome" value="{{form.nome.value}}" required>
+            <label>Nome</label>
+        </div>
+        <div class="inputBox">
+            <input type="text" name="cpf" value="{{form.cpf.value}}" required>
+            <label>CPF</label>
+        </div>
+        <div class="inputBox">
+            <input type="text" name="endereco" value="{{form.endereco.value}}" required>
+            <label>Endereço</label>
+        </div>
+        <div class="inputBox">
+            <input type="text" name="telefone" value="{{form.telefone.value}}" required>
+            <label>Telefone</label>
+        </div>
+        <div>
+            <input type="submit" class="btn btn-success btn-lg form_botao_direito" name="" value="Salvar">
+            <a href="javascript:history.back();">
+                <button type="button" class="btn btn-secondary btn-lg form_botao_esquerdo">Valtar</button>
+                </a>
+        </div>
+        <br>
+    </form>
+</div>
 {% endblock%}

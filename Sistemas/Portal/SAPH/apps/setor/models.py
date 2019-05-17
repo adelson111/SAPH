@@ -15,7 +15,7 @@ class Setor(models.Model):
     gerente = models.ForeignKey(Funcionario, blank=False, null=True, on_delete=models.SET_NULL, related_name='gerentesetor')
 
     def __str__(self):
-        return self.nome
+        return self.email
 
     class Meta:
         verbose_name_plural = 'Setores'

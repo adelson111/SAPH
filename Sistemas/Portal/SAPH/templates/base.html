@@ -19,20 +19,12 @@
 {% if user.username %}
 
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <!-- Brand -->
-
-    <a class="navbar-brand" href="#">Logo</a>
-    {% if not user.funcionario.organizacao %}
-        <a class="btn bg-info" href="{% url 'cadastrar_organizacao' %}">CADASTRAR ORGANIZAÇÃO</a>
-    {% else %}
-    <!-- Links -->
-    <ul class="navbar-nav">
     <a class="navbar-brand" href="{% url 'page_home'%}">SAPH</a>
-
     <div class="collapse navbar-collapse" id="navb">
-        <!-- Links -->
         <ul class="navbar-nav mr-auto">
-
+            {% if not user.funcionario.organizacao %}
+            <a class="btn bg-info" href="{% url 'cadastrar_organizacao' %}">CADASTRAR ORGANIZAÇÃO</a>
+            {% else %}
             <!-- Dropdown -->
             {%if user.funcionario.cargo == 'admin' %}
             <li class="nav-item dropdown">
@@ -78,27 +70,26 @@
                     Solicitação
                 </a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Cadastrar</a>
+                    <a class="dropdown-item" href="{% url 'cadasrtrar_solicitacao' %}">Cadastrar</a>
                     <a class="dropdown-item" href="#">Editar</a>
                     <a class="dropdown-item" href="#">Listar</a>
                     <a class="dropdown-item" href="#">Cancelar</a>
                 </div>
             </li>
-{% endif%}
+            {% endif%}
         </ul>
         <div class="my-2 my-lg-0">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbardrop5" data-toggle="dropdown">
                         {%if user.funcionario.foto %}
-                            <img src="{{MEDIA_URL}}{{user.funcionario.foto.url}}" class="rounded-circle" alt="Imagem do usuário" style="width:30px">
+                        <img src="{{MEDIA_URL}}{{user.funcionario.foto.url}}" class="rounded-circle" alt="Imagem do usuário" style="width:30px">
                         {% else %}
-                            <img src="{{MEDIA_URL}}media/media/funcionario/sem_foto.png" class="rounded-circle" alt="Imagem do usuário" style="width:30px">
+                        <img src="{{MEDIA_URL}}media/media/funcionario/sem_foto.png" class="rounded-circle" alt="Imagem do usuário" style="width:30px">
                         {% endif %}
                     </a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Perfil</a>
-                        <a class="dropdown-item" href="{% url 'logout'%}">Logout</a>
+                        <a class="dropdown-item" href="{% url 'logout'%}">Sair</a>
                     </div>
                 </li>
             </ul>

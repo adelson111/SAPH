@@ -27,11 +27,15 @@ class CadastrarFuncionario(CreateView):
         funcionario = form.save(commit=False)
         username = funcionario.email
         password = funcionario.senha
-        funcionario.user = User.objects.create_user(username=username, password=password)
-        funcionario.save()
-        return super(CadastrarFuncionario, self).form_valid(form)
+        try:
+            funcionario.user = User.objects.create_user(username=username, password=password)
+            funcionario.save()
+            return super(CadastrarFuncionario, self).form_valid(form)
+        except IntegrityError:
+            return HttpResponse('FUDEU1')
 
-    success_url = reverse_lazy('page-home')
+
+    success_url = reverse_lazy('page_home')
 
 class AtualizarFuncionario(UpdateView):
     model = Funcionario

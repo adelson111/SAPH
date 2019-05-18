@@ -28,17 +28,17 @@
             <!-- Dropdown -->
             {%if user.funcionario.cargo == 'admin' %}
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                <a class="nav-link dropdown-toggle" href="" id="navbardrop" data-toggle="dropdown">
                     Organização
                 </a>
                 <div class="dropdown-menu">
                     <!--<a class="dropdown-item" href="#">Cadastrar</a>-->
-                    <a class="dropdown-item" href="#">Editar</a>
+                    <a class="dropdown-item" href="">Editar</a>
                 </div>
             </li>
             {% endif %}
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbardrop1" data-toggle="dropdown">
+                <a class="nav-link dropdown-toggle" href="" id="navbardrop1" data-toggle="dropdown">
                     Funcionario
                 </a>
                 <div class="dropdown-menu">
@@ -48,7 +48,7 @@
                 </div>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbardrop2" data-toggle="dropdown">
+                <a class="nav-link dropdown-toggle" href="" id="navbardrop2" data-toggle="dropdown">
                     Setor
                 </a>
                 <div class="dropdown-menu">
@@ -57,7 +57,7 @@
                 </div>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbardrop3" data-toggle="dropdown">
+                <a class="nav-link dropdown-toggle" href="" id="navbardrop3" data-toggle="dropdown">
                     Nível
                 </a>
                 <div class="dropdown-menu">
@@ -66,33 +66,31 @@
                 </div>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbardrop4" data-toggle="dropdown">
+                <a class="nav-link dropdown-toggle" href="" id="navbardrop4" data-toggle="dropdown">
                     Solicitação
                 </a>
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="{% url 'cadasrtrar_solicitacao' %}">Cadastrar</a>
-                    <a class="dropdown-item" href="#">Editar</a>
-                    <a class="dropdown-item" href="#">Listar</a>
-                    <a class="dropdown-item" href="#">Cancelar</a>
+                    <a class="dropdown-item" href="">Editar</a>
+                    <a class="dropdown-item" href="">Listar</a>
+                    <a class="dropdown-item" href="">Cancelar</a>
                 </div>
             </li>
             {% endif%}
         </ul>
         <div class="my-2 my-lg-0">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop5" data-toggle="dropdown">
-                        {%if user.funcionario.foto %}
-                        <img src="{{MEDIA_URL}}{{user.funcionario.foto.url}}" class="rounded-circle" alt="Imagem do usuário" style="width:30px">
-                        {% else %}
-                        <img src="{{MEDIA_URL}}media/media/funcionario/sem_foto.png" class="rounded-circle" alt="Imagem do usuário" style="width:30px">
-                        {% endif %}
-                    </a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="{% url 'logout'%}">Sair</a>
-                    </div>
-                </li>
-            </ul>
+            <div class="dropdown">
+                {%if user.funcionario.foto %}
+                <img src="{{MEDIA_URL}}{{user.funcionario.foto.url}}" data-toggle="dropdown" class="rounded-circle imagem_perfil" alt="Imagem do usuário">
+                {% else %}
+                <img src="{{MEDIA_URL}}media/media/funcionario/sem_foto.png" data-toggle="dropdown" class="rounded-circle imagem_perfil" alt="Imagem do usuário">
+                {% endif %}
+                <div class="dropdown-menu dropdown-menu-right">
+                    <a class="dropdown-item" href="">Perfil</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="{% url 'logout'%}">Sair</a>
+                </div>
+            </div>
         </div>
     </div>
 

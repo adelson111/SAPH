@@ -18,7 +18,7 @@
             <label>Funcionário</label>
             <select name="funcionario" id="id_funcionario" class="custom-select" multiple>
                 {% for f in form.funcionario %}
-                <option value="{{f.pk}}">{{f}}</option>
+                    {{f}}
                 {% endfor %}
             </select>
         </div>
@@ -26,15 +26,15 @@
             <label class="select">Nível</label>
             <select name="nivel" id="id_nivel" class="custom-select custom-select-sm">
               {% for f in form.nivel %}
-                <option value="{{f.pk}}">{{f}}</option>
+                    {{f}}
                 {% endfor %}
             </select>
         </div>
         <div>
             <label class="select">Gerente</label>
             <select name="gerente" id="id_gerente" class="custom-select custom-select-sm" required>
-              {% for f in form.gerente %}
-                <option value="{{f.pk}}">{{f}}</option>
+                {% for f in form.gerente %}
+                    {{f}}
                 {% endfor %}
             </select>
         </div>

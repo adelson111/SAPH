@@ -1,56 +1,55 @@
 {% extends 'base.html' %}
 
+{%block title%}Cadastrar Funcionário{%endblock%}
+
 {% block main %}
 <div class="titulo">
     <h2>Cadastrar Funcionário</h2>
 </div>
+
 <div class="form">
     <form method="POST">
         {% csrf_token %}
         <div class="inputBox">
-            <input type="text" name="nome" required>
+            <input type="text" name="nome" maxlength="80" id="id_nome" required>
             <label>Nome</label>
         </div>
         <div class="inputBox">
-            <input type="email" name="email" required>
+            <input type="email" name="email" maxlength="80" id="id_email" required>
             <label>E-mail</label>
         </div>
         <div class="inputBox">
-            <input type="password" name="senha" required>
+            <input type="password" name="senha" maxlength="15" id="id_senha" required>
             <label>Senha</label>
         </div>
         <div class="inputBox">
-            <input type="text" name="cpf" required>
+            <input type="text" name="cpf" maxlength="14" id="id_cpf" required>
             <label>CPF</label>
         </div>
         <div class="inputBox">
-            <input type="text" name="cargo" required>
+            <input type="text" name="cargo" maxlength="15" id="id_cargo" required>
             <label>Cargo</label>
         </div>
         <div class="inputBox">
-            <input type="text" name="endereco" required>
+            <input type="text" name="endereco" maxlength="100" id="id_endereco" required>
             <label>Endereço</label>
         </div>
         <div class="inputBox">
-            <input type="text" name="telefone" required>
+            <input type="text" name="telefone" maxlength="10" id="id_telefone" required>
             <label>Telefone</label>
         </div>
         <div class="form_ativo">
             <label>Ativo</label>
-            <input type="checkbox" name="ativo" checked required>
+            <input type="checkbox" name="ativo" id="id_ativo" checked>
         </div>
         <div class="form_foto">
             <label>Foto</label>
-            <input type="file" name="foto">
+            <input type="file" name="foto" accept="image/*" id="id_foto">
         </div>
         <div class="form_botao_direito">
-            <input type="submit" class="btn btn-success btn-lg" name="" value="Cadastrar">
+            <button type="submit" class="btn btn-success btn-lg">Cadastrar</button>
         </div>
         <br>
     </form>
 </div>
-
-
-
-
 {% endblock%}

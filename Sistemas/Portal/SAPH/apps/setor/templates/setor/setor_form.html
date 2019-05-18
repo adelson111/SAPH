@@ -6,24 +6,25 @@
 <div class="titulo">
     <h2>Cadastrar Setor</h2>
 </div>
+
 <div class="form">
     <form method="POST">
         {% csrf_token %}
         <div class="inputBox">
-            <input type="text" name="nome" required>
+            <input type="text" name="nome" maxlength="20" id="id_nome" required>
             <label>Nome</label>
         </div>
         <div>
             <label>Funcionário</label>
-            <select name="funcionario" class="custom-select" multiple="">
+            <select name="funcionario" id="id_funcionario" class="custom-select" multiple>
                 {% for f in form.funcionario %}
-                <option value="">{{f}}</option>
+                <option value="{{f.pk}}">{{f}}</option>
                 {% endfor %}
             </select>
         </div>
         <div>
             <label class="select">Nível</label>
-            <select class="custom-select custom-select-sm">
+            <select name="nivel" id="id_nivel" class="custom-select custom-select-sm">
               {% for f in form.nivel %}
                 <option value="{{f.pk}}">{{f}}</option>
                 {% endfor %}
@@ -31,20 +32,16 @@
         </div>
         <div>
             <label class="select">Gerente</label>
-            <select class="custom-select custom-select-sm">
-              <option selected>Abra este menu select</option>
+            <select name="gerente" id="id_gerente" class="custom-select custom-select-sm" required>
               {% for f in form.gerente %}
                 <option value="{{f.pk}}">{{f}}</option>
                 {% endfor %}
             </select>
         </div>
         <div class="form_botao_direito">
-            <input type="submit" class="btn btn-success btn-lg" name="" value="Cadastrar">
+            <button type="submit" class="btn btn-success btn-lg">Cadastrar</button>
         </div>
         <br>
     </form>
 </div>
-
-
-
 {% endblock %}

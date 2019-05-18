@@ -6,9 +6,9 @@
 <div class="titulo">
     <h2>Funcionários Bloqueados</h2>
 </div>
+
 <ul class="list-group">
     {% for funcionario in object_list %}
-
     <li class="list-group-item">
         <div class="row">
             <div class="col-sm-9">
@@ -22,7 +22,6 @@
             </div>
         </div>
     </li>
-
     {%endfor%}
 </ul>
 {% endblock %}

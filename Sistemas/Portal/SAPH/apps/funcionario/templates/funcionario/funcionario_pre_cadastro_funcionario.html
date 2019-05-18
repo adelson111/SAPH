@@ -1,15 +1,14 @@
 {% extends 'base.html' %}
 
-{% block title %}Pre Cadastro{% endblock %}
+{% block title %}Pré Cadastro{% endblock %}
 
 {% block main %}
-
 <div class="box">
-    <h2>Pre Cadastro</h2>
+    <h2>Pré Cadastro</h2>
     <form method="POST">
         {% csrf_token %}
         <div class="inputBox">
-            <input type="email" name="username" required id="id_username">
+            <input type="email" name="email" maxlength="80" id="id_email" required>
             <label>E-mail</label>
         </div>
         <div class="centralizar">

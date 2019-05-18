@@ -6,10 +6,11 @@
 <div class="titulo">
     <h2>Organizações Cadastrada</h2>
 </div>
-    <ul class="list-group">
+
+<ul class="list-group">
     {% for organizacao in object_list %}
-        <li class="list-group-item">
-            <div class="row">
+    <li class="list-group-item">
+        <div class="row">
             <div class="col-sm-9">
                 <span>{{organizacao.nome}}</span>
             </div>
@@ -20,8 +21,7 @@
                 <a href=""><button type="button" class="btn btn-secondary">Bloquear</button></a>
             </div>
         </div>
-        </li>
+    </li>
     {%endfor%}
-    </ul>
-
+</ul>
 {% endblock %}

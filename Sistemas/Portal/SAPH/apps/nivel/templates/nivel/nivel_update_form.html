@@ -6,12 +6,13 @@
 <div class="titulo">
     <h2>Atualizar Nível</h2>
 </div>
+
 <div class="form">
     <form method="POST">
         {% csrf_token %}
         <div>
             <label>Nível Superior</label>
-            <select name="nivelSuperior" class="custom-select">
+            <select name="nivelSuperior" id="id_nivelSuperior" class="custom-select">
                 {% for f in form.nivelSuperior %}
                 <option value="{{f.pk}}">{{f}}</option>
                 {% endfor %}
@@ -19,7 +20,7 @@
         </div>
         <div>
             <label class="select">Nível Inferior</label>
-            <select name="nivelInferior" class="custom-select">
+            <select name="nivelInferior" id="id_nivelInferior" class="custom-select">
                 {% for f in form.nivelInferior %}
                 <option value="{{f.pk}}">{{f}}</option>
                 {% endfor %}
@@ -27,30 +28,19 @@
         </div>
         <div>
             <label class="select">Funcionário</label>
-            <select name="funcionario" class="custom-select">
+            <select name="funcionario" id="id_funcionario" class="custom-select" required>
                 {% for f in form.funcionario %}
                 <option value="{{f.pk}}">{{f}}</option>
                 {% endfor %}
             </select>
         </div>
         <div>
-            <input type="submit" class="btn btn-success btn-lg form_botao_direito" name="" value="Salvar">
+            <button type="submit" class="btn btn-success btn-lg form_botao_direito">Salvar</button>
             <a href="javascript:history.back();">
                 <button type="button" class="btn btn-secondary btn-lg form_botao_esquerdo">Valtar</button>
-                </a>
+            </a>
         </div>
         <br>
     </form>
 </div>
-
-
-<h1 class="text-center">Atualizar Nivel</h1>
-<form method="POST">
-    {%csrf_token%}
-    Nivel Superior:{{form.nivelSuperior}}<br>
-    Nivel Inferior:{{form.nivelInferior}}<br>
-    Funcionario :{{form.funcionario}}<br>
-    <button type="submit" class="btn btn-success">Salvar</button>
-
-</form>
 {% endblock%}

@@ -3,35 +3,31 @@
 {%block title%}Cadastrar Organização{%endblock%}
 
 {% block main %}
-
 <div class="titulo">
     <h2>Cadastrar Organização</h2>
 </div>
+
 <div class="form">
     <form method="POST">
         {% csrf_token %}
         <div class="inputBox">
-            <input type="text" name="nome" required>
+            <input type="text" name="nome" maxlength="80" id="id_nome" required>
             <label>Nome</label>
         </div>
         <div class="inputBox">
-            <input type="text" name="cnpj" required>
+            <input type="text" name="cnpj" maxlength="15" id="id_cnpj" required>
             <label>CNPJ</label>
         </div>
         <div class="inputBox">
-            <input type="text" name="endereco" required>
+            <input type="text" name="endereco" maxlength="50" id="id_endereco" required>
             <label>Endereço</label>
         </div>
         <div class="inputBox">
-            <input type="text" name="telefone" required>
+            <input type="text" name="telefone" maxlength="15" id="id_telefone" required>
             <label>Telefone</label>
         </div>
-        <div class="inputBox">
-            <input type="text" name="numeroNivel" required>
-            <label>Qantidade de níveis</label>
-        </div>
         <div class="form_botao_direito">
-            <input type="submit" class="btn btn-success btn-lg" name="" value="Cadastrar">
+            <button type="submit" class="btn btn-success btn-lg">Cadastrar</button>
         </div>
         <br>
     </form>

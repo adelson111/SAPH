@@ -6,24 +6,25 @@
 <div class="titulo">
     <h2>Atualizar Setor</h2>
 </div>
+
 <div class="form">
     <form method="POST">
         {% csrf_token %}
         <div class="inputBox">
-            <input type="text" name="nome" value="{{form.nome.value}}" required>
+            <input type="text" name="nome" value="{{form.nome.value}}" maxlength="20" id="id_nome" required>
             <label>Nome</label>
         </div>
         <div>
             <label>Funcionário</label>
-            <select name="funcionario" class="custom-select" multiple="">
+            <select name="funcionario" id="id_funcionario" class="custom-select" multiple>
                 {% for f in form.funcionario %}
-                <option value="">{{f}}</option>
+                <option value="{{f.pk}}">{{f}}</option>
                 {% endfor %}
             </select>
         </div>
         <div>
             <label class="select">Nível</label>
-            <select class="custom-select custom-select-sm">
+            <select name="nivel" id="id_nivel" class="custom-select custom-select-sm">
               {% for f in form.nivel %}
                 <option value="{{f.pk}}">{{f}}</option>
                 {% endfor %}
@@ -31,7 +32,7 @@
         </div>
         <div>
             <label class="select">Gerente</label>
-            <select class="custom-select custom-select-sm">
+            <select name="gerente" id="id_gerente" class="custom-select custom-select-sm">
               <option selected>Abra este menu select</option>
               {% for f in form.gerente %}
                 <option value="{{f.pk}}">{{f}}</option>
@@ -39,7 +40,7 @@
             </select>
         </div>
         <div>
-            <input type="submit" class="btn btn-success btn-lg form_botao_direito" name="" value="Salvar">
+            <button type="submit" class="btn btn-success btn-lg form_botao_direito">Salvar</button>
             <a href="javascript:history.back();">
                 <button type="button" class="btn btn-secondary btn-lg form_botao_esquerdo">Valtar</button>
                 </a>
@@ -47,5 +48,4 @@
         <br>
     </form>
 </div>
-
 {% endblock%}

@@ -89,7 +89,11 @@
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbardrop5" data-toggle="dropdown">
-                        <img src="" class="rounded-circle" alt="Imagem do usuário">
+                        {%if user.funcionario.foto %}
+                            <img src="{{MEDIA_URL}}{{user.funcionario.foto.url}}" class="rounded-circle" alt="Imagem do usuário" style="width:30px">
+                        {% else %}
+                            <img src="{{MEDIA_URL}}media/media/funcionario/sem_foto.png" class="rounded-circle" alt="Imagem do usuário" style="width:30px">
+                        {% endif %}
                     </a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="#">Perfil</a>

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{%block title%}Atualizar Solicitacao{%endblock%}
+
+{% block main %}
+<div class="titulo">
+    <h2>Atualizar Solicitacao</h2>
+</div>
+
+<div class="form">
+    <form method="POST">
+        {% csrf_token %}
+        {{form}}
+        <div class="form_botao_direito">
+            <button type="submit" class="btn btn-success btn-lg">Atualizar</button>
+        </div>
+    </form>
+</div>
+{% endblock%}

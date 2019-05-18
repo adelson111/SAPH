@@ -1,39 +1,68 @@
 {% extends 'base.html' %}
 
+{%block title%}Cadastrar Solicitação{%endblock%}
+
 {% block main %}
-<h1>Cadastrar Solicitação</h1>
-<form method="POST">
-    {%csrf_token%}
-    <div class="tipo">
-        Tipo: {{ form2.tipo }}
-    </div>
-    <div class="descricao">
-        Descricao: {{ form2.descricao }}
-    </div>
-    <div class="itens">
-        Descricao: {{ form2.itens }}
-    </div>
+<div class="titulo">
+    <h2>Cadastrar Solicitação</h2>
+</div>
 
+<div class="form">
+    <form method="POST">
+        {% csrf_token %}
+        <div class="inputBox">
+            <input type="text" name="form2-tipo" maxlength="25" id="id_form2-tipo" required>
+            <label>Nome</label>
+        </div>
+        <div class="inputBox">
+            <input type="text" name="form2-descricao" maxlength="300" id="id_form2-descricao" required>
+            <label>Descrição</label>
+        </div>
+        <div>
+            <div>
+                <label class="form_botao_esquerdo">Itens</label>
+                <!-- Botão para acionar modal -->
+                <button type="button" class="btn btn-outline-secondary btn-sm form_botao_direito" data-toggle="modal" data-target="#ExemploModalCentralizado">Adicionar item</button>
+            </div>
+            <select name="form2-itens" id="id_form2-itens" class="custom-select" multiple required>
+                {% for f in form2.itens %}
+                <option value="{{f.pk}}">{{f}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form_botao_direito">
+            <button type="submit" class="btn btn-success btn-lg">Cadastrar</button>
+        </div>
 
-</form>
-<a id = 'addItem' >Aicionar item</a>
-<button id = 'submit' type="submit">Cadastrar</button>
-<script>
-    btnAdd = document.getElementById('addItem');
-    btnAdd.addEventListener('click',function(){
-        div = addElementInForm('div');
-        div.class = 'item';
-        div.innerHTML = 'Item: {{ form1.nome }}';
-    });
-    btnSubmit = document.getElementById('submit');
-    btnSubmit.addEventListener('click',function(){
-        document.querySelector('form').submit();
-    });
-    function addElementInForm(tag){
-        form = document.querySelector('form');
-        node = document.createElement(tag);
-        form.appendChild(node);
-        return node;
-    }
-</script>
+    </form>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="ExemploModalCentralizado" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="titulo_modal">
+                    <h5 class="modal-title" id="TituloModalCentralizado">Adicionar Item</h5>
+                </div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form method="POST">
+                {% csrf_token %}
+                <div class="modal-body form">
+                    <div class="inputBox item">
+                        {{ form1.nome }}
+                        <label>Item</label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-outline-success">Adicionar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 {% endblock%}

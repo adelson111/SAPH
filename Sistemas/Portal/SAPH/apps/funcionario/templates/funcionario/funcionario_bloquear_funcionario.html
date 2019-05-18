@@ -13,6 +13,7 @@
         <div>
             <label>Nome:</label>
             <span>{{form.nome.value}}</span>
+            <input type="hidden" name="nome" value="{{form.nome.value}}" maxlength="80" id="id_nome">
         </div>
         <div class="custom-control custom-switch switch">
             {% if form.ativo.value == True %}

@@ -11,21 +11,21 @@
     {% for nivel in object_list %}
     <li class="list-group-item">
         <div class="row">
-            <div class="col-sm-5">
-                <div class="centralizar">
-                    <span>Responsável</span>
+            <div class="col-sm-3 centralizar">
+                <div>
+                    <span><b>Responsável</b></span>
                 </div>
                 <span>{{nivel.funcionario}}</span>
             </div>
-            <div class="col-sm-2">
-                <div class="centralizar">
-                    <span>Nível Superior</span>
+            <div class="col-sm-3 centralizar">
+                <div>
+                    <span><b>Nível Superior</b></span>
                 </div>
                 <span>{{nivel.nivelSuperior}}</span>
             </div>
-            <div class="col-sm-2">
-                <div class="centralizar">
-                    <span>Nível Inferior</span>
+            <div class="col-sm-3 centralizar">
+                <div>
+                    <span><b>Nível Inferior</b></span>
                 </div>
                 <span>{{nivel.nivelInferior}}</span>
             </div>

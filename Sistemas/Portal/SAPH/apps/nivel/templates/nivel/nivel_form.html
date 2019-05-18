@@ -14,7 +14,7 @@
             <label>Nível Superior</label>
             <select name="nivelSuperior" id="id_nivelSuperior" class="custom-select">
                 {% for f in form.nivelSuperior %}
-                <option value="{{f.pk}}">{{f}}</option>
+                    {{f}}
                 {% endfor %}
             </select>
         </div>
@@ -22,7 +22,7 @@
             <label class="select">Nível Inferior</label>
             <select name="nivelInferior" id="id_nivelInferior" class="custom-select">
                 {% for f in form.nivelInferior %}
-                <option value="{{f.pk}}">{{f}}</option>
+                    {{f}}
                 {% endfor %}
             </select>
         </div>
@@ -30,7 +30,7 @@
             <label class="select">Funcionário</label>
             <select name="funcionario" id="id_funcionario" class="custom-select" required>
                 {% for f in form.funcionario %}
-                <option value="{{f.pk}}">{{f}}</option>
+                    {{f}}
                 {% endfor %}
             </select>
         </div>

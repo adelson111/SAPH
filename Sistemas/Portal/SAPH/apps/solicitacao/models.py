@@ -10,7 +10,8 @@ class Item(models.Model):
 
 class Solicitacao(models.Model):
     tipo = models.CharField(max_length=25)
-    item = models.ManyToManyField(Item,null=True)
+    descricao = models.CharField(max_length=300, null = False)
+    itens = models.ManyToManyField(Item,null=True, related_name='itens_solicitacao')
 
     def get_absolute_url(self):
         return reverse('cadasrtrar_solicitacao')

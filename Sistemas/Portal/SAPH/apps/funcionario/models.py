@@ -18,7 +18,7 @@ class Funcionario(models.Model):
     endereco = models.CharField(max_length=100, null=True, blank=True)
     telefone = models.CharField(max_length=10, null=True, blank=True)
     ativo = models.BooleanField(default=True)
-    foto = models.ImageField(upload_to='funcionarios/funcionarios_fotos', null=True, blank=True)
+    foto = models.ImageField(upload_to='media/funcionario', null=True, blank=True)
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=True, blank=True)
     organizacao = models.ForeignKey(Organizacao, on_delete=models.CASCADE, null=True, blank=True, related_name="organizacao")
 

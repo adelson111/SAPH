@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{%block title%}Apagar Solicitacao{%endblock%}
+
+{% block main %}
+    <h1>Apagar Solicitacao</h1>
+
+<form method="post">
+    {% csrf_token %}
+    <p>Vai deletar o setor? "{{ solicitacao.tipo }}"</p>
+    <input type="submit" value="Confirm">
+</form>
+
+{% endblock %}

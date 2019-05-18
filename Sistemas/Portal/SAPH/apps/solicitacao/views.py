@@ -31,18 +31,19 @@ class CadastrarSolicitacao(CreateView):
                 pk = formOne.save()
                 itens.append(get_object_or_404(Item, pk=pk.pk))
 
+
         formTwo = self.form2(request.POST,prefix="form2")
 
         if formTwo.is_valid():
-            solicitacao =  formTwo.save()
+            solicitacao = formTwo.save()
             for item in itens:
                 solicitacao.itens.add(item)
 
             return redirect('cadasrtrar_solicitacao')
 
         return render(request, self.template_name, {
-            'form1': formOne,
-            'form2': formTwo
+            'form1': self.form1(prefix='form1'),
+            'form2': self.form2(prefix='form2')
         })
 
 

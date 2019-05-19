@@ -11,11 +11,11 @@
     <form method="POST">
         {% csrf_token %}
         <div class="inputBox">
-            <input type="text" name="form2-tipo" maxlength="25" id="id_form2-tipo" required>
+            <input type="text" name="tipo" maxlength="25" id="id_tipo" required>
             <label>Nome</label>
         </div>
         <div class="inputBox">
-            <input type="text" name="form2-descricao" maxlength="300" id="id_form2-descricao" required>
+            <input type="text" name="descricao" maxlength="300" id="id_descricao" required>
             <label>Descrição</label>
         </div>
         <div>
@@ -24,8 +24,8 @@
                 <!-- Botão para acionar modal -->
                 <button type="button" class="btn btn-outline-secondary btn-sm form_botao_direito" data-toggle="modal" data-target="#ExemploModalCentralizado">Adicionar item</button>
             </div>
-            <select name="form2-itens" id="id_form2-itens" class="custom-select" multiple required>
-                {% for f in form2.itens %}
+            <select name="itens" id="id_itens" class="custom-select" multiple required>
+                {% for f in form.itens %}
                     {{f}}
                 {% endfor %}
             </select>
@@ -53,16 +53,36 @@
                 {% csrf_token %}
                 <div class="modal-body form">
                     <div class="inputBox item">
-                        {{ form1.nome }}
+                        <input type="text" maxlength="300" id="id_novo_item" required>
                         <label>Item</label>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cancelar</button>
-                    <button type="submit" class="btn btn-outline-success">Adicionar</button>
+                    <button type="button" id = 'cadastrar' class="btn btn-outline-success">Adicionar</button>
                 </div>
             </form>
         </div>
     </div>
 </div>
+<script>
+    $("#cadastrar").click(function(){
+        novoItem = $('#id_novo_item').val();
+        $.ajax({
+            url:  "{% url 'cadastrar_item'%}",
+            type:  'POST',
+            dataType:  'json',
+            data: {
+                csrfmiddlewaretoken: '{{ csrf_token }}',
+                nome:novoItem
+            },
+            success: function  (data) {
+                console.log(data);
+                $('#ExemploModalCentralizado').modal('hide');
+                $('select').append('<option value='+data.id+' selected>'+data.nome+'</option>');
+
+            }
+        });
+    });
+</script>
 {% endblock%}

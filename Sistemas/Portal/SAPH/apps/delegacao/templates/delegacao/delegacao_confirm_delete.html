@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{%block title%}Apagar Delegação{%endblock%}
+
+{% block main %}
+    <h1>Apagar Delegação</h1>
+
+<form method="post">
+    {% csrf_token %}
+    <p>Vai deletar a Delegação? "{{ delegacao.tipo }}"</p>
+    <input type="submit" value="Confirm">
+</form>
+
+{% endblock %}

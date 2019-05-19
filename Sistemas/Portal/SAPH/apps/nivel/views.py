@@ -1,25 +1,32 @@
-from django.shortcuts import render
+from gc import get_objects
+
+from django.shortcuts import render, get_object_or_404
 
 # Create your views here.
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
 from django.views.generic import CreateView, ListView, UpdateView, DeleteView
 
 from apps.nivel.models import Nivel
 
-from apps.nivel.forms import NivelEdit
+from apps.nivel.forms import NivelEdit, NivelCreate
+from apps.organizacao.models import Organizacao
 
 
 class CadastrarNivel(CreateView):
     model = Nivel
-    fields = ['nivelSuperior', 'nivelInferior', 'funcionario']
-
+    # fields = ['nome','nivelSuperior', 'nivelInferior', 'funcionario', 'organizacao']
+    form_class = NivelCreate
+    def get_form_kwargs(self):
+        kwargs = super(CadastrarNivel, self).get_form_kwargs()
+        kwargs.update({'organizacao': self.kwargs['pk_organizacao']})
+        return kwargs
+    
 
 class ListarNivel(ListView):
     model = Nivel
 
-
     def get_queryset(self):
-        return Nivel.objects.all()
+        return Nivel.objects.filter(organizacao=self.request.user.funcionario.organizacao)
 
 
 class AtualizarNivel(UpdateView):

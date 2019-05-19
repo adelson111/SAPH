@@ -11,7 +11,13 @@
     {% for nivel in object_list %}
     <li class="list-group-item">
         <div class="row">
-            <div class="col-sm-3 centralizar">
+            <div class="col-sm-1 centralizar">
+                <div>
+                    <span><b>Nome</b></span>
+                </div>
+                <span>{{nivel.nome}}</span>
+            </div>
+            <div class="col-sm-2 centralizar">
                 <div>
                     <span><b>Responsável</b></span>
                 </div>

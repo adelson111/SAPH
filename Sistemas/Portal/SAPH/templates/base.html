@@ -33,7 +33,7 @@
                 </a>
                 <div class="dropdown-menu">
                     <!--<a class="dropdown-item" href="#">Cadastrar</a>-->
-                    <a class="dropdown-item" href="">Editar</a>
+                    <a class="dropdown-item" href="{% url 'atualizar_organizacao' user.funcionario.organizacao.pk%}">Editar</a>
                 </div>
             </li>
             {% endif %}
@@ -52,7 +52,7 @@
                     Setor
                 </a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="{% url 'cadastrar_setor' %}">Cadastrar</a>
+                    <a class="dropdown-item" href="{% url 'cadastrar_setor' user.funcionario.organizacao.pk %}">Cadastrar</a>
                     <a class="dropdown-item" href="{% url 'listar_setor' %}">Listar</a>
                 </div>
             </li>
@@ -61,7 +61,7 @@
                     Nível
                 </a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="{% url 'cadastrar_nivel' %}">Cadastrar</a>
+                    <a class="dropdown-item" href="{% url 'cadastrar_nivel' user.funcionario.organizacao.pk %}">Cadastrar</a>
                     <a class="dropdown-item" href="{% url 'listar_nivel' %}">Listar</a>
                 </div>
             </li>

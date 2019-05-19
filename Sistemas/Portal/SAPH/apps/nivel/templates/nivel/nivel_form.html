@@ -10,6 +10,10 @@
 <div class="form">
     <form method="POST">
         {% csrf_token %}
+        <div class="inputBox">
+            <input type="text" name="nome" maxlength="80" id="id_nome" required>
+            <label>Nome</label>
+        </div>
         <div>
             <label>Nível Superior</label>
             <select name="nivelSuperior" id="id_nivelSuperior" class="custom-select">
@@ -38,6 +42,7 @@
             <button type="submit" class="btn btn-success btn-lg">Cadastrar</button>
         </div>
         <br>
+        <input type="hidden" name="organizacao" id="id_organizacao" value="{{ user.funcionario.organizacao.pk }}">
     </form>
 </div>
 {% endblock%}

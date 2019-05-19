@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="439812fa-55e6-4e22-b505-799ca2dcbad9" name="Default Changelist" comment="" />
+    <list default="true" id="439812fa-55e6-4e22-b505-799ca2dcbad9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/funcionario/templates/funcionario/funcionario_pre_update_funcionario.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/funcionario/templates/funcionario/funcionario_pre_update_funcionario.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nivel/templates/nivel/nivel_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/nivel/templates/nivel/nivel_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nivel/templates/nivel/nivel_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/nivel/templates/nivel/nivel_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nivel/templates/nivel/nivel_update_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/nivel/templates/nivel/nivel_update_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/setor/templates/setor/setor_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/setor/templates/setor/setor_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/setor/templates/setor/setor_update_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/setor/templates/setor/setor_update_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/solicitacao/templates/solicitacao/solicitacao_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/solicitacao/templates/solicitacao/solicitacao_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/solicitacao/templates/solicitacao/solicitacao_update_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/solicitacao/templates/solicitacao/solicitacao_update_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/solicitacao/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/solicitacao/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/solicitacao/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/solicitacao/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+    </list>
     <ignored path="apps/core/migrations/" />
     <ignored path="apps/funcionario/migrations/" />
     <ignored path="../../../.idea/" />
@@ -14,11 +28,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/apps/solicitacao/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="62" column="52" selection-start-line="62" selection-start-column="52" selection-end-line="62" selection-end-column="52" />
+            <state relative-caret-position="177">
+              <caret line="76" column="32" selection-start-line="76" selection-start-column="32" selection-end-line="76" selection-end-column="32" />
               <folding>
                 <element signature="e#1#65#0" expanded="true" />
               </folding>
@@ -27,37 +41,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SAPH/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="21" column="31" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/apps/solicitacao/templates/solicitacao/solicitacao_form.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
-              <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/setor/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
-              <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="41" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/apps/solicitacao/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="103" selection-start-line="6" selection-start-column="82" selection-end-line="6" selection-end-column="103" />
+            <state relative-caret-position="105">
+              <caret line="9" column="19" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="19" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -81,7 +68,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/apps/setor/models.py" />
-        <option value="$PROJECT_DIR$/SAPH/settings.py" />
         <option value="$PROJECT_DIR$/apps/solicitacao/admin.py" />
         <option value="$PROJECT_DIR$/apps/solicitacao/migrations/0001_initial.py" />
         <option value="$PROJECT_DIR$/apps/solicitacao/templates/solicitacao/solicitacao-form.html" />
@@ -92,13 +78,14 @@
         <option value="$PROJECT_DIR$/apps/funcionario/views.py" />
         <option value="$PROJECT_DIR$/apps/solicitacao/models.py" />
         <option value="$PROJECT_DIR$/apps/solicitacao/form.py" />
-        <option value="$PROJECT_DIR$/apps/solicitacao/templates/solicitacao/solicitacao_form.html" />
         <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/apps/setor/views.py" />
-        <option value="$PROJECT_DIR$/apps/solicitacao/urls.py" />
         <option value="$PROJECT_DIR$/apps/solicitacao/templates/solicitacao/solicitacao_list.html" />
         <option value="$PROJECT_DIR$/apps/solicitacao/templates/solicitacao/solicitacao_confirm_delete.html" />
+        <option value="$PROJECT_DIR$/apps/solicitacao/templates/solicitacao/solicitacao_form.html" />
+        <option value="$PROJECT_DIR$/apps/solicitacao/urls.py" />
         <option value="$PROJECT_DIR$/apps/solicitacao/templates/solicitacao/solicitacao_update_form.html" />
+        <option value="$PROJECT_DIR$/SAPH/settings.py" />
         <option value="$PROJECT_DIR$/apps/solicitacao/views.py" />
       </list>
     </option>
@@ -113,8 +100,49 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="SAPH" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SAPH" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SAPH" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SAPH" type="462c0819:PsiDirectoryNode" />
+              <item name="apps" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SAPH" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SAPH" type="462c0819:PsiDirectoryNode" />
+              <item name="apps" type="462c0819:PsiDirectoryNode" />
+              <item name="solicitacao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SAPH" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SAPH" type="462c0819:PsiDirectoryNode" />
+              <item name="apps" type="462c0819:PsiDirectoryNode" />
+              <item name="solicitacao" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SAPH" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SAPH" type="462c0819:PsiDirectoryNode" />
+              <item name="apps" type="462c0819:PsiDirectoryNode" />
+              <item name="solicitacao" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="solicitacao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SAPH" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SAPH" type="462c0819:PsiDirectoryNode" />
+              <item name="SAPH" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="Scope" />
-      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -188,8 +216,8 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.runserver" />
       <item itemvalue="Python.makemigrations" />
+      <item itemvalue="Python.runserver" />
     </list>
   </component>
   <component name="SvnConfiguration">
@@ -268,18 +296,18 @@
     <frame x="0" y="-1" width="1366" height="740" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24944155" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24944155" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.64705884" weight="0.3125" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.65897244" weight="0.39864865" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.64482504" visible="true" weight="0.3125" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.6574832" weight="0.39864865" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4996277" visible="true" weight="0.3288364" />
-      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.4944155" weight="0.3293919" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5003723" side_tool="true" visible="true" weight="0.3288364" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4988831" weight="0.32715008" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49367088" weight="0.3293919" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.355175" side_tool="true" visible="true" weight="0.3125" />
       <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49143708" weight="0.3293919" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="bottom" id="Messages" order="11" />
@@ -357,13 +385,6 @@
     <entry file="file://$PROJECT_DIR$/apps/setor/apps.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/SAPH/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="44" column="23" selection-start-line="44" selection-start-column="23" selection-end-line="44" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/apps/organizacao/admin.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -383,13 +404,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="35" column="6" selection-start-line="35" selection-start-column="6" selection-end-line="35" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore" />
     <entry file="file://$PROJECT_DIR$/apps/solicitacao/admin.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -643,13 +658,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="74" column="65" selection-start-line="74" selection-start-column="65" selection-end-line="74" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/apps/setor/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -670,24 +678,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/setor/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/apps/solicitacao/templates/solicitacao/solicitacao_list.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="14" column="49" selection-start-line="14" selection-start-column="49" selection-end-line="14" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SAPH/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="21" column="31" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
         </state>
       </provider>
     </entry>
@@ -698,37 +692,65 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/solicitacao/urls.py">
+    <entry file="file://$PROJECT_DIR$/SAPH/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
-          <caret line="6" column="103" selection-start-line="6" selection-start-column="82" selection-end-line="6" selection-end-column="103" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
+          <caret line="21" column="31" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/setor/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1065">
+          <caret line="74" column="22" lean-forward="true" selection-start-line="74" selection-start-column="22" selection-end-line="74" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/apps/solicitacao/templates/solicitacao/solicitacao_update_form.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="74" selection-start-line="14" selection-start-column="74" selection-end-line="14" selection-end-column="74" />
+        <state relative-caret-position="87">
+          <caret line="71" column="25" selection-start-line="71" selection-start-column="25" selection-end-line="71" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/solicitacao/templates/solicitacao/solicitacao_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="26" column="79" lean-forward="true" selection-start-line="26" selection-start-column="79" selection-end-line="26" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SAPH/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="124" lean-forward="true" selection-start-line="124" selection-end-line="124" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/apps/solicitacao/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="62" column="52" selection-start-line="62" selection-start-column="52" selection-end-line="62" selection-end-column="52" />
+        <state relative-caret-position="177">
+          <caret line="76" column="32" selection-start-line="76" selection-start-column="32" selection-end-line="76" selection-end-column="32" />
           <folding>
             <element signature="e#1#65#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/solicitacao/templates/solicitacao/solicitacao_form.html">
+    <entry file="file://$PROJECT_DIR$/apps/solicitacao/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
+        <state relative-caret-position="105">
+          <caret line="9" column="19" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

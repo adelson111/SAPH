@@ -1,5 +1,6 @@
 
 from django.shortcuts import render, redirect, get_object_or_404
+from django.http import JsonResponse
 
 # Create your views here.
 from django.urls import reverse_lazy
@@ -66,3 +67,19 @@ class ApagarSolicitacao(DeleteView):
     model = Solicitacao
     success_url = reverse_lazy('listar_solicitacao')
 
+class  CadastrarItem(CreateView):
+    def  post(self, request):
+        data = dict()
+        form = ItemForm(request.POST)
+        if form.is_valid():
+            item = form.save()
+            data['nome'] = item.nome
+            data['id'] = item.id
+        return JsonResponse(data)
+
+class  ListarItem(ListView):
+    def  get(self, request):
+        itens =  list(Item.objects.all().values())
+        data =  dict()
+        data['nome'] = itens
+        return JsonResponse(data)

@@ -1,9 +1,10 @@
-
 from django.views.generic import CreateView,UpdateView,ListView,DeleteView
 from django.urls import reverse_lazy, reverse
 
 from apps.setor.form import SetorCreate
 from .models import Setor
+from apps.organizacao.models import Organizacao
+
 
 class CadastrarSetor(CreateView):
     model = Setor
@@ -30,8 +31,10 @@ class AtualizarSetor(UpdateView):
 
 class ListarSetor(ListView):
     model = Setor
+
     def get_queryset(self):
-        return Setor.objects.all()
+        # return Setor.objects.all()
+        return Setor.objects.select_related('nivel').filter(nivel__organizacao=self.request.user.funcionario.organizacao)
 
 class ApagarSetor(DeleteView):
     model = Setor

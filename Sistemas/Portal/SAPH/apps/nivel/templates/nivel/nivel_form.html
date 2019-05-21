@@ -45,4 +45,23 @@
         <input type="hidden" name="organizacao" id="id_organizacao" value="{{ user.funcionario.organizacao.pk }}">
     </form>
 </div>
+<script>
+    $('#id_nivelSuperior').click(function(e){
+        selecionado = $('#id_nivelSuperior').val();
+        <!--console.log(selecionado);-->
+        if(selecionado!=''){
+            $("#id_nivelInferior option[value="+selecionado+"]").remove();
+           }
+        <!--console.log(a);-->
+        <!--$("#id_nivelInferior option[value=selecionado]").remove();-->
+
+    });
+    $('#id_nivelInferior').click(function(e){
+        selecionado = $('#id_nivelInferior').val();
+        if(selecionado!=''){
+            $("#id_nivelSuperior option[value="+selecionado+"]").remove();
+        }
+
+    });
+</script>
 {% endblock%}

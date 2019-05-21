@@ -39,7 +39,7 @@ class CadastrarFuncionario(CreateView):
 
 class AtualizarFuncionario(UpdateView):
     model = Funcionario
-    fields = ['nome', 'email', 'senha', 'cpf', 'cargo', 'endereco', 'telefone', 'ativo', 'foto']
+    fields = ['nome', 'cpf', 'cargo', 'endereco', 'telefone', 'ativo', 'foto']
     def get_queryset(self):
         return Funcionario.objects.filter(pk=self.kwargs['pk'])
 

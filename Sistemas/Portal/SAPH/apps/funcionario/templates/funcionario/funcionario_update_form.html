@@ -11,19 +11,28 @@
     <form method="POST">
         {% csrf_token %}
         <div class="inputBox">
-            <input type="text" name="nome" value="{{form.nome.value}}" maxlength="80" id="id_nome" required>
+            {{form.nome}}
+            <!--<input type="text" name="nome" maxlength="80" id="id_nome" required>-->
             <label>Nome</label>
         </div>
         <div class="inputBox">
-            <input type="text" name="cpf" value="{{form.cpf.value}}" maxlength="14" id="id_cpf" required>
+            {{form.cpf}}
+            <!--<input type="text" name="cpf" maxlength="14" id="id_cpf" required>-->
             <label>CPF</label>
         </div>
         <div class="inputBox">
-            <input type="text" name="endereco" value="{{form.endereco.value}}" maxlength="100" id="id_endereco" required>
+            {{form.cargo}}
+            <!--<input type="text" name="endereco" maxlength="100" id="id_endereco" required>-->
+            <label>Cargo</label>
+        </div>
+        <div class="inputBox">
+            {{form.endereco}}
+            <!--<input type="text" name="endereco" maxlength="100" id="id_endereco" required>-->
             <label>Endereço</label>
         </div>
         <div class="inputBox">
-            <input type="text" name="telefone" value="{{form.telefone.value}}" maxlength="10" id="id_telefone" required>
+            {{form.telefone}}
+            <!--<input type="text" name="telefone" maxlength="10" id="id_telefone" required>-->
             <label>Telefone</label>
         </div>
         <div>

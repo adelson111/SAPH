@@ -7,7 +7,7 @@ from .models import Setor
 
 class SetorCreate(ModelForm):
     def __init__(self, organizacao, *args, **kwargs):
-        funcionarios = Funcionario.objects.filter(organizacao=organizacao)
+        funcionarios = Funcionario.objects.filter(organizacao=organizacao, ativo=True)
         niveis= Nivel.objects.filter(organizacao=organizacao)
         super(SetorCreate, self).__init__(*args, **kwargs)
         self.fields['funcionario'].queryset = funcionarios

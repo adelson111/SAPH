@@ -20,7 +20,9 @@ class CadastrarNivel(CreateView):
         kwargs = super(CadastrarNivel, self).get_form_kwargs()
         kwargs.update({'organizacao': self.kwargs['pk_organizacao']})
         return kwargs
-    
+
+    def get_success_url(self):
+        return reverse('cadastrar_setor', args=[self.request.user.funcionario.organizacao.pk])
 
 class ListarNivel(ListView):
     model = Nivel

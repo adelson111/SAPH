@@ -8,7 +8,7 @@
 </div>
 
 <div class="form">
-    <form method="POST">
+    <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="inputBox">
             <input type="text" name="nome" maxlength="80" id="id_nome" required>
@@ -44,7 +44,8 @@
         </div>
         <div class="form_foto">
             <label>Foto</label>
-            <input type="file" name="foto" accept="image/*" id="id_foto">
+            <!--<input type="file" name="foto" accept="image/*" id="id_foto">-->
+            {{form.foto}}
         </div>
         <input type="hidden" name="organizacao" id="id_organizacao" value="{{user.funcionario.organizacao.pk}}">
         <div class="form_botao_direito">

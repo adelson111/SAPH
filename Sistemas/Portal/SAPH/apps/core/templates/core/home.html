@@ -8,12 +8,9 @@
     <div class="center">
         {% if not user.username %}
         <form>
-            <h2>Email</h2>
+            <h2>E-mail</h2>
             <input type="email" name="email">
             <input type="submit" name="acao" value="Cadastrar">
-            {% if not user.username %}
-            <a class="btn bg-success btn-outline-light botao_login" href="{% url 'login'%}">Login</a>
-            {% endif %}
         </form>
         {% else %}
         <div class="logado">

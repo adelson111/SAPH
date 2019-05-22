@@ -11,25 +11,25 @@
     {% for nivel in object_list %}
     <li class="list-group-item">
         <div class="row">
-            <div class="col-sm-1 centralizar">
+            <div class="col-sm-3 centralizar">
                 <div>
                     <span><b>Nome</b></span>
                 </div>
                 <span>{{nivel.nome}}</span>
             </div>
-            <div class="col-sm-2 centralizar">
+            <div class="col-sm-3 centralizar">
                 <div>
                     <span><b>Responsável</b></span>
                 </div>
                 <span>{{nivel.funcionario}}</span>
             </div>
-            <div class="col-sm-3 centralizar">
+            <div class="col-sm-2 centralizar">
                 <div>
                     <span><b>Nível Superior</b></span>
                 </div>
                 <span>{{nivel.nivelSuperior}}</span>
             </div>
-            <div class="col-sm-3 centralizar">
+            <div class="col-sm-2 centralizar">
                 <div>
                     <span><b>Nível Inferior</b></span>
                 </div>
@@ -38,7 +38,7 @@
             <div class="col-sm-1 centralizar">
                 <a href="{% url 'atualizar_nivel' nivel.pk %}"><button type="button" class="btn btn-secondary">Editar</button></a>
             </div>
-            <div class="col-sm-2 centralizar">
+            <div class="col-sm-1 centralizar">
                 <a href="{% url 'apagar_nivel' nivel.pk %}"><button type="button" class="btn btn-secondary">Deletar</button></a>
             </div>
         </div>

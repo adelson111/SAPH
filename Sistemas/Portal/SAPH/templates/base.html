@@ -8,38 +8,42 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <link rel="stylesheet" type="text/css" href="{% static '/css/estilo_login.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static '/css/responsivo.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static '/css/estilo_formulario.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static '/css/posicionamento.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/css/home.css' %}">
     <title>{%block title%}{%endblock%}</title>
 </head>
 <body>
 
+
 {% if user.username %}
 
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark centralizar">
     <a class="navbar-brand" href="{% url 'page_home'%}">SAPH</a>
-    <div class="collapse navbar-collapse" id="navb">
-        <ul class="navbar-nav mr-auto">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Menu Colapso">
+            <span class="navbar-toggler-icon text-light"></span>
+        </button>
+    <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav mr-auto ">
             {% if not user.funcionario.organizacao %}
             <a class="btn bg-info" href="{% url 'cadastrar_organizacao' %}">CADASTRAR ORGANIZAÇÃO</a>
             {% else %}
-            <!-- Dropdown -->
             {%if user.funcionario.cargo == 'admin' %}
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="" id="navbardrop" data-toggle="dropdown">
                     Organização
                 </a>
                 <div class="dropdown-menu">
-                    <!--<a class="dropdown-item" href="#">Cadastrar</a>-->
                     <a class="dropdown-item" href="{% url 'atualizar_organizacao' user.funcionario.organizacao.pk%}">Editar</a>
                 </div>
             </li>
             {% endif %}
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="" id="navbardrop1" data-toggle="dropdown">
-                    Funcionario
+                    Funcionário
                 </a>
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="{% url 'cadasrtrar_funcionario' user.funcionario.organizacao.pk %}">Cadastrar</a>
@@ -93,18 +97,19 @@
                 <img src="/media/media/funcionario/sem_foto.png" data-toggle="dropdown" class="rounded-circle imagem_perfil" alt="Imagem do usuário">
                 {% endif %}
                 <div class="dropdown-menu dropdown-menu-right">
-                    <a class="dropdown-item" href="">Perfil</a>
-                    <div class="dropdown-divider"></div>
+                    <!--<a class="dropdown-item" href="">Perfil</a>
+                    <div class="dropdown-divider"></div>-->
                     <a class="dropdown-item" href="{% url 'logout'%}">Sair</a>
                 </div>
             </div>
         </div>
     </div>
-
 </nav>
 
 {% endif %}
-<br>
+
+{%block principal%}
+{%endblock%}
 <div class="container">
     {%block main%}
     {%endblock%}

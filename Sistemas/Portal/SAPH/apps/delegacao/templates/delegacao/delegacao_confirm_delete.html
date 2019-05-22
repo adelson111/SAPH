@@ -1,14 +1,25 @@
 {% extends 'base.html' %}
 
-{%block title%}Apagar Delegação{%endblock%}
+{%block title%}Deletar Delegação{%endblock%}
 
 {% block main %}
-    <h1>Apagar Delegação</h1>
+<div class="titulo">
+    <h2>Deletar Delegação</h2>
+</div>
 
-<form method="post">
-    {% csrf_token %}
-    <p>Vai deletar a Delegação? "{{ delegacao.tipo }}"</p>
-    <input type="submit" value="Confirm">
-</form>
+<div class="form">
+    <form method="POST">
+        {% csrf_token %}
+        <div class="centralizar">
+            <h4>Deseja realmente deletar a delegação: {{ delegacao.tipo }}</h4>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-success btn-lg form_botao_direito">Confirmar</button>
+            <a href="javascript:history.back();">
+                <button type="button" class="btn btn-secondary btn-lg form_botao_esquerdo">Valtar</button>
+            </a>
+        </div>
+    </form>
+</div>
 
 {% endblock %}

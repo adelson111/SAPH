@@ -1,7 +1,8 @@
+{% load static %}
 section.banner-principal{
   width: 100%;
   height: 400px;
-  background-image: url('/media/media/funcionario/principal.jpg');
+  background-image: url('../imagem/principal.jpg');
   background-size: cover;
   position: relative;
 }

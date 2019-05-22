@@ -1,14 +1,22 @@
 {% extends 'base.html' %}
 
-{%block title%}Apagar Funcionário{%endblock%}
+{%block title%}Deletar Funcionário{%endblock%}
 
 {% block main %}
-    <h1>Apagar Funcionário</h1>
+<div class="titulo">
+    <h2>Deletar Funcionário</h2>
+</div>
 
-<form method="post">
-    {% csrf_token %}
-    <p>Vai deletar esse corno? "{{ funcionario.nome }}"</p>
-    <input type="submit" value="Confirm">
-</form>
+<div class="form">
+    <form method="POST">
+        {% csrf_token %}
+        <div class="centralizar">
+            <h4>Deseja realmente deletar o funcionário: {{ funcionario.nome }}</h4>
+        </div>
+        <div class="form_botao_direito">
+            <button type="submit" class="btn btn-success btn-lg">Confirmar</button>
+        </div>
+    </form>
+</div>
 
 {% endblock %}

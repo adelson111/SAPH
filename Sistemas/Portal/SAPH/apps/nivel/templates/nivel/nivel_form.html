@@ -46,22 +46,36 @@
     </form>
 </div>
 <script>
-    $('#id_nivelSuperior').click(function(e){
-        selecionado = $('#id_nivelSuperior').val();
-        <!--console.log(selecionado);-->
-        if(selecionado!=''){
-            $("#id_nivelInferior option[value="+selecionado+"]").remove();
-           }
-        <!--console.log(a);-->
-        <!--$("#id_nivelInferior option[value=selecionado]").remove();-->
+        $("#id_nivelSuperior").change(function(){
+        nivelS = $('#id_nivelSuperior').val();
+        console.log(nivelS);
+        if(nivelS!=""){
+            $.ajax({
+                url:  '/nivel/pesquisa/' + nivelS + '/',
+                type:  'POST',
+                dataType:  'json',
+                data: {
+                    csrfmiddlewaretoken: '{{ csrf_token }}',
+                },
+                success: function  (data) {
+                    console.log(data);
+                    <!--$('#ExemploModalCentralizado').modal('hide');-->
+                    <!--$('select').append('<option value='+data.id+' selected>'+data.nome+'</option>');-->
+                    if(data.nivelInf != "" && data.nivelSup != ""){
+                        console.log("TEM SUP E INF");
+                    }else if(data.nivelSup != "" && data.nivelInf ==""){
+                        console.log("TEM SUP");
+                    }else if(data.nivelSup == "" &&  data.nivelInf !=""){
+                        console.log("TEM INF");
 
-    });
-    $('#id_nivelInferior').click(function(e){
-        selecionado = $('#id_nivelInferior').val();
-        if(selecionado!=''){
-            $("#id_nivelSuperior option[value="+selecionado+"]").remove();
-        }
+                        $('#id_nivelInferior option[value='+ data.nivelInf + ']').attr({ selected : "selected" });
 
+                        <!--$('#id_nivelInferior option[value=" '+data.nivelInf+ '"]').attr({ selected : "selected" });-->
+                        <!--$('#cidadeEntrega option[value="' + cidadeResidencia + '"]').attr({ selected : "selected" });-->
+                    }
+                }
+            });
+        };
     });
 </script>
 {% endblock%}

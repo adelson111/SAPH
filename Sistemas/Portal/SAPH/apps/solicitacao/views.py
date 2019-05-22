@@ -16,12 +16,14 @@ class CadastrarSolicitacao(CreateView):
 
 class ListarSolicitacao(ListView):
     model = Solicitacao
+
     def get_queryset(self):
         return Solicitacao.objects.all()
 
 class AtualizarSolicitacao(UpdateView):
     model = Solicitacao
     fields = ['tipo','descricao','itens']
+
     def get_queryset(self):
         return Solicitacao.objects.filter(pk=self.kwargs['pk'])
 

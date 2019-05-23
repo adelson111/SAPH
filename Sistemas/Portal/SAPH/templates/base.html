@@ -10,7 +10,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <link rel="stylesheet" type="text/css" href="{% static '/css/estilo_login.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static '/css/responsivo.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static '/css/estilo_formulario.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static '/css/posicionamento.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static '/css/home.css' %}">
@@ -18,15 +17,13 @@
 </head>
 <body>
 
-
-{% if user.username %}
-
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark centralizar">
     <a class="navbar-brand" href="{% url 'page_home'%}">SAPH</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Menu Colapso">
-            <span class="navbar-toggler-icon text-light"></span>
-        </button>
+        <span class="navbar-toggler-icon text-light"></span>
+    </button>
     <div class="collapse navbar-collapse" id="menu">
+        {% if user.username %}
         <ul class="navbar-nav mr-auto ">
             {% if not user.funcionario.organizacao %}
             <a class="btn bg-info" href="{% url 'cadastrar_organizacao' %}">CADASTRAR ORGANIZAÇÃO</a>
@@ -94,7 +91,7 @@
                 {%if user.funcionario.foto %}
                 <img src="{{user.funcionario.foto.url}}" data-toggle="dropdown" class="rounded-circle imagem_perfil" alt="Imagem do usuário">
                 {% else %}
-                <img src="/media/media/funcionario/sem_foto.png" data-toggle="dropdown" class="rounded-circle imagem_perfil" alt="Imagem do usuário">
+                <img src="{% static '/imagem/sem_foto.png' %}" data-toggle="dropdown" class="rounded-circle imagem_perfil" alt="Imagem do usuário">
                 {% endif %}
                 <div class="dropdown-menu dropdown-menu-right">
                     <!--<a class="dropdown-item" href="">Perfil</a>
@@ -103,10 +100,82 @@
                 </div>
             </div>
         </div>
+        {% else %}
+        <div class="botao_menu">
+            <button type="button" class="btn btn-dark">Contato</button>
+            <button type="button" class="btn btn-dark">Sobre</button>
+            <!--<button type="button" class="btn btn-dark" data-toggle="modal" data-target="#ModalCadastrar">Cadastre-se</button>-->
+            <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#ModalLogin">Entrar</button>
+        </div>
+        {% endif %}
     </div>
 </nav>
 
-{% endif %}
+
+<!-- Modal -->
+<div class="modal fade" id="ModalLogin" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="titulo_modal">
+                    <h5 class="modal-title">Entrar</h5>
+                </div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form method="POST">
+                {% csrf_token %}
+                <div class="modal-body form">
+                    <div class="inputBox item">
+                        <input type="email" name="username" id="id_username" required>
+                        <label>E-mail</label>
+                    </div>
+                    <div class="inputBox item">
+                        <input type="password" name="password" id="id_password" required>
+                        <label>Senha</label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-outline-success">Entrar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal
+<div class="modal fade" id="ModalCadastrar" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="titulo_modal">
+                    <h5 class="modal-title">Cadastre-se</h5>
+                </div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form method="POST">
+                {% csrf_token %}
+                <div class="modal-body form">
+                    <div class="inputBox item">
+                        <input type="email" name="email" maxlength="80" id="id_email" required>
+                        <label>E-mail</label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-outline-success">Cadastrar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+-->
+
 
 {%block principal%}
 {%endblock%}

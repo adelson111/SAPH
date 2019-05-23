@@ -47,34 +47,42 @@
 </div>
 <script>
         $("#id_nivelSuperior").change(function(){
+        token = document.getElementsByName("csrfmiddlewaretoken")[0].value;
         nivelS = $('#id_nivelSuperior').val();
-        console.log(nivelS);
+        <!--console.log(nivelS);-->
         if(nivelS!=""){
+            console.log("MIZERA");
             $.ajax({
                 url:  '/nivel/pesquisa/' + nivelS + '/',
                 type:  'POST',
                 dataType:  'json',
                 data: {
-                    csrfmiddlewaretoken: '{{ csrf_token }}',
+                    csrfmiddlewaretoken: token,
                 },
                 success: function  (data) {
-                    console.log(data);
-                    <!--$('#ExemploModalCentralizado').modal('hide');-->
-                    <!--$('select').append('<option value='+data.id+' selected>'+data.nome+'</option>');-->
+                    <!--console.log(data);-->
                     if(data.nivelInf != "" && data.nivelSup != ""){
-                        console.log("TEM SUP E INF");
-                    }else if(data.nivelSup != "" && data.nivelInf ==""){
-                        console.log("TEM SUP");
-                    }else if(data.nivelSup == "" &&  data.nivelInf !=""){
-                        console.log("TEM INF");
-
+                        console.log("TEM SUP E INF => " + data.nivelInf);
+                        <!--console.log(data.nivelInf);-->
                         $('#id_nivelInferior option[value='+ data.nivelInf + ']').attr({ selected : "selected" });
+
+                    }else if(data.nivelSup != "" && data.nivelInf ==""){
+                        console.log("TEM SUP => " + data.nivelInf);
+                            <!--$('#id_nivelInferior').firstChild.attr({ selected : "selected" });-->
+                            $("#id_nivelInferior option:first").prop('selected', 'true')
+
+                    }else if(data.nivelSup == "" &&  data.nivelInf !=""){
+                        console.log("TEM INF=> " + data.nivelInf );
+
+                        <!--$('#id_nivelInferior option[value='+ data.nivelInf + ']').attr({ selected : "selected" });-->
 
                         <!--$('#id_nivelInferior option[value=" '+data.nivelInf+ '"]').attr({ selected : "selected" });-->
                         <!--$('#cidadeEntrega option[value="' + cidadeResidencia + '"]').attr({ selected : "selected" });-->
                     }
                 }
             });
+            console.log("FINAL DA CHAMADA");
+            console.log("-------------------------");
         };
     });
 </script>

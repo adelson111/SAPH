@@ -67,10 +67,13 @@ class PesquisaNivel(View):
         # Nivel.objects.filter(pk=kwargs['pk'])
         nivel = get_object_or_404(Nivel, pk=kwargs['pk'])
         # nivelS = 'FUDEUSUPERIOR'
+
+
         if(nivel.nivelSuperior != None):
             nivelS = nivel.nivelSuperior.pk
         if(nivel.nivelSuperior == None):
             nivelS = ""
+
         # nivelI = 'FUDEUINFERIOR'
         # nivelI = nivel.nivelInferior.pk
         if (nivel.nivelInferior!= None):

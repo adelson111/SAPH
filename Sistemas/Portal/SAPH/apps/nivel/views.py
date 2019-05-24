@@ -29,11 +29,11 @@ class CadastrarNivel(CreateView):
 
     def form_valid(self, form):
         nivel = form.save()
-        if(nivel.nivelSuperior.pk!=""):
+        if(nivel.nivelSuperior.pk!=None):
             nivelSuperior = get_object_or_404(Nivel, pk=nivel.nivelSuperior.pk)
             nivelSuperior.nivelInferior = nivel
             nivelSuperior.save()
-        if(nivel.nivelInferior.pk!=""):
+        if(nivel.nivelInferior.pk!=None):
             nivelInferior = get_object_or_404(Nivel, pk=nivel.nivelInferior.pk)
             nivelInferior.nivelSuperior = nivel
             nivelInferior.save()
@@ -80,5 +80,5 @@ class PesquisaNivel(View):
             nivelI = nivel.nivelInferior.pk
         if (nivel.nivelInferior== None):
             nivelI = ""
-        response = json.dumps({'nivelInf': nivelI, 'nivelSup':nivelS })
+        response = json.dumps({'nivelInf': nivelI, 'nivelSup': nivelS })
         return HttpResponse(response, content_type='application/json')

@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %}Finalizar Pré Cadastro{% endblock %}
+
+{% block main %}
+<div class="titulo">
+    <h2>Finalizar Pré Cadastro</h2>
+</div>
+
+<div class="form">
+    <form method="POST">
+        {% csrf_token %}
+        <div class="inputBox">
+            <input type="text" name="nome" id="id_nome" required>
+            <label>Nome</label>
+        </div>
+        <div class="inputBox">
+            <input type="text" name="cpf" id="id_cpf" required>
+            <label>CPF</label>
+        </div>
+        <div>
+            <label>Cargo</label>
+            <div>
+                <span>admin</span>
+            </div>
+            <input type="hidden" name="cargo" value="admin" readonly="readonly" id="id_cargo" required>
+        </div>
+        <div class="inputBox endereco">
+            <input type="text" name="endereco" id="id_endereco" required>
+            <label>Endereço</label>
+        </div>
+        <div class="inputBox">
+            <input type="text" name="telefone" id="id_telefone" required>
+            <label>Telefone</label>
+        </div>
+        <div class="form_foto">
+            <label>Foto</label>
+            <input type="file" name="foto" accept="image/*" id="id_foto">
+        </div>
+        <div class="form_botao_direito">
+            <button type="submit" class="btn btn-success btn-lg">Finalizar</button>
+        </div>
+        <br>
+    </form>
+</div>
+
+{% endblock%}

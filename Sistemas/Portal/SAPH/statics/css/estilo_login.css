@@ -1,0 +1,82 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+
+}
+.box{}
+
+.box h2{
+	margin:0 0 30px;
+	padding:0;
+	color: #fff;
+	text-align: center;
+}
+
+.box .inputBox{
+	position: relative;
+}
+
+.box .inputBox input{
+	width: 100%;
+	padding: 10px 0;
+	font-size: 16px;
+	color: #fff;
+	letter-spacing: 1px;
+	margin-bottom: 30px;
+	border: none;
+	border-bottom: 1px solid #fff;
+	outline: none;
+	background: transparent;
+}
+
+.box .inputBox label{
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 10px 0;
+	font-size: 16px;
+	color: #fff;
+	letter-spacing: 1px;
+	pointer-events:none;
+	transition: .5s;
+}
+
+.box .inputBox input:focus ~ label,
+.box .inputBox input:valid ~ label{
+	top: -20px;
+	left: 0;
+	color: #03a9f4;
+	font-size: 12px;
+}
+
+.box input[type="submit"]{
+	background: transparent;
+	border: none;
+	outline: none;
+	color: #fff;
+	background: #03a9f4;
+
+}
+
+.cabecalho_modal {
+    border: 0px;
+}
+
+
+.corpo_modal {
+    box-shadow: 0px 0px 30px 0px #888888;
+    background: #343a40;
+    border-radius: 15px;
+}
+
+.corpo_do_corpo_modal {
+    padding: 7%;
+}
+
+.titulo_modal_login {
+    color: white;
+    text-align: center;
+    width: 100%;
+    padding-top: 5%;
+}

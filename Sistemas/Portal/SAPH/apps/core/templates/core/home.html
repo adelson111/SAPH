@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+{% load static %}
+{%block title%}SAPH{%endblock%}
+
+{% block principal %}
+<section class="banner-principal">
+    <div class="overlay"></div>
+    <div class="center">
+        {% if not user.username %}
+        <form method="POST" id="form">
+            {% csrf_token %}
+            <h2>E-mail</h2>
+            <input type="email" name="email" maxlength="80" id="id_email" required>
+            <input type="submit" name="acao" value="Cadastrar">
+        </form>
+        {% else %}
+        <div class="logado centralizar">
+            <h1>Aproveite nosso serviço.</h1>
+        </div>
+        {% endif %}
+    </div>
+</section>
+{% endblock%}
+
+{% block main %}
+<section class="descricao-autor">
+    <div class="center">
+        <div class="w-50 left">
+            <h2>Márcio Douglas Xavier</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nisi
+                massa, rutrum non leo non, mattis sagittis ante. Mauris fermentum
+                purus neque. Pellentesque malesuada suscipit congue. Sed volutpat
+                pharetra dolor vel lobortis. Donec imperdiet faucibus mattis.
+                Morbi sodales turpis vel tincidunt maximus. Aenean libero risus,
+                gravida quis turpis ac, tincidunt facilisis magna. Ut molestie
+                feugiat diam ac suscipit. Maecenas semper varius justo, eget posuere
+                dolor posuere sed. Sed non elementum sapien. Quisque dictum velit
+                sit amet sagittis vestibulum. Mauris a risus elit. Proin nec nulla
+                sit amet lectus vestibulum pellentesque id eu ante. Lorem ipsum
+                dolor sit amet, consectetur adipiscing elit. Pellentesque
+                sollicitudin malesuada maximus. Vivamus ac magna placerat, porttitor
+                libero vel, posuere quam. </p>
+        </div>
+        <div class="w-50 left">
+            <img class="right" src="{% static '/imagem/sem_foto.png' %}" alt="Imagem da descrição do autor">
+        </div>
+        <div class="clear"></div>
+    </div>
+</section>
+<section class="especialidades">
+    <div class="center">
+        <h2 class="title">Especialidades</h2>
+        <div class="w-33 left box-especialidade">
+            <h3><i class="fab fa-css3"></i></h3>
+            <h4>CSS</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras et
+                erat at urna rutrum tincidunt eget sed purus. Duis odio nulla,
+                semper sit amet rutrum nec, lacinia eget eros. Vestibulum ac
+                laoreet orci, at aliquet nibh. Nam ut orci libero. Phasellus dolor
+                risus, volutpat quis dignissim a, vestibulum non eros.  </p>
+        </div>
+        <div class="w-33 left box-especialidade">
+            <h3><i class="fab fa-python"></i></h3>
+            <h4>PYTHON</h4>
+            <p>Donec vitae elementum sem, quis pulvinar diam. In semper luctus
+                dui, vehicula varius tortor elementum id. Sed vel lorem id velit
+                tristique ornare non a dolor. Pellentesque rhoncus ante at mauris
+                pretium, sed lobortis augue dignissim. Sed sollicitudin lacus in
+                egestas fermentum.
+            </p>
+        </div>
+        <div class="w-33 left box-especialidade">
+            <h3><i class="fab fa-html5"></i></h3>
+            <h4>HTML</h4>
+            <p>Vivamus molestie ornare pretium. Morbi at massa ipsum. Etiam
+                sollicitudin velit eu enim convallis tristique. Proin vitae risus
+                ut orci lobortis posuere. Pellentesque habitant morbi tristique
+                senectus et netus et malesuada fames ac turpis egestas.
+            </p>
+        </div>
+        <div class="clear"></div>
+    </div>
+</section>
+
+<script>
+
+$("#form").submit(function(){
+    email = $('#id_email').val();
+    $.ajax({
+        url:  "",
+        type:  'POST',
+        dataType:  'json',
+        data: {
+            csrfmiddlewaretoken: '{{ csrf_token }}',
+            email: email
+        },
+        success: function  (data) {
+            alert("oi");
+        }
+    });
+});
+
+</script>
+{% endblock%}

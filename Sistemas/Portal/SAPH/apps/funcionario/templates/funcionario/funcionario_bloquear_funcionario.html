@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{%block title%}Bloquear Funcionário{%endblock%}
+
+{% block main %}
+<div class="titulo">
+    <h2>Bloquear Funcionário</h2>
+</div>
+
+<div class="form">
+    <form method="POST">
+        {% csrf_token %}
+        <div>
+            <label>Nome:</label>
+            <span>{{form.nome.value}}</span>
+            <input type="hidden" name="nome" value="{{form.nome.value}}" maxlength="80" id="id_nome">
+        </div>
+        <div class="custom-control custom-switch switch">
+            {% if form.ativo.value == True %}
+            <input type="checkbox" class="custom-control-input" name="ativo" id="id_ativo" checked>
+            <label class="custom-control-label" for="id_ativo">Desbloqueado</label>
+            {% else %}
+            <input type="checkbox" class="custom-control-input" name="ativo" id="id_ativo" >
+            <label class="custom-control-label" for="id_ativo">Bloqueado</label>
+            {% endif %}
+        </div>
+        <div>
+            <button type="submit" class="btn btn-success btn-lg form_botao_direito">Salvar</button>
+            <a href="javascript:history.back();">
+                <button type="button" class="btn btn-secondary btn-lg form_botao_esquerdo">Valtar</button>
+            </a>
+        </div>
+        <br>
+    </form>
+</div>
+{% endblock%}

@@ -2,11 +2,8 @@
 from django.db import models
 from django.urls import reverse
 # Create your models here.
+from apps.item.models import Item
 
-class Item(models.Model):
-    nome = models.CharField(max_length=30)
-    def __str__(self):
-        return self.nome
 
 class Solicitacao(models.Model):
     tipo = models.CharField(max_length=25)

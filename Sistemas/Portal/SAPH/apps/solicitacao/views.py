@@ -6,7 +6,7 @@ from django.http import JsonResponse
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, ListView, UpdateView, DeleteView
 
-from apps.solicitacao.form import SolicitacaoForm, ItemForm
+from apps.solicitacao.form import SolicitacaoForm
 from apps.solicitacao.models import Item, Solicitacao
 
 
@@ -34,12 +34,4 @@ class ApagarSolicitacao(DeleteView):
     model = Solicitacao
     success_url = reverse_lazy('listar_solicitacao')
 
-class  CadastrarItem(CreateView):
-    def  post(self, request):
-        data = dict()
-        form = ItemForm(request.POST)
-        if form.is_valid():
-            item = form.save()
-            data['nome'] = item.nome
-            data['id'] = item.id
-        return JsonResponse(data)
+

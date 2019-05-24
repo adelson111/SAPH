@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 from django.urls import reverse
 
-from apps.solicitacao.models import Item
+from apps.item.models import Item
 
 
 class Delegacao(models.Model):

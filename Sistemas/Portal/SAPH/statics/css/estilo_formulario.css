@@ -89,3 +89,11 @@ margin-top: 5%;
     text-align: center;
     width: 100%;
 }
+
+.bloquear-campo{
+    pointer-events: none;
+}
+
+.margem_hr {
+    margin-bottom: 10%;
+}

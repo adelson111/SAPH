@@ -49,19 +49,33 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form method="POST" id = 'form-item'>
-                {% csrf_token %}
-                <div class="modal-body form">
-                    <div class="inputBox item">
-                        <input type="text" maxlength="300" id="id_novo_item" required>
-                        <label>Item</label>
+            <div class="modal-body">
+                <div>
+                    <button type="button" class="btn btn-outline-secondary btn-sm">Adicionar campo</button>
+                </div>
+                <hr class="margem_hr">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <select class="custom-select" required>
+                            <option value="" selected>---------</option>
+                            <option value="">Texto</option>
+                            <option value="">Numérico</option>
+                            <option value="">Data</option>
+                            <option value="">Arquivo</option>
+                        </select>
+                    </div>
+                    <div class="form col-sm-6">
+                        <div class="inputBox">
+                            <input type="text" name="" maxlength="25" required>
+                            <label>Descrição</label>
+                        </div>
                     </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cancelar</button>
-                    <button type="button" id ="cadastrar" class="btn btn-outline-success">Adicionar</button>
-                </div>
-            </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cancelar</button>
+                <button type="button" id ="cadastrar" class="btn btn-outline-success">Adicionar</button>
+            </div>
         </div>
     </div>
 </div>

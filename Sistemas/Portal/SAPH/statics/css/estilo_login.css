@@ -74,6 +74,9 @@ body{
     padding: 7%;
 }
 
-.titulo_modal {
+.titulo_modal_login {
     color: white;
+    text-align: center;
+    width: 100%;
+    padding-top: 5%;
 }

@@ -16,31 +16,30 @@
         </div>
         <div>
             <label>Funcionário</label>
-            {{ form.funcionario }}
-            <!--<select name="funcionario" id="id_funcionario" class="custom-select" multiple>
+            <!--{{ form.funcionario }}-->
+            <select name="funcionario" id="id_funcionario" class="custom-select" multiple>
                 {% for f in form.funcionario %}
                 {{f}}
                 {% endfor %}
-            </select>-->
+            </select>
         </div>
         <div>
             <label class="select">Nível</label>
-            {{ form.nivel }}
-            <!--<select name="nivel" id="id_nivel" class="custom-select custom-select-sm">
+            <!--{{ form.nivel }}-->
+            <select name="nivel" id="id_nivel" class="custom-select custom-select-sm">
                 {% for f in form.nivel %}
                 {{f}}
                 {% endfor %}
-            </select>-->
+            </select>
         </div>
         <div>
             <label class="select">Gerente</label>
-            {{ form.gerente }}
-            <!--
+            <!--{{ form.gerente }}-->
             <select name="gerente" id="id_gerente" class="custom-select custom-select-sm">
                 {% for f in form.gerente %}
                 {{f}}
                 {% endfor %}
-            </select>-->
+            </select>
         </div>
         <div>
             <button type="submit" class="btn btn-success btn-lg form_botao_direito">Salvar</button>

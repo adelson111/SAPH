@@ -18,7 +18,11 @@
                 <a href="{% url 'atualizar_funcionario' funcionario.pk %}"><button type="button" class="btn btn-secondary">Editar</button></a>
             </div>
             <div class="col-sm-2 centralizar">
+                {% if funcionario.ativo == True %}
                 <a href="{% url 'bloquear_funcionario' funcionario.pk %}"><button type="button" class="btn btn-secondary">Bloquear</button></a>
+                {% else %}
+                <a href="{% url 'bloquear_funcionario' funcionario.pk %}"><button type="button" class="btn btn-secondary">Desbloquear</button></a>
+                {% endif %}
             </div>
         </div>
     </li>

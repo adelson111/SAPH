@@ -93,3 +93,7 @@ margin-top: 5%;
 .bloquear-campo{
     pointer-events: none;
 }
+
+.margem_hr {
+    margin-bottom: 10%;
+}

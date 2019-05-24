@@ -48,6 +48,13 @@ class ListarNivel(ListView):
     def get_queryset(self):
         return Nivel.objects.filter(organizacao=self.request.user.funcionario.organizacao)
 
+class Organograma(ListView):
+    model = Nivel
+
+    def get_queryset(self):
+        return Nivel.objects.filter(organizacao=self.request.user.funcionario.organizacao)
+
+    template_name_suffix = '_organograma'
 
 class AtualizarNivel(UpdateView):
     model = Nivel

@@ -23,6 +23,7 @@ class FuncionarioCadastra(ModelForm):
         super(FuncionarioCadastra, self).__init__(*args, **kwargs)
         self.fields['organizacao'].queryset = organ
 
+
     class Meta:
         model = Funcionario
         fields = ['nome', 'email', 'senha', 'cpf', 'cargo', 'endereco', 'telefone', 'ativo', 'foto', 'organizacao']

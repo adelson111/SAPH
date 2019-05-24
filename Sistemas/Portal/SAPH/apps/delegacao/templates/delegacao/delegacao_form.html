@@ -11,11 +11,11 @@
     <form method="POST">
         {% csrf_token %}
         <div class="inputBox">
-            <input type="text" name="tipo" maxlength="25" id="id_tipo" required>
+            {{ form.tipo }}
             <label>Nome</label>
         </div>
         <div class="inputBox">
-            <input type="text" name="descricao" maxlength="300" id="id_descricao" required>
+            {{ form.descricao }}
             <label>Descrição</label>
         </div>
         <div>
@@ -59,7 +59,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cancelar</button>
-                    <button type="button" id = 'cadastrar' class="btn btn-outline-success">Adicionar</button>
+                    <button type="button" id ="cadastrar" class="btn btn-outline-success">Adicionar</button>
                 </div>
             </form>
         </div>

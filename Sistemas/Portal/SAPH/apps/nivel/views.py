@@ -7,7 +7,7 @@ from django.shortcuts import render, get_object_or_404
 # Create your views here.
 from django.urls import reverse_lazy, reverse
 from django.views import View
-from django.views.generic import CreateView, ListView, UpdateView, DeleteView
+from django.views.generic import CreateView, ListView, UpdateView, DeleteView, TemplateView
 
 from apps.nivel.models import Nivel
 
@@ -82,3 +82,11 @@ class PesquisaNivel(View):
             nivelI = ""
         response = json.dumps({'nivelInf': nivelI, 'nivelSup':nivelS })
         return HttpResponse(response, content_type='application/json')
+
+
+class Organograma(ListView):
+    model = Nivel
+
+    def get_queryset(self):
+        return Nivel.objects.filter(organizacao=self.request.user.funcionario.organizacao)
+    template_name_suffix = "_organograma"

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}Organograma{% endblock%}
+
+{% block main %}
+<div class="titulo">
+    <h2>Organograma</h2>
+</div>
+
+<ul class="list-group">
+    {% for nivel in object_list %}
+    <li class="list-group-item">
+        <div>
+            <span><b>Nome</b></span>
+        </div>
+        <span>{{nivel.nome}}</span>
+    </li>
+    {%endfor%}
+</ul>
+{% endblock%}

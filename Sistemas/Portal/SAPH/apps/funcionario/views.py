@@ -72,10 +72,6 @@ class BloquearFuncionario(UpdateView):
 
     template_name_suffix = '_bloquear_funcionario'
 
-class ApagarFuncionario(DeleteView):
-    model = Funcionario
-    success_url = reverse_lazy('listar_funcionarios')
-
 
 class PreCadastroFuncionario(CreateView):
     model = Funcionario

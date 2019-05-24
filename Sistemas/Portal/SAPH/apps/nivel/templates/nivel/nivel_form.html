@@ -11,37 +11,24 @@
     <form method="POST">
         {% csrf_token %}
         <div class="inputBox">
-            <input type="text" name="nome" maxlength="80" id="id_nome" required>
+            {{ form.nome }}
             <label>Nome</label>
         </div>
         <div>
             <label>Nível Superior</label>
-            <select name="nivelSuperior" id="id_nivelSuperior" class="custom-select">
-                {% for f in form.nivelSuperior %}
-                    {{f}}
-                {% endfor %}
-            </select>
+            {{ form.nivelSuperior }}
         </div>
         <div>
             <label class="select">Nível Inferior</label>
-            <select name="nivelInferior" id="id_nivelInferior" class="custom-select">
-                {% for f in form.nivelInferior %}
-                    {{f}}
-                {% endfor %}
-            </select>
+            {{ form.nivelInferior }}
         </div>
         <div>
-            <label class="select">Funcionário</label>
-            <select name="funcionario" id="id_funcionario" class="custom-select" required>
-                {% for f in form.funcionario %}
-                    {{f}}
-                {% endfor %}
-            </select>
+            <label class="select">Responsável</label>
+            {{ form.funcionario }}
         </div>
         <div class="form_botao_direito">
             <button type="submit" class="btn btn-success btn-lg">Cadastrar</button>
         </div>
-        <br>
         <input type="hidden" name="organizacao" id="id_organizacao" value="{{ user.funcionario.organizacao.pk }}">
     </form>
 </div>

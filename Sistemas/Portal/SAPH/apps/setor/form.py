@@ -14,6 +14,10 @@ class SetorCreate(ModelForm):
         self.fields['nivel'].queryset = niveis
         self.fields['gerente'].queryset = funcionarios
 
+        self.fields['funcionario'].widget.attrs = {'class' : 'custom-select'}
+        self.fields['nivel'].widget.attrs = {'class' : 'custom-select custom-select-sm'}
+        self.fields['gerente'].widget.attrs = {'class' : 'custom-select custom-select-sm'}
+
     class Meta:
         model = Setor
         fields = ['nome','funcionario', 'nivel', 'gerente']

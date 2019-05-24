@@ -11,11 +11,11 @@
     <form method="POST">
         {% csrf_token %}
         <div class="inputBox">
-            <input type="text" name="tipo" value="{{form.tipo.value}}" maxlength="25" id="id_tipo" required>
+            {{form.tipo}}
             <label>Nome</label>
         </div>
         <div class="inputBox">
-            <input type="text" name="descricao" value="{{form.descricao.value}}" maxlength="300" id="id_descricao" required>
+            {{form.descricao}}
             <label>Descrição</label>
         </div>
         <div>

@@ -12,27 +12,30 @@
         {% csrf_token %}
         <div>
             <label>Nível Superior</label>
-            <select name="nivelSuperior" id="id_nivelSuperior" class="custom-select">
+            {{ form.nivelSuperior }}
+            <!--<select name="nivelSuperior" id="id_nivelSuperior" class="custom-select">
                 {% for f in form.nivelSuperior %}
                     {{f}}
                 {% endfor %}
-            </select>
+            </select>-->
         </div>
         <div>
             <label class="select">Nível Inferior</label>
-            <select name="nivelInferior" id="id_nivelInferior" class="custom-select">
+            {{ form.nivelInferior }}
+            <!--<select name="nivelInferior" id="id_nivelInferior" class="custom-select">
                 {% for f in form.nivelInferior %}
                     {{f}}
                 {% endfor %}
-            </select>
+            </select>-->
         </div>
         <div>
-            <label class="select">Funcionário</label>
-            <select name="funcionario" id="id_funcionario" class="custom-select" required>
+            <label class="select">Responsável</label>
+            {{ form.funcionario }}
+            <!--<select name="funcionario" id="id_funcionario" class="custom-select" required>
                 {% for f in form.funcionario %}
                     {{f}}
                 {% endfor %}
-            </select>
+            </select>-->
         </div>
         <div>
             <button type="submit" class="btn btn-success btn-lg form_botao_direito">Salvar</button>

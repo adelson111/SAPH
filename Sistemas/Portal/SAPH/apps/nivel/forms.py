@@ -14,6 +14,10 @@ class NivelCreate(ModelForm):
         self.fields['nivelInferior'].queryset = nivel
         self.fields['funcionario'].queryset=funcionarios
 
+        self.fields['nivelSuperior'].widget.attrs = {'class' : 'custom-select'}
+        self.fields['nivelInferior'].widget.attrs = {'class' : 'custom-select'}
+        self.fields['funcionario'].widget.attrs = {'class' : 'custom-select'}
+
     class Meta:
         model = Nivel
         fields = ['nome', 'nivelSuperior', 'nivelInferior', 'funcionario', 'organizacao']

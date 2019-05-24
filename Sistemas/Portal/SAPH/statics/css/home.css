@@ -173,3 +173,9 @@ img{
     width: 100%;
   }
 }
+
+@media screen and (max-width:575px){
+  .menu_navbar {
+    width: 100%;
+  }
+}

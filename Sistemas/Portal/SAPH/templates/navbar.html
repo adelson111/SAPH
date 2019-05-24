@@ -72,7 +72,7 @@
             <div class="botao_menu">
                 <button type="button" class="btn btn-dark menu_navbar">Contato</button>
                 <button type="button" class="btn btn-dark menu_navbar">Sobre</button>
-                <!--<button type="button" class="btn btn-dark menu_navbar" data-toggle="modal" data-target="#ModalCadastrar">Cadastre-se</button>-->
+                <button type="button" class="btn btn-dark menu_navbar" data-toggle="modal" data-target="#ModalCadastrar">Cadastre-se</button>
                 <button type="button" class="btn btn-dark menu_navbar" data-toggle="modal" data-target="#ModalLogin">Entrar</button>
             </div>
         {% endif %}
@@ -94,7 +94,7 @@
             </div>
             <div class="modal-body corpo_do_corpo_modal">
                 <div class="box">
-                    <form method="POST" id="formulario">
+                    <form method="POST" action="{% url 'login' %}">
                         {% csrf_token %}
                         <div class="inputBox">
                             <input type="email" name="username" id="id_username" required>
@@ -106,6 +106,7 @@
                         </div>
                         <div>
                             <button type="submit" class="btn btn-primary form_botao_direito">Entrar</button>
+                            <button type="button" class="btn btn-secondary form_botao_esquerdo">Esqueci minha senha</button>
                         </div>
                     </form>
                 </div>
@@ -114,56 +115,31 @@
     </div>
 </div>
 
-<script>
-
-$("#formulario").submit(function(){
-    email = $('#id_username').val();
-    senha = $('#id_password').val();
-    $.ajax({
-        url:  "",
-        type:  'POST',
-        dataType:  'json',
-        data: {
-            csrfmiddlewaretoken: '{{ csrf_token }}',
-            username: email,
-            password: senha
-        },
-        success: function  (data) {
-            alert("oi");
-        }
-    });
-});
-
-</script>
-
-
-
-<!-- Modal
 <div class="modal fade" id="ModalCadastrar" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <div class="titulo_modal">
-                    <h5 class="modal-title">Cadastre-se</h5>
+        <div class="modal-content corpo_modal">
+            <div class="modal-header cabecalho_modal">
+                <div class="titulo_modal_login">
+                    <h4 class="modal-title titulo_modal" id="TituloModalCentralizado">Cadastrar</h4>
                 </div>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form method="POST">
-                {% csrf_token %}
-                <div class="modal-body form">
-                    <div class="inputBox item">
-                        <input type="email" name="email" maxlength="80" id="id_email" required>
-                        <label>E-mail</label>
-                    </div>
+            <div class="modal-body corpo_do_corpo_modal">
+                <div class="box">
+                    <form method="POST" action="{% url 'pre_cadasrtrar_funcionario' %}">
+                        {% csrf_token %}
+                        <div class="inputBox">
+                            <input type="email" name="email" maxlength="80" id="id_email" required>
+                            <label>E-mail</label>
+                        </div>
+                        <div>
+                            <button type="submit" class="btn btn-primary form_botao_direito">Cadastrar</button>
+                        </div>
+                    </form>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-outline-success">Cadastrar</button>
-                </div>
-            </form>
+            </div>
         </div>
     </div>
 </div>
--->

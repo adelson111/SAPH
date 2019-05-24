@@ -10,9 +10,9 @@ class NivelCreate(ModelForm):
         funcionarios = Funcionario.objects.filter(organizacao=organizacao)
         nivel = Nivel.objects.filter(organizacao=organizacao)
         super(NivelCreate, self).__init__(*args, **kwargs)
-        self.fields['nivelSuperior'].queryset=nivel
+        self.fields['nivelSuperior'].queryset = nivel
         self.fields['nivelInferior'].queryset = nivel
-        self.fields['funcionario'].queryset=funcionarios
+        self.fields['funcionario'].queryset = funcionarios
 
     class Meta:
         model = Nivel

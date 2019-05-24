@@ -72,7 +72,7 @@
             <div class="botao_menu">
                 <button type="button" class="btn btn-dark menu_navbar">Contato</button>
                 <button type="button" class="btn btn-dark menu_navbar">Sobre</button>
-                <!--<button type="button" class="btn btn-dark menu_navbar" data-toggle="modal" data-target="#ModalCadastrar">Cadastre-se</button>-->
+                <button type="button" class="btn btn-dark menu_navbar" data-toggle="modal" data-target="#ModalCadastrar">Cadastre-se</button>
                 <button type="button" class="btn btn-dark menu_navbar" data-toggle="modal" data-target="#ModalLogin">Entrar</button>
             </div>
         {% endif %}
@@ -94,7 +94,7 @@
             </div>
             <div class="modal-body corpo_do_corpo_modal">
                 <div class="box">
-                    <form method="POST" id="formulario">
+                    <form action="{% url 'login' %}" method="POST" id="formulario">
                         {% csrf_token %}
                         <div class="inputBox">
                             <input type="email" name="username" id="id_username" required>
@@ -138,7 +138,7 @@ $("#formulario").submit(function(){
 
 
 
-<!-- Modal
+
 <div class="modal fade" id="ModalCadastrar" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -150,7 +150,7 @@ $("#formulario").submit(function(){
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form method="POST">
+            <form action="{% url 'pre_cadasrtrar_funcionario' %}" method="POST">
                 {% csrf_token %}
                 <div class="modal-body form">
                     <div class="inputBox item">
@@ -160,10 +160,11 @@ $("#formulario").submit(function(){
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-outline-success">Cadastrar</button>
+                    <div>
+                            <button type="submit" class="btn btn-primary form_botao_direito">Entrar</button>
+                        </div>
                 </div>
             </form>
         </div>
     </div>
 </div>
--->

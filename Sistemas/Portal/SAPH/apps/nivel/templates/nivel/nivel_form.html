@@ -11,79 +11,83 @@
     <form method="POST">
         {% csrf_token %}
         <div class="inputBox">
-            <input type="text" name="nome" maxlength="80" id="id_nome" required>
+            {{ form.nome }}
             <label>Nome</label>
         </div>
         <div>
             <label>Nível Superior</label>
-            <select name="nivelSuperior" id="id_nivelSuperior" class="custom-select">
-                {% for f in form.nivelSuperior %}
-                    {{f}}
-                {% endfor %}
-            </select>
+            {{ form.nivelSuperior }}
         </div>
         <div>
             <label class="select">Nível Inferior</label>
-            <select name="nivelInferior" id="id_nivelInferior" class="custom-select">
-                {% for f in form.nivelInferior %}
-                    {{f}}
-                {% endfor %}
-            </select>
+            {{ form.nivelInferior }}
         </div>
         <div>
-            <label class="select">Funcionário</label>
-            <select name="funcionario" id="id_funcionario" class="custom-select" required>
-                {% for f in form.funcionario %}
-                    {{f}}
-                {% endfor %}
-            </select>
+            <label class="select">Responsável</label>
+            {{ form.funcionario }}
         </div>
         <div class="form_botao_direito">
             <button type="submit" class="btn btn-success btn-lg">Cadastrar</button>
         </div>
-        <br>
         <input type="hidden" name="organizacao" id="id_organizacao" value="{{ user.funcionario.organizacao.pk }}">
     </form>
 </div>
 <script>
+
         $("#id_nivelSuperior").change(function(){
-        token = document.getElementsByName("csrfmiddlewaretoken")[0].value;
-        nivelS = $('#id_nivelSuperior').val();
-        <!--console.log(nivelS);-->
-        if(nivelS!=""){
-            console.log("MIZERA");
-            $.ajax({
-                url:  '/nivel/pesquisa/' + nivelS + '/',
-                type:  'POST',
-                dataType:  'json',
-                data: {
-                    csrfmiddlewaretoken: token,
-                },
-                success: function  (data) {
-                    <!--console.log(data);-->
-                    if(data.nivelInf != "" && data.nivelSup != ""){
-                        console.log("TEM SUP E INF => " + data.nivelInf);
-                        <!--console.log(data.nivelInf);-->
-                        $('#id_nivelInferior option[value='+ data.nivelInf + ']').attr({ selected : "selected" });
+            token = document.getElementsByName("csrfmiddlewaretoken")[0].value;
+            nivelS = $('#id_nivelSuperior').val();
+            if(nivelS!=""){
+                $.ajax({
+                    url:  '/nivel/pesquisa/' + nivelS + '/',
+                    type:  'POST',
+                    dataType:  'json',
+                    data: {
+                        csrfmiddlewaretoken: token,
+                    },
+                    <!--timeout: 3000,-->
+                    complete: function  (data) {
+                        if(data.readyState==4){
+                            if(data.responseJSON['nivelInf'] != "" && data.responseJSON['nivelSup'] != ""){
+                                a = $("#id_nivelInferior").val();
+                                if(a!=""){
+                                    $("#id_nivelInferior option[value=" + a +"]").removeAttr("selected");
+                                    $("#id_nivelInferior option[value=" + data.responseJSON['nivelInf'] + "]").attr({ selected : "selected" });
+                                    <!--$("#id_nivelInferior").attr({'disable':disable});-->
+                                    $("#id_nivelInferior").addClass("bloquear-campo");
 
-                    }else if(data.nivelSup != "" && data.nivelInf ==""){
-                        console.log("TEM SUP => " + data.nivelInf);
-                            <!--$('#id_nivelInferior').firstChild.attr({ selected : "selected" });-->
-                            $("#id_nivelInferior option:first").prop('selected', 'true')
 
-                    }else if(data.nivelSup == "" &&  data.nivelInf !=""){
-                        console.log("TEM INF=> " + data.nivelInf );
-
-                        <!--$('#id_nivelInferior option[value='+ data.nivelInf + ']').attr({ selected : "selected" });-->
-
-                        <!--$('#id_nivelInferior option[value=" '+data.nivelInf+ '"]').attr({ selected : "selected" });-->
-                        <!--$('#cidadeEntrega option[value="' + cidadeResidencia + '"]').attr({ selected : "selected" });-->
+                                }else{
+                                    $("#id_nivelInferior option[value=" + data.responseJSON['nivelInf'] + "]").attr({ selected : "selected" });
+                                    $("#id_nivelInferior").addClass("bloquear-campo");
+                                }
+                            }if(data.responseJSON['nivelSup'] != "" && data.responseJSON['nivelInf'] ==""){
+                                a = $("#id_nivelInferior").val();
+                                if(a!=""){
+                                   $("#id_nivelInferior option[value=" + a +"]").removeAttr("selected");
+                                   $("#id_nivelInferior").addClass("bloquear-campo");
+                                }else{
+                                    $("#id_nivelInferior option:first").prop("selected", "true");
+                                    $("#id_nivelInferior").addClass("bloquear-campo");
+                                }
+                            }if(data.responseJSON['nivelSup']== "" &&  data.responseJSON['nivelInf'] !=""){
+                                a = $("#id_nivelInferior").val();
+                                if(a!=""){
+                                    $("#id_nivelInferior option[value=" + a +"]").removeAttr("selected");
+                                    $("#id_nivelInferior option[value="+ data.responseJSON['nivelInf'] + "]").attr({ selected : "selected" });
+                                    $("#id_nivelInferior").addClass("bloquear-campo");
+                                }else{
+                                    $("#id_nivelInferior option[value="+ data.responseJSON['nivelInf'] + "]").attr({ selected : "selected" });
+                                    $("#id_nivelInferior").addClass("bloquear-campo");
+                                }
+                            }
+                        }
+                    },
+                    error: function(erro){
+                        console.log("FUDEU FOI TUDO AGORA");
                     }
-                }
-            });
-            console.log("FINAL DA CHAMADA");
-            console.log("-------------------------");
-        };
-    });
+                });
+            };
+        });
 </script>
 {% endblock%}

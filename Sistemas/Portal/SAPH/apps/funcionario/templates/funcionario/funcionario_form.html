@@ -11,40 +11,38 @@
     <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="inputBox">
-            <input type="text" name="nome" maxlength="80" id="id_nome" required>
+            {{form.nome}}
             <label>Nome</label>
         </div>
         <div class="inputBox">
-            <input type="email" name="email" maxlength="80" id="id_email" required>
+            {{form.email}}
             <label>E-mail</label>
         </div>
         <div class="inputBox">
-            <input type="password" name="senha" maxlength="15" id="id_senha" required>
+            {{form.senha}}
             <label>Senha</label>
         </div>
         <div class="inputBox">
-            <input type="text" name="cpf" maxlength="14" id="id_cpf" required>
+            {{form.cpf}}
             <label>CPF</label>
         </div>
         <div class="inputBox">
-            <input type="text" name="cargo" maxlength="15" id="id_cargo" required>
+            {{form.cargo}}
             <label>Cargo</label>
         </div>
         <div class="inputBox">
-            <input type="text" name="endereco" maxlength="100" id="id_endereco" required>
+            {{form.endereco}}
             <label>Endereço</label>
         </div>
         <div class="inputBox">
-            <input type="text" name="telefone" maxlength="10" id="id_telefone" required>
+            {{form.telefone}}
             <label>Telefone</label>
         </div>
         <div class="form_ativo">
+            {{form.ativo}}
             <label>Ativo</label>
-            <input type="checkbox" name="ativo" id="id_ativo" checked>
         </div>
         <div class="form_foto">
-            <label>Foto</label>
-            <!--<input type="file" name="foto" accept="image/*" id="id_foto">-->
             {{form.foto}}
         </div>
         <input type="hidden" name="organizacao" id="id_organizacao" value="{{user.funcionario.organizacao.pk}}">

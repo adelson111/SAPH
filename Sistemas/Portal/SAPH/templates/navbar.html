@@ -1,0 +1,169 @@
+{% load static %}
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark centralizar">
+    <a class="navbar-brand" href="{% url 'page_home'%}">SAPH</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Menu Colapso">
+        <span class="navbar-toggler-icon text-light"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="menu">
+        {% if user.username %}
+            <ul class="navbar-nav mr-auto ">
+                {% if not user.funcionario.organizacao %}
+                    <a class="nav-link" href="{% url 'cadastrar_organizacao' %}">CADASTRAR ORGANIZAÇÃO</a>
+                {% else %}
+                    {%if user.funcionario.cargo == 'admin' %}
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="{% url 'atualizar_organizacao' user.funcionario.organizacao.pk%}" id="navbardrop">Editar Organização</a>
+                        </li>
+                    {% endif %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'organograma_nivel'%}" id="navbardrop10">Organograma</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbardrop1" data-toggle="dropdown">Funcionário</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{% url 'cadasrtrar_funcionario' user.funcionario.organizacao.pk %}">Cadastrar</a>
+                            <a class="dropdown-item" href="{% url 'listar_funcionarios' %}">Listar</a>
+                            <a class="dropdown-item" href="{% url 'listar_funcionarios_bloqueado' %}">Bloqueados</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbardrop2" data-toggle="dropdown">Setor</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{% url 'cadastrar_setor' user.funcionario.organizacao.pk %}">Cadastrar</a>
+                            <a class="dropdown-item" href="{% url 'listar_setor' %}">Listar</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbardrop3" data-toggle="dropdown">Nível</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{% url 'cadastrar_nivel' user.funcionario.organizacao.pk %}">Cadastrar</a>
+                            <a class="dropdown-item" href="{% url 'listar_nivel' %}">Listar</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbardrop4" data-toggle="dropdown">Solicitação</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{% url 'cadasrtrar_solicitacao' %}">Cadastrar</a>
+                            <a class="dropdown-item" href="{% url 'listar_solicitacao' %}">Listar</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbardrop5" data-toggle="dropdown">Delegação</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{% url 'cadasrtrar_delegacao' %}">Cadastrar</a>
+                            <a class="dropdown-item" href="{% url 'listar_delegacao' %}">Listar</a>
+                        </div>
+                    </li>
+                {% endif%}
+            </ul>
+            <div class="my-2 my-lg-0">
+                <div class="dropdown">
+                    {%if user.funcionario.foto %}
+                        <img src="{{user.funcionario.foto.url}}" data-toggle="dropdown" class="rounded-circle imagem_perfil" alt="Imagem do usuário">
+                    {% else %}
+                        <img src="{% static '/imagem/sem_foto.png' %}" data-toggle="dropdown" class="rounded-circle imagem_perfil" alt="Imagem do usuário">
+                    {% endif %}
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a class="dropdown-item" href="{% url 'logout'%}">Sair</a>
+                    </div>
+                </div>
+            </div>
+        {% else %}
+            <div class="botao_menu">
+                <button type="button" class="btn btn-dark menu_navbar">Contato</button>
+                <button type="button" class="btn btn-dark menu_navbar">Sobre</button>
+                <!--<button type="button" class="btn btn-dark menu_navbar" data-toggle="modal" data-target="#ModalCadastrar">Cadastre-se</button>-->
+                <button type="button" class="btn btn-dark menu_navbar" data-toggle="modal" data-target="#ModalLogin">Entrar</button>
+            </div>
+        {% endif %}
+    </div>
+</nav>
+
+
+<!-- Modal -->
+<div class="modal fade" id="ModalLogin" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content corpo_modal">
+            <div class="modal-header cabecalho_modal">
+                <div class="titulo_modal_login">
+                    <h4 class="modal-title titulo_modal" id="TituloModalCentralizado">Entrar</h4>
+                </div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body corpo_do_corpo_modal">
+                <div class="box">
+                    <form method="POST" id="formulario">
+                        {% csrf_token %}
+                        <div class="inputBox">
+                            <input type="email" name="username" id="id_username" required>
+                            <label>E-mail</label>
+                        </div>
+                        <div class="inputBox">
+                            <input type="password" name="password" id="id_password" required>
+                            <label>Senha</label>
+                        </div>
+                        <div>
+                            <button type="submit" class="btn btn-primary form_botao_direito">Entrar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+$("#formulario").submit(function(){
+    email = $('#id_username').val();
+    senha = $('#id_password').val();
+    $.ajax({
+        url:  "",
+        type:  'POST',
+        dataType:  'json',
+        data: {
+            csrfmiddlewaretoken: '{{ csrf_token }}',
+            username: email,
+            password: senha
+        },
+        success: function  (data) {
+            alert("oi");
+        }
+    });
+});
+
+</script>
+
+
+
+<!-- Modal
+<div class="modal fade" id="ModalCadastrar" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="titulo_modal">
+                    <h5 class="modal-title">Cadastre-se</h5>
+                </div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form method="POST">
+                {% csrf_token %}
+                <div class="modal-body form">
+                    <div class="inputBox item">
+                        <input type="email" name="email" maxlength="80" id="id_email" required>
+                        <label>E-mail</label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-outline-success">Cadastrar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+-->

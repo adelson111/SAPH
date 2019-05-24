@@ -11,27 +11,27 @@
     <form method="POST">
         {% csrf_token %}
         <div class="inputBox">
-            <input type="text" name="nome" value="{{form.nome.value}}" maxlength="80" id="id_nome" required>
+            {{ form.nome }}
             <label>Nome</label>
         </div>
         <div class="inputBox">
-            <input type="text" name="cnpj" value="{{form.cnpj.value}}" maxlength="15" id="id_cnpj" required>
-            <label>CNPj</label>
+            {{ form.cnpj }}
+            <label>CNPJ</label>
         </div>
         <div class="inputBox">
-            <input type="text" name="endereco" value="{{form.endereco.value}}" maxlength="50" id="id_endereco" required>
+            {{ form.endereco }}
             <label>Endereço</label>
         </div>
         <div class="inputBox">
-            <input type="text" name="telefone" value="{{form.telefone.value}}" maxlength="15" id="id_telefone" required>
+            {{ form.telefone }}
             <label>Telefone</label>
         </div>
         <div class="form_ativo">
+            {{ form.situacao }}
             <label>Situação</label>
-            <input type="checkbox" name="situacao" id="id_situacao" checked>
         </div>
         <div class="inputBox">
-            <input type="text" name="numeroNivel" value="{{form.numeroNivel.value}}" maxlength="2" id="id_numeroNivel" required>
+            {{ form.numeroNivel }}
             <label>Quantidade de Níveis</label>
         </div>
         <div>

@@ -11,11 +11,12 @@
     <form method="POST">
         {% csrf_token %}
         <div class="inputBox">
-            <input type="text" name="nome" value="{{form.nome.value}}" maxlength="20" id="id_nome" required>
+            {{ form.nome }}
             <label>Nome</label>
         </div>
         <div>
             <label>Funcionário</label>
+            <!--{{ form.funcionario }}-->
             <select name="funcionario" id="id_funcionario" class="custom-select" multiple>
                 {% for f in form.funcionario %}
                 {{f}}
@@ -24,6 +25,7 @@
         </div>
         <div>
             <label class="select">Nível</label>
+            <!--{{ form.nivel }}-->
             <select name="nivel" id="id_nivel" class="custom-select custom-select-sm">
                 {% for f in form.nivel %}
                 {{f}}
@@ -32,6 +34,7 @@
         </div>
         <div>
             <label class="select">Gerente</label>
+            <!--{{ form.gerente }}-->
             <select name="gerente" id="id_gerente" class="custom-select custom-select-sm">
                 {% for f in form.gerente %}
                 {{f}}

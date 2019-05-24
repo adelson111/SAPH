@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {%block title%}SAPH{%endblock%}
 
 {% block principal %}
@@ -7,13 +7,14 @@
     <div class="overlay"></div>
     <div class="center">
         {% if not user.username %}
-        <form>
+        <form method="POST" id="form">
+            {% csrf_token %}
             <h2>E-mail</h2>
-            <input type="email" name="email">
+            <input type="email" name="email" maxlength="80" id="id_email" required>
             <input type="submit" name="acao" value="Cadastrar">
         </form>
         {% else %}
-        <div class="logado">
+        <div class="logado centralizar">
             <h1>Aproveite nosso serviço.</h1>
         </div>
         {% endif %}
@@ -41,7 +42,7 @@
                 libero vel, posuere quam. </p>
         </div>
         <div class="w-50 left">
-            <img class="right" src="/media/media/funcionario/sem_foto.png" alt="">
+            <img class="right" src="{% static '/imagem/sem_foto.png' %}" alt="Imagem da descrição do autor">
         </div>
         <div class="clear"></div>
     </div>
@@ -80,4 +81,24 @@
         <div class="clear"></div>
     </div>
 </section>
+
+<script>
+
+$("#form").submit(function(){
+    email = $('#id_email').val();
+    $.ajax({
+        url:  "",
+        type:  'POST',
+        dataType:  'json',
+        data: {
+            csrfmiddlewaretoken: '{{ csrf_token }}',
+            email: email
+        },
+        success: function  (data) {
+            alert("oi");
+        }
+    });
+});
+
+</script>
 {% endblock%}

@@ -10,13 +10,13 @@ from apps.organizacao.models import Organizacao
 
 
 class Funcionario(models.Model):
-    nome = models.CharField(max_length=80, null=True, blank=True)
-    email = models.EmailField(max_length=80, null=True, blank=True)
-    senha = models.CharField(max_length=15, null=True, blank=True)
-    cpf = models.CharField(max_length=14, null=True, blank=True)
-    cargo = models.CharField(max_length=15, null=True, blank=True)
-    endereco = models.CharField(max_length=100, null=True, blank=True)
-    telefone = models.CharField(max_length=10, null=True, blank=True)
+    nome = models.CharField(max_length=80, null=True)
+    email = models.EmailField(max_length=80, null=True)
+    senha = models.CharField(max_length=15, null=True)
+    cpf = models.CharField(max_length=14, null=True)
+    cargo = models.CharField(max_length=15, null=True)
+    endereco = models.CharField(max_length=100, null=True)
+    telefone = models.CharField(max_length=10, null=True)
     ativo = models.BooleanField(default=True)
     foto = models.ImageField(upload_to='media/funcionario', null=True, blank=True)
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=True, blank=True)

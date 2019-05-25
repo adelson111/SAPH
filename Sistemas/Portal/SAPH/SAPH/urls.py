@@ -25,7 +25,7 @@ from apps.delegacao import urls as urls_delegacao
 from apps.item import urls as urls_item
 from django.conf.urls.static import static
 from SAPH import settings
-
+# from django.contrib.auth.urls
 urlpatterns = [
     path('', include(urls_core)),
     path('admin/', admin.site.urls),

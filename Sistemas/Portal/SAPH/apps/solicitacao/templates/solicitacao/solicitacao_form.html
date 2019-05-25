@@ -10,6 +10,7 @@
 <div class="form">
     <form method="POST">
         {% csrf_token %}
+        {% form1 %}
         <div class="inputBox">
             <input type="text" name="tipo" maxlength="25" id="id_tipo" required>
             <label>Nome</label>
@@ -22,6 +23,7 @@
             <div>
                 <label class="form_botao_esquerdo">Itens</label>
                 <!-- Botão para acionar modal -->
+
                 <button type="button" class="btn btn-outline-secondary btn-sm form_botao_direito" data-toggle="modal" data-target="#ExemploModalCentralizado">Adicionar item</button>
             </div>
             <select name="itens" id="id_itens" class="custom-select" multiple required>

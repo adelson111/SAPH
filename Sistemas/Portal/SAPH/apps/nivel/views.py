@@ -89,3 +89,36 @@ class PesquisaNivel(View):
             nivelI = ""
         response = json.dumps({'nivelInf': nivelI, 'nivelSup': nivelS })
         return HttpResponse(response, content_type='application/json')
+
+
+class OrdenarNivel(ListView):
+    model = Nivel
+
+    def get_queryset(self):
+        nivelall = Nivel.objects.filter(organizacao=self.request.user.funcionario.organizacao)
+        data = {}
+        lista = []
+        superior = ''
+        for nivel in nivelall:
+            if(nivel.nivelSuperior == None):
+                superior = nivel
+            lista.append(nivel)
+        inferior = False
+        i = 0
+        while (inferior == False and i <= len(lista)+1):
+            if(superior.nivelSuperior ==None):
+                data[i] = lista[i]
+                superior = superior.nivelInferior
+            if(lista[i].nivelSuperior == superior.nivelInferior and lista[i].nivelSuperior.nivelSuperior != None):
+                data[i] = lista[i].nivelSuperior
+                superior = lista[i].nivelSuperior
+            if (lista[i].nivelSuperior == superior.nivelSuperior and lista[i].nivelSuperior.nivelSuperior != None):
+                data[i] = lista[i].nivelSuperior
+                superior = lista[i].nivelInferior
+
+            if(lista[i].nivelInferior==None):
+                inferior = True
+                data[len(lista)-1] = lista[i].nivelSuperior
+
+            i= i + 1
+        a = 88

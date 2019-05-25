@@ -6,11 +6,12 @@ TYPE = [
     ('double', 'Real' ),
     ('date', 'Data' ),
     ('text', 'Texto'),
-    ('file', 'Arquivo')
+    ('file', 'Arquivo'),
 ]
 
 class Campo(models.Model):
     nome = models.CharField(max_length=100)
+    descricao = models.TextField(max_length=300)
     tipo = models.CharField(
         max_length=6,
         choices= TYPE,

@@ -10,7 +10,6 @@
 <div class="form">
     <form method="POST">
         {% csrf_token %}
-        {% form1 %}
         <div class="inputBox">
             <input type="text" name="tipo" maxlength="25" id="id_tipo" required>
             <label>Nome</label>
@@ -52,27 +51,50 @@
                 </button>
             </div>
             <div class="modal-body">
+                <div class="inputBox">
+                    <input id = 'id_novo_item' type="text" name="nome" maxlength="25" required>
+                    <label>Nome do Item</label>
+                </div>
                 <div>
                     <button type="button" class="btn btn-outline-secondary btn-sm">Adicionar campo</button>
                 </div>
                 <hr class="margem_hr">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <select class="custom-select" required>
-                            <option value="" selected>---------</option>
-                            <option value="">Texto</option>
-                            <option value="">Numérico</option>
-                            <option value="">Data</option>
-                            <option value="">Arquivo</option>
-                        </select>
-                    </div>
-                    <div class="form col-sm-6">
-                        <div class="inputBox">
-                            <input type="text" name="" maxlength="25" required>
-                            <label>Descrição</label>
+                <form id = 'campos' method="POST">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <select class="custom-select" required name="tipo">
+                                <option value="" selected>---------</option>
+                                <option value="text">Texto</option>
+                                <option value="number">Numérico</option>
+                                <option value="date">Data</option>
+                                <option value="file">Arquivo</option>
+                            </select>
+                        </div>
+                        <div class="form col-sm-6">
+                            <div class="inputBox">
+                                <input type="text" name="nome" maxlength="25" required>
+                                <label>Nome</label>
+                            </div>
                         </div>
                     </div>
-                </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <select class="custom-select" required name="tipo">
+                                <option value="" selected>---------</option>
+                                <option value="text">Texto</option>
+                                <option value="number">Numérico</option>
+                                <option value="date">Data</option>
+                                <option value="file">Arquivo</option>
+                            </select>
+                        </div>
+                        <div class="form col-sm-6">
+                            <div class="inputBox">
+                                <input type="text" name="nome" maxlength="25" required>
+                                <label>Nome</label>
+                            </div>
+                        </div>
+                    </div>
+                </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cancelar</button>
@@ -83,22 +105,26 @@
 </div>
 <script>
     $("#cadastrar").click(function(){
+        campos = $('#campos').serializeArray();
+        campos.unshift({
+            name:'csrfmiddlewaretoken',
+            value:'{{ csrf_token }}'
+        });
+        console.log(campos);
+        $.post("{% url 'cadastrar_campo'%}",$.param(campos, true),function(data){
+            console.log('irru'+data);
+        });
         novoItem = $('#id_novo_item').val();
-        $.ajax({
-            url:  "{% url 'cadastrar_item'%}",
-            type:  'POST',
-            dataType:  'json',
-            data: {
+        $.post("{% url 'cadastrar_item'%}",
+            {
                 csrfmiddlewaretoken: '{{ csrf_token }}',
                 nome:novoItem
             },
-            success: function  (data) {
-                console.log(data);
-                $('#ExemploModalCentralizado').modal('hide');
-                $('select').append('<option value='+data.id+' selected>'+data.nome+'</option>');
-
-            }
+            function(data){
+            console.log(data);
+            $('#ExemploModalCentralizado').modal('hide');
+            $('select').append('<option value='+data.id+' selected>'+data.nome+'</option>');
         });
-    });
+        });
 </script>
 {% endblock%}

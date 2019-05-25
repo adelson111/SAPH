@@ -11,12 +11,14 @@ TYPE = [
 
 class Campo(models.Model):
     nome = models.CharField(max_length=100)
-    descricao = models.TextField(max_length=300)
+    descricao = models.TextField(max_length=300,null=True)
     tipo = models.CharField(
         max_length=6,
         choices= TYPE,
         default='text'
     )
+    def __str__(self):
+        return self.nome
 
 class Item(models.Model):
     nome = models.CharField(max_length=30)

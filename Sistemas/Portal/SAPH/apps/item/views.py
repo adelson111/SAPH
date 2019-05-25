@@ -6,31 +6,37 @@ from django.views.generic import CreateView
 
 from apps.item.forms import ItemForm, CampoForm
 
-def _get_form(request, formcls, prefix):
-    data = request.POST if prefix in request.POST else None
-    return formcls(data, prefix=prefix)
+class Campos(object):
+    campos = []
+
+class  CadastrarCampo(CreateView):
+    def  post(self, request):
+        tipos = request.POST.getlist('tipo')
+        nomes = request.POST.getlist('nome')
+        data = dict()
+        for tipo,nome in zip(tipos,nomes):
+            print(tipo)
+            print(nome)
+            form = CampoForm({
+                'nome':nome,
+                'descricao':'alguma coisa',
+                'tipo': tipo
+            })
+            if form.is_valid():
+                campo = form.save()
+                Campos.campos.append(campo)
+        return JsonResponse(data)
 
 class  CadastrarItem(CreateView):
-
-    def get(self, request, *args, **kwargs):
-        return self.render_to_response({
-            'form1': ItemForm(prefix='item_form'),
-            'form2': CampoForm(prefix='campo_form')
-        })
-
     def  post(self, request):
         data = dict()
-        formOne = _get_form(request,ItemForm,'item_form')
-        formTwo = _get_form(request,CampoForm,'campo_form')
-        campos = []
-        if formTwo.is_valid():
-            campos.append(formTwo.save())
-
-        if formOne.is_valid():
-            item = formOne.save()
-            for campo in campos:
-                item.add(campo)
+        form = ItemForm(request.POST)
+        if form.is_valid():
+            item = form.save()
             data['nome'] = item.nome
             data['id'] = item.id
+            for campo in Campos.campos:
+                item.campus.add(campo)
 
         return JsonResponse(data)
+

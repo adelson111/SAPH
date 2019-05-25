@@ -7,11 +7,11 @@
     <div class="overlay"></div>
     <div class="center">
         {% if not user.username %}
-        <form method="POST" id="form">
+        <form method="POST" action="{% url 'pre_cadasrtrar_funcionario' %}">
             {% csrf_token %}
             <h2>E-mail</h2>
             <input type="email" name="email" maxlength="80" id="id_email" required>
-            <input type="submit" name="acao" value="Cadastrar">
+            <input type="submit" value="Cadastrar">
         </form>
         {% else %}
         <div class="logado centralizar">

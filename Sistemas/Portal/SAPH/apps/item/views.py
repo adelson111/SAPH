@@ -13,18 +13,20 @@ class  CadastrarCampo(CreateView):
     def  post(self, request):
         tipos = request.POST.getlist('tipo')
         nomes = request.POST.getlist('nome')
+        descricoes = request.POST.getlist('descricao')
         data = dict()
-        for tipo,nome in zip(tipos,nomes):
+        for tipo,nome,descricao in zip(tipos,nomes,descricoes):
             print(tipo)
             print(nome)
             form = CampoForm({
                 'nome':nome,
-                'descricao':'alguma coisa',
+                'descricao':descricao,
                 'tipo': tipo
             })
             if form.is_valid():
                 campo = form.save()
-                Campos.campos.append(campo)
+                if campo not in Campos.campos:
+                    Campos.campos.append(campo)
         return JsonResponse(data)
 
 class  CadastrarItem(CreateView):

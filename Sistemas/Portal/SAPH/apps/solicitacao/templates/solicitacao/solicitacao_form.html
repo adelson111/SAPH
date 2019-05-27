@@ -51,12 +51,11 @@
                 </button>
             </div>
             <div class="modal-body">
-                <div class="inputBox">
-                    <input id = 'id_novo_item' type="text" name="nome" maxlength="25" required>
-                    <label>Nome do Item</label>
-                </div>
-                <div>
-                    <button type="button" class="btn btn-outline-secondary btn-sm">Adicionar campo</button>
+                <div class="form">
+                    <div class="inputBox">
+                        <input id = 'id_novo_item' type="text" name="nome" maxlength="25" required>
+                        <label>Nome do Item</label>
+                    </div>
                 </div>
                 <hr class="margem_hr">
                 <form id = 'campos' method="POST">
@@ -76,25 +75,20 @@
                                 <label>Nome</label>
                             </div>
                         </div>
+                        <div class="form col-sm-1"></div>
                     </div>
                     <div class="row">
-                        <div class="col-sm-6">
-                            <select class="custom-select" required name="tipo">
-                                <option value="" selected>---------</option>
-                                <option value="text">Texto</option>
-                                <option value="number">Numérico</option>
-                                <option value="date">Data</option>
-                                <option value="file">Arquivo</option>
-                            </select>
-                        </div>
-                        <div class="form col-sm-6">
-                            <div class="inputBox">
-                                <input type="text" name="nome" maxlength="25" required>
-                                <label>Nome</label>
-                            </div>
+                        <div class="col-sm-12">
+                            <label>Descrição</label>
+                            <textarea class="form-control" rows="3"></textarea>
                         </div>
                     </div>
+                    <div id="div_adicionar"></div>
                 </form>
+                <hr>
+                <div class="texto_direita">
+                    <button type="button" class="btn btn-outline-secondary btn-sm" id="adicionar">Adicionar campo</button>
+                </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cancelar</button>
@@ -103,6 +97,7 @@
         </div>
     </div>
 </div>
+
 <script>
     $("#cadastrar").click(function(){
         campos = $('#campos').serializeArray();
@@ -125,6 +120,47 @@
             $('#ExemploModalCentralizado').modal('hide');
             $('select').append('<option value='+data.id+' selected>'+data.nome+'</option>');
         });
-        });
+    });
+
+    $("#adicionar").click(function(){
+        $("#div_adicionar").append(
+        '<div id="pai">'+
+            '<hr class="hr_item">'+
+            '<div class="texto_direita">'+
+                '<span class="cursor_clique" onclick="remover(this)">X</span>'+
+            '</div>'+
+            '<div class="row">'+
+                '<div class="col-sm-6">'+
+                    '<select class="custom-select" required name="tipo">'+
+                        '<option value="" selected>---------</option>'+
+                        '<option value="text">Texto</option>'+
+                        '<option value="number">Numérico</option>'+
+                        '<option value="date">Data</option>'+
+                        '<option value="file">Arquivo</option>'+
+                    '</select>'+
+                '</div>'+
+                '<div class="form col-sm-6">'+
+                    '<div class="inputBox">'+
+                        '<input type="text" name="nome" maxlength="25" required>'+
+                        '<label>Nome</label>'+
+                    '</div>'+
+                '</div>'+
+            '</div>'+
+            '<div class="row">'+
+                '<div class="col-sm-12">'+
+                    '<label>Descrição</label>'+
+                    '<textarea class="form-control" rows="3"></textarea>'+
+                '</div>'+
+            '</div>'+
+        '</div>'
+        );
+    });
+
+    function remover(filho) {
+        var pai = filho.parentNode.parentNode;
+        pai.remove();
+        console.log(pai);
+    }
 </script>
+
 {% endblock%}

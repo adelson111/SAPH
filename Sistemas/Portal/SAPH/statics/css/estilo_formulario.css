@@ -97,3 +97,7 @@ margin-top: 5%;
 .margem_hr {
     margin-bottom: 10%;
 }
+
+.cursor_clique {
+    cursor: pointer;
+}

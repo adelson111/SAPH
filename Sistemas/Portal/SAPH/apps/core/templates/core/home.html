@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+
 {%block title%}SAPH{%endblock%}
 
 {% block principal %}
@@ -82,23 +83,4 @@
     </div>
 </section>
 
-<script>
-
-$("#form").submit(function(){
-    email = $('#id_email').val();
-    $.ajax({
-        url:  "",
-        type:  'POST',
-        dataType:  'json',
-        data: {
-            csrfmiddlewaretoken: '{{ csrf_token }}',
-            email: email
-        },
-        success: function  (data) {
-            alert("oi");
-        }
-    });
-});
-
-</script>
 {% endblock%}

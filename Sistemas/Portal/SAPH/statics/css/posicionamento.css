@@ -19,3 +19,14 @@
     margin-left: auto;
 }
 
+.texto_direita {
+    text-align: right;
+}
+
+.hr_item {
+    margin-top: 7%;
+}
+
+.apagar_item {
+    margin-botton: 3%;
+}

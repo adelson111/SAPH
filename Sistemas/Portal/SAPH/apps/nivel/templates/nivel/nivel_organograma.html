@@ -12,17 +12,23 @@
     {% for nivel in listaSaida %}
     <li class="list-group-item">
         <div class="row">
-            <div class="col-sm-6 centralizar">
+            <div class="col-sm-4 centralizar">
                 <div>
                     <span><b>Nome</b></span>
                 </div>
                 <span>{{nivel.nome}}</span>
             </div>
-            <div class="col-sm-6 centralizar">
+            <div class="col-sm-4 centralizar">
+                <div>
+                    <span><b>Responsável</b></span>
+                </div>
+                <span>{{nivel.funcionario}}</span>
+            </div>
+            <div class="col-sm-4 centralizar">
                 <div>
                     <span><b>Setor</b></span>
                 </div>
-                <span>Nome do setor</span>
+                <a href="{% url 'detalhar_nivel' nivel.pk %}">iuiui</a>
             </div>
         </div>
     </li>

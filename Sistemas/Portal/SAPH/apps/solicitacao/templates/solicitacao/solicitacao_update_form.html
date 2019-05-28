@@ -11,7 +11,10 @@
     <form method="POST">
         {% csrf_token %}
         <div class="inputBox">
-            <input type="text" name="tipo" value="{{form.tipo.value}}" maxlength="25" id="id_tipo" required>
+            <input type="text" name="tipo" value="{{form.tipo.value}}" maxlength="100" id="id_tipo" required>
+            <div class="invalid-feedback">
+                Please provide a valid tipe.
+            </div>
             <label>Nome</label>
         </div>
         <div class="inputBox">
@@ -68,6 +71,19 @@
     </div>
 </div>
 <script>
+    caracterespecial = new RegExp('^[A-ZÁ-Úá-úa-z ]{5,100}$');
+    $("input[name='tipo']").bind('input',function(){
+        nome = $(this).val();
+        console.log(caracterespecial.test(nome));
+        if(!caracterespecial.test(nome)){
+            $(this).addClass("border border-danger rounded form-control is-invalid");
+        }else{
+            $(this).removeClass("border border-danger rounded form-control is-invalid");
+            $(this).addClass("border border-success rounded form-control is-valid");
+
+
+        }
+    });
     $("#cadastrar").click(function(){
         novoItem = $('#id_novo_item').val();
         $.ajax({

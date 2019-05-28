@@ -7,7 +7,7 @@ from apps.item.models import Item
 
 
 class Delegacao(models.Model):
-    tipo = models.CharField(max_length=25)
+    tipo = models.CharField(max_length=100)
     descricao = models.CharField(max_length=300)
     itens = models.ManyToManyField(Item)
     status = models.CharField(max_length=15)

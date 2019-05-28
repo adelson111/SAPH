@@ -7,12 +7,13 @@ from django.shortcuts import render, get_object_or_404
 # Create your views here.
 from django.urls import reverse_lazy, reverse
 from django.views import View
-from django.views.generic import CreateView, ListView, UpdateView, DeleteView
+from django.views.generic import CreateView, ListView, UpdateView, DeleteView, DetailView
 
 from apps.nivel.models import Nivel
 
 from apps.nivel.forms import NivelEdit, NivelCreate
 from apps.organizacao.models import Organizacao
+from apps.setor.models import Setor
 
 
 class CadastrarNivel(CreateView):
@@ -120,5 +121,11 @@ class PesquisaNivel(View):
             nivelI = ""
         response = json.dumps({'nivelInf': nivelI, 'nivelSup': nivelS })
         return HttpResponse(response, content_type='application/json')
+
+class DetalharNivel(View):
+    def get(self, request, nivel_id):
+        setores = Setor.objects.filter(nivel_id=nivel_id)
+        return render(request, 'nivel/setores_nivel.html', {'setores': setores} )
+
 
 

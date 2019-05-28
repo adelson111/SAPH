@@ -30,11 +30,13 @@ class CadastrarNivel(CreateView):
 
     def form_valid(self, form):
         nivel = form.save()
-        if(nivel.nivelSuperior.pk!=None):
+        if(nivel.nivelSuperior and nivel.nivelSuperior.pk!=None):
+        # if(nivel.nivelSuperior.pk!=None):
             nivelSuperior = get_object_or_404(Nivel, pk=nivel.nivelSuperior.pk)
             nivelSuperior.nivelInferior = nivel
             nivelSuperior.save()
-        if(nivel.nivelInferior.pk!=None):
+        if(nivel.nivelInferior and nivel.nivelInferior.pk!=None):
+        # if(nivel.nivelInferior.pk!=None):
             nivelInferior = get_object_or_404(Nivel, pk=nivel.nivelInferior.pk)
             nivelInferior.nivelSuperior = nivel
             nivelInferior.save()

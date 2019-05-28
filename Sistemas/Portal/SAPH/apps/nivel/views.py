@@ -70,6 +70,9 @@ class Organograma(View):
         o = 0
         while (inferior == False):
 
+            if(i == len(lista)):
+                i = 0
+
             if (superior.nivelSuperior==None):
                 listaSaida.append(superior)
                 superior = superior.nivelInferior

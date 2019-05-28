@@ -37,6 +37,7 @@
     </form>
 </div>
 
+
 <!-- Modal -->
 <div class="modal fade" id="ExemploModalCentralizado" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -79,7 +80,7 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <label>Descrição</label>
-                            <textarea class="form-control" name = "descricao" rows="3"></textarea>
+                            <textarea class="form-control" rows="3" name="descricao"></textarea>
                         </div>
                     </div>
                     <div id="div_adicionar"></div>
@@ -96,6 +97,7 @@
         </div>
     </div>
 </div>
+
 
 <script>
     $("#cadastrar").click(function(){
@@ -158,7 +160,6 @@
     function remover(filho) {
         var pai = filho.parentNode.parentNode;
         pai.remove();
-        console.log(pai);
     }
 </script>
 

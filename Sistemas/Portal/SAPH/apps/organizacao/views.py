@@ -26,8 +26,7 @@ class CadastrarOrganizacao(CreateView):
 
 class AtualizarOrganizacao(UpdateView):
     model = Organizacao
-    fields = ['nome', 'cnpj', 'endereco', 'telefone',
-              'situacao', 'numeroNivel']
+    fields = ['nome', 'cnpj', 'endereco', 'telefone']
 
     def get_queryset(self):
         return Organizacao.objects.filter(pk=self.kwargs['pk'])

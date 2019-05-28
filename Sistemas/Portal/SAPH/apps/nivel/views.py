@@ -48,13 +48,44 @@ class ListarNivel(ListView):
     def get_queryset(self):
         return Nivel.objects.filter(organizacao=self.request.user.funcionario.organizacao)
 
-class Organograma(ListView):
+class Organograma(View):
     model = Nivel
 
-    def get_queryset(self):
-        return Nivel.objects.filter(organizacao=self.request.user.funcionario.organizacao)
+    def get(self, request):
+        nivelall = Nivel.objects.filter(organizacao=self.request.user.funcionario.organizacao)
+        data = {}
+        lista = []
+        superior = ''
+        for nivel in nivelall:
+            if(nivel.nivelSuperior == None):
+                superior = nivel
+            lista.append(nivel)
+        inferior = False
+        i = 0
+        listaSaida = []
+        tam = len(lista)
+        o = 0
+        while (inferior == False):
 
-    template_name_suffix = '_organograma'
+            if (superior.nivelSuperior==None):
+                listaSaida.append(superior)
+                superior = superior.nivelInferior
+                i = 0
+            o += 1
+            print(listaSaida)
+            print(lista[i])
+            if (superior.nivelInferior == lista[i] and listaSaida[0].nivelSuperior == None):
+                listaSaida.append(superior)
+                superior = superior.nivelInferior
+                i = 0
+            if (superior.nivelInferior == None):
+                listaSaida.insert(len(lista), superior)
+                inferior = True
+            i+=1
+
+        return render(request, 'nivel/nivel_organograma.html', {'listaSaida':listaSaida})
+
+    # template_name_suffix = '_organograma'
 
 class AtualizarNivel(UpdateView):
     model = Nivel
@@ -91,34 +122,3 @@ class PesquisaNivel(View):
         return HttpResponse(response, content_type='application/json')
 
 
-class OrdenarNivel(ListView):
-    model = Nivel
-
-    def get_queryset(self):
-        nivelall = Nivel.objects.filter(organizacao=self.request.user.funcionario.organizacao)
-        data = {}
-        lista = []
-        superior = ''
-        for nivel in nivelall:
-            if(nivel.nivelSuperior == None):
-                superior = nivel
-            lista.append(nivel)
-        inferior = False
-        i = 0
-        while (inferior == False and i <= len(lista)+1):
-            if(superior.nivelSuperior ==None):
-                data[i] = lista[i]
-                superior = superior.nivelInferior
-            if(lista[i].nivelSuperior == superior.nivelInferior and lista[i].nivelSuperior.nivelSuperior != None):
-                data[i] = lista[i].nivelSuperior
-                superior = lista[i].nivelSuperior
-            if (lista[i].nivelSuperior == superior.nivelSuperior and lista[i].nivelSuperior.nivelSuperior != None):
-                data[i] = lista[i].nivelSuperior
-                superior = lista[i].nivelInferior
-
-            if(lista[i].nivelInferior==None):
-                inferior = True
-                data[len(lista)-1] = lista[i].nivelSuperior
-
-            i= i + 1
-        a = 88

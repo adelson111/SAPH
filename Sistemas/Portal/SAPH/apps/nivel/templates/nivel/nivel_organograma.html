@@ -8,39 +8,10 @@
 </div>
 
 <ul class="list-group">
-    {% for nivelF in object_list %}
+    {% for nivelF in listaSaida %}
         <span>Começo</span>
         <span>Fora</span>
-        {% for nivelD in object_list %}
-
-            {% if nivelF.nivelInferior == nivelD.nivelSuperior %}
-<span>Dentro</span>
-                <li class="list-group-item">
-                    <div class="row">
-                        <div class="col-sm-4 centralizar">
-                            <div>
-                                <span><b>Nome</b></span>
-                            </div>
-                            <span>{{nivelD.nome}}</span>
-                        </div>
-                        <div class="col-sm-4 centralizar">
-                            <div>
-                                <span><b>Nível Superior</b></span>
-                            </div>
-                            <span>{{nivelD.nivelSuperior}}</span>
-                        </div>
-                        <div class="col-sm-4 centralizar">
-                            <div>
-                                <span><b>Nível Inferior</b></span>
-                            </div>
-                            <span>{{nivelD.nivelInferior}}</span>
-                        </div>
-                    </div>
-                </li>
-
-            {% endif %}
-<span>Outro</span>
-        {%endfor%}
+    <p>{{nivelF}}</p>
 
     {%endfor%}
 

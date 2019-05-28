@@ -8,35 +8,21 @@
 </div>
 
 <ul class="list-group">
-    {% for nivelF in listaSaida %}
-        <span>Começo</span>
-        <span>Fora</span>
-    <p>{{nivelF}}</p>
 
-    {%endfor%}
-
-    <h2 style="margin-top: 30px;">Todo</h2>
-
-    {% for nivelF in object_list %}
+    {% for nivel in listaSaida %}
     <li class="list-group-item">
         <div class="row">
-            <div class="col-sm-4 centralizar">
+            <div class="col-sm-6 centralizar">
                 <div>
                     <span><b>Nome</b></span>
                 </div>
-                <span>{{nivelF.nome}}</span>
+                <span>{{nivel.nome}}</span>
             </div>
-            <div class="col-sm-4 centralizar">
+            <div class="col-sm-6 centralizar">
                 <div>
-                    <span><b>Nível Superior</b></span>
+                    <span><b>Setor</b></span>
                 </div>
-                <span>{{nivelF.nivelSuperior}}</span>
-            </div>
-            <div class="col-sm-4 centralizar">
-                <div>
-                    <span><b>Nível Inferior</b></span>
-                </div>
-                <span>{{nivelF.nivelInferior}}</span>
+                <span>Nome do setor</span>
             </div>
         </div>
     </li>

@@ -6,7 +6,7 @@ from apps.item.models import Item
 
 
 class Solicitacao(models.Model):
-    tipo = models.CharField(max_length=25)
+    tipo = models.CharField(max_length=100)
     descricao = models.CharField(max_length=300, null=False)
     itens = models.ManyToManyField(Item, related_name='itens_solicitacao')
     status = models.CharField(max_length=30, null=False, blank=False)

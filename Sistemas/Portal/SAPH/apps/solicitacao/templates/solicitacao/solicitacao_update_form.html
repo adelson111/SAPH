@@ -11,7 +11,10 @@
     <form method="POST">
         {% csrf_token %}
         <div class="inputBox">
-            <input type="text" name="tipo" value="{{form.tipo.value}}" maxlength="25" id="id_tipo" required>
+            <input type="text" name="tipo" value="{{form.tipo.value}}" maxlength="100" id="id_tipo" required>
+            <div class="invalid-feedback">
+                Please provide a valid tipe.
+            </div>
             <label>Nome</label>
         </div>
         <div class="inputBox">
@@ -39,6 +42,7 @@
     </form>
 </div>
 
+
 <!-- Modal -->
 <div class="modal fade" id="ExemploModalCentralizado" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -51,40 +55,130 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form method="POST" id = 'form-item'>
-                {% csrf_token %}
-                <div class="modal-body form">
-                    <div class="inputBox item">
-                        <input type="text" maxlength="300" id="id_novo_item" required>
-                        <label>Item</label>
+            <div class="modal-body">
+                <div class="form">
+                    <div class="inputBox">
+                        <input id = 'id_novo_item' type="text" name="nome" maxlength="25" required>
+                        <label>Nome do Item</label>
                     </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cancelar</button>
-                    <button type="button" id = 'cadastrar' class="btn btn-outline-success">Adicionar</button>
+                <hr class="margem_hr">
+                <form id = 'campos' method="POST">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <select class="custom-select" required name="tipo">
+                                <option value="" selected>---------</option>
+                                <option value="text">Texto</option>
+                                <option value="number">Numérico</option>
+                                <option value="date">Data</option>
+                                <option value="file">Arquivo</option>
+                            </select>
+                        </div>
+                        <div class="form col-sm-6">
+                            <div class="inputBox">
+                                <input type="text" name="nome" maxlength="100" required>
+                                <label>Nome</label>
+                            </div>
+                        </div>
+                        <div class="form col-sm-1"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <label>Descrição</label>
+                            <textarea class="form-control" rows="2" name="descricao"></textarea>
+                        </div>
+                    </div>
+                    <div id="div_adicionar"></div>
+                </form>
+                <hr>
+                <div class="texto_direita">
+                    <button type="button" class="btn btn-outline-secondary btn-sm" id="adicionar">Adicionar campo</button>
                 </div>
-            </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cancelar</button>
+                <button type="button" id ="cadastrar" class="btn btn-outline-success">Adicionar</button>
+            </div>
         </div>
     </div>
 </div>
+
+
 <script>
+    caracterespecial = new RegExp('^[A-ZÁ-Úá-úa-z ]{5,100}$');
+    $("input[name='tipo']").bind('input',function(){
+        nome = $(this).val();
+        console.log(caracterespecial.test(nome));
+        if(!caracterespecial.test(nome)){
+            $(this).addClass("border border-danger rounded form-control is-invalid");
+        }else{
+            $(this).removeClass("border border-danger rounded form-control is-invalid");
+            $(this).addClass("border border-success rounded form-control is-valid");
+
+
+        }
+    });
     $("#cadastrar").click(function(){
+        campos = $('#campos').serializeArray();
+        campos.unshift({
+            name:'csrfmiddlewaretoken',
+            value:'{{ csrf_token }}'
+        });
+        console.log(campos);
+        $.post("{% url 'cadastrar_campo'%}",$.param(campos, true),function(data){
+            console.log('irru'+data);
+        });
         novoItem = $('#id_novo_item').val();
-        $.ajax({
-            url:  "{% url 'cadastrar_item'%}",
-            type:  'POST',
-            dataType:  'json',
-            data: {
+        $.post("{% url 'cadastrar_item'%}",
+            {
                 csrfmiddlewaretoken: '{{ csrf_token }}',
-                nome:novoItem 
+                nome:novoItem
             },
-            success: function  (data) {
-                console.log(data);
-                $('#ExemploModalCentralizado').modal('hide');
-                $('select').append('<option value='+data.id+' selected>'+data.nome+'</option>');
-                
-            }
+            function(data){
+            console.log(data);
+            $('#ExemploModalCentralizado').modal('hide');
+            $('select').append('<option value='+data.id+' selected>'+data.nome+'</option>');
         });
     });
+
+    $("#adicionar").click(function(){
+        $("#div_adicionar").append(
+        '<div id="pai">'+
+            '<hr class="hr_item">'+
+            '<div class="texto_direita">'+
+                '<span class="cursor_clique" onclick="remover(this)">X</span>'+
+            '</div>'+
+            '<div class="row">'+
+                '<div class="col-sm-6">'+
+                    '<select class="custom-select" required name="tipo">'+
+                        '<option value="" selected>---------</option>'+
+                        '<option value="text">Texto</option>'+
+                        '<option value="number">Numérico</option>'+
+                        '<option value="date">Data</option>'+
+                        '<option value="file">Arquivo</option>'+
+                    '</select>'+
+                '</div>'+
+                '<div class="form col-sm-6">'+
+                    '<div class="inputBox">'+
+                        '<input type="text" name="nome" maxlength="25" required>'+
+                        '<label>Nome</label>'+
+                    '</div>'+
+                '</div>'+
+            '</div>'+
+            '<div class="row">'+
+                '<div class="col-sm-12">'+
+                    '<label>Descrição</label>'+
+                    '<textarea class="form-control" name = "descricao" rows="3"></textarea>'+
+                '</div>'+
+            '</div>'+
+        '</div>'
+        );
+    });
+
+    function remover(filho) {
+        var pai = filho.parentNode.parentNode;
+        pai.remove();
+    }
 </script>
+
 {% endblock%}

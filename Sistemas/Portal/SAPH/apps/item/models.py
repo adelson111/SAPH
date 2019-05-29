@@ -21,7 +21,7 @@ class Campo(models.Model):
         return self.nome
 
 class Item(models.Model):
-    nome = models.CharField(max_length=30)
+    nome = models.CharField(max_length=100)
     campus = models.ManyToManyField(Campo)
     def __str__(self):
         return self.nome

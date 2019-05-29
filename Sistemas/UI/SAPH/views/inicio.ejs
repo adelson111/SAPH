@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <!-- Estilo customizado -->
+    <link rel="stylesheet" type="text/css" href="css/estilo.css">
+
+    <title>SAPH - Sistema de Aprovação por Hierarquia</title>
+  </head>
+  <body>
+
+    <header><!-- inicio Cabecalho -->
+      <nav class="navbar navbar-expand-sm navbar-light bg-info">
+        <div class="container">
+
+          <a href="/" class="navbar-brand">
+           <h2 class="text-info bg-white">SAPH</h2>
+          </a>
+
+          <button class="navbar-toggler" data-toggle="collapse" data-target="#nav-principal">
+            <span class="navbar-toggler-icon "></span>
+          </button>
+
+          <div class="collapse navbar-collapse " id="nav-principal" >
+            <ul class="navbar-nav ml-auto ">
+              <li class="nav-item">
+                <a href="/" class="nav-link">Início</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a href="/solicitacoes" class="nav-link dropdown-toggle" data-toggle='dropdown'>Solicitações</a>
+
+                <div class="dropdown-menu   bg-info" >
+
+                  <a href="/solicitacoes" class="dropdown-item text-light bg-info">Nova Solicitação </a>
+                  <a href="/solicitacoes" class="dropdown-item text-light bg-info">Minhas Solicitações</a>
+                  <a href="/solicitacoes" class="dropdown-item text-light bg-info">Solicitações guardadas</a>
+
+               </div>
+             </li>
+             <li class="nav-item dropdown">
+                <a href="/delegacao" class="nav-link dropdown-toggle" data-toggle='dropdown'>Delegações</a>
+
+                <div class="dropdown-menu bg-info">
+
+                  <a href="/delegacao" class="dropdown-item text-light bg-info">Nova Delegação </a>
+                  <a href="/delegacao" class="dropdown-item text-light bg-info">Minhas Delegações</a>
+
+               </div>
+             </li>
+              <li class="nav-item">
+                <a href="/visualizar" class="nav-link">Visualizar</a>
+              </li>
+              <li class="nav-item">
+                <a href="/Exportar" class="nav-link">Exportar</a>
+              </li>
+              <li class="nav-item bl-10">
+                <a href=""><img src="img/user.png "  class=" bl-10 " id="user"></a>
+                <a href=""><span class="badge badge-primary">2</span></a>
+                <a href=""><span class="badge badge-danger">4</span></a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </nav>
+    </header><!--/fim Cabecalho -->
+
+    <section class="caixa mt-10" >
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 d-flex">
+            <div class="align-self-center">
+              <h2 class="text-center">Organograma da empresa contratante</h2>
+              <p>
+                É possível visualizar a disposição entre os níveis hierárquicos da Empresa X
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6" align="center">
+            <img src="img/organograma.png" class="img-fluid">
+            <a href="" class="btn btn-primary text-center">Exibir Organograma</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section><!-- Início seção home -->
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 d-flex"><!-- Textos da seção -->
+            <div class="align-self-center">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Solicitações Recentes</h4>
+                  <h6 class="card-subtitle">Subtítulo do cartão</h6>
+                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sapien dui, feugiat et lorem quis, fringilla maximus nisl. Vivamus sed est pulvinar, aliquet purus ut, dictum elit.</p>
+                  <a class="btn btn-outline-primary" href="">Ver Solicitação</a>
+                </div>
+              </div>
+            </div>
+          </div><!--/fim textos da seção -->
+          <div class="col-md-4 d-none d-md-block ">
+          </div>
+        </div>
+      </div>
+    </section><!--/fim seção home -->
+
+    <section class="caixa"><!--/Início seção saiba -->
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 d-flex">
+            <div class="align-self-left">
+              <div class="align-self-left">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Delegações Recentes</h4>
+                    <h6 class="card-subtitle">Subtítulo do cartão</h6>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sapien dui, feugiat et lorem quis, fringilla maximus nisl. Vivamus sed est pulvinar, aliquet purus ut, dictum elit.</p>
+                    <a class="btn btn-outline-primary" href="">Ver Solicitação</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+          </div>
+        </div>
+      </div>
+    </section><!--/FIM seção saiba -->
+
+    <footer class="mt-4 mb-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8">
+            <p>
+              <a href="">Início</a>
+              <a href="">Sobre</a>
+              <a href="">Contato</a>
+            </p>
+          </div>
+          <div class="col-md-4 d-flex justify-content-end">
+            <a href="" class="btn btn-outline-dark">
+              <i class="fab fa-facebook"></i>
+            </a>
+            <a href="" class="btn btn-outline-dark ml-2">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="" class="btn btn-outline-dark ml-2">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="" class="btn btn-outline-dark ml-2">
+              <i class="fab fa-youtube"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JavaScript (Opcional) -->
+    <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
+</html>

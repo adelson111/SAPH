@@ -26,4 +26,4 @@ class FuncionarioCadastra(ModelForm):
 
     class Meta:
         model = Funcionario
-        fields = ['nome', 'email', 'senha', 'cpf', 'cargo', 'endereco', 'telefone', 'ativo', 'foto', 'organizacao']
+        fields = ['nome', 'email', 'senha', 'cpf', 'cargo', 'endereco', 'telefone', 'foto', 'organizacao']

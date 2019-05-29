@@ -1,3 +1,5 @@
+from django.contrib import messages
+from django.contrib.messages.views import SuccessMessageMixin
 
 from apps.funcionario.forms import FuncionaioPreCadastro, FuncionarioCadastra, FuncionarioEdit
 from django.core.exceptions import ObjectDoesNotExist
@@ -9,14 +11,14 @@ from django.shortcuts import render
 
 from .models import Funcionario
 from django.views.generic import CreateView, UpdateView, ListView, DeleteView
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
 from django.contrib.auth.models import User
 
-class CadastrarFuncionario(CreateView):
+class CadastrarFuncionario(SuccessMessageMixin, CreateView):
     model = Funcionario
     # fields = ['nome', 'email', 'senha', 'cpf', 'cargo', 'endereco', 'telefone', 'ativo', 'foto', 'organizacao']
     form_class = FuncionarioCadastra
-
+    success_message = "%(nome)s Cadastrado com sucesso"
     def get_form_kwargs(self, *args, **kwargs):
         kwargs = super(CadastrarFuncionario, self).get_form_kwargs()
         # kwargs.update({'organizacao': self.request.user.funcionario.organizacao.pk})
@@ -34,14 +36,39 @@ class CadastrarFuncionario(CreateView):
         except IntegrityError:
             return HttpResponse('FUDEU1')
 
+    def get_success_message(self, cleaned_data):
+        # return messages.add_message(self.request, messages.SUCCESS, self.message_data)
+        return self.success_message % dict(
+            cleaned_data,
+            nome = self.object.nome
+        )
 
-    success_url = reverse_lazy('page_home')
+    def get_success_url(self):
+        return reverse('cadasrtrar_funcionario', args=[self.request.user.funcionario.organizacao.pk])
+    # success_url = reverse_lazy('cadasrtrar_funcionario')
 
-class AtualizarFuncionario(UpdateView):
+class AtualizarFuncionario(SuccessMessageMixin, UpdateView):
     model = Funcionario
-    fields = ['nome', 'cpf', 'cargo', 'endereco', 'telefone', 'ativo', 'foto']
+    fields = ['nome', 'cpf', 'cargo', 'endereco', 'telefone', 'foto']
+
+    # message_data = {
+    #     'mens': 'USUÁRIO ATUALIZADO COM SUCESSO',
+    # }
+    success_message = "%(nome)s atualizado com sucesso"
+
     def get_queryset(self):
         return Funcionario.objects.filter(pk=self.kwargs['pk'])
+
+    def get_success_message(self, cleaned_data):
+        # return messages.add_message(self.request, messages.SUCCESS, self.message_data)
+        return self.success_message % dict(
+            cleaned_data,
+            nome = self.object.nome
+        )
+
+    def get_success_url(self):
+        return reverse('atualizar_funcionario', args=[self.kwargs['pk']])
+
 
     template_name_suffix = '_update_form'
 

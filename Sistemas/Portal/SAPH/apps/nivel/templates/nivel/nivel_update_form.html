@@ -3,6 +3,13 @@
 {% block title %}Atualizar Nível{% endblock%}
 
 {% block main %}
+
+{% if messages %}
+    {% for message in messages %}
+        <input type="hidden" id="mensagem" value="{{message}}">
+    {% endfor %}
+{% endif %}
+
 <div class="titulo">
     <h2>Atualizar Nível</h2>
 </div>
@@ -51,4 +58,15 @@
         <br>
     </form>
 </div>
+<script>
+    $(document).ready(function(){
+        m = $("#mensagem").val();
+        console.log(m);
+        if(m!=undefined){
+            alert(m);
+        }
+    });
+
+
+</script>
 {% endblock%}

@@ -1,6 +1,7 @@
 import json
 from gc import get_objects
 
+from django.contrib.messages.views import SuccessMessageMixin
 from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
 
@@ -16,17 +17,16 @@ from apps.organizacao.models import Organizacao
 from apps.setor.models import Setor
 
 
-class CadastrarNivel(CreateView):
+class CadastrarNivel(SuccessMessageMixin, CreateView):
     model = Nivel
     # fields = ['nome','nivelSuperior', 'nivelInferior', 'funcionario', 'organizacao']
     form_class = NivelCreate
+    success_message = "%(nome)s Cadastrado com sucesso"
+
     def get_form_kwargs(self):
         kwargs = super(CadastrarNivel, self).get_form_kwargs()
         kwargs.update({'organizacao': self.kwargs['pk_organizacao']})
         return kwargs
-
-    def get_success_url(self):
-        return reverse('cadastrar_nivel', args=[self.request.user.funcionario.organizacao.pk])
 
     def form_valid(self, form):
         nivel = form.save()
@@ -43,6 +43,16 @@ class CadastrarNivel(CreateView):
         form.save()
         return super(CadastrarNivel, self).form_valid(form)
 
+
+    def get_success_message(self, cleaned_data):
+        # return messages.add_message(self.request, messages.SUCCESS, self.message_data)
+        return self.success_message % dict(
+            cleaned_data,
+            nome=self.object.nome
+        )
+
+    def get_success_url(self):
+        return reverse('cadastrar_nivel', args=[self.request.user.funcionario.organizacao.pk])
 
 
 class ListarNivel(ListView):
@@ -93,9 +103,17 @@ class Organograma(View):
 class AtualizarNivel(UpdateView):
     model = Nivel
     form_class = NivelEdit
+    success_message = "%(nome)s Atualizado com sucesso"
 
     def get_queryset(self):
         return Nivel.objects.filter(pk=self.kwargs['pk'])
+
+    def get_success_message(self, cleaned_data):
+        # return messages.add_message(self.request, messages.SUCCESS, self.message_data)
+        return self.success_message % dict(
+            cleaned_data,
+            nome=self.object.nome
+        )
 
     template_name_suffix = '_update_form'
 

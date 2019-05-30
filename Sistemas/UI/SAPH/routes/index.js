@@ -3,7 +3,12 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'SAPH' });
+  res.render('index', {
+     title: 'SAPH',
+     home : true
+    },
+
+);
 });
 
 router.get('/contato',(req, res, next)=>{

@@ -3,10 +3,12 @@ from django.db import models
 from django.urls import reverse
 # Create your models here.
 from apps.item.models import Item
+from apps.nivel.models import Nivel
 
 
 class Solicitacao(models.Model):
     tipo = models.CharField(max_length=100)
+    nivel = models.ManyToManyField(Nivel, related_name='nivel_solicitacao')
     descricao = models.CharField(max_length=300, null=False)
     itens = models.ManyToManyField(Item, related_name='itens_solicitacao')
     status = models.CharField(max_length=30, null=False, blank=False)

@@ -66,7 +66,19 @@
             alert(m);
         }
     });
+    caracterespecial = new RegExp('^[A-ZÁ-Úá-úa-z ]{5,100}$');
+    $("input[name='nome']").bind('input',function(){
+        nome = $(this).val();
+        console.log(caracterespecial.test(nome));
+        if(!caracterespecial.test(nome)){
+            $(this).addClass("border border-danger rounded form-control is-invalid");
+        }else{
+            $(this).removeClass("border border-danger rounded form-control is-invalid");
+            $(this).addClass("border border-success rounded form-control is-valid");
 
+
+        }
+    });
 
 </script>
 {% endblock%}

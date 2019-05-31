@@ -4,12 +4,14 @@ from django.shortcuts import render, get_object_or_404
 from django.views.generic import CreateView, UpdateView, ListView
 
 from apps.funcionario.models import Funcionario
+from apps.organizacao.forms import OrganizacaoCadastra
 from .models import Organizacao
 
 
 class CadastrarOrganizacao(CreateView):
     model = Organizacao
-    fields = ['nome', 'cnpj', 'endereco', 'telefone']
+    #fields = ['nome', 'cnpj', 'endereco', 'telefone']
+    form_class = OrganizacaoCadastra
 
     def form_valid(self, form):
         organizacao = form.save(commit=False)

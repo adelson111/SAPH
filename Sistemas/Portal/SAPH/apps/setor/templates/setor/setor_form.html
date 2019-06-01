@@ -3,6 +3,25 @@
 {%block title%}Cadastrar Setor{%endblock%}
 
 {% block main %}
+{% if messages %}
+
+    {% for message in messages %}
+
+        <input type="hidden" id="mensagem" value="{{message}}">
+        <!--<div class="alert alert-success">-->
+            <!--<strong>Success!</strong> This alert box could indicate a successful or positive action.-->
+        <!--</div>-->
+    <!--<div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">-->
+        <!--<div class="toast-header">-->
+        <!--</div>-->
+        <!--<div class="toast-body">-->
+            <!--<p>{{message.color}}</p>-->
+            <!--<h1>{{message}}</h1>-->
+        <!--</div>-->
+      <!--</div>-->
+    {% endfor %}
+
+{% endif %}
 <div class="titulo">
     <h2>Cadastrar Setor</h2>
 </div>
@@ -32,4 +51,14 @@
         <br>
     </form>
 </div>
+
+<script>
+    $(document).ready(function(){
+        m = $("#mensagem").val();
+        <!--console.log(m);-->
+        if(m!=undefined){
+            alert(m);
+         }
+     });
+</script>
 {% endblock %}

@@ -75,32 +75,53 @@ class Organograma(View):
             lista.append(nivel)
         inferior = False
         i = 0
-        listaSaida = []
+        listaSaida = {}
+        # listaSaida1 = {}
+        pos = 0
         tam = len(lista)
         o = 0
-        while (inferior == False):
+        if(tam>0):
+            while (inferior == False):
 
-            if(i == len(lista)):
-                i = 0
+                if(i == len(lista)):
+                    i = 0
+                    pos+=1
 
-            if (superior.nivelSuperior==None):
-                listaSaida.append(superior)
-                superior = superior.nivelInferior
-                i = 0
-            o += 1
-            print(listaSaida)
-            print(lista[i])
-            if (superior.nivelInferior == lista[i] and listaSaida[0].nivelSuperior == None):
-                listaSaida.append(superior)
-                superior = superior.nivelInferior
-                i = 0
-            if (superior.nivelInferior == None):
-                listaSaida.insert(len(lista), superior)
-                inferior = True
-            i+=1
+                if (superior.nivelSuperior==None):
+                    s = Setor.objects.filter(nivel_id=superior.pk)
+                    listaSaida[pos] = []
+                    listaSaida[pos].append(superior)
+                    listaSaida[pos].append(s)
+                    superior = superior.nivelInferior
+                    i = 0
+                    pos += 1
+                o += 1
+                print(listaSaida)
+                print(lista[i])
+                if (superior.nivelInferior == lista[i] and listaSaida.get(0)[0].nivelSuperior == None):
+                    # listaSaida.append(superior)
+                    s = Setor.objects.filter(nivel_id=superior.pk)
+                    listaSaida[pos] = []
+                    listaSaida[pos].append(superior)
+                    listaSaida[pos].append(s)
+                    superior = superior.nivelInferior
+                    i = 0
+                    pos += 1
+                if (superior.nivelInferior == None):
+                    # listaSaida.insert(len(lista), superior)
+                    s = Setor.objects.filter(nivel_id=superior.pk)
+                    tam1 = len(lista)
+                    listaSaida[tam1] = []
+                    listaSaida[tam1].append(superior)
+                    listaSaida[tam1].append(s)
+                    inferior = True
+                    pos += 1
+                i+=1
 
-        return render(request, 'nivel/nivel_organograma.html', {'listaSaida':listaSaida})
-
+            a = 1
+            return render(request, 'nivel/nivel_organograma.html', {'listaSaida':listaSaida})
+        else:
+            return render(request, 'nivel/nivel_organograma.html', {'listaSaida': listaSaida})
     # template_name_suffix = '_organograma'
 
 class AtualizarNivel(UpdateView):

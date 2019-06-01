@@ -1,11 +1,14 @@
 <div class="container">
   <h1>Solicitações</h1>
-  <select name="itens" id="tipo" class="custom-select" required>
-    <%solicitacoes.forEach(function(solicitacao){%>
-          <option value="<%=solicitacao.tipo%>"><%=solicitacao.tipo%></option>
-    <%}); %>
-  </select>
-  <div class="body-solicitacao">
-    <div class="itens"></div>
-  </div>
+  <form class="" action="index.html" method="post">
+    <select name="itens" id="tipo" class="custom-select" required>
+      <%solicitacoes.forEach(function(solicitacao){%>
+            <option value="<%=solicitacao.tipo%>"><%=solicitacao.tipo%></option>
+      <%}); %>
+    </select>
+    <div class="body-solicitacao">
+      <div class="itens"></div>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
 </div>

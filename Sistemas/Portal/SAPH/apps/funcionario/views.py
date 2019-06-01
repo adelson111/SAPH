@@ -1,11 +1,16 @@
 from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
+import json, pickle
+import io
+
+from django.core import serializers
+from django.forms import model_to_dict
 
 from apps.funcionario.forms import FuncionaioPreCadastro, FuncionarioCadastra, FuncionarioEdit
 from django.core.exceptions import ObjectDoesNotExist
 from django.db import IntegrityError
 
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render
 
 
@@ -77,7 +82,15 @@ class ListarFuncionarios(ListView):
 
     def get_queryset(self):
         # return Funcionario.objects.all()
+        # a = Funcionario.objects.filter(organizacao=self.request.user.funcionario.organizacao.pk)
+        #CONSIGO SERIALIZAR A CONSULTA
+        # con = serializers.serialize('json',a)
+        # b = model_to_dict(a)
+        # print(b)
+        # print(con)
         return Funcionario.objects.filter(organizacao=self.request.user.funcionario.organizacao.pk)
+
+
 
 
 class ListarFuncionarioBloqueado(ListView):

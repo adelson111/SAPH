@@ -1,71 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="21e3dfba-0662-49f6-a9f6-9a0d5291d61f" name="Default Changelist" comment="Pegar arquivos">
-      <change afterPath="$PROJECT_DIR$/../../../.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Arquivo/baco_final.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Arquivo/banco.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/nb-configuration.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/Campo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/Delegacao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/Funcionario.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/Item.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/Nivel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/Organizacao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/Setor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/Solicitacao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/rest/Campo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/rest/Delegacao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/rest/Funcionario.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/rest/Item.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/rest/Nivel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/rest/Organizacao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/rest/Setor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/rest/Solicitacao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/saph/Conf.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/webapp/META-INF/context.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/webapp/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/delegacao/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/funcionario/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/item/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/nivel/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/organizacao/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/organizacao/migrations/0002_auto_20190530_1712.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/setor/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/solicitacao/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/statics/js/jquery.mask.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../UI/SAPH/npm-debug.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/content/exportar.ejs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/content/nova-scripts.ejs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/content/nova.ejs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/content/ver.ejs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/conteudo-abaixo.ejs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/conteudo-topo.ejs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/footer-index.ejs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/header-index.ejs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/section-index.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/com/saph/App.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/com/saph/App.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/SAPH.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/SAPH.iml" afterDir="false" />
+    <list default="true" id="21e3dfba-0662-49f6-a9f6-9a0d5291d61f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/funcionario/templates/funcionario/funcionario_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/funcionario/templates/funcionario/funcionario_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/funcionario/templates/funcionario/funcionario_update_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/funcionario/templates/funcionario/funcionario_update_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/nivel/templates/nivel/nivel_update_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/nivel/templates/nivel/nivel_update_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/organizacao/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/organizacao/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/organizacao/templates/organizacao/organizacao_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/organizacao/templates/organizacao/organizacao_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/organizacao/templates/organizacao/organizacao_update_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/organizacao/templates/organizacao/organizacao_update_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/solicitacao/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/solicitacao/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/SAPH/routes/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/views/base/head.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/views/delegacao.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/SAPH/views/delegacao.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/views/exportar.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/SAPH/views/exportar.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/views/index.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/SAPH/views/index.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/views/inicio.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/SAPH/views/inicio.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/views/solicitacoes.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/SAPH/views/solicitacoes.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/views/visualizar.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/SAPH/views/visualizar.ejs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -178,7 +115,14 @@
       <option name="project" value="LOCAL" />
       <updated>1559300316028</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Pegar arquivos">
+      <created>1559366674417</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1559366674417</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">

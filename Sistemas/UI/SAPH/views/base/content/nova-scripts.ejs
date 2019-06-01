@@ -1,0 +1,23 @@
+<script type="text/javascript">
+  $( "#tipo" ).change(function() {
+    tipo = $('#tipo option:selected').val();
+    <% solicitacoes.forEach(function(solicitacao){%>
+      if (tipo == '<%=solicitacao.tipo%>'){
+        $('.body-solicitacao').html('');
+        <% solicitacao.itens.forEach(function(item){%>
+          $('.body-solicitacao').append(
+            '<hr>'+
+            '<h3><%=item.nome%></h3>'+
+            '<div class="form-row">'+
+              <%item.campos.forEach(function(campo){%>
+                '<div class="col">'+
+                  '<input type="<%=campo.tipo%>" class="form-control<%=campo.tipo=='file'?'-file':''%>" placeholder="<%=campo.nome%>">'+
+                '</div>'+
+              <%});%>
+            '</div>'
+          );
+        <%});%>
+      }
+    <%});%>
+  });
+</script>

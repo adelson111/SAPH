@@ -1,24 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="21e3dfba-0662-49f6-a9f6-9a0d5291d61f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/core/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/delegacao/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/funcionario/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/nivel/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/organizacao/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/organizacao/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/setor/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/solicitacao/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/statics/js/regex.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/delegacao/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/item/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/organizacao/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/organizacao/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/solicitacao/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/statics/js/mascara.js" beforeDir="false" afterPath="$PROJECT_DIR$/statics/js/mascara.js" afterDir="false" />
+    <list default="true" id="21e3dfba-0662-49f6-a9f6-9a0d5291d61f" name="Default Changelist" comment="Pegar arquivos">
+      <change afterPath="$PROJECT_DIR$/../../../.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Arquivo/baco_final.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Arquivo/banco.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/nb-configuration.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/Campo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/Delegacao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/Funcionario.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/Item.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/Nivel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/Organizacao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/Setor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/Solicitacao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/rest/Campo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/rest/Delegacao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/rest/Funcionario.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/rest/Item.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/rest/Nivel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/rest/Organizacao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/rest/Setor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/rest/Solicitacao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/saph/Conf.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/webapp/META-INF/context.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/webapp/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/delegacao/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/funcionario/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/item/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/nivel/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/organizacao/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/organizacao/migrations/0002_auto_20190530_1712.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/setor/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/solicitacao/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/statics/js/jquery.mask.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../UI/SAPH/npm-debug.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/content/exportar.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/content/nova-scripts.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/content/nova.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/content/ver.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/conteudo-abaixo.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/conteudo-topo.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/footer-index.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/header-index.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/section-index.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/com/saph/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/com/saph/App.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/SAPH.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/SAPH.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/funcionario/templates/funcionario/funcionario_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/funcionario/templates/funcionario/funcionario_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/funcionario/templates/funcionario/funcionario_update_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/funcionario/templates/funcionario/funcionario_update_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nivel/templates/nivel/nivel_update_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/nivel/templates/nivel/nivel_update_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/organizacao/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/organizacao/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/organizacao/templates/organizacao/organizacao_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/organizacao/templates/organizacao/organizacao_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/organizacao/templates/organizacao/organizacao_update_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/organizacao/templates/organizacao/organizacao_update_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/solicitacao/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/solicitacao/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/SAPH/routes/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/views/base/head.ejs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/views/delegacao.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/SAPH/views/delegacao.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/views/exportar.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/SAPH/views/exportar.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/views/index.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/SAPH/views/index.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/views/inicio.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/SAPH/views/inicio.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/views/solicitacoes.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/SAPH/views/solicitacoes.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/views/visualizar.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/SAPH/views/visualizar.ejs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,17 +74,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/base.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="95" selection-start-line="9" selection-start-column="95" selection-end-line="9" selection-end-column="95" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
@@ -81,62 +118,6 @@
             <path>
               <item name="SAPH" type="b2602c69:ProjectViewProjectNode" />
               <item name="SAPH" type="462c0819:PsiDirectoryNode" />
-              <item name="apps" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SAPH" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SAPH" type="462c0819:PsiDirectoryNode" />
-              <item name="apps" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SAPH" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SAPH" type="462c0819:PsiDirectoryNode" />
-              <item name="apps" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SAPH" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SAPH" type="462c0819:PsiDirectoryNode" />
-              <item name="apps" type="462c0819:PsiDirectoryNode" />
-              <item name="nivel" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SAPH" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SAPH" type="462c0819:PsiDirectoryNode" />
-              <item name="apps" type="462c0819:PsiDirectoryNode" />
-              <item name="organizacao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SAPH" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SAPH" type="462c0819:PsiDirectoryNode" />
-              <item name="apps" type="462c0819:PsiDirectoryNode" />
-              <item name="setor" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SAPH" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SAPH" type="462c0819:PsiDirectoryNode" />
-              <item name="apps" type="462c0819:PsiDirectoryNode" />
-              <item name="solicitacao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SAPH" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SAPH" type="462c0819:PsiDirectoryNode" />
-              <item name="statics" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SAPH" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SAPH" type="462c0819:PsiDirectoryNode" />
-              <item name="statics" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SAPH" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SAPH" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -147,7 +128,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/apps/solicitacao" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.CommitDialog" />
   </component>
@@ -172,29 +153,6 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
-    <configuration name="run" type="PythonConfigurationType" factoryName="Python">
-      <module name="SAPH" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="$PROJECT_DIR$/../../../../AmbienteDjango/venvSAPH/bin/python" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/manage.py" />
-      <option name="PARAMETERS" value="runserver" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -206,10 +164,25 @@
       <option name="presentableId" value="Default" />
       <updated>1559101856694</updated>
     </task>
+    <task id="LOCAL-00001" summary="Pegar arquivo">
+      <created>1559300049044</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1559300049044</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Apagar ṕycache">
+      <created>1559300316027</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1559300316028</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="-4" width="1301" height="772" extended-state="6" />
+    <frame x="64" y="-4" width="1303" height="773" extended-state="6" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24960877" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -224,7 +197,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.61180127" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.33229813" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Python Console" order="10" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.32972136" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -288,6 +261,12 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Pegar arquivo" />
+    <MESSAGE value="Apagar ṕycache" />
+    <MESSAGE value="Pegar arquivos" />
+    <option name="LAST_COMMIT_MESSAGE" value="Pegar arquivos" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/apps/funcionario/migrations/__init__.py">
@@ -462,10 +441,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/apps/delegacao/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="95" selection-start-line="9" selection-start-column="95" selection-end-line="9" selection-end-column="95" />
+        <state relative-caret-position="150">
+          <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
         </state>
       </provider>
     </entry>

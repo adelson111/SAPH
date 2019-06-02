@@ -1,14 +1,73 @@
-<div class="container">
-  <h1>Solicitações</h1>
-  <form class="" action="index.html" method="post">
-    <select name="itens" id="tipo" class="custom-select" required>
-      <%solicitacoes.forEach(function(solicitacao){%>
-            <option value="<%=solicitacao.tipo%>"><%=solicitacao.tipo%></option>
-      <%}); %>
-    </select>
-    <div class="body-solicitacao">
-      <div class="itens"></div>
+
+<div class="container-fluid ">
+  <div class="row flex-xl-nowrap">
+
+  <div class="col-12 col-md-9 col-xl-3 py-md-3">
+    <div class="card">
+      <div class="card-header  text-center py-4" id="home">
+        <h3>Ítens</h3>
+      </div>
+      <ul id="itens">
+        <li>Item1</li>
+        <ul>
+          <li>Campo</li>
+        </ul>
+      </ul>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
+  </div>
+  <!-- col-12 col-md-3 col-xl-2 bd-content-->
+
+  <div class="col-12 col-md-9 col-xl-9 py-md-3 pl-md-5 bd-content">
+      <div class="card">
+        <div class="card-header  text-center py-4" id="home">
+          <h3>Nova solicitação</h3>
+        </div>
+        <br>
+          <div class="card-body px-lg-5 pt-0 pt-30">
+            <form class="text-left" style="color: #757575;" action="index.html" method="post">
+              <div class="col">
+                <div class="md-form">
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend ">
+                      <label class="input-group-text " for="inputGroupSelect01">Tipos de solicitações</label>
+                    </div>
+                    <select name="itens" id="tipo" class="custom-select" required>
+                      <%solicitacoes.forEach(function(solicitacao){%>
+                            <option value="<%=solicitacao.tipo%>"><%=solicitacao.tipo%></option>
+                      <%}); %>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="body-solicitacao">
+                  <div class="itens"></div>
+                </div>
+
+              </div>
+            </form>
+          </div>
+          <div class="card-header text-center" id="home">
+
+              <button type="submit" class="btn btn-info btn-lg" >Enviar</button>
+              <button type="submit"  class="btn btn-success btn-lg" >Guardar</button>
+
+          </div>
+      </div>
+  </div>
+</div>
+<nav aria-label="..." class="text-center">
+  <ul class="pagination justify-content-end">
+    <li class="page-item disabled">
+      <a class="page-link" href="#" tabindex="-1"><</a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item active">
+      <a class="page-link" href="#">2 <span class="sr-only">(atual)</span></a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item">
+      <a class="page-link" href="#">></a>
+    </li>
+  </ul>
+</nav>
 </div>

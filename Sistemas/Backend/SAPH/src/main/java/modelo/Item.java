@@ -13,7 +13,7 @@ import java.util.ArrayList;
  */
 public class Item {
     private String nome;
-    private ArrayList<Campo> campo = new ArrayList<>();
+    private ArrayList<Campo> campo = new ArrayList<Campo>();
 
     public Item() {
     }

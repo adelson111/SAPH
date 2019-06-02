@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class Delegacao {
     private String tipo;
     private String descricao;
-    private ArrayList<Item> item = new ArrayList<>();
+    private ArrayList<Item> item = new ArrayList<Item>();
     private String status;
 
     public Delegacao() {

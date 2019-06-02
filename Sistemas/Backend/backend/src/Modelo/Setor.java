@@ -3,27 +3,51 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package modelo;
+package Modelo;
 
 import java.util.ArrayList;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  *
- * @author adelson
+ * @author andre
  */
+@Entity
+@Table(name = "tb_setor")
 public class Setor {
+    @Id 
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int id;
+    @Column
     private String nome;
-    private ArrayList<Funcionario> funcionario = new ArrayList<Funcionario>();
+    @Column
+    private ArrayList<Funcionario> funcionario = new ArrayList<>();
+    @Column
     private Nivel nivel;
+    @Column
     private Funcionario gerente;
 
     public Setor() {
     }
 
-    public Setor(String nome, Nivel nivel, Funcionario gerente) {
+    public Setor(int id, String nome, Nivel nivel, Funcionario gerente) {
+        this.id = id;
         this.nome = nome;
         this.nivel = nivel;
         this.gerente = gerente;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNome() {

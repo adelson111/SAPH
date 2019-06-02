@@ -32,7 +32,7 @@
                       <label class="input-group-text " for="inputGroupSelect01">Tipos de solicitações</label>
                     </div>
                     <select name="itens" id="tipo" class="custom-select"  required>
-                      <%solicitacoes.forEach(function(solicitacao){%>
+                      <%tipos.forEach(function(solicitacao){%>
                             <option value="<%=solicitacao.tipo%>"><%=solicitacao.tipo%></option>
                       <%}); %>
                     </select>

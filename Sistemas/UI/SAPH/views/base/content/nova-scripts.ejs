@@ -1,7 +1,7 @@
 <script type="text/javascript">
   $( "#tipo" ).change(function() {
     tipo = $('#tipo option:selected').val();
-    <% solicitacoes.forEach(function(solicitacao){%>
+    <% tipos.forEach(function(solicitacao){%>
       if (tipo == '<%=solicitacao.tipo%>'){
         $('.body-solicitacao').html('');
         $('#itens').html('');

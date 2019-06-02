@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class Solicitacao {
     private String tipo;
     private String descricao;
-    private ArrayList<Item> item = new ArrayList<Item>();
+    private ArrayList<Item> itens = new ArrayList<Item>();
     private String status;
 
     public Solicitacao() {
@@ -43,11 +43,11 @@ public class Solicitacao {
     }
 
     public ArrayList<Item> getItem() {
-        return item;
+        return itens;
     }
 
     public void setItem(ArrayList<Item> item) {
-        this.item = item;
+        this.itens = item;
     }
 
     public String getStatus() {

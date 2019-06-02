@@ -13,7 +13,7 @@ import java.util.ArrayList;
  */
 public class Item {
     private String nome;
-    private ArrayList<Campo> campo = new ArrayList<Campo>();
+    private ArrayList<Campo> campos = new ArrayList<Campo>();
 
     public Item() {
     }
@@ -31,11 +31,11 @@ public class Item {
     }
 
     public ArrayList<Campo> getCampo() {
-        return campo;
+        return campos;
     }
 
     public void setCampo(ArrayList<Campo> campo) {
-        this.campo = campo;
+        this.campos = campo;
     }
     
     

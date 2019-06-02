@@ -9,3 +9,12 @@ class SolicitacaoForm(ModelForm):
         model = Solicitacao
         fields = ['tipo','descricao','itens']
 
+class CreateSolicitacao(ModelForm):
+
+    def __init__(self, *args, **kwargs):
+        super(CreateSolicitacao, self).__init__(*args, **kwargs)
+        self.fields['nivel'].widget.attrs = {'class': 'custom-select'}
+
+    class Meta:
+        model = Solicitacao
+        fields = ['tipo', 'descricao', 'itens', 'nivel']

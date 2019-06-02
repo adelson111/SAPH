@@ -3,6 +3,13 @@
 {%block title%}Cadastrar Solicitação{%endblock%}
 
 {% block main %}
+
+{% if messages %}
+    {% for message in messages %}
+        <input type="hidden" id="mensagem" value="{{message}}">
+    {% endfor %}
+{% endif %}
+
 <div class="titulo">
     <h2>Cadastrar Solicitação</h2>
 </div>
@@ -17,6 +24,10 @@
         <div class="inputBox">
             <input type="text" name="descricao" maxlength="300" id="id_descricao" required>
             <label>Descrição</label>
+        </div>
+        <div>
+            <label>Niveis</label>
+            {{form.nivel}}
         </div>
         <div>
             <div>
@@ -160,6 +171,13 @@
         var pai = filho.parentNode.parentNode;
         pai.remove();
     }
+    $(document).ready(function(){
+        m = $("#mensagem").val();
+        <!--console.log(m);-->
+        if(m!=undefined){
+            alert(m);
+         }
+     });
 </script>
 
 {% endblock%}

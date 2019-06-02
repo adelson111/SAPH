@@ -82,12 +82,12 @@ class ListarFuncionarios(ListView):
 
     def get_queryset(self):
         # return Funcionario.objects.all()
-        # a = Funcionario.objects.filter(organizacao=self.request.user.funcionario.organizacao.pk)
+        a = Funcionario.objects.filter(organizacao=self.request.user.funcionario.organizacao.pk)
         #CONSIGO SERIALIZAR A CONSULTA
-        # con = serializers.serialize('json',a)
+        con = serializers.serialize('json', a)
         # b = model_to_dict(a)
         # print(b)
-        # print(con)
+        print(con)
         return Funcionario.objects.filter(organizacao=self.request.user.funcionario.organizacao.pk)
 
 

@@ -13,7 +13,7 @@ import java.util.ArrayList;
  */
 public class Setor {
     private String nome;
-    private ArrayList<Funcionario> funcionario = new ArrayList<>();
+    private ArrayList<Funcionario> funcionario = new ArrayList<Funcionario>();
     private Nivel nivel;
     private Funcionario gerente;
 

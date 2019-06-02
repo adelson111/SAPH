@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="67baca69-eba1-402e-a20d-5727e8d57cdc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sistemas/Backend/backend/build.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sistemas/Backend/backend/manifest.mf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sistemas/Backend/backend/nbproject/build-impl.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sistemas/Backend/backend/nbproject/genfiles.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sistemas/Backend/backend/nbproject/private/private.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sistemas/Backend/backend/nbproject/private/private.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sistemas/Backend/backend/nbproject/project.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sistemas/Backend/backend/nbproject/project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sistemas/Backend/backend/src/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sistemas/Backend/backend/nbproject/project.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Sistemas/Backend/backend/nbproject/project.properties" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -165,7 +157,14 @@
       <option name="project" value="LOCAL" />
       <updated>1559480596822</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Conexão JPA com POSTGRES">
+      <created>1559481752891</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1559481752892</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -192,7 +191,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Atualização na Documentação" />
-    <option name="LAST_COMMIT_MESSAGE" value="Atualização na Documentação" />
+    <MESSAGE value="Conexão JPA com POSTGRES" />
+    <option name="LAST_COMMIT_MESSAGE" value="Conexão JPA com POSTGRES" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/.gitignore">

@@ -18,20 +18,20 @@
   <!-- col-12 col-md-3 col-xl-2 bd-content-->
 
   <div class="col-12 col-md-9 col-xl-9 py-md-3 pl-md-5 bd-content">
-      <div class="card fixed " style="height: 700px; text-align: right;" id="solicitacao">
+      <div class="card fixed " style="height: 700px; text-align: right;">
         <div class="card-header-fixed text-center py-4" id="home">
           <h3>Nova solicitação</h3>
         </div>
         <br>
           <div class="card-body px-lg-5 pt-0 pt-30 overflow-auto" >
-            <form class="text-left " style="color: #757575;" action="index.html" method="post">
+            <form class="text-left " style="color: #757575;" action="index.html" method="post" id="solicitacao" >
               <div class="col">
                 <div class="md-form">
                   <div class="input-group mb-3">
                     <div class="input-group-prepend ">
                       <label class="input-group-text " for="inputGroupSelect01">Tipos de solicitações</label>
                     </div>
-                    <select name="itens" id="tipo" class="custom-select" required>
+                    <select name="itens" id="tipo" class="custom-select"  required>
                       <%solicitacoes.forEach(function(solicitacao){%>
                             <option value="<%=solicitacao.tipo%>"><%=solicitacao.tipo%></option>
                       <%}); %>
@@ -51,10 +51,18 @@
 
               <button type="submit" class="btn btn-info btn-lg" >Enviar</button>
               <button type="submit"  class="btn btn-success btn-lg" >Guardar</button>
-              <i class="fab fa-print"></i>
+
+              <a href="#">Exportar</a>
 
           </div>
       </div>
   </div>
 </div>
 </div>
+<style type="text/css">
+  @media (max-width: 575.98px) {
+    .form-row {
+      display: block;
+    }
+   }
+</style>

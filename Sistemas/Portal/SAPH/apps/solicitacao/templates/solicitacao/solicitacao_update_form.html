@@ -3,6 +3,7 @@
 {%block title%}Atualizar Solicitacao{%endblock%}
 
 {% block main %}
+
 <div class="titulo">
     <h2>Atualizar Solicitacao</h2>
 </div>
@@ -20,6 +21,10 @@
         <div class="inputBox">
             <input type="text" name="descricao" value="{{form.descricao.value}}" maxlength="300" id="id_descricao" required>
             <label>Descrição</label>
+        </div>
+        <div>
+            <label>Niveis</label>
+            {{form.nivel}}
         </div>
         <div>
             <div>

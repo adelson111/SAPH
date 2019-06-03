@@ -4,9 +4,7 @@
  * and open the template in the editor.
  */
 package teste;
-
 import Dao.OrganizacaoDao;
-import Modelo.Funcionario;
 import Modelo.Organizacao;
 
 /**

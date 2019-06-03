@@ -27,12 +27,15 @@ public class OrganizacaoDao {
             //conecta ao banco
             em.getTransaction().begin();
             //salva o objeto produto
+            System.out.println("begin");
             em.merge(organizacao);
             //executa o comando no banco de dados
+            System.out.println("marge");
             em.getTransaction().commit();
             System.out.println("Organização Cadastrado!");
         }catch(Exception e){
             //desfaz tudo caso ocorra uma exeção
+            e.printStackTrace();
             em.getTransaction().rollback();
         }finally{
             //encerra a conexão

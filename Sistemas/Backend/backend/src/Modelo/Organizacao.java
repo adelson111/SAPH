@@ -5,6 +5,7 @@
  */
 package Modelo;
 
+import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,10 +19,11 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "tb_organizacao")
-public class Organizacao {
+public class Organizacao implements Serializable {
+    private static final long serialVersionUID = 1L;
     @Id 
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private long id;
     @Column
     private String nome;
     @Column
@@ -48,13 +50,14 @@ public class Organizacao {
         this.numeroNivel = numeroNivel;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
+
 
     public String getNome() {
         return nome;

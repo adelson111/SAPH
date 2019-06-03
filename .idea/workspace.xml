@@ -2,41 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="67baca69-eba1-402e-a20d-5727e8d57cdc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sistemas/Backend/backend/build/built-jar.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sistemas/Backend/backend/build/classes/.netbeans_automatic_build" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sistemas/Backend/backend/build/classes/.netbeans_update_resources" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sistemas/Backend/backend/build/classes/Dao/OrganizacaoDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sistemas/Backend/backend/build/classes/META-INF/persistence.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sistemas/Backend/backend/build/classes/Modelo/Funcionario.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sistemas/Backend/backend/build/classes/Modelo/Funcionario_.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sistemas/Backend/backend/build/classes/Modelo/Nivel.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sistemas/Backend/backend/build/classes/Modelo/Nivel_.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sistemas/Backend/backend/build/classes/Modelo/Organizacao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sistemas/Backend/backend/build/classes/Modelo/Organizacao_.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sistemas/Backend/backend/build/classes/Modelo/Setor.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sistemas/Backend/backend/build/classes/Modelo/Setor_.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sistemas/Backend/backend/build/classes/Modelo/Tipo_Campo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sistemas/Backend/backend/build/classes/Modelo/Tipo_Campo_.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sistemas/Backend/backend/build/classes/Modelo/Tipo_Item.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sistemas/Backend/backend/build/classes/Modelo/Tipo_Item_.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sistemas/Backend/backend/build/classes/resouces.res" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sistemas/Backend/backend/build/classes/teste/teste.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sistemas/Backend/backend/build/generated-sources/ap-source-output/Modelo/Funcionario_.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sistemas/Backend/backend/build/generated-sources/ap-source-output/Modelo/Nivel_.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sistemas/Backend/backend/build/generated-sources/ap-source-output/Modelo/Organizacao_.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sistemas/Backend/backend/build/generated-sources/ap-source-output/Modelo/Setor_.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sistemas/Backend/backend/dist/README.TXT" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sistemas/Backend/backend/dist/backend.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sistemas/Backend/backend/dist/lib/eclipselink.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sistemas/Backend/backend/dist/lib/javax.persistence_2.1.0.v201304241213.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sistemas/Backend/backend/dist/lib/org.eclipse.persistence.jpa.jpql_2.5.2.v20140319-9ad6abd.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sistemas/Backend/backend/dist/lib/postgresql-42.2.5.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sistemas/Backend/backend/dist/lib/postgresql-9.4.1209.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sistemas/Backend/backend/src/Modelo/Tipo_Campo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sistemas/Backend/backend/src/Modelo/Tipo_Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sistemas/Backend/backend/nbproject/private/private.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Sistemas/Backend/backend/nbproject/private/private.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sistemas/Backend/backend/nbproject/project.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Sistemas/Backend/backend/nbproject/project.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/SAPH.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -204,7 +174,14 @@
       <option name="project" value="LOCAL" />
       <updated>1559486366708</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="adicionada a biblioteca do postgres ao backend, e continuação das classes">
+      <created>1559501123854</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1559501123854</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -220,7 +197,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="7" visible="true" weight="0.32943144" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32943144" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32943144" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50074404" side_tool="true" weight="0.32943144" />
       <window_info anchor="bottom" id="Python Console" order="10" />
@@ -233,15 +210,10 @@
     <MESSAGE value="Atualização na Documentação" />
     <MESSAGE value="Conexão JPA com POSTGRES" />
     <MESSAGE value="Classes backend" />
-    <option name="LAST_COMMIT_MESSAGE" value="Classes backend" />
+    <MESSAGE value="adicionada a biblioteca do postgres ao backend, e continuação das classes" />
+    <option name="LAST_COMMIT_MESSAGE" value="adicionada a biblioteca do postgres ao backend, e continuação das classes" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="30" selection-start-column="30" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore" />
   </component>
 </project>

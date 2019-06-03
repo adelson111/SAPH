@@ -1,6 +1,6 @@
 
 <div class="container-fluid ">
-  <div class="row flex-xl-nowrap">
+  <div class="row flex-xl-nowrap" id="cards">
 
   <div class="col-12 col-md-9 col-xl-3 py-md-3 ">
     <div class="card">
@@ -18,12 +18,13 @@
   <!-- col-12 col-md-3 col-xl-2 bd-content-->
 
   <div class="col-12 col-md-9 col-xl-9 py-md-3 pl-md-5 bd-content">
-      <div class="card fixed " style="height: 700px; text-align: right;">
+      <div class="card fixed " style="height: 700px; text-align: right;" id="campos">
         <div class="card-header-fixed text-center py-4" id="home">
           <h3>Nova solicitação</h3>
         </div>
         <br>
-          <div class="card-body px-lg-5 pt-0 pt-30 overflow-auto" >
+
+          <div class="card-body px-lg-5 pt-0 pt-30 overflow-auto"  id="cardSolici">
             <form class="text-left " style="color: #757575;" action="index.html" method="post" id="solicitacao" >
               <div class="col">
                 <div class="md-form">
@@ -47,7 +48,7 @@
             </form>
             <hr>
           </div>
-          <div class="card-header text-center" id="home">
+          <div class="card-header text-center rodapeCard" id="home">
 
               <button type="submit" class="btn btn-info btn-lg" >Enviar</button>
               <button type="submit"  class="btn btn-success btn-lg" >Guardar</button>
@@ -59,25 +60,17 @@
   </div>
 </div>
 </div>
+
 <style type="text/css">
   @media (max-width: 575.98px) {
     .form-row {
       display: block;
     }
-    #imprimir{
-      display: none;
-    }
-    #tipoSolicitacao{
-      display: none;
-    }
-   }
-   @media print {
-     body{
-       background-color: red;
-     }
    }
 </style>
+
 <script type="text/javascript">
+
 $('#imprimir').click(function(){
    window.print('new', '_blank');
 });

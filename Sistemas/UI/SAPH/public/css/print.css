@@ -1,0 +1,43 @@
+
+* {
+   background: transparent;
+   color: #000;
+   text-shadow: none;
+   filter: none;
+  -ms-filter: none;
+  font-size: 14px;
+}
+
+  .print {
+    display: block;
+  }
+  .no-print {
+    display: none;
+  }
+  .header {
+      padding-top: 0px;
+  }
+	nav, footer, video, audio, object, embed, input{
+			display:none;
+	}
+
+   .rodapeCard, .form-control-file{
+     display: none;
+   }
+  #cardSolici{
+    height: auto;
+    
+  }
+
+  #cards{
+    position: relative;
+    left: 10%;
+  }
+
+   #tipo{
+     font-size: 16px;
+   }
+
+  #home{
+    background-color: white;
+  }

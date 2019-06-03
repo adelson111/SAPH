@@ -23,7 +23,7 @@
             <a href="/contato" class="nav-link">Contato</a>
           </li>
           <li class="nav-item">
-            <a href="/login" class="btn btn-outline-light ml-4">Entrar</a>
+            <a href="/login"  class="btn btn-outline-light text-dark ml-4" data-toggle="modal" data-target="#myModal">Entrar</a>
           </li>
         </ul>
       </div>
@@ -31,3 +31,50 @@
     </div>
   </nav>
 </header><!--/fim Cabecalho -->
+<!-- The Modal -->
+  <div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header" id="home">
+          <h4 class=" modal-title" width:"600px"; >SAPH</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+          <div class="lowin-box-inner">
+            <div id="formContent">
+              <!-- Tabs Titles -->
+
+              <!-- Icon -->
+              <div class="fadeIn first">
+                <h3>Login</h3>
+              </div>
+
+              <!-- Login Form -->
+              <form>
+                <input type="text" id="login" class="fadeIn second" name="login" required  placeholder="email">
+                <input type="text" id="password" class="fadeIn third" name="login"  required placeholder="senha">
+                <input type="submit" class="fadeIn fourth" value="Entrar">
+              </form>
+
+              <!-- Remind Passowrd -->
+              <div id="formFooter">
+                <hr>
+                <a class="alternate sidepanel-item-small  nav-link active " href="#">Esqueceu sua senha?</a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer" id="home">
+          <button type="button" class="btn btn-info" data-dismiss="modal">Fechar</button>
+        </div>
+
+      </div>
+    </div>
+  </div>

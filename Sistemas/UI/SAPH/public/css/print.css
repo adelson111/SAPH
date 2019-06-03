@@ -26,7 +26,7 @@
    }
   #cardSolici{
     height: auto;
-    
+
   }
 
   #cards{
@@ -40,4 +40,8 @@
 
   #home{
     background-color: white;
+  }
+  #cardSolici, #itens{
+    overflow: none;
+    height: auto;
   }

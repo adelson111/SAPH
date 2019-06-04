@@ -30,3 +30,16 @@
 .apagar_item {
     margin-botton: 3%;
 }
+
+.linha {
+    margin-bottom: 5%;
+    border-bottom-style: dotted;
+    border-bottom-width: 2px;
+}
+
+.setor {
+    background-color: #9d9fa2;
+    border: 1px solid black;
+    width: 50%;
+    float: left;
+}

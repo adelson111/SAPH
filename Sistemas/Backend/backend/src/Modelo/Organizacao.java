@@ -18,9 +18,14 @@ import javax.persistence.Table;
  * @author andre
  */
 @Entity
+<<<<<<< HEAD
 @Table(name = "tb_organizacao")
 public class Organizacao implements Serializable {
     private static final long serialVersionUID = 1L;
+=======
+@Table(name = "organizacao")
+public class Organizacao {
+>>>>>>> e511abbac27b1d1f59cb2bf39b504ec7e2dcbc61
     @Id 
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;

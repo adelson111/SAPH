@@ -18,12 +18,12 @@ import javax.persistence.Table;
  * @author andre
  */
 @Entity
-@Table(name = "tb_setor")
+@Table(name = "setor")
 public class Setor {
     @Id 
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    @Column
+    @Column(length=20)
     private String nome;
     @Column
     private ArrayList<Funcionario> funcionario = new ArrayList<>();

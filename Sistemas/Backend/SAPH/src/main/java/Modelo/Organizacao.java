@@ -18,23 +18,23 @@ import javax.persistence.Table;
  * @author andre
  */
 @Entity
-@Table(name = "tb_organizacao")
+@Table(name = "organizacao")
 public class Organizacao implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id 
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-    @Column
+    @Column(length=80)
     private String nome;
-    @Column
+    @Column(length=15)
     private String cnpj;
-    @Column
+    @Column(length=50)
     private String endereco;
-    @Column
+    @Column(length=15)
     private String telefone;
     @Column
     private boolean situacao;
-    @Column
+    @Column(length=2)
     private String numeroNivel;
 
     public Organizacao() {

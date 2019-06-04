@@ -5,15 +5,12 @@
  */
 package rest;
 
-import java.util.List;
-import java.util.ArrayList;
-
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-import com.google.gson.Gson;
+
 
 /**
  *
@@ -21,11 +18,11 @@ import com.google.gson.Gson;
  */
 @Path("solicitacao")
 public class Solicitacao {
-//    @GET
-//    @Produces(MediaType.APPLICATION_JSON)
-//    public String get() {
-//        return "Eu sou Solicitação";
-//    }
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public String get() {
+        return "Eu sou Solicitação";
+    }
 //    @GET
 //    @Produces(MediaType.APPLICATION_JSON)
 //    @Path("listar")

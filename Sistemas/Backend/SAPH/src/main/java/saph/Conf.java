@@ -12,7 +12,7 @@ import org.glassfish.jersey.server.ResourceConfig;
  *
  * @author adelson
  */
-@ApplicationPath("SAPH")
+@ApplicationPath("saph")
 public class Conf extends ResourceConfig {
 
     public Conf() {

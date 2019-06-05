@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{%block title%}Detalhar Setor{%endblock%}
+
+{% block main %}
+<div class="titulo">
+    <h2>Detalhar Setor</h2>
+</div>
+
+
+<div class="form">
+
+    {% for nivel in setor %}
+    <div>
+        <h3>Nome</h3>
+        <label>{{nivel.nome}}</label>
+    </div>
+    <div>
+        <h3>Funcionário</h3>
+        <label>{{nivel.funcionario}}</label>
+
+    </div>
+    <div>
+        <h3>Nivel</h3>
+        <label>{{nivel.nivel}}</label>
+    </div>
+    <div>
+        <h3>Gerente</h3>
+        <label>{{nivel.gerente.nome}}</label>
+    </div>
+    {%endfor%}
+    <div>
+        <a href="javascript:history.back();">
+            <button type="button" class="btn btn-secondary btn-lg form_botao_esquerdo">Voltar</button>
+        </a>
+    </div>
+
+
+    </divclass>
+    <!--
+    <ul class="list-group">
+
+        {% for nivel in setor %}
+        <li class="list-group-item">
+            <div class="row">
+                <div class="col-sm-6 centralizar">
+                    <div>
+                        <span><b>Nome</b></span>
+                    </div>
+                    <span>{{nivel.nome}}</span>
+                </div>
+                <div class="col-sm-6 centralizar">
+                    <div>
+                        <span><b>Setor</b></span>
+                    </div>
+                    <a<span>Nome do setor</span>
+                </div>
+            </div>
+        </li>
+        {%endfor%}
+    </ul> -->
+    {% endblock%}

@@ -1,4 +1,6 @@
 from django.contrib.messages.views import SuccessMessageMixin
+from django.shortcuts import render
+from django.views import View
 from django.views.generic import CreateView,UpdateView,ListView,DeleteView
 from django.urls import reverse_lazy, reverse
 
@@ -48,3 +50,8 @@ class ListarSetor(ListView):
 class ApagarSetor(DeleteView):
     model = Setor
     success_url = reverse_lazy('listar_funcionarios')
+
+class DetalharSetor(View):
+    def get(self, request, pk):
+        setor = Setor.objects.filter(pk=pk)
+        return render(request, 'setor/setor_detalhar.html', {'setor': setor})

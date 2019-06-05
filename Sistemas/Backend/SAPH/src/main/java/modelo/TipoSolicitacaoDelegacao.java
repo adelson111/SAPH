@@ -3,13 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Modelo;
+package modelo;
+
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -17,22 +20,24 @@ import javax.persistence.Table;
  * @author andre
  */
 @Entity
-@Table(name = "tb_tipo_solicitacao_agregacao")
-public class Tipo_Solicitacao_Agregacao{
+@Table(name = "tipo_solicitacao_delegacao")
+public class TipoSolicitacaoDelegacao{
     @Id 
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    @Column
+    @Column(length=100)
     private String tipo;
-    @Column
+    @Column(length=1)
     private String tipo_s_d;
-    @Column
+    @Column(length=300)
     private String descricao;
+    @OneToMany( targetEntity=TipoItem.class )
+    private List<TipoItem> itens;
 
-    public Tipo_Solicitacao_Agregacao() {
+    public TipoSolicitacaoDelegacao() {
     }
 
-    public Tipo_Solicitacao_Agregacao(int id, String tipo, String tipo_s_d, String descricao) {
+    public TipoSolicitacaoDelegacao(int id, String tipo, String tipo_s_d, String descricao) {
         this.id = id;
         this.tipo = tipo;
         this.tipo_s_d = tipo_s_d;
@@ -70,6 +75,15 @@ public class Tipo_Solicitacao_Agregacao{
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
+
+	public List getItens() {
+		return itens;
+	}
+
+	public void setItens(List itens) {
+		this.itens = itens;
+	}
+    
     
     
     

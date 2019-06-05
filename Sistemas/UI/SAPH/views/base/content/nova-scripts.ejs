@@ -24,7 +24,7 @@
             '<hr>'+
             '<h3><%=item.nome%></h3>'+
             '<div class="form-row">'+
-              <% size = item.campos.length>3?'col-12':'col'%>
+              <% size = item.campos.length>3?'col-4':'col'%>
               <%item.campos.forEach(function(campo){%>
                 <% size = campo.tipo=='textarea'?'col-12':size%>
                 '<div class="<%=size%> orm-group">'+

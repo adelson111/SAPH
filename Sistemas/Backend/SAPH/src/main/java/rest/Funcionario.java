@@ -7,7 +7,6 @@ package rest;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
@@ -19,8 +18,8 @@ import javax.ws.rs.core.MediaType;
 public class Funcionario {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    @Path("consultar/{nome}")
-    public String getNome(@PathParam("nome") String nome) {
-        return "Meu nome é: "+nome;
+    @Path("buscarF")
+    public String getNomes() {
+        return "Meu nome fun funcionario é: ";
     }
 }

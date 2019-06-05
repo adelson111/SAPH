@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Modelo;
+package modelo;
 
 import java.util.ArrayList;
 import javax.persistence.Column;
@@ -18,12 +18,12 @@ import javax.persistence.Table;
  * @author andre
  */
 @Entity
-@Table(name = "tb_setor")
+@Table(name = "setor")
 public class Setor {
     @Id 
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    @Column
+    @Column(length=20)
     private String nome;
     @Column
     private ArrayList<Funcionario> funcionario = new ArrayList<>();

@@ -3,13 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Modelo;
+package modelo;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -17,28 +21,24 @@ import javax.persistence.Table;
  * @author andre
  */
 @Entity
-@Table(name = "tb_campo")
-public class Tipo_Campo {
+@Table(name = "tipo_item")
+public class TipoItem {
     @Id 
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    @Column
+    @Column(length=100)
     private String nome;
-    @Column
-    private String descricao;
-    @Column
-    private String tipo;
+    @OneToMany( targetEntity=TipoCampo.class )
+    private List<TipoCampo> campos;
 
-    public Tipo_Campo() {
+    public TipoItem() {
     }
 
-    public Tipo_Campo(int id, String nome, String descricao, String tipo) {
+    public TipoItem(int id, String nome) {
         this.id = id;
         this.nome = nome;
-        this.descricao = descricao;
-        this.tipo = tipo;
     }
-    
+
     public int getId() {
         return id;
     }
@@ -55,21 +55,14 @@ public class Tipo_Campo {
         this.nome = nome;
     }
 
-    public String getDescricao() {
-        return descricao;
+    public List<TipoCampo> getCampo() {
+        return campos;
     }
 
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
+    public void setCampo(List<TipoCampo> campo) {
+        this.campos = campo;
     }
-
-    public String getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
-    }
+    
     
     
     

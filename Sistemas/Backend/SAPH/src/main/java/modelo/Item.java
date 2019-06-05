@@ -3,9 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Modelo;
+package modelo;
 
-import java.util.ArrayList;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,22 +17,23 @@ import javax.persistence.Table;
  * @author andre
  */
 @Entity
-@Table(name = "tb_item")
-public class Tipo_Item {
+@Table(name = "item")
+public class Item {
     @Id 
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     @Column
-    private String nome;
+    private SolicitacaoDelegacao s_d_id;
     @Column
-    private ArrayList<Tipo_Campo> campo = new ArrayList<Tipo_Campo>();
+    private TipoItem tipo_item_id;
 
-    public Tipo_Item() {
+    public Item() {
     }
 
-    public Tipo_Item(int id, String nome) {
+    public Item(int id, SolicitacaoDelegacao s_d_id, TipoItem tipo_item_id) {
         this.id = id;
-        this.nome = nome;
+        this.s_d_id = s_d_id;
+        this.tipo_item_id = tipo_item_id;
     }
 
     public int getId() {
@@ -44,23 +44,21 @@ public class Tipo_Item {
         this.id = id;
     }
 
-    public String getNome() {
-        return nome;
+    public SolicitacaoDelegacao getS_d_id() {
+        return s_d_id;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setS_d_id(SolicitacaoDelegacao s_d_id) {
+        this.s_d_id = s_d_id;
     }
 
-    public ArrayList<Tipo_Campo> getCampo() {
-        return campo;
+    public TipoItem getTipo_item_id() {
+        return tipo_item_id;
     }
 
-    public void setCampo(ArrayList<Tipo_Campo> campo) {
-        this.campo = campo;
+    public void setTipo_item_id(TipoItem tipo_item_id) {
+        this.tipo_item_id = tipo_item_id;
     }
-    
-    
     
     
 }

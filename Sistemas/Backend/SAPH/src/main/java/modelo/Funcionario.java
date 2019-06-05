@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Modelo;
+package modelo;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -17,28 +17,28 @@ import javax.persistence.Table;
  * @author andre
  */
 @Entity
-@Table(name = "tb_funcionario")
+@Table(name = "funcionario")
 public class Funcionario{
     @Id 
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    @Column
+    @Column(length=80)
     private String nome;
-    @Column
+    @Column(length=80)
     private String email;
-    @Column
+    @Column(length=15)
     private String senha;
-    @Column
+    @Column(length=14)
     private String cpf;
-    @Column
+    @Column(length=15)
     private String cargo;
-    @Column
+    @Column(length=100)
     private String endereco;
-    @Column
+    @Column(length=15)
     private String telefone;
     @Column
     private boolean ativo;
-    @Column
+    @Column(length=100)
     private String foto;
     @Column
     private Organizacao organizacao;

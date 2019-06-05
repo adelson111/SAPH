@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Modelo;
+package modelo;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -17,12 +17,12 @@ import javax.persistence.Table;
  * @author andre
  */
 @Entity
-@Table(name = "tb_nivel")
+@Table(name = "nivel")
 public class Nivel {
     @Id 
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    @Column
+    @Column(length=30)
     private String nome;
     @Column
     private Nivel nivelSuperior;

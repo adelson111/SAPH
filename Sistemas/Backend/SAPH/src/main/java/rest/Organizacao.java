@@ -14,6 +14,8 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+import com.google.gson.Gson;
+
 /**
  *
  * @author adelson
@@ -30,8 +32,8 @@ public class Organizacao {
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     @Path("cadastrar/{organizacao}")
-    public String cadastrar(@PathParam("organizacao") Modelo.Organizacao organizacao) {
-        new OrganizacaoDao().salvar(organizacao);
+    public String cadastrar(@PathParam("organizacao") String organizacao) {
+        new OrganizacaoDao().salvar(new Gson().fromJson(organizacao, modelo.Organizacao.class));
         return "Eu sou Organizacao";
     }
 }

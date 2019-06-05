@@ -12,20 +12,17 @@
         {% for key, nivel in listaSaida.items %}
         <div>
             <div class="row linha">
-                <div class="col-sm-4 centralizar">
+                <div class="col-sm-3 centralizar">
                     <div>
-                        <span><b>Nome</b></span>
+                        <span class="nome_nivel" data-toggle="modal" data-target="#modalNome" data-id='{{nivel.0.nome}}|{{nivel.0.funcionario.nome}}' id="abrirModal">{{nivel.0.nome}}</span>
                     </div>
-                    <span>{{nivel.0.nome}}</span>
                 </div>
-                <div class="col-sm-4 centralizar">
-                    <hr>
-                    {% for setor in nivel.1 %}
-                    <div class="setor">
-                        <a href="">{{setor.nome}}</a>
+                <div class="col-sm-9 centralizar">
+                    <div class="centralizar">
+                        {% for setor in nivel.1 %}
+                            <a href="{% url 'detalhar_setor' setor.pk %}"><button class="setor">{{setor.nome}}</button></a>
+                        {% endfor %}
                     </div>
-                    {% endfor %}
-
                 </div>
             </div>
         </div>
@@ -35,41 +32,36 @@
     <h2 class="text-center">Não Existe Niveis Cadastrados</h2>
 {% endif %}
 
-<br><br><br>
-{% if listaSaida|length > 0 %}
-    <ul class="list-group">
-        {% for key, nivel in listaSaida.items %}
-        <li class="list-group-item">
-            <div class="row">
-                <div class="col-sm-4 centralizar">
-                    <div>
-                        <span><b>Nome</b></span>
-                    </div>
-                    <span>{{nivel.0.nome}}</span>
-                </div>
-                <div class="col-sm-4 centralizar">
-                    <div>
-                        <span><b>Responsável</b></span>
-                    </div>
-                    <span>{{nivel.0.funcionario}}</span>
-                </div>
-                <div class="col-sm-4 centralizar">
-                    <div>
-                        <span><b>Setor</b></span>
-                    </div>
-                    {% for setor in nivel.1 %}
-                    <a href="{% url 'detalhar_nivel' setor.pk %}">{{setor.nome}}</a>
-                    {% endfor %}
 
+<!-- Modal -->
+<div class="modal fade" id="modalNome" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="titulo_modal">
+                    <h5 class="modal-title" id="TituloModalCentralizado"></h5>
                 </div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
-        </li>
-        {%endfor%}
-    </ul>
-{% else %}
-    <h2 class="text-center">Não Existe Niveis Cadastrados</h2>
-{% endif %}
+            <div class="modal-body centralizar">
+                <h4>Responsável</h4>
+                <span id="responsavel"></span>
+            </div>
+        </div>
+    </div>
+</div>
 
-
+<script>
+    $(document).on("click", "#abrirModal", function () {
+        var info = $(this).attr('data-id');
+        var str = info.split('|');
+        var nome = str[0];
+        var responsavel = str[1];
+        $(".modal-title").text(nome);
+        $("#responsavel").text(responsavel);
+    });
+</script>
 
 {% endblock%}

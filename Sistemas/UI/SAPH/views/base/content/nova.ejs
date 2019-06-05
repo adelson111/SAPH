@@ -23,7 +23,6 @@
           <h3>Nova solicitação</h3>
         </div>
         <br>
-
           <div class="card-body px-lg-5 pt-0 pt-30 overflow-auto"  id="cardSolici">
             <form class="text-left " style="color: #757575;" action="index.html" method="post" id="solicitacao" >
               <div class="col">
@@ -32,9 +31,9 @@
                     <div class="input-group-prepend ">
                       <label class="input-group-text " id="tipoSolicitacao" for="inputGroupSelect01">Tipos de solicitações</label>
                     </div>
-                    <select name="itens" id="tipo" class="custom-select"  required>
+                    <select name="TipoSolicitacao" id="tipo" class="custom-select"  required>
                       <%tipos.forEach(function(solicitacao){%>
-                            <option value="<%=solicitacao.tipo%>"><%=solicitacao.tipo%></option>
+                            <option value="<%=solicitacao.id%>"><%=solicitacao.tipo%></option>
                       <%}); %>
                     </select>
                   </div>
@@ -75,9 +74,11 @@
 $('#imprimir').click(function(){
    window.print('new', '_blank');
 });
+
 $('#guardar').click(function(){
-  alert("data");
-  $.post("http://localhost:3000/solicitacoes/cada",{'solicitacao':"vai q cola"},function(data){
+  alert($("#solicitacao").serialize());
+
+  $.post("http://localhost:3000/solicitacoes/cada",{'solicitacao':"teste"},function(data){
     console.log(data);
   });
 });

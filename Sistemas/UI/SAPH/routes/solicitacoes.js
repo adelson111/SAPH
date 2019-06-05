@@ -13,8 +13,9 @@ router.get('/new',(req, res, next)=>{
 
 });
 router.post('/cada', function (req, res) {
+  console.log(req.body.solicitacao);
   var args = {
-      data: "hello" ,
+      data: req.body.solicitacao ,
       headers: { "Content-Type": "application/json" }
   };
   client.post("http://localhost:8080/SAPH/saph/solicitacao/cadastrar",args,function (data, response) {

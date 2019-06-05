@@ -43,10 +43,10 @@ public class Solicitacao {
     @Produces(MediaType.APPLICATION_JSON)
     @Path("listar")
     public String getTiposSolicitacoes() {
-    	List<TipoSolicitacaoDelegacao> solicitacoes = new ArrayList();
+    	List<TipoSolicitacaoDelegacao> solicitacoes = new ArrayList<TipoSolicitacaoDelegacao>();
     	List<TipoItem> itens = new ArrayList<TipoItem>();
-    	List<TipoCampo> campos = new ArrayList();
-    	for(int i=0; i<10;i++) {
+    	List<TipoCampo> campos = new ArrayList<TipoCampo>();																																																																												
+    	for(int i=0; i<5;i++) {
     		campos.add(new TipoCampo(i,"Campo"+i, "campo descricao", "text"));
     		TipoItem it = new TipoItem(i,"item-"+i);
     		it.setCampo(campos);
@@ -55,12 +55,16 @@ public class Solicitacao {
     		s.setItens(itens);
     		solicitacoes.add(s);
     	}
+    	System.out.println(cadastrar("oi"));
         return new Gson().toJson(solicitacoes);
     }
     @POST
-    @Consumes(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.TEXT_PLAIN)
     @Path("cadastrar")
     public String cadastrar(String solicitacao) {
-        return solicitacao+" epa";
+    	
+    	//modelo.SolicitacaoDelegacao soli = new Gson().fromJson(solicitacao, modelo.SolicitacaoDelegacao.class);
+    	//System.out.println(soli);
+        return solicitacao;
     }
 }

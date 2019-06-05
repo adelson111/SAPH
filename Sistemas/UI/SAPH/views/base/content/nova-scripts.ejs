@@ -2,11 +2,14 @@
   $( "#tipo" ).change(function() {
     tipo = $('#tipo option:selected').val();
     <% tipos.forEach(function(solicitacao){%>
-      if (tipo == '<%=solicitacao.tipo%>'){
+      if (tipo == '<%=solicitacao.id%>'){
         $('.body-solicitacao').html('');
         $('#itens').html('');
         <% solicitacao.itens.forEach(function(item){%>
           <%var files = [];%>
+          $('.body-solicitacao').append(
+            '<input name = "TipoItem" value = "<%=item.id%>" type="hidden">'
+          );
           <%for(i = 0; i < item.campos.length; i++){
             if(item.campos[i].tipo=='file'){
               files.push(item.campos[i]);
@@ -29,7 +32,8 @@
                 <% size = campo.tipo=='textarea'?'col-12':size%>
                 '<div class="<%=size%> orm-group">'+
                   '<label"><%=campo.nome%></label>'+
-                  '<input type="<%=campo.tipo%>" class="form-control<%=campo.tipo=='file'?'-file':''%>" placeholder="<%=campo.nome%>...">'+
+                  '<input name = "TipoCampo" value = "<%=campo.id%>" type="hidden">'+
+                  '<input name = "Campo" type="<%=campo.tipo%>" class="form-control<%=campo.tipo=='file'?'-file':''%>" placeholder="<%=campo.nome%>...">'+
                 '</div>'+
               <%});%>
             '</div>'

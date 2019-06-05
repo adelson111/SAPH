@@ -13,11 +13,12 @@ router.get('/new',(req, res, next)=>{
 
 });
 router.post('/cada', function (req, res) {
-  console.log('a1');
-  client.post("http://localhost:8080/SAPH/saph/solicitacao/cadastrar",'{"solicitacao":"é"}',function (data, response) {
-    console.log('a2');
-    res.send('data');
-    res.send("response");
+  var args = {
+      data: "hello" ,
+      headers: { "Content-Type": "application/json" }
+  };
+  client.post("http://localhost:8080/SAPH/saph/solicitacao/cadastrar",args,function (data, response) {
+    res.send(data);
   });
 });
 module.exports = router;

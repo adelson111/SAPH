@@ -58,11 +58,9 @@ public class Solicitacao {
         return new Gson().toJson(solicitacoes);
     }
     @POST
-    @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    @Path("cadastrar/{solicitacao}")
-    public String cadastrar(@PathParam("solicitacao") String solicitacao) {
-    	System.out.println("ok");
-        return solicitacao;
+    @Path("cadastrar")
+    public String cadastrar(String solicitacao) {
+        return solicitacao+" epa";
     }
 }

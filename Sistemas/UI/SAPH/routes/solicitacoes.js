@@ -12,6 +12,13 @@ router.get('/new',(req, res, next)=>{
   });
 
 });
+
+router.get('/list',(req, res, next)=>{
+  res.render('list', {
+    title: 'Solicitações - SAPH',
+  });
+});
+
 router.post('/cada', function (req, res) {
   console.log('a1');
   client.post("http://localhost:8080/SAPH/saph/solicitacao/cadastrar",'{"solicitacao":"é"}',function (data, response) {

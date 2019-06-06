@@ -18,7 +18,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "setor_funcionario")
-public class Setor_Funcionario {
+public class SetorFuncionario {
     @Id 
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
@@ -27,10 +27,10 @@ public class Setor_Funcionario {
     @Column
     private Funcionario funcionario_id;
 
-    public Setor_Funcionario() {
+    public SetorFuncionario() {
     }
 
-    public Setor_Funcionario(int id, Setor setor_id, Funcionario funcionario_id) {
+    public SetorFuncionario(int id, Setor setor_id, Funcionario funcionario_id) {
         this.id = id;
         this.setor_id = setor_id;
         this.funcionario_id = funcionario_id;

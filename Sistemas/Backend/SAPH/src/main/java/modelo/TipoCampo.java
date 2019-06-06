@@ -17,7 +17,7 @@ import javax.persistence.Table;
  * @author andre
  */
 @Entity
-@Table(name = "campo")
+@Table(name = "tipo_campo")
 public class TipoCampo {
     @Id 
     @GeneratedValue(strategy = GenerationType.AUTO)

@@ -20,7 +20,7 @@ import modelo.Organizacao;
 public class OrganizacaoDao {
 
     public EntityManager getEM() {
-        EntityManagerFactory factory = Persistence.createEntityManagerFactory("banco");
+        EntityManagerFactory factory = Persistence.createEntityManagerFactory("Persistencia");
         return factory.createEntityManager();
     }
     //salvar entidade
@@ -76,7 +76,7 @@ public class OrganizacaoDao {
             if (org != null) {
                 //remove o produto
                 em.remove(org);
-                System.out.println("Produto removido");
+                System.out.println("Organização removida");
             }
             //executa o comando no banco de dados
             em.getTransaction().commit();

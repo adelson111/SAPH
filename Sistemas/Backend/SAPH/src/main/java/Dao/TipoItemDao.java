@@ -10,19 +10,20 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
-import modelo.Funcionario;
+import modelo.TipoItem;
+
 
 /**
  *
  * @author andre
  */
-public class FuncionarioDao {
+public class TipoItemDao {
     public EntityManager getEM() {
         EntityManagerFactory factory = Persistence.createEntityManagerFactory("Persistencia");
         return factory.createEntityManager();
     }
     //salvar entidade
-    public void salvar(Funcionario funcionario) {
+    public void salvar(TipoItem tipo_item) {
         //Obtemos uma EntityManager.
         EntityManager em = getEM();
         try {
@@ -30,7 +31,7 @@ public class FuncionarioDao {
             em.getTransaction().begin();
             //salva o objeto produto
             System.out.println("begin");
-            em.merge(funcionario);
+            em.merge(tipo_item);
             //executa o comando no banco de dados
             System.out.println("marge");
             em.getTransaction().commit();
@@ -45,13 +46,13 @@ public class FuncionarioDao {
         }
     }
     //pegar entidade pelo id
-    public Funcionario get(int id) {
+    public TipoItem get(int id) {
         //Obtemos uma EntityManager.
         EntityManager em = getEM();
-        Funcionario func = null;
+        TipoItem tipo_item = null;
         try {
             //busca um produto do banco de dados,passando como parametro
-            func = em.find(Funcionario.class, id);
+            tipo_item = em.find(TipoItem.class, id);
         } catch (Exception e) {
             //desfaz tudo caso ocorra uma exeção
             em.getTransaction().rollback();
@@ -60,21 +61,21 @@ public class FuncionarioDao {
             em.close();
         }
         //retorna produto
-        return func;
+        return tipo_item;
     }
     //remover
-    public void remover(Funcionario func) {
+    public void remover(TipoItem tipo_item) {
         //Obtemos uma EntityManager.
         EntityManager em = getEM();
         //busca um produto no banco de dados, passando como parametro a sua classe e o id.
-        func = em.find(Funcionario.class, func.getId());
+        tipo_item = em.find(TipoItem.class, tipo_item.getId());
         try {
             //conecta ao banco
             em.getTransaction().begin();
-            if (func != null) {
+            if (tipo_item != null) {
                 //remove o produto
-                em.remove(func);
-                System.out.println("Funcionario removido");
+                em.remove(tipo_item);
+                System.out.println("Tipo de Item removido");
             }
             //executa o comando no banco de dados
             em.getTransaction().commit();
@@ -87,8 +88,8 @@ public class FuncionarioDao {
         }
     }
     //select
-    public List<Funcionario> lista() {
-        Query query = getEM().createQuery("select * from funcionario");	
+    public List<TipoItem> lista() {
+        Query query = getEM().createQuery("select * from tipo_item");	
         return query.getResultList(); 	
     }
 }

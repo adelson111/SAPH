@@ -14,7 +14,8 @@ import Modelo.Organizacao;
 public class teste {
     public static void main(String[] args) {
         Organizacao org = new Organizacao();
-        org.setNome("TADS5V DEVELOP");
+        org.setId(1);
+        org.setNome("TADS5V DEVELOPment");
         org.setCnpj("12334546");
         org.setEndereco("Lagoinha");
         org.setTelefone("084994002431");

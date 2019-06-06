@@ -10,19 +10,19 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
-import modelo.Funcionario;
+import modelo.Setor;
 
 /**
  *
  * @author andre
  */
-public class FuncionarioDao {
+public class SetorDao {
     public EntityManager getEM() {
         EntityManagerFactory factory = Persistence.createEntityManagerFactory("Persistencia");
         return factory.createEntityManager();
     }
     //salvar entidade
-    public void salvar(Funcionario funcionario) {
+    public void salvar(Setor setor) {
         //Obtemos uma EntityManager.
         EntityManager em = getEM();
         try {
@@ -30,7 +30,7 @@ public class FuncionarioDao {
             em.getTransaction().begin();
             //salva o objeto produto
             System.out.println("begin");
-            em.merge(funcionario);
+            em.merge(setor);
             //executa o comando no banco de dados
             System.out.println("marge");
             em.getTransaction().commit();
@@ -45,13 +45,13 @@ public class FuncionarioDao {
         }
     }
     //pegar entidade pelo id
-    public Funcionario get(int id) {
+    public Setor get(int id) {
         //Obtemos uma EntityManager.
         EntityManager em = getEM();
-        Funcionario func = null;
+        Setor setor = null;
         try {
             //busca um produto do banco de dados,passando como parametro
-            func = em.find(Funcionario.class, id);
+            setor = em.find(Setor.class, id);
         } catch (Exception e) {
             //desfaz tudo caso ocorra uma exeção
             em.getTransaction().rollback();
@@ -60,21 +60,21 @@ public class FuncionarioDao {
             em.close();
         }
         //retorna produto
-        return func;
+        return setor;
     }
     //remover
-    public void remover(Funcionario func) {
+    public void remover(Setor setor) {
         //Obtemos uma EntityManager.
         EntityManager em = getEM();
         //busca um produto no banco de dados, passando como parametro a sua classe e o id.
-        func = em.find(Funcionario.class, func.getId());
+        setor = em.find(Setor.class, setor.getId());
         try {
             //conecta ao banco
             em.getTransaction().begin();
-            if (func != null) {
+            if (setor != null) {
                 //remove o produto
-                em.remove(func);
-                System.out.println("Funcionario removido");
+                em.remove(setor);
+                System.out.println("Setor removido");
             }
             //executa o comando no banco de dados
             em.getTransaction().commit();
@@ -87,8 +87,8 @@ public class FuncionarioDao {
         }
     }
     //select
-    public List<Funcionario> lista() {
-        Query query = getEM().createQuery("select * from funcionario");	
+    public List<Setor> lista() {
+        Query query = getEM().createQuery("select * from setor");	
         return query.getResultList(); 	
     }
 }

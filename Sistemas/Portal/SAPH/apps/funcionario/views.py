@@ -152,6 +152,7 @@ class SubirFuncionarios(View):
         o = Organizacao.objects.filter(pk=request.user.funcionario.organizacao.pk)
         l = []
         # con = serializers.serialize("json", a)
+        # data = serializers.serialize('json', list(objectQuerySet), fields=('fileName', 'id'))
         lorganizacao = []
         lorganizacao.append(model_to_dict(o[0]))
         for x in a:

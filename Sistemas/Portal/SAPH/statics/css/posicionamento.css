@@ -23,6 +23,7 @@
     text-align: right;
 }
 
+
 .hr_item {
     margin-top: 7%;
 }
@@ -32,14 +33,22 @@
 }
 
 .linha {
-    margin-bottom: 5%;
+    margin-bottom: 3%;
     border-bottom-style: dotted;
     border-bottom-width: 2px;
 }
 
 .setor {
-    background-color: #9d9fa2;
+    /*background-color: #9d9fa2;*/
+    background-color: #c4c4c4;
     border: 1px solid black;
-    width: 50%;
+    border-radius: 10px;
+    width: 23%;
     float: left;
+    padding: 1.5% 0%;
+    margin: 0% 2% 1% 0%;
+}
+
+.nome_nivel {
+    cursor: pointer;
 }

@@ -2,12 +2,39 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8b2baf8a-ed15-48c6-9f94-24ef91e31dc6" name="Default Changelist" comment="Testando backend e Usuário">
+      <change afterPath="$PROJECT_DIR$/apps/setor/templates/setor/setor_detalhar.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/content/list.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../UI/SAPH/views/list.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/Dao/OrganizacaoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/Dao/OrganizacaoDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/rest/Organizacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/rest/Organizacao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/rest/Solicitacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/rest/Solicitacao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0-SNAPSHOT.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0-SNAPSHOT/WEB-INF/classes/modelo/Funcionario.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0-SNAPSHOT/WEB-INF/classes/modelo/Nivel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0-SNAPSHOT/WEB-INF/classes/modelo/Organizacao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0-SNAPSHOT/WEB-INF/classes/modelo/Setor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Funcionario.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Nivel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Organizacao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Setor.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Organizacao.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Organizacao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Solicitacao.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Solicitacao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/SAPH.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/SAPH.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/funcionario/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/funcionario/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/funcionario/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/funcionario/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nivel/templates/nivel/nivel_organograma.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/nivel/templates/nivel/nivel_organograma.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/setor/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/setor/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/setor/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/setor/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/statics/css/posicionamento.css" beforeDir="false" afterPath="$PROJECT_DIR$/statics/css/posicionamento.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/routes/solicitacoes.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/SAPH/routes/solicitacoes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/views/base/content/nova-scripts.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/content/nova-scripts.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/views/base/content/nova.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/content/nova.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/views/base/conteudo-topo.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/conteudo-topo.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/views/base/header.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/header.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/views/new.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/SAPH/views/new.ejs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,20 +44,43 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/nivel/templates/nivel/nivel_organograma.html">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/apps/setor/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="705">
-              <caret line="47" selection-start-line="47" selection-end-line="47" />
+            <state relative-caret-position="281">
+              <caret line="57" column="63" selection-start-line="57" selection-start-column="63" selection-end-line="57" selection-end-column="63" />
+              <folding>
+                <element signature="e#0#61#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/apps/setor/templates/setor/setor_detalhar.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="21" column="12" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/apps/setor/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/apps/funcionario/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="553">
-              <caret line="152" column="14" lean-forward="true" selection-start-line="152" selection-start-column="14" selection-end-line="152" selection-end-column="14" />
+            <state relative-caret-position="308">
+              <caret line="160" selection-start-line="160" selection-end-line="160" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -61,6 +111,8 @@
         <option value="$PROJECT_DIR$/apps/nivel/templates/nivel/nivel_organograma.html" />
         <option value="$PROJECT_DIR$/apps/funcionario/urls.py" />
         <option value="$PROJECT_DIR$/apps/funcionario/views.py" />
+        <option value="$PROJECT_DIR$/apps/setor/templates/setor/setor_detalhar.html" />
+        <option value="$PROJECT_DIR$/apps/setor/views.py" />
       </list>
     </option>
   </component>
@@ -78,6 +130,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -94,13 +147,27 @@
               <item name="SAPH" type="b2602c69:ProjectViewProjectNode" />
               <item name="SAPH" type="462c0819:PsiDirectoryNode" />
               <item name="apps" type="462c0819:PsiDirectoryNode" />
-              <item name="funcionario" type="462c0819:PsiDirectoryNode" />
+              <item name="setor" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SAPH" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SAPH" type="462c0819:PsiDirectoryNode" />
+              <item name="apps" type="462c0819:PsiDirectoryNode" />
+              <item name="setor" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SAPH" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SAPH" type="462c0819:PsiDirectoryNode" />
+              <item name="apps" type="462c0819:PsiDirectoryNode" />
+              <item name="setor" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="setor" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -110,6 +177,7 @@
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -147,6 +215,9 @@
       <method v="2" />
     </configuration>
   </component>
+  <component name="StructureViewFactory">
+    <option name="AUTOSCROLL_MODE" value="false" />
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -166,6 +237,8 @@
       <updated>1559586706449</updated>
       <workItem from="1559739414975" duration="8820000" />
       <workItem from="1559759978962" duration="614000" />
+      <workItem from="1559779857952" duration="2496000" />
+      <workItem from="1559823439215" duration="1194000" />
     </task>
     <task id="LOCAL-00002" summary="Testando backend e Usuário">
       <created>1559590672253</created>
@@ -174,26 +247,34 @@
       <option name="project" value="LOCAL" />
       <updated>1559590672254</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Testando backend">
+      <created>1559779933951</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1559779933951</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9434000" />
+    <option name="totallyTimeSpent" value="13124000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1366" y="-1" width="1920" height="1080" extended-state="6" />
+    <frame x="0" y="-1" width="1600" height="860" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4946352" visible="true" weight="0.18089648" />
-      <window_info id="Structure" order="1" sideWeight="0.50536484" side_tool="true" visible="true" weight="0.18089648" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49336284" visible="true" weight="0.18597169" />
+      <window_info id="Structure" order="1" sideWeight="0.50663716" side_tool="true" weight="0.18333334" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.5838509" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.72746783" />
+      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.38764045" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.47360247" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.47241378" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.33229813" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.32919255" />
@@ -271,74 +352,78 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Começando a organizar o organograma" />
     <MESSAGE value="Testando backend e Usuário" />
-    <option name="LAST_COMMIT_MESSAGE" value="Testando backend e Usuário" />
+    <MESSAGE value="Testando backend" />
+    <option name="LAST_COMMIT_MESSAGE" value="Testando backend" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/apps/funcionario/views.py</url>
-          <line>165</line>
+          <line>166</line>
           <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/apps/funcionario/views.py</url>
+          <line>160</line>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/SAPH$runserver.coverage" NAME="runserver Coverage Results" MODIFIED="1559752960044" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/SAPH$runserver.coverage" NAME="runserver Coverage Results" MODIFIED="1559823503765" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
       <expression>
-        <expression-string>o[0]</expression-string>
+        <expression-string>setor[0]</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>o</expression-string>
+        <expression-string>setor[1]</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>o.query</expression-string>
+        <expression-string>setor</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>o.content</expression-string>
+        <expression-string>s[1].funcionario</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>Organizacao.objects.filter(pk=request.user.funcionario.organizacao.pk)</expression-string>
+        <expression-string>s[1]</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>request.user.funcionario.organizacao</expression-string>
+        <expression-string>s.1</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>Organizacao.objects.filter(pk=request.user.funcionario.organizacao)</expression-string>
+        <expression-string>s1</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>l[0]</expression-string>
+        <expression-string>s</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>setor.content</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../../../../ambienteTeste1/lib/python3.6/site-packages/django/views/generic/base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
-          <caret line="96" selection-start-line="96" selection-end-line="96" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../../../ambienteTeste1/lib/python3.6/site-packages/pip-10.0.1-py3.6.egg/pip/_vendor/requests/api.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="173">
@@ -346,10 +431,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/apps/nivel/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="170" column="57" lean-forward="true" selection-start-line="170" selection-start-column="57" selection-end-line="170" selection-end-column="57" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/apps/nivel/templates/nivel/nivel_organograma.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="705">
-          <caret line="47" selection-start-line="47" selection-end-line="47" />
+        <state relative-caret-position="510">
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/setor/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -363,12 +467,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../ambienteTeste1/lib/python3.6/site-packages/django/views/generic/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="107">
+          <caret line="96" selection-start-line="96" selection-end-line="96" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/apps/funcionario/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="553">
-          <caret line="152" column="14" lean-forward="true" selection-start-line="152" selection-start-column="14" selection-end-line="152" selection-end-column="14" />
+        <state relative-caret-position="308">
+          <caret line="160" selection-start-line="160" selection-end-line="160" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/setor/templates/setor/setor_detalhar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="21" column="12" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/setor/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="57" column="63" selection-start-line="57" selection-start-column="63" selection-end-line="57" selection-end-column="63" />
+          <folding>
+            <element signature="e#0#61#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -33,11 +33,26 @@ class CadastrarSetor(SuccessMessageMixin, CreateView):
         return reverse('cadastrar_setor', args=[self.request.user.funcionario.organizacao.pk])
 
 
-class AtualizarSetor(UpdateView):
+class AtualizarSetor(SuccessMessageMixin, UpdateView):
     model = Setor
     fields = ['nome','funcionario', 'nivel', 'gerente']
+    success_message = "%(nome)s Alterado  com sucesso"
+
     def get_queryset(self):
         return Setor.objects.filter(pk=self.kwargs['pk'])
+
+
+    def get_success_message(self, cleaned_data):
+        # return messages.add_message(self.request, messages.SUCCESS, self.message_data)
+        return self.success_message % dict(
+            cleaned_data,
+            nome = self.object.nome
+        )
+
+
+    def get_success_url(self):
+        # return reverse('cadastrar_setor', args=[self.request.user.funcionario.organizacao.pk])
+        return reverse('listar_setor')
 
     template_name_suffix = '_update_form'
 

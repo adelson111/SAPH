@@ -3,6 +3,11 @@
 {%block title%}Setores Cadastrados{%endblock%}
 
 {% block main %}
+{% if messages %}
+    {% for message in messages %}
+        <input type="hidden" id="mensagem" value="{{message}}">
+    {% endfor %}
+{% endif %}
 <div class="titulo">
     <h2>Setores Cadastrados</h2>
 </div>
@@ -24,5 +29,13 @@
     </li>
     {%endfor%}
 </ul>
-
+<script>
+    $(document).ready(function(){
+        m = $("#mensagem").val();
+        <!--console.log(m);-->
+        if(m!=undefined){
+            alert(m);
+         }
+     });
+</script>
 {% endblock %}

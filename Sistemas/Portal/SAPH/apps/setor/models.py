@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 
 # Create your models here.
+from django.shortcuts import redirect
 from django.urls import reverse
 
 from apps.funcionario.models import Funcionario
@@ -20,5 +21,5 @@ class Setor(models.Model):
     class Meta:
         verbose_name_plural = 'Setores'
 
-    def get_absolute_url(self):
-        return reverse('cadastrar_setor')
+    # def get_absolute_url(self):
+    #     return redirect('cadastrar_setor')

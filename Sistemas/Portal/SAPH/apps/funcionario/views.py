@@ -5,6 +5,8 @@ import io
 
 from django.core import serializers
 from django.forms import model_to_dict
+from django.views import View
+from pip._vendor import requests
 
 from apps.funcionario.forms import FuncionaioPreCadastro, FuncionarioCadastra, FuncionarioEdit
 from django.core.exceptions import ObjectDoesNotExist
@@ -13,7 +15,7 @@ from django.db import IntegrityError
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render
 
-
+from apps.organizacao.models import Organizacao
 from .models import Funcionario
 from django.views.generic import CreateView, UpdateView, ListView, DeleteView
 from django.urls import reverse_lazy, reverse
@@ -142,3 +144,26 @@ class PreUpdateFuncionario(UpdateView):
     template_name_suffix = '_pre_update_funcionario'
 
 
+class SubirFuncionarios(View):
+
+    def get(self, request):
+        # a = Funcionario.objects.all()
+        a = User.objects.all()
+        o = Organizacao.objects.filter(pk=request.user.funcionario.organizacao.pk)
+        l = []
+        # con = serializers.serialize("json", a)
+        lorganizacao = []
+        lorganizacao.append(model_to_dict(o[0]))
+        for x in a:
+            l.append(model_to_dict(x))
+        d = {'nome':'Fudeu'}
+        resp = requests.post(url='http://localhost:8080/SAPH/saph/organizacao/cadastrar',
+                             data=lorganizacao[0],
+                             headers={'content-type': 'application/json'})
+        # resp = requests.get('http://localhost:8080/SAPH/saph/organizacao')
+        # for l1 in l:
+            # print(l1)
+        if(resp == 201 or resp==200):
+            return HttpResponse("ESSA MIZERA DEU CERTO")
+        else:
+            return HttpResponse("ESSA MIZERA DEU ERRADO")

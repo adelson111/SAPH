@@ -45,7 +45,6 @@ INSTALLED_APPS = [
     'apps.solicitacao',
     'apps.delegacao',
     'apps.item',
-    'rest_framework',
 ]
 
 MIDDLEWARE = [

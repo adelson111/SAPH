@@ -20,13 +20,17 @@ import modelo.Organizacao;
 public class OrganizacaoDao {
 
     public EntityManager getEM() {
-        EntityManagerFactory factory = Persistence.createEntityManagerFactory("Persistencia");
+        System.out.println("Chegou no metodo");
+        EntityManagerFactory factory = Persistence.createEntityManagerFactory("persistencia");
+        System.out.println("Criaou o link");
         return factory.createEntityManager();
     }
     //salvar entidade
     public void salvar(Organizacao organizacao) {
+        System.out.println("Chegou salvar");
         //Obtemos uma EntityManager.
         EntityManager em = getEM();
+        System.out.println("Passou da persistencia.");
         try {
             //conecta ao banco
             em.getTransaction().begin();

@@ -20,13 +20,12 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "organizacao")
 public class Organizacao implements Serializable {
-    private static final long serialVersionUID = 1L;
-    @Id 
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    
+    @Id
     private long id;
     @Column(length=80)
     private String nome;
-    @Column(length=15)
+    @Column(length=20)
     private String cnpj;
     @Column(length=50)
     private String endereco;
@@ -34,20 +33,17 @@ public class Organizacao implements Serializable {
     private String telefone;
     @Column
     private boolean situacao;
-    @Column(length=2)
-    private String numeroNivel;
 
     public Organizacao() {
     }
 
-    public Organizacao(int id, String nome, String cnpj, String endereco, String telefone, boolean situacao, String numeroNivel) {
+    public Organizacao(int id, String nome, String cnpj, String endereco, String telefone, boolean situacao) {
         this.id = id;
         this.nome = nome;
         this.cnpj = cnpj;
         this.endereco = endereco;
         this.telefone = telefone;
         this.situacao = situacao;
-        this.numeroNivel = numeroNivel;
     }
 
     public long getId() {
@@ -99,13 +95,8 @@ public class Organizacao implements Serializable {
         this.situacao = situacao;
     }
 
-    public String getNumeroNivel() {
-        return numeroNivel;
-    }
-
-    public void setNumeroNivel(String numeroNivel) {
-        this.numeroNivel = numeroNivel;
-    }
+    
+    
     
     
 }

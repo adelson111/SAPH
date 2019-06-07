@@ -6,6 +6,7 @@
 package rest;
 
 import Dao.OrganizacaoDao;
+import com.google.gson.Gson;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -26,12 +27,9 @@ public class Organizacao {
         return "Eu sou Organizacao";
     }
     @POST
-    @Produces(MediaType.TEXT_PLAIN)
     @Consumes(MediaType.APPLICATION_JSON)
-    @Path("cadastrar")
     public String cadastrar(String organizacao) {
-//        new OrganizacaoDao().salvar(new Gson().fromJson(organizacao, modelo.Organizacao.class));
-        System.out.println("Recebeu: "+organizacao);
+        new OrganizacaoDao().salvar(new Gson().fromJson(organizacao, modelo.Organizacao.class));
         return "Eu sou Organizacao";
     }
 }

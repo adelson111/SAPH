@@ -7,10 +7,6 @@ from apps.funcionario.models import Funcionario
 from apps.organizacao.forms import OrganizacaoCadastra
 from .models import Organizacao
 
-# implementacao do rest
-from rest_framework import routers, serializers, viewsets
-from .serializer import OrganizacaoSerializer
-
 class CadastrarOrganizacao(CreateView):
     model = Organizacao
     #fields = ['nome', 'cnpj', 'endereco', 'telefone']
@@ -45,6 +41,3 @@ class ListarOrganizacao(ListView):
         return Organizacao.objects.all()
 
 
-class OrganizacaoViewSet(viewsets.ModelViewSet):
-    queryset = Organizacao.objects.all()
-    serializer_class = OrganizacaoSerializer

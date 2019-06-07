@@ -27,13 +27,6 @@ from django.conf.urls.static import static
 from SAPH import settings
 # from django.contrib.auth.urls
 
-# improtacao do
-from rest_framework import routers, serializers, viewsets
-from apps.organizacao.views import OrganizacaoViewSet
-
-router = routers.DefaultRouter()
-router.register('organizacao-rest', OrganizacaoViewSet)
-
 urlpatterns = [
     path('', include(urls_core)),
     path('admin/', admin.site.urls),
@@ -45,6 +38,5 @@ urlpatterns = [
     path('delegacao/', include(urls_delegacao)),
     path('item/', include(urls_item)),
     path('accounts/', include('django.contrib.auth.urls')),
-    path('api-auth/', include('rest_framework.urls')),
-    path('rest/', include(router.urls))
+    path('api-auth/', include('rest_framework.urls'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

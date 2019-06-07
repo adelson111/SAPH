@@ -20,7 +20,7 @@ router.get('/list',(req, res, next)=>{
 });
 
 router.get('/list/detalhes',(req, res, next)=>{
-  res.render('detalhes', {
+  res.render('list', {
     title: 'Solicitações - SAPH',
   });
 });

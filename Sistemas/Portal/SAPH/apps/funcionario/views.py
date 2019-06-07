@@ -159,12 +159,13 @@ class SubirFuncionarios(View):
             l.append(model_to_dict(x))
         d = {'nome':'Fudeu'}
         resp = requests.post(url='http://localhost:8080/SAPH/saph/organizacao/cadastrar',
-                             data=lorganizacao[0],
+                             # data=lorganizacao[0],
+                             data=json.dumps(lorganizacao[0]),
                              headers={'content-type': 'application/json'})
         # resp = requests.get('http://localhost:8080/SAPH/saph/organizacao')
         # for l1 in l:
             # print(l1)
-        if(resp == 201 or resp==200):
+        if(resp.status_code==200 or resp.status_code==201):
             return HttpResponse("ESSA MIZERA DEU CERTO")
         else:
             return HttpResponse("ESSA MIZERA DEU ERRADO")

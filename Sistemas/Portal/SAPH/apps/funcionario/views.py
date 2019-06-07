@@ -147,12 +147,9 @@ class PreUpdateFuncionario(UpdateView):
 class SubirFuncionarios(View):
 
     def get(self, request):
-
         # a = Funcionario.objects.all()
         a = User.objects.all()
-        print("chedou")
         o = Organizacao.objects.filter(pk=request.user.funcionario.organizacao.pk)
-
         l = []
         # con = serializers.serialize("json", a)
         # data = serializers.serialize('json', list(objectQuerySet), fields=('fileName', 'id'))
@@ -161,6 +158,7 @@ class SubirFuncionarios(View):
         for x in a:
             l.append(model_to_dict(x))
         d = {'nome':'Fudeu'}
+        a1 = json
         resp = requests.post(url='http://localhost:8080/SAPH/saph/organizacao/cadastrar',
                              data=lorganizacao[0],
                              headers={'content-type': 'application/json'})

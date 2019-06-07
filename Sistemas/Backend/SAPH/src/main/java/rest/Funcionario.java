@@ -20,17 +20,9 @@ import javax.ws.rs.core.MediaType;
 public class Funcionario {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    @Path("buscarF")
+    @Path("buscar")
     public String getNomes() {
         return "Meu nome fun funcionario é: ";
     }
     
-    @POST
-    @Produces(MediaType.TEXT_PLAIN)
-    @Consumes(MediaType.APPLICATION_JSON)
-    @Path("cadastrar")
-    public String cadastrar(String organizacao) {
-//        new OrganizacaoDao().salvar(new Gson().fromJson(organizacao, modelo.Organizacao.class));
-        return "Eu sou Organizacao";
-    }
 }

@@ -31,6 +31,7 @@ public class Organizacao {
     @Path("cadastrar")
     public String cadastrar(String organizacao) {
 //        new OrganizacaoDao().salvar(new Gson().fromJson(organizacao, modelo.Organizacao.class));
+        System.out.println("Recebeu: "+organizacao);
         return "Eu sou Organizacao";
     }
 }

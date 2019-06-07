@@ -15,3 +15,32 @@
 footer p a {
 	margin: 5px 15px;
 }
+
+.linha {
+    margin-bottom: 3%;
+    border-bottom-style: dotted;
+    border-bottom-width: 2px;
+}
+
+.centralizar {
+    text-align: center;
+}
+
+.nome_nivel {
+    cursor: pointer;
+}
+
+.setor {
+    /*background-color: #9d9fa2;*/
+    background-color: #c4c4c4;
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 23%;
+    float: left;
+    padding: 1.5% 0%;
+    margin: 0% 2% 1% 0%;
+}
+
+.organograma {
+	padding-top: 2%;
+}

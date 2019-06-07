@@ -96,8 +96,8 @@ class Organograma(View):
                     i = 0
                     pos += 1
                 o += 1
-                print(listaSaida)
-                print(lista[i])
+                #print(listaSaida)
+                #print(lista[i])
                 if (superior.nivelInferior == lista[i] and listaSaida.get(0)[0].nivelSuperior == None):
                     # listaSaida.append(superior)
                     s = Setor.objects.filter(nivel_id=superior.pk)

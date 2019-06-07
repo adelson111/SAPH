@@ -1,40 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8b2baf8a-ed15-48c6-9f94-24ef91e31dc6" name="Default Changelist" comment="Testando backend e Usuário">
-      <change afterPath="$PROJECT_DIR$/apps/setor/templates/setor/setor_detalhar.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/content/list.ejs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../UI/SAPH/views/list.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/Dao/OrganizacaoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/Dao/OrganizacaoDao.java" afterDir="false" />
+    <list default="true" id="93c860a7-ab0d-43a2-aba9-d5b6696b3e71" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/rest/Funcionario.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/rest/Funcionario.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/rest/Organizacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/rest/Organizacao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/rest/Solicitacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/rest/Solicitacao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0-SNAPSHOT/WEB-INF/classes/modelo/Funcionario.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0-SNAPSHOT/WEB-INF/classes/modelo/Nivel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0-SNAPSHOT/WEB-INF/classes/modelo/Organizacao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0-SNAPSHOT/WEB-INF/classes/modelo/Setor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Funcionario.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Nivel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Organizacao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Setor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0-SNAPSHOT/WEB-INF/classes/rest/Campo.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0-SNAPSHOT/WEB-INF/classes/rest/Campo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0-SNAPSHOT/WEB-INF/classes/rest/Delegacao.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0-SNAPSHOT/WEB-INF/classes/rest/Delegacao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0-SNAPSHOT/WEB-INF/classes/rest/Funcionario.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0-SNAPSHOT/WEB-INF/classes/rest/Funcionario.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0-SNAPSHOT/WEB-INF/classes/rest/Item.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0-SNAPSHOT/WEB-INF/classes/rest/Item.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0-SNAPSHOT/WEB-INF/classes/rest/Nivel.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0-SNAPSHOT/WEB-INF/classes/rest/Nivel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0-SNAPSHOT/WEB-INF/classes/rest/Setor.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0-SNAPSHOT/WEB-INF/classes/rest/Setor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0-SNAPSHOT/WEB-INF/classes/rest/Solicitacao.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0-SNAPSHOT/WEB-INF/classes/rest/Solicitacao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0-SNAPSHOT/WEB-INF/classes/saph/Conf.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0-SNAPSHOT/WEB-INF/classes/saph/Conf.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Funcionario.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Funcionario.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Organizacao.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Organizacao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Solicitacao.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Solicitacao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/maven-archiver/pom.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/SAPH.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/SAPH.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/delegacao/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/delegacao/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/delegacao/templates/delegacao/delegacao_confirm_delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/delegacao/templates/delegacao/delegacao_confirm_delete.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/funcionario/templates/funcionario/funcionario_bloquear_funcionario.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/funcionario/templates/funcionario/funcionario_bloquear_funcionario.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/funcionario/templates/funcionario/funcionario_update_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/funcionario/templates/funcionario/funcionario_update_form.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/funcionario/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/funcionario/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/nivel/templates/nivel/nivel_organograma.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/nivel/templates/nivel/nivel_organograma.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nivel/templates/nivel/nivel_confirm_delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/nivel/templates/nivel/nivel_confirm_delete.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/organizacao/templates/organizacao/organizacao_update_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/organizacao/templates/organizacao/organizacao_update_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/setor/templates/setor/setor_confirm_delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/setor/templates/setor/setor_confirm_delete.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/setor/templates/setor/setor_detalhar.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/setor/templates/setor/setor_detalhar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/setor/templates/setor/setor_update_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/setor/templates/setor/setor_update_form.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/setor/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/setor/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/setor/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/setor/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/solicitacao/templates/solicitacao/solicitacao_confirm_delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/solicitacao/templates/solicitacao/solicitacao_confirm_delete.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/statics/css/posicionamento.css" beforeDir="false" afterPath="$PROJECT_DIR$/statics/css/posicionamento.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/routes/solicitacoes.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/SAPH/routes/solicitacoes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/views/base/content/nova-scripts.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/content/nova-scripts.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/views/base/content/nova.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/content/nova.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/views/base/conteudo-topo.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/conteudo-topo.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/views/base/header.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/header.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/views/new.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/SAPH/views/new.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/navbar.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -43,59 +41,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/apps/setor/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="281">
-              <caret line="57" column="63" selection-start-line="57" selection-start-column="63" selection-end-line="57" selection-end-column="63" />
-              <folding>
-                <element signature="e#0#61#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/setor/templates/setor/setor_detalhar.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="21" column="12" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/setor/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <element signature="e#0#28#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/apps/funcionario/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="160" selection-start-line="160" selection-end-line="160" />
-              <folding>
-                <element signature="e#0#35#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/funcionario/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="19" column="59" selection-start-line="19" selection-start-column="59" selection-end-line="19" selection-end-column="59" />
-              <folding>
-                <element signature="e#0#28#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="120">
+              <caret line="8" selection-start-line="8" selection-end-line="8" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -108,23 +59,31 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/apps/nivel/templates/nivel/nivel_organograma.html" />
-        <option value="$PROJECT_DIR$/apps/funcionario/urls.py" />
-        <option value="$PROJECT_DIR$/apps/funcionario/views.py" />
+        <option value="$PROJECT_DIR$/apps/delegacao/models.py" />
+        <option value="$PROJECT_DIR$/apps/setor/urls.py" />
+        <option value="$PROJECT_DIR$/statics/css/posicionamento.css" />
         <option value="$PROJECT_DIR$/apps/setor/templates/setor/setor_detalhar.html" />
-        <option value="$PROJECT_DIR$/apps/setor/views.py" />
+        <option value="$PROJECT_DIR$/apps/organizacao/templates/organizacao/organizacao_update_form.html" />
+        <option value="$PROJECT_DIR$/apps/delegacao/templates/delegacao/delegacao_confirm_delete.html" />
+        <option value="$PROJECT_DIR$/apps/funcionario/templates/funcionario/funcionario_bloquear_funcionario.html" />
+        <option value="$PROJECT_DIR$/apps/funcionario/templates/funcionario/funcionario_update_form.html" />
+        <option value="$PROJECT_DIR$/apps/nivel/templates/nivel/nivel_confirm_delete.html" />
+        <option value="$PROJECT_DIR$/apps/setor/templates/setor/setor_confirm_delete.html" />
+        <option value="$PROJECT_DIR$/apps/setor/templates/setor/setor_update_form.html" />
+        <option value="$PROJECT_DIR$/apps/solicitacao/templates/solicitacao/solicitacao_confirm_delete.html" />
+        <option value="$PROJECT_DIR$/apps/funcionario/urls.py" />
+        <option value="$PROJECT_DIR$/templates/navbar.html" />
+        <option value="$PROJECT_DIR$/apps/funcionario/views.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="170" />
-    <option name="y" value="91" />
+    <option name="x" value="147" />
+    <option name="y" value="-4" />
     <option name="width" value="1026" />
-    <option name="height" value="546" />
+    <option name="height" value="574" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -147,22 +106,18 @@
               <item name="SAPH" type="b2602c69:ProjectViewProjectNode" />
               <item name="SAPH" type="462c0819:PsiDirectoryNode" />
               <item name="apps" type="462c0819:PsiDirectoryNode" />
-              <item name="setor" type="462c0819:PsiDirectoryNode" />
+              <item name="funcionario" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SAPH" type="b2602c69:ProjectViewProjectNode" />
               <item name="SAPH" type="462c0819:PsiDirectoryNode" />
               <item name="apps" type="462c0819:PsiDirectoryNode" />
               <item name="setor" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SAPH" type="b2602c69:ProjectViewProjectNode" />
               <item name="SAPH" type="462c0819:PsiDirectoryNode" />
-              <item name="apps" type="462c0819:PsiDirectoryNode" />
-              <item name="setor" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="setor" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -172,11 +127,8 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/manage.py" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.path.for.package.eslint" value="project" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
@@ -192,19 +144,18 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="runserver" type="PythonConfigurationType" factoryName="Python">
+    <configuration name="run" type="PythonConfigurationType" factoryName="Python">
       <module name="SAPH" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="$PROJECT_DIR$/../../../../ambienteTeste1/bin/python" />
+      <option name="SDK_HOME" value="$USER_HOME$/Ambiente/venv/bin/python" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/manage.py" />
       <option name="PARAMETERS" value="runserver" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -215,238 +166,120 @@
       <method v="2" />
     </configuration>
   </component>
-  <component name="StructureViewFactory">
-    <option name="AUTOSCROLL_MODE" value="false" />
-  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
-    <task id="LOCAL-00001" summary="Começando a organizar o organograma">
-      <created>1559583314373</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1559583314373</updated>
-    </task>
     <task active="true" id="Default" summary="Default task">
-      <changelist id="8b2baf8a-ed15-48c6-9f94-24ef91e31dc6" name="Default Changelist" comment="" />
-      <created>1559586706449</created>
+      <changelist id="93c860a7-ab0d-43a2-aba9-d5b6696b3e71" name="Default Changelist" comment="" />
+      <created>1559842792772</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1559586706449</updated>
-      <workItem from="1559739414975" duration="8820000" />
-      <workItem from="1559759978962" duration="614000" />
-      <workItem from="1559779857952" duration="2496000" />
-      <workItem from="1559823439215" duration="1194000" />
+      <updated>1559842792772</updated>
     </task>
-    <task id="LOCAL-00002" summary="Testando backend e Usuário">
-      <created>1559590672253</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1559590672254</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Testando backend">
-      <created>1559779933951</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1559779933951</updated>
-    </task>
-    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13124000" />
-  </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="-1" width="1600" height="860" extended-state="6" />
+    <frame x="64" y="-4" width="1303" height="773" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49336284" visible="true" weight="0.18597169" />
-      <window_info id="Structure" order="1" sideWeight="0.50663716" side_tool="true" weight="0.18333334" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.5838509" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.38764045" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.47241378" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.33229813" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Python Console" order="10" weight="0.32919255" />
-      <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="12" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" />
-      <window_info anchor="right" id="SciView" order="4" />
-    </layout>
-    <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24960877" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2769953" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.5838509" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.48757765" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39906833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.49068323" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.33229813" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.32919255" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Python Console" order="10" weight="0.32972136" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.32919255" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2769953" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.48757765" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39906833" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32919255" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.32919255" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout-to-restore>
   </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
-              <option name="COLUMN_ORDER">
-                <list>
-                  <option value="0" />
-                  <option value="1" />
-                  <option value="2" />
-                  <option value="3" />
-                </list>
-              </option>
-            </State>
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="RECENT_FILTERS">
-      <map>
-        <entry key="Branch">
-          <value>
-            <list />
-          </value>
-        </entry>
-        <entry key="User">
-          <value>
-            <list />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Começando a organizar o organograma" />
-    <MESSAGE value="Testando backend e Usuário" />
-    <MESSAGE value="Testando backend" />
-    <option name="LAST_COMMIT_MESSAGE" value="Testando backend" />
-  </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/apps/funcionario/views.py</url>
-          <line>166</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/apps/funcionario/views.py</url>
-          <line>160</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/SAPH$runserver.coverage" NAME="runserver Coverage Results" MODIFIED="1559823503765" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-  </component>
-  <component name="debuggerHistoryManager">
-    <expressions id="evaluateExpression">
-      <expression>
-        <expression-string>setor[0]</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>setor[1]</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>setor</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>s[1].funcionario</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>s[1]</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>s.1</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>s1</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>s</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>setor.content</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-    </expressions>
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="request._encoding" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../../../../ambienteTeste1/lib/python3.6/site-packages/pip-10.0.1-py3.6.egg/pip/_vendor/requests/api.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="100" column="4" selection-start-line="100" selection-start-column="4" selection-end-line="100" selection-end-column="4" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/apps/core/models.py">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/nivel/views.py">
+    <entry file="file://$PROJECT_DIR$/apps/core/apps.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/core/admin.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/core/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/delegacao/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="170" column="57" lean-forward="true" selection-start-line="170" selection-start-column="57" selection-end-line="170" selection-end-column="57" />
+        <state>
           <folding>
-            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#0#35#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/nivel/templates/nivel/nivel_organograma.html">
+    <entry file="file://$PROJECT_DIR$/apps/delegacao/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="34" selection-start-line="34" selection-end-line="34" />
+        <state>
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/delegacao/tests.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/solicitacao/models.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/delegacao/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="37" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/delegacao/apps.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/delegacao/admin.py">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/apps/setor/models.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -457,47 +290,229 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/funcionario/urls.py">
+    <entry file="file://$PROJECT_DIR$/apps/setor/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="19" column="59" selection-start-line="19" selection-start-column="59" selection-end-line="19" selection-end-column="59" />
+        <state relative-caret-position="135">
+          <caret line="9" column="83" selection-start-line="9" selection-start-column="83" selection-end-line="9" selection-end-column="83" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../ambienteTeste1/lib/python3.6/site-packages/django/views/generic/base.py">
+    <entry file="file://$PROJECT_DIR$/statics/css/posicionamento.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
-          <caret line="96" selection-start-line="96" selection-end-line="96" />
+        <state relative-caret-position="840">
+          <caret line="56" column="20" selection-start-line="56" selection-start-column="20" selection-end-line="56" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/funcionario/views.py">
+    <entry file="file://$PROJECT_DIR$/apps/delegacao/templates/delegacao/delegacao_confirm_delete.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="160" selection-start-line="160" selection-end-line="160" />
+        <state relative-caret-position="270">
+          <caret line="18" column="93" selection-start-line="18" selection-start-column="93" selection-end-line="18" selection-end-column="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/delegacao/templates/delegacao/delegacao_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1980" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/delegacao/templates/delegacao/delegacao_list.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/delegacao/templates/delegacao/delegacao_update_form.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/funcionario/templates/funcionario/funcionario_bloquear_funcionario.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="93" selection-start-line="29" selection-start-column="93" selection-end-line="29" selection-end-column="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/funcionario/templates/funcionario/funcionario_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-653" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/funcionario/templates/funcionario/funcionario_func_bloqueado.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/funcionario/templates/funcionario/funcionario_list.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/funcionario/templates/funcionario/funcionario_pre_cadastro_funcionario.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/funcionario/templates/funcionario/funcionario_pre_update_funcionario.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-188" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/funcionario/templates/funcionario/funcionario_update_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="57" column="93" selection-start-line="57" selection-start-column="93" selection-end-line="57" selection-end-column="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/nivel/templates/nivel/nivel_confirm_delete.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="93" selection-start-line="20" selection-start-column="93" selection-end-line="20" selection-end-column="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/nivel/templates/nivel/nivel_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-727" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/nivel/templates/nivel/nivel_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-352" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/nivel/templates/nivel/nivel_organograma.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-502" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/nivel/templates/nivel/nivel_update_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-743" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/nivel/templates/nivel/setores_nivel.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/organizacao/templates/organizacao/organizacao_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-38" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/organizacao/templates/organizacao/organizacao_list.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/organizacao/templates/organizacao/organizacao_update_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="26" column="35" lean-forward="true" selection-start-line="26" selection-start-column="35" selection-end-line="26" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/setor/templates/setor/setor_confirm_delete.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="93" selection-start-line="18" selection-start-column="93" selection-end-line="18" selection-end-column="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/setor/templates/setor/setor_detalhar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="18" column="23" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/setor/templates/setor/setor_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-225" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/setor/templates/setor/setor_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-87" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/setor/templates/setor/setor_update_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="412">
+          <caret line="46" column="93" selection-start-line="46" selection-start-column="93" selection-end-line="46" selection-end-column="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/solicitacao/templates/solicitacao/solicitacao_confirm_delete.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="93" selection-start-line="18" selection-start-column="93" selection-end-line="18" selection-end-column="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/solicitacao/templates/solicitacao/solicitacao_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-315" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/solicitacao/templates/solicitacao/solicitacao_list.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/solicitacao/templates/solicitacao/solicitacao_update_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-225" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/core/templates/core/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-428">
+          <caret line="23" column="13" lean-forward="true" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/core/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/core/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/setor/templates/setor/setor_detalhar.html">
+    <entry file="file://$PROJECT_DIR$/templates/navbar.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="21" column="12" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="12" />
+        <state relative-caret-position="172">
+          <caret line="66" column="69" selection-start-line="66" selection-start-column="69" selection-end-line="66" selection-end-column="69" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/apps/setor/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="57" column="63" selection-start-line="57" selection-start-column="63" selection-end-line="57" selection-end-column="63" />
+        <state relative-caret-position="188">
+          <caret line="73" column="107" selection-start-line="70" selection-start-column="4" selection-end-line="73" selection-end-column="107" />
           <folding>
             <element signature="e#0#61#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/funcionario/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/requirements">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/funcionario/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" selection-start-line="8" selection-end-line="8" selection-end-column="17" />
         </state>
       </provider>
     </entry>

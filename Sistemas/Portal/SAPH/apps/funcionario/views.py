@@ -147,9 +147,12 @@ class PreUpdateFuncionario(UpdateView):
 class SubirFuncionarios(View):
 
     def get(self, request):
+
         # a = Funcionario.objects.all()
         a = User.objects.all()
+        print("chedou")
         o = Organizacao.objects.filter(pk=request.user.funcionario.organizacao.pk)
+
         l = []
         # con = serializers.serialize("json", a)
         # data = serializers.serialize('json', list(objectQuerySet), fields=('fileName', 'id'))

@@ -64,6 +64,8 @@
                         <img src="{% static '/imagem/sem_foto.png' %}" data-toggle="dropdown" class="rounded-circle imagem_perfil" alt="Imagem do usuário">
                     {% endif %}
                     <div class="dropdown-menu dropdown-menu-right">
+                        <a class="dropdown-item" href="{% url 'subir'%}">Exportar</a>
+                        <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="{% url 'logout'%}">Sair</a>
                     </div>
                 </div>

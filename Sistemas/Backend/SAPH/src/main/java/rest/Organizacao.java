@@ -26,10 +26,10 @@ public class Organizacao {
         return "Eu sou Organizacao";
     }
     @POST
-    @Produces(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.TEXT_PLAIN)
     @Consumes(MediaType.APPLICATION_JSON)
-    @Path("cadastrar/{organizacao}")
-    public String cadastrar(@PathParam("organizacao") String organizacao) {
+    @Path("cadastrar")
+    public String cadastrar(String organizacao) {
 //        new OrganizacaoDao().salvar(new Gson().fromJson(organizacao, modelo.Organizacao.class));
         return "Eu sou Organizacao";
     }

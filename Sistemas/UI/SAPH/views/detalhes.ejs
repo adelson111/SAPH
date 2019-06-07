@@ -1,13 +1,14 @@
-<%- include('base/conteudo-topo') -%>
+<%- include('base/conteudoTopo') -%>
 
 <div class="container-fluid ">
 
 <div class="container" style="margin-top: 20px;">
   <div class="row">
-    <div class="col">
+    <div class="col bg-info">
       <div class="card  overflow-auto" style="height: 700px;" >
-        <div class="card-header  text-center py-4">
-          <h3>Ítens</h3>
+        <div class="card-header-fixed text-center py-4" >
+          <h3 style="font-family: 'Roboto','Helvetica Neue',Helvetica,Arial,sans-serif;">ÍTENS</h3>
+          <hr>
         </div>
         <ul class="overflow-auto" id="itens">
           <li>Item1</li>
@@ -20,11 +21,10 @@
 
     <div class="col-6">
       <div class="card fixed " style="height: 700px; text-align: right;" id="campos">
-        <div class="card-header-fixed text-center py-4" id="home">
-          <h3>Lista de Compras</h3>
+        <div class="card-header-fixed text-center py-4" >
+          <h3 style="font-family: 'Roboto','Helvetica Neue',Helvetica,Arial,sans-serif;">LISTA DE COMPRAS</h3>
+          <hr>
         </div>
-        <br>
-
           <div class="card-body px-lg-5 pt-0 pt-30 overflow-auto"  id="cardSolici">
             <form class="text-left " style="color: #757575;" action="index.html" method="post" id="solicitacao" >
               <div class="col">
@@ -34,7 +34,6 @@
                       <label class="input-group-text " id="tipoSolicitacao" for="inputGroupSelect01">Tipos de solicitações</label>
                     </div>
                     <select name="itens" id="tipo" class="custom-select"  required>
-
                     </select>
                   </div>
                 </div>
@@ -59,17 +58,77 @@
       </div>
 
     </div>
-    <div class="col">
-      <div class="card  overflow-auto" style="height: 700px;" >
-        <div class="card-header  text-center py-4" id="home">
-          <h3>Ítens</h3>
+    <div class="col bg-info">
+      <div class="card " style="height: 700px;" >
+        <div class="card-header-fixed text-center py-4" >
+          <h3 style="font-family: 'Roboto','Helvetica Neue',Helvetica,Arial,sans-serif;">COMENTÁRIOS</h3>
         </div>
-        <ul class="overflow-auto" id="itens">
-          <li>Item1</li>
-          <ul>
-            <li>Campo</li>
-          </ul>
-        </ul>
+
+        <div class="card-body fixed  overflow-auto " style="background-color:#DCDCDC;">
+          <p>seil lá!</p>
+          <p>seil lá!</p>
+          <p>seil lá!</p>
+          <p>seil lá!</p>
+          <p>seil lá!</p>
+          <p>seil lá!</p>
+          <p>seil lá!</p>
+          <p>seil lá!</p>
+          <p>seil lá!</p>
+          <p>seil lá!</p>
+          <p>seil lá!</p>
+          <p>seil lá!</p>
+          <p>seil lá!</p>
+          <p>seil lá!</p>
+          <p>seil lá!</p>
+          <p>seil lá!</p>
+          <p>seil lá!</p>
+          <p>seil lá!</p>
+          <p>seil lá!</p>
+          <p>seil lá!</p>
+          <p>seil lá!</p>
+          <p>seil lá!</p>
+          <p>seil lá!</p>
+          <p>seil lá!</p>
+          <p>seil lá!</p>
+          <p>seil lá!</p>
+          <p>seil lá!</p>
+          <p>seil lá!</p>
+          <p>seil lá!</p>
+          <p>seil lá!</p>
+          <p>seil lá!</p>
+          <p>seil lá!</p>
+          <p>seil lá!</p>
+          <p>seil lá!</p>
+          <p>seil lá!</p>
+          <p>seil lá!</p>
+          <p>seil lá!</p>
+          <p>seil lá!</p>
+          <p>seil lá!</p>
+          <p>seil lá!</p>
+          <p>seil lá!</p>
+          <p>seil lá!</p>
+          <p>seil lá!</p>
+          <p>seil lá!</p>
+          <p>seil lá!</p>
+          <p>seil lá!</p>
+          <p>seil lá!</p>
+          <p>seil lá!</p>
+          <p>seil lá!</p>
+          <p>seil lá!</p>
+          <p>seil lá!</p>
+          <p>seil lá!</p>
+          <p>seil lá!</p>
+          <p>seil lá!</p>
+          <p>seil lá!</p>
+          <p>seil lá!</p>
+          <p>seil lá!</p>
+        </div>
+
+        <div class="card-float text-center bg-white" style="background-color:#DCDCDC;">
+            <input style="margin:10px;" type="text" name="" value="">
+            <a style="margin-bottom:10px;" class="btn bg-warning" href="#">Comentar</a>
+        </div>
+
       </div>
     </div>
   </div>
@@ -84,6 +143,7 @@
     }
 
    }
+
 </style>
 
 <script type="text/javascript">

@@ -20,6 +20,7 @@ router.get('/contato',(req, res, next)=>{
 router.get('/sobre',(req, res, next)=>{
   res.render('sobre', {
     title: 'Sobre - SAPH',
+    home : true
   });
 });
 

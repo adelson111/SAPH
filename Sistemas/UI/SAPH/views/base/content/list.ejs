@@ -1,4 +1,4 @@
-<div class="container-fluid ">
+<div class="container-fluid no-print" >
   <div class="row flex-xl-nowrap" id="cards">
 
   <div class="col-12 col-md-9 col-xl-3 py-md-3 bd-content">
@@ -21,8 +21,8 @@
   <div class="col-12 col-md-9 col-xl-9 py-md-3 pl-md-5 bd-content">
       <div class="card fixed " style="height: 700px; text-align: right;" id="campos" >
 
-        <div class="card-header-fixed text-center py-4" >
-          <h3 style="font-family: 'Roboto','Helvetica Neue',Helvetica,Arial,sans-serif;">LISTA DE SOLICITAÇÕES</h3>
+        <div class="card-header-fixed text-center py-4 print" >
+          <h3 style="font-family: 'Roboto','Helvetica Neue',Helvetica,Arial,sans-serif;" id="printSection">LISTA DE SOLICITAÇÕES</h3>
           <%-include('menu')-%>
         </div>
 
@@ -34,7 +34,7 @@
                   <ul class="list-group" id="lista">
                     <li class="list-group-item bg-info text-light" style=" margin-bottom:10px;">
                       <div class="text-dark font-weight-bold">
-                        LISTA DE COMPRAS<a class="btn float-right bg-warning text-light" data-toggle="modal" data-target="#largeModal"  href="" name="button">DESCRIÇÃO</a>
+                        SOLICITAÇÃO<a class="btn float-right bg-warning text-light" data-toggle="modal" data-target="#largeModal"  href="" name="button">DESCRIÇÃO</a>
                       </div>
                     </li>
 
@@ -50,16 +50,16 @@
 </div>
 </div>
 <!-- large modal -->
-<div class="modal fade" id="largeModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title" id="myModalLabel">LISTA DE COMPRAS</h4>
+<div class="modal fade no-print" id="largeModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+  <div class="modal-dialog modal-lg" id="modal3" >
+    <div class="modal-content " id="modal">
+      <div class="modal-header bg-info  text-light" id="modal2">
+        <h4 class="modal-title" id="myModalLabel">DETALHES DA SOLICITAÇÃO</h4>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body" id="bodyModal">
         <div class="card fixed " style="height: 500px; text-align: right;" id="campos">
           <div class="card-header-fixed text-center py-4" >
             <h3 style="font-family: 'Roboto','Helvetica Neue',Helvetica,Arial,sans-serif;">LISTA DE COMPRAS</h3>
@@ -74,6 +74,66 @@
                       <div class="input-group-prepend ">
                         <label class="input-group-text " id="tipoSolicitacao" for="inputGroupSelect01">Tipos de solicitações</label>
                       </div>
+                      <div class="input-group-prepend ">
+                        <label class="input-group-text " id="tipoSolicitacao" for="inputGroupSelect01">Tipos de solicitações</label>
+                      </div>
+
+                      <div class="input-group-prepend ">
+                        <label class="input-group-text " id="tipoSolicitacao" for="inputGroupSelect01">Tipos de solicitações</label>
+                      </div>
+
+                      <div class="input-group-prepend ">
+                        <label class="input-group-text " id="tipoSolicitacao" for="inputGroupSelect01">Tipos de solicitações</label>
+                      </div>
+                      <div class="input-group-prepend ">
+                        <label class="input-group-text " id="tipoSolicitacao" for="inputGroupSelect01">Tipos de solicitações</label>
+                      </div>
+                      <div class="input-group-prepend ">
+                        <label class="input-group-text " id="tipoSolicitacao" for="inputGroupSelect01">Tipos de solicitações</label>
+                      </div>
+                      <div class="input-group-prepend ">
+                        <label class="input-group-text " id="tipoSolicitacao" for="inputGroupSelect01">Tipos de solicitações</label>
+                      </div>
+                      <div class="input-group-prepend ">
+                        <label class="input-group-text " id="tipoSolicitacao" for="inputGroupSelect01">Tipos de solicitações</label>
+                      </div>
+                      <div class="input-group-prepend ">
+                        <label class="input-group-text " id="tipoSolicitacao" for="inputGroupSelect01">Tipos de solicitações</label>
+                      </div>
+                      <div class="input-group-prepend ">
+                        <label class="input-group-text " id="tipoSolicitacao" for="inputGroupSelect01">Tipos de solicitações</label>
+                      </div>
+                      <div class="input-group-prepend ">
+                        <label class="input-group-text " id="tipoSolicitacao" for="inputGroupSelect01">Tipos de solicitações</label>
+                      </div>
+                      <div class="input-group-prepend ">
+                        <label class="input-group-text " id="tipoSolicitacao" for="inputGroupSelect01">Tipos de solicitações</label>
+                      </div>
+                      <div class="input-group-prepend ">
+                        <label class="input-group-text " id="tipoSolicitacao" for="inputGroupSelect01">Tipos de solicitações</label>
+                      </div>
+                      <div class="input-group-prepend ">
+                        <label class="input-group-text " id="tipoSolicitacao" for="inputGroupSelect01">Tipos de solicitações</label>
+                      </div>
+                      <div class="input-group-prepend ">
+                        <label class="input-group-text " id="tipoSolicitacao" for="inputGroupSelect01">Tipos de solicitações</label>
+                      </div>
+                      <div class="input-group-prepend ">
+                        <label class="input-group-text " id="tipoSolicitacao" for="inputGroupSelect01">Tipos de solicitações</label>
+                      </div>
+                      <div class="input-group-prepend ">
+                        <label class="input-group-text " id="tipoSolicitacao" for="inputGroupSelect01">Tipos de solicitações</label>
+                      </div>
+                      <div class="input-group-prepend ">
+                        <label class="input-group-text " id="tipoSolicitacao" for="inputGroupSelect01">Tipos de solicitações</label>
+                      </div>  <div class="input-group-prepend ">
+                          <label class="input-group-text " id="tipoSolicitacao" for="inputGroupSelect01">Tipos de solicitações</label>
+                        </div>  <div class="input-group-prepend ">
+                            <label class="input-group-text " id="tipoSolicitacao" for="inputGroupSelect01">Tipos de solicitações</label>
+                          </div>  <div class="input-group-prepend ">
+                              <label class="input-group-text " id="tipoSolicitacao" for="inputGroupSelect01">Tipos de solicitações</label>
+                            </div>
+
                       <select name="itens" id="tipo" class="custom-select"  required>
                       </select>
                     </div>
@@ -87,18 +147,17 @@
               </form>
               <hr>
             </div>
-            <div class="card-header text-center rodapeCard" >
+            <div class="card-header text-center rodapeCard no-print"  >
 
                 <button type="submit" id="enviar" class="btn btn-info btn-lg" >Enviar</button>
                 <button type="submit" id="guardar" class="btn btn-success btn-lg" >Editar</button>
-                <button type="submit" id="guardar" class="btn btn-success btn-lg" >Clonar</button>
                 <a href="#">
                   <img id="imprimir" class="float-left" src="https://pt.seaicons.com/wp-content/uploads/2016/06/print-icon.png" width="50px">
                 </a>
             </div>
 
       </div>
-      <div class="card-body fixed  overflow-auto " style="background-color:#DCDCDC; height: 200px;">
+      <div id="comentarios" class="card-body   overflow-auto " style="background-color:#DCDCDC; height: 200px;">
         <p>seil lá!</p>
         <p>seil lá!</p>
         <p>seil lá!</p>
@@ -158,11 +217,11 @@
         <p>seil lá!</p>
       </div>
 
-      <div class="card-float text-center bg-white" style="background-color:#DCDCDC; style="width:200px;">
+      <div  class="card-float no-print text-center bg-white" style="background-color:#DCDCDC; style="width:200px;">
           <input style="margin:10px;" type="textarea"   "value="">
           <a style="margin-bottom:10px;" class="btn bg-warning" href="#">Comentar</a>
       </div>
-      <div class="modal-footer">
+      <div class="modal-footer no-print" >
         <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
         <button type="button" class="btn btn-primary">Salvar</button>
       </div>
@@ -179,10 +238,10 @@
       display: block;
     }
    }
+
+ }
 </style>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="yourPath/animatedModal.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
 <script type="text/javascript">
   $('#demo01').click(function(event) {
     event.preventDefault();
@@ -191,9 +250,11 @@
       $(html).appendTo('body').animatedModal();
     });
   });
+
 $('#imprimir').click(function(){
    window.print('new', '_blank');
 });
+
 $('#guardar').click(function(){
   alert("data");
   $.post("http://localhost:3000/solicitacoes/cada",{'solicitacao':"vai q cola"},function(data){

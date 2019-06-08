@@ -50,21 +50,28 @@
 
               <!-- Icon -->
               <div class="fadeIn first">
-                <h3>Login</h3>
+                <h4 class="modal-title">Login</h4>
               </div>
 
-              <!-- Login Form -->
+
               <form>
-                <input type="text" id="login" class="fadeIn second" name="login" required  placeholder="email">
-                <input type="text" id="password" class="fadeIn third" name="login"  required placeholder="senha">
-                <input type="submit" class="fadeIn fourth" value="Entrar">
-              </form>
+      					<div class="form-group">
 
-              <!-- Remind Passowrd -->
-              <div id="formFooter">
-                <hr>
-                <a class="alternate sidepanel-item-small  nav-link active " href="#">Esqueceu sua senha?</a>
-              </div>
+      						<input type="text" class="form-control" placeholder="E-mail" required="required">
+      					</div>
+      					<div class="form-group">
+
+      						<input type="password" class="form-control" placeholder="Senha" required="required">
+      					</div>
+      					<div class="form-group">
+      						<input type="submit" class="btn btn-info btn-block btn-lg" value="Login">
+      					</div>
+      				</form>
+
+
+              <div class="modal-footer">
+        				<a href="#">Esqueceu sua senha?</a>
+        			</div>
 
             </div>
           </div>
@@ -78,3 +85,28 @@
       </div>
     </div>
   </div>
+<style type="text/css">
+
+  .modal-login h4 {
+      text-align: center;
+      font-size: 26px;
+  }
+  .modal-body {
+    position: relative;
+    padding: 15px;
+  }
+  .form-group {
+    margin-bottom: 15px;
+  }
+  .modal-footer {
+    background: #ecf0f1;
+    border-color: #dee4e7;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 13px;
+    justify-content: center;
+  }
+  .modal-login .modal-footer a {
+    color: #999;
+  }
+</style>

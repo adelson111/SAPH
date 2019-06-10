@@ -19,6 +19,8 @@ import javax.ws.rs.core.MediaType;
 import com.google.gson.Gson;
 
 import Dao.OrganizacaoDao;
+import Dao.SolicitacaoDelegacaoDao;
+import modelo.SolicitacaoDelegacao;
 
 //import com.google.gson.Gson;
 
@@ -43,10 +45,11 @@ public class Solicitacao {
     @Produces(MediaType.APPLICATION_JSON)
     @Path("listar")
     public String getTiposSolicitacoes() {
-    	List<TipoSolicitacaoDelegacao> solicitacoes = new ArrayList();
+    	List<TipoSolicitacaoDelegacao> solicitacoes = new ArrayList<TipoSolicitacaoDelegacao>();
     	List<TipoItem> itens = new ArrayList<TipoItem>();
-    	List<TipoCampo> campos = new ArrayList();
+    	List<TipoCampo> campos = new ArrayList<TipoCampo>();
     	boolean file = false;
+    	
     	String type = "text";
     	for(int i=0; i<3;i++) {
     		campos.add(new TipoCampo(i,"Campo"+i, "campo descricao", type));
@@ -65,7 +68,10 @@ public class Solicitacao {
     @Produces(MediaType.TEXT_PLAIN)
     @Consumes(MediaType.APPLICATION_JSON)
     public String cadastrar( String solicitacao) {
-    	System.out.println("ok");
+    	SolicitacaoDelegacao s = new Gson().fromJson(solicitacao, SolicitacaoDelegacao.class);
+    	System.out.println(s.getItens().get(0).getCampos());
+    	SolicitacaoDelegacaoDao dao = new SolicitacaoDelegacaoDao();
+    	dao.salvar(s);
         return solicitacao;
     }
 }

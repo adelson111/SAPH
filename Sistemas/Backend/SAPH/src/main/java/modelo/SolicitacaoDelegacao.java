@@ -5,11 +5,14 @@
  */
 package modelo;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -26,7 +29,9 @@ public class SolicitacaoDelegacao {
     private TipoSolicitacaoDelegacao idSolicitacaoDelegacao;
     @Column(length=30)
     private String status;
-
+    @OneToMany( targetEntity=Item.class )
+    private List<Item> itens;
+    
     public SolicitacaoDelegacao() {
     }
 
@@ -59,5 +64,15 @@ public class SolicitacaoDelegacao {
     public void setStatus(String status) {
         this.status = status;
     }
+
+	public List<Item> getItens() {
+		return itens;
+	}
+
+	public void setItens(List<Item> itens) {
+		this.itens = itens;
+	}
+    
+    
     
 }

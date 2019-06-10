@@ -5,11 +5,14 @@
  */
 package modelo;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -26,7 +29,9 @@ public class Item {
     private SolicitacaoDelegacao s_d_id;
     @Column
     private TipoItem tipo_item_id;
-
+    @OneToMany( targetEntity=Campo.class )
+    private List<Campo> campos;
+    
     public Item() {
     }
 
@@ -59,6 +64,15 @@ public class Item {
     public void setTipo_item_id(TipoItem tipo_item_id) {
         this.tipo_item_id = tipo_item_id;
     }
+
+	public List<Campo> getCampos() {
+		return campos;
+	}
+
+	public void setCampos(List<Campo> campos) {
+		this.campos = campos;
+	}
+    
     
     
 }

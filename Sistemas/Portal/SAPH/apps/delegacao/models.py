@@ -18,4 +18,4 @@ class Delegacao(models.Model):
     def __str__(self):
         return self.tipo
     class Meta:
-        verbose_name_plural = 'Solicitações'
+        verbose_name_plural = 'Delegações'

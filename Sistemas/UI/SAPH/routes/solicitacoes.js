@@ -19,8 +19,26 @@ router.get('/list',(req, res, next)=>{
   });
 });
 
-router.get('/list/detalhes',(req, res, next)=>{
-  res.render('detalhes', {
+router.get('/confirmadas',(req, res, next)=>{
+  res.render('confirmadas', {
+    title: 'Solicitações - SAPH',
+  });
+});
+
+router.get('/analise',(req, res, next)=>{
+  res.render('analise', {
+    title: 'Solicitações - SAPH',
+  });
+});
+
+router.get('/recusadas',(req, res, next)=>{
+  res.render('recusadas', {
+    title: 'Solicitações - SAPH',
+  });
+});
+
+router.get('/salvas',(req, res, next)=>{
+  res.render('salvas', {
     title: 'Solicitações - SAPH',
   });
 });

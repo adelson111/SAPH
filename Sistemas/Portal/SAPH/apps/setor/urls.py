@@ -8,5 +8,4 @@ urlpatterns = [
     path('apagar-setor/<int:pk>/', ApagarSetor.as_view(), name="apagar_setor"),
     path('listar-setor/', ListarSetor.as_view(), name="listar_setor"),
     path('detalhar-setor/<int:pk>', DetalharSetor.as_view(), name="detalhar_setor")
-
 ]

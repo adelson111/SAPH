@@ -7,7 +7,6 @@ from apps.funcionario.models import Funcionario
 from apps.organizacao.forms import OrganizacaoCadastra
 from .models import Organizacao
 
-
 class CadastrarOrganizacao(CreateView):
     model = Organizacao
     #fields = ['nome', 'cnpj', 'endereco', 'telefone']
@@ -40,3 +39,5 @@ class ListarOrganizacao(ListView):
 
     def get_queryset(self):
         return Organizacao.objects.all()
+
+

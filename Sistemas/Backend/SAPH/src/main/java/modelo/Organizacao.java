@@ -19,7 +19,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "organizacao")
-public class Organizacao implements Serializable {
+public class Organizacao {
     
     @Id
     private long id;

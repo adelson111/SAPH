@@ -29,7 +29,8 @@ public class Organizacao {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     public String cadastrar(String organizacao) {
-        new OrganizacaoDao().salvar(new Gson().fromJson(organizacao, modelo.Organizacao.class));
+        System.out.println("Chedou aqui: "+organizacao);
+        //new OrganizacaoDao().salvar(new Gson().fromJson(organizacao, modelo.Organizacao.class));
         return "Eu sou Organizacao";
     }
 }

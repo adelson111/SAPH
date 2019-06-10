@@ -12,6 +12,7 @@ import javax.persistence.Persistence;
 import javax.persistence.Query;
 
 import modelo.Organizacao;
+import org.hibernate.jpa.boot.spi.EntityManagerFactoryBuilder;
 
 /**
  *
@@ -36,7 +37,7 @@ public class OrganizacaoDao {
             em.getTransaction().begin();
             //salva o objeto produto
             System.out.println("begin");
-            em.merge(organizacao);
+            em.persist(organizacao);
             //executa o comando no banco de dados
             System.out.println("marge");
             em.getTransaction().commit();

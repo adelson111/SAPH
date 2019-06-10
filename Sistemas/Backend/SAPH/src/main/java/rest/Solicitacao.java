@@ -46,7 +46,7 @@ public class Solicitacao {
     	List<TipoSolicitacaoDelegacao> solicitacoes = new ArrayList();
     	List<TipoItem> itens = new ArrayList<TipoItem>();
     	List<TipoCampo> campos = new ArrayList();
-    	for(int i=0; i<10;i++) {
+    	for(int i=0; i<3;i++) {
     		campos.add(new TipoCampo(i,"Campo"+i, "campo descricao", "text"));
     		TipoItem it = new TipoItem(i,"item-"+i);
     		it.setCampo(campos);
@@ -58,10 +58,9 @@ public class Solicitacao {
         return new Gson().toJson(solicitacoes);
     }
     @POST
-    @Produces(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.TEXT_PLAIN)
     @Consumes(MediaType.APPLICATION_JSON)
-    @Path("cadastrar/{solicitacao}")
-    public String cadastrar(@PathParam("solicitacao") String solicitacao) {
+    public String cadastrar( String solicitacao) {
     	System.out.println("ok");
         return solicitacao;
     }

@@ -32,9 +32,9 @@
                     <div class="input-group-prepend ">
                       <label class="input-group-text " id="tipoSolicitacao" for="inputGroupSelect01">Tipos de solicitações</label>
                     </div>
-                    <select name="itens" id="tipo" class="custom-select"  required>
+                    <select name="tipo" id="tipo" class="custom-select"  required>
                       <%tipos.forEach(function(solicitacao){%>
-                            <option value="<%=solicitacao.tipo%>"><%=solicitacao.tipo%></option>
+                            <option value="<%=solicitacao.id%>"><%=solicitacao.tipo%></option>
                       <%}); %>
                     </select>
                   </div>
@@ -76,8 +76,21 @@ $('#imprimir').click(function(){
    window.print('new', '_blank');
 });
 $('#guardar').click(function(){
-  alert("data");
-  $.post("http://localhost:3000/solicitacoes/cada",{'solicitacao':"vai q cola"},function(data){
+  var dici = new Map();
+  tipo = $("select[name='tipo']").val();
+  console.log($(".tipo-itens"));
+  $(".tipo-itens").each(function(item){
+    console.log(item);
+  });
+
+  dici = {
+    solicitacao: tipo,
+    itens:{
+
+    }
+  }
+  console.log(tipo);
+  $.post("http://localhost:3000/solicitacoes/cada",{'solicitacao':$('#solicitacao').serialize()},function(data){
     console.log(data);
   });
 });

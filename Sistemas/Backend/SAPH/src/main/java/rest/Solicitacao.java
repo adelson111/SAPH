@@ -46,14 +46,18 @@ public class Solicitacao {
     	List<TipoSolicitacaoDelegacao> solicitacoes = new ArrayList();
     	List<TipoItem> itens = new ArrayList<TipoItem>();
     	List<TipoCampo> campos = new ArrayList();
+    	boolean file = false;
+    	String type = "text";
     	for(int i=0; i<3;i++) {
-    		campos.add(new TipoCampo(i,"Campo"+i, "campo descricao", "text"));
+    		campos.add(new TipoCampo(i,"Campo"+i, "campo descricao", type));
     		TipoItem it = new TipoItem(i,"item-"+i);
     		it.setCampo(campos);
     		itens.add(it);
     		TipoSolicitacaoDelegacao s = new TipoSolicitacaoDelegacao(i,"Tipo-"+i,"descrição-"+i,"ativo");
     		s.setItens(itens);
     		solicitacoes.add(s);
+    		type = file?"file":"text";
+    		file = i<3?true:false;
     	}
         return new Gson().toJson(solicitacoes);
     }

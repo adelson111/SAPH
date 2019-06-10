@@ -77,20 +77,27 @@ $('#imprimir').click(function(){
 });
 $('#guardar').click(function(){
   var dici = new Map();
-  tipo = $("select[name='tipo']").val();
-  console.log($(".tipo-itens"));
+  tipoSolicitacao = $("select[name='tipo']").val();
+  tipoItens = [];
   $(".tipo-itens").each(function(item){
-    console.log(item);
+    tipoCampos = [];
+    $("#"+$( this ).attr("id")+" .tipo-campos").each(function(campo){
+      tipoCampos.push({
+        campo:$( this ).attr("data-id"),
+        valor:$( this ).val()
+      });
+    });
+    tipoItens.push({
+      item:$( this ).attr("id"),
+      campos:tipoCampos,
+    });
   });
-
   dici = {
     solicitacao: tipo,
-    itens:{
-
-    }
+    itens:tipoItens,
   }
-  console.log(tipo);
-  $.post("http://localhost:3000/solicitacoes/cada",{'solicitacao':$('#solicitacao').serialize()},function(data){
+  dici = JSON.stringify(dici);
+  $.post("http://localhost:3000/solicitacoes/cada",{'solicitacao':dici},function(data){
     console.log(data);
   });
 });

@@ -343,7 +343,7 @@
       <updated>1559842792772</updated>
       <workItem from="1560085960495" duration="1560000" />
       <workItem from="1560121314428" duration="10403000" />
-      <workItem from="1560296026858" duration="470000" />
+      <workItem from="1560296026858" duration="723000" />
     </task>
     <task id="LOCAL-00001" summary="Teste request Portal">
       <created>1559878787060</created>
@@ -366,11 +366,25 @@
       <option name="project" value="LOCAL" />
       <updated>1560296089563</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="senha 1">
+      <created>1560296511290</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1560296511290</updated>
+    </task>
+    <task id="LOCAL-00005" summary="senha 1">
+      <created>1560296624980</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1560296624980</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12433000" />
+    <option name="totallyTimeSpent" value="12686000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-1" width="1366" height="728" extended-state="6" />
@@ -428,7 +442,8 @@
     <MESSAGE value="Teste request Portal" />
     <MESSAGE value="Criação do Organograma no UI" />
     <MESSAGE value="senha" />
-    <option name="LAST_COMMIT_MESSAGE" value="senha" />
+    <MESSAGE value="senha 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="senha 1" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

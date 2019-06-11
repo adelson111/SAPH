@@ -1,4 +1,5 @@
 from django.contrib import messages
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.messages.views import SuccessMessageMixin
 import json, pickle
 import io
@@ -21,7 +22,7 @@ from django.views.generic import CreateView, UpdateView, ListView, DeleteView
 from django.urls import reverse_lazy, reverse
 from django.contrib.auth.models import User
 
-class CadastrarFuncionario(SuccessMessageMixin, CreateView):
+class CadastrarFuncionario(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     model = Funcionario
     # fields = ['nome', 'email', 'senha', 'cpf', 'cargo', 'endereco', 'telefone', 'ativo', 'foto', 'organizacao']
     form_class = FuncionarioCadastra
@@ -54,7 +55,7 @@ class CadastrarFuncionario(SuccessMessageMixin, CreateView):
         return reverse('cadasrtrar_funcionario', args=[self.request.user.funcionario.organizacao.pk])
     # success_url = reverse_lazy('cadasrtrar_funcionario')
 
-class AtualizarFuncionario(SuccessMessageMixin, UpdateView):
+class AtualizarFuncionario(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     model = Funcionario
     fields = ['nome', 'cpf', 'cargo', 'endereco', 'telefone', 'foto']
 
@@ -79,7 +80,7 @@ class AtualizarFuncionario(SuccessMessageMixin, UpdateView):
 
     template_name_suffix = '_update_form'
 
-class ListarFuncionarios(ListView):
+class ListarFuncionarios(LoginRequiredMixin, ListView):
     model = Funcionario
 
     def get_queryset(self):
@@ -95,7 +96,7 @@ class ListarFuncionarios(ListView):
 
 
 
-class ListarFuncionarioBloqueado(ListView):
+class ListarFuncionarioBloqueado(LoginRequiredMixin, ListView):
     model = Funcionario
 
 
@@ -105,7 +106,7 @@ class ListarFuncionarioBloqueado(ListView):
 
     template_name_suffix = '_func_bloqueado'
 
-class BloquearFuncionario(UpdateView):
+class BloquearFuncionario(LoginRequiredMixin, UpdateView):
     model = Funcionario
     # fields = ['nome', 'ativo']
     form_class = FuncionarioEdit
@@ -125,7 +126,7 @@ class PreCadastroFuncionario(CreateView):
         funcionario.senha = 'ifrn2018'
 
         try:
-            funcionario.user = User.objects.create_user(username=username, password='ifrn2018')
+            funcionario.user = User.objects.create_user(username=username, email=username, password='ifrn2018')
             funcionario.save()
         except IntegrityError:
             return HttpResponse('FUDEU')
@@ -134,7 +135,7 @@ class PreCadastroFuncionario(CreateView):
 
     template_name_suffix = '_pre_cadastro_funcionario'
 
-class PreUpdateFuncionario(UpdateView):
+class PreUpdateFuncionario(LoginRequiredMixin, UpdateView):
     model = Funcionario
     fields = ['nome', 'cpf', 'cargo', 'endereco', 'telefone', 'foto']
     # form_class = FuncionarioEd    it
@@ -144,7 +145,7 @@ class PreUpdateFuncionario(UpdateView):
     template_name_suffix = '_pre_update_funcionario'
 
 
-class SubirFuncionarios(View):
+class SubirFuncionarios(LoginRequiredMixin, View):
 
     def get(self, request):
         # a = Funcionario.objects.all()

@@ -1,3 +1,4 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.messages.views import SuccessMessageMixin
 from django.shortcuts import render
 from django.views import View
@@ -10,7 +11,7 @@ from .models import Setor
 from apps.organizacao.models import Organizacao
 
 
-class CadastrarSetor(SuccessMessageMixin, CreateView):
+class CadastrarSetor(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     model = Setor
     # fields = ['nome','funcionario', 'nivel', 'gerente']
     form_class = SetorCreate
@@ -33,7 +34,7 @@ class CadastrarSetor(SuccessMessageMixin, CreateView):
         return reverse('cadastrar_setor', args=[self.request.user.funcionario.organizacao.pk])
 
 
-class AtualizarSetor(SuccessMessageMixin, UpdateView):
+class AtualizarSetor(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     model = Setor
     fields = ['nome','funcionario', 'nivel', 'gerente']
     success_message = "%(nome)s Alterado  com sucesso"
@@ -56,18 +57,18 @@ class AtualizarSetor(SuccessMessageMixin, UpdateView):
 
     template_name_suffix = '_update_form'
 
-class ListarSetor(ListView):
+class ListarSetor(LoginRequiredMixin, ListView):
     model = Setor
 
     def get_queryset(self):
         # return Setor.objects.all()
         return Setor.objects.select_related('nivel').filter(nivel__organizacao=self.request.user.funcionario.organizacao)
 
-class ApagarSetor(DeleteView):
+class ApagarSetor(LoginRequiredMixin, DeleteView):
     model = Setor
     success_url = reverse_lazy('listar_funcionarios')
 
-class DetalharSetor(View):
+class DetalharSetor(LoginRequiredMixin, View):
     def get(self, request, pk):
         setor = Setor.objects.filter(pk=pk)
         funcionarios = Funcionario.objects.filter(setor__pk=pk)

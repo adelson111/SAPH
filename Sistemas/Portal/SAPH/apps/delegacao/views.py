@@ -1,3 +1,4 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render
 
 # Create your views here.
@@ -7,16 +8,16 @@ from django.views.generic import CreateView, ListView, UpdateView, DeleteView
 from apps.delegacao.models import Delegacao
 
 
-class CadastrarDelegacao(CreateView):
+class CadastrarDelegacao(LoginRequiredMixin, CreateView):
     model = Delegacao
     fields = ['tipo', 'descricao', 'itens']
 
-class ListarDelegacao(ListView):
+class ListarDelegacao(LoginRequiredMixin, ListView):
     model = Delegacao
     def get_queryset(self):
         return Delegacao.objects.all()
 
-class AtualizarDelegacao(UpdateView):
+class AtualizarDelegacao(LoginRequiredMixin, UpdateView):
     model = Delegacao
     fields = ['tipo','descricao','itens']
     def get_queryset(self):
@@ -25,6 +26,6 @@ class AtualizarDelegacao(UpdateView):
     template_name_suffix = '_update_form'
     success_url = reverse_lazy('listar_delegacao')
 
-class ApagarDelegacao(DeleteView):
+class ApagarDelegacao(LoginRequiredMixin, DeleteView):
     model = Delegacao
     success_url = reverse_lazy('listar_delegacao')

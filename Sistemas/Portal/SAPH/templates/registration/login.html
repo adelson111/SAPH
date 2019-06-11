@@ -4,24 +4,27 @@
 {% block title %}Entrar{% endblock %}
 
 {% block main%}
-<div class="box" style="background-color:black;">
-    <h2>Entar</h2>
-    <form method="POST">
-        {% csrf_token %}
-        <div class="inputBox">
-            <input type="email" name="username" id="id_username" required>
-            <label>E-mail</label>
+<div class="row">
+    <div class="card-login">
+        <div class="card">
+            <div class="card-header">
+                Login
+            </div>
+            <div class="card-body">
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <input type="text" name="username" id="id_username" class="form-control" placeholder="Usuário" />
+                    </div>
+                    <div class="form-group">
+                        <input type="password"name="password" id="id_password" class="form-control" placeholder="Senha" />
+                    </div>
+                    <button class="btn btn-lg btn-info btn-block" type="submit">
+                        Entrar
+                    </button>
+                </form>
+            </div>
         </div>
-        <div class="inputBox">
-            <input type="password" name="password" id="id_password" required>
-            <label>Senha</label>
-        </div>
-        <div>
-            <button type="submit" class="btn btn-primary form_botao_direito">Entrar</button>
-            <a href="{% url 'pre_cadasrtrar_funcionario'%}">
-                <button type="button" class="btn btn-link form_botao_esquerdo">Criar Conta</button>
-            </a>
-        </div>
-    </form>
+    </div>
 </div>
 {% endblock %}

@@ -1,3 +1,4 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render, get_object_or_404
 
 # Create your views here.
@@ -7,7 +8,7 @@ from apps.funcionario.models import Funcionario
 from apps.organizacao.forms import OrganizacaoCadastra
 from .models import Organizacao
 
-class CadastrarOrganizacao(CreateView):
+class CadastrarOrganizacao(LoginRequiredMixin, CreateView):
     model = Organizacao
     #fields = ['nome', 'cnpj', 'endereco', 'telefone']
     form_class = OrganizacaoCadastra
@@ -25,7 +26,7 @@ class CadastrarOrganizacao(CreateView):
         return super(CadastrarOrganizacao, self).form_valid(form)
 
 
-class AtualizarOrganizacao(UpdateView):
+class AtualizarOrganizacao(LoginRequiredMixin, UpdateView):
     model = Organizacao
     fields = ['nome', 'cnpj', 'endereco', 'telefone']
 
@@ -34,7 +35,7 @@ class AtualizarOrganizacao(UpdateView):
 
     template_name_suffix = '_update_form'
 
-class ListarOrganizacao(ListView):
+class ListarOrganizacao(LoginRequiredMixin, ListView):
     model = Organizacao
 
     def get_queryset(self):

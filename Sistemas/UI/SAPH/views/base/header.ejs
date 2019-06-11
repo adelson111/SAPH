@@ -1,21 +1,49 @@
 <div class="container  ">
 
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+
 <header ><!-- inicio Cabecalho -->
   <nav class= "navbar navbar-expand-sm navbar-light bg-info ">
     <div class="container">
-
-      <a href="/inicio" class="navbar-brand">
-       <h2 class="text-info bg-white">SAPH</h2>
-      </a>
-
+      
       <button class="navbar-toggler" data-toggle="collapse" data-target="#nav-principal">
         <span class="navbar-toggler-icon "></span>
       </button>
 
-      <div class="collapse navbar-collapse " id="nav-principal" >
-        <ul class="navbar-nav ml-auto ">
+      <div class="container">
+          <ul class="nav navbar-nav" id="menuUser">
+              <li class="dropdown" id="menuList">
+                <a href="#" class="dropdown-toggle text-center" data-toggle="dropdown" >
+                  IFulano de TADS
+                  <img src="../img/user.png "  class=" bl-10 glyphicon glyphicon-user pull-right mt-0 " id="user"> 
+                </a>
+                <ul class="dropdown-menu" id="menuConteudo">
+                  <li><a href="#">Configurações <span class="glyphicon glyphicon-cog pull-right"></span></a></li>
+                  <li class="divider"></li>
+                  <li><a href="#">Novas solicitações<span class="badge pull-right"> 12 </span></a></li>
+                  <li class="divider"></li>
+                  <li><a href="#">Novas Delegações<span class="badge pull-right"> 7 </span></a></li>
+                  <li class="divider"></li>
+                  <li><a href="#">Comentários<span class="badge pull-right"> 12 </span></a></li>
+                  <li class="divider"></li>
+                  <li><a href="#">Solicitações salvas<span class="glyphicon glyphicon-heart pull-right"></span></a></li>
+                  <li class="divider"></li>
+                  <li><a href="#">Delegações salvas<span class="glyphicon glyphicon-heart pull-right"></span></a></li>
+                  <li class="divider"></li>
+                  <li><a href="#">Sair<span class="glyphicon glyphicon-log-out pull-right"></span></a></li>
+                </ul>
+              </li>
+            </ul>
+      </div>
+
+      <div class="container">
+      <div class="collapse navbar-collapse" id="nav-principal" >
+        <ul class="navbar-nav ml-20 ">
           <li class="nav-item">
-            <a href="/inicio" class="nav-link">Início</a>
+            <a href="/inicio" class="nav-link " >Início</a>
           </li>
           <li class="nav-item dropdown">
             <a href="/solicitacoes" class="nav-link dropdown-toggle" data-toggle='dropdown'>Solicitações</a>
@@ -38,14 +66,59 @@
            </div>
 
          </li>
-          <li class="nav-item bl-10">
-            <a href=""><img src="../img/user.png "  class=" bl-10 " id="user"></a>
-            <a href=""><span class="badge badge-primary">2</span></a>
-            <a href=""><span class="badge badge-danger">4</span></a>
-          </li>
+
         </ul>
       </div>
 
-    </div>
+    </div> 
+  </div>
+
   </nav>
+
 </header><!--/fim Cabecalho -->
+<style type="text/css">
+ 
+  #menuUser>li>a:hover, .nav>li>a:focus, .nav .open>a, .nav .open>a:hover, .nav .open>a:focus {
+      background:#fff;
+  }
+  #menuList {
+      background:#fff;
+      border:1px solid #ccc;
+      border-radius:4px;
+      width:300px;    
+  }
+
+  #menuConteudo>li>a {
+      color:#428bca;
+  }
+
+ #menuConteudo{
+      border-radius:4px;
+      box-shadow:none;
+      margin-top:5px;
+      width:250px;
+  }
+
+#menuConteudo:before {
+      content: "";
+      border-bottom: 10px solid #fff;
+      border-right: 10px solid transparent;
+      border-left: 10px solid transparent;
+      position: absolute;
+      top: -10px;
+      right: 16px;
+      z-index: 10;
+  }
+
+    
+  #menuUser ul#menuConteudo:after {
+      content: "";
+      border-bottom: 12px solid #ccc;
+      border-right: 12px solid transparent;
+      border-left: 12px solid transparent;
+      position: absolute;
+      top: -12px;
+      right: 14px;
+      z-index: 9;
+  }
+</style>

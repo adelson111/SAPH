@@ -32,9 +32,9 @@
                     <div class="input-group-prepend ">
                       <label class="input-group-text " id="tipoSolicitacao" for="inputGroupSelect01">Tipos de solicitações</label>
                     </div>
-                    <select name="itens" id="tipo" class="custom-select"  required>
+                    <select name="tipo" id="tipo" class="custom-select"  required>
                       <%tipos.forEach(function(solicitacao){%>
-                            <option value="<%=solicitacao.tipo%>"><%=solicitacao.tipo%></option>
+                            <option value="<%=solicitacao.id%>"><%=solicitacao.tipo%></option>
                       <%}); %>
                     </select>
                   </div>
@@ -76,8 +76,29 @@ $('#imprimir').click(function(){
    window.print('new', '_blank');
 });
 $('#guardar').click(function(){
-  alert("data");
-  $.post("http://localhost:3000/solicitacoes/cada",{'solicitacao':"vai q cola"},function(data){
+  var dici = new Map();
+  tipoSolicitacao = $("select[name='tipo']").val();
+  tipoItens = [];
+  $(".tipo-itens").each(function(item){
+    tipoCampos = [];
+    $("#"+$( this ).attr("id")+" .tipo-campos").each(function(campo){
+      tipoCampos.push({
+        campo:$( this ).attr("data-id"),
+        valor:$( this ).val()
+      });
+    });
+    tipoItens.push({
+      item:$( this ).attr("id"),
+      campos:tipoCampos,
+    });
+  });
+  dici = {
+    solicitacao: tipo,
+    itens:tipoItens,
+    status:"ativo",
+  }
+  dici = JSON.stringify(dici);
+  $.post("http://localhost:3000/solicitacoes/cada",{'solicitacao':dici},function(data){
     console.log(data);
   });
 });

@@ -8,43 +8,34 @@ package modelo;
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
  *
- * @author andre
+ * @author adelson
  */
 @Entity
 @Table(name = "organizacao")
 public class Organizacao implements Serializable {
-    
+
     @Id
     private long id;
-    @Column(length=80)
+
+    @Column(length = 80, nullable = false)
     private String nome;
-    @Column(length=20)
+
+    @Column(length = 19, nullable = false)
     private String cnpj;
-    @Column(length=50)
+
+    @Column(length = 100, nullable = false)
     private String endereco;
-    @Column(length=15)
+
+    @Column(length = 17, nullable = false)
     private String telefone;
-    @Column
+
+    @Column(nullable = false)
     private boolean situacao;
-
-    public Organizacao() {
-    }
-
-    public Organizacao(int id, String nome, String cnpj, String endereco, String telefone, boolean situacao) {
-        this.id = id;
-        this.nome = nome;
-        this.cnpj = cnpj;
-        this.endereco = endereco;
-        this.telefone = telefone;
-        this.situacao = situacao;
-    }
 
     public long getId() {
         return id;
@@ -53,7 +44,6 @@ public class Organizacao implements Serializable {
     public void setId(long id) {
         this.id = id;
     }
-
 
     public String getNome() {
         return nome;
@@ -95,8 +85,4 @@ public class Organizacao implements Serializable {
         this.situacao = situacao;
     }
 
-    
-    
-    
-    
 }

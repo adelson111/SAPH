@@ -5,67 +5,65 @@
  */
 package modelo;
 
+import java.io.Serializable;
 import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 /**
  *
- * @author andre
+ * @author adelson
  */
 @Entity
 @Table(name = "tipo_solicitacao_delegacao")
-public class TipoSolicitacaoDelegacao{
-    @Id 
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
-    @Column(length=100)
-    private String tipo;
-    @Column(length=1)
-    private String tipo_s_d;
-    @Column(length=300)
+public class TipoSolicitacaoDelegacao implements Serializable {
+    
+    @Id
+    private long id;
+    
+    @Column(length = 80, nullable = false)
+    private String nome;
+    
+    @Column(length = 300, nullable = false)
     private String descricao;
-    @OneToMany( targetEntity=TipoItem.class )
-    private List<TipoItem> itens;
+    
+    @Enumerated(EnumType.STRING)
+    @Column(length = 12, nullable = false)
+    private tipo.TipoSolicitacaoDelegacao tipo;
+    
+    @ManyToMany(targetEntity = TipoItem.class)
+    @JoinTable(name = "tipo_solicitacao_delegacao_item", 
+            joinColumns = {@JoinColumn(name = "tipo_solicitacao_delegacao_id")}, 
+            inverseJoinColumns = {@JoinColumn(name = "tipo_item_id")})
+    private List<TipoItem> tipoItem;
+    
+    @ManyToMany(targetEntity = Nivel.class)
+    @JoinTable(name = "tipo_solicitacao_delegacao_nivel", 
+            joinColumns = {@JoinColumn(name = "tipo_solicitacao_delegacao_id")}, 
+            inverseJoinColumns = {@JoinColumn(name = "nivel_id")})
+    private List<Nivel> nivel;
 
-    public TipoSolicitacaoDelegacao() {
-    }
-
-    public TipoSolicitacaoDelegacao(int id, String tipo, String tipo_s_d, String descricao) {
-        this.id = id;
-        this.tipo = tipo;
-        this.tipo_s_d = tipo_s_d;
-        this.descricao = descricao;
-    }
-
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
-    public String getTipo() {
-        return tipo;
+    public String getNome() {
+        return nome;
     }
 
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
-    }
-
-    public String getTipo_s_d() {
-        return tipo_s_d;
-    }
-
-    public void setTipo_s_d(String tipo_s_d) {
-        this.tipo_s_d = tipo_s_d;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public String getDescricao() {
@@ -76,15 +74,28 @@ public class TipoSolicitacaoDelegacao{
         this.descricao = descricao;
     }
 
-	public List getItens() {
-		return itens;
-	}
+    public tipo.TipoSolicitacaoDelegacao getTipo() {
+        return tipo;
+    }
 
-	public void setItens(List itens) {
-		this.itens = itens;
-	}
-    
-    
-    
+    public void setTipo(tipo.TipoSolicitacaoDelegacao tipo) {
+        this.tipo = tipo;
+    }
+
+    public List<TipoItem> getTipoItem() {
+        return tipoItem;
+    }
+
+    public void setTipoItem(List<TipoItem> tipoItem) {
+        this.tipoItem = tipoItem;
+    }
+
+    public List<Nivel> getNivel() {
+        return nivel;
+    }
+
+    public void setNivel(List<Nivel> nivel) {
+        this.nivel = nivel;
+    }
     
 }

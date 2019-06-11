@@ -5,45 +5,40 @@
  */
 package modelo;
 
+import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
  *
- * @author andre
+ * @author adelson
  */
 @Entity
 @Table(name = "tipo_campo")
-public class TipoCampo {
-    @Id 
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
-    @Column(length=100)
+public class TipoCampo implements Serializable {
+
+    @Id
+    private long id;
+
+    @Column(length = 80, nullable = false)
     private String nome;
-    @Column(length=300)
+
+    @Column(length = 300, nullable = false)
     private String descricao;
-    @Column(length=6)
-    private String tipo;
 
-    public TipoCampo() {
-    }
+    @Enumerated(EnumType.STRING)
+    @Column(length = 8, nullable = false)
+    private tipo.TipoCampo tipo;
 
-    public TipoCampo(int id, String nome, String descricao, String tipo) {
-        this.id = id;
-        this.nome = nome;
-        this.descricao = descricao;
-        this.tipo = tipo;
-    }
-    
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -63,14 +58,12 @@ public class TipoCampo {
         this.descricao = descricao;
     }
 
-    public String getTipo() {
+    public tipo.TipoCampo getTipo() {
         return tipo;
     }
 
-    public void setTipo(String tipo) {
+    public void setTipo(tipo.TipoCampo tipo) {
         this.tipo = tipo;
     }
-    
-    
-    
+
 }

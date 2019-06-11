@@ -5,51 +5,50 @@
  */
 package modelo;
 
+import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 /**
  *
- * @author andre
+ * @author adelson
  */
 @Entity
 @Table(name = "nivel")
-public class Nivel {
-    @Id 
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
-    @Column(length=30)
+public class Nivel implements Serializable {
+
+    @Id
+    private long id;
+
+    @Column(length = 80, nullable = false)
     private String nome;
-    @Column
+
+    @OneToOne(targetEntity = Nivel.class)
+    @JoinColumn(name = "nivel_superior_id")
     private Nivel nivelSuperior;
-    @Column
+
+    @OneToOne(targetEntity = Nivel.class)
+    @JoinColumn(name = "nivel_inferior_id")
     private Nivel nivelInferior;
-    @Column
+
+    @ManyToOne(targetEntity = Funcionario.class)
+    @JoinColumn(name = "responsavel_id", nullable = false)
     private Funcionario responsavel;
-    @Column
+
+    @ManyToOne(targetEntity = Organizacao.class)
+    @JoinColumn(name = "organizacao_id", nullable = false)
     private Organizacao organizacao;
 
-    public Nivel() {
-    }
-
-    public Nivel(int id, String nome, Nivel nivelSuperior, Nivel nivelInferior, Funcionario responsavel, Organizacao organizacao) {
-        this.id = id;
-        this.nome = nome;
-        this.nivelSuperior = nivelSuperior;
-        this.nivelInferior = nivelInferior;
-        this.responsavel = responsavel;
-        this.organizacao = organizacao;
-    }
-
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -92,6 +91,5 @@ public class Nivel {
     public void setOrganizacao(Organizacao organizacao) {
         this.organizacao = organizacao;
     }
-    
-    
+
 }

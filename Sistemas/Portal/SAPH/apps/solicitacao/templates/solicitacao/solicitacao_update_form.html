@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 
-{%block title%}Atualizar Solicitacao{%endblock%}
+{%block title%}Atualizar Solicitacão{%endblock%}
 
 {% block main %}
 
 <div class="titulo">
-    <h2>Atualizar Solicitacao</h2>
+    <h2>Atualizar Solicitacão</h2>
 </div>
 
 <div class="form">
@@ -23,7 +23,7 @@
             <label>Descrição</label>
         </div>
         <div>
-            <label>Niveis</label>
+            <label>Níveis</label>
             {{form.nivel}}
         </div>
         <div>
@@ -32,11 +32,7 @@
                 <!-- Botão para acionar modal -->
                 <button type="button" class="btn btn-outline-secondary btn-sm form_botao_direito" data-toggle="modal" data-target="#ExemploModalCentralizado">Adicionar item</button>
             </div>
-            <select name="itens" id="itens" class="custom-select" multiple required>
-                {% for f in form.itens %}
-                    {{f}}
-                {% endfor %}
-            </select>
+                {{form.itens }}
         </div>
         <div>
             <button type="submit" class="btn btn-success btn-lg form_botao_direito">Atualizar</button>
@@ -142,7 +138,7 @@
             function(data){
             console.log(data);
             $('#ExemploModalCentralizado').modal('hide');
-            $('select').append('<option value='+data.id+' selected>'+data.nome+'</option>');
+            $('#id_itens').append('<option value='+data.id+' selected>'+data.nome+'</option>');
         });
     });
 

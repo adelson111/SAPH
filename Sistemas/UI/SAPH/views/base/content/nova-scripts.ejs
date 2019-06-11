@@ -2,34 +2,34 @@
   $( "#tipo" ).change(function() {
     tipo = $('#tipo option:selected').val();
     <% tipos.forEach(function(solicitacao){%>
-      if (tipo == '<%=solicitacao.tipo%>'){
+      if (tipo == '<%=solicitacao.id%>'){
         $('.body-solicitacao').html('');
         $('#itens').html('');
-        <% solicitacao.itens.forEach(function(item){%>
+        <% solicitacao.tipoItem.forEach(function(item){%>
           <%var files = [];%>
-          <%for(i = 0; i < item.campos.length; i++){
-            if(item.campos[i].tipo=='file'){
-              files.push(item.campos[i]);
-              item.campos.splice(i, 1);
+          <%for(i = 0; i < item.tipoCampo.length; i++){
+            if(item.tipoCampo[i].tipo=='file'){
+              files.push(item.tipoCampo[i]);
+              item.tipoCampo.splice(i, 1);
             }
           }; %>
-          <%item.campos = item.campos.concat(files);%>
+          <%item.tipoCampo = item.tipoCampo.concat(files);%>
           $('#itens').append('<li><%=item.nome%></li>'+
           '<ul>'+
-            <%item.campos.forEach(function(campo){%>
+            <%item.tipoCampo.forEach(function(campo){%>
                 '<li><%=campo.nome%></li>'+
             <%});%>
           '</ul>');
           $('.body-solicitacao').append(
             '<hr>'+
             '<h3><%=item.nome%></h3>'+
-            '<div class="form-row">'+
-              <% size = item.campos.length>3?'col-4':'col'%>
-              <%item.campos.forEach(function(campo){%>
+            '<div class="form-row tipo-itens" id="<%=item.id%>">'+
+              <% size = item.tipoCampo.length>3?'col-4':'col'%>
+              <%item.tipoCampo.forEach(function(campo){%>
                 <% size = campo.tipo=='textarea'?'col-12':size%>
-                '<div class="<%=size%> orm-group">'+
+                '<div class="<%=size%> orm-group " >'+
                   '<label"><%=campo.nome%></label>'+
-                  '<input type="<%=campo.tipo%>" class="form-control<%=campo.tipo=='file'?'-file':''%>" placeholder="<%=campo.nome%>...">'+
+                  '<input name = "campo" data-id="<%=campo.id%>"" type="<%=campo.tipo%>" class="form-control<%=campo.tipo=='file'?'-file':''%> tipo-campos" placeholder="<%=campo.nome%>...">'+
                 '</div>'+
               <%});%>
             '</div>'

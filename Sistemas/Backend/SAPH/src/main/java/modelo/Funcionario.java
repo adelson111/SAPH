@@ -5,66 +5,62 @@
  */
 package modelo;
 
+import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
- * @author andre
+ * @author adelson
  */
 @Entity
 @Table(name = "funcionario")
-public class Funcionario{
-    @Id 
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
-    @Column(length=80)
+public class Funcionario implements Serializable {
+
+    @Id
+    private long id;
+
+    @Column(length = 80, nullable = true)
     private String nome;
-    @Column(length=80)
-    private String email;
-    @Column(length=15)
-    private String senha;
-    @Column(length=14)
+
+    @Column(length = 15, nullable = true)
     private String cpf;
-    @Column(length=15)
+
+    @Column(length = 30, nullable = true)
     private String cargo;
-    @Column(length=100)
+
+    @Column(length = 100, nullable = true)
     private String endereco;
-    @Column(length=15)
+
+    @Column(length = 17, nullable = true)
     private String telefone;
-    @Column
+
+    @Column(nullable = false)
     private boolean ativo;
-    @Column(length=100)
+
+    @Column(length = 100, nullable = true)
     private String foto;
-    @Column
+
+    @ManyToOne(targetEntity = Organizacao.class)
+    @JoinColumn(name = "organizacao_id", nullable = false)
     private Organizacao organizacao;
 
-    public Funcionario() {
-    }
+    @OneToOne(targetEntity = Usuario.class)
+    @JoinColumn(name = "usuaio_id", nullable = false)
+    private Usuario usuario;
 
-    public Funcionario(int id, String nome, String email, String senha, String cpf, String cargo, String endereco, String telefone, boolean ativo, String foto, Organizacao organizacao) {
-        this.id = id;
-        this.nome = nome;
-        this.email = email;
-        this.senha = senha;
-        this.cpf = cpf;
-        this.cargo = cargo;
-        this.endereco = endereco;
-        this.telefone = telefone;
-        this.ativo = ativo;
-        this.foto = foto;
-        this.organizacao = organizacao;
-    }
-
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -74,22 +70,6 @@ public class Funcionario{
 
     public void setNome(String nome) {
         this.nome = nome;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getSenha() {
-        return senha;
-    }
-
-    public void setSenha(String senha) {
-        this.senha = senha;
     }
 
     public String getCpf() {
@@ -147,6 +127,13 @@ public class Funcionario{
     public void setOrganizacao(Organizacao organizacao) {
         this.organizacao = organizacao;
     }
-    
-    
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
 }

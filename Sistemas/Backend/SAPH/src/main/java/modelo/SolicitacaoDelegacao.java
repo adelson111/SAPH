@@ -5,59 +5,58 @@
  */
 package modelo;
 
+import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import tipo.TipoStatus;
 
 /**
  *
- * @author andre
+ * @author adelson
  */
 @Entity
 @Table(name = "solicitacao_delegacao")
-public class SolicitacaoDelegacao {
-    @Id 
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
-    @Column
-    private TipoSolicitacaoDelegacao idSolicitacaoDelegacao;
-    @Column(length=30)
-    private String status;
+public class SolicitacaoDelegacao implements Serializable {
+    
+    @Id
+    private long id;
+    
+    @Enumerated(EnumType.STRING)
+    @Column(length = 10, nullable = false)
+    private tipo.TipoStatus status;
+    
+    @ManyToOne(targetEntity = TipoSolicitacaoDelegacao.class)
+    @JoinColumn(name = "tipo_solicitacao_delegacao_id", nullable = false)
+    private TipoSolicitacaoDelegacao tipoSolicitacaoDelegacao;
 
-    public SolicitacaoDelegacao() {
-    }
-
-    public SolicitacaoDelegacao(int id, TipoSolicitacaoDelegacao idSolicitacaoDelegacao, String status) {
-        this.id = id;
-        this.idSolicitacaoDelegacao = idSolicitacaoDelegacao;
-        this.status = status;
-    }
-
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
-    public TipoSolicitacaoDelegacao getIdSolicitacaoDelegacao() {
-        return idSolicitacaoDelegacao;
-    }
-
-    public void setIdSolicitacaoDelegacao(TipoSolicitacaoDelegacao idSolicitacaoDelegacao) {
-        this.idSolicitacaoDelegacao = idSolicitacaoDelegacao;
-    }
-
-    public String getStatus() {
+    public TipoStatus getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(TipoStatus status) {
         this.status = status;
+    }
+
+    public TipoSolicitacaoDelegacao getTipoSolicitacaoDelegacao() {
+        return tipoSolicitacaoDelegacao;
+    }
+
+    public void setTipoSolicitacaoDelegacao(TipoSolicitacaoDelegacao tipoSolicitacaoDelegacao) {
+        this.tipoSolicitacaoDelegacao = tipoSolicitacaoDelegacao;
     }
     
 }

@@ -5,60 +5,55 @@
  */
 package modelo;
 
-import javax.persistence.Column;
+import java.io.Serializable;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 /**
  *
- * @author andre
+ * @author adelson
  */
 @Entity
 @Table(name = "item")
-public class Item {
-    @Id 
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
-    @Column
-    private SolicitacaoDelegacao s_d_id;
-    @Column
-    private TipoItem tipo_item_id;
+public class Item implements Serializable {
+    
+    @Id
+    private long id;
+    
+    @ManyToOne(targetEntity = SolicitacaoDelegacao.class)
+    @JoinColumn(name = "solicitacao_delegacao_id", nullable = false)
+    private SolicitacaoDelegacao solicitacaoDelegacao;
+    
+    @OneToOne(targetEntity = TipoItem.class)
+    @JoinColumn(name = "tipo_item_id", nullable = false)
+    private TipoItem tipoItem;
 
-    public Item() {
-    }
-
-    public Item(int id, SolicitacaoDelegacao s_d_id, TipoItem tipo_item_id) {
-        this.id = id;
-        this.s_d_id = s_d_id;
-        this.tipo_item_id = tipo_item_id;
-    }
-
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
-    public SolicitacaoDelegacao getS_d_id() {
-        return s_d_id;
+    public SolicitacaoDelegacao getSolicitacaoDelegacao() {
+        return solicitacaoDelegacao;
     }
 
-    public void setS_d_id(SolicitacaoDelegacao s_d_id) {
-        this.s_d_id = s_d_id;
+    public void setSolicitacaoDelegacao(SolicitacaoDelegacao solicitacaoDelegacao) {
+        this.solicitacaoDelegacao = solicitacaoDelegacao;
     }
 
-    public TipoItem getTipo_item_id() {
-        return tipo_item_id;
+    public TipoItem getTipoItem() {
+        return tipoItem;
     }
 
-    public void setTipo_item_id(TipoItem tipo_item_id) {
-        this.tipo_item_id = tipo_item_id;
+    public void setTipoItem(TipoItem tipoItem) {
+        this.tipoItem = tipoItem;
     }
-    
     
 }

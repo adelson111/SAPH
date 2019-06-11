@@ -12,20 +12,20 @@ create table usuario (
 create table organizacao (
    id serial not null,
    nome varchar(80) not null,
-   cnpj varchar(20) not null,
-   endereco varchar(50) not null,
-   telefone varchar(15) not null,
+   cnpj varchar(19) not null,
+   endereco varchar(100) not null,
+   telefone varchar(17) not null,
    situacao boolean not null,
    primary key (id)
 );
 
-create table funcionarios (
+create table funcionario (
    id serial not null,
    nome varchar(80),
-   cpf varchar(14),
-   cargo varchar(15),
+   cpf varchar(15),
+   cargo varchar(30),
    endereco varchar(100),
-   telefone varchar(10),
+   telefone varchar(17),
    ativo boolean not null,
    foto varchar(100),
    organizacao_id int not null,
@@ -41,9 +41,9 @@ create table funcionarios (
 
 create table nivel (
    id serial not null,
-   nome varchar(30) not null,
-   nivel_superior_id int not null,
-   nivel_inferior_id int not null,
+   nome varchar(80) not null,
+   nivel_superior_id int,
+   nivel_inferior_id int,
    responsavel_id int not null,
    organizacao_id int not null,
    primary key (id),
@@ -63,7 +63,7 @@ create table nivel (
 
 create table setor (
    id serial not null,
-   nome varchar(30) not null,
+   nome varchar(80) not null,
    gerente_id int not null,
    nivel_id int not null,
    primary key (id),
@@ -88,15 +88,15 @@ create table setor_funcionario (
 
 create table tipo_campo (
    id serial not null,
-   nome varchar(100) not null,
+   nome varchar(80) not null,
    descricao varchar(300) not null,
-   tipo varchar(10) not null,
+   tipo varchar(8) not null,
    primary key (id)
 );
 
 create table tipo_item (
    id serial not null,
-   nome varchar(100) not null,
+   nome varchar(80) not null,
    primary key (id)
 );
 
@@ -113,8 +113,8 @@ create table tipo_item_campo (
 
 create table tipo_solicitacao_delegacao (
    id serial not null,
-   nome varchar(100) not null,
-   descricao varchar(200) not null,
+   nome varchar(80) not null,
+   descricao varchar(300) not null,
    tipo varchar(12) not null,
    primary key (id)
 );
@@ -184,7 +184,7 @@ create table campo (
 
 create table comentario (
    id serial not null,
-   comentario varchar(200) not null,
+   comentario varchar(300) not null,
    solicitacao_delegacao_id int not null,
    funcionario_id int not null,
    primary key (id),

@@ -166,10 +166,4 @@ class PesquisaNivel(View):
         response = json.dumps({'nivelInf': nivelI, 'nivelSup': nivelS })
         return HttpResponse(response, content_type='application/json')
 
-class DetalharNivel(View):
-    def get(self, request, nivel_id):
-        setores = Setor.objects.filter(nivel_id=nivel_id)
-        return render(request, 'nivel/setores_nivel.html', {'setores': setores} )
-
-
 

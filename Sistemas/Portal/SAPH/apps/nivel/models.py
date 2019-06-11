@@ -7,7 +7,7 @@ from apps.organizacao.models import Organizacao
 
 
 class Nivel(models.Model):
-    nome = models.CharField(max_length=30, null=False, blank=False)
+    nome = models.CharField(max_length=80, null=False, blank=False)
     nivelSuperior = models.ForeignKey('self', null=True, blank=True, on_delete=models.PROTECT, related_name='nivelsuperior')
     nivelInferior = models.ForeignKey('self', null=True, blank=True, on_delete=models.PROTECT, related_name='nivelinferior')
     funcionario = models.ForeignKey(Funcionario, on_delete=models.PROTECT, related_name='funcionario_do_nivel')

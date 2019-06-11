@@ -5,45 +5,41 @@
  */
 package modelo;
 
+import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 /**
  *
- * @author andre
+ * @author adelson
  */
 @Entity
 @Table(name = "comentario")
-public class Comentario {
-    @Id 
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
-    @Column(length=300)
+public class Comentario implements Serializable {
+    
+    @Id
+    private long id;
+    
+    @Column(length = 300, nullable = false)
     private String comentario;
-    @Column
-    private SolicitacaoDelegacao s_d_id;
-    @Column
-    private Funcionario funcionario_id;
+    
+    @ManyToOne(targetEntity = SolicitacaoDelegacao.class)
+    @JoinColumn(name = "solicitacao_delegacao_id", nullable = false)
+    private SolicitacaoDelegacao solicitacaoDelegacao;
+    
+    @ManyToOne(targetEntity = Funcionario.class)
+    @JoinColumn(name = "funcionario_id", nullable = false)
+    private Funcionario funcionario;
 
-    public Comentario() {
-    }
-
-    public Comentario(int id, String comentario, SolicitacaoDelegacao s_d_id, Funcionario funcionario_id) {
-        this.id = id;
-        this.comentario = comentario;
-        this.s_d_id = s_d_id;
-        this.funcionario_id = funcionario_id;
-    }
-
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -55,21 +51,20 @@ public class Comentario {
         this.comentario = comentario;
     }
 
-    public SolicitacaoDelegacao getS_d_id() {
-        return s_d_id;
+    public SolicitacaoDelegacao getSolicitacaoDelegacao() {
+        return solicitacaoDelegacao;
     }
 
-    public void setS_d_id(SolicitacaoDelegacao s_d_id) {
-        this.s_d_id = s_d_id;
+    public void setSolicitacaoDelegacao(SolicitacaoDelegacao solicitacaoDelegacao) {
+        this.solicitacaoDelegacao = solicitacaoDelegacao;
     }
 
-    public Funcionario getFuncionario_id() {
-        return funcionario_id;
+    public Funcionario getFuncionario() {
+        return funcionario;
     }
 
-    public void setFuncionario_id(Funcionario funcionario_id) {
-        this.funcionario_id = funcionario_id;
+    public void setFuncionario(Funcionario funcionario) {
+        this.funcionario = funcionario;
     }
-    
     
 }

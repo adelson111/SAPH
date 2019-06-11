@@ -5,48 +5,50 @@
  */
 package modelo;
 
-import java.util.ArrayList;
+import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 /**
  *
- * @author andre
+ * @author adelson
  */
 @Entity
 @Table(name = "setor")
-public class Setor {
-    @Id 
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
-    @Column(length=20)
+public class Setor implements Serializable {
+
+    @Id
+    private long id;
+
+    @Column(length = 80, nullable = false)
     private String nome;
-    @Column
-    private ArrayList<Funcionario> funcionario = new ArrayList<>();
-    @Column
-    private Nivel nivel;
-    @Column
+
+    @ManyToMany(targetEntity = Funcionario.class)
+    @JoinTable(name = "setor_funcionario", 
+            joinColumns = {@JoinColumn(name = "setor_id")}, 
+            inverseJoinColumns = {@JoinColumn(name = "funcionario_id")})
+    private List<Funcionario> funcionario;
+
+    @ManyToOne(targetEntity = Funcionario.class)
+    @JoinColumn(name = "gerente_id", nullable = false)
     private Funcionario gerente;
 
-    public Setor() {
-    }
+    @ManyToOne(targetEntity = Nivel.class)
+    @JoinColumn(name = "nivel_id", nullable = false)
+    private Nivel nivel;
 
-    public Setor(int id, String nome, Nivel nivel, Funcionario gerente) {
-        this.id = id;
-        this.nome = nome;
-        this.nivel = nivel;
-        this.gerente = gerente;
-    }
-
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -58,20 +60,12 @@ public class Setor {
         this.nome = nome;
     }
 
-    public ArrayList<Funcionario> getFuncionario() {
+    public List<Funcionario> getFuncionario() {
         return funcionario;
     }
 
-    public void setFuncionario(ArrayList<Funcionario> funcionario) {
+    public void setFuncionario(List<Funcionario> funcionario) {
         this.funcionario = funcionario;
-    }
-
-    public Nivel getNivel() {
-        return nivel;
-    }
-
-    public void setNivel(Nivel nivel) {
-        this.nivel = nivel;
     }
 
     public Funcionario getGerente() {
@@ -81,6 +75,13 @@ public class Setor {
     public void setGerente(Funcionario gerente) {
         this.gerente = gerente;
     }
-    
+
+    public Nivel getNivel() {
+        return nivel;
+    }
+
+    public void setNivel(Nivel nivel) {
+        this.nivel = nivel;
+    }
     
 }

@@ -5,45 +5,41 @@
  */
 package modelo;
 
-import java.util.ArrayList;
+import java.io.Serializable;
 import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 /**
  *
- * @author andre
+ * @author adelson
  */
 @Entity
 @Table(name = "tipo_item")
-public class TipoItem {
-    @Id 
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
-    @Column(length=100)
+public class TipoItem implements Serializable {
+
+    @Id
+    private long id;
+
+    @Column(length = 80, nullable = false)
     private String nome;
-    @OneToMany( targetEntity=TipoCampo.class )
-    private List<TipoCampo> campos;
 
-    public TipoItem() {
-    }
+    @ManyToMany(targetEntity = TipoCampo.class)
+    @JoinTable(name = "tipo_item_campo", 
+            joinColumns = {@JoinColumn(name = "tipo_item_id")}, 
+            inverseJoinColumns = {@JoinColumn(name = "tipo_campo_id")})
+    private List<TipoCampo> tipoCampo;
 
-    public TipoItem(int id, String nome) {
-        this.id = id;
-        this.nome = nome;
-    }
-
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -55,15 +51,12 @@ public class TipoItem {
         this.nome = nome;
     }
 
-    public List<TipoCampo> getCampo() {
-        return campos;
+    public List<TipoCampo> getTipoCampo() {
+        return tipoCampo;
     }
 
-    public void setCampo(List<TipoCampo> campo) {
-        this.campos = campo;
+    public void setTipoCampo(List<TipoCampo> tipoCampo) {
+        this.tipoCampo = tipoCampo;
     }
-    
-    
-    
-    
+
 }

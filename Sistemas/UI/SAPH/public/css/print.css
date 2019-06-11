@@ -44,4 +44,25 @@
   #cardSolici, #itens{
     overflow: none;
     height: auto;
+    display: block;
+  }
+
+  #solicitacao{
+    display: block;
+    overflow: none;
+  }
+
+  .card-body{
+    overflow: none;
+  }
+
+  #largeModal, #modal3, #modal{
+    height: 100%;
+  }
+  #bodyModal{
+    height: auto;
+  }
+
+  #comentarios{
+    display: none
   }

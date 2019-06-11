@@ -159,7 +159,7 @@ class SubirFuncionarios(View):
             l.append(model_to_dict(x))
         d = {'nome':'Fudeu'}
         a1 = json
-        resp = requests.post(url='http://localhost:8080/SAPH/saph/organizacao',
+        resp = requests.post(url='http://localhost:8080/SAPH/saph/organizacao/',
                              # data=lorganizacao[0],
                              data=json.dumps(lorganizacao[0]),
                              headers={'content-type': 'application/json'})

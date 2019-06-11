@@ -14,9 +14,7 @@ import org.glassfish.jersey.server.ResourceConfig;
  */
 @ApplicationPath("saph")
 public class Conf extends ResourceConfig {
-
     public Conf() {
         packages("rest");
     }
-    
 }

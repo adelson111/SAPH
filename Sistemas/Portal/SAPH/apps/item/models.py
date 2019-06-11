@@ -10,7 +10,7 @@ TYPE = [
 ]
 
 class Campo(models.Model):
-    nome = models.CharField(max_length=100)
+    nome = models.CharField(max_length=80)
     descricao = models.TextField(max_length=300,null=True)
     tipo = models.CharField(
         max_length=6,
@@ -21,7 +21,7 @@ class Campo(models.Model):
         return self.nome
 
 class Item(models.Model):
-    nome = models.CharField(max_length=100)
+    nome = models.CharField(max_length=80)
     campus = models.ManyToManyField(Campo)
     def __str__(self):
         return self.nome

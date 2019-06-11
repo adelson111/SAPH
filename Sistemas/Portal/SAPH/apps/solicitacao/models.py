@@ -7,7 +7,7 @@ from apps.nivel.models import Nivel
 
 
 class Solicitacao(models.Model):
-    tipo = models.CharField(max_length=100)
+    tipo = models.CharField(max_length=80)
     nivel = models.ManyToManyField(Nivel, related_name='nivel_solicitacao')
     descricao = models.CharField(max_length=300, null=False)
     itens = models.ManyToManyField(Item, related_name='itens_solicitacao')

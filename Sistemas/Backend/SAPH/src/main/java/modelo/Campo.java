@@ -5,45 +5,42 @@
  */
 package modelo;
 
+import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 /**
  *
- * @author andre
+ * @author adelson
  */
 @Entity
 @Table(name = "campo")
-public class Campo{
-    @Id 
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
-    @Column(length=200)
+public class Campo implements Serializable {
+    
+    @Id
+    private long id;
+    
+    @Column(length = 300, nullable = false)
     private String valor;
-    @Column
-    private Item item_id;
-    @Column
-    private TipoCampo tipo_campo_id;
+    
+    @ManyToOne(targetEntity = Item.class)
+    @JoinColumn(name = "item_id", nullable = false)
+    private Item item;
+    
+    @OneToOne(targetEntity = TipoCampo.class)
+    @JoinColumn(name = "tipo_campo_id", nullable = false)
+    private TipoCampo tipoCampo;
 
-    public Campo() {
-    }
-
-    public Campo(int id, String valor, Item item_id, TipoCampo tipo_campo_id) {
-        this.id = id;
-        this.valor = valor;
-        this.item_id = item_id;
-        this.tipo_campo_id = tipo_campo_id;
-    }
-
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -55,21 +52,20 @@ public class Campo{
         this.valor = valor;
     }
 
-    public Item getItem_id() {
-        return item_id;
+    public Item getItem() {
+        return item;
     }
 
-    public void setItem_id(Item item_id) {
-        this.item_id = item_id;
+    public void setItem(Item item) {
+        this.item = item;
     }
 
-    public TipoCampo getTipo_campo_id() {
-        return tipo_campo_id;
+    public TipoCampo getTipoCampo() {
+        return tipoCampo;
     }
 
-    public void setTipo_campo_id(TipoCampo tipo_campo_id) {
-        this.tipo_campo_id = tipo_campo_id;
+    public void setTipoCampo(TipoCampo tipoCampo) {
+        this.tipoCampo = tipoCampo;
     }
-    
     
 }

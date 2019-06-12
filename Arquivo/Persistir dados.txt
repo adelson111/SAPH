@@ -1,0 +1,172 @@
+Usuário
+
+{
+	"id": 7,
+	"email": "7",
+	"senha": "7"
+}
+
+-------------------------------------------------------
+
+Organização
+
+{
+	"id": 7,
+	"nome": "7",
+	"cnpj": "7",
+	"endereco": "7",
+	"telefone": "7",
+	"situacao": true
+}
+
+-------------------------------------------------------
+
+Funcionário
+
+{
+	"id": 7,
+	"nome": "7",
+	"cpf": "7",
+	"cargo": "7",
+	"endereco": "7",
+	"telefone": "7",
+	"ativo": true,
+	"foto": "7",
+	"organizacao": {
+	"id": 7
+	},
+	"usuario": {
+	"id": 7
+	}
+}
+
+-------------------------------------------------------
+
+Nível
+
+{
+	"id": 7,
+	"nome": "7",
+	"responsavel": {
+	"id": 7
+	},
+	"organizacao": {
+	"id": 7
+	}
+}
+
+-------------------------------------------------------
+
+Setor
+
+{
+	"id": 7,
+	"nome": "7",
+	"funcionario": [
+	    {
+		"id": 7
+	    }
+	],
+	"gerente": {
+	    "id": 7
+	},
+	"nivel": {
+	    "id": 7
+	}
+}
+
+-------------------------------------------------------
+
+Tipo Item XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+[
+    {
+        "id": 1,
+        "nome": "Compra",
+        "tipoCampo": [
+		{
+		"id": 1,
+		"nome": "ddd",
+		"descricao": "dd",
+		"tipo": "TEXTO"
+		}
+        ]
+    }
+]
+
+-------------------------------------------------------
+
+Tipo Solicitação Delegação
+
+{
+	"id": 7,
+	"nome": "7",
+	"descricao": "7",
+	"tipo": "SOLICITACAO",
+	"tipoItem": [
+		{
+		    "id": 7
+		}
+	],
+	"nivel": [
+		{
+		    "id": 7
+		}
+	]
+}
+
+-------------------------------------------------------
+
+Solicitação Delegação
+
+{
+	"id": 7,
+	"status": "ENVIADA",
+	"tipoSolicitacaoDelegacao": {
+	    "id": 7
+	}
+}
+
+-------------------------------------------------------
+
+Item
+
+{
+    "id": 7,
+    "solicitacaoDelegacao": {
+        "id": 7
+    },
+    "tipoItem": {
+        "id": 7
+    }
+}
+
+-------------------------------------------------------
+
+Campo XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+{
+    "id": 7,
+    "solicitacaoDelegacao": {
+        "id": 7
+    },
+    "tipoItem": {
+        "id": 7
+    }
+}
+
+-------------------------------------------------------
+
+Comentário
+
+{
+	"id": 7,
+	"comentario": "7",
+	"solicitacaoDelegacao": {
+	    "id": 7
+	},
+	"funcionario": {
+	    "id": 7
+	}
+}
+

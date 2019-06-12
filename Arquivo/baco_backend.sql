@@ -131,10 +131,8 @@ create table tipo_solicitacao_delegacao_item (
 );
 
 create table tipo_solicitacao_delegacao_nivel (
-   id serial not null,
    tipo_solicitacao_delegacao_id int not null,
    nivel_id int not null,
-   primary key (id),
    foreign key (tipo_solicitacao_delegacao_id) references tipo_solicitacao_delegacao (id)
    on delete no action
    on update no action,

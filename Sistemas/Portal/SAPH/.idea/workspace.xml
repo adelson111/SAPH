@@ -1,67 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5d1cea4b-28ea-4cb8-8a4e-6fbcda998d46" name="Default Changelist" comment="Backend com acesso ao banco.">
-      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/rest/Campo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/rest/Comentario.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/rest/Funcionario.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/rest/Item.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/rest/Nivel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/rest/Setor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/rest/TipoCampo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/rest/TipoItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Documentacao/baco_backend.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Documentacao/baco_backend.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/Campo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/Campo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/Comentario.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/Comentario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/Funcionario.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/Funcionario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/Nivel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/Nivel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/Setor.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/Setor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/SolicitacaoDelegacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/SolicitacaoDelegacao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/TipoItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/TipoItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/TipoSolicitacaoDelegacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/TipoSolicitacaoDelegacao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/rest/SolicitacaoDelegacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/rest/SolicitacaoDelegacao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/rest/TipoSolicitacaoDelegacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/rest/TipoSolicitacaoDelegacao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0.0.war" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0.0.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0.0/WEB-INF/classes/modelo/Campo.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0.0/WEB-INF/classes/modelo/Campo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0.0/WEB-INF/classes/modelo/Comentario.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0.0/WEB-INF/classes/modelo/Comentario.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0.0/WEB-INF/classes/modelo/Funcionario.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0.0/WEB-INF/classes/modelo/Funcionario.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0.0/WEB-INF/classes/modelo/Funcionario_.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0.0/WEB-INF/classes/modelo/Funcionario_.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0.0/WEB-INF/classes/modelo/Item.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0.0/WEB-INF/classes/modelo/Item.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0.0/WEB-INF/classes/modelo/Nivel.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0.0/WEB-INF/classes/modelo/Nivel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0.0/WEB-INF/classes/modelo/Nivel_.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0.0/WEB-INF/classes/modelo/Nivel_.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0.0/WEB-INF/classes/modelo/Setor.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0.0/WEB-INF/classes/modelo/Setor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0.0/WEB-INF/classes/modelo/SolicitacaoDelegacao.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0.0/WEB-INF/classes/modelo/SolicitacaoDelegacao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0.0/WEB-INF/classes/modelo/TipoItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0.0/WEB-INF/classes/modelo/TipoItem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0.0/WEB-INF/classes/modelo/TipoItem_.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0.0/WEB-INF/classes/modelo/TipoItem_.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0.0/WEB-INF/classes/modelo/TipoSolicitacaoDelegacao.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0.0/WEB-INF/classes/modelo/TipoSolicitacaoDelegacao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0.0/WEB-INF/classes/rest/SolicitacaoDelegacao.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0.0/WEB-INF/classes/rest/SolicitacaoDelegacao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0.0/WEB-INF/classes/rest/TipoSolicitacaoDelegacao$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0.0/WEB-INF/classes/rest/TipoSolicitacaoDelegacao$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0.0/WEB-INF/classes/rest/TipoSolicitacaoDelegacao.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0.0/WEB-INF/classes/rest/TipoSolicitacaoDelegacao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Campo.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Campo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Comentario.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Comentario.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Funcionario.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Funcionario.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Funcionario_.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Funcionario_.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Item.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Item.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Nivel.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Nivel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Nivel_.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Nivel_.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Setor.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Setor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/SolicitacaoDelegacao.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/SolicitacaoDelegacao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/TipoItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/TipoItem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/TipoItem_.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/TipoItem_.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/TipoSolicitacaoDelegacao.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/TipoSolicitacaoDelegacao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/SolicitacaoDelegacao.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/SolicitacaoDelegacao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/TipoSolicitacaoDelegacao$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/TipoSolicitacaoDelegacao$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/TipoSolicitacaoDelegacao.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/TipoSolicitacaoDelegacao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/generated-sources/annotations/modelo/Funcionario_.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/generated-sources/annotations/modelo/Funcionario_.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/generated-sources/annotations/modelo/Nivel_.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/generated-sources/annotations/modelo/Nivel_.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/generated-sources/annotations/modelo/TipoItem_.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/generated-sources/annotations/modelo/TipoItem_.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+    <list default="true" id="5d1cea4b-28ea-4cb8-8a4e-6fbcda998d46" name="Default Changelist" comment="Colocando recuperação de senha no Portal (Django)">
+      <change beforePath="$PROJECT_DIR$/../../../Documentacao/baco_backend.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Documentacao/banco_backend.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/routes/solicitacoes.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/SAPH/routes/solicitacoes.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -96,35 +39,38 @@
         <option value="$PROJECT_DIR$/apps/setor/templates/setor/setor_update_form.html" />
         <option value="$PROJECT_DIR$/apps/solicitacao/templates/solicitacao/solicitacao_confirm_delete.html" />
         <option value="$PROJECT_DIR$/apps/funcionario/urls.py" />
-        <option value="$PROJECT_DIR$/templates/navbar.html" />
+        <option value="$PROJECT_DIR$/requirements" />
         <option value="$PROJECT_DIR$/apps/organizacao/serializer.py" />
         <option value="$PROJECT_DIR$/apps/nivel/templates/nivel/nivel_organograma.html" />
-        <option value="$PROJECT_DIR$/SAPH/settings.py" />
-        <option value="$PROJECT_DIR$/apps/organizacao/views.py" />
-        <option value="$PROJECT_DIR$/requirements" />
-        <option value="$PROJECT_DIR$/SAPH/urls.py" />
-        <option value="$PROJECT_DIR$/apps/funcionario/views.py" />
-        <option value="$PROJECT_DIR$/apps/nivel/urls.py" />
-        <option value="$PROJECT_DIR$/apps/nivel/views.py" />
-        <option value="$PROJECT_DIR$/apps/organizacao/forms.py" />
         <option value="$PROJECT_DIR$/apps/organizacao/models.py" />
+        <option value="$PROJECT_DIR$/apps/delegacao/views.py" />
+        <option value="$PROJECT_DIR$/apps/item/views.py" />
+        <option value="$PROJECT_DIR$/apps/nivel/views.py" />
+        <option value="$PROJECT_DIR$/apps/organizacao/views.py" />
+        <option value="$PROJECT_DIR$/apps/setor/views.py" />
+        <option value="$PROJECT_DIR$/apps/solicitacao/views.py" />
+        <option value="$PROJECT_DIR$/templates/base.html" />
+        <option value="$PROJECT_DIR$/templates/registration/login.html" />
+        <option value="$PROJECT_DIR$/templates/404.html" />
+        <option value="$PROJECT_DIR$/SAPH/settings.py" />
+        <option value="$PROJECT_DIR$/templates/registration/password_reset_email.html" />
+        <option value="$PROJECT_DIR$/templates/registration/password_reset_subject.txt" />
+        <option value="$PROJECT_DIR$/templates/registration/password_reset_done.html" />
+        <option value="$PROJECT_DIR$/SAPH/urls.py" />
+        <option value="$PROJECT_DIR$/templates/navbar.html" />
+        <option value="$PROJECT_DIR$/apps/funcionario/views.py" />
         <option value="$PROJECT_DIR$/apps/funcionario/models.py" />
-        <option value="$PROJECT_DIR$/apps/item/models.py" />
-        <option value="$PROJECT_DIR$/apps/nivel/models.py" />
-        <option value="$PROJECT_DIR$/apps/setor/models.py" />
-        <option value="$PROJECT_DIR$/apps/solicitacao/models.py" />
-        <option value="$PROJECT_DIR$/apps/solicitacao/form.py" />
-        <option value="$PROJECT_DIR$/apps/solicitacao/templates/solicitacao/solicitacao_form.html" />
-        <option value="$PROJECT_DIR$/apps/solicitacao/templates/solicitacao/solicitacao_list.html" />
-        <option value="$PROJECT_DIR$/apps/solicitacao/templates/solicitacao/solicitacao_update_form.html" />
+        <option value="$PROJECT_DIR$/templates/registration/password_reset_form.html" />
+        <option value="$PROJECT_DIR$/templates/registration/password_reset_confirm.html" />
+        <option value="$PROJECT_DIR$/templates/registration/password_reset_complete.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="131" />
+    <option name="x" value="70" />
     <option name="y" value="-4" />
     <option name="width" value="1026" />
-    <option name="height" value="630" />
+    <option name="height" value="602" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -278,9 +224,13 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -294,19 +244,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
-    <configuration name="run" type="PythonConfigurationType" factoryName="Python">
+  <component name="RunManager" selected="Python.runserver">
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="SAPH" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="$USER_HOME$/Ambiente/venv/bin/python" />
+      <option name="SDK_HOME" value="$USER_HOME$/ambienteTeste1/bin/python" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/manage.py" />
       <option name="PARAMETERS" value="runserver" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -316,6 +267,77 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="makemigrations" type="PythonConfigurationType" factoryName="Python">
+      <module name="SAPH" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/ambienteTeste1/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/manage.py" />
+      <option name="PARAMETERS" value="makemigrations" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="migrate" type="PythonConfigurationType" factoryName="Python">
+      <module name="SAPH" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/ambienteTeste1/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/manage.py" />
+      <option name="PARAMETERS" value="migrate" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="runserver" type="PythonConfigurationType" factoryName="Python">
+      <module name="SAPH" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/ambienteTeste1/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/manage.py" />
+      <option name="PARAMETERS" value="runserver" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.runserver" />
+      <item itemvalue="Python.makemigrations" />
+      <item itemvalue="Python.migrate" />
+    </list>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -327,6 +349,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1559842792772</updated>
+      <workItem from="1560085960495" duration="1560000" />
+      <workItem from="1560121314428" duration="10403000" />
+      <workItem from="1560296026858" duration="1040000" />
     </task>
     <task id="LOCAL-00001" summary="Teste request Portal">
       <created>1559878787060</created>
@@ -342,29 +367,39 @@
       <option name="project" value="LOCAL" />
       <updated>1559931386154</updated>
     </task>
-    <task id="LOCAL-00003" summary="Tentativa de enviar o portal para banco do backend">
-      <created>1559939868041</created>
+    <task id="LOCAL-00003" summary="senha">
+      <created>1560296089562</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1559939868093</updated>
+      <updated>1560296089563</updated>
     </task>
-    <task id="LOCAL-00004" summary="Pegar backend">
-      <created>1560197147674</created>
+    <task id="LOCAL-00004" summary="senha 1">
+      <created>1560296511290</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1560197147674</updated>
+      <updated>1560296511290</updated>
     </task>
-    <task id="LOCAL-00005" summary="Backend com acesso ao banco.">
-      <created>1560228002049</created>
+    <task id="LOCAL-00005" summary="senha 1">
+      <created>1560296624980</created>
       <option name="number" value="00005" />
       <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
-      <updated>1560228002049</updated>
+      <updated>1560296624980</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="senha 1">
+      <created>1560296761559</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1560296761559</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="13003000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-4" width="1303" height="773" extended-state="6" />
@@ -374,64 +409,51 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.26552796" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3431677" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.39482757" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.34310344" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.4689441" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32919255" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="7" sideWeight="0.49924242" visible="true" weight="0.4689441" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3275862" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5007576" side_tool="true" visible="true" weight="0.4862069" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.32919255" />
+      <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="right" id="SciView" order="4" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19561815" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28636363" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.26552796" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.39482757" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3431677" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.46945336" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32919255" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.48757765" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3275862" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.32919255" />
+      <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="right" id="SciView" order="4" />
     </layout-to-restore>
   </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
   <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
-              <option name="COLUMN_ORDER">
-                <list>
-                  <option value="0" />
-                  <option value="1" />
-                  <option value="2" />
-                  <option value="3" />
-                </list>
-              </option>
-            </State>
-          </value>
-        </entry>
-      </map>
-    </option>
     <option name="RECENT_FILTERS">
       <map>
         <entry key="Branch">
@@ -450,10 +472,10 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Teste request Portal" />
     <MESSAGE value="Criação do Organograma no UI" />
-    <MESSAGE value="Tentativa de enviar o portal para banco do backend" />
-    <MESSAGE value="Pegar backend" />
-    <MESSAGE value="Backend com acesso ao banco." />
-    <option name="LAST_COMMIT_MESSAGE" value="Backend com acesso ao banco." />
+    <MESSAGE value="senha" />
+    <MESSAGE value="senha 1" />
+    <MESSAGE value="Colocando recuperação de senha no Portal (Django)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Colocando recuperação de senha no Portal (Django)" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -462,117 +484,126 @@
       </configuration>
     </watches-manager>
   </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/SAPH$runserver.coverage" NAME="runserver Coverage Results" MODIFIED="1560135520080" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
       <expression>
-        <expression-string>lorganizacao</expression-string>
+        <expression-string>self.from_email</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>self</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>self.request.POST['email']</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>self.request.POST</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>self.request.POST.email</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>self.request</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>self.request.post</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>self.request.email</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>selg</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/apps/funcionario/forms.py">
+    <entry file="file://$PROJECT_DIR$/apps/nivel/templates/nivel/nivel_list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-352" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/nivel/templates/nivel/nivel_update_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-743" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/nivel/templates/nivel/setores_nivel.html" />
+    <entry file="file://$PROJECT_DIR$/apps/setor/templates/setor/setor_confirm_delete.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="93" selection-start-line="18" selection-start-column="93" selection-end-line="18" selection-end-column="93" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/funcionario/views.py">
+    <entry file="file://$PROJECT_DIR$/apps/setor/templates/setor/setor_detalhar.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="161" column="78" selection-start-line="161" selection-start-column="78" selection-end-line="161" selection-end-column="78" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="197">
+          <caret line="18" column="23" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/item/admin.py">
+    <entry file="file://$PROJECT_DIR$/apps/setor/templates/setor/setor_form.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-225" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/setor/templates/setor/setor_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-87" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/setor/templates/setor/setor_update_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="412">
+          <caret line="46" column="93" selection-start-line="46" selection-start-column="93" selection-end-line="46" selection-end-column="93" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/item/apps.py">
+    <entry file="file://$PROJECT_DIR$/apps/solicitacao/templates/solicitacao/solicitacao_confirm_delete.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="93" selection-start-line="18" selection-start-column="93" selection-end-line="18" selection-end-column="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/solicitacao/templates/solicitacao/solicitacao_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-315" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/solicitacao/templates/solicitacao/solicitacao_list.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/item/forms.py">
+    <entry file="file://$PROJECT_DIR$/apps/solicitacao/templates/solicitacao/solicitacao_update_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-225" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SAPH/wsgi.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <folding>
-            <element signature="e#0#34#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/item/tests.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/item/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/item/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#36#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/nivel/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/nivel/apps.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/nivel/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#34#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/nivel/tests.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/nivel/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="59" selection-start-line="3" selection-start-column="59" selection-end-line="3" selection-end-column="59" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/nivel/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="168" selection-start-line="168" selection-end-line="168" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#220#229#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -586,19 +617,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/funcionario/templates/funcionario/funcionario_form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1231">
-          <caret line="83" column="48" selection-start-line="83" selection-start-column="48" selection-end-line="83" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/funcionario/tests.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/apps/funcionario/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
+        <state relative-caret-position="212">
           <caret line="19" column="10" lean-forward="true" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="16" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
@@ -606,13 +627,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/organizacao/apps.py">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/apps/nivel/templates/nivel/nivel_confirm_delete.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="93" selection-start-line="20" selection-start-column="91" selection-end-line="20" selection-end-column="97" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/nivel/templates/nivel/nivel_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="55" column="37" lean-forward="true" selection-start-line="55" selection-start-column="8" selection-end-line="55" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/nivel/templates/nivel/nivel_organograma.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="62" column="36" lean-forward="true" selection-start-line="62" selection-start-column="36" selection-end-line="62" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/statics/css/posicionamento.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="40" selection-start-line="40" selection-end-line="49" selection-end-column="1" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/apps/organizacao/serializer.py" />
-    <entry file="file://$PROJECT_DIR$/apps/organizacao/tests.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/apps/organizacao/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -622,75 +665,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/organizacao/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-344">
-          <folding>
-            <element signature="e#0#54#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/setor/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/setor/apps.py">
+    <entry file="file://$PROJECT_DIR$/apps/organizacao/templates/organizacao/organizacao_form.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/setor/form.py">
+    <entry file="file://$PROJECT_DIR$/apps/organizacao/templates/organizacao/organizacao_list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#34#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-135" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/organizacao/templates/organizacao/organizacao_update_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="35" lean-forward="true" selection-start-line="26" selection-start-column="35" selection-end-line="26" selection-end-column="35" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/setor/tests.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/setor/urls.py">
+    <entry file="file://$PROJECT_DIR$/apps/organizacao/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/setor/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#61#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/solicitacao/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/solicitacao/apps.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/solicitacao/tests.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/solicitacao/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="150">
+          <caret line="10" column="48" selection-start-line="10" selection-start-column="48" selection-end-line="10" selection-end-column="48" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
@@ -699,144 +692,204 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/apps/delegacao/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="405">
+          <caret line="28" column="42" selection-start-line="28" selection-start-column="42" selection-end-line="28" selection-end-column="42" />
           <folding>
-            <element signature="e#0#35#0" expanded="true" />
+            <element signature="e#0#57#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/organizacao/templates/organizacao/organizacao_form.html">
+    <entry file="file://$PROJECT_DIR$/apps/item/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="37" column="28" lean-forward="true" selection-start-line="37" selection-start-column="28" selection-end-line="37" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/delegacao/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="305">
+          <caret line="32" column="39" selection-start-line="32" selection-start-column="39" selection-end-line="32" selection-end-column="39" />
           <folding>
-            <element signature="e#0#28#0" expanded="true" />
+            <element signature="e#0#57#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/organizacao/forms.py">
+    <entry file="file://$PROJECT_DIR$/apps/nivel/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="66" selection-start-line="7" selection-start-column="66" selection-end-line="7" selection-end-column="66" />
+        <state relative-caret-position="395">
+          <caret line="169" column="38" selection-start-line="169" selection-start-column="38" selection-end-line="169" selection-end-column="38" />
           <folding>
-            <element signature="e#0#42#0" expanded="true" />
+            <element signature="e#0#11#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/core/models.py">
+    <entry file="file://$PROJECT_DIR$/apps/organizacao/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/funcionario/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="16" column="42" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
+        <state relative-caret-position="120">
+          <caret line="10" column="45" selection-start-line="10" selection-start-column="45" selection-end-line="10" selection-end-column="45" />
           <folding>
-            <element signature="e#0#28#0" expanded="true" />
+            <element signature="e#0#57#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/item/models.py">
+    <entry file="file://$PROJECT_DIR$/apps/setor/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="23" column="40" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/nivel/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="40" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
+        <state relative-caret-position="120">
+          <caret line="13" column="39" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="39" />
           <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/organizacao/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="45" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="45" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/setor/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="12" column="40" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/solicitacao/templates/solicitacao/solicitacao_confirm_delete.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/organizacao/templates/organizacao/organizacao_list.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/solicitacao/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="42" selection-start-line="13" selection-start-column="42" selection-end-line="13" selection-end-column="42" />
-          <folding>
-            <element signature="e#1#29#0" expanded="true" />
+            <element signature="e#0#57#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/apps/solicitacao/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="2" column="36" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/solicitacao/form.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="26" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
+        <state relative-caret-position="425">
+          <caret line="52" column="42" selection-start-line="52" selection-start-column="42" selection-end-line="52" selection-end-column="42" />
           <folding>
-            <element signature="e#0#24#0" expanded="true" />
+            <element signature="e#0#57#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/solicitacao/templates/solicitacao/solicitacao_list.html">
+    <entry file="file://$PROJECT_DIR$/templates/registration/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="39" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
+        <state relative-caret-position="150">
+          <caret line="14" column="19" lean-forward="true" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/solicitacao/templates/solicitacao/solicitacao_form.html">
+    <entry file="file://$PROJECT_DIR$/templates/404.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="126" column="24" selection-start-line="126" selection-start-column="16" selection-end-line="126" selection-end-column="24" />
+        <state relative-caret-position="180">
+          <caret line="12" column="20" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/solicitacao/templates/solicitacao/solicitacao_update_form.html">
+    <entry file="file://$PROJECT_DIR$/templates/registration/password_reset_done.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2100">
-          <caret line="140" column="16" selection-start-line="140" selection-start-column="16" selection-end-line="140" selection-end-column="16" />
+        <state relative-caret-position="75">
+          <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/core/templates/core/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="34" column="32" lean-forward="true" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/core/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/core/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="16" lean-forward="true" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/registration/password_reset_subject.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="17" selection-start-column="17" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/funcionario/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1590">
+          <caret line="128" column="30" selection-start-line="128" selection-start-column="30" selection-end-line="128" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/ambienteTeste1/lib/python3.6/site-packages/django/contrib/auth/urls.py" />
+    <entry file="file://$USER_HOME$/ambienteTeste1/lib/python3.6/site-packages/django/contrib/auth/views.py" />
+    <entry file="file://$PROJECT_DIR$/templates/registration/password_reset_complete.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/navbar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1650">
+          <caret line="110" column="62" selection-start-line="110" selection-start-column="62" selection-end-line="110" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/registration/password_reset_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="14" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/registration/password_reset_email.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/funcionario/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="35" selection-start-line="35" selection-end-line="52" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/registration/password_reset_confirm.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="44" selection-start-line="13" selection-start-column="44" selection-end-line="13" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SAPH/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1520">
+          <caret line="149" column="16" selection-start-line="149" selection-start-column="16" selection-end-line="149" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/requirements">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="15" lean-forward="true" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SAPH/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-52">
+          <caret line="27" column="21" lean-forward="true" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
+          <folding>
+            <element signature="e#628#660#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

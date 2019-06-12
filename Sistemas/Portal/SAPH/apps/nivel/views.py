@@ -1,6 +1,7 @@
 import json
 from gc import get_objects
 
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.messages.views import SuccessMessageMixin
 from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
@@ -17,7 +18,7 @@ from apps.organizacao.models import Organizacao
 from apps.setor.models import Setor
 
 
-class CadastrarNivel(SuccessMessageMixin, CreateView):
+class CadastrarNivel(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     model = Nivel
     # fields = ['nome','nivelSuperior', 'nivelInferior', 'funcionario', 'organizacao']
     form_class = NivelCreate
@@ -55,13 +56,13 @@ class CadastrarNivel(SuccessMessageMixin, CreateView):
         return reverse('cadastrar_nivel', args=[self.request.user.funcionario.organizacao.pk])
 
 
-class ListarNivel(ListView):
+class ListarNivel(LoginRequiredMixin, ListView):
     model = Nivel
 
     def get_queryset(self):
         return Nivel.objects.filter(organizacao=self.request.user.funcionario.organizacao)
 
-class Organograma(View):
+class Organograma(LoginRequiredMixin, View):
     model = Nivel
 
     def get(self, request):
@@ -124,7 +125,7 @@ class Organograma(View):
             return render(request, 'nivel/nivel_organograma.html', {'listaSaida': listaSaida})
     # template_name_suffix = '_organograma'
 
-class AtualizarNivel(UpdateView):
+class AtualizarNivel(LoginRequiredMixin, UpdateView):
     model = Nivel
     form_class = NivelEdit
     success_message = "%(nome)s Atualizado com sucesso"
@@ -141,11 +142,11 @@ class AtualizarNivel(UpdateView):
 
     template_name_suffix = '_update_form'
 
-class DeletaNivel(DeleteView):
+class DeletaNivel(LoginRequiredMixin, DeleteView):
     model =Nivel
     success_url = reverse_lazy('listar_nivel')
 
-class PesquisaNivel(View):
+class PesquisaNivel(LoginRequiredMixin, View):
     def post(self, *args, **kwargs):
         # Nivel.objects.filter(pk=kwargs['pk'])
         nivel = get_object_or_404(Nivel, pk=kwargs['pk'])
@@ -166,4 +167,7 @@ class PesquisaNivel(View):
         response = json.dumps({'nivelInf': nivelI, 'nivelSup': nivelS })
         return HttpResponse(response, content_type='application/json')
 
-
+class DetalharNivel(LoginRequiredMixin, View):
+    def get(self, request, nivel_id):
+        setores = Setor.objects.filter(nivel_id=nivel_id)
+        return render(request, 'nivel/setores_nivel.html', {'setores': setores} )

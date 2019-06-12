@@ -33,20 +33,20 @@ class Funcionario(models.Model):
             return reverse_lazy('page_home')
         return reverse('page_home')
 
-    # def save(self, *args, **kwargs):
-    #     super(Funcionario, self).save(*args, **kwargs)
-    #     if(self.nome==None):
-    #         data = {'pk': self.pk, 'email': self.email}
-    #         # plain_text = render_to_string('clientes/email/novo_aluno.txt', data)
-    #         html_email = render_to_string('funcionario/email/func_novo.html', data)
-    #         # if not self.status:
-    #         send_mail(
-    #             'Novo Cliente Cadastrado',
-    #             #'O seu pre-cadastro %s foi realizado' % self.first_name,
-    #             # plain_text,
-    #             from_email='teste@msdevelopment.com.br',
-    #             message='sasas',
-    #             recipient_list=[self.email],
-    #             html_message=html_email,
-    #             fail_silently=False,
-    #             )
+    def save(self, *args, **kwargs):
+        super(Funcionario, self).save(*args, **kwargs)
+        if(self.nome==None):
+            data = {'pk': self.pk, 'email': self.email}
+            # plain_text = render_to_string('clientes/email/novo_aluno.txt', data)
+            html_email = render_to_string('funcionario/email/func_novo.html', data)
+            # if not self.status:
+            send_mail(
+                'Novo Cliente Cadastrado',
+                #'O seu pre-cadastro %s foi realizado' % self.first_name,
+                # plain_text,
+                from_email='teste@msdevelopment.com.br',
+                message='sasas',
+                recipient_list=[self.email],
+                html_message=html_email,
+                fail_silently=False,
+                )

@@ -108,7 +108,7 @@
                         </div>
                         <div>
                             <button type="submit" class="btn btn-primary form_botao_direito">Entrar</button>
-                            <button type="button" class="btn btn-secondary form_botao_esquerdo">Esqueci minha senha</button>
+                            <a href="{% url 'password_reset' %}" class="form_botao_esquerdo">Esqueci minha senha</a>
                         </div>
                     </form>
                 </div>
@@ -117,12 +117,12 @@
     </div>
 </div>
 
-<div class="modal fade" id="ModalCadastrar" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+<div class="modal fade" id="ModalCadastrar" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content corpo_modal">
             <div class="modal-header cabecalho_modal">
                 <div class="titulo_modal_login">
-                    <h4 class="modal-title titulo_modal" id="TituloModalCentralizado">Cadastrar</h4>
+                    <h4 class="modal-title titulo_modal" id="TituloModalCentralizado1">Cadastrar</h4>
                 </div>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
                     <span aria-hidden="true">&times;</span>

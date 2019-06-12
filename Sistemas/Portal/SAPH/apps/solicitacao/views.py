@@ -1,3 +1,4 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.messages.views import SuccessMessageMixin
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import JsonResponse
@@ -10,7 +11,7 @@ from apps.solicitacao.form import SolicitacaoForm, CreateSolicitacao
 from apps.solicitacao.models import Item, Solicitacao
 
 
-class CadastrarSolicitacao(SuccessMessageMixin, CreateView):
+class CadastrarSolicitacao(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     model = Solicitacao
     # fields = ['tipo', 'descricao', 'itens', 'nivel']
     form_class = CreateSolicitacao
@@ -24,13 +25,13 @@ class CadastrarSolicitacao(SuccessMessageMixin, CreateView):
 
 
 
-class ListarSolicitacao(ListView):
+class ListarSolicitacao(LoginRequiredMixin, ListView):
     model = Solicitacao
 
     def get_queryset(self):
         return Solicitacao.objects.all()
 
-class AtualizarSolicitacao(SuccessMessageMixin, UpdateView):
+class AtualizarSolicitacao(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     model = Solicitacao
     # fields = ['tipo','descricao','itens']
     form_class = CreateSolicitacao
@@ -49,7 +50,7 @@ class AtualizarSolicitacao(SuccessMessageMixin, UpdateView):
     success_url = reverse_lazy('listar_solicitacao')
 
 
-class ApagarSolicitacao(DeleteView):
+class ApagarSolicitacao(LoginRequiredMixin, DeleteView):
     model = Solicitacao
     success_url = reverse_lazy('listar_solicitacao')
 

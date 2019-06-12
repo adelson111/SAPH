@@ -1,3 +1,4 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import JsonResponse
 from django.shortcuts import render
 
@@ -9,7 +10,7 @@ from apps.item.forms import ItemForm, CampoForm
 class Campos(object):
     campos = []
 
-class  CadastrarCampo(CreateView):
+class  CadastrarCampo(LoginRequiredMixin, CreateView):
     def  post(self, request):
         tipos = request.POST.getlist('tipo')
         nomes = request.POST.getlist('nome')
@@ -29,7 +30,7 @@ class  CadastrarCampo(CreateView):
                     Campos.campos.append(campo)
         return JsonResponse(data)
 
-class  CadastrarItem(CreateView):
+class  CadastrarItem(LoginRequiredMixin, CreateView):
     def  post(self, request):
         data = dict()
         form = ItemForm(request.POST)

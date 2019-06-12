@@ -25,7 +25,7 @@ SECRET_KEY = 'yy^bd@n(=rr*$w4=8t$5=gtf*^(oil((j%=9rjsnlvvit71n(@'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'apps.solicitacao',
     'apps.delegacao',
     'apps.item',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [

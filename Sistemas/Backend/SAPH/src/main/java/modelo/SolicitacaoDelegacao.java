@@ -10,6 +10,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -31,7 +32,7 @@ public class SolicitacaoDelegacao implements Serializable {
     @Column(length = 10, nullable = false)
     private tipo.TipoStatus status;
     
-    @ManyToOne(targetEntity = TipoSolicitacaoDelegacao.class)
+    @ManyToOne(targetEntity = TipoSolicitacaoDelegacao.class, fetch=FetchType.EAGER)
     @JoinColumn(name = "tipo_solicitacao_delegacao_id", nullable = false)
     private TipoSolicitacaoDelegacao tipoSolicitacaoDelegacao;
 

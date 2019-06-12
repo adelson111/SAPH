@@ -8,7 +8,6 @@ package rest;
 import banco.Persistencia;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import java.util.ArrayList;
 import java.util.List;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
@@ -19,8 +18,6 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
-import modelo.TipoCampo;
-import modelo.TipoItem;
 
 /**
  *
@@ -62,34 +59,7 @@ public class TipoSolicitacaoDelegacao {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public String selecionar() {
-        //return new Gson().toJson(new Persistencia().selecionar(new modelo.TipoSolicitacaoDelegacao()));
-
-        System.out.println("Campo");
-        TipoCampo tipoCampo = new TipoCampo();
-        tipoCampo.setId(1);
-        tipoCampo.setNome("Campo 1");
-        tipoCampo.setDescricao("Descrição do campo 1");
-        tipoCampo.setTipo(tipo.TipoCampo.TEXTO);
-        List<TipoCampo> campos = new ArrayList<>();
-        campos.add(tipoCampo);
-        
-        System.out.println("Tipo");
-        TipoItem tipoItem = new TipoItem();
-        tipoItem.setId(1);
-        tipoItem.setNome("Item 1");
-        tipoItem.setTipoCampo(campos);
-        List<TipoItem> items = new ArrayList<>();
-        items.add(tipoItem);
-        
-        System.out.println("Solicitação");
-        modelo.TipoSolicitacaoDelegacao tipoSolicitacaoDelegacao = new modelo.TipoSolicitacaoDelegacao();
-        tipoSolicitacaoDelegacao.setId(1);
-        tipoSolicitacaoDelegacao.setNome("Compra");
-        tipoSolicitacaoDelegacao.setDescricao("Compra de mouse");
-        tipoSolicitacaoDelegacao.setTipo(tipo.TipoSolicitacaoDelegacao.SOLICITACAO);
-        tipoSolicitacaoDelegacao.setTipoItem(items);
-        System.out.println("Vai retornar");
-        return new Gson().toJson(tipoSolicitacaoDelegacao);
+        return new Gson().toJson(new Persistencia().selecionar(new modelo.TipoSolicitacaoDelegacao()));
     }
 
     @GET

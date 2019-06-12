@@ -12,6 +12,7 @@ public abstract class TipoItem_ {
 	public static volatile ListAttribute<TipoItem, TipoCampo> tipoCampo;
 	public static volatile SingularAttribute<TipoItem, String> nome;
 	public static volatile SingularAttribute<TipoItem, Long> id;
+	public static volatile ListAttribute<TipoItem, TipoSolicitacaoDelegacao> tipoSolicitacaoDelegacao;
 
 }
 

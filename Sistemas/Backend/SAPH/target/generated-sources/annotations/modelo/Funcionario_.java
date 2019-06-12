@@ -1,6 +1,7 @@
 package modelo;
 
 import javax.annotation.Generated;
+import javax.persistence.metamodel.ListAttribute;
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 
@@ -8,6 +9,7 @@ import javax.persistence.metamodel.StaticMetamodel;
 @StaticMetamodel(Funcionario.class)
 public abstract class Funcionario_ {
 
+	public static volatile ListAttribute<Funcionario, Setor> setor;
 	public static volatile SingularAttribute<Funcionario, String> telefone;
 	public static volatile SingularAttribute<Funcionario, Boolean> ativo;
 	public static volatile SingularAttribute<Funcionario, String> endereco;

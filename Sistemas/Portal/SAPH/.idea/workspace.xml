@@ -1,214 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5d1cea4b-28ea-4cb8-8a4e-6fbcda998d46" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../UI/SAPH/public/img/adminitracao.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../UI/SAPH/routes/delegacoes.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../UI/SAPH/views/analise.ejs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/content/analise.ejs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/content/confirmadas.ejs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/content/d-analise.ejs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/content/d-confirmadas.ejs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/content/d-salvas.ejs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/content/delegacao-baixo.ejs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/content/delegacao-topo.ejs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/content/listar-delegacoes.ejs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/content/menu-delegacoes.ejs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/content/nova-delegacao.ejs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/content/recusadas.ejs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/content/salvas.ejs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/content/section1.ejs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/content/section2.ejs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/content/solicitacao-baixo.ejs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/content/solicitacao-topo.ejs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/menu-index.ejs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/modal-login.ejs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/section-index-contato.ejs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/section-index-sobre.ejs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../UI/SAPH/views/confirmadas.ejs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../UI/SAPH/views/d-analise.ejs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../UI/SAPH/views/d-confirmadas.ejs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../UI/SAPH/views/d-salvas.ejs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../UI/SAPH/views/listar-delegacoes.ejs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../UI/SAPH/views/nova-delegacao.ejs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../UI/SAPH/views/recusadas.ejs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../UI/SAPH/views/salvas.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../.gitignore" beforeDir="false" />
+    <list default="true" id="5d1cea4b-28ea-4cb8-8a4e-6fbcda998d46" name="Default Changelist" comment="Backend com acesso ao banco.">
+      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/rest/Campo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/rest/Comentario.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/rest/Funcionario.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/rest/Item.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/rest/Nivel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/rest/Setor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/rest/TipoCampo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/rest/TipoItem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../Documentacao/baco_backend.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Documentacao/baco_backend.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/WebContent/META-INF/MANIFEST.MF" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/Dao/CampoDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/Dao/ComentarioDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/Dao/FuncionarioDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/Dao/ItemDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/Dao/NivelDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/Dao/OrganizacaoDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/Dao/SetorDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/Dao/SetorFuncionarioDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/Dao/SolicitacaoDelegacaoDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/Dao/TipoCampoDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/Dao/TipoItemDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/Dao/TipoSolicitacaoDelegacaoDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/Dao/TipoSolicitacaoDelegacaoItemDao.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/Campo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/Campo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/Comentario.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/Comentario.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/Funcionario.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/Funcionario.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/Item.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/Nivel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/Nivel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/Organizacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/Organizacao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/Setor.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/Setor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/SetorFuncionario.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/SolicitacaoDelegacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/SolicitacaoDelegacao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/TipoCampo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/TipoCampo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/TipoItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/TipoItem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/TipoSolicitacaoDelegacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/TipoSolicitacaoDelegacao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/TipoSolitacaoDelegacaoItem.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/rest/Campo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/rest/Delegacao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/rest/Funcionario.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/rest/Item.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/rest/Nivel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/rest/Organizacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/rest/Organizacao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/rest/Setor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/rest/Solicitacao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/saph/Conf.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/saph/Conf.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/webapp/META-INF/context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/webapp/META-INF/context.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/webapp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/webapp/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0-SNAPSHOT.war" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0-SNAPSHOT/META-INF/context.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0-SNAPSHOT/WEB-INF/classes/modelo/Funcionario.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0-SNAPSHOT/WEB-INF/classes/modelo/Nivel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0-SNAPSHOT/WEB-INF/classes/modelo/Organizacao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0-SNAPSHOT/WEB-INF/classes/modelo/Setor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0-SNAPSHOT/WEB-INF/classes/rest/Campo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0-SNAPSHOT/WEB-INF/classes/rest/Delegacao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0-SNAPSHOT/WEB-INF/classes/rest/Funcionario.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0-SNAPSHOT/WEB-INF/classes/rest/Item.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0-SNAPSHOT/WEB-INF/classes/rest/Nivel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0-SNAPSHOT/WEB-INF/classes/rest/Organizacao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0-SNAPSHOT/WEB-INF/classes/rest/Setor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0-SNAPSHOT/WEB-INF/classes/rest/Solicitacao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0-SNAPSHOT/WEB-INF/classes/saph/Conf.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0-SNAPSHOT/WEB-INF/lib/gson-2.8.5.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0-SNAPSHOT/WEB-INF/lib/javax.annotation-api-1.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0-SNAPSHOT/WEB-INF/lib/javax.ws.rs-api-2.0.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0-SNAPSHOT/WEB-INF/lib/osgi-resource-locator-1.0.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0-SNAPSHOT/WEB-INF/lib/validation-api-1.1.0.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0-SNAPSHOT/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0-SNAPSHOT/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Funcionario.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Nivel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Organizacao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Setor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Campo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Delegacao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Funcionario.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Item.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Nivel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Organizacao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Setor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Solicitacao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/saph/Conf.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/Servers/localhost-config/catalina.policy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/Servers/localhost-config/catalina.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/Servers/localhost-config/context.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/Servers/localhost-config/server.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/Servers/localhost-config/tomcat-users.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/Servers/localhost-config/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/backend/build.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/backend/build/built-jar.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/backend/build/classes/.netbeans_automatic_build" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/backend/build/classes/.netbeans_update_resources" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/backend/build/classes/Dao/OrganizacaoDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/backend/build/classes/Dao/SetorDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/backend/build/classes/META-INF/persistence.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/backend/build/classes/Modelo/Funcionario.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/backend/build/classes/Modelo/Funcionario_.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/backend/build/classes/Modelo/Nivel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/backend/build/classes/Modelo/Nivel_.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/backend/build/classes/Modelo/Organizacao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/backend/build/classes/Modelo/Organizacao_.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/backend/build/classes/Modelo/Setor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/backend/build/classes/Modelo/Setor.rapt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/backend/build/classes/Modelo/Setor_.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/backend/build/classes/Modelo/Tipo_Campo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/backend/build/classes/Modelo/Tipo_Campo.rapt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/backend/build/classes/Modelo/Tipo_Campo_.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/backend/build/classes/Modelo/Tipo_Item.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/backend/build/classes/Modelo/Tipo_Item.rapt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/backend/build/classes/Modelo/Tipo_Item_.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/backend/build/classes/Modelo/Tipo_Solicitacao_Agregacao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/backend/build/classes/resouces.res" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/backend/build/classes/teste/teste.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/backend/build/generated-sources/ap-source-output/Modelo/Funcionario_.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/backend/build/generated-sources/ap-source-output/Modelo/Nivel_.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/backend/build/generated-sources/ap-source-output/Modelo/Organizacao_.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/backend/build/generated-sources/ap-source-output/Modelo/Setor_.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/backend/build/generated-sources/ap-source-output/Modelo/Tipo_Campo_.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/backend/build/generated-sources/ap-source-output/Modelo/Tipo_Item_.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/backend/dist/backend.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/backend/dist/lib/org.eclipse.persistence.jpa.modelgen_2.5.2.v20140319-9ad6abd.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/backend/manifest.mf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/backend/nbproject/build-impl.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/backend/nbproject/genfiles.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/backend/nbproject/private/private.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/backend/nbproject/private/private.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/backend/nbproject/project.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/backend/nbproject/project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/backend/src/Dao/OrganizacaoDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/backend/src/Dao/SetorDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/backend/src/META-INF/persistence.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/backend/src/Modelo/Funcionario.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/backend/src/Modelo/Nivel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/backend/src/Modelo/Organizacao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/backend/src/Modelo/Setor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/backend/src/Modelo/Tipo_Campo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/backend/src/Modelo/Tipo_Item.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/backend/src/Modelo/Tipo_Solicitacao_Agregacao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/backend/src/teste/teste.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/SAPH.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/SAPH.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/rest/SolicitacaoDelegacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/rest/SolicitacaoDelegacao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/rest/TipoSolicitacaoDelegacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/rest/TipoSolicitacaoDelegacao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0.0.war" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0.0.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0.0/WEB-INF/classes/modelo/Campo.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0.0/WEB-INF/classes/modelo/Campo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0.0/WEB-INF/classes/modelo/Comentario.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0.0/WEB-INF/classes/modelo/Comentario.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0.0/WEB-INF/classes/modelo/Funcionario.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0.0/WEB-INF/classes/modelo/Funcionario.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0.0/WEB-INF/classes/modelo/Funcionario_.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0.0/WEB-INF/classes/modelo/Funcionario_.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0.0/WEB-INF/classes/modelo/Item.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0.0/WEB-INF/classes/modelo/Item.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0.0/WEB-INF/classes/modelo/Nivel.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0.0/WEB-INF/classes/modelo/Nivel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0.0/WEB-INF/classes/modelo/Nivel_.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0.0/WEB-INF/classes/modelo/Nivel_.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0.0/WEB-INF/classes/modelo/Setor.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0.0/WEB-INF/classes/modelo/Setor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0.0/WEB-INF/classes/modelo/SolicitacaoDelegacao.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0.0/WEB-INF/classes/modelo/SolicitacaoDelegacao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0.0/WEB-INF/classes/modelo/TipoItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0.0/WEB-INF/classes/modelo/TipoItem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0.0/WEB-INF/classes/modelo/TipoItem_.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0.0/WEB-INF/classes/modelo/TipoItem_.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0.0/WEB-INF/classes/modelo/TipoSolicitacaoDelegacao.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0.0/WEB-INF/classes/modelo/TipoSolicitacaoDelegacao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0.0/WEB-INF/classes/rest/SolicitacaoDelegacao.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0.0/WEB-INF/classes/rest/SolicitacaoDelegacao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0.0/WEB-INF/classes/rest/TipoSolicitacaoDelegacao$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0.0/WEB-INF/classes/rest/TipoSolicitacaoDelegacao$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0.0/WEB-INF/classes/rest/TipoSolicitacaoDelegacao.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/SAPH-1.0.0/WEB-INF/classes/rest/TipoSolicitacaoDelegacao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Campo.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Campo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Comentario.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Comentario.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Funcionario.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Funcionario.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Funcionario_.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Funcionario_.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Item.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Item.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Nivel.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Nivel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Nivel_.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Nivel_.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Setor.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Setor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/SolicitacaoDelegacao.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/SolicitacaoDelegacao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/TipoItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/TipoItem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/TipoItem_.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/TipoItem_.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/TipoSolicitacaoDelegacao.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/TipoSolicitacaoDelegacao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/SolicitacaoDelegacao.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/SolicitacaoDelegacao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/TipoSolicitacaoDelegacao$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/TipoSolicitacaoDelegacao$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/TipoSolicitacaoDelegacao.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/TipoSolicitacaoDelegacao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/generated-sources/annotations/modelo/Funcionario_.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/generated-sources/annotations/modelo/Funcionario_.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/generated-sources/annotations/modelo/Nivel_.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/generated-sources/annotations/modelo/Nivel_.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/generated-sources/annotations/modelo/TipoItem_.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/generated-sources/annotations/modelo/TipoItem_.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SAPH/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/SAPH/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/funcionario/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/funcionario/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/funcionario/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/funcionario/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/item/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/item/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/nivel/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/nivel/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/nivel/templates/nivel/setores_nivel.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/nivel/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/nivel/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/nivel/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/nivel/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/organizacao/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/organizacao/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/organizacao/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/organizacao/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/organizacao/serializer.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/setor/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/setor/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/solicitacao/form.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/solicitacao/form.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/solicitacao/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/solicitacao/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/solicitacao/templates/solicitacao/solicitacao_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/solicitacao/templates/solicitacao/solicitacao_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/solicitacao/templates/solicitacao/solicitacao_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/solicitacao/templates/solicitacao/solicitacao_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/solicitacao/templates/solicitacao/solicitacao_update_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/solicitacao/templates/solicitacao/solicitacao_update_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements" beforeDir="false" afterPath="$PROJECT_DIR$/requirements" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/statics/imagem/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/SAPH/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/public/css/print.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/SAPH/public/css/print.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/SAPH/routes/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/routes/list.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../UI/SAPH/routes/solicitacoes.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/SAPH/routes/solicitacoes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/routes/users.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/views/base/content/list.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/content/list.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/views/base/content/menu.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/content/menu.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/views/base/content/nova-scripts.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/content/nova-scripts.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/views/base/content/nova.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/content/nova.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/views/base/conteudo-topo.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/conteudo-topo.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/views/base/conteudoTopo.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/views/base/footer-index.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/footer-index.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/views/base/footer.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/footer.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/views/base/header-index.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/header-index.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/views/base/header.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/header.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/views/base/section-index.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/section-index.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/views/contato.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/SAPH/views/contato.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/views/detalhes.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/views/sobre.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/SAPH/views/sobre.ejs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -217,78 +70,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/solicitacao/templates/solicitacao/solicitacao_form.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="126" column="24" selection-start-line="126" selection-start-column="16" selection-end-line="126" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/solicitacao/templates/solicitacao/solicitacao_list.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="39" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/apps/solicitacao/templates/solicitacao/solicitacao_update_form.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2100">
-              <caret line="140" column="16" selection-start-line="140" selection-start-column="16" selection-end-line="140" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/solicitacao/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="42" selection-start-line="13" selection-start-column="42" selection-end-line="13" selection-end-column="42" />
-              <folding>
-                <element signature="e#1#29#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/solicitacao/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="2" column="36" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/organizacao/templates/organizacao/organizacao_list.html">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/solicitacao/templates/solicitacao/solicitacao_confirm_delete.html">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/solicitacao/form.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="26" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
-              <folding>
-                <element signature="e#0#24#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -352,7 +134,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -492,6 +273,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -574,14 +356,20 @@
       <option name="project" value="LOCAL" />
       <updated>1560197147674</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Backend com acesso ao banco.">
+      <created>1560228002049</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1560228002049</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="-4" width="1301" height="772" extended-state="6" />
-    <editor active="true" />
+    <frame x="64" y="-4" width="1303" height="773" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22613458" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22613458" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -591,7 +379,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.46945336" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.4689441" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32919255" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.32919255" />
@@ -619,12 +407,53 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout-to-restore>
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Teste request Portal" />
     <MESSAGE value="Criação do Organograma no UI" />
     <MESSAGE value="Tentativa de enviar o portal para banco do backend" />
     <MESSAGE value="Pegar backend" />
-    <option name="LAST_COMMIT_MESSAGE" value="Pegar backend" />
+    <MESSAGE value="Backend com acesso ao banco." />
+    <option name="LAST_COMMIT_MESSAGE" value="Backend com acesso ao banco." />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -780,15 +609,7 @@
     <entry file="file://$PROJECT_DIR$/apps/organizacao/apps.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/organizacao/serializer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#57#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/organizacao/serializer.py" />
     <entry file="file://$PROJECT_DIR$/apps/organizacao/tests.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>

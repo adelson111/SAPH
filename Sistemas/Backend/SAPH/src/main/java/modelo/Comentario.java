@@ -8,6 +8,7 @@ package modelo;
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -27,11 +28,11 @@ public class Comentario implements Serializable {
     @Column(length = 300, nullable = false)
     private String comentario;
     
-    @ManyToOne(targetEntity = SolicitacaoDelegacao.class)
+    @ManyToOne(targetEntity = SolicitacaoDelegacao.class, fetch=FetchType.EAGER)
     @JoinColumn(name = "solicitacao_delegacao_id", nullable = false)
     private SolicitacaoDelegacao solicitacaoDelegacao;
     
-    @ManyToOne(targetEntity = Funcionario.class)
+    @ManyToOne(targetEntity = Funcionario.class, fetch=FetchType.EAGER)
     @JoinColumn(name = "funcionario_id", nullable = false)
     private Funcionario funcionario;
 

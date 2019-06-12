@@ -9,11 +9,13 @@ import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -30,17 +32,17 @@ public class Setor implements Serializable {
     @Column(length = 80, nullable = false)
     private String nome;
 
-    @ManyToMany(targetEntity = Funcionario.class)
+    @ManyToMany(targetEntity = Funcionario.class, fetch=FetchType.EAGER)
     @JoinTable(name = "setor_funcionario", 
             joinColumns = {@JoinColumn(name = "setor_id")}, 
             inverseJoinColumns = {@JoinColumn(name = "funcionario_id")})
     private List<Funcionario> funcionario;
 
-    @ManyToOne(targetEntity = Funcionario.class)
+    @ManyToOne(targetEntity = Funcionario.class, fetch=FetchType.EAGER)
     @JoinColumn(name = "gerente_id", nullable = false)
     private Funcionario gerente;
 
-    @ManyToOne(targetEntity = Nivel.class)
+    @ManyToOne(targetEntity = Nivel.class, fetch=FetchType.EAGER)
     @JoinColumn(name = "nivel_id", nullable = false)
     private Nivel nivel;
 

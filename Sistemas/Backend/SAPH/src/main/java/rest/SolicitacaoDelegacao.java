@@ -41,7 +41,8 @@ public class SolicitacaoDelegacao {
     @Consumes(MediaType.APPLICATION_JSON)
     @Path("lista")
     public String cadastrarLista(String json) {
-        new Persistencia().cadastrar((List<Object>) new Gson().fromJson(json, new TypeToken<List<modelo.SolicitacaoDelegacao>>(){}.getType()));
+        new Persistencia().cadastrar((List<Object>) new Gson().fromJson(json, new TypeToken<List<modelo.SolicitacaoDelegacao>>() {
+        }.getType()));
         return "Cadastrado com sucesso!";
     }
 
@@ -63,38 +64,7 @@ public class SolicitacaoDelegacao {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public String selecionar() {
-        //return new Gson().toJson(new Persistencia().selecionar(new modelo.SolicitacaoDelegacao()));
-        List<TipoSolicitacaoDelegacao> solicitacoes = new ArrayList<>();
-        List<TipoItem> itens = new ArrayList<>();
-        List<TipoCampo> campos = new ArrayList<>();
-        boolean file = false;
-
-        String type = "text";
-        for (int i = 0; i < 3; i++) {
-            TipoCampo tipoCampo = new TipoCampo();
-            tipoCampo.setId(i);
-            tipoCampo.setNome("Campo" + i);
-            tipoCampo.setDescricao("campo descricao");
-            tipoCampo.setTipo(tipo.TipoCampo.REAL);
-            campos.add(tipoCampo);
-
-            TipoItem it = new TipoItem();
-            it.setId(i);
-            it.setNome("item-" + i);
-            it.setTipoCampo(campos);
-            itens.add(it);
-            
-            TipoSolicitacaoDelegacao s = new TipoSolicitacaoDelegacao();
-            s.setId(i);
-            s.setNome("Tipo-" + i);
-            s.setDescricao("descrição-" + i);
-            s.setTipo(tipo.TipoSolicitacaoDelegacao.SOLICITACAO);
-            s.setTipoItem(itens);
-            solicitacoes.add(s);
-            
-        }
-        return new Gson().toJson(solicitacoes);
-        
+        return new Gson().toJson(new Persistencia().selecionar(new modelo.SolicitacaoDelegacao()));
     }
 
     @GET

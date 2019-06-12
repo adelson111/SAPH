@@ -8,6 +8,7 @@ package modelo;
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -28,11 +29,11 @@ public class Campo implements Serializable {
     @Column(length = 300, nullable = false)
     private String valor;
     
-    @ManyToOne(targetEntity = Item.class)
+    @ManyToOne(targetEntity = Item.class, fetch=FetchType.EAGER)
     @JoinColumn(name = "item_id", nullable = false)
     private Item item;
     
-    @OneToOne(targetEntity = TipoCampo.class)
+    @OneToOne(targetEntity = TipoCampo.class, fetch=FetchType.EAGER)
     @JoinColumn(name = "tipo_campo_id", nullable = false)
     private TipoCampo tipoCampo;
 

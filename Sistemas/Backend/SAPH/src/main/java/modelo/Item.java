@@ -7,6 +7,7 @@ package modelo;
 
 import java.io.Serializable;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -24,11 +25,11 @@ public class Item implements Serializable {
     @Id
     private long id;
     
-    @ManyToOne(targetEntity = SolicitacaoDelegacao.class)
+    @ManyToOne(targetEntity = SolicitacaoDelegacao.class, fetch=FetchType.EAGER)
     @JoinColumn(name = "solicitacao_delegacao_id", nullable = false)
     private SolicitacaoDelegacao solicitacaoDelegacao;
     
-    @OneToOne(targetEntity = TipoItem.class)
+    @OneToOne(targetEntity = TipoItem.class, fetch=FetchType.EAGER)
     @JoinColumn(name = "tipo_item_id", nullable = false)
     private TipoItem tipoItem;
 

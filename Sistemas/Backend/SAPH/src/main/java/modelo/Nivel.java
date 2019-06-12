@@ -6,10 +6,13 @@
 package modelo;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -36,13 +39,16 @@ public class Nivel implements Serializable {
     @JoinColumn(name = "nivel_inferior_id")
     private Nivel nivelInferior;
 
-    @ManyToOne(targetEntity = Funcionario.class)
+    @ManyToOne(targetEntity = Funcionario.class, fetch=FetchType.EAGER)
     @JoinColumn(name = "responsavel_id", nullable = false)
     private Funcionario responsavel;
 
-    @ManyToOne(targetEntity = Organizacao.class)
+    @ManyToOne(targetEntity = Organizacao.class, fetch=FetchType.EAGER)
     @JoinColumn(name = "organizacao_id", nullable = false)
     private Organizacao organizacao;
+    
+    @ManyToMany(targetEntity = TipoSolicitacaoDelegacao.class, fetch=FetchType.EAGER)
+    private List<TipoSolicitacaoDelegacao> tipoSolicitacaoDelegacao;
 
     public long getId() {
         return id;

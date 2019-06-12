@@ -3,6 +3,7 @@ from gc import get_objects
 
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.messages.views import SuccessMessageMixin
+from django.forms import model_to_dict
 from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
 
@@ -10,6 +11,7 @@ from django.shortcuts import render, get_object_or_404
 from django.urls import reverse_lazy, reverse
 from django.views import View
 from django.views.generic import CreateView, ListView, UpdateView, DeleteView, DetailView
+from pip._vendor import requests
 
 from apps.nivel.models import Nivel
 
@@ -171,3 +173,20 @@ class DetalharNivel(LoginRequiredMixin, View):
     def get(self, request, nivel_id):
         setores = Setor.objects.filter(nivel_id=nivel_id)
         return render(request, 'nivel/setores_nivel.html', {'setores': setores} )
+
+class SubirNivel(LoginRequiredMixin, View):
+
+    def get(self, request):
+        n = Nivel.objects.all()
+        lniveis = []
+        for nivel in n:
+            lniveis.append(model_to_dict(nivel))
+
+        resp = requests.post(url='http://localhost:8080/SAPH/saph/organizacao/',
+                             # data=lorganizacao[0],
+                             data=json.dumps(lniveis),
+                             headers={'content-type': 'application/json'})
+        if (resp.status_code == 200 or resp.status_code == 201):
+            return HttpResponse("ESSA MIZERA DEU CERTO")
+        else:
+            return HttpResponse("ESSA MIZERA DEU ERRADO")

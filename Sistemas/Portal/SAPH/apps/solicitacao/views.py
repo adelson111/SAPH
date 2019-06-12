@@ -54,4 +54,3 @@ class ApagarSolicitacao(LoginRequiredMixin, DeleteView):
     model = Solicitacao
     success_url = reverse_lazy('listar_solicitacao')
 
-

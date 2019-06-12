@@ -148,25 +148,17 @@ class PreUpdateFuncionario(LoginRequiredMixin, UpdateView):
 class SubirFuncionarios(LoginRequiredMixin, View):
 
     def get(self, request):
-        # a = Funcionario.objects.all()
-        a = User.objects.all()
-        o = Organizacao.objects.filter(pk=request.user.funcionario.organizacao.pk)
-        l = []
-        # con = serializers.serialize("json", a)
-        # data = serializers.serialize('json', list(objectQuerySet), fields=('fileName', 'id'))
-        lorganizacao = []
-        lorganizacao.append(model_to_dict(o[0]))
-        for x in a:
-            l.append(model_to_dict(x))
-        d = {'nome':'Fudeu'}
-        a1 = json
+        f = Funcionario.objects.all()
+        lfuncionario = []
+        for funcionario in f:
+            lfuncionario.append(model_to_dict(funcionario))
+        # lfuncionario.append(model_to_dict(f[0]))
+
         resp = requests.post(url='http://localhost:8080/SAPH/saph/organizacao/',
                              # data=lorganizacao[0],
-                             data=json.dumps(lorganizacao[0]),
+                             data=json.dumps(lfuncionario),
                              headers={'content-type': 'application/json'})
-        # resp = requests.get('http://localhost:8080/SAPH/saph/organizacao')
-        # for l1 in l:
-            # print(l1)
+
         if(resp.status_code==200 or resp.status_code==201):
             return HttpResponse("ESSA MIZERA DEU CERTO")
         else:

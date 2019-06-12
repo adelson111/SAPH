@@ -1,8 +1,14 @@
+import json
+
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.forms import model_to_dict
+from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
 
 # Create your views here.
+from django.views import View
 from django.views.generic import CreateView, UpdateView, ListView
+from pip._vendor import requests
 
 from apps.funcionario.models import Funcionario
 from apps.organizacao.forms import OrganizacaoCadastra
@@ -42,3 +48,17 @@ class ListarOrganizacao(LoginRequiredMixin, ListView):
         return Organizacao.objects.all()
 
 
+class SubirOrganizacao(LoginRequiredMixin, View):
+
+    def get(self, request):
+        o = Organizacao.objects.filter(pk=request.user.funcionario.organizacao.pk)
+        lorganizacao = []
+        lorganizacao.append(model_to_dict(o[0]))
+        resp = requests.post(url='http://localhost:8080/SAPH/saph/organizacao/',
+                             # data=lorganizacao[0],
+                             data=json.dumps(lorganizacao[0]),
+                             headers={'content-type': 'application/json'})
+        if (resp.status_code == 200 or resp.status_code == 201):
+            return HttpResponse("ESSA MIZERA DEU CERTO")
+        else:
+            return HttpResponse("ESSA MIZERA DEU ERRADO")

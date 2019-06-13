@@ -93,9 +93,10 @@ $('#guardar').click(function(){
     });
   });
   dici = {
-    solicitacao: tipo,
+    id: tipo,
+    tipoSolicitacaoDelegacao:tipoSolicitacao,
+    status:"APROVADA",
     itens:tipoItens,
-    status:"ativo",
   }
   dici = JSON.stringify(dici);
   $.post("http://localhost:3000/solicitacoes/cada",{'solicitacao':dici},function(data){

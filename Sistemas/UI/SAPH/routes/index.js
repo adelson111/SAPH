@@ -7,7 +7,6 @@ router.get('/', function(req, res, next) {
      title: 'SAPH',
      home : true
     },
-
 );
 });
 

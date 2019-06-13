@@ -52,7 +52,7 @@ router.post('/cada', function (req, res) {
       data: req.body.solicitacao,
       headers: { "Content-Type": "application/json" }
   };
-  client.post("http://localhost:8080/SAPH/saph/solicitacao",args,function (data, response) {
+  client.post("http://localhost:8080/SAPH/saph/solicitacao-delegacao",args,function (data, response) {
     res.send(data);
   });
 });

@@ -11,6 +11,8 @@ import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -26,6 +28,7 @@ import tipo.TipoStatus;
 public class SolicitacaoDelegacao implements Serializable {
     
     @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private long id;
     
     @Enumerated(EnumType.STRING)

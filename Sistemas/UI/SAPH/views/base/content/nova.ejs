@@ -34,7 +34,7 @@
                     </div>
                     <select name="tipo" id="tipo" class="custom-select"  required>
                       <%tipos.forEach(function(solicitacao){%>
-                            <option value="<%=solicitacao.id%>"><%=solicitacao.tipo%></option>
+                            <option value="<%=solicitacao.id%>"><%=solicitacao.nome%></option>
                       <%}); %>
                     </select>
                   </div>
@@ -93,7 +93,6 @@ $('#guardar').click(function(){
     });
   });
   dici = {
-    id: tipo,
     tipoSolicitacaoDelegacao:tipoSolicitacao,
     status:"APROVADA",
     itens:tipoItens,

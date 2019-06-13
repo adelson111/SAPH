@@ -33,8 +33,8 @@ public class SolicitacaoDelegacao {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     public String cadastrar(String json) {
-        new Persistencia().cadastrar(new Gson().fromJson(json, modelo.SolicitacaoDelegacao.class));
-        return "Cadastrado com sucesso!";
+    	new Persistencia().cadastrar(montarSolicitacaoDelegacao(json));
+    	return "Cadastrado com sucesso!";
     }
 
     @POST
@@ -73,5 +73,19 @@ public class SolicitacaoDelegacao {
     public String selecionar(@PathParam("id") long id) {
         return new Gson().toJson(new Persistencia().selecionar(new modelo.SolicitacaoDelegacao(), id));
     }
-
+    
+    private modelo.SolicitacaoDelegacao montarSolicitacaoDelegacao(String json){
+    	System.out.println(json);
+    	int i = json.lastIndexOf("tipoSolicitacaoDelegacao");
+    	int tipoSolicitacaoDelegacao = Integer.parseInt(String.valueOf(json.charAt(i+27)));
+    	char[] replace = json.toCharArray();
+    	replace[i+27] = ' ';
+    	json = String.valueOf(replace).replace("\" \"", "null");
+    	modelo.SolicitacaoDelegacao solicitacaoDelegacao = new Gson().fromJson(json, modelo.SolicitacaoDelegacao.class);
+    	Persistencia persistencia = new Persistencia();
+    	modelo.TipoSolicitacaoDelegacao tiDelegacao = (TipoSolicitacaoDelegacao) persistencia.selecionar(new modelo.TipoSolicitacaoDelegacao(), tipoSolicitacaoDelegacao);
+    	
+    	solicitacaoDelegacao.setTipoSolicitacaoDelegacao(tiDelegacao);
+    	return solicitacaoDelegacao;
+    }
 }

@@ -1,11 +1,18 @@
+import json
+
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.http import JsonResponse
+from django.forms import model_to_dict
+from django.http import JsonResponse, HttpResponse
 from django.shortcuts import render
 
 # Create your views here.
+from django.views import View
 from django.views.generic import CreateView
+from pip._vendor import requests
 
 from apps.item.forms import ItemForm, CampoForm
+from apps.item.models import Item
+
 
 class Campos(object):
     campos = []
@@ -43,3 +50,21 @@ class  CadastrarItem(LoginRequiredMixin, CreateView):
 
         return JsonResponse(data)
 
+
+class SubirItem(LoginRequiredMixin, View):
+
+    def get(self, request):
+        itens= Item.objects.all()
+        lItens = []
+
+        for iten in lItens:
+            lItens.append(model_to_dict(iten))
+
+        resp = requests.post(url='http://localhost:8080/SAPH/saph/organizacao/',
+                             data=json.dumps(lItens),
+                             headers={'content-type': 'application/json'})
+
+        if (resp.status_code == 200 or resp.status_code == 201):
+            return HttpResponse("ESSA MIZERA DEU CERTO")
+        else:
+            return HttpResponse("ESSA MIZERA DEU ERRADO")

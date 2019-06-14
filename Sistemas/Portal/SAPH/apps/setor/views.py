@@ -1,9 +1,14 @@
+import json
+
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.messages.views import SuccessMessageMixin
+from django.forms import model_to_dict
+from django.http import HttpResponse
 from django.shortcuts import render
 from django.views import View
 from django.views.generic import CreateView,UpdateView,ListView,DeleteView
 from django.urls import reverse_lazy, reverse
+from pip._vendor import requests
 
 from apps.funcionario.models import Funcionario
 from apps.setor.form import SetorCreate
@@ -73,3 +78,22 @@ class DetalharSetor(LoginRequiredMixin, View):
         setor = Setor.objects.filter(pk=pk)
         funcionarios = Funcionario.objects.filter(setor__pk=pk)
         return render(request, 'setor/setor_detalhar.html', {'setor': setor, 'funcionarios': funcionarios})
+
+
+class SubirSetor(LoginRequiredMixin, View):
+
+    def get(self, request):
+        setores = Setor.objects.all()
+        lSetores = []
+
+        for setor in setores:
+            lSetores.append(model_to_dict(setor))
+
+        resp = requests.post(url='http://localhost:8080/SAPH/saph/organizacao/',
+                             data=json.dumps(lSetores),
+                             headers={'content-type': 'application/json'})
+
+        if(resp.status_code==200 or resp.status_code==201):
+            return HttpResponse("ESSA MIZERA DEU CERTO")
+        else:
+            return HttpResponse("ESSA MIZERA DEU ERRADO")

@@ -148,26 +148,49 @@ class PreUpdateFuncionario(LoginRequiredMixin, UpdateView):
 class SubirFuncionarios(LoginRequiredMixin, View):
 
     def get(self, request):
-        # a = Funcionario.objects.all()
-        a = User.objects.all()
-        o = Organizacao.objects.filter(pk=request.user.funcionario.organizacao.pk)
-        l = []
-        # con = serializers.serialize("json", a)
-        # data = serializers.serialize('json', list(objectQuerySet), fields=('fileName', 'id'))
-        lorganizacao = []
-        lorganizacao.append(model_to_dict(o[0]))
-        for x in a:
-            l.append(model_to_dict(x))
-        d = {'nome':'Fudeu'}
-        a1 = json
-        resp = requests.post(url='http://localhost:8080/SAPH/saph/organizacao/',
+        usuarios = User.objects.all()
+        # usuarios = User.objects.values('id', 'username', 'password')
+        lUsuario = []
+        for usuario in usuarios:
+            dicUsuario = {
+                'id': usuario.pk,
+                'email': usuario.username,
+                'senha': usuario.password
+            }
+            lUsuario.append(dicUsuario)
+
+        # respUsuario = requests.post(url='http://localhost:8080/SAPH/saph/usuario/lista',
+        #                            data = json.dumps(lUsuario),
+        #                            headers={'content-type': 'application/json'})
+
+        funcionarios = Funcionario.objects.values('id','nome', 'cpf', 'cargo', 'endereco', 'telefone', 'ativo', 'foto', 'user_id')
+        lFuncionario = []
+        organizacao = self.request.user.funcionario.organizacao.pk
+        for funcionario in funcionarios:
+            dic = {
+                'id': funcionario['id'],
+                'ativo': funcionario['ativo'],
+                'cargo': funcionario['cargo'],
+                'cpf': funcionario['cpf'],
+                'endereco': funcionario['endereco'],
+                'foto': funcionario['foto'],
+                'nome': funcionario['nome'],
+                'telefone': funcionario['telefone'],
+                'organizacao': {
+                    'id': organizacao},
+                'usuario': {
+                    'id': funcionario['user_id']}
+            }
+            lFuncionario.append(dic)
+        #
+        resp = requests.post(url='http://localhost:8080/SAPH/saph/funcionario/lista/',
                              # data=lorganizacao[0],
-                             data=json.dumps(lorganizacao[0]),
+                             data=json.dumps(lFuncionario),
                              headers={'content-type': 'application/json'})
-        # resp = requests.get('http://localhost:8080/SAPH/saph/organizacao')
-        # for l1 in l:
-            # print(l1)
+
+        # if(respUsuario.status_code == 200 or respUsuario.status_code == 201):
         if(resp.status_code==200 or resp.status_code==201):
+            # if(resp.status_code==200 or resp.status_code==201 and respUsuario.status_code == 200 or respUsuario.status_code == 201):
             return HttpResponse("ESSA MIZERA DEU CERTO")
         else:
             return HttpResponse("ESSA MIZERA DEU ERRADO")

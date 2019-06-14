@@ -1,11 +1,16 @@
+import json
+
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.messages.views import SuccessMessageMixin
+from django.forms import model_to_dict
 from django.shortcuts import render, redirect, get_object_or_404
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
 
 # Create your views here.
 from django.urls import reverse_lazy
+from django.views import View
 from django.views.generic import CreateView, ListView, UpdateView, DeleteView
+from pip._vendor import requests
 
 from apps.solicitacao.form import SolicitacaoForm, CreateSolicitacao
 from apps.solicitacao.models import Item, Solicitacao
@@ -55,3 +60,20 @@ class ApagarSolicitacao(LoginRequiredMixin, DeleteView):
     success_url = reverse_lazy('listar_solicitacao')
 
 
+class SubirSolicitacao(LoginRequiredMixin, View):
+
+    def get(self, request):
+        solicitacoes = Solicitacao.objects.all()
+        lSolicitacoes = []
+
+        for solicitacao in solicitacoes:
+            lSolicitacoes.append(model_to_dict(solicitacao))
+
+        resp = requests.post(url='http://localhost:8080/SAPH/saph/organizacao/',
+                             data=json.dumps(lSolicitacoes),
+                             headers={'content-type': 'application/json'})
+
+        if(resp.status_code==200 or resp.status_code==201):
+            return HttpResponse("ESSA MIZERA DEU CERTO")
+        else:
+            return HttpResponse("ESSA MIZERA DEU ERRADO")

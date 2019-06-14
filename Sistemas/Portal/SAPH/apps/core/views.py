@@ -7,3 +7,4 @@ from django.views import View
 class MyHome(View):
 	def get(self, request, *args, **kwargs):
 		return render(request, 'core/home.html')
+

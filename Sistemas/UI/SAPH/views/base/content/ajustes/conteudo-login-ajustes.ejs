@@ -1,0 +1,114 @@
+<div class="col-12 col-md-9 col-xl-9 py-md-3 pl-md-5 bd-content">
+        <div class="card fixed " style="height: 700px; text-align: right;" id="campos">
+          <div class="card text-center py-4" >
+            <h3>DADOS DE LOGIN</h3>
+          </div>
+          <br>
+    
+            <div class="card-body px-lg-5 pt-0 pt-30 overflow-auto"  id="cardSolici">
+            
+              <form action="" method="post">
+                <div class="form-group">
+                    <label>email:</label>
+                    <input class="form-control" type="email" name="fullname" value="ifudido@gmail.com"/>
+                    <span class="Error"></span>
+                </div>
+                <div class="form-group">
+                  <label>Senha:</label>
+                  <input class="form-control" type="password" name="fullname" value="bosta123"/>
+                  <span class="Error"></span>
+                </div>
+                <div class="form-group">
+                    <label>Confirme sua senha:</label>
+                    <input class="form-control" type="password" name="fullname" value=""/>
+                    <span class="Error"></span>
+                </div>
+    
+                <div class="form-group text-center">
+                    <input class="btn btn-info " type="submit" value="Salvar alterações"/>
+                </div>
+            </form>
+    
+            </div>
+    
+        </div>
+    </div>
+    
+    <style type="text-css">
+    
+    .preview
+    {
+        padding: 10px;
+        position: relative;
+    }
+    .preview i
+    {
+        color: white;
+        font-size: 35px;
+        transform: translate(50px,130px);
+    }
+    
+    .preview-img
+    {
+        border-radius: 100%;
+        box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.7);
+    }
+    
+    .browse-button
+    {
+        width: 200px;
+        height: 200px;
+        border-radius: 100%;
+        position: absolute; /* Tweak the position property if the element seems to be unfit */
+        top: 10px;
+        left: 132px;
+        background: linear-gradient(180deg, transparent, black);
+        opacity: 0;
+        transition: 0.3s ease;
+    }
+    
+    .browse-button:hover
+    {
+        opacity: 1;
+    }
+    
+    .browse-input
+    {
+        width: 200px;
+        height: 200px;
+        border-radius: 100%;
+        transform: translate(-1px,-26px);
+        opacity: 0;
+    }
+    
+    .form-group
+    {
+        width:  250px;
+        margin: 10px auto;
+    }
+    
+    .form-group input
+    {
+        transition: 0.3s linear;
+    }
+    
+    .form-group input:focus
+    {
+        border: 1px solid crimson;
+        box-shadow: 0 0 0 0;
+    }
+    
+    .Error
+    {
+        color: crimson;
+        font-size: 13px;
+    }
+    
+    .Back
+    {
+        font-size: 25px;
+    }
+    
+    </style>
+    
+    

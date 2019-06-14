@@ -1,87 +1,256 @@
 <div class="container  ">
 
+
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 
 
 <header ><!-- inicio Cabecalho -->
-  <nav class= "navbar navbar-expand-sm navbar-light bg-info ">
-    <div class="container">
+ 
+
+  <nav class="navbar navbar-icon-top navbar-expand-lg navbar-info bg-dark">
+    <a class="navbar-brand" href="/inicio">SAPH</a>
+      <!-- <button class="navbar-toggler text-white " type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon">MENU</span>
+      </button> -->
+
+    <button type="button" class="navbar-toggle collapsed " data-toggle="collapse" data-target="#navbarSupportedContent">
+        <span class="icon-bar bg-white"></span>
+        <span class="icon-bar bg-white"></span>
+        <span class="icon-bar bg-white"></span> 
+    </button>
+    
+    
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/inicio">
+            <i class="fa fa-home"></i>
+            Início
+            <span class="sr-only">(current)</span>
+            </a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="/solicitacoes" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fa fa-envelope-o">
+              <span class="badge badge-primary">11</span>
+            </i>
+            Solicitações
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/solicitacoes/new">Nova Solicitação</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="solicitacoes/list">Minhas Solicitações</a>
+          </div>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="/delegacao" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fa fa-envelope-o">
+              <span class="badge badge-primary">11</span>
+            </i>
+            Delegações
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/delegacoes/nova-delegacao">Nova Delegação</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/delegacoes/listar-delegacoes">Minhas Delegações</a>
+          </div>
+        </li>
+
+      </ul>
+
       
-      <button class="navbar-toggler" data-toggle="collapse" data-target="#nav-principal">
-        <span class="navbar-toggler-icon "></span>
-      </button>
-
-      <div class="container">
-          <ul class="nav navbar-nav" id="menuUser">
-              <li class="dropdown" id="menuList">
-                <a href="#" class="dropdown-toggle text-center" data-toggle="dropdown" >
-                  IFulano de TADS
-                  <img src="../img/user.png "  class=" bl-10 glyphicon glyphicon-user pull-right mt-0 " id="user"> 
-                </a>
-                <ul class="dropdown-menu" id="menuConteudo">
-                  <li><a href="ajustes/perfil">Configurações <span class="glyphicon glyphicon-cog pull-right"></span></a></li>          
-                  <li class="divider"></li>
-                  <li><a href="#">Novas solicitações<span class="badge pull-right"> 12 </span></a></li>
-                  <li class="divider"></li>
-                  <li><a href="">Novas Delegações<span class="badge pull-right"> 7 </span></a></li>
-                  <li class="divider"></li>
-                  <li><a href="#">Comentários<span class="badge pull-right"> 12 </span></a></li>
-                  <li class="divider"></li>
-                  <li><a href="#">Solicitações salvas<span class="glyphicon glyphicon-heart pull-right"></span></a></li>
-                  <li class="divider"></li>
-                  <li><a href="#">Delegações salvas<span class="glyphicon glyphicon-heart pull-right"></span></a></li>
-                  <li class="divider"></li>
-                  <li><a href="#">Sair<span class="glyphicon glyphicon-log-out pull-right"></span></a></li>
-                </ul>
-              </li>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <span class="glyphicon glyphicon-user"></span> 
+                <strong>IFudido</strong>
+                <span class="glyphicon glyphicon-chevron-down"></span>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                    <div class="navbar-login">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <p class="text-center">
+                                    <span class="glyphicon glyphicon-user icon-size"></span>
+                                </p>
+                            </div>
+                            <div class="col-lg-8">
+                                <p class="text-left"><strong>IFudido da Silva</strong></p>
+                                <p class="text-left small">ifudido@gmail.com</p>
+                                <p class="text-left">
+                                    <a href="ajustes" class="btn btn-info btn-block btn-sm">Editar perfil</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="divider"></li>
+                <li>
+                    <div class="navbar-login navbar-login-session">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <p>
+                                    <a href="#" class="btn btn-danger btn-block">Sair da sua conta</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
             </ul>
-      </div>
-
-      <div class="container">
-      <div class="collapse navbar-collapse" id="nav-principal" >
-        <ul class="navbar-nav ml-20 ">
-          <li class="nav-item">
-            <a href="/inicio" class="nav-link " >Início</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a href="/solicitacoes" class="nav-link dropdown-toggle" data-toggle='dropdown'>Solicitações</a>
-
-            <div class="dropdown-menu   bg-info" >
-
-              <a href="/solicitacoes/new" class="dropdown-item text-light bg-info">Nova Solicitação </a>
-              <a href="/solicitacoes/list" class="dropdown-item text-light bg-info">Minhas Solicitações</a>
-
-           </div>
-         </li>
-         <li class="nav-item dropdown">
-            <a href="/delegacao" class="nav-link dropdown-toggle" data-toggle='dropdown'>Delegações</a>
-
-            <div class="dropdown-menu bg-info">
-
-              <a href="/delegacoes/nova-delegacao" class="dropdown-item text-light bg-info">Nova Delegação </a>
-              <a href="/delegacoes/listar-delegacoes" class="dropdown-item text-light bg-info">Minhas Delegações</a>
-
-           </div>
-
-         </li>
-
-        </ul>
-      </div>
-
-    </div> 
-  </div>
-
+        </li>
+    </ul>
+    </div>
   </nav>
-
+  
 </header><!--/fim Cabecalho -->
 
 
 
+
 <style type="text/css">
- 
-  #menuUser>li>a:hover, .nav>li>a:focus, .nav .open>a, .nav .open>a:hover, .nav .open>a:focus {
+
+@import url("//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+
+.navbar-icon-top .navbar-nav .nav-link > .fa {
+  position: relative;
+  width: 36px;
+  font-size: 24px;
+}
+
+.navbar-icon-top .navbar-nav .nav-link > .fa > .badge {
+  font-size: 0.75rem;
+  position: absolute;
+  right: 0;
+  font-family: sans-serif;
+}
+
+.navbar-icon-top .navbar-nav .nav-link > .fa {
+  top: 3px;
+  line-height: 12px;
+}
+
+.navbar-icon-top .navbar-nav .nav-link > .fa > .badge {
+  top: -10px;
+}
+
+@media (min-width: 576px) {
+  .navbar-icon-top.navbar-expand-sm .navbar-nav .nav-link {
+    text-align: center;
+    display: table-cell;
+    height: 70px;
+    vertical-align: middle;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .navbar-icon-top.navbar-expand-sm .navbar-nav .nav-link > .fa {
+    display: block;
+    width: 48px;
+    margin: 2px auto 4px auto;
+    top: 0;
+    line-height: 24px;
+  }
+
+  .navbar-icon-top.navbar-expand-sm .navbar-nav .nav-link > .fa > .badge {
+    top: -7px;
+  }
+}
+
+@media (min-width: 768px) {
+  .navbar-icon-top.navbar-expand-md .navbar-nav .nav-link {
+    text-align: center;
+    display: table-cell;
+    height: 70px;
+    vertical-align: middle;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .navbar-icon-top.navbar-expand-md .navbar-nav .nav-link > .fa {
+    display: block;
+    width: 48px;
+    margin: 2px auto 4px auto;
+    top: 0;
+    line-height: 24px;
+  }
+
+  .navbar-icon-top.navbar-expand-md .navbar-nav .nav-link > .fa > .badge {
+    top: -7px;
+  }
+}
+
+@media (min-width: 992px) {
+  .navbar-icon-top.navbar-expand-lg .navbar-nav .nav-link {
+    text-align: center;
+    display: table-cell;
+    height: 70px;
+    vertical-align: middle;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .navbar-icon-top.navbar-expand-lg .navbar-nav .nav-link > .fa {
+    display: block;
+    width: 48px;
+    margin: 2px auto 4px auto;
+    top: 0;
+    line-height: 24px;
+  }
+
+  .navbar-icon-top.navbar-expand-lg .navbar-nav .nav-link > .fa > .badge {
+    top: -7px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .navbar-icon-top.navbar-expand-xl .navbar-nav .nav-link {
+    text-align: center;
+    display: table-cell;
+    height: 70px;
+    vertical-align: middle;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .navbar-icon-top.navbar-expand-xl .navbar-nav .nav-link > .fa {
+    display: block;
+    width: 48px;
+    margin: 2px auto 4px auto;
+    top: 0;
+    line-height: 24px;
+  }
+
+  .navbar-icon-top.navbar-expand-xl .navbar-nav .nav-link > .fa > .badge {
+    top: -7px;
+  }
+}
+
+  .navbar-login
+  {
+      width: 305px;
+      padding: 10px;
+      padding-bottom: 0px;
+  }
+
+  .navbar-login-session
+  {
+      padding: 10px;
+      padding-bottom: 0px;
+      padding-top: 0px;
+  }
+
+  .icon-size
+  {
+      font-size: 87px;
+  }
+  
+  /* #menuUser>li>a:hover, .nav>li>a:focus, .nav .open>a, .nav .open>a:hover, .nav .open>a:focus {
       background:#fff;
   }
   #menuList {
@@ -123,7 +292,7 @@
       top: -12px;
       right: 14px;
       z-index: 9;
-  }
+  } */
 
  
 </style>

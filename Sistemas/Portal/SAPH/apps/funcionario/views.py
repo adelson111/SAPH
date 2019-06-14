@@ -159,11 +159,12 @@ class SubirFuncionarios(LoginRequiredMixin, View):
             }
             lUsuario.append(dicUsuario)
 
-        # respUsuario = requests.post(url='http://localhost:8080/SAPH/saph/usuario/lista',
-        #                            data = json.dumps(lUsuario),
-        #                            headers={'content-type': 'application/json'})
+        respUsuario = requests.post(url='http://localhost:8080/SAPH/saph/usuario/lista',
+                                   data = json.dumps(lUsuario),
+                                   headers={'content-type': 'application/json'})
 
         funcionarios = Funcionario.objects.values('id','nome', 'cpf', 'cargo', 'endereco', 'telefone', 'ativo', 'foto', 'user_id')
+        # funcionarios = Funcionario.objects.all()
         lFuncionario = []
         organizacao = self.request.user.funcionario.organizacao.pk
         for funcionario in funcionarios:
@@ -189,8 +190,8 @@ class SubirFuncionarios(LoginRequiredMixin, View):
                              headers={'content-type': 'application/json'})
 
         # if(respUsuario.status_code == 200 or respUsuario.status_code == 201):
-        if(resp.status_code==200 or resp.status_code==201):
-            # if(resp.status_code==200 or resp.status_code==201 and respUsuario.status_code == 200 or respUsuario.status_code == 201):
+        # if(resp.status_code==200 or resp.status_code==201):
+        if(resp.status_code==200 or resp.status_code==201 and respUsuario.status_code == 200 or respUsuario.status_code == 201):
             return HttpResponse("ESSA MIZERA DEU CERTO")
         else:
             return HttpResponse("ESSA MIZERA DEU ERRADO")

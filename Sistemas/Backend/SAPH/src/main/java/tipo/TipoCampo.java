@@ -10,9 +10,8 @@ package tipo;
  * @author adelson
  */
 public enum TipoCampo {
-    TEXTO,
-    INTEIRO,
-    REAL,
-    DATA,
-    ARQUIVO
+    text,
+    number,
+    file,
+    textarea
 }

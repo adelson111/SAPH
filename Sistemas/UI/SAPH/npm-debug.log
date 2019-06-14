@@ -7,7 +7,7 @@
 6 silly lifecycle saph@0.0.0~prestart: no script for prestart, continuing
 7 info lifecycle saph@0.0.0~start: saph@0.0.0
 8 verbose lifecycle saph@0.0.0~start: unsafe-perm in lifecycle true
-9 verbose lifecycle saph@0.0.0~start: PATH: /usr/share/npm/bin/node-gyp-bin:/home/moises/Downloads/SAPH/Sistemas/UI/SAPH/node_modules/.bin:/home/moises/.yarn/bin:/home/moises/.config/yarn/global/node_modules/.bin:/usr/local/heroku/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/jvm/java-8-oracle/bin:/usr/lib/jvm/java-8-oracle/db/bin:/usr/lib/jvm/java-8-oracle/jre/bin
+9 verbose lifecycle saph@0.0.0~start: PATH: /usr/share/npm/bin/node-gyp-bin:/home/moises/Downloads/SAPH/Sistemas/UI/SAPH/node_modules/.bin:/home/moises/.yarn/bin:/home/moises/.config/yarn/global/node_modules/.bin:/usr/local/heroku/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/lib/jvm/java-8-oracle/bin:/usr/lib/jvm/java-8-oracle/db/bin:/usr/lib/jvm/java-8-oracle/jre/bin:/usr/lib/jvm/java-8-oracle/bin:/usr/lib/jvm/java-8-oracle/db/bin:/usr/lib/jvm/java-8-oracle/jre/bin:~/development/flutter/bin
 10 verbose lifecycle saph@0.0.0~start: CWD: /home/moises/Downloads/SAPH/Sistemas/UI/SAPH
 11 silly lifecycle saph@0.0.0~start: Args: [ '-c', 'node ./bin/www' ]
 12 silly lifecycle saph@0.0.0~start: Returned: code: 1  signal: null

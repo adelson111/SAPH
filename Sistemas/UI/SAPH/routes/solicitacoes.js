@@ -14,8 +14,11 @@ router.get('/new',(req, res, next)=>{
 });
 
 router.get('/list',(req, res, next)=>{
-  res.render('list', {
-    title: 'Solicitações - SAPH',
+  client.get("http://localhost:8080/SAPH/saph/solicitacao-delegacao/", function (data, response) {
+    res.render('list', {
+      title: 'Solicitacoes - SAPH',
+      solicitacoes:data,
+    });
   });
 });
 
@@ -49,7 +52,7 @@ router.post('/cada', function (req, res) {
       data: req.body.solicitacao,
       headers: { "Content-Type": "application/json" }
   };
-  client.post("http://localhost:8080/SAPH/saph/solicitacao",args,function (data, response) {
+  client.post("http://localhost:8080/SAPH/saph/solicitacao-delegacao",args,function (data, response) {
     res.send(data);
   });
 });

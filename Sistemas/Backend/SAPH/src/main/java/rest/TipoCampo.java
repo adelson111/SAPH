@@ -29,6 +29,7 @@ public class TipoCampo {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     public String cadastrar(String json) {
+    	System.out.println(json+" aqui");
         new Persistencia().cadastrar(new Gson().fromJson(json, modelo.TipoCampo.class));
         return "Cadastrado com sucesso!";
     }

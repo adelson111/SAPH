@@ -6,18 +6,22 @@ var client = new Client();
 router.get('/nova-delegacao',(req, res, next)=>{
   res.render('nova-delegacao', {
     title: 'Delegacoes - SAPH',
+    dele: true
   });
 });
 
 router.get('/listar-delegacoes',(req, res, next)=>{
   res.render('listar-delegacoes', {
     title: 'Solicitações - SAPH',
+    dele: true
   });
 });
+
 
 router.get('/listar-delegacoes',(req, res, next)=>{
   res.render('listar-delegacoes', {
     title: 'Solicitações - SAPH',
+    dele: true
   });
 });
 
@@ -30,12 +34,14 @@ router.get('/d-confirmadas',(req, res, next)=>{
 router.get('/d-analise',(req, res, next)=>{
   res.render('d-analise', {
     title: 'Solicitações - SAPH',
+    dele: true
   });
 });
 
 router.get('/d-salvas',(req, res, next)=>{
   res.render('d-salvas', {
     title: 'Solicitações - SAPH',
+    dele: true
   });
 });
 

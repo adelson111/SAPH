@@ -9,9 +9,12 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 /**
@@ -20,19 +23,22 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "comentario")
+@SequenceGenerator(name = "sequencia_comentario", sequenceName = "sequencia_comentario",
+        initialValue = 1, allocationSize = 1)
 public class Comentario implements Serializable {
     
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequencia_comentario")
     private long id;
     
     @Column(length = 300, nullable = false)
     private String comentario;
     
-    @ManyToOne(targetEntity = SolicitacaoDelegacao.class, fetch=FetchType.EAGER)
+    @ManyToOne
     @JoinColumn(name = "solicitacao_delegacao_id", nullable = false)
     private SolicitacaoDelegacao solicitacaoDelegacao;
     
-    @ManyToOne(targetEntity = Funcionario.class, fetch=FetchType.EAGER)
+    @ManyToOne
     @JoinColumn(name = "funcionario_id", nullable = false)
     private Funcionario funcionario;
 

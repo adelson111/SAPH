@@ -33,10 +33,10 @@ Funcionário
 	"ativo": true,
 	"foto": "7",
 	"organizacao": {
-	"id": 7
+		"id": 7
 	},
 	"usuario": {
-	"id": 7
+		"id": 7
 	}
 }
 
@@ -48,10 +48,10 @@ Nível
 	"id": 7,
 	"nome": "7",
 	"responsavel": {
-	"id": 7
+		"id": 7
 	},
 	"organizacao": {
-	"id": 7
+		"id": 7
 	}
 }
 
@@ -68,31 +68,37 @@ Setor
 	    }
 	],
 	"gerente": {
-	    "id": 7
+		"id": 7
 	},
 	"nivel": {
-	    "id": 7
+		"id": 7
 	}
 }
 
 -------------------------------------------------------
 
-Tipo Item XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Tipo Campo
 
-[
-    {
-        "id": 1,
-        "nome": "Compra",
-        "tipoCampo": [
+{
+	"id": 7,
+	"nome": "7",
+	"descricao": "7",
+	"tipo": "text"
+}
+
+-------------------------------------------------------
+
+Tipo Item
+
+{
+	"id": 7,
+	"nome": "7",
+	"tipoCampo": [
 		{
-		"id": 1,
-		"nome": "ddd",
-		"descricao": "dd",
-		"tipo": "TEXTO"
+		"id": 7
 		}
-        ]
-    }
-]
+	]
+}
 
 -------------------------------------------------------
 
@@ -120,7 +126,6 @@ Tipo Solicitação Delegação
 Solicitação Delegação
 
 {
-	"id": 7,
 	"status": "ENVIADA",
 	"tipoSolicitacaoDelegacao": {
 	    "id": 7
@@ -132,9 +137,8 @@ Solicitação Delegação
 Item
 
 {
-    "id": 7,
     "solicitacaoDelegacao": {
-        "id": 7
+        "id": 1
     },
     "tipoItem": {
         "id": 7
@@ -143,16 +147,16 @@ Item
 
 -------------------------------------------------------
 
-Campo XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Campo
 
 {
-    "id": 7,
-    "solicitacaoDelegacao": {
-        "id": 7
-    },
-    "tipoItem": {
-        "id": 7
-    }
+	"valor": "7",
+	"item": {
+		"id": 1
+	},
+	"tipoCampo": {
+		"id": 7
+	}
 }
 
 -------------------------------------------------------
@@ -160,10 +164,9 @@ Campo XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 Comentário
 
 {
-	"id": 7,
 	"comentario": "7",
 	"solicitacaoDelegacao": {
-	    "id": 7
+	    "id": 1
 	},
 	"funcionario": {
 	    "id": 7

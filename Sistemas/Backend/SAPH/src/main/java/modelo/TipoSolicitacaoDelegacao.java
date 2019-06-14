@@ -40,13 +40,13 @@ public class TipoSolicitacaoDelegacao implements Serializable {
     @Column(length = 12, nullable = false)
     private tipo.TipoSolicitacaoDelegacao tipo;
     
-    @ManyToMany(targetEntity = TipoItem.class, fetch=FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "tipo_solicitacao_delegacao_item", 
             joinColumns = {@JoinColumn(name = "tipo_solicitacao_delegacao_id")}, 
             inverseJoinColumns = {@JoinColumn(name = "tipo_item_id")})
     private List<TipoItem> tipoItem;
     
-    @ManyToMany(targetEntity = Nivel.class, fetch=FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "tipo_solicitacao_delegacao_nivel", 
             joinColumns = {@JoinColumn(name = "tipo_solicitacao_delegacao_id")}, 
             inverseJoinColumns = {@JoinColumn(name = "nivel_id")})

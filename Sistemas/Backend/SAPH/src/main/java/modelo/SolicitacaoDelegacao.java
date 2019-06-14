@@ -11,9 +11,13 @@ import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import tipo.TipoStatus;
 
@@ -23,16 +27,19 @@ import tipo.TipoStatus;
  */
 @Entity
 @Table(name = "solicitacao_delegacao")
+@SequenceGenerator(name = "sequencia_solicitacao_delegacao", sequenceName = "sequencia_solicitacao_delegacao",
+        initialValue = 1, allocationSize = 1)
 public class SolicitacaoDelegacao implements Serializable {
     
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequencia_solicitacao_delegacao")
     private long id;
     
     @Enumerated(EnumType.STRING)
     @Column(length = 10, nullable = false)
     private tipo.TipoStatus status;
     
-    @ManyToOne(targetEntity = TipoSolicitacaoDelegacao.class, fetch=FetchType.EAGER)
+    @OneToOne
     @JoinColumn(name = "tipo_solicitacao_delegacao_id", nullable = false)
     private TipoSolicitacaoDelegacao tipoSolicitacaoDelegacao;
 

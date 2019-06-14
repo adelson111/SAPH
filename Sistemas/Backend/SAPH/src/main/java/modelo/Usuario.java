@@ -26,7 +26,7 @@ public class Usuario implements Serializable {
     @Column(length = 80, unique = true, nullable = false)
     private String email;
 
-    @XmlTransient
+    
     @Column(length = 65, nullable = false)
     private String senha;
 

@@ -51,16 +51,13 @@ public class Funcionario implements Serializable {
     @Column(length = 100, nullable = true)
     private String foto;
 
-    @ManyToOne(targetEntity = Organizacao.class)
+    @ManyToOne
     @JoinColumn(name = "organizacao_id", nullable = false)
     private Organizacao organizacao;
 
-    @OneToOne(targetEntity = Usuario.class)
+    @OneToOne
     @JoinColumn(name = "usuaio_id", nullable = false)
     private Usuario usuario;
-    
-    @ManyToMany(targetEntity = Setor.class, fetch=FetchType.EAGER)
-    private List<Setor> setor;
 
     public long getId() {
         return id;

@@ -24,12 +24,13 @@ public class Persistencia {
         return emf.createEntityManager();
     }
 
-    public void cadastrar(Object objeto) {
+    public String cadastrar(Object objeto) {
         try {
             em = getPersistencia();
             em.getTransaction().begin();
             em.persist(objeto);
             em.getTransaction().commit();
+            return "Cadastrado com sucesso!";
         } catch (Exception e) {
             System.out.println("Erro ao cadastrar: " + e.getMessage());
             em.getTransaction().rollback();
@@ -37,9 +38,10 @@ public class Persistencia {
             em.close();
             emf.close();
         }
+        return "Erro ao cadastrar!";
     }
 
-    public void cadastrar(List<Object> objeto) {
+    public String cadastrar(List<Object> objeto) {
         try {
             em = getPersistencia();
             em.getTransaction().begin();
@@ -47,6 +49,7 @@ public class Persistencia {
                 em.persist(o);
             }
             em.getTransaction().commit();
+            return "Cadastrado por lista com sucesso!";
         } catch (Exception e) {
             System.out.println("Erro ao cadastrar: " + e.getMessage());
             em.getTransaction().rollback();
@@ -54,14 +57,16 @@ public class Persistencia {
             em.close();
             emf.close();
         }
+        return "Erro ao cadastrar por lista!";
     }
 
-    public void atualizar(Object objeto) {
+    public String atualizar(Object objeto) {
         try {
             em = getPersistencia();
             em.getTransaction().begin();
             em.merge(objeto);
             em.getTransaction().commit();
+            return "Atualizado com sucesso!";
         } catch (Exception e) {
             System.out.println("Erro ao atualizar: " + e.getMessage());
             em.getTransaction().rollback();
@@ -69,15 +74,17 @@ public class Persistencia {
             em.close();
             emf.close();
         }
+        return "Erro ao atualizar!";
     }
 
-    public void remover(Object objeto, long id) {
+    public String remover(Object objeto, long id) {
         try {
             em = getPersistencia();
             objeto = em.find(objeto.getClass(), id);
             em.getTransaction().begin();
             em.remove(objeto);
             em.getTransaction().commit();
+            return "Removido com sucesso!";
         } catch (Exception e) {
             System.out.println("Erro ao remover: " + e.getMessage());
             em.getTransaction().rollback();
@@ -85,6 +92,7 @@ public class Persistencia {
             em.close();
             emf.close();
         }
+        return "Erro ao remover";
     }
 
     public Object selecionar(Object objeto, long id) {

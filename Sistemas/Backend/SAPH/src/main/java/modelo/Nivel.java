@@ -31,24 +31,21 @@ public class Nivel implements Serializable {
     @Column(length = 80, nullable = false)
     private String nome;
 
-    @OneToOne(targetEntity = Nivel.class)
+    @ManyToOne
     @JoinColumn(name = "nivel_superior_id")
     private Nivel nivelSuperior;
 
-    @OneToOne(targetEntity = Nivel.class)
+    @ManyToOne
     @JoinColumn(name = "nivel_inferior_id")
     private Nivel nivelInferior;
 
-    @ManyToOne(targetEntity = Funcionario.class, fetch=FetchType.EAGER)
+    @ManyToOne
     @JoinColumn(name = "responsavel_id", nullable = false)
     private Funcionario responsavel;
 
-    @ManyToOne(targetEntity = Organizacao.class, fetch=FetchType.EAGER)
+    @ManyToOne
     @JoinColumn(name = "organizacao_id", nullable = false)
     private Organizacao organizacao;
-    
-    @ManyToMany(targetEntity = TipoSolicitacaoDelegacao.class, fetch=FetchType.EAGER)
-    private List<TipoSolicitacaoDelegacao> tipoSolicitacaoDelegacao;
 
     public long getId() {
         return id;

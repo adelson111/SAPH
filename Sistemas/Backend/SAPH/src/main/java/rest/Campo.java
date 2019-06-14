@@ -29,31 +29,27 @@ public class Campo {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     public String cadastrar(String json) {
-        new Persistencia().cadastrar(new Gson().fromJson(json, modelo.Campo.class));
-        return "Cadastrado com sucesso!";
+        return new Persistencia().cadastrar(new Gson().fromJson(json, modelo.Campo.class));
     }
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Path("lista")
     public String cadastrarLista(String json) {
-        new Persistencia().cadastrar((List<Object>) new Gson().fromJson(json, new TypeToken<List<modelo.Campo>>(){}.getType()));
-        return "Cadastrado com sucesso!";
+        return new Persistencia().cadastrar((List<Object>) new Gson().fromJson(json, new TypeToken<List<modelo.Campo>>(){}.getType()));
     }
 
     @PUT
     @Consumes(MediaType.APPLICATION_JSON)
     public String atualizar(String json) {
-        new Persistencia().atualizar(new Gson().fromJson(json, modelo.Campo.class));
-        return "Atualizado com sucesso!";
+        return new Persistencia().atualizar(new Gson().fromJson(json, modelo.Campo.class));
     }
 
     @DELETE
     @Produces(MediaType.TEXT_PLAIN)
     @Path("{id}")
     public String remover(@PathParam("id") long id) {
-        new Persistencia().remover(new modelo.Campo(), id);
-        return "Removido com sucesso!";
+        return new Persistencia().remover(new modelo.Campo(), id);
     }
 
     @GET

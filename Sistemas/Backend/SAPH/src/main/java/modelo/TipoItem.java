@@ -31,14 +31,11 @@ public class TipoItem implements Serializable {
     @Column(length = 80, nullable = false)
     private String nome;
 
-    @OneToMany(targetEntity = TipoCampo.class, fetch=FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "tipo_item_campo", 
             joinColumns = {@JoinColumn(name = "tipo_item_id")}, 
             inverseJoinColumns = {@JoinColumn(name = "tipo_campo_id")})
     private List<TipoCampo> tipoCampo;
-
-    @ManyToMany(targetEntity = TipoSolicitacaoDelegacao.class, fetch=FetchType.EAGER)
-    private List<TipoSolicitacaoDelegacao> tipoSolicitacaoDelegacao;
     
     public long getId() {
         return id;

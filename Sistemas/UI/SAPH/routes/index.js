@@ -40,6 +40,7 @@ router.get('/delegacao',(req, res, next)=>{
     title: 'Delegações - SAPH',
   });
 });
+
 router.get('/visualizar',(req, res, next)=>{
   res.render('visualizar', {
     title: 'Visualizar - SAPH',
@@ -50,5 +51,7 @@ router.get('/exportar',(req, res, next)=>{
   res.render('exportar', {
     title: 'Exportar - SAPH',
   });
+
 });
+
 module.exports = router;

@@ -3,21 +3,23 @@
   <div class="col-12 col-md-9 col-xl-9 py-md-3 pl-md-5 bd-content">
     <div class="card fixed " style="height: 700px; text-align: right;" id="campos" >
 
-        <div class="card-header-fixed text-center py-4 bg-dark text-light" >
-          <h3 style="font-family: 'Roboto','Helvetica Neue',Helvetica,Arial,sans-serif;" id="printSection">LISTA DE DELEGAÇÕES</h3>
-        </div>
-            <div class="panel with-nav-tabs panel-default">
-                        <div class="panel-heading">
-                                <ul class="nav nav-tabs">
-                                    <li class="active"><a href="#tab1default" data-toggle="tab">Todas</a></li>
-                                    <li class=""><a href="#tab2default" data-toggle="tab">Confirmadas</a></li>
-                                    <li class=""><a href="#tab3default" data-toggle="tab">Em análise</a></li>
-                                    <li class=""><a href="#tab4default" data-toggle="tab">Salvas</a></li>
-                                </ul>
-                        </div>
-                        <div class="panel-body">
+        <!-- <div class="card-header-fixed text-center py-4 bg-dark text-light" >
+          <h5 style="font-family: 'Roboto','Helvetica Neue',Helvetica,Arial,sans-serif; height:auto;" id="printSection">LISTA DE DELEGAÇÕES</h5>
+        </div> -->
+        <div class="panel-heading">
 
-                            <div class="tab-content overflow-auto">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#tab1default" data-toggle="tab">Todas</a></li>
+                    <li class=""><a href="#tab2default" data-toggle="tab">Confirmadas</a></li>
+                    <li class=""><a href="#tab3default" data-toggle="tab">Em análise</a></li>
+                    <li class=""><a href="#tab4default" data-toggle="tab">Salvas</a></li>
+                </ul>
+        </div>
+            <div class="panel with-nav-tabs panel-default overflow-auto">
+
+                        <div class="panel-body" >
+
+                            <div class="tab-content" width="auto">
 
                                 <div class="tab-pane fade  active in" id="tab1default">
                                     <%- include('d-todas')-%>
@@ -31,7 +33,7 @@
                                   <%- include('d-analise') -%>
                                 </div>
 
-                                <div class="tab-pane fade" id="tab4default">
+                                <div class="tab-pane fade"  id="tab4default">
                                   <%- include('d-salvas') -%>
                                 </div>
 
@@ -110,5 +112,43 @@ body {
     line-height: 1.42857143;
     color: #333;
     background-color: #fff;
+  }
+  .Portfolio {
+    position: relative;
+    margin: 5px;
+    border: 2px solid black;
+    float: left;
+    width: 80px;
+    transition-duration: 0.4s;
+    border-radius: 5px;
+    animation: winanim 0.5s ;
+    -webkit-backface-visibility:visible;
+    backface-visibility:visible;
+    box-shadow:0 3px 5px -1px rgba(0,0,0,.2),0 5px 8px 0 rgba(0,0,0,.14),0 1px 14px 0 rgba(0,0,0,.12)
+  }
+
+  .Portfolio:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
+  }
+
+  .Portfolio img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px
+  }
+
+  .desc {
+    padding: 5px;
+    text-align: center;
+    font-size: 90%;
+    background:black;
+    color:white;
+    height: 50px;.
+  }
+
+  @keyframes winanim {
+    0%{opacity:0;transform:scale3d(.3,.3,.3)}
+    50%{opacity:1}
+
   }
 </style>

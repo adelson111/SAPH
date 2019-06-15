@@ -2,17 +2,48 @@
   <div class="row flex-xl-nowrap" id="cards">
 
   <div class="col-12 col-md-9 col-xl-3 py-md-3 bd-content">
-    <div class="card fixed" style="height: 350px;" >
+    <div class="card fixed" style="height: 700px;" >
       <div class="card-header-fixed algolia-autocomplete text-center py-4" style="padding: 10px;">
           <input type="search" class="form-control ds-input nav-link"
           placeholder="Pesquisar..."
           style="vertical-align: top;" >
       </div>
+
       <ul class="list-group list-group-flush" id="itens">
-        <a href=""><li class="list-group-item">morra</li></a>
-        <a href=""><li class="list-group-item">se lasque</li></a>
+        <li class="list-group-item">
+          <label>
+              Cagar na pia
+          </label>
+
+          <div class="pull-right action-buttons">
+              <a href="" data-toggle="modal" data-target="#largeModal"><span class="glyphicon glyphicon-comment"></span></a>
+          </div>
+        </li>
+
+        <li class="list-group-item">
+          <label>
+              Matar Lula
+          </label>
+
+          <div class="pull-right action-buttons">
+              <a href="" data-toggle="modal" data-target="#largeModal"><span class="glyphicon glyphicon-comment"></span></a>
+          </div>
+        </li>
+
       </ul>
+
     </div>
 
   </div>
+
+  <style type="text/css">
+
+  .panel-footer .pagination { margin: 0; }
+  .panel .glyphicon,.list-group-item .glyphicon { margin-right:5px; }
+  .panel-body .radio, .checkbox { display:inline-block;margin:0px; }
+  .panel-body input[type=checkbox]:checked + label { text-decoration: line-through;color: rgb(128, 144, 160); }
+  .list-group-item:hover, a.list-group-item:focus {text-decoration: none;background-color: rgb(245, 245, 245);}
+  .list-group { margin-bottom:0px; }
+
+  </style>
   <!-- col-12 col-md-3 col-xl-2 bd-content-->

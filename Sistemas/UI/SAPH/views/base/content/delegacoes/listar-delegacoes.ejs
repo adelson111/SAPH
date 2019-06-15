@@ -1,21 +1,114 @@
 <%- include('delegacao-topo') -%>
-          <div class="card-body px-lg-5 pt-0 pt-30 overflow-auto"  id="cardSolici">
-            <form class="text-left " style="color: #757575;" action="index.html" method="post" id="solicitacao" >
-              <div class="col">
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  <div class="col-12 col-md-9 col-xl-9 py-md-3 pl-md-5 bd-content">
+    <div class="card fixed " style="height: 700px; text-align: right;" id="campos" >
 
-                <div class="body-delegacao" >
-                  <ul class="list-group" id="lista">
-                    <li class="list-group-item bg-info text-light" style=" margin-bottom:10px;">
-                      <div class="text-dark font-weight-bold">
-                        Se mate<a class="btn float-right bg-warning text-light" data-toggle="modal" data-target="#largeModal"  href="" name="button">DESCRIÇÃO</a>
-                      </div>
-                    </li>
+        <div class="card-header-fixed text-center py-4 bg-dark text-light" >
+          <h3 style="font-family: 'Roboto','Helvetica Neue',Helvetica,Arial,sans-serif;" id="printSection">LISTA DE DELEGAÇÕES</h3>
+        </div>
+            <div class="panel with-nav-tabs panel-default">
+                        <div class="panel-heading">
+                                <ul class="nav nav-tabs">
+                                    <li class="active"><a href="#tab1default" data-toggle="tab">Todas</a></li>
+                                    <li class=""><a href="#tab2default" data-toggle="tab">Confirmadas</a></li>
+                                    <li class=""><a href="#tab3default" data-toggle="tab">Em análise</a></li>
+                                    <li class=""><a href="#tab4default" data-toggle="tab">Salvas</a></li>
+                                </ul>
+                        </div>
+                        <div class="panel-body">
 
-                    </ul>
-                </div>
+                            <div class="tab-content overflow-auto">
 
-              </div>
-            </form>
-            <hr>
+                                <div class="tab-pane fade  active in" id="tab1default">
+                                    <%- include('d-todas')-%>
+                                </div>
+
+                                <div class="tab-pane fade" id="tab2default">
+                                  <%- include('d-confirmadas') -%>
+                                </div>
+
+                                <div class="tab-pane fade " id="tab3default">
+                                  <%- include('d-analise') -%>
+                                </div>
+
+                                <div class="tab-pane fade" id="tab4default">
+                                  <%- include('d-salvas') -%>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
           </div>
 <%- include('delegacao-baixo') -%>
+
+<style type="text/css">
+.panel.with-nav-tabs .nav-tabs {
+    border-bottom: none;
+}
+.panel.with-nav-tabs .panel-heading {
+    padding: 5px 5px 0 5px;
+}
+.panel-default>.panel-heading {
+    color: #333;
+    background-color: #f5f5f5;
+    border-color: #ddd;
+}
+.panel-heading {
+    padding: 10px 15px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+.panel.with-nav-tabs .nav-tabs {
+    border-bottom: none;
+}
+.nav {
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+.nav-tabs>li {
+    float: left;
+    margin-bottom: -1px;
+}
+.nav>li {
+    position: relative;
+    display: block;
+}
+.panel-default {
+    border-color: #ddd;
+}
+.panel {
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}
+
+*{
+   -webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+   box-sizing: border-box;
+}
+div {
+    display: block;
+}
+body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    background-color: #fff;
+  }
+</style>

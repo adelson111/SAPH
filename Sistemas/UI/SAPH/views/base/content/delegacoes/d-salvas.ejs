@@ -1,23 +1,16 @@
-<%- include('delegacao-topo') -%>
+<form class="text-left " style="color: #757575;" action="index.html" method="post" id="solicitacao" >
+  <div class="col">
 
-<div class="card-body px-lg-5 pt-0 pt-30 overflow-auto"  id="cardSolici">
-  <form class="text-left " style="color: #757575;" action="index.html" method="post" id="solicitacao" >
-    <div class="col">
+    <div class="body-solicitacao" >
+      <ul class="list-group" id="lista">
+        <li class="list-group-item bg-primary " style=" margin-bottom:10px;">
+          <div class="text-dark font-weight-bold ">
+          <span class="text-light">sei n</span> <a class="btn float-right bg-warning text-light" data-toggle="modal" data-target="#largeModal"  href="" name="button">DESCRIÇÃO</a>
+          </div>
+        </li>
 
-      <div class="body-solicitacao" >
-        <ul class="list-group" id="lista">
-          <li class="list-group-item bg-info text-light" style=" margin-bottom:10px;">
-            <div class="text-dark font-weight-bold">
-              sei n<a class="btn float-right bg-warning text-light" data-toggle="modal" data-target="#largeModal"  href="" name="button">DESCRIÇÃO</a>
-            </div>
-          </li>
-
-          </ul>
-      </div>
-
+        </ul>
     </div>
-  </form>
-  <hr>
-</div>
 
-<%- include('delegacao-baixo') -%>
+  </div>
+</form>

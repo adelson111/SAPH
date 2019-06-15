@@ -12,6 +12,10 @@
 	height: 50px;
 }
 
+#lista li{
+	background-color: red ;
+}
+
 footer p a {
 	margin: 5px 15px;
 }

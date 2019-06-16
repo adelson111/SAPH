@@ -4,25 +4,41 @@
 
   <div class="col-12 col-md-9 col-xl-3 py-md-3 ">
     <div class="card  overflow-auto" style="height: 700px;" >
-      <div class="card list-group  text-center py-4">
-        <h3>Ítens</h3>
+      <div class="panel-group" id="accordion">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <span class="glyphicon glyphicon-file">
+              </span> ÍTENS</a>
+            </h4>
+          </div>
+        </div><!-- /input-group image-preview [TO HERE]-->
       </div>
-      <ul class="overflow-auto" id="itens">
-        <li class=".list-group-item">Item1</li>
-        <ul>
-          <li class=".list-group-item">Campo</li>
+
+        <ul class="overflow-auto list-group  " id="itens">
+          <li class="list-group-item">Item1</li>
+          <ul class=" ">
+            <li class="list-group-item">Campo</li>
+            <li class="list-group-item">Campo2</li>
+          </ul>
         </ul>
-      </ul>
+
     </div>
   </div>
   <!-- col-12 col-md-3 col-xl-2 bd-content-->
 
   <div class="col-12 col-md-9 col-xl-9 py-md-3 pl-md-5 bd-content">
       <div class="card fixed " style="height: 700px; text-align: right;" id="campos">
-        <div class="card-header-fixed text-center py-4">
-          <h3>Nova Delegação</h3>
-          <hr>
-        </div>
+          <div class="panel-group">
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <span class="glyphicon glyphicon-envelope">
+                  </span> NOVA DELEGAÇÃO</a>
+                </h4>
+              </div>
+            </div><!-- /input-group image-preview [TO HERE]-->
+          </div>
 
           <div class="card-body px-lg-5 pt-0 pt-30 overflow-auto"  id="cardSolici">
             <form class="text-left " style="color: #757575;" action="index.html" method="post" id="solicitacao" >
@@ -32,7 +48,7 @@
                     <div class="input-group-prepend ">
                       <label class="input-group-text " id="tipoSolicitacao" for="inputGroupSelect01">Tipos de solicitações</label>
                     </div>
-                    <select name="tipo" id="tipo" class="custom-select"  required>
+                    <select name="tipo" id="tipo" class="custom-select form-control form-control-lg"  required>
 
                     </select>
                   </div>
@@ -46,27 +62,27 @@
             </form>
             <hr>
           </div>
-          <div class="card-header text-center rodapeCard" id="home">
 
-              <button type="submit" id="enviar" class="btn btn-info btn-lg" >Enviar</button>
-              <button type="submit" id="guardar" class="btn btn-success btn-lg" >Guardar</button>
-              <a href="#">
-                <img id="imprimir" class="float-left" src="https://pt.seaicons.com/wp-content/uploads/2016/06/print-icon.png" width="50px">
-              </a>
-          </div>
-      </div>
+<div>
+  <!-- <button type="submit" id="enviar" class="btn btn-info btn-lg" >Enviar</button>
+  <button type="submit" id="guardar" class="btn btn-success btn-lg" >Guardar</button>
+  <a href="#">
+    <img id="imprimir" class="float-left" src="https://pt.seaicons.com/wp-content/uploads/2016/06/print-icon.png" width="50px">
+  </a> -->
+  <div class="form-group float-right mr-5">
+    <button type="button" class="btn btn-success btn-sm">
+    <span class="glyphicon glyphicon-send"></span> Enviar</button>
+    <button type="submit" class="btn btn-success btn-sm">
+    <span class="glyphicon glyphicon-floppy-disk"></span> Guardar</button>
+    <button type="submit" class="btn btn-success btn-sm">
+    <span class="glyphicon glyphicon-print" id="imprimir"></span> Imprimir</button>
   </div>
 </div>
 </div>
 
-<style type="text/css">
-  @media (max-width: 575.98px) {
-    .form-row {
-      display: block;
-    }
-
-   }
-</style>
+</div>
+</div>
+</div>
 
 <script type="text/javascript">
 
@@ -76,3 +92,18 @@ $('#imprimir').click(function(){
 
 
 </script>
+<style type="text/css">
+  @media (max-width: 575.98px) {
+    .form-row {
+      display: block;
+    }
+
+   }
+  @media (min-width: 768px)
+.form-inline .form-group {
+    display: inline-block;
+    margin-bottom: 0;
+    vertical-align: middle;
+}
+
+</style>

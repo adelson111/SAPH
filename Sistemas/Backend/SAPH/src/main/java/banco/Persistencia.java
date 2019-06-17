@@ -9,6 +9,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import modelo.Usuario;
 
 /**
  *
@@ -119,6 +120,26 @@ public class Persistencia {
             emf.close();
         }
         return null;
+    }
+
+    public boolean selecionarUsuario(String email, String senha) {
+        try {
+            em = getPersistencia();
+            Usuario usuario = (Usuario) em.createQuery(
+                    "select u from Usuario u where u.email = :email and u.senha = :senha")
+                    .setParameter("email", email)
+                    .setParameter("senha", senha)
+                    .getSingleResult();
+            if (usuario != null) {
+                return true;
+            }
+        } catch (Exception e) {
+            System.out.println("Erro ao selecionar: " + e.getMessage());
+        } finally {
+            em.close();
+            emf.close();
+        }
+        return false;
     }
 
 }

@@ -26,8 +26,7 @@ public class Usuario implements Serializable {
     @Column(length = 80, unique = true, nullable = false)
     private String email;
 
-    
-    @Column(length = 65, nullable = false)
+    @Column(length = 129, nullable = false)
     private String senha;
 
     public long getId() {

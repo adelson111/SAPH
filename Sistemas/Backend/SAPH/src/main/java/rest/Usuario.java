@@ -36,7 +36,8 @@ public class Usuario {
     @Consumes(MediaType.APPLICATION_JSON)
     @Path("lista")
     public String cadastrarLista(String json) {
-        return new Persistencia().cadastrar((List<Object>) new Gson().fromJson(json, new TypeToken<List<modelo.Usuario>>(){}.getType()));
+        return new Persistencia().cadastrar((List<Object>) new Gson().fromJson(json, new TypeToken<List<modelo.Usuario>>() {
+        }.getType()));
     }
 
     @PUT
@@ -46,7 +47,7 @@ public class Usuario {
     }
 
     @DELETE
-    @Produces(MediaType.TEXT_PLAIN)
+    @Consumes(MediaType.TEXT_PLAIN)
     @Path("{id}")
     public String remover(@PathParam("id") long id) {
         return new Persistencia().remover(new modelo.Usuario(), id);
@@ -63,6 +64,13 @@ public class Usuario {
     @Path("{id}")
     public String selecionar(@PathParam("id") long id) {
         return new Gson().toJson(new Persistencia().selecionar(new modelo.Usuario(), id));
+    }
+
+    @POST
+    @Consumes(MediaType.TEXT_PLAIN)
+    @Path("autenticar/{email}/{senha}")
+    public boolean entrar(@PathParam("email") String email, @PathParam("senha") String senha) {
+        return new Persistencia().selecionarUsuario(email, senha);
     }
 
 }

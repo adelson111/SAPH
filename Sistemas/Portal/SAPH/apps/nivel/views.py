@@ -13,6 +13,7 @@ from django.views import View
 from django.views.generic import CreateView, ListView, UpdateView, DeleteView, DetailView
 from pip._vendor import requests
 
+from apps import organizacao, funcionario
 from apps.nivel.models import Nivel
 
 from apps.nivel.forms import NivelEdit, NivelCreate
@@ -178,17 +179,29 @@ class DetalharNivel(LoginRequiredMixin, View):
 class SubirNivel(LoginRequiredMixin, View):
 
     def get(self, request):
-        niveis = Nivel.objects.all()
-        lNiveis= []
 
+        niveis = Nivel.objects.values('id', 'nome', 'nivelSuperior', 'nivelInferior', 'funcionario')
+        lNivel = []
+        organizacao = self.request.user.funcionario.organizacao.pk
         for nivel in niveis:
-            lNiveis.append(model_to_dict(nivel))
-
-        resp = requests.post(url='http://localhost:8080/SAPH/saph/organizacao/',
-                             data=json.dumps(lNiveis),
+            dicNivel = {
+                'id': nivel['id'],
+                'nome': nivel['nome'],
+                'nivelSuperior': nivel['nivelSuperior'],
+                'nivelInferior': nivel['nivelInferior'],
+                'responsavel': {
+                    'id': nivel['funcionario']},
+                'organizacao': {
+                    'id': organizacao}
+            }
+            lNivel.append(dicNivel)
+        #
+        resp = requests.post(url='http://localhost:8080/SAPH/saph/nivel/lista/',
+                             # data=lorganizacao[0],
+                             data=json.dumps(lNivel),
                              headers={'content-type': 'application/json'})
 
-        if(resp.status_code==200 or resp.status_code==201):
+        if (resp.status_code == 200 or resp.status_code == 201):
             return HttpResponse("ESSA MIZERA DEU CERTO")
         else:
             return HttpResponse("ESSA MIZERA DEU ERRADO")

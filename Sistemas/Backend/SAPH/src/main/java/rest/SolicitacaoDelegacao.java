@@ -8,7 +8,6 @@ package rest;
 import banco.Persistencia;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import java.util.ArrayList;
 import java.util.List;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
@@ -19,9 +18,6 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
-import modelo.TipoCampo;
-import modelo.TipoItem;
-import modelo.TipoSolicitacaoDelegacao;
 
 /**
  *
@@ -40,7 +36,8 @@ public class SolicitacaoDelegacao {
     @Consumes(MediaType.APPLICATION_JSON)
     @Path("lista")
     public String cadastrarLista(String json) {
-        return new Persistencia().cadastrar((List<Object>) new Gson().fromJson(json, new TypeToken<List<modelo.SolicitacaoDelegacao>>(){}.getType()));
+        return new Persistencia().cadastrar((List<Object>) new Gson().fromJson(json, new TypeToken<List<modelo.SolicitacaoDelegacao>>() {
+        }.getType()));
     }
 
     @PUT
@@ -50,7 +47,7 @@ public class SolicitacaoDelegacao {
     }
 
     @DELETE
-    @Produces(MediaType.TEXT_PLAIN)
+    @Consumes(MediaType.TEXT_PLAIN)
     @Path("{id}")
     public String remover(@PathParam("id") long id) {
         return new Persistencia().remover(new modelo.SolicitacaoDelegacao(), id);

@@ -36,7 +36,8 @@ public class Setor {
     @Consumes(MediaType.APPLICATION_JSON)
     @Path("lista")
     public String cadastrarLista(String json) {
-        return new Persistencia().cadastrar((List<Object>) new Gson().fromJson(json, new TypeToken<List<modelo.Setor>>(){}.getType()));
+        return new Persistencia().cadastrar((List<Object>) new Gson().fromJson(json, new TypeToken<List<modelo.Setor>>() {
+        }.getType()));
     }
 
     @PUT
@@ -46,7 +47,7 @@ public class Setor {
     }
 
     @DELETE
-    @Produces(MediaType.TEXT_PLAIN)
+    @Consumes(MediaType.TEXT_PLAIN)
     @Path("{id}")
     public String remover(@PathParam("id") long id) {
         return new Persistencia().remover(new modelo.Setor(), id);

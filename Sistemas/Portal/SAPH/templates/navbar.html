@@ -6,77 +6,77 @@
     </button>
     <div class="collapse navbar-collapse" id="menu">
         {% if user.username %}
-            <ul class="navbar-nav mr-auto ">
-                {% if not user.funcionario.organizacao %}
-                    <a class="nav-link" href="{% url 'cadastrar_organizacao' %}">CADASTRAR ORGANIZAÇÃO</a>
+        <ul class="navbar-nav mr-auto ">
+            {% if not user.funcionario.organizacao %}
+            <a class="nav-link" href="{% url 'cadastrar_organizacao' %}">CADASTRAR ORGANIZAÇÃO</a>
+            {% else %}
+            {%if user.funcionario.cargo == 'admin' %}
+            <li class="nav-item dropdown">
+                <a class="nav-link cursor_clique" href="{% url 'atualizar_organizacao' user.funcionario.organizacao.pk%}" id="navbardrop">Editar Organização</a>
+            </li>
+            {% endif %}
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'organograma_nivel'%}" id="navbardrop10">Organograma</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle cursor_clique" id="navbardrop1" data-toggle="dropdown">Funcionário</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="{% url 'cadasrtrar_funcionario' user.funcionario.organizacao.pk %}">Cadastrar</a>
+                    <a class="dropdown-item" href="{% url 'listar_funcionarios' %}">Listar</a>
+                    <a class="dropdown-item" href="{% url 'listar_funcionarios_bloqueado' %}">Bloqueados</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle cursor_clique" id="navbardrop3" data-toggle="dropdown">Nível</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="{% url 'cadastrar_nivel' user.funcionario.organizacao.pk %}">Cadastrar</a>
+                    <a class="dropdown-item" href="{% url 'listar_nivel' %}">Listar</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle cursor_clique" id="navbardrop2" data-toggle="dropdown">Setor</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="{% url 'cadastrar_setor' user.funcionario.organizacao.pk %}">Cadastrar</a>
+                    <a class="dropdown-item" href="{% url 'listar_setor' %}">Listar</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle cursor_clique" id="navbardrop4" data-toggle="dropdown">Solicitação</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="{% url 'cadasrtrar_solicitacao' %}">Cadastrar</a>
+                    <a class="dropdown-item" href="{% url 'listar_solicitacao' %}">Listar</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle cursor_clique" id="navbardrop5" data-toggle="dropdown">Delegação</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="{% url 'cadasrtrar_delegacao' %}">Cadastrar</a>
+                    <a class="dropdown-item" href="{% url 'listar_delegacao' %}">Listar</a>
+                </div>
+            </li>
+            {% endif%}
+        </ul>
+        <div class="my-2 my-lg-0">
+            <div class="dropdown">
+                {%if user.funcionario.foto %}
+                <img src="{{user.funcionario.foto.url}}" data-toggle="dropdown" class="rounded-circle imagem_perfil" alt="Imagem do usuário">
                 {% else %}
-                    {%if user.funcionario.cargo == 'admin' %}
-                        <li class="nav-item dropdown">
-                            <a class="nav-link cursor_clique" href="{% url 'atualizar_organizacao' user.funcionario.organizacao.pk%}" id="navbardrop">Editar Organização</a>
-                        </li>
-                    {% endif %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'organograma_nivel'%}" id="navbardrop10">Organograma</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle cursor_clique" id="navbardrop1" data-toggle="dropdown">Funcionário</a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="{% url 'cadasrtrar_funcionario' user.funcionario.organizacao.pk %}">Cadastrar</a>
-                            <a class="dropdown-item" href="{% url 'listar_funcionarios' %}">Listar</a>
-                            <a class="dropdown-item" href="{% url 'listar_funcionarios_bloqueado' %}">Bloqueados</a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle cursor_clique" id="navbardrop3" data-toggle="dropdown">Nível</a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="{% url 'cadastrar_nivel' user.funcionario.organizacao.pk %}">Cadastrar</a>
-                            <a class="dropdown-item" href="{% url 'listar_nivel' %}">Listar</a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle cursor_clique" id="navbardrop2" data-toggle="dropdown">Setor</a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="{% url 'cadastrar_setor' user.funcionario.organizacao.pk %}">Cadastrar</a>
-                            <a class="dropdown-item" href="{% url 'listar_setor' %}">Listar</a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle cursor_clique" id="navbardrop4" data-toggle="dropdown">Solicitação</a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="{% url 'cadasrtrar_solicitacao' %}">Cadastrar</a>
-                            <a class="dropdown-item" href="{% url 'listar_solicitacao' %}">Listar</a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle cursor_clique" id="navbardrop5" data-toggle="dropdown">Delegação</a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="{% url 'cadasrtrar_delegacao' %}">Cadastrar</a>
-                            <a class="dropdown-item" href="{% url 'listar_delegacao' %}">Listar</a>
-                        </div>
-                    </li>
-                {% endif%}
-            </ul>
-            <div class="my-2 my-lg-0">
-                <div class="dropdown">
-                    {%if user.funcionario.foto %}
-                        <img src="{{user.funcionario.foto.url}}" data-toggle="dropdown" class="rounded-circle imagem_perfil" alt="Imagem do usuário">
-                    {% else %}
-                        <img src="{% static '/imagem/sem_foto.png' %}" data-toggle="dropdown" class="rounded-circle imagem_perfil" alt="Imagem do usuário">
-                    {% endif %}
-                    <div class="dropdown-menu dropdown-menu-right">
-                        <a class="dropdown-item" href="{% url 'subir'%}">Exportar</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="{% url 'logout'%}">Sair</a>
-                    </div>
+                <img src="{% static '/imagem/sem_foto.png' %}" data-toggle="dropdown" class="rounded-circle imagem_perfil" alt="Imagem do usuário">
+                {% endif %}
+                <div class="dropdown-menu dropdown-menu-right">
+                    <a class="dropdown-item" href="" data-toggle="modal" data-target="#modalExportar">Exportar</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="{% url 'logout'%}">Sair</a>
                 </div>
             </div>
+        </div>
         {% else %}
-            <div class="botao_menu">
-                <button type="button" class="btn btn-dark menu_navbar">Contato</button>
-                <button type="button" class="btn btn-dark menu_navbar">Sobre</button>
-                <button type="button" class="btn btn-dark menu_navbar" data-toggle="modal" data-target="#ModalCadastrar">Cadastre-se</button>
-                <button type="button" class="btn btn-dark menu_navbar" data-toggle="modal" data-target="#ModalLogin">Entrar</button>
-            </div>
+        <div class="botao_menu">
+            <button type="button" class="btn btn-dark menu_navbar">Contato</button>
+            <button type="button" class="btn btn-dark menu_navbar">Sobre</button>
+            <button type="button" class="btn btn-dark menu_navbar" data-toggle="modal" data-target="#ModalCadastrar">Cadastre-se</button>
+            <button type="button" class="btn btn-dark menu_navbar" data-toggle="modal" data-target="#ModalLogin">Entrar</button>
+        </div>
         {% endif %}
     </div>
 </nav>
@@ -145,3 +145,47 @@
         </div>
     </div>
 </div>
+
+<!-- Modal -->
+<div class="modal fade" id="modalExportar" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body modal_exportar">
+                <div id="confirmar" class="centralizar" style="display:block">
+                    <h4 class="">Tem certeza que deseja exportar?</h4>
+                    <div class="modal_exportar_espaco">
+                        <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">Cancelar</button>
+                        <button type="button" id="botao_exportar" class="btn btn-success btn-lg">Confirmar</button>
+                    </div>
+                </div>
+                <div id="carregando" class="centralizar" style="display:none">
+                    <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status"></div>
+                    <h4 class="modal_exportar_espaco">Exportando</h4>
+                </div>
+                <div id="exportado" class="centralizar" style="display:none">
+                    <h4 class="">Exportado com sucesso!</h4>
+                    <div class="modal_exportar_espaco">
+                        <a href="{% url 'page_home' %}"><button type="button" class="btn btn-success btn-lg">Concluir</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function(){
+        $("#botao_exportar").click(function(){
+            $('#confirmar').hide();
+            $('#carregando').show();
+            $.get( "{% url 'exportar' %}", function( data ) {
+                if(data == "sim") {
+                    $('#carregando').hide();
+                    $('#exportado').show();
+                } else {
+                    alert( "Load was performed." + data );
+                }
+            });
+        });
+     });
+</script>

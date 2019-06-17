@@ -56,3 +56,12 @@
 .detalhar {
     margin-bottom: 3%;
 }
+
+.modal_exportar{
+    height: 200px;
+    padding: 7%;
+}
+
+.modal_exportar_espaco {
+    padding-top: 7%;
+}

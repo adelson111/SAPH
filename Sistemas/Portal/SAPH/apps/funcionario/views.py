@@ -163,6 +163,7 @@ class SubirFuncionarios(LoginRequiredMixin, View):
                                    data = json.dumps(lUsuario),
                                    headers={'content-type': 'application/json'})
 
+
         funcionarios = Funcionario.objects.values('id','nome', 'cpf', 'cargo', 'endereco', 'telefone', 'ativo', 'foto', 'user_id')
         # funcionarios = Funcionario.objects.all()
         lFuncionario = []

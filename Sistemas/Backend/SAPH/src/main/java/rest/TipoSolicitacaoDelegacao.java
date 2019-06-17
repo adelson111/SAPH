@@ -36,7 +36,8 @@ public class TipoSolicitacaoDelegacao {
     @Consumes(MediaType.APPLICATION_JSON)
     @Path("lista")
     public String cadastrarLista(String json) {
-        return new Persistencia().cadastrar((List<Object>) new Gson().fromJson(json, new TypeToken<List<modelo.TipoSolicitacaoDelegacao>>(){}.getType()));
+        return new Persistencia().cadastrar((List<Object>) new Gson().fromJson(json, new TypeToken<List<modelo.TipoSolicitacaoDelegacao>>() {
+        }.getType()));
     }
 
     @PUT
@@ -46,11 +47,10 @@ public class TipoSolicitacaoDelegacao {
     }
 
     @DELETE
-    @Produces(MediaType.TEXT_PLAIN)
+    @Consumes(MediaType.TEXT_PLAIN)
     @Path("{id}")
     public String remover(@PathParam("id") long id) {
-        new Persistencia().remover(new modelo.TipoSolicitacaoDelegacao(), id);
-        return "Removido com sucesso!";
+        return new Persistencia().remover(new modelo.TipoSolicitacaoDelegacao(), id);
     }
 
     @GET

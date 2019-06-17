@@ -39,7 +39,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <div class="titulo_modal">
-                    <h5 class="modal-title nome_nivel" id="TituloModalCentralizado"></h5>
+                    <h5 class="modal-title nome_nivel_modal" id="TituloModalCentralizado"></h5>
                 </div>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
                     <span aria-hidden="true">&times;</span>
@@ -60,7 +60,7 @@ $(document).ready(function(){
         var str = info.split('|');
         var nome = str[0];
         var responsavel = str[1];
-        $(".nome_nivel").text(nome);
+        $(".nome_nivel_modal").text(nome);
         $("#responsavel").text(responsavel);
     });
 });

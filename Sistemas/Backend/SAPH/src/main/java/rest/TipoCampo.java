@@ -29,7 +29,6 @@ public class TipoCampo {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     public String cadastrar(String json) {
-    	System.out.println(json+" aqui");
         return new Persistencia().cadastrar(new Gson().fromJson(json, modelo.TipoCampo.class));
     }
 
@@ -37,7 +36,8 @@ public class TipoCampo {
     @Consumes(MediaType.APPLICATION_JSON)
     @Path("lista")
     public String cadastrarLista(String json) {
-        return new Persistencia().cadastrar((List<Object>) new Gson().fromJson(json, new TypeToken<List<modelo.TipoCampo>>(){}.getType()));
+        return new Persistencia().cadastrar((List<Object>) new Gson().fromJson(json, new TypeToken<List<modelo.TipoCampo>>() {
+        }.getType()));
     }
 
     @PUT
@@ -47,7 +47,7 @@ public class TipoCampo {
     }
 
     @DELETE
-    @Produces(MediaType.TEXT_PLAIN)
+    @Consumes(MediaType.TEXT_PLAIN)
     @Path("{id}")
     public String remover(@PathParam("id") long id) {
         return new Persistencia().remover(new modelo.TipoCampo(), id);

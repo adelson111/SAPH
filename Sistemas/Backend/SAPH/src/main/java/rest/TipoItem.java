@@ -29,48 +29,28 @@ public class TipoItem {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     public String cadastrar(String json) {
-        new Persistencia().cadastrar(new Gson().fromJson(json, modelo.TipoItem.class));
-        
-//        modelo.TipoCampo tipoCampo = new modelo.TipoCampo();
-//        List<modelo.TipoCampo> listaTipoCampo = null;
-//        
-//        modelo.TipoItem tipoItemChegada = new Gson().fromJson(json, modelo.TipoItem.class);
-//        
-//        for(TipoCampo tipoCampos : tipoItemChegada.getTipoCampo()) {
-//            tipoCampo.setId(tipoCampos.getId());
-//            listaTipoCampo.add(tipoCampo);
-//        }
-//        
-//        modelo.TipoItem tipoItemSaida = new modelo.TipoItem();
-//        tipoItemSaida.setId(tipoItemChegada.getId());
-//        tipoItemSaida.setNome(tipoItemChegada.getNome());
-//        tipoItemSaida.setTipoCampo(listaTipoCampo);
-        
-        
-        return "Cadastrado com sucesso!";
+        return new Persistencia().cadastrar(new Gson().fromJson(json, modelo.TipoItem.class));
     }
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Path("lista")
     public String cadastrarLista(String json) {
-        new Persistencia().cadastrar((List<Object>) new Gson().fromJson(json, new TypeToken<List<modelo.TipoItem>>(){}.getType()));
-        return "Cadastrado com sucesso!";
+        return new Persistencia().cadastrar((List<Object>) new Gson().fromJson(json, new TypeToken<List<modelo.TipoItem>>() {
+        }.getType()));
     }
 
     @PUT
     @Consumes(MediaType.APPLICATION_JSON)
     public String atualizar(String json) {
-        new Persistencia().atualizar(new Gson().fromJson(json, modelo.TipoItem.class));
-        return "Atualizado com sucesso!";
+        return new Persistencia().atualizar(new Gson().fromJson(json, modelo.TipoItem.class));
     }
 
     @DELETE
-    @Produces(MediaType.TEXT_PLAIN)
+    @Consumes(MediaType.TEXT_PLAIN)
     @Path("{id}")
     public String remover(@PathParam("id") long id) {
-        new Persistencia().remover(new modelo.TipoItem(), id);
-        return "Removido com sucesso!";
+        return new Persistencia().remover(new modelo.TipoItem(), id);
     }
 
     @GET

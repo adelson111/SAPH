@@ -47,6 +47,12 @@ Nível
 {
 	"id": 7,
 	"nome": "7",
+	"nivelSuperior": {
+		"id": 7
+	},
+	"nivelInferior": {
+		"id": 7
+	},
 	"responsavel": {
 		"id": 7
 	},

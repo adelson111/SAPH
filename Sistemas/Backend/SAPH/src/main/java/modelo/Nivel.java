@@ -7,6 +7,7 @@ package modelo;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -31,13 +32,15 @@ public class Nivel implements Serializable {
     @Column(length = 80, nullable = false)
     private String nome;
 
-    @ManyToOne
-    @JoinColumn(name = "nivel_superior_id")
-    private Nivel nivelSuperior;
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name = "nivel_superior_id")
+    @Column(name = "nivel_superior_id")
+    private long nivelSuperior;
 
-    @ManyToOne
-    @JoinColumn(name = "nivel_inferior_id")
-    private Nivel nivelInferior;
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name = "nivel_inferior_id")
+    @Column(name = "nivel_inferior_id")
+    private long nivelInferior;
 
     @ManyToOne
     @JoinColumn(name = "responsavel_id", nullable = false)
@@ -63,19 +66,19 @@ public class Nivel implements Serializable {
         this.nome = nome;
     }
 
-    public Nivel getNivelSuperior() {
+    public long getNivelSuperior() {
         return nivelSuperior;
     }
 
-    public void setNivelSuperior(Nivel nivelSuperior) {
+    public void setNivelSuperior(long nivelSuperior) {
         this.nivelSuperior = nivelSuperior;
     }
 
-    public Nivel getNivelInferior() {
+    public long getNivelInferior() {
         return nivelInferior;
     }
 
-    public void setNivelInferior(Nivel nivelInferior) {
+    public void setNivelInferior(long nivelInferior) {
         this.nivelInferior = nivelInferior;
     }
 
@@ -94,5 +97,7 @@ public class Nivel implements Serializable {
     public void setOrganizacao(Organizacao organizacao) {
         this.organizacao = organizacao;
     }
-
+    
+    
+    
 }

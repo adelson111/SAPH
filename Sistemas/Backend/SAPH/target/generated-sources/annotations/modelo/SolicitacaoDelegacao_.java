@@ -1,6 +1,7 @@
 package modelo;
 
 import javax.annotation.Generated;
+import javax.persistence.metamodel.ListAttribute;
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 import tipo.TipoStatus;
@@ -9,6 +10,7 @@ import tipo.TipoStatus;
 @StaticMetamodel(SolicitacaoDelegacao.class)
 public abstract class SolicitacaoDelegacao_ {
 
+	public static volatile ListAttribute<SolicitacaoDelegacao, Item> itens;
 	public static volatile SingularAttribute<SolicitacaoDelegacao, Long> id;
 	public static volatile SingularAttribute<SolicitacaoDelegacao, TipoSolicitacaoDelegacao> tipoSolicitacaoDelegacao;
 	public static volatile SingularAttribute<SolicitacaoDelegacao, TipoStatus> status;

@@ -9,6 +9,9 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+
+import modelo.SolicitacaoDelegacao;
+import modelo.TipoSolicitacaoDelegacao;
 import modelo.Usuario;
 
 /**
@@ -140,6 +143,27 @@ public class Persistencia {
             emf.close();
         }
         return false;
+    }
+    public List<TipoSolicitacaoDelegacao> getSolicitacaoDelegacaoByType(String tipos) {
+        try {
+            em = getPersistencia();
+            tipo.TipoSolicitacaoDelegacao enumSD = null;
+            if(tipos.equals("SOLICITACAO")) {
+            	enumSD = tipo.TipoSolicitacaoDelegacao.SOLICITACAO;
+            }else if(tipos.equals("DELEGACAO")){
+            	enumSD = tipo.TipoSolicitacaoDelegacao.DELEGACAO;
+            }
+            return em.createQuery(
+                    "select tsd from TipoSolicitacaoDelegacao tsd where tsd.tipo = :tipoS")
+                    .setParameter("tipoS", enumSD)
+                    .getResultList();
+        } catch (Exception e) {
+            System.out.println("Erro ao selecionar: " + e.getMessage());
+        } finally {
+            em.close();
+            emf.close();
+        }
+        return null;
     }
 
 }

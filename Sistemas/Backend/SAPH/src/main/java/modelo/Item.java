@@ -38,7 +38,7 @@ public class Item implements Serializable {
     @JoinColumn(name = "tipo_item_id", nullable = false)
     private TipoItem tipoItem;
     
-    @OneToMany
+    @OneToMany(fetch = FetchType.EAGER)
     @JoinColumn(name = "item_id")
     private List<modelo.Campo> campos;
 

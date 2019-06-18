@@ -45,7 +45,7 @@ public class SolicitacaoDelegacao implements Serializable {
     @JoinColumn(name = "tipo_solicitacao_delegacao_id", nullable = false)
     private TipoSolicitacaoDelegacao tipoSolicitacaoDelegacao;
     
-    @OneToMany
+    @OneToMany(fetch = FetchType.EAGER)
     @JoinColumn(name = "solicitaca_delegacao_id")
     private List<modelo.Item> itens;
     

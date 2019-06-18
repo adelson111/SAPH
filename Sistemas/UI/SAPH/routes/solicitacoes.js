@@ -15,6 +15,7 @@ router.get('/new',(req, res, next)=>{
 
 router.get('/list',(req, res, next)=>{
   client.get("http://localhost:8080/SAPH/saph/solicitacao-delegacao/", function (data, response) {
+    console.log(data);
     res.render('list', {
       title: 'Solicitacoes - SAPH',
       solicitacoes:data,

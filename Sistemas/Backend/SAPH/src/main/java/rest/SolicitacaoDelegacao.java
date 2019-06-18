@@ -32,6 +32,9 @@ public class SolicitacaoDelegacao {
     	modelo.SolicitacaoDelegacao solicitacao = new Gson().fromJson(json, modelo.SolicitacaoDelegacao.class);
     	Persistencia persistencia = new Persistencia();
     	for(modelo.Item item:solicitacao.getItens()) {
+    		for(modelo.Campo campo:item.getCampos()) {
+    			persistencia.cadastrar(campo);
+    		}
     		persistencia.cadastrar(item);
     	}
         return persistencia.cadastrar(solicitacao);

@@ -83,7 +83,9 @@ $('#guardar').click(function(){
     tipoCampos = [];
     $("#"+$( this ).attr("id")+" .tipo-campos").each(function(campo){
       tipoCampos.push({
-        campo:$( this ).attr("data-id"),
+        tipoCampo:{
+          id:$( this ).attr("data-id")
+        },
         valor:$( this ).val()
       });
     });

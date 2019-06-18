@@ -6,6 +6,8 @@
 package modelo;
 
 import java.io.Serializable;
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -13,6 +15,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
@@ -34,6 +37,10 @@ public class Item implements Serializable {
     @OneToOne
     @JoinColumn(name = "tipo_item_id", nullable = false)
     private TipoItem tipoItem;
+    
+    @OneToMany
+    @JoinColumn(name = "item_id")
+    private List<modelo.Campo> campos;
 
     public long getId() {
         return id;
@@ -50,5 +57,14 @@ public class Item implements Serializable {
     public void setTipoItem(TipoItem tipoItem) {
         this.tipoItem = tipoItem;
     }
+
+	public List<modelo.Campo> getCampos() {
+		return campos;
+	}
+
+	public void setCampos(List<modelo.Campo> campos) {
+		this.campos = campos;
+	}
+    
     
 }

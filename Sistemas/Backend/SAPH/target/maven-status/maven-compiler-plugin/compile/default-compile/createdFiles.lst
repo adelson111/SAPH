@@ -20,9 +20,9 @@ rest/Item.class
 rest/Organizacao$1.class
 rest/Setor.class
 rest/Nivel.class
-saph/Conf.class
 modelo/Item_.class
 rest/Nivel$1.class
+saph/Conf.class
 rest/TipoSolicitacaoDelegacao.class
 modelo/TipoCampo.class
 modelo/Organizacao_.class
@@ -36,8 +36,8 @@ rest/TipoSolicitacaoDelegacao$1.class
 modelo/Campo.class
 modelo/Comentario.class
 rest/TipoCampo.class
-tipo/TipoCampo.class
 modelo/Comentario_.class
+tipo/TipoCampo.class
 rest/Comentario$1.class
 rest/Funcionario.class
 modelo/TipoItem_.class

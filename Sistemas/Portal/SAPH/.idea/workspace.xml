@@ -1,7 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6a27e0a3-f03d-4cc7-be92-64b4000d9b95" name="Default Changelist" comment="" />
+    <list default="true" id="6a27e0a3-f03d-4cc7-be92-64b4000d9b95" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/banco/Persistencia.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/banco/Persistencia.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Campo.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Campo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Campo_.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Comentario.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Comentario.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Comentario_.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Funcionario.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Funcionario.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Funcionario_.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Item.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Item.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Item_.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Nivel.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Nivel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Nivel_.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Organizacao.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Organizacao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Organizacao_.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Setor.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Setor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Setor_.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/SolicitacaoDelegacao.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/SolicitacaoDelegacao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/SolicitacaoDelegacao_.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/TipoCampo.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/TipoCampo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/TipoCampo_.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/TipoItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/TipoItem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/TipoItem_.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/TipoSolicitacaoDelegacao.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/TipoSolicitacaoDelegacao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/TipoSolicitacaoDelegacao_.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Usuario.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Usuario_.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Campo$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Campo$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Campo.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Campo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Comentario$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Comentario$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Comentario.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Comentario.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Funcionario$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Funcionario$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Funcionario.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Funcionario.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Item$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Item$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Item.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Item.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Nivel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Nivel$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Nivel.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Nivel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Organizacao$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Organizacao$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Organizacao.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Organizacao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Setor$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Setor$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Setor.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Setor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/SolicitacaoDelegacao$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/SolicitacaoDelegacao$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/SolicitacaoDelegacao.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/SolicitacaoDelegacao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/TipoCampo$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/TipoCampo$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/TipoCampo.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/TipoCampo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/TipoItem$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/TipoItem$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/TipoItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/TipoItem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/TipoSolicitacaoDelegacao$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/TipoSolicitacaoDelegacao$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/TipoSolicitacaoDelegacao.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/TipoSolicitacaoDelegacao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Usuario$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Usuario$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Usuario.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/saph/Conf.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/saph/Conf.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/tipo/TipoCampo.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/tipo/TipoCampo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/tipo/TipoSolicitacaoDelegacao.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/tipo/TipoSolicitacaoDelegacao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/tipo/TipoStatus.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/tipo/TipoStatus.class" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -9,7 +63,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf />
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -84,6 +138,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -95,7 +150,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -259,9 +313,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="-4" width="1301" height="772" extended-state="6" />
+    <frame x="0" y="-1" width="1366" height="728" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21517996" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21444528" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />

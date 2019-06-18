@@ -93,7 +93,9 @@ $('#guardar').click(function(){
     });
   });
   dici = {
-    tipoSolicitacaoDelegacao:tipoSolicitacao,
+    tipoSolicitacaoDelegacao:{
+      id:tipoSolicitacao
+    },
     status:"APROVADA",
     itens:tipoItens,
   }

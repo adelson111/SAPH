@@ -31,10 +31,6 @@ public class Item implements Serializable {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequencia_item")
     private long id;
     
-    @ManyToOne
-    @JoinColumn(name = "solicitacao_delegacao_id", nullable = false)
-    private SolicitacaoDelegacao solicitacaoDelegacao;
-    
     @OneToOne
     @JoinColumn(name = "tipo_item_id", nullable = false)
     private TipoItem tipoItem;
@@ -45,14 +41,6 @@ public class Item implements Serializable {
 
     public void setId(long id) {
         this.id = id;
-    }
-
-    public SolicitacaoDelegacao getSolicitacaoDelegacao() {
-        return solicitacaoDelegacao;
-    }
-
-    public void setSolicitacaoDelegacao(SolicitacaoDelegacao solicitacaoDelegacao) {
-        this.solicitacaoDelegacao = solicitacaoDelegacao;
     }
 
     public TipoItem getTipoItem() {

@@ -29,7 +29,12 @@ public class SolicitacaoDelegacao {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     public String cadastrar(String json) {
-        return new Persistencia().cadastrar(new Gson().fromJson(json, modelo.SolicitacaoDelegacao.class));
+    	modelo.SolicitacaoDelegacao solicitacao = new Gson().fromJson(json, modelo.SolicitacaoDelegacao.class);
+    	Persistencia persistencia = new Persistencia();
+    	for(modelo.Item item:solicitacao.getItens()) {
+    		persistencia.cadastrar(item);
+    	}
+        return persistencia.cadastrar(solicitacao);
     }
 
     @POST

@@ -6,6 +6,8 @@
 package modelo;
 
 import java.io.Serializable;
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -15,7 +17,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
@@ -42,7 +44,11 @@ public class SolicitacaoDelegacao implements Serializable {
     @OneToOne
     @JoinColumn(name = "tipo_solicitacao_delegacao_id", nullable = false)
     private TipoSolicitacaoDelegacao tipoSolicitacaoDelegacao;
-
+    
+    @OneToMany
+    @JoinColumn(name = "solicitaca_delegacao_id")
+    private List<modelo.Item> itens;
+    
     public long getId() {
         return id;
     }
@@ -66,5 +72,15 @@ public class SolicitacaoDelegacao implements Serializable {
     public void setTipoSolicitacaoDelegacao(TipoSolicitacaoDelegacao tipoSolicitacaoDelegacao) {
         this.tipoSolicitacaoDelegacao = tipoSolicitacaoDelegacao;
     }
+
+	public List<Item> getItens() {
+		return itens;
+	}
+
+	public void setItens(List<Item> itens) {
+		this.itens = itens;
+	}
+    
+    
     
 }

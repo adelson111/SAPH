@@ -4,6 +4,7 @@ var Client = require('node-rest-client').Client;
 var client = new Client();
 
 router.get('/nova-delegacao',(req, res, next)=>{
+  async = true;
   res.render('nova-delegacao', {
     title: 'Delegacoes - SAPH',
     dele: true

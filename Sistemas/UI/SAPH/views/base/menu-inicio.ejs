@@ -1,0 +1,83 @@
+
+<div class="wrapper">
+  <div class="sidebar " data-color="black" data-active-color="danger">
+
+    <div class="logo">
+      <h3 class="text-center text-info">SAPH</h3>
+    </div>
+    <div class="sidebar-wrapper">
+      <div class="w-100" >
+        <img style="width:100px; margin-left:25%" src="img/user.png" >
+        <p class="text-light" style="margin-left:25%">FUDIDO DE TADS</p>
+      </div>
+      <ul class="nav">
+        <li class="active ">
+          <a class="text-info"href="/inicio">
+            <i class=" text-info fas fa-home"></i>
+            <p>Início</p>
+          </a>
+        </li>
+        <li>
+          <a class="text-info"href="/solicitacoes/new">
+            <i class="text-info fas fa-hand-point-up"></i>
+            <p>Solicitar</p>
+          </a>
+        </li>
+        <li>
+          <a class="text-info"href="/delegacoes/nova-delegacao">
+            <i class="text-info fas fa-hand-point-down"></i>
+            <p>Delegar</p>
+          </a>
+        </li>
+        <li>
+          <a class="text-info" href="/solicitacoes/list">
+            <i class="text-success fas fa-envelope"></i>
+            <p>Minhas solicitações</p>
+          </a>
+        </li>
+        <li>
+          <a class="text-info" href="/delegacoes/listar-delegacoes">
+            <i class="text-warning fas fa-envelope"></i>
+            <p>Minhas delegações</p>
+          </a>
+        </li>
+        <li>
+          <a class="text-info" href="./tables.html">
+            <i class="text-info fas fa-sitemap"></i>
+            <p>Nível hierárquico</p>
+          </a>
+        </li>
+        <li>
+          <a class="text-info" href="./tables.html">
+            <i class="text-info fas fa-file-pdf"></i>
+            <p>Exportar</p>
+          </a>
+        </li>
+        <li>
+          <a class="text-info" href="./tables.html">
+            <i class="text-danger fas fa-sign-out-alt"></i>
+            <p>Sair</p>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="main-panel">
+  <%- include('header') -%>
+
+
+
+    <!-- Chart JS -->
+    <script src="../assets/js/plugins/chartjs.min.js"></script>
+    <!--  Notifications Plugin    -->
+    <script src="../assets/js/plugins/bootstrap-notify.js"></script>
+    <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
+    <script src="../assets/js/paper-dashboard.min.js?v=2.0.0" type="text/javascript"></script>
+    <!-- Paper Dashboard DEMO methods, don't include it in your project! -->
+    <script src="../assets/demo/demo.js"></script>
+    <script>
+      $(document).ready(function() {
+        // Javascript method's body can be found in assets/assets-for-demo/js/demo.js
+        demo.initChartsPages();
+      });
+    </script>

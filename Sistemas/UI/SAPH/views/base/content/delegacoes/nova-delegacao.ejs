@@ -1,4 +1,4 @@
-
+<!--
 <div class="container-fluid ">
   <div class="row flex-xl-nowrap" id="cards">
 
@@ -12,7 +12,7 @@
               </span> ÍTENS
             </h4>
           </div>
-        </div><!-- /input-group image-preview [TO HERE]-->
+        </div>
       </div>
 
         <ul class="overflow-auto list-group  " id="itens">
@@ -25,7 +25,7 @@
 
     </div>
   </div>
-  <!-- col-12 col-md-3 col-xl-2 bd-content-->
+
 
   <div class="col-12 col-md-9 col-xl-9 py-md-3 pl-md-5 bd-content">
       <div class="card fixed " style="height: 700px; text-align: right;" id="campos">
@@ -37,7 +37,7 @@
                   </span> NOVA DELEGAÇÃO
                 </h4>
               </div>
-            </div><!-- /input-group image-preview [TO HERE]-->
+            </div>
           </div>
 
           <div class="card-body px-lg-5 pt-0 pt-30 overflow-auto"  id="cardSolici">
@@ -66,11 +66,7 @@
           </div>
 
 <div>
-  <!-- <button type="submit" id="enviar" class="btn btn-info btn-lg" >Enviar</button>
-  <button type="submit" id="guardar" class="btn btn-success btn-lg" >Guardar</button>
-  <a href="#">
-    <img id="imprimir" class="float-left" src="https://pt.seaicons.com/wp-content/uploads/2016/06/print-icon.png" width="50px">
-  </a> -->
+
   <div class="form-group float-right mr-5">
     <button type="button" class="btn btn-success btn-sm">
     <span class="glyphicon glyphicon-send"></span> Enviar</button>
@@ -149,4 +145,132 @@ $('#imprimir').click(function(){
     vertical-align: middle;
 }
 
-</style>
+</style> -->
+
+<div class="content">
+  <div class="row">
+    <div class="col-md-12 ">
+      <div class="card">
+        <div class="card-header text-center">
+          <h5 class="card-title">Nova delegação</h5>
+        </div>
+        <div class="card-body" style="height:700px;">
+          <div class="row">
+            <div class="col-md-12 ">
+              <div class="card-body px-lg-5 pt-0 pt-30 overflow-auto"  id="cardSolici">
+                    <form class="text-left " style="color: #757575;" action="index.html" method="post" id="solicitacao" >
+                      <div class="col">
+                        <div class="md-form">
+                          <div class="input-group mb-3">
+
+                            <span class="input-group-text " id="tipoSolicitacao" for="inputGroupSelect01">Tipos</span>
+
+                            <select name="tipo" id="tipo" class="custom-select form-control form-control-lg"  required>
+
+                            </select>
+
+                          </div>
+                        </div>
+
+                        <div class="body-solicitacao max-height-50 overflow-auto">
+                          <div class="itens"> <p>s</p> </div>
+                          <div class="itens"> <p>s</p> </div>
+                          <div class="itens"> <p>s</p> </div>
+                          <div class="itens"> <p>s</p> </div>
+                          <div class="itens"> <p>s</p> </div>
+                          <div class="itens"> <p>s</p> </div>
+                          <div class="itens"> <p>s</p> </div>
+                          <div class="itens"> <p>s</p> </div>
+                          <div class="itens"> <p>s</p> </div>
+                          <div class="itens"> <p>s</p> </div>
+                          <div class="itens"> <p>s</p> </div>
+                          <div class="itens"> <p>s</p> </div>
+                          <div class="itens"> <p>s</p> </div>
+                          <div class="itens"> <p>s</p> </div>
+                          <div class="itens"> <p>s</p> </div>
+                          <div class="itens"> <p>s</p> </div>
+                          <div class="itens"> <p>s</p> </div>
+                          <div class="itens"> <p>s</p> </div>
+                          <div class="itens"> <p>s</p> </div>
+                          <div class="itens"> <p>s</p> </div>
+                          <div class="itens"> <p>s</p> </div>
+                          <div class="itens"> <p>s</p> </div>
+                          <div class="itens"> <p>s</p> </div>
+                          <div class="itens"> <p>s</p> </div>
+                          <div class="itens"> <p>s</p> </div>
+                          <div class="itens"> <p>s</p> </div>
+                          <div class="itens"> <p>s</p> </div>
+                          <div class="itens"> <p>s</p> </div>
+                        </div>
+
+                      </div>
+                    </form>
+                  </div>
+                  <div class="card-footer">
+                    <div class="form-group float-right mr-5">
+                      <button type="button" class="btn btn-success btn-sm">
+                      <span class="glyphicon glyphicon-send"></span> Enviar</button>
+                      <button type="submit" class="btn btn-success btn-sm">
+                      <span class="glyphicon glyphicon-floppy-disk"></span> Guardar</button>
+                      <button type="submit" class="btn btn-success btn-sm">
+                      <span class="glyphicon glyphicon-print" id="imprimir"></span> Imprimir</button>
+                    </div>
+
+                  </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-body">
+          <div class="places-buttons">
+            <div class="row">
+              <div class="col-md-6 ml-auto mr-auto text-center">
+                <h4 class="card-title">
+                  Notifications Places
+                  <p class="category">Click to view notifications</p>
+                </h4>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-8 ml-auto mr-auto">
+                <div class="row">
+                  <div class="col-md-4">
+                    <button class="btn btn-primary btn-block" onclick="demo.showNotification('top','left')">Top Left</button>
+                  </div>
+                  <div class="col-md-4">
+                    <button class="btn btn-primary btn-block" onclick="demo.showNotification('top','center')">Top Center</button>
+                  </div>
+                  <div class="col-md-4">
+                    <button class="btn btn-primary btn-block" onclick="demo.showNotification('top','right')">Top Right</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-8 ml-auto mr-auto">
+                <div class="row">
+                  <div class="col-md-4">
+                    <button class="btn btn-primary btn-block" onclick="demo.showNotification('bottom','left')">Bottom Left</button>
+                  </div>
+                  <div class="col-md-4">
+                    <button class="btn btn-primary btn-block" onclick="demo.showNotification('bottom','center')">Bottom Center</button>
+                  </div>
+                  <div class="col-md-4">
+                    <button class="btn btn-primary btn-block" onclick="demo.showNotification('bottom','right')">Bottom Right</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

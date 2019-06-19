@@ -35,12 +35,6 @@ router.get('/inicio',(req, res, next)=>{
   });
 });
 
-router.get('/delegacao',(req, res, next)=>{
-  res.render('delegacao', {
-    title: 'Delegações - SAPH',
-  });
-});
-
 router.get('/visualizar',(req, res, next)=>{
   res.render('visualizar', {
     title: 'Visualizar - SAPH',

@@ -4,9 +4,11 @@ var Client = require('node-rest-client').Client;
 var client = new Client();
 
 router.get('/nova-delegacao',(req, res, next)=>{
-  res.render('nova-delegacao', {
-    title: 'Delegacoes - SAPH',
-    dele: true
+  client.get("http://localhost:8080/SAPH/saph/tipo-solicitacao-delegacao/tipo/DELEGACAO", function (data, response) {
+    res.render('nova-delegacao', {
+      title: 'Delegacoes - SAPH',
+      tipos: data,
+    });
   });
 });
 

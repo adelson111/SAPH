@@ -158,7 +158,7 @@ $('#imprimir').click(function(){
           <div class="row">
             <div class="col-md-12 ">
               <div class="card-body px-lg-5 pt-0 pt-30 overflow-auto"  id="cardSolici">
-                    <form class="text-left " style="color: #757575;" action="index.html" method="post" id="solicitacao" >
+                    <form class="text-left " style="color: #757575;" action="index.html" method="post" id="delegacao" >
                       <div class="col">
                         <div class="md-form">
                           <div class="input-group mb-3">
@@ -166,13 +166,15 @@ $('#imprimir').click(function(){
                             <span class="input-group-text " id="tipoSolicitacao" for="inputGroupSelect01">Tipos</span>
 
                             <select name="tipo" id="tipo" class="custom-select form-control form-control-lg"  required>
-
+                              <%tipos.forEach(function(delegacao){%>
+                                <option value="<%=delegacao.id%>"><%=delegacao.nome%></option>
+                              <%});%>
                             </select>
 
                           </div>
                         </div>
 
-                        <div class="body-solicitacao max-height-50 overflow-auto">
+                        <div class="body-delegacao max-height-50 overflow-auto">
                           <div class="itens"> <p>s</p> </div>
                           <div class="itens"> <p>s</p> </div>
                           <div class="itens"> <p>s</p> </div>
@@ -274,3 +276,44 @@ $('#imprimir').click(function(){
     </div>
   </div>
 </div>
+<script type="text/javascript">
+  $( "#tipo" ).change(function() {
+    tipo = $('#tipo option:selected').val();
+    <% tipos.forEach(function(delegacao){%>
+      if (tipo == '<%=delegacao.id%>'){
+        $('.body-delegacao').html('');
+        $('#itens').html('');
+        <% delegacao.tipoItem.forEach(function(item){%>
+          <%var files = [];%>
+          <%for(i = 0; i < item.tipoCampo.length; i++){
+            if(item.tipoCampo[i].tipo=='file'){
+              files.push(item.tipoCampo[i]);
+              item.tipoCampo.splice(i, 1);
+            }
+          }; %>
+          <%item.tipoCampo = item.tipoCampo.concat(files);%>
+          $('#itens').append('<li><%=item.nome%></li>'+
+          '<ul>'+
+            <%item.tipoCampo.forEach(function(campo){%>
+                '<li><%=campo.nome%></li>'+
+            <%});%>
+          '</ul>');
+          $('.body-delegacao').append(
+            '<hr>'+
+            '<h3><%=item.nome%></h3>'+
+            '<div class="form-row tipo-itens" id="<%=item.id%>">'+
+              <% size = item.tipoCampo.length>3?'col-4':'col'%>
+              <%item.tipoCampo.forEach(function(campo){%>
+                <% size = campo.tipo=='textarea'?'col-12':size%>
+                '<div class="<%=size%> orm-group " >'+
+                  '<label"><%=campo.nome%></label>'+
+                  '<input name = "campo" data-id="<%=campo.id%>"" type="<%=campo.tipo%>" class="form-control<%=campo.tipo=='file'?'-file':''%> tipo-campos" placeholder="<%=campo.nome%>...">'+
+                '</div>'+
+              <%});%>
+            '</div>'
+          );
+        <%});%>
+      }
+    <%});%>
+  });
+</script>

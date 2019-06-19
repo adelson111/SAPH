@@ -1,152 +1,3 @@
-<!--
-<div class="container-fluid ">
-  <div class="row flex-xl-nowrap" id="cards">
-
-  <div class="col-12 col-md-9 col-xl-3 py-md-3 ">
-    <div class="card  overflow-auto" style="height: 700px;" >
-      <div class="panel-group" id="accordion">
-        <div class="panel panel-primary">
-          <div class="panel-heading">
-            <h4 class="panel-title">
-              <span class="glyphicon glyphicon-file">
-              </span> ÍTENS
-            </h4>
-          </div>
-        </div>
-      </div>
-
-        <ul class="overflow-auto list-group  " id="itens">
-          <li class="list-group-item">Item1</li>
-          <ul class=" ">
-            <li class="list-group-item">Campo</li>
-            <li class="list-group-item">Campo2</li>
-          </ul>
-        </ul>
-
-    </div>
-  </div>
-
-
-  <div class="col-12 col-md-9 col-xl-9 py-md-3 pl-md-5 bd-content">
-      <div class="card fixed " style="height: 700px; text-align: right;" id="campos">
-          <div class="panel-group">
-            <div class="panel panel-primary">
-              <div class="panel-heading">
-                <h4 class="panel-title">
-                  <span class="glyphicon glyphicon-envelope">
-                  </span> NOVA DELEGAÇÃO
-                </h4>
-              </div>
-            </div>
-          </div>
-
-          <div class="card-body px-lg-5 pt-0 pt-30 overflow-auto"  id="cardSolici">
-            <form class="text-left " style="color: #757575;" action="index.html" method="post" id="delegacao" >
-              <div class="col">
-                <div class="md-form">
-                  <div class="input-group mb-3">
-                    <div class="input-group-prepend ">
-                      <label class="input-group-text " id="tipoSolicitacao" for="inputGroupSelect01">Tipos de solicitações</label>
-                    </div>
-                    <select name="tipo" id="tipo" class="custom-select form-control form-control-lg"  required>
-                      <%tipos.forEach(function(delegacao){%>
-                        <option value="<%=delegacao.id%>"><%=delegacao.nome%></option>
-                      <%});%>
-                    </select>
-                  </div>
-                </div>
-
-                <div class="body-delegacao">
-                  <div class="itens"></div>
-                </div>
-
-              </div>
-            </form>
-            <hr>
-          </div>
-
-<div>
-
-  <div class="form-group float-right mr-5">
-    <button type="button" class="btn btn-success btn-sm">
-    <span class="glyphicon glyphicon-send"></span> Enviar</button>
-    <button type="submit" class="btn btn-success btn-sm">
-    <span class="glyphicon glyphicon-floppy-disk"></span> Guardar</button>
-    <button type="submit" class="btn btn-success btn-sm">
-    <span class="glyphicon glyphicon-print" id="imprimir"></span> Imprimir</button>
-  </div>
-</div>
-</div>
-
-</div>
-</div>
-</div>
-<script type="text/javascript">
-  $( "#tipo" ).change(function() {
-    tipo = $('#tipo option:selected').val();
-    <% tipos.forEach(function(delegacao){%>
-      if (tipo == '<%=delegacao.id%>'){
-        $('.body-delegacao').html('');
-        $('#itens').html('');
-        <% delegacao.tipoItem.forEach(function(item){%>
-          <%var files = [];%>
-          <%for(i = 0; i < item.tipoCampo.length; i++){
-            if(item.tipoCampo[i].tipo=='file'){
-              files.push(item.tipoCampo[i]);
-              item.tipoCampo.splice(i, 1);
-            }
-          }; %>
-          <%item.tipoCampo = item.tipoCampo.concat(files);%>
-          $('#itens').append('<li><%=item.nome%></li>'+
-          '<ul>'+
-            <%item.tipoCampo.forEach(function(campo){%>
-                '<li><%=campo.nome%></li>'+
-            <%});%>
-          '</ul>');
-          $('.body-delegacao').append(
-            '<hr>'+
-            '<h3><%=item.nome%></h3>'+
-            '<div class="form-row tipo-itens" id="<%=item.id%>">'+
-              <% size = item.tipoCampo.length>3?'col-4':'col'%>
-              <%item.tipoCampo.forEach(function(campo){%>
-                <% size = campo.tipo=='textarea'?'col-12':size%>
-                '<div class="<%=size%> orm-group " >'+
-                  '<label"><%=campo.nome%></label>'+
-                  '<input name = "campo" data-id="<%=campo.id%>"" type="<%=campo.tipo%>" class="form-control<%=campo.tipo=='file'?'-file':''%> tipo-campos" placeholder="<%=campo.nome%>...">'+
-                '</div>'+
-              <%});%>
-            '</div>'
-          );
-        <%});%>
-      }
-    <%});%>
-  });
-</script>
-
-<script type="text/javascript">
-
-$('#imprimir').click(function(){
-   window.print('new', '_blank');
-});
-
-
-</script>
-<style type="text/css">
-  @media (max-width: 575.98px) {
-    .form-row {
-      display: block;
-    }
-
-   }
-  @media (min-width: 768px)
-.form-inline .form-group {
-    display: inline-block;
-    margin-bottom: 0;
-    vertical-align: middle;
-}
-
-</style> -->
-
 <div class="content">
   <div class="row">
     <div class="col-md-12 ">
@@ -157,7 +8,7 @@ $('#imprimir').click(function(){
         <div class="card-body" style="height:700px;">
           <div class="row">
             <div class="col-md-12 ">
-              <div class="card-body px-lg-5 pt-0 pt-30 overflow-auto"  id="cardSolici">
+              <div class="card-body px-lg-5 pt-0 pt-30 "  id="cardSolici">
                     <form class="text-left " style="color: #757575;" action="index.html" method="post" id="delegacao" >
                       <div class="col">
                         <div class="md-form">
@@ -174,7 +25,7 @@ $('#imprimir').click(function(){
                           </div>
                         </div>
 
-                        <div class="body-delegacao max-height-50 overflow-auto">
+                        <div class="body-delegacao max-height-50 overflow-auto" style="height:550px">
                           <div class="itens"> <p>s</p> </div>
                           <div class="itens"> <p>s</p> </div>
                           <div class="itens"> <p>s</p> </div>
@@ -235,39 +86,22 @@ $('#imprimir').click(function(){
             <div class="row">
               <div class="col-md-6 ml-auto mr-auto text-center">
                 <h4 class="card-title">
-                  Notifications Places
-                  <p class="category">Click to view notifications</p>
+                  Ítens
                 </h4>
               </div>
             </div>
             <div class="row">
               <div class="col-lg-8 ml-auto mr-auto">
-                <div class="row">
-                  <div class="col-md-4">
-                    <button class="btn btn-primary btn-block" onclick="demo.showNotification('top','left')">Top Left</button>
-                  </div>
-                  <div class="col-md-4">
-                    <button class="btn btn-primary btn-block" onclick="demo.showNotification('top','center')">Top Center</button>
-                  </div>
-                  <div class="col-md-4">
-                    <button class="btn btn-primary btn-block" onclick="demo.showNotification('top','right')">Top Right</button>
-                  </div>
-                </div>
+                <div class="card  overflow-auto" style="height: 300px;" >
+                  <ul class="overflow-auto list-group  b-10 p-15" id="itens">
+                    <li class="list-group-item">Item1</li>
+                    <ul>
+                      <li class="">Campo</li>
+                      <li class="">Campo2</li>
+                    </ul>
+                  </ul>
+
               </div>
-            </div>
-            <div class="row">
-              <div class="col-lg-8 ml-auto mr-auto">
-                <div class="row">
-                  <div class="col-md-4">
-                    <button class="btn btn-primary btn-block" onclick="demo.showNotification('bottom','left')">Bottom Left</button>
-                  </div>
-                  <div class="col-md-4">
-                    <button class="btn btn-primary btn-block" onclick="demo.showNotification('bottom','center')">Bottom Center</button>
-                  </div>
-                  <div class="col-md-4">
-                    <button class="btn btn-primary btn-block" onclick="demo.showNotification('bottom','right')">Bottom Right</button>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
@@ -276,6 +110,53 @@ $('#imprimir').click(function(){
     </div>
   </div>
 </div>
+
+<script type="text/javascript">
+  $( "#tipo" ).change(function() {
+    tipo = $('#tipo option:selected').val();
+    <% tipos.forEach(function(delegacao){%>
+      if (tipo == '<%=delegacao.id%>'){
+        $('.body-delegacao').html('');
+        $('#itens').html('');
+        <% delegacao.tipoItem.forEach(function(item){%>
+          <%var files = [];%>
+          <%for(i = 0; i < item.tipoCampo.length; i++){
+            if(item.tipoCampo[i].tipo=='file'){
+              files.push(item.tipoCampo[i]);
+              item.tipoCampo.splice(i, 1);
+            }
+          }; %>
+          <%item.tipoCampo = item.tipoCampo.concat(files);%>
+          $('#itens').append('<li><%=item.nome%></li>'+
+          '<ul>'+
+            <%item.tipoCampo.forEach(function(campo){%>
+                '<li><%=campo.nome%></li>'+
+            <%});%>
+          '</ul>');
+          $('.body-delegacao').append(
+            '<hr>'+
+            '<h3><%=item.nome%></h3>'+
+            '<div class="form-row tipo-itens" id="<%=item.id%>">'+
+              <% size = item.tipoCampo.length>3?'col-4':'col'%>
+              <%item.tipoCampo.forEach(function(campo){%>
+                <% size = campo.tipo=='textarea'?'col-12':size%>
+                '<div class="<%=size%> orm-group " >'+
+                  '<label"><%=campo.nome%></label>'+
+                  '<input name = "campo" data-id="<%=campo.id%>"" type="<%=campo.tipo%>" class="form-control<%=campo.tipo=='file'?'-file':''%> tipo-campos" placeholder="<%=campo.nome%>...">'+
+                '</div>'+
+              <%});%>
+            '</div>'
+          );
+        <%});%>
+      }
+    <%});%>
+  });
+</script>
+<script type="text/javascript">
+$('#imprimir').click(function(){
+   window.print('new', '_blank');
+});
+</script>
 <script type="text/javascript">
   $( "#tipo" ).change(function() {
     tipo = $('#tipo option:selected').val();

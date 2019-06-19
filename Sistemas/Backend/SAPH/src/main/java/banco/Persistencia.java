@@ -144,7 +144,7 @@ public class Persistencia {
         }
         return false;
     }
-    public List<TipoSolicitacaoDelegacao> getSolicitacaoDelegacaoByType(String tipos) {
+    public List<TipoSolicitacaoDelegacao> getTipoSolicitacaoDelegacaoByType(String tipos) {
         try {
             em = getPersistencia();
             tipo.TipoSolicitacaoDelegacao enumSD = null;
@@ -154,8 +154,29 @@ public class Persistencia {
             	enumSD = tipo.TipoSolicitacaoDelegacao.DELEGACAO;
             }
             return em.createQuery(
-                    "select tsd from TipoSolicitacaoDelegacao tsd where tsd.tipo = :tipoS")
-                    .setParameter("tipoS", enumSD)
+                    "select tsd from TipoSolicitacaoDelegacao tsd where tsd.tipo = :tipo")
+                    .setParameter("tipo", enumSD)
+                    .getResultList();
+        } catch (Exception e) {
+            System.out.println("Erro ao selecionar: " + e.getMessage());
+        } finally {
+            em.close();
+            emf.close();
+        }
+        return null;
+    }
+    public List<SolicitacaoDelegacao> getSolicitacaoDelegacaoByType(String tipoSD) {
+        try {
+            em = getPersistencia();
+            tipo.TipoSolicitacaoDelegacao enumSD = null;
+            if(tipoSD.equals("SOLICITACAO")) {
+            	enumSD = tipo.TipoSolicitacaoDelegacao.SOLICITACAO;
+            }else if(tipoSD.equals("DELEGACAO")){
+            	enumSD = tipo.TipoSolicitacaoDelegacao.DELEGACAO;
+            }
+            return em.createQuery(
+                    "select sd from SolicitacaoDelegacao sd where sd.tipoSolicitacaoDelegacao.tipo = :tipo")
+                    .setParameter("tipo", enumSD)
                     .getResultList();
         } catch (Exception e) {
             System.out.println("Erro ao selecionar: " + e.getMessage());

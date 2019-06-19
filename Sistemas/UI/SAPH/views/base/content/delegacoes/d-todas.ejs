@@ -1,24 +1,8 @@
-<div class="Portfolio">
-  <a href="#!" data-toggle="modal" data-target="#largeModal">
-    <img class="card-img" src="http://www.pngmart.com/files/7/Envelope-PNG-Transparent.png" alt="">
-  </a>
-  <div class="desc">Matar Lula</div>
-</div>
-<div class="Portfolio">
-  <a href="#!" data-toggle="modal" data-target="#largeModal">
-    <img class="card-img" src="http://www.pngmart.com/files/7/Envelope-PNG-Transparent.png" alt="">
-  </a>
-  <div class="desc">Sair na G Magazine</div>
-</div>
-<div class="Portfolio">
-  <a href="#!" data-toggle="modal" data-target="#largeModal">
-    <img class="card-img" src="http://www.pngmart.com/files/7/Envelope-PNG-Transparent.png" alt="">
-  </a>
-  <div class="desc">Andar pelado</div>
-</div>
-<div class="Portfolio">
-  <a href="#!" data-toggle="modal" data-target="#largeModal">
-    <img class="card-img" src="http://www.pngmart.com/files/7/Envelope-PNG-Transparent.png" alt="">
-  </a>
-  <div class="desc">Matar Moro</div>
-</div>
+<%delegacoes.forEach(function(delegacao){%>
+  <div class="Portfolio">
+    <a href="#!" data-toggle="modal" data-target="#largeModal">
+      <img class="card-img" src="http://www.pngmart.com/files/7/Envelope-PNG-Transparent.png" alt="">
+    </a>
+    <div class="desc"><%=delegacao.tipoSolicitacaoDelegacao.nome%></div>
+  </div>
+<%});%>

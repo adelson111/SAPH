@@ -13,9 +13,12 @@ router.get('/nova-delegacao',(req, res, next)=>{
 });
 
 router.get('/listar-delegacoes',(req, res, next)=>{
-  res.render('listar-delegacoes', {
-    title: 'Solicitações - SAPH',
-    dele: true
+  client.get("http://localhost:8080/SAPH/saph/solicitacao-delegacao/tipo/DELEGACAO", function (data, response) {
+    console.log(data);
+    res.render('listar-delegacoes', {
+      title: 'Delegacoes - SAPH',
+      delegacoes:data,
+    });
   });
 });
 

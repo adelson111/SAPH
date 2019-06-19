@@ -63,8 +63,8 @@
                     <div class="form-group float-right mr-5">
                       <button type="button" class="btn btn-success btn-sm">
                       <span class="glyphicon glyphicon-send"></span> Enviar</button>
-                      <button type="submit" class="btn btn-success btn-sm">
-                      <span class="glyphicon glyphicon-floppy-disk"></span> Guardar</button>
+                      <button type="submit" class="btn btn-success btn-sm" id ="guardar">
+                      <span class="glyphicon glyphicon-floppy-disk" ></span> Guardar</button>
                       <button type="submit" class="btn btn-success btn-sm">
                       <span class="glyphicon glyphicon-print" id="imprimir"></span> Imprimir</button>
                     </div>
@@ -155,6 +155,42 @@
 <script type="text/javascript">
 $('#imprimir').click(function(){
    window.print('new', '_blank');
+
+});
+$('#guardar').click(function(){
+  console.log("oi");
+  var dici = new Map();
+  tipoSolicitacao = $("select[name='tipo']").val();
+  tipoItens = [];
+  $(".tipo-itens").each(function(item){
+    tipoCampos = [];
+    $("#"+$( this ).attr("id")+" .tipo-campos").each(function(campo){
+      tipoCampos.push({
+        tipoCampo:{
+          id:$( this ).attr("data-id")
+        },
+        valor:$( this ).val()
+      });
+    });
+    tipoItens.push({
+      tipoItem:{
+        id:$( this ).attr("id")
+      },
+      campos:tipoCampos,
+    });
+  });
+  dici = {
+    tipoSolicitacaoDelegacao:{
+      id:tipoSolicitacao
+    },
+    status:"APROVADA",
+    itens:tipoItens,
+  }
+  dici = JSON.stringify(dici);
+  console.log(dici);
+  $.post("http://localhost:3000/solicitacoes/cada",{'solicitacao':dici},function(data){
+    alert(data);
+  });
 });
 </script>
 <script type="text/javascript">

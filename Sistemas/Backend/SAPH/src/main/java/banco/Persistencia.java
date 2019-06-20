@@ -10,6 +10,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
+import modelo.Funcionario;
 import modelo.SolicitacaoDelegacao;
 import modelo.TipoSolicitacaoDelegacao;
 import modelo.Usuario;
@@ -125,24 +126,25 @@ public class Persistencia {
         return null;
     }
 
-    public boolean selecionarUsuario(String email, String senha) {
+    public Funcionario selecionarUsuario(String email, String senha) {
         try {
             em = getPersistencia();
-            Usuario usuario = (Usuario) em.createQuery(
+            Usuario usuario =  (Usuario) em.createQuery(
                     "select u from Usuario u where u.email = :email and u.senha = :senha")
                     .setParameter("email", email)
                     .setParameter("senha", senha)
                     .getSingleResult();
-            if (usuario != null) {
-                return true;
-            }
+            return (Funcionario) em.createQuery(
+                    "select f from Funcionario f where f.usuario = :usuario")
+                    .setParameter("usuario", usuario)
+                    .getSingleResult();
         } catch (Exception e) {
             System.out.println("Erro ao selecionar: " + e.getMessage());
         } finally {
             em.close();
             emf.close();
         }
-        return false;
+        return null;
     }
     public List<TipoSolicitacaoDelegacao> getTipoSolicitacaoDelegacao(String tipos) {
         try {

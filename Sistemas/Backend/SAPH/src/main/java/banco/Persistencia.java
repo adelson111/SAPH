@@ -144,7 +144,7 @@ public class Persistencia {
         }
         return false;
     }
-    public List<TipoSolicitacaoDelegacao> getTipoSolicitacaoDelegacaoByType(String tipos) {
+    public List<TipoSolicitacaoDelegacao> getTipoSolicitacaoDelegacao(String tipos) {
         try {
             em = getPersistencia();
             tipo.TipoSolicitacaoDelegacao enumSD = null;
@@ -165,7 +165,7 @@ public class Persistencia {
         }
         return null;
     }
-    public List<SolicitacaoDelegacao> getSolicitacaoDelegacaoByType(String tipoSD) {
+    public List<SolicitacaoDelegacao> getSolicitacaoDelegacao(String tipoSD) {
         try {
             em = getPersistencia();
             tipo.TipoSolicitacaoDelegacao enumSD = null;

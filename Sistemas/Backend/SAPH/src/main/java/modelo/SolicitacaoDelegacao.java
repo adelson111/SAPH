@@ -6,6 +6,7 @@
 package modelo;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -21,6 +22,9 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
 import tipo.TipoStatus;
 
 /**
@@ -45,9 +49,16 @@ public class SolicitacaoDelegacao implements Serializable {
     @JoinColumn(name = "tipo_solicitacao_delegacao_id", nullable = false)
     private TipoSolicitacaoDelegacao tipoSolicitacaoDelegacao;
     
+    @Temporal(TemporalType.TIMESTAMP)     
+    private Date dataEnvio = new java.sql.Date(System.currentTimeMillis());
+    
     @OneToMany(fetch = FetchType.EAGER)
     @JoinColumn(name = "solicitaca_delegacao_id")
     private List<modelo.Item> itens;
+    
+    @OneToOne
+    @JoinColumn(name = "solicitante_delegante_id")
+    private Funcionario solicitanteDelegante;
     
     public long getId() {
         return id;
@@ -80,7 +91,24 @@ public class SolicitacaoDelegacao implements Serializable {
 	public void setItens(List<Item> itens) {
 		this.itens = itens;
 	}
+
+	public Date getDataEnvio() {
+		return dataEnvio;
+	}
+
+	public void setDataEnvio(Date dataEnvio) {
+		this.dataEnvio = dataEnvio;
+	}
+
+	public Funcionario getSolicitanteDelegante() {
+		return solicitanteDelegante;
+	}
+
+	public void setSolicitanteDelegante(Funcionario solicitanteDelegante) {
+		this.solicitanteDelegante = solicitanteDelegante;
+	}
     
+	
     
     
 }

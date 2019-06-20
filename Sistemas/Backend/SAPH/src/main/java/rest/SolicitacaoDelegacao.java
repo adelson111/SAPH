@@ -75,9 +75,9 @@ public class SolicitacaoDelegacao {
     }
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    @Path("tipo/{tipo}")
-    public String selecionar(@PathParam("tipo") String tipo) {
-        return new Gson().toJson(new Persistencia().getSolicitacaoDelegacao(tipo));
+    @Path("parametros/{tipo}/{solicitanteDelegante}")
+    public String selecionar(@PathParam("tipo") String tipo,@PathParam("solicitanteDelegante") long solicitanteDelegante) {
+        return new Gson().toJson(new Persistencia().getSolicitacaoDelegacao(tipo,solicitanteDelegante));
     }
 
 }

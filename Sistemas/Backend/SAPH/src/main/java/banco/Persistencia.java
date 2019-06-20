@@ -165,7 +165,7 @@ public class Persistencia {
         }
         return null;
     }
-    public List<SolicitacaoDelegacao> getSolicitacaoDelegacao(String tipoSD) {
+    public List<SolicitacaoDelegacao> getSolicitacaoDelegacao(String tipoSD,long solicitanteDelegante) {
         try {
             em = getPersistencia();
             tipo.TipoSolicitacaoDelegacao enumSD = null;
@@ -175,8 +175,9 @@ public class Persistencia {
             	enumSD = tipo.TipoSolicitacaoDelegacao.DELEGACAO;
             }
             return em.createQuery(
-                    "select sd from SolicitacaoDelegacao sd where sd.tipoSolicitacaoDelegacao.tipo = :tipo")
+                    "select sd from SolicitacaoDelegacao sd where sd.tipoSolicitacaoDelegacao.tipo = :tipo and sd.solicitanteDelegante.id = :solicitanteDelegante")
                     .setParameter("tipo", enumSD)
+                    .setParameter("solicitanteDelegante", solicitanteDelegante)
                     .getResultList();
         } catch (Exception e) {
             System.out.println("Erro ao selecionar: " + e.getMessage());

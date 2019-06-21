@@ -1,18 +1,32 @@
+<div class="col-12 pl-md-5 bd-content">
+    <form action="" method="post">
+          <div class="preview text-center">
+              <img class="preview-img" src="http://simpleicon.com/wp-content/uploads/account.png" alt="Preview Image" width="120" height="120"/>
+              <div class="browse-button">
+                  <input class="browse-input" type="file" required name="UploadedFile" id="UploadedFile"/>
+              </div>
+              <span class="Error"></span>
+          </div>
+          <div class="form-group">
+              <label>Nome:</label>
+              <input class="form-control" type="text" name="fullname" value="IFudido da Silva"/>
+              <span class="Error"></span>
+          </div>
+          <div class="form-group">
+            <label>Telefone:</label>
+            <input class="form-control" type="text" name="fullname" value="084123456789"/>
+            <span class="Error"></span>
+          </div>
+          <div class="form-group">
+              <label>CPF:</label>
+              <input class="form-control" type="text" name="fullname" value="12364535678"/>
+              <span class="Error"></span>
+            </div>
 
-<div class="container-fluid ">
-        <div class="row flex-xl-nowrap" id="cards">
+          <div class="form-group text-center">
+              <input class="btn btn-info " type="submit" value="Salvar alterações"/>
+          </div>
+      </form>
+</div>
 
-        <%- include('menu') -%>
-        <%- include('conteudo') -%>
-
-      </div>
-      </div>
-
-      <style type="text/css">
-        @media (max-width: 575.98px) {
-          .form-row {
-            display: block;
-          }
-
-         }
-      </style>
+<%- include('cssdoscoisa') -%>

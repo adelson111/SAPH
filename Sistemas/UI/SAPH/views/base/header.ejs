@@ -1,5 +1,5 @@
 
-  <nav class="navbar navbar-expand-lg navbar-absolute fixed-top text-light bg-info " style="height: 70px; border-radius: 0">
+  <nav class="navbar navbar-expand-lg navbar-absolute fixed-top text-info navbar-transparent " style="height: 70px; border-radius: 0" id="vaoselascar">
     <div class="container-fluid">
       <div class="navbar-wrapper">
         <div class="navbar-toggle">
@@ -15,32 +15,35 @@
         <span class="navbar-toggler-bar navbar-kebab"></span>
         <span class="navbar-toggler-bar navbar-kebab"></span>
       </button>
+      <form>
+       <div class="input-group no-border w-70  float-left">
+            <input type="text" class="search-query form-control" value="" placeholder="O que você procura?">
+          </div>          
+      </form>
       <div class="collapse navbar-collapse justify-content-end" id="navigation">
-        <form>
-          <div class="input-group no-border w-50  float-left ">
-            <input type="text" value="" class="form-control" placeholder="O que você procura?">
-          </div>
-          
-        </form>
-        <ul class="navbar-nav float-right">
+       
+        <ul class="navbar-nav float-right" style="background-color: lightgray">
           <li class="nav-item btn-rotate dropdown">
             <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <i class="fas fa-bell"></i>
               <p>
-                <span class="d-lg-none d-md-block">Notificações</span>
+                <span class="d-lg-none d-md-block text-light">Notificações</span>
               </p>
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="#">Solicitações     <span class="badge badge-success badge-pill">24</span></a>
-              <a class="dropdown-item" href="/delegacao">Delegações      <span class="badge badge-warning badge-pill">69</span></a>
+              <a class="dropdown-item" href="/solicitacoes/list">Solicitações     <span class="badge badge-success badge-pill">24</span></a>
+              <a class="dropdown-item" href="/delegacoes/listar-delegacoes">Delegações      <span class="badge badge-warning badge-pill">69</span></a>
             </div>
           </li>
           <li class="nav-item btn-rotate dropdown">
             <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <i class="fas fa-user"></i>
-            </a>
+              <p>
+                <span class="d-lg-none d-md-block text-light"  >Perfil</span>
+              </p>
+            </a> 
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="#">Editar perfil</a>
+              <a class="dropdown-item" href="/ajustes/login-ajustes">Editar perfil</a>
               <a class="dropdown-item" href="#">Sair</a>
             </div>
           </li>
@@ -49,3 +52,12 @@
       </div>
     </div>
   </nav>
+
+  <style type="text/css">
+    @media (max-width: 575.98px) { 
+      div#navigation{
+        background-color:#17a2b8;
+      }
+    }
+    
+  </style>

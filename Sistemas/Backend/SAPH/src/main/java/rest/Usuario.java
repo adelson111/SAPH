@@ -68,9 +68,11 @@ public class Usuario {
 
     @POST
     @Consumes(MediaType.TEXT_PLAIN)
+    @Produces(MediaType.APPLICATION_JSON)
     @Path("autenticar/{email}/{senha}")
-    public boolean entrar(@PathParam("email") String email, @PathParam("senha") String senha) {
-        return new Persistencia().selecionarUsuario(email, senha);
+    public String entrar(@PathParam("email") String email, @PathParam("senha") String senha) {
+    	System.out.println(email+"-"+senha);
+        return new Gson().toJson(new Persistencia().selecionarUsuario(email, senha));
     }
 
 }

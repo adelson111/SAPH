@@ -1,45 +1,95 @@
-<%- include('delegacao-topo') -%>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<div class="col-12 col-md-9 col-xl-9 py-md-3 pl-md-5 bd-content">
-  <div class="card fixed " style="height: 700px; text-align: right;" id="campos" >
-    <div class="panel-heading">
-      <ul class="nav nav-tabs">
-        <li class="active"><a href="#tab1default" data-toggle="tab">Todas</a></li>
-        <li class=""><a href="#tab2default" data-toggle="tab">Confirmadas</a></li>
-        <li class=""><a href="#tab3default" data-toggle="tab">Em análise</a></li>
-        <li class=""><a href="#tab4default" data-toggle="tab">Salvas</a></li>
-      </ul>
-    </div>
-    <div class="panel with-nav-tabs panel-default overflow-auto">
-      <div class="panel-body" >
-        <div class="tab-content" width="auto">
-          <div class="tab-pane fade  active in" id="tab1default">
-            <%- include('d-todas')-%>
-          </div>
-          <div class="tab-pane fade" id="tab2default">
-            <%- include('d-confirmadas') -%>
-          </div>
-          <div class="tab-pane fade " id="tab3default">
-            <%- include('d-analise') -%>
-          </div>
-          <div class="tab-pane fade"  id="tab4default">
-            <%- include('d-salvas') -%>
+<div class="content">
+  <div class="row">
+    <div class="col-md-12 ">
+      <div class="card">
+        <div class="card-header text-center">
+          <h4 class="card-title">Lista de delegações</h4>
+        </div>
+        <div class="card-body" style="height:700px;">
+          <div class="row">
+            <div class="col-md-12 ">
+              <div class="card-body px-lg-5 pt-0 pt-30 "  id="cardSolici">
+                <div class="card fixed " style="height: 600px; text-align: right;" id="campos" >
+                  <div class="panel-heading">
+                    <ul class="nav nav-tabs">
+                      <li class="active"><a href="#tab1default" data-toggle="tab">Todas</a></li>
+                      <li class=""><a href="#tab2default" data-toggle="tab">Confirmadas</a></li>
+                      <li class=""><a href="#tab3default" data-toggle="tab">Em análise</a></li>
+                      <li class=""><a href="#tab4default" data-toggle="tab">Salvas</a></li>
+                    </ul>
+                  </div>
+                  <div class="panel with-nav-tabs panel-default overflow-auto">
+                    <div class="panel-body" >
+                      <div class="tab-content" width="auto">
+                        <div class="tab-pane fade  active in" id="tab1default">
+                          <%- include('d-todas')-%>
+                        </div>
+                        <div class="tab-pane fade" id="tab2default">
+                          <%- include('d-confirmadas') -%>
+                        </div>
+                        <div class="tab-pane fade " id="tab3default">
+                          <%- include('d-analise') -%>
+                        </div>
+                        <div class="tab-pane fade"  id="tab4default">
+                          <%- include('d-salvas') -%>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
     </div>
   </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-body">
+          <div class="places-buttons">
+            <div class="row">
+              <div class="col-md-6 ml-auto mr-auto text-center">
+                <h4 class="card-title">
+                  Delegações
+                </h4>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-8 ml-auto mr-auto">
+                <div class="card  overflow-auto" style="height: 300px; margin-bottom:0">
+                
 
-  <%- include('delegacao-baixo') -%>
+                    <div class="dropdown delega w-80">
+                      <span class="btn btn-secondary w-100 dropdown-toggle bg-dark text-light" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Cagar na pia
+                      </span>
+                      <div class="dropdown-menu w-50 " aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item text-center" href="#">Salvar</a>
+                        <a class="dropdown-item text-center"href="#">Clonar</a>
+                        <a class="dropdown-item text-center" href="#">Excluir</a>
+                      </div>
+                    </div> 
+  
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 
-
-
-<script type="text/javascript">
-
-</script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<%- include('delegacao-baixo') -%>
 
   <style type="text/css">
+
+  
 
   .panel.with-nav-tabs .nav-tabs {
       border-bottom: none;
@@ -154,4 +204,4 @@
       position: absolute;
       z-index: 1;
     }
-  </style>
+  </style> 

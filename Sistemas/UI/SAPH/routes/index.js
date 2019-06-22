@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
-
+var Client = require('node-rest-client').Client;
+var client = new Client();
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', {
@@ -30,16 +31,28 @@ router.get('/login',(req, res, next)=>{
 });
 
 router.get('/inicio',(req, res, next)=>{
-  res.render('inicio', {
-    title: 'Home - SAPH',
+  email = req.query.email;
+  senha = req.query.senha;
+  client.post("http://localhost:8080/SAPH/saph/usuario/autenticar/"+email+"/"+senha,function (data, response) {
+    console.log(data);
+    if(data!=null){
+      res.render('inicio', {
+        title: 'Home - SAPH',
+        funcionario:data
+      });
+    }else{
+      res.send("erro");
+    }
   });
 });
 
-router.get('/delegacao',(req, res, next)=>{
-  res.render('delegacao', {
-    title: 'Delegações - SAPH',
-  });
-});
+//rota para testes
+
+// router.get('/inicio',(req, res, next)=>{
+//   res.render('inicio', {
+//     title: 'Visualizar - SAPH',
+//   });
+// });
 
 router.get('/visualizar',(req, res, next)=>{
   res.render('visualizar', {

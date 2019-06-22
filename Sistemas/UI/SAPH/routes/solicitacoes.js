@@ -4,7 +4,7 @@ var Client = require('node-rest-client').Client;
 var client = new Client();
 
 router.get('/new',(req, res, next)=>{
-  client.get("http://localhost:8080/SAPH/saph/tipo-solicitacao-delegacao/", function (data, response) {
+  client.get("http://localhost:8080/SAPH/saph/tipo-solicitacao-delegacao/tipo/SOLICITACAO", function (data, response) {
     res.render('new', {
       title: 'Solicitacoes - SAPH',
       tipos: data,
@@ -14,7 +14,7 @@ router.get('/new',(req, res, next)=>{
 });
 
 router.get('/list',(req, res, next)=>{
-  client.get("http://localhost:8080/SAPH/saph/solicitacao-delegacao/", function (data, response) {
+  client.get("http://localhost:8080/SAPH/saph/solicitacao-delegacao/parametros/SOLICITACAO/7", function (data, response) {
     res.render('list', {
       title: 'Solicitacoes - SAPH',
       solicitacoes:data,
@@ -46,8 +46,7 @@ router.get('/salvas',(req, res, next)=>{
   });
 });
 
-router.post('/cada', function (req, res) {
-  // console.log(res.body.solicitacao);
+router.post('/cadadastrar', function (req, res) {
   var args = {
       data: req.body.solicitacao,
       headers: { "Content-Type": "application/json" }

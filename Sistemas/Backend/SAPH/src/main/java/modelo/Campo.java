@@ -35,9 +35,7 @@ public class Campo implements Serializable {
     @Column(length = 300, nullable = false)
     private String valor;
     
-    @ManyToOne
-    @JoinColumn(name = "item_id", nullable = false)
-    private Item item;
+    
     
     @OneToOne
     @JoinColumn(name = "tipo_campo_id", nullable = false)
@@ -57,14 +55,6 @@ public class Campo implements Serializable {
 
     public void setValor(String valor) {
         this.valor = valor;
-    }
-
-    public Item getItem() {
-        return item;
-    }
-
-    public void setItem(Item item) {
-        this.item = item;
     }
 
     public TipoCampo getTipoCampo() {

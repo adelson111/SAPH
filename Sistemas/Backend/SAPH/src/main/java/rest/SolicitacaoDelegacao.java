@@ -29,7 +29,15 @@ public class SolicitacaoDelegacao {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     public String cadastrar(String json) {
-        return new Persistencia().cadastrar(new Gson().fromJson(json, modelo.SolicitacaoDelegacao.class));
+    	modelo.SolicitacaoDelegacao solicitacao = new Gson().fromJson(json, modelo.SolicitacaoDelegacao.class);
+    	Persistencia persistencia = new Persistencia();
+    	for(modelo.Item item:solicitacao.getItens()) {
+    		for(modelo.Campo campo:item.getCampos()) {
+    			persistencia.cadastrar(campo);
+    		}
+    		persistencia.cadastrar(item);
+    	}
+        return persistencia.cadastrar(solicitacao);
     }
 
     @POST
@@ -64,6 +72,12 @@ public class SolicitacaoDelegacao {
     @Path("{id}")
     public String selecionar(@PathParam("id") long id) {
         return new Gson().toJson(new Persistencia().selecionar(new modelo.SolicitacaoDelegacao(), id));
+    }
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("parametros/{tipo}/{solicitanteDelegante}")
+    public String selecionar(@PathParam("tipo") String tipo,@PathParam("solicitanteDelegante") long solicitanteDelegante) {
+        return new Gson().toJson(new Persistencia().getSolicitacaoDelegacao(tipo,solicitanteDelegante));
     }
 
 }

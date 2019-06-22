@@ -42,14 +42,15 @@ public class SolicitacaoDelegacao implements Serializable {
     private long id;
     
     @Enumerated(EnumType.STRING)
-    @Column(length = 10, nullable = false)
+    @Column(length = 10)
     private tipo.TipoStatus status;
     
     @OneToOne
-    @JoinColumn(name = "tipo_solicitacao_delegacao_id", nullable = false)
+    @JoinColumn(name = "tipo_solicitacao_delegacao_id")
     private TipoSolicitacaoDelegacao tipoSolicitacaoDelegacao;
     
-    @Temporal(TemporalType.TIMESTAMP)     
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "data_envio")
     private Date dataEnvio = new java.sql.Date(System.currentTimeMillis());
     
     @OneToMany(fetch = FetchType.EAGER)

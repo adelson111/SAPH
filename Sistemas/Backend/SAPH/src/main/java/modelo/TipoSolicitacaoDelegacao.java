@@ -30,14 +30,14 @@ public class TipoSolicitacaoDelegacao implements Serializable {
     @Id
     private long id;
     
-    @Column(length = 80, nullable = false)
+    @Column(length = 80)
     private String nome;
     
-    @Column(length = 300, nullable = false)
+    @Column(length = 300)
     private String descricao;
     
     @Enumerated(EnumType.STRING)
-    @Column(length = 12, nullable = false)
+    @Column(length = 12)
     private tipo.TipoSolicitacaoDelegacao tipo;
     
     @ManyToMany(fetch = FetchType.EAGER)
@@ -46,11 +46,7 @@ public class TipoSolicitacaoDelegacao implements Serializable {
             inverseJoinColumns = {@JoinColumn(name = "tipo_item_id")})
     private List<TipoItem> tipoItem;
     
-    @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(name = "tipo_solicitacao_delegacao_nivel", 
-            joinColumns = {@JoinColumn(name = "tipo_solicitacao_delegacao_id")}, 
-            inverseJoinColumns = {@JoinColumn(name = "nivel_id")})
-    private List<Nivel> nivel;
+    
 
     public long getId() {
         return id;
@@ -92,12 +88,5 @@ public class TipoSolicitacaoDelegacao implements Serializable {
         this.tipoItem = tipoItem;
     }
 
-    public List<Nivel> getNivel() {
-        return nivel;
-    }
-
-    public void setNivel(List<Nivel> nivel) {
-        this.nivel = nivel;
-    }
     
 }

@@ -25,7 +25,50 @@ import javax.ws.rs.core.MediaType;
  */
 @Path("organizacao")
 public class Organizacao {
-
+    
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Path("exportar")
+    public String exportar(String json) {
+//        return new Persistencia().cadastrar(new Gson().fromJson(json, modelo.Organizacao.class));
+//        modelo.SolicitacaoDelegacao solicitacao = new Gson().fromJson(json, modelo.SolicitacaoDelegacao.class);
+//    	Persistencia persistencia = new Persistencia();
+//    	for(modelo.Item item:solicitacao.getItens()) {
+//    		for(modelo.Campo campo:item.getCampos()) {
+//    			persistencia.cadastrar(campo);
+//    		}
+//    		persistencia.cadastrar(item);
+//    	}
+//        return persistencia.cadastrar(solicitacao);
+        Persistencia persistencia = new Persistencia();
+        
+        modelo.Organizacao organizacao = new Gson().fromJson(json, modelo.Organizacao.class);
+        
+        for(modelo.Funcionario funcionarios : organizacao.getFuncionarios()) {
+            persistencia.cadastrar(funcionarios.getUsuario());
+            persistencia.cadastrar(funcionarios);
+        }
+        for(modelo.Nivel niveis : organizacao.getNiveis()) {
+            for(modelo.Setor setores : niveis.getSetores()) {
+                persistencia.cadastrar(setores);
+            }
+            for(modelo.TipoSolicitacaoDelegacao tipoSolicitacoesDelegacoes: niveis.getTipoSolicitacoesDelegacoes()) {
+                for(modelo.TipoItem tipoItens : tipoSolicitacoesDelegacoes.getTipoItem()) {
+                    for(modelo.TipoCampo tipoCampos : tipoItens.getTipoCampo()) {
+                        persistencia.cadastrar(tipoCampos);
+                    }
+                    persistencia.cadastrar(tipoItens);
+                }
+                persistencia.cadastrar(tipoSolicitacoesDelegacoes);
+            }
+            persistencia.cadastrar(niveis);
+        }
+        return persistencia.cadastrar(organizacao);
+        
+        
+//        return new Gson().toJson(organizacao);
+    }
+    
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     public String cadastrar(String json) {

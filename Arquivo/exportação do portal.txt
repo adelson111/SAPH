@@ -1,0 +1,108 @@
+{
+    "id": 1,
+    "nome": "11",
+    "cnpj": "11",
+    "endereco": "11",
+    "telefone": "11",
+    "situacao": true,
+    "funcionarios": [
+        {
+            "id": 1,
+            "nome": "11",
+            "cpf": "11",
+            "cargo": "11",
+            "endereco": "11",
+            "telefone": "11",
+            "ativo": true,
+            "foto": "11",
+            "usuario": {
+                "id": 1,
+                "email": "11",
+                "senha": "11"
+            }
+        }
+    ],
+    "niveis": [
+        {
+            "id": 1,
+            "nome": "11",
+            "nivelSuperior": 0,
+            "nivelInferior": 0,
+            "responsavel": {
+                "id": 1,
+                "nome": "11",
+                "cpf": "11",
+                "cargo": "11",
+                "endereco": "11",
+                "telefone": "11",
+                "ativo": true,
+                "foto": "11",
+                "usuario": {
+                    "id": 1,
+                    "email": "11",
+                    "senha": "11"
+                }
+            },
+            "setores": [
+                {
+                    "id": 1,
+                    "nome": "11",
+                    "funcionarios": [
+                        {
+                            "id": 1,
+                            "nome": "11",
+                            "cpf": "11",
+                            "cargo": "11",
+                            "endereco": "11",
+                            "telefone": "11",
+                            "ativo": true,
+                            "foto": "11",
+                            "usuario": {
+                                "id": 1,
+                                "email": "11",
+                                "senha": "11"
+                            }
+                        }
+                    ],
+                    "gerente": {
+                        "id": 1,
+                        "nome": "11",
+                        "cpf": "11",
+                        "cargo": "11",
+                        "endereco": "11",
+                        "telefone": "11",
+                        "ativo": true,
+                        "foto": "11",
+                        "usuario": {
+                            "id": 1,
+                            "email": "11",
+                            "senha": "11"
+                        }
+                    }
+                }
+            ],
+            "tipoSolicitacoesDelegacoes": [
+                {
+                    "id": 1,
+                    "nome": "11",
+                    "descricao": "11",
+                    "tipo": "SOLICITACAO",
+                    "tipoItem": [
+                        {
+                            "id": 1,
+                            "nome": "11",
+                            "tipoCampo": [
+                                {
+                                    "id": 1,
+                                    "nome": "11",
+                                    "descricao": "11",
+                                    "tipo": "text"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

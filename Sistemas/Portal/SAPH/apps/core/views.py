@@ -13,6 +13,7 @@ from apps.funcionario.models import Funcionario
 from apps.nivel.models import Nivel
 from apps.organizacao.models import Organizacao
 from apps.setor.models import Setor
+from apps.solicitacao.models import Solicitacao
 
 
 class MyHome(View):
@@ -22,108 +23,114 @@ class MyHome(View):
 class Exportar(LoginRequiredMixin, View) :
 
 	def get(self, request):
-		#Usuário
-		usuarios = User.objects.all()
-		lUsuario = []
-		for usuario in usuarios:
-			dicUsuario = {
-				'id': usuario.pk,
-				'email': usuario.username,
-				'senha': usuario.password
-			}
-			lUsuario.append(dicUsuario)
+		organizacoes = Organizacao.objects.filter(pk=request.user.funcionario.organizacao.pk).values()
+		funcionairos = Funcionario.objects.filter(organizacao=self.request.user.funcionario.organizacao)
+		niveis = Nivel.objects.filter(organizacao=self.request.user.funcionario.organizacao)
 
-		# Organização
-		organizacoes = Organizacao.objects.values()
-		lOrganizacao = []
-		for organizacao in organizacoes:
-			lOrganizacao.append(organizacao)
+		lOrganizacao1 = []
+		lFuncionarios = []
+		lNiveis = []
+		organizacaoDic = {}
 
-		# Funcionário
-		funcionarios = Funcionario.objects.values('id', 'nome', 'cpf', 'cargo', 'endereco', 'telefone', 'ativo', 'foto', 'user_id')
-		lFuncionario = []
-		organizacao = self.request.user.funcionario.organizacao.pk
-		for funcionario in funcionarios:
-			dicFuncionario = {
-				'id': funcionario['id'],
-				'ativo': funcionario['ativo'],
-				'cargo': funcionario['cargo'],
-				'cpf': funcionario['cpf'],
-				'endereco': funcionario['endereco'],
-				'foto': funcionario['foto'],
-				'nome': funcionario['nome'],
-				'telefone': funcionario['telefone'],
-				'organizacao': {
-					'id': organizacao},
+		for funcionario in funcionairos:
+			dic = {
+				'id': funcionario.pk,
+				'nome': funcionario.nome,
+				'cpf': funcionario.cpf,
+				'cargo': funcionario.cargo,
+				'endereco': funcionario.endereco,
+				'telefone': funcionario.telefone,
+				'ativo': funcionario.ativo,
+				# 'foto': funcionario.foto,
+				'foto': "Foto",
 				'usuario': {
-					'id': funcionario['user_id']}
+					'id': funcionario.user.pk,
+					'email': funcionario.user.username,
+					'senha': funcionario.user.password
+				}
 			}
-			lFuncionario.append(dicFuncionario)
+			lFuncionarios.append(dic)
 
-		# Nível
-		niveis = Nivel.objects.values('id', 'nome', 'nivelSuperior', 'nivelInferior', 'funcionario', 'organizacao')
-		lNivel = []
-		for setor in niveis:
-			dicNivel = {
-				'id': setor['id'],
-				'nome': setor['nome'],
-				'nivelSuperior': setor['nivelSuperior'],
-				'nivelInferior': setor['nivelInferior'],
-				'responsavel': {
-					'id': setor['funcionario']},
-				'organizacao': {
-					'id': setor['organizacao']}
-			}
-			lNivel.append(dicNivel)
+		for nivel in niveis.values():
+			nivelsuperior = nivel['nivelSuperior_id']
+			nivelinfeiror = nivel['nivelInferior_id']
+			if (nivel['nivelSuperior_id'] == None):
+				nivelsuperior = '0'
+			if (nivel['nivelInferior_id'] == None):
+				nivelinfeiror = '0'
+			if (nivel['nivelSuperior_id'] == None and nivel['nivelInferior_id'] == None):
+				nivelsuperior = '0'
+				nivelinfeiror = '0'
 
-		# Setor
-		setores = Setor.objects.values('id', 'nome', 'funcionario', 'nivel', 'gerente')
-		lSetor = []
-		for setor in setores:
-			dicSetor = {
-				'id': setor['id'],
-				'nome': setor['nome'],
-				'funcionario': {
-					'id': setor['funcionario']},
-				'gerente': {
-					'id': setor['gerente']},
-				'nivel': {
-					'id': setor['nivel']}
+			setoresnivel = Setor.objects.select_related('nivel').filter(
+				nivel__organizacao=self.request.user.funcionario.organizacao, nivel__pk=nivel['id'])
+			lSetores = []
+			for setor in setoresnivel.values():
+				funcionarios = Funcionario.objects.filter(setor__pk=setor['id'])
+				lfunc = []
+				for func in funcionarios:
+					dic = {
+						'id': func.pk
+					}
+					lfunc.append(dic)
+
+				dicSetor1 = {
+					'id': setor['id'],
+					'nome': setor['nome'],
+					'funcionarios': lfunc,
+					'gerente': {'id': setor['gerente_id']}
+				}
+				lSetores.append(dicSetor1)
+			solicitacoes = Solicitacao.objects.prefetch_related('nivel').filter(nivel__id=nivel['id'])
+			lSocilitacoes = []
+			for solicitacao in solicitacoes:
+				lisa = []
+				for sol in solicitacao.itens.values('id', 'nome'):
+					dicitenssolicitacao = {
+						'id': sol['id'],
+						'nome': sol['nome'],
+						'tipoCampos': [{}]
+					}
+					lisa.append(dicitenssolicitacao)
+				dic = {
+					'id': solicitacao.pk,
+					'nome': solicitacao.tipo,
+					'descricao': solicitacao.descricao,
+					'tipo': 'SOLICITACAO',
+					'tipoItens': lisa
+				}
+
+				lSocilitacoes.append(dic)
+
+			dic = {
+				'id': nivel['id'],
+				'nome': nivel['nome'],
+				'nivelSuperior': nivelsuperior,
+				'nivelInferior': nivelinfeiror,
+				'responsavel': {'id': nivel['funcionario_id']},
+				'setores': lSetores,
+				'tipoSolicitacoesDelegacoes': lSocilitacoes
 			}
-			lSetor.append(dicSetor)
+			lNiveis.append(dic)
+		for organizacao in organizacoes:
+			organizacaoDic = {
+				'id': organizacao['id'],
+				'nome': organizacao['nome'],
+				'cnpj': organizacao['cnpj'],
+				'endereco': organizacao['endereco'],
+				'telefone': organizacao['telefone'],
+				'situacao': organizacao['situacao'],
+				'funcionarios': lFuncionarios,
+				'niveis': lNiveis,
+			}
+
+		lOrganizacao1.append(organizacaoDic)
 
 		# Envio das requests
-		respUsuario = requests.post(url='http://localhost:8080/SAPH/saph/usuario/lista/',
-									data=json.dumps(lUsuario),
+		resp = requests.post(url='http://localhost:8080/SAPH/saph/organizacao/exportar/',
+									data=json.dumps(lOrganizacao1),
 									headers={'content-type': 'application/json'})
-		if (respUsuario.status_code == 200 or respUsuario.status_code == 201):
-			respOrganizacao = requests.post(url='http://localhost:8080/SAPH/saph/organizacao/lista/',
-											data=json.dumps(lOrganizacao),
-											headers={'content-type': 'application/json'})
-			if (respOrganizacao.status_code == 200 or respOrganizacao.status_code == 201):
-				respFuncionario = requests.post(url='http://localhost:8080/SAPH/saph/funcionario/lista/',
-												data=json.dumps(lFuncionario),
-												headers={'content-type': 'application/json'})
-				if (respFuncionario.status_code == 200 or respFuncionario.status_code == 201):
-					respNivel = requests.post(url='http://localhost:8080/SAPH/saph/nivel/lista/',
-										 data=json.dumps(lNivel),
-										 headers={'content-type': 'application/json'})
-
-					if (respNivel.status_code == 200 or respNivel.status_code == 201):
-						'''respSetor = requests.post(url='http://localhost:8080/SAPH/saph/setor/lista/',
-												  data=json.dumps(lSetor[0]),
-												  headers={'content-type': 'application/json'})
-
-						if (respSetor.status_code == 200 or respSetor.status_code == 201):
-							return HttpResponse("DEU TUDO CERTO")
-						else:
-							return HttpResponse("ERRO SETOR")'''
-						return HttpResponse("sim")
-					else:
-						return HttpResponse("ERRO NÍVEL")
-				else:
-					return HttpResponse("ERRO FUNCIONÁRIO")
-			else:
-				return HttpResponse("ERRO ORGANOGRAMA")
+		if (resp.status_code == 200 or resp.status_code == 201):
+			return HttpResponse("sim")
 		else:
-			return HttpResponse("ERRO USUÁRIO")
+			return HttpResponse("nao")

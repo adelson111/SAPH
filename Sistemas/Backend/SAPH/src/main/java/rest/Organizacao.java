@@ -30,19 +30,9 @@ public class Organizacao {
     @Consumes(MediaType.APPLICATION_JSON)
     @Path("exportar")
     public String exportar(String json) {
-//        return new Persistencia().cadastrar(new Gson().fromJson(json, modelo.Organizacao.class));
-//        modelo.SolicitacaoDelegacao solicitacao = new Gson().fromJson(json, modelo.SolicitacaoDelegacao.class);
-//    	Persistencia persistencia = new Persistencia();
-//    	for(modelo.Item item:solicitacao.getItens()) {
-//    		for(modelo.Campo campo:item.getCampos()) {
-//    			persistencia.cadastrar(campo);
-//    		}
-//    		persistencia.cadastrar(item);
-//    	}
-//        return persistencia.cadastrar(solicitacao);
+
         Persistencia persistencia = new Persistencia();
-        
-        modelo.Organizacao organizacao = new Gson().fromJson(json, modelo.Organizacao.class);
+        modelo.Organizacao organizacao = new Gson().fromJson(json.substring(1, json.length()-1), modelo.Organizacao.class);
         
         for(modelo.Funcionario funcionarios : organizacao.getFuncionarios()) {
             persistencia.cadastrar(funcionarios.getUsuario());
@@ -53,8 +43,8 @@ public class Organizacao {
                 persistencia.cadastrar(setores);
             }
             for(modelo.TipoSolicitacaoDelegacao tipoSolicitacoesDelegacoes: niveis.getTipoSolicitacoesDelegacoes()) {
-                for(modelo.TipoItem tipoItens : tipoSolicitacoesDelegacoes.getTipoItem()) {
-                    for(modelo.TipoCampo tipoCampos : tipoItens.getTipoCampo()) {
+                for(modelo.TipoItem tipoItens : tipoSolicitacoesDelegacoes.getTipoItens()) {
+                    for(modelo.TipoCampo tipoCampos : tipoItens.getTipoCampos()) {
                         persistencia.cadastrar(tipoCampos);
                     }
                     persistencia.cadastrar(tipoItens);
@@ -63,10 +53,13 @@ public class Organizacao {
             }
             persistencia.cadastrar(niveis);
         }
+        
         return persistencia.cadastrar(organizacao);
         
-        
-//        return new Gson().toJson(organizacao);
+//        
+//        System.out.println(json.substring(1, json.length()-1));
+//        
+//        return json.substring(1, json.length()-1);
     }
     
     @POST
@@ -79,8 +72,9 @@ public class Organizacao {
     @Consumes(MediaType.APPLICATION_JSON)
     @Path("lista")
     public String cadastrarLista(String json) {
-        return new Persistencia().cadastrar((List<Object>) new Gson().fromJson(json, new TypeToken<List<modelo.Organizacao>>() {
-        }.getType()));
+//        return new Persistencia().cadastrar((List<Object>) new Gson().fromJson(json, new TypeToken<List<modelo.Organizacao>>() {
+//        }.getType()));
+        return json;
     }
 
     @PUT

@@ -46,6 +46,14 @@ router.get('/inicio',(req, res, next)=>{
   });
 });
 
+//rota para testes
+
+// router.get('/inicio',(req, res, next)=>{
+//   res.render('inicio', {
+//     title: 'Visualizar - SAPH',
+//   });
+// });
+
 router.get('/visualizar',(req, res, next)=>{
   res.render('visualizar', {
     title: 'Visualizar - SAPH',

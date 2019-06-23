@@ -35,7 +35,7 @@ public class TipoItem implements Serializable {
     @JoinTable(name = "tipo_item_campo", 
             joinColumns = {@JoinColumn(name = "tipo_item_id")}, 
             inverseJoinColumns = {@JoinColumn(name = "tipo_campo_id")})
-    private List<TipoCampo> tipoCampo;
+    private List<TipoCampo> tipoCampos;
     
     public long getId() {
         return id;
@@ -53,12 +53,12 @@ public class TipoItem implements Serializable {
         this.nome = nome;
     }
 
-    public List<TipoCampo> getTipoCampo() {
-        return tipoCampo;
+    public List<TipoCampo> getTipoCampos() {
+        return tipoCampos;
     }
 
-    public void setTipoCampo(List<TipoCampo> tipoCampo) {
-        this.tipoCampo = tipoCampo;
+    public void setTipoCampos(List<TipoCampo> tipoCampos) {
+        this.tipoCampos = tipoCampos;
     }
 
 }

@@ -168,6 +168,12 @@
                         <a href="{% url 'page_home' %}"><button type="button" class="btn btn-success btn-lg">Concluir</button></a>
                     </div>
                 </div>
+                <div id="erro" class="centralizar" style="display:none">
+                    <h4 class="">Erro ao exportar!</h4>
+                    <div class="modal_exportar_espaco">
+                        <a href="{% url 'page_home' %}"><button type="button" class="btn btn-success btn-lg">Concluir</button></a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -183,7 +189,8 @@
                     $('#carregando').hide();
                     $('#exportado').show();
                 } else {
-                    alert(data);
+                    $('#carregando').hide();
+                    $('#erro').show();
                 }
             });
         });

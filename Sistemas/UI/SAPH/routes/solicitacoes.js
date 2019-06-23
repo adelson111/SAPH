@@ -46,8 +46,7 @@ router.get('/salvas',(req, res, next)=>{
   });
 });
 
-router.post('/cada', function (req, res) {
-  // console.log(res.body.solicitacao);
+router.post('/cadadastrar', function (req, res) {
   var args = {
       data: req.body.solicitacao,
       headers: { "Content-Type": "application/json" }

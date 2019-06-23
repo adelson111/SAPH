@@ -14,6 +14,7 @@ router.get('/', function(req, res, next) {
 router.get('/contato',(req, res, next)=>{
   res.render('contato', {
     title: 'Contato - SAPH',
+    home : true
   });
 });
 

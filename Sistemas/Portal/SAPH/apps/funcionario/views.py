@@ -7,7 +7,6 @@ import io
 from django.core import serializers
 from django.forms import model_to_dict
 from django.views import View
-from pip._vendor import requests
 
 from apps.funcionario.forms import FuncionaioPreCadastro, FuncionarioCadastra, FuncionarioEdit
 from django.core.exceptions import ObjectDoesNotExist
@@ -144,55 +143,3 @@ class PreUpdateFuncionario(LoginRequiredMixin, UpdateView):
 
     template_name_suffix = '_pre_update_funcionario'
 
-
-class SubirFuncionarios(LoginRequiredMixin, View):
-
-    def get(self, request):
-        usuarios = User.objects.all()
-        # usuarios = User.objects.values('id', 'username', 'password')
-        lUsuario = []
-        for usuario in usuarios:
-            dicUsuario = {
-                'id': usuario.pk,
-                'email': usuario.username,
-                'senha': usuario.password
-            }
-            lUsuario.append(dicUsuario)
-
-        respUsuario = requests.post(url='http://localhost:8080/SAPH/saph/usuario/lista',
-                                   data = json.dumps(lUsuario),
-                                   headers={'content-type': 'application/json'})
-
-
-        funcionarios = Funcionario.objects.values('id','nome', 'cpf', 'cargo', 'endereco', 'telefone', 'ativo', 'foto', 'user_id')
-        # funcionarios = Funcionario.objects.all()
-        lFuncionario = []
-        organizacao = self.request.user.funcionario.organizacao.pk
-        for funcionario in funcionarios:
-            dic = {
-                'id': funcionario['id'],
-                'ativo': funcionario['ativo'],
-                'cargo': funcionario['cargo'],
-                'cpf': funcionario['cpf'],
-                'endereco': funcionario['endereco'],
-                'foto': funcionario['foto'],
-                'nome': funcionario['nome'],
-                'telefone': funcionario['telefone'],
-                'organizacao': {
-                    'id': organizacao},
-                'usuario': {
-                    'id': funcionario['user_id']}
-            }
-            lFuncionario.append(dic)
-        #
-        resp = requests.post(url='http://localhost:8080/SAPH/saph/funcionario/lista/',
-                             # data=lorganizacao[0],
-                             data=json.dumps(lFuncionario),
-                             headers={'content-type': 'application/json'})
-
-        # if(respUsuario.status_code == 200 or respUsuario.status_code == 201):
-        # if(resp.status_code==200 or resp.status_code==201):
-        if(resp.status_code==200 or resp.status_code==201 and respUsuario.status_code == 200 or respUsuario.status_code == 201):
-            return HttpResponse("ESSA MIZERA DEU CERTO")
-        else:
-            return HttpResponse("ESSA MIZERA DEU ERRADO")

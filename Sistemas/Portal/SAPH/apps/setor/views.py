@@ -8,7 +8,6 @@ from django.shortcuts import render
 from django.views import View
 from django.views.generic import CreateView,UpdateView,ListView,DeleteView
 from django.urls import reverse_lazy, reverse
-from pip._vendor import requests
 
 from apps.funcionario.models import Funcionario
 from apps.setor.form import SetorCreate
@@ -79,48 +78,3 @@ class DetalharSetor(LoginRequiredMixin, View):
         funcionarios = Funcionario.objects.filter(setor__pk=pk)
         return render(request, 'setor/setor_detalhar.html', {'setor': setor, 'funcionarios': funcionarios})
 
-
-class SubirSetor(LoginRequiredMixin, View):
-
-    def get(self, request):
-        setores = Setor.objects.select_related('nivel').filter(nivel__organizacao=self.request.user.funcionario.organizacao).values()
-        lSetores = []
-
-        for setor in setores:
-            funcionarios = list(Funcionario.objects.filter(setor__pk=setor['id']).values('id'))
-            lFuncionarios = []
-            lFuncionarios.append(funcionarios)
-            for func in funcionarios:
-                print(func)
-
-
-
-            dic = {
-                'id': setor['id'],
-                'nome': setor['nome'],
-                'funcionario': [
-                    dict(funcionarios)
-                ],
-                'gerente': {
-                    'id': setor['gerente_id']
-                },
-                'nivel': {
-                    'id': setor['nivel_id']
-                },
-            }
-            lSetores.append(dic)
-
-        resp = requests.post(url='http://localhost:8080/SAPH/saph/setor/lista/',
-                             data=json.dumps(lSetores),
-                             headers={'content-type': 'application/json'})
-
-
-        a = 0
-
-
-
-
-        if(resp.status_code==200 or resp.status_code==201):
-            return HttpResponse("ESSA MIZERA DEU CERTO")
-        else:
-            return HttpResponse("ESSA MIZERA DEU ERRADO")

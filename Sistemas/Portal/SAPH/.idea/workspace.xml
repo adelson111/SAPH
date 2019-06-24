@@ -1,7 +1,120 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6a27e0a3-f03d-4cc7-be92-64b4000d9b95" name="Default Changelist" comment="" />
+    <list default="true" id="6a27e0a3-f03d-4cc7-be92-64b4000d9b95" name="Default Changelist" comment="Merge branch 'master' of https://github.com/Adelson111/SAPH&#10;&#10;# Conflicts:&#10;#&#9;Sistemas/Portal/SAPH/.idea/workspace.xml">
+      <change afterPath="$PROJECT_DIR$/../../../Arquivo/exportação do portal.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Arquivo/subir portal.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/nb-configuration.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/banco/Persistencia.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Campo.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Comentario.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Funcionario.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Item.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Nivel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Organizacao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Setor.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/SolicitacaoDelegacao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/TipoCampo.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/TipoItem.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/TipoSolicitacaoDelegacao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Usuario.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Campo$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Campo.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Comentario$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Comentario.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Funcionario$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Funcionario.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Item$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Item.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Nivel$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Nivel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Organizacao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Setor$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Setor.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/SolicitacaoDelegacao$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/SolicitacaoDelegacao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/TipoCampo$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/TipoCampo.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/TipoItem$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/TipoItem.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/TipoSolicitacaoDelegacao$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/TipoSolicitacaoDelegacao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Usuario$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Usuario.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/saph/Conf.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/tipo/TipoCampo.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/tipo/TipoSolicitacaoDelegacao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/tipo/TipoStatus.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../UI/SAPH/public/img/eeee.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/content/index/contato.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/content/index/em-comum.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/content/index/index.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/content/index/login.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/content/index/sobre.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../UI/SAPH/views/login.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/.classpath" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/.project" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/.settings/org.eclipse.core.resources.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/.settings/org.eclipse.jdt.apt.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/.settings/org.eclipse.jpt.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/.settings/org.eclipse.m2e.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/.settings/org.eclipse.wst.common.component" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/.settings/org.eclipse.wst.common.project.facet.core.prefs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/.settings/org.eclipse.wst.common.project.facet.core.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/.settings/org.eclipse.wst.validation.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/banco/Persistencia.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/banco/Persistencia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/Campo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/Campo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/Comentario.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/Comentario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/Funcionario.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/Funcionario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/Nivel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/Nivel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/Organizacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/Organizacao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/Setor.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/Setor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/SolicitacaoDelegacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/SolicitacaoDelegacao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/TipoCampo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/TipoCampo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/TipoItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/TipoItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/TipoSolicitacaoDelegacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/TipoSolicitacaoDelegacao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/rest/Organizacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/rest/Organizacao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/SAPH.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/SAPH.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/core/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/core/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/delegacao/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/delegacao/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/delegacao/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/delegacao/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/delegacao/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/delegacao/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/funcionario/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/funcionario/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/funcionario/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/funcionario/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/item/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/item/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nivel/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/nivel/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/nivel/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/nivel/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/organizacao/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/organizacao/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/organizacao/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/organizacao/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/setor/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/setor/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/setor/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/setor/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/solicitacao/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/solicitacao/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/SAPH/routes/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/views/base/content/section1.ejs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/views/base/content/section2.ejs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/views/base/content/solicitacoes/analise.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/content/solicitacoes/analise.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/views/base/content/solicitacoes/confirmadas.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/content/solicitacoes/confirmadas.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/views/base/content/solicitacoes/recusadas.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/content/solicitacoes/recusadas.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/views/base/content/solicitacoes/salvas.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/content/solicitacoes/salvas.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/views/base/content/solicitacoes/todas.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/content/solicitacoes/todas.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/views/base/conteudo-topo.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/conteudo-topo.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/views/base/footer-index.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/footer-index.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/views/base/footer.ejs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/views/base/header-index.ejs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/views/base/menu-index.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/menu-index.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/views/base/modal-login.ejs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/views/base/section-index.ejs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/views/contato.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/SAPH/views/contato.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/views/index.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/SAPH/views/index.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/views/sobre.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/SAPH/views/sobre.ejs" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -9,15 +122,48 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/apps/organizacao/views.py">
+        <entry file="file://$PROJECT_DIR$/apps/delegacao/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="156" column="58" selection-start-line="156" selection-start-column="58" selection-end-line="156" selection-end-column="58" />
+            <state relative-caret-position="210">
+              <caret line="14" column="40" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
               <folding>
-                <element signature="e#0#11#0" expanded="true" />
+                <element signature="e#0#28#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/apps/solicitacao/admin.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" selection-start-line="5" selection-end-line="5" selection-end-column="32" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/apps/delegacao/admin.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="29" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/apps/solicitacao/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="10" column="75" lean-forward="true" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="75" />
             </state>
           </provider>
         </entry>
@@ -37,7 +183,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/apps/delegacao/models.py" />
         <option value="$PROJECT_DIR$/apps/setor/urls.py" />
         <option value="$PROJECT_DIR$/apps/setor/templates/setor/setor_detalhar.html" />
         <option value="$PROJECT_DIR$/apps/organizacao/templates/organizacao/organizacao_update_form.html" />
@@ -78,16 +223,18 @@
         <option value="$PROJECT_DIR$/statics/css/estilo_formulario.css" />
         <option value="$PROJECT_DIR$/statics/css/posicionamento.css" />
         <option value="$PROJECT_DIR$/apps/solicitacao/templates/solicitacao/solicitacao_form.html" />
-        <option value="$PROJECT_DIR$/apps/core/views.py" />
         <option value="$PROJECT_DIR$/templates/navbar.html" />
+        <option value="$PROJECT_DIR$/apps/delegacao/models.py" />
+        <option value="$PROJECT_DIR$/apps/core/views.py" />
+        <option value="$PROJECT_DIR$/apps/delegacao/admin.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="227" />
-    <option name="y" value="117" />
-    <option name="width" value="977" />
-    <option name="height" value="558" />
+    <option name="x" value="395" />
+    <option name="y" value="92" />
+    <option name="width" value="1024" />
+    <option name="height" value="574" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -97,6 +244,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -113,19 +261,30 @@
               <item name="SAPH" type="b2602c69:ProjectViewProjectNode" />
               <item name="SAPH" type="462c0819:PsiDirectoryNode" />
               <item name="apps" type="462c0819:PsiDirectoryNode" />
-              <item name="organizacao" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SAPH" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SAPH" type="462c0819:PsiDirectoryNode" />
+              <item name="apps" type="462c0819:PsiDirectoryNode" />
+              <item name="delegacao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SAPH" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SAPH" type="462c0819:PsiDirectoryNode" />
+              <item name="apps" type="462c0819:PsiDirectoryNode" />
+              <item name="solicitacao" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/manage.py" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -174,9 +333,9 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="$USER_HOME$/Ambiente/venv/bin/python" />
+      <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
@@ -204,6 +363,7 @@
       <workItem from="1560121314428" duration="10403000" />
       <workItem from="1560296026858" duration="1040000" />
       <workItem from="1561176554815" duration="1429000" />
+      <workItem from="1561402316796" duration="5994000" />
     </task>
     <task id="LOCAL-00001" summary="Teste request Portal">
       <created>1559878787060</created>
@@ -286,7 +446,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14432000" />
+    <option name="totallyTimeSpent" value="20426000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -298,20 +458,20 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="-1" width="1366" height="728" extended-state="6" />
+    <frame x="0" y="-1" width="1920" height="1080" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21818182" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22145145" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.39285713" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49843505" weight="0.3416149" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.39270386" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49843505" weight="0.34120172" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32919255" />
-      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49843505" visible="true" weight="0.46724138" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32608697" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49843505" weight="0.46724138" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3251073" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5015649" side_tool="true" weight="0.3416149" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.32919255" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
@@ -323,17 +483,17 @@
       <window_info anchor="right" id="SciView" order="4" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21517996" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2219697" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.39285713" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49843505" weight="0.3416149" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.49843505" visible="true" weight="0.3413793" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32919255" />
-      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49843505" weight="0.46784565" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49843505" weight="0.46724138" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32608697" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5015649" side_tool="true" weight="0.3416149" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.32919255" />
@@ -399,9 +559,24 @@
     <MESSAGE value="Conserto do backend e base de dados" />
     <MESSAGE value="Criação de exportar do portal e autenticar do backend" />
     <MESSAGE value="Merge branch 'master' of https://github.com/Adelson111/SAPH&#10;&#10;# Conflicts:&#10;#&#9;Sistemas/Backend/SAPH/target/classes/banco/Persistencia.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/modelo/Campo.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/modelo/Comentario.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/modelo/Funcionario.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/modelo/Item.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/modelo/Nivel.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/modelo/Organizacao.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/modelo/Setor.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/modelo/SolicitacaoDelegacao.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/modelo/TipoCampo.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/modelo/TipoItem.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/modelo/TipoSolicitacaoDelegacao.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/modelo/Usuario.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/Campo$1.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/Campo.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/Comentario$1.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/Comentario.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/Funcionario$1.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/Funcionario.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/Item$1.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/Item.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/Nivel$1.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/Nivel.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/Organizacao$1.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/Organizacao.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/Setor$1.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/Setor.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/SolicitacaoDelegacao$1.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/SolicitacaoDelegacao.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/TipoCampo$1.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/TipoCampo.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/TipoItem$1.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/TipoItem.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/TipoSolicitacaoDelegacao$1.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/TipoSolicitacaoDelegacao.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/Usuario$1.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/Usuario.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/saph/Conf.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/tipo/TipoCampo.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/tipo/TipoSolicitacaoDelegacao.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/tipo/TipoStatus.class&#10;#&#9;Sistemas/Portal/SAPH/.idea/workspace.xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'master' of https://github.com/Adelson111/SAPH&#10;&#10;# Conflicts:&#10;#&#9;Sistemas/Backend/SAPH/target/classes/banco/Persistencia.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/modelo/Campo.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/modelo/Comentario.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/modelo/Funcionario.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/modelo/Item.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/modelo/Nivel.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/modelo/Organizacao.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/modelo/Setor.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/modelo/SolicitacaoDelegacao.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/modelo/TipoCampo.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/modelo/TipoItem.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/modelo/TipoSolicitacaoDelegacao.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/modelo/Usuario.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/Campo$1.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/Campo.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/Comentario$1.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/Comentario.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/Funcionario$1.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/Funcionario.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/Item$1.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/Item.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/Nivel$1.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/Nivel.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/Organizacao$1.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/Organizacao.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/Setor$1.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/Setor.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/SolicitacaoDelegacao$1.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/SolicitacaoDelegacao.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/TipoCampo$1.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/TipoCampo.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/TipoItem$1.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/TipoItem.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/TipoSolicitacaoDelegacao$1.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/TipoSolicitacaoDelegacao.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/Usuario$1.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/Usuario.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/saph/Conf.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/tipo/TipoCampo.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/tipo/TipoSolicitacaoDelegacao.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/tipo/TipoStatus.class&#10;#&#9;Sistemas/Portal/SAPH/.idea/workspace.xml" />
+    <MESSAGE value="Merge branch 'master' of https://github.com/Adelson111/SAPH&#10;&#10;# Conflicts:&#10;#&#9;Sistemas/Portal/SAPH/.idea/workspace.xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'master' of https://github.com/Adelson111/SAPH&#10;&#10;# Conflicts:&#10;#&#9;Sistemas/Portal/SAPH/.idea/workspace.xml" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/apps/core/views.py</url>
+          <line>148</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/apps/core/views.py</url>
+          <line>126</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
         <watch expression="request._encoding" />
@@ -410,85 +585,67 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/SAPH$runserver.coverage" NAME="runserver Coverage Results" MODIFIED="1560135520080" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/SAPH$run.coverage" NAME="run Coverage Results" MODIFIED="1561407998013" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="debuggerHistoryManager">
+    <expressions id="evaluateCodeFragment">
+      <expression>
+        <expression-string>from apps.item.models import Item
+
+Item.objects.all()</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+    </expressions>
     <expressions id="evaluateExpression">
       <expression>
-        <expression-string>dicSetor</expression-string>
+        <expression-string>Item.objects.prefetch_related('campus')[0].campus.values()</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>lSetor</expression-string>
+        <expression-string>sol</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>setores</expression-string>
+        <expression-string>campus</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>lNiveis</expression-string>
+        <expression-string>Item.objects.prefetch_related('campus')</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>lnivel</expression-string>
+        <expression-string>Item.objects.prefetch_related('campus').filter()</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>self.from_email</expression-string>
+        <expression-string>Item.objects.prefetch_related('campus').filter(item_item_campus__pk=2)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>self</expression-string>
+        <expression-string>Item.objects.prefetch_related('campus').filter(item_item__pk=2)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>self.request.POST['email']</expression-string>
+        <expression-string>Item.objects.prefetch_related('campus').filter(item_item__pk=2</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>self.request.POST</expression-string>
+        <expression-string>dicitenssolicitacao</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/apps/organizacao/templates/organizacao/organizacao_update_form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="35" lean-forward="true" selection-start-line="26" selection-start-column="35" selection-end-line="26" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/registration/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="14" column="19" lean-forward="true" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/registration/password_reset_done.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/core/templates/core/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="34" column="32" lean-forward="true" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -554,23 +711,6 @@
           <folding>
             <element signature="e#628#660#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/item/models.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/solicitacao/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/solicitacao/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" selection-end-column="4" />
         </state>
       </provider>
     </entry>
@@ -787,16 +927,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/core/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="120" column="48" selection-start-line="120" selection-start-column="48" selection-end-line="120" selection-end-column="48" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/apps/nivel/templates/nivel/nivel_form.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -816,10 +946,77 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/apps/organizacao/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="156" column="58" selection-start-line="156" selection-start-column="58" selection-end-line="156" selection-end-column="58" />
+        <state relative-caret-position="395">
+          <caret line="49" column="9" lean-forward="true" selection-start-line="49" selection-start-column="9" selection-end-line="49" selection-end-column="9" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/item/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="6" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/organizacao/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/solicitacao/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/solicitacao/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="10" column="75" lean-forward="true" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/core/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-90">
+          <caret line="9" selection-start-line="9" selection-end-line="9" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/solicitacao/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" selection-start-line="5" selection-end-line="5" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/delegacao/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="29" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/delegacao/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="40" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>

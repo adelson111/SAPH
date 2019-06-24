@@ -14,8 +14,17 @@ router.get('/', function(req, res, next) {
 router.get('/contato',(req, res, next)=>{
   res.render('contato', {
     title: 'Contato - SAPH',
+    home : true
   });
 });
+
+router.get('/login',(req, res, next)=>{
+  res.render('login', {
+    title: 'Login - SAPH',
+    home : true
+  });
+});
+
 
 router.get('/sobre',(req, res, next)=>{
   res.render('sobre', {

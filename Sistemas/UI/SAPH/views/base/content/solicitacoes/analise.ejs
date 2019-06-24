@@ -1,36 +1,15 @@
-<div class="Portfolio">
-  <a href="#!" data-toggle="modal" data-target="#largeModal">
-    <img class="card-img" src="http://www.pngmart.com/files/7/Envelope-PNG-Transparent.png" alt="">
-  </a>
-  <div class="desc">Cagaa</div>
-</div>
-<div class="Portfolio">
-  <a href="#!" data-toggle="modal" data-target="#largeModal">
-    <img class="card-img" src="http://www.pngmart.com/files/7/Envelope-PNG-Transparent.png" alt="">
-  </a>
-  <div class="desc">Cagaa</div>
-</div>
-<div class="Portfolio">
-  <a href="#!" data-toggle="modal" data-target="#largeModal">
-    <img class="card-img" src="http://www.pngmart.com/files/7/Envelope-PNG-Transparent.png" alt="">
-  </a>
-  <div class="desc">Cagaa</div>
-</div>
-<div class="Portfolio">
-  <a href="#!" data-toggle="modal" data-target="#largeModal">
-    <img class="card-img" src="http://www.pngmart.com/files/7/Envelope-PNG-Transparent.png" alt="">
-  </a>
-  <div class="desc">Cagaa</div>
-</div>
-<div class="Portfolio">
-  <a href="#!" data-toggle="modal" data-target="#largeModal">
-    <img class="card-img" src="http://www.pngmart.com/files/7/Envelope-PNG-Transparent.png" alt="">
-  </a>
-  <div class="desc">Cagaa</div>
-</div>
-<div class="Portfolio">
-  <a href="#!" data-toggle="modal" data-target="#largeModal">
-    <img class="card-img" src="http://www.pngmart.com/files/7/Envelope-PNG-Transparent.png" alt="">
-  </a>
-  <div class="desc">Cagaa</div>
-</div>
+<%existe = false;%>
+<%solicitacoes.forEach(function(solicitacao){%>
+  <% if(solicitacao.status == "EM_ESPERA"){%>
+    <%existe = true;%>
+    <div class="Portfolio">
+      <a href="#!" data-toggle="modal" data-target="#largeModal">
+        <img class="card-img" src="http://www.pngmart.com/files/7/Envelope-PNG-Transparent.png" alt="">
+      </a>
+      <div class="desc"><%=solicitacao.tipoSolicitacaoDelegacao.nome%></div>
+    </div>
+  <%}%>
+<%});%>
+<%if(!existe){%>
+  <h1>0 solicitações em analise</h1>
+<%}%>

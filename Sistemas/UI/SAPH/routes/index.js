@@ -18,6 +18,14 @@ router.get('/contato',(req, res, next)=>{
   });
 });
 
+router.get('/login',(req, res, next)=>{
+  res.render('login', {
+    title: 'Login - SAPH',
+    home : true
+  });
+});
+
+
 router.get('/sobre',(req, res, next)=>{
   res.render('sobre', {
     title: 'Sobre - SAPH',

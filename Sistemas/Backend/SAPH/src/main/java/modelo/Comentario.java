@@ -31,15 +31,15 @@ public class Comentario implements Serializable {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequencia_comentario")
     private long id;
     
-    @Column(length = 300, nullable = false)
+    @Column(length = 300)
     private String comentario;
     
     @ManyToOne
-    @JoinColumn(name = "solicitacao_delegacao_id", nullable = false)
+    @JoinColumn(name = "solicitacao_delegacao_id")
     private SolicitacaoDelegacao solicitacaoDelegacao;
     
     @ManyToOne
-    @JoinColumn(name = "funcionario_id", nullable = false)
+    @JoinColumn(name = "funcionario_id")
     private Funcionario funcionario;
 
     public long getId() {

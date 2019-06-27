@@ -35,7 +35,7 @@ public class Item implements Serializable {
     private long id;
     
     @OneToOne
-    @JoinColumn(name = "tipo_item_id", nullable = false)
+    @JoinColumn(name = "tipo_item_id")
     private TipoItem tipoItem;
     
     @OneToMany(fetch = FetchType.EAGER)

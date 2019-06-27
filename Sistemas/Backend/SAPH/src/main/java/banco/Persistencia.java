@@ -37,7 +37,7 @@ public class Persistencia {
             em.getTransaction().commit();
             return "Cadastrado com sucesso!";
         } catch (Exception e) {
-            System.out.println("Erro ao cadastrar: " + e.getMessage());
+            System.out.println("Erro ao cadastrar - "+objeto.getClass().getName()+" : " + e.getMessage());
             em.getTransaction().rollback();
         } finally {
             em.close();

@@ -1,58 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6a27e0a3-f03d-4cc7-be92-64b4000d9b95" name="Default Changelist" comment="Merge branch 'master' of https://github.com/Adelson111/SAPH&#10;&#10;# Conflicts:&#10;#&#9;Sistemas/Portal/SAPH/.idea/workspace.xml">
-      <change afterPath="$PROJECT_DIR$/../../../Arquivo/exportação do portal.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Arquivo/subir portal.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/nb-configuration.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/banco/Persistencia.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Campo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Comentario.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Funcionario.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Item.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Nivel.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Organizacao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Setor.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/SolicitacaoDelegacao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/TipoCampo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/TipoItem.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/TipoSolicitacaoDelegacao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Usuario.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Campo$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Campo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Comentario$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Comentario.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Funcionario$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Funcionario.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Item$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Item.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Nivel$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Nivel.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Organizacao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Setor$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Setor.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/SolicitacaoDelegacao$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/SolicitacaoDelegacao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/TipoCampo$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/TipoCampo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/TipoItem$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/TipoItem.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/TipoSolicitacaoDelegacao$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/TipoSolicitacaoDelegacao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Usuario$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Usuario.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/saph/Conf.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/tipo/TipoCampo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/tipo/TipoSolicitacaoDelegacao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/tipo/TipoStatus.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../UI/SAPH/public/img/eeee.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/content/index/contato.ejs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/content/index/em-comum.ejs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/content/index/index.ejs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/content/index/login.ejs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/content/index/sobre.ejs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../UI/SAPH/views/login.ejs" afterDir="false" />
+    <list default="true" id="6a27e0a3-f03d-4cc7-be92-64b4000d9b95" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/.classpath" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/.factorypath" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/.project" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/.settings/org.eclipse.core.resources.prefs" beforeDir="false" />
@@ -64,56 +15,54 @@
       <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/.settings/org.eclipse.wst.common.project.facet.core.prefs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/.settings/org.eclipse.wst.common.project.facet.core.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/.settings/org.eclipse.wst.validation.prefs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/banco/Persistencia.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/banco/Persistencia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/Campo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/Campo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/Comentario.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/Comentario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/Funcionario.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/Funcionario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/Nivel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/Nivel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/Organizacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/Organizacao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/Setor.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/Setor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/SolicitacaoDelegacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/SolicitacaoDelegacao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/TipoCampo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/TipoCampo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/TipoItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/TipoItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/TipoSolicitacaoDelegacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/TipoSolicitacaoDelegacao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/modelo/Usuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/rest/Organizacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Backend/SAPH/src/main/java/rest/Organizacao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/SAPH.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/SAPH.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/lib/unknown/binary/hibernate-jpamodelgen-4.3.1.Final/SNAPSHOT/hibernate-jpamodelgen-4.3.1.Final-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/banco/Persistencia.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Campo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Comentario.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Funcionario.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Item.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Nivel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Organizacao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Setor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/SolicitacaoDelegacao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/TipoCampo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/TipoItem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/TipoSolicitacaoDelegacao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/modelo/Usuario.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Campo$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Campo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Comentario$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Comentario.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Funcionario$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Funcionario.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Item$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Item.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Nivel$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Nivel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Organizacao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Setor$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Setor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/SolicitacaoDelegacao$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/SolicitacaoDelegacao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/TipoCampo$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/TipoCampo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/TipoItem$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/TipoItem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/TipoSolicitacaoDelegacao$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/TipoSolicitacaoDelegacao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Usuario$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/rest/Usuario.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/saph/Conf.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/tipo/TipoCampo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/tipo/TipoSolicitacaoDelegacao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Backend/SAPH/target/classes/tipo/TipoStatus.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/core/templates/core/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/core/templates/core/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/core/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/core/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/delegacao/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/delegacao/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/delegacao/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/delegacao/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/delegacao/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/delegacao/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/funcionario/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/funcionario/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/funcionario/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/funcionario/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/item/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/item/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/nivel/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/nivel/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/nivel/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/nivel/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/organizacao/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/organizacao/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/organizacao/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/organizacao/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/setor/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/setor/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/setor/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/setor/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/solicitacao/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/solicitacao/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/navbar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/SAPH/routes/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/views/base/content/section1.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/views/base/content/section2.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/views/base/content/solicitacoes/analise.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/content/solicitacoes/analise.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/views/base/content/solicitacoes/confirmadas.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/content/solicitacoes/confirmadas.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/views/base/content/solicitacoes/recusadas.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/content/solicitacoes/recusadas.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/views/base/content/solicitacoes/salvas.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/content/solicitacoes/salvas.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/views/base/content/solicitacoes/todas.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/content/solicitacoes/todas.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/views/base/conteudo-topo.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/conteudo-topo.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/views/base/footer-index.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/footer-index.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/views/base/footer.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/views/base/header-index.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/views/base/menu-index.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/SAPH/views/base/menu-index.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/views/base/modal-login.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/views/base/section-index.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/views/contato.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/SAPH/views/contato.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/views/index.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/SAPH/views/index.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UI/SAPH/views/sobre.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/SAPH/views/sobre.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/funcionario/templates/funcionario/funcionario_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/funcionario/templates/funcionario/funcionario_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/funcionario/templates/funcionario/funcionario_pre_update_funcionario.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/funcionario/templates/funcionario/funcionario_pre_update_funcionario.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/funcionario/templates/funcionario/funcionario_update_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/funcionario/templates/funcionario/funcionario_update_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/organizacao/templates/organizacao/organizacao_update_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/organizacao/templates/organizacao/organizacao_update_form.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -123,11 +72,34 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/apps/delegacao/models.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/apps/funcionario/templates/funcionario/funcionario_form.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="40" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
+            <state relative-caret-position="97">
+              <caret line="75" selection-start-line="75" selection-end-line="84" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/apps/funcionario/templates/funcionario/funcionario_pre_update_funcionario.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="162">
+              <caret line="47" column="33" selection-start-line="47" selection-start-column="33" selection-end-line="47" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/apps/funcionario/templates/funcionario/funcionario_pre_cadastro_funcionario.html">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/apps/funcionario/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="11" column="10" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="34" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -136,34 +108,64 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/solicitacao/admin.py">
+        <entry file="file://$PROJECT_DIR$/apps/nivel/templates/nivel/nivel_form.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" selection-start-line="5" selection-end-line="5" selection-end-column="32" />
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="660">
+              <caret line="71" column="51" selection-start-line="71" selection-start-column="24" selection-end-line="71" selection-end-column="51" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/delegacao/admin.py">
+        <entry file="file://$PROJECT_DIR$/apps/organizacao/templates/organizacao/organizacao_form.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="29" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="117">
+              <caret line="35" selection-start-line="35" selection-end-line="41" selection-end-column="9" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/solicitacao/models.py">
+        <entry file="file://$PROJECT_DIR$/apps/organizacao/templates/organizacao/organizacao_update_form.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="372">
+              <caret line="41" column="8" selection-start-line="41" selection-start-column="8" selection-end-line="41" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/apps/organizacao/urls.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="90">
-              <caret line="10" column="75" lean-forward="true" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="75" />
+              <caret line="6" column="32" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="32" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/apps/setor/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="24" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="24" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/apps/solicitacao/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="27" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="27" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -183,17 +185,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/apps/setor/urls.py" />
-        <option value="$PROJECT_DIR$/apps/setor/templates/setor/setor_detalhar.html" />
-        <option value="$PROJECT_DIR$/apps/organizacao/templates/organizacao/organizacao_update_form.html" />
         <option value="$PROJECT_DIR$/apps/delegacao/templates/delegacao/delegacao_confirm_delete.html" />
         <option value="$PROJECT_DIR$/apps/funcionario/templates/funcionario/funcionario_bloquear_funcionario.html" />
-        <option value="$PROJECT_DIR$/apps/funcionario/templates/funcionario/funcionario_update_form.html" />
         <option value="$PROJECT_DIR$/apps/nivel/templates/nivel/nivel_confirm_delete.html" />
         <option value="$PROJECT_DIR$/apps/setor/templates/setor/setor_confirm_delete.html" />
         <option value="$PROJECT_DIR$/apps/setor/templates/setor/setor_update_form.html" />
         <option value="$PROJECT_DIR$/apps/solicitacao/templates/solicitacao/solicitacao_confirm_delete.html" />
-        <option value="$PROJECT_DIR$/apps/funcionario/urls.py" />
         <option value="$PROJECT_DIR$/requirements" />
         <option value="$PROJECT_DIR$/apps/organizacao/serializer.py" />
         <option value="$PROJECT_DIR$/apps/organizacao/models.py" />
@@ -210,31 +207,43 @@
         <option value="$PROJECT_DIR$/templates/registration/password_reset_confirm.html" />
         <option value="$PROJECT_DIR$/templates/registration/password_reset_complete.html" />
         <option value="$PROJECT_DIR$/apps/solicitacao/models.py" />
-        <option value="$PROJECT_DIR$/apps/solicitacao/views.py" />
-        <option value="$PROJECT_DIR$/apps/setor/views.py" />
-        <option value="$PROJECT_DIR$/apps/delegacao/views.py" />
-        <option value="$PROJECT_DIR$/apps/item/views.py" />
-        <option value="$PROJECT_DIR$/apps/organizacao/views.py" />
         <option value="$PROJECT_DIR$/apps/nivel/templates/nivel/nivel_organograma.html" />
-        <option value="$PROJECT_DIR$/apps/funcionario/views.py" />
         <option value="$PROJECT_DIR$/apps/core/urls.py" />
-        <option value="$PROJECT_DIR$/apps/nivel/urls.py" />
-        <option value="$PROJECT_DIR$/apps/nivel/views.py" />
         <option value="$PROJECT_DIR$/statics/css/estilo_formulario.css" />
         <option value="$PROJECT_DIR$/statics/css/posicionamento.css" />
         <option value="$PROJECT_DIR$/apps/solicitacao/templates/solicitacao/solicitacao_form.html" />
+        <option value="$PROJECT_DIR$/apps/funcionario/views.py" />
+        <option value="$PROJECT_DIR$/apps/nivel/views.py" />
+        <option value="$PROJECT_DIR$/apps/setor/views.py" />
+        <option value="$PROJECT_DIR$/apps/solicitacao/views.py" />
+        <option value="$PROJECT_DIR$/apps/organizacao/urls.py" />
+        <option value="$PROJECT_DIR$/apps/setor/urls.py" />
+        <option value="$PROJECT_DIR$/apps/nivel/urls.py" />
+        <option value="$PROJECT_DIR$/apps/funcionario/urls.py" />
+        <option value="$PROJECT_DIR$/apps/organizacao/views.py" />
         <option value="$PROJECT_DIR$/templates/navbar.html" />
-        <option value="$PROJECT_DIR$/apps/delegacao/models.py" />
-        <option value="$PROJECT_DIR$/apps/core/views.py" />
         <option value="$PROJECT_DIR$/apps/delegacao/admin.py" />
+        <option value="$PROJECT_DIR$/apps/delegacao/models.py" />
+        <option value="$PROJECT_DIR$/apps/solicitacao/form.py" />
+        <option value="$PROJECT_DIR$/apps/delegacao/views.py" />
+        <option value="$PROJECT_DIR$/apps/delegacao/templates/delegacao/delegacao_update_form.html" />
+        <option value="$PROJECT_DIR$/apps/delegacao/templates/delegacao/delegacao_form.html" />
+        <option value="$PROJECT_DIR$/apps/item/views.py" />
+        <option value="$PROJECT_DIR$/apps/core/templates/core/home.html" />
+        <option value="$PROJECT_DIR$/apps/core/views.py" />
+        <option value="$PROJECT_DIR$/apps/funcionario/templates/funcionario/funcionario_form.html" />
+        <option value="$PROJECT_DIR$/apps/funcionario/templates/funcionario/funcionario_update_form.html" />
+        <option value="$PROJECT_DIR$/apps/funcionario/templates/funcionario/funcionario_list.html" />
+        <option value="$PROJECT_DIR$/apps/funcionario/templates/funcionario/funcionario_pre_update_funcionario.html" />
+        <option value="$PROJECT_DIR$/apps/organizacao/templates/organizacao/organizacao_update_form.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="395" />
-    <option name="y" value="92" />
-    <option name="width" value="1024" />
-    <option name="height" value="574" />
+    <option name="x" value="372" />
+    <option name="y" value="1076" />
+    <option name="width" value="975" />
+    <option name="height" value="557" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -244,7 +253,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -260,31 +268,19 @@
             <path>
               <item name="SAPH" type="b2602c69:ProjectViewProjectNode" />
               <item name="SAPH" type="462c0819:PsiDirectoryNode" />
-              <item name="apps" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SAPH" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SAPH" type="462c0819:PsiDirectoryNode" />
-              <item name="apps" type="462c0819:PsiDirectoryNode" />
-              <item name="delegacao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SAPH" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SAPH" type="462c0819:PsiDirectoryNode" />
-              <item name="apps" type="462c0819:PsiDirectoryNode" />
-              <item name="solicitacao" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/manage.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -333,9 +329,9 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="$USER_HOME$/Ambiente/venv/bin/python" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
@@ -362,8 +358,6 @@
       <workItem from="1560085960495" duration="1560000" />
       <workItem from="1560121314428" duration="10403000" />
       <workItem from="1560296026858" duration="1040000" />
-      <workItem from="1561176554815" duration="1429000" />
-      <workItem from="1561402316796" duration="5994000" />
     </task>
     <task id="LOCAL-00001" summary="Teste request Portal">
       <created>1559878787060</created>
@@ -428,25 +422,32 @@
       <option name="project" value="LOCAL" />
       <updated>1560772485137</updated>
     </task>
-    <task id="LOCAL-00010" summary="Merge branch 'master' of https://github.com/Adelson111/SAPH&#10;&#10;# Conflicts:&#10;#&#9;Sistemas/Backend/SAPH/target/classes/banco/Persistencia.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/modelo/Campo.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/modelo/Comentario.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/modelo/Funcionario.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/modelo/Item.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/modelo/Nivel.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/modelo/Organizacao.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/modelo/Setor.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/modelo/SolicitacaoDelegacao.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/modelo/TipoCampo.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/modelo/TipoItem.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/modelo/TipoSolicitacaoDelegacao.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/modelo/Usuario.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/Campo$1.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/Campo.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/Comentario$1.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/Comentario.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/Funcionario$1.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/Funcionario.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/Item$1.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/Item.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/Nivel$1.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/Nivel.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/Organizacao$1.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/Organizacao.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/Setor$1.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/Setor.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/SolicitacaoDelegacao$1.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/SolicitacaoDelegacao.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/TipoCampo$1.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/TipoCampo.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/TipoItem$1.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/TipoItem.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/TipoSolicitacaoDelegacao$1.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/TipoSolicitacaoDelegacao.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/Usuario$1.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/Usuario.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/saph/Conf.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/tipo/TipoCampo.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/tipo/TipoSolicitacaoDelegacao.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/tipo/TipoStatus.class&#10;#&#9;Sistemas/Portal/SAPH/.idea/workspace.xml">
-      <created>1561176619996</created>
+    <task id="LOCAL-00010" summary="Enviar configuração backend">
+      <created>1561216262612</created>
       <option name="number" value="00010" />
       <option name="presentableId" value="LOCAL-00010" />
       <option name="project" value="LOCAL" />
-      <updated>1561176619996</updated>
+      <updated>1561216262616</updated>
     </task>
-    <task id="LOCAL-00011" summary="Merge branch 'master' of https://github.com/Adelson111/SAPH&#10;&#10;# Conflicts:&#10;#&#9;Sistemas/Backend/SAPH/target/classes/banco/Persistencia.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/modelo/Campo.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/modelo/Comentario.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/modelo/Funcionario.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/modelo/Item.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/modelo/Nivel.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/modelo/Organizacao.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/modelo/Setor.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/modelo/SolicitacaoDelegacao.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/modelo/TipoCampo.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/modelo/TipoItem.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/modelo/TipoSolicitacaoDelegacao.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/modelo/Usuario.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/Campo$1.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/Campo.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/Comentario$1.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/Comentario.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/Funcionario$1.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/Funcionario.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/Item$1.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/Item.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/Nivel$1.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/Nivel.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/Organizacao$1.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/Organizacao.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/Setor$1.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/Setor.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/SolicitacaoDelegacao$1.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/SolicitacaoDelegacao.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/TipoCampo$1.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/TipoCampo.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/TipoItem$1.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/TipoItem.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/TipoSolicitacaoDelegacao$1.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/TipoSolicitacaoDelegacao.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/Usuario$1.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/Usuario.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/saph/Conf.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/tipo/TipoCampo.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/tipo/TipoSolicitacaoDelegacao.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/tipo/TipoStatus.class&#10;#&#9;Sistemas/Portal/SAPH/.idea/workspace.xml">
-      <created>1561176701908</created>
+    <task id="LOCAL-00011" summary="Repondo projeto">
+      <created>1561633342277</created>
       <option name="number" value="00011" />
       <option name="presentableId" value="LOCAL-00011" />
       <option name="project" value="LOCAL" />
-      <updated>1561176701908</updated>
+      <updated>1561633342279</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Finalizando reparo">
+      <created>1561633669509</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1561633669509</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20426000" />
+    <option name="totallyTimeSpent" value="13003000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -458,20 +459,20 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="-1" width="1920" height="1080" extended-state="6" />
+    <frame x="320" y="1076" width="1301" height="772" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22145145" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.31768388" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.39270386" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49843505" weight="0.34120172" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.4347826" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49843505" weight="0.3416149" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32919255" />
-      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49843505" weight="0.46724138" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3251073" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49843505" weight="0.4665272" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32608697" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5015649" side_tool="true" weight="0.3416149" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.32919255" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
@@ -483,17 +484,17 @@
       <window_info anchor="right" id="SciView" order="4" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2219697" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21517996" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.39285713" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.49843505" visible="true" weight="0.3413793" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49843505" weight="0.3416149" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32919255" />
-      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49843505" weight="0.46724138" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49843505" weight="0.46784565" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32608697" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5015649" side_tool="true" weight="0.3416149" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.32919255" />
@@ -558,25 +559,12 @@
     <MESSAGE value="Apagando projeto não utilizado" />
     <MESSAGE value="Conserto do backend e base de dados" />
     <MESSAGE value="Criação de exportar do portal e autenticar do backend" />
-    <MESSAGE value="Merge branch 'master' of https://github.com/Adelson111/SAPH&#10;&#10;# Conflicts:&#10;#&#9;Sistemas/Backend/SAPH/target/classes/banco/Persistencia.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/modelo/Campo.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/modelo/Comentario.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/modelo/Funcionario.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/modelo/Item.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/modelo/Nivel.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/modelo/Organizacao.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/modelo/Setor.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/modelo/SolicitacaoDelegacao.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/modelo/TipoCampo.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/modelo/TipoItem.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/modelo/TipoSolicitacaoDelegacao.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/modelo/Usuario.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/Campo$1.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/Campo.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/Comentario$1.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/Comentario.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/Funcionario$1.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/Funcionario.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/Item$1.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/Item.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/Nivel$1.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/Nivel.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/Organizacao$1.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/Organizacao.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/Setor$1.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/Setor.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/SolicitacaoDelegacao$1.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/SolicitacaoDelegacao.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/TipoCampo$1.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/TipoCampo.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/TipoItem$1.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/TipoItem.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/TipoSolicitacaoDelegacao$1.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/TipoSolicitacaoDelegacao.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/Usuario$1.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/rest/Usuario.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/saph/Conf.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/tipo/TipoCampo.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/tipo/TipoSolicitacaoDelegacao.class&#10;#&#9;Sistemas/Backend/SAPH/target/classes/tipo/TipoStatus.class&#10;#&#9;Sistemas/Portal/SAPH/.idea/workspace.xml" />
-    <MESSAGE value="Merge branch 'master' of https://github.com/Adelson111/SAPH&#10;&#10;# Conflicts:&#10;#&#9;Sistemas/Portal/SAPH/.idea/workspace.xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'master' of https://github.com/Adelson111/SAPH&#10;&#10;# Conflicts:&#10;#&#9;Sistemas/Portal/SAPH/.idea/workspace.xml" />
+    <MESSAGE value="Enviar configuração backend" />
+    <MESSAGE value="Repondo projeto" />
+    <MESSAGE value="Finalizando reparo" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finalizando reparo" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/apps/core/views.py</url>
-          <line>148</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/apps/core/views.py</url>
-          <line>126</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
         <watch expression="request._encoding" />
@@ -585,229 +573,57 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/SAPH$runserver.coverage" NAME="runserver Coverage Results" MODIFIED="1560135520080" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/SAPH$run.coverage" NAME="run Coverage Results" MODIFIED="1561407998013" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="debuggerHistoryManager">
-    <expressions id="evaluateCodeFragment">
-      <expression>
-        <expression-string>from apps.item.models import Item
-
-Item.objects.all()</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
-      </expression>
-    </expressions>
     <expressions id="evaluateExpression">
       <expression>
-        <expression-string>Item.objects.prefetch_related('campus')[0].campus.values()</expression-string>
+        <expression-string>lSocilitacoesDelegacoes</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>sol</expression-string>
+        <expression-string>Item.objects.filter(campus__pk=1).values('campus__pk', 'campus__nome', 'campus__descricao', 'campus__tipo')</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>campus</expression-string>
+        <expression-string>lisa</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>Item.objects.prefetch_related('campus')</expression-string>
+        <expression-string>Item.objects.filter(campus__pk=itens['id']).values('campus__pk', 'campus__nome', 'campus__descricao', 'campus__tipo')</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>Item.objects.prefetch_related('campus').filter()</expression-string>
+        <expression-string>lOrganizacao1</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>Item.objects.prefetch_related('campus').filter(item_item_campus__pk=2)</expression-string>
+        <expression-string>lOrganizacao</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>Item.objects.prefetch_related('campus').filter(item_item__pk=2)</expression-string>
+        <expression-string>dicSetor</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>Item.objects.prefetch_related('campus').filter(item_item__pk=2</expression-string>
+        <expression-string>lSetor</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>dicitenssolicitacao</expression-string>
+        <expression-string>setores</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/registration/password_reset_subject.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="17" selection-start-column="17" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/ambienteTeste1/lib/python3.6/site-packages/django/contrib/auth/urls.py" />
-    <entry file="file://$USER_HOME$/ambienteTeste1/lib/python3.6/site-packages/django/contrib/auth/views.py" />
-    <entry file="file://$PROJECT_DIR$/templates/registration/password_reset_complete.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/registration/password_reset_form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="14" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/registration/password_reset_email.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/registration/password_reset_confirm.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="44" selection-start-line="13" selection-start-column="44" selection-end-line="13" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SAPH/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1520">
-          <caret line="149" column="16" selection-start-line="149" selection-start-column="16" selection-end-line="149" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/requirements">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="15" lean-forward="true" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SAPH/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-52">
-          <caret line="27" column="21" lean-forward="true" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
-          <folding>
-            <element signature="e#628#660#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/delegacao/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/item/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/nivel/templates/nivel/nivel_organograma.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="62" column="28" selection-start-line="62" selection-start-column="28" selection-end-line="62" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/funcionario/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="107" lean-forward="true" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="107" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/404.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="20" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/funcionario/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="30" column="49" selection-start-line="30" selection-start-column="49" selection-end-line="30" selection-end-column="49" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/nivel/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="15" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="15" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/nivel/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="203" column="19" selection-start-line="203" selection-start-column="19" selection-end-line="203" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/funcionario/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="187" column="60" selection-start-line="187" selection-start-column="60" selection-end-line="187" selection-end-column="60" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/setor/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-981">
-          <caret line="14" column="25" lean-forward="true" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/setor/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/statics/css/estilo_formulario.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="497">
@@ -837,13 +653,6 @@ Item.objects.all()</expression-string>
         <state relative-caret-position="-98" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/solicitacao/templates/solicitacao/solicitacao_update_form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1133">
-          <caret line="182" column="9" lean-forward="true" selection-start-line="107" selection-end-line="182" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/apps/setor/templates/setor/setor_form.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="472">
@@ -851,58 +660,8 @@ Item.objects.all()</expression-string>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/solicitacao/templates/solicitacao/solicitacao_form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="58" column="36" lean-forward="true" selection-start-line="58" selection-start-column="36" selection-end-line="58" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/funcionario/templates/funcionario/funcionario_update_form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-846" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/funcionario/templates/funcionario/funcionario_pre_update_funcionario.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-441" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/funcionario/templates/funcionario/funcionario_pre_cadastro_funcionario.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/funcionario/templates/funcionario/funcionario_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-201" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/funcionario/templates/funcionario/funcionario_func_bloqueado.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-141" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/funcionario/templates/funcionario/funcionario_form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1041" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/funcionario/templates/funcionario/funcionario_bloquear_funcionario.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-276" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/apps/nivel/templates/nivel/nivel_confirm_delete.html">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/nivel/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="74" selection-start-line="11" selection-start-column="74" selection-end-line="11" selection-end-column="74" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/apps/organizacao/models.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -914,23 +673,23 @@ Item.objects.all()</expression-string>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/navbar.html">
+    <entry file="file://$PROJECT_DIR$/apps/setor/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="185" column="20" selection-start-line="185" selection-start-column="20" selection-end-line="185" selection-end-column="20" />
+        <state relative-caret-position="292">
+          <caret line="80" selection-start-line="80" selection-end-line="80" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="e#0#11#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/nivel/templates/nivel/nivel_form.html">
+    <entry file="file://$PROJECT_DIR$/apps/nivel/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="71" column="51" lean-forward="true" selection-start-line="71" selection-start-column="24" selection-end-line="71" selection-end-column="51" />
+        <state relative-caret-position="45">
+          <caret line="3" column="59" selection-start-line="3" selection-start-column="59" selection-end-line="3" selection-end-column="59" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -946,57 +705,21 @@ Item.objects.all()</expression-string>
     </entry>
     <entry file="file://$PROJECT_DIR$/apps/organizacao/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="395">
-          <caret line="49" column="9" lean-forward="true" selection-start-line="49" selection-start-column="9" selection-end-line="49" selection-end-column="9" />
+        <state relative-caret-position="-317">
+          <caret line="10" column="65" selection-start-line="10" selection-start-column="65" selection-end-line="10" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/navbar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="562">
+          <caret line="191" column="34" selection-start-line="191" selection-start-column="34" selection-end-line="191" selection-end-column="34" />
           <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/item/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="6" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/organizacao/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/solicitacao/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/solicitacao/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="10" column="75" lean-forward="true" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/core/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-90">
-          <caret line="9" selection-start-line="9" selection-end-line="9" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/solicitacao/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" selection-start-line="5" selection-end-line="5" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1011,10 +734,280 @@ Item.objects.all()</expression-string>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/apps/solicitacao/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" selection-start-line="5" selection-end-line="5" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/nivel/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="76" column="29" selection-start-line="76" selection-start-column="29" selection-end-line="76" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/solicitacao/templates/solicitacao/solicitacao_confirm_delete.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/delegacao/templates/delegacao/delegacao_confirm_delete.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/solicitacao/tests.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/delegacao/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="75" lean-forward="true" selection-start-line="5" selection-start-column="75" selection-end-line="5" selection-end-column="75" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/solicitacao/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="14" column="22" lean-forward="true" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/solicitacao/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="26" column="33" lean-forward="true" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/solicitacao/form.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/solicitacao/templates/solicitacao/solicitacao_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1073">
+          <caret line="93" column="19" lean-forward="true" selection-start-line="93" selection-start-column="19" selection-end-line="93" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/solicitacao/templates/solicitacao/solicitacao_update_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/delegacao/templates/delegacao/delegacao_update_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="37" column="28" lean-forward="true" selection-start-line="37" selection-start-column="28" selection-end-line="37" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/apps/delegacao/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="40" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
+        <state relative-caret-position="195">
+          <caret line="19" column="24" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/delegacao/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="57" lean-forward="true" selection-start-line="22" selection-start-column="57" selection-end-line="22" selection-end-column="57" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/item/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="22" lean-forward="true" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/item/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="35" lean-forward="true" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/item/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="489">
+          <caret line="46" column="28" selection-start-line="46" selection-start-column="28" selection-end-line="46" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/core/templates/core/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-180">
+          <caret line="21" column="10" lean-forward="true" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/core/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="152" column="44" lean-forward="true" selection-start-line="152" selection-start-column="44" selection-end-line="152" selection-end-column="44" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/funcionario/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="30" column="49" selection-start-line="30" selection-start-column="49" selection-end-line="30" selection-end-column="49" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/funcionario/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-195">
+          <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/delegacao/templates/delegacao/delegacao_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="37" column="28" selection-start-line="37" selection-start-column="28" selection-end-line="37" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/funcionario/templates/funcionario/email/func_novo.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/funcionario/templates/funcionario/funcionario_update_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="71" column="51" lean-forward="true" selection-start-line="71" selection-start-column="51" selection-end-line="71" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/funcionario/templates/funcionario/funcionario_bloquear_funcionario.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-135" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/funcionario/templates/funcionario/funcionario_func_bloqueado.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-135" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/funcionario/templates/funcionario/funcionario_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/funcionario/templates/funcionario/funcionario_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="97">
+          <caret line="75" selection-start-line="75" selection-end-line="84" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/funcionario/templates/funcionario/funcionario_pre_update_funcionario.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="47" column="33" selection-start-line="47" selection-start-column="33" selection-end-line="47" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/funcionario/templates/funcionario/funcionario_pre_cadastro_funcionario.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/funcionario/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="11" column="10" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/nivel/templates/nivel/nivel_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="71" column="51" selection-start-line="71" selection-start-column="24" selection-end-line="71" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/organizacao/templates/organizacao/organizacao_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="117">
+          <caret line="35" selection-start-line="35" selection-end-line="41" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/organizacao/templates/organizacao/organizacao_update_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="372">
+          <caret line="41" column="8" selection-start-line="41" selection-start-column="8" selection-end-line="41" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/organizacao/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="32" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/setor/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="24" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/solicitacao/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="27" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="27" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>

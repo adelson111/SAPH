@@ -13,7 +13,7 @@ from apps.delegacao.models import Delegacao
 
 class CadastrarDelegacao(LoginRequiredMixin, CreateView):
     model = Delegacao
-    fields = ['tipo', 'descricao', 'itens']
+    fields = ['tipo', 'nivel', 'descricao', 'itens']
 
 class ListarDelegacao(LoginRequiredMixin, ListView):
     model = Delegacao
@@ -22,7 +22,7 @@ class ListarDelegacao(LoginRequiredMixin, ListView):
 
 class AtualizarDelegacao(LoginRequiredMixin, UpdateView):
     model = Delegacao
-    fields = ['tipo','descricao','itens']
+    fields = ['tipo', 'nivel', 'descricao','itens']
     def get_queryset(self):
         return Delegacao.objects.filter(pk=self.kwargs['pk'])
 

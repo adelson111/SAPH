@@ -23,8 +23,6 @@ class  CadastrarCampo(LoginRequiredMixin, CreateView):
         descricoes = request.POST.getlist('descricao')
         data = dict()
         for tipo,nome,descricao in zip(tipos,nomes,descricoes):
-            print(tipo)
-            print(nome)
             form = CampoForm({
                 'nome':nome,
                 'descricao':descricao,
@@ -46,6 +44,7 @@ class  CadastrarItem(LoginRequiredMixin, CreateView):
             data['id'] = item.id
             for campo in Campos.campos:
                 item.campus.add(campo)
+            Campos.campos=[]
 
         return JsonResponse(data)
 

@@ -9,9 +9,10 @@ from django.shortcuts import render
 from django.views import View
 from pip._vendor import requests
 
+from apps.delegacao.models import Delegacao
 from apps.funcionario.models import Funcionario
-from apps.nivel.models import Nivel
 from apps.item.models import Item
+from apps.nivel.models import Nivel
 from apps.organizacao.models import Organizacao
 from apps.setor.models import Setor
 from apps.solicitacao.models import Solicitacao
@@ -82,35 +83,50 @@ class Exportar(LoginRequiredMixin, View) :
 					'gerente': {'id': setor['gerente_id']}
 				}
 				lSetores.append(dicSetor1)
-			solicitacoes = Solicitacao.objects.prefetch_related('nivel').filter(nivel__id=nivel['id'])
-			lSocilitacoes = []
-			for solicitacao in solicitacoes:
-				lisa = []
-				for sol in solicitacao.itens.values('id', 'nome'):
-				# for sol in solicitacao.itens:
-					# solicitacao.itens.prefetch_related('campus')[0]
-					# Item.objects.prefetch_related('campus')[0].campus.values()
-					# Item.objects.prefetch_related('campus').filter(campus__pk=1)
-					# FALTA ISSO AQUI
-					listacampus = []
-					for campus in Item.objects.prefetch_related('campus').all():
-						listacampus.append(campus)
 
-					dicitenssolicitacao = {
-						'id': sol['id'],
-						'nome': sol['nome'],
-						'tipoCampos': listacampus
+			lSocilitacoesDelegacoes = []
+
+			solicitacoes = Solicitacao.objects.prefetch_related('nivel').filter(nivel__id=nivel['id'])
+			for solicitacao in solicitacoes:
+				ld = []
+				for itens in solicitacao.itens.values('id', 'nome'):
+					dicitensdelegacao = {
+						'id': itens['id'],
+						'nome': itens['nome'],
+						#'tipoCampos': list(Item.objects.filter(campus__pk=itens['id']).values('campus__pk', 'campus__nome', 'campus__descricao', 'campus__tipo'))
+						'tipoCampos': []
 					}
-					lisa.append(dicitenssolicitacao)
+					ld.append(dicitensdelegacao)
 				dic = {
 					'id': solicitacao.pk,
 					'nome': solicitacao.tipo,
 					'descricao': solicitacao.descricao,
 					'tipo': 'SOLICITACAO',
-					'tipoItens': lisa
+					'tipoItens': ld
 				}
 
-				lSocilitacoes.append(dic)
+				lSocilitacoesDelegacoes.append(dic)
+
+			delegacoes = Delegacao.objects.prefetch_related('nivel').filter(nivel__id=nivel['id'])
+			for delegacao in delegacoes:
+				ld = []
+				for itens in delegacao.itens.values('id', 'nome'):
+					dicitensdelegacao = {
+						'id': itens['id'],
+						'nome': itens['nome'],
+						#'tipoCampos': list(Item.objects.filter(campus__pk=itens['id']).values('campus__pk', 'campus__nome', 'campus__descricao', 'campus__tipo'))
+						'tipoCampos': []
+					}
+					ld.append(dicitensdelegacao)
+				dic = {
+					'id': delegacao.pk,
+					'nome': delegacao.tipo,
+					'descricao': delegacao.descricao,
+					'tipo': 'DELEGACAO',
+					'tipoItens': ld
+				}
+
+				lSocilitacoesDelegacoes.append(dic)
 
 			dic = {
 				'id': nivel['id'],
@@ -119,11 +135,9 @@ class Exportar(LoginRequiredMixin, View) :
 				'nivelInferior': nivelinfeiror,
 				'responsavel': {'id': nivel['funcionario_id']},
 				'setores': lSetores,
-				'tipoSolicitacoesDelegacoes': lSocilitacoes
+				'tipoSolicitacoesDelegacoes': lSocilitacoesDelegacoes
 			}
 			lNiveis.append(dic)
-
-
 		for organizacao in organizacoes:
 			organizacaoDic = {
 				'id': organizacao['id'],
@@ -138,12 +152,11 @@ class Exportar(LoginRequiredMixin, View) :
 
 		lOrganizacao1.append(organizacaoDic)
 
-		# Envio das requests
-		# resp = requests.post(url='http://localhost:8080/SAPH/saph/organizacao/exportar/',
-		# 							data=json.dumps(lOrganizacao1),
-		# 							headers={'content-type': 'application/json'})
-		# if (resp.status_code == 200 or resp.status_code == 201):
-		# 	return HttpResponse("sim")
-		# else:
-		# 	return HttpResponse("nao")
-		a = 10
+		# Envio da request
+		resp = requests.post(url='http://localhost:8080/SAPH/saph/organizacao/exportar/',
+									data=json.dumps(lOrganizacao1),
+									headers={'content-type': 'application/json'})
+		if (resp.status_code == 200 or resp.status_code == 201):
+			return HttpResponse("sim")
+		else:
+			return HttpResponse("nao")

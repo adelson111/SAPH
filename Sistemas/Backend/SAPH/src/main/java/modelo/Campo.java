@@ -32,13 +32,11 @@ public class Campo implements Serializable {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequencia_campo")
     private long id;
     
-    @Column(length = 300, nullable = false)
+    @Column(length = 300)
     private String valor;
     
-    
-    
     @OneToOne
-    @JoinColumn(name = "tipo_campo_id", nullable = false)
+    @JoinColumn(name = "tipo_campo_id")
     private TipoCampo tipoCampo;
 
     public long getId() {

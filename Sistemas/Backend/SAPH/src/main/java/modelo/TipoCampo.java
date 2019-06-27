@@ -24,14 +24,14 @@ public class TipoCampo implements Serializable {
     @Id
     private long id;
 
-    @Column(length = 80, nullable = false)
+    @Column(length = 80)
     private String nome;
 
-    @Column(length = 300, nullable = false)
+    @Column(length = 300)
     private String descricao;
 
     @Enumerated(EnumType.STRING)
-    @Column(length = 8, nullable = false)
+    @Column(length = 8)
     private tipo.TipoCampo tipo;
 
     public long getId() {

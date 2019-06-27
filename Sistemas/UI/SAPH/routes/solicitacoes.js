@@ -64,4 +64,14 @@ router.post('/cadadastrar', function (req, res) {
     res.send(data);
   });
 });
+
+router.post('/enviar', function (req, res) {
+  var args = {
+      data: req.body.solicitacao,
+      headers: { "Content-Type": "application/json" }
+  };
+  client.post("http://localhost:8080/SAPH/saph/solicitacao-delegacao/enviar",args,function (data, response) {
+    res.send(data);
+  });
+});
 module.exports = router;

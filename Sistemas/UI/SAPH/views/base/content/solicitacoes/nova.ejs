@@ -61,7 +61,7 @@
                   </div>
                   <div class="card-footer">
                     <div class="form-group float-right mr-5">
-                      <button type="button" class="btn btn-success btn-sm">
+                      <button type="button" class="btn btn-success btn-sm" id ="enviar">
                       <span class="glyphicon glyphicon-send"></span> Enviar</button>
                       <button type="submit" class="btn btn-success btn-sm" id ="guardar">
                       <span class="glyphicon glyphicon-floppy-disk" ></span> Guardar</button>
@@ -117,6 +117,13 @@ $('#imprimir').click(function(){
    window.print('new', '_blank');
 });
 $('#guardar').click(function(){
+  montarSolicitacao("cadadastrar");
+});
+$('#enviar').click(function(){
+  montarSolicitacao("enviar");
+});
+
+function montarSolicitacao(acao){
   var dici = new Map();
   tipoSolicitacao = $("select[name='tipo']").val();
   tipoItens = [];
@@ -149,9 +156,8 @@ $('#guardar').click(function(){
   }
   dici = JSON.stringify(dici);
   console.log(dici);
-  $.post("http://localhost:3000/solicitacoes/cadadastrar",{'solicitacao':dici},function(data){
+  $.post("http://localhost:3000/solicitacoes/"+acao,{'solicitacao':dici},function(data){
     alert(data);
   });
-});
-
+}
 </script>

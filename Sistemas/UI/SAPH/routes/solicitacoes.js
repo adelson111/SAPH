@@ -14,7 +14,7 @@ router.get('/new',(req, res, next)=>{
 });
 
 router.get('/list',(req, res, next)=>{
-  client.get("http://localhost:8080/SAPH/saph/solicitacao-delegacao/parametros/SOLICITACAO/7", function (data, response) {
+  client.get("http://localhost:8080/SAPH/saph/solicitacao-delegacao/parametros/SOLICITACAO/"+req.query.funcionario, function (data, response) {
     res.render('list', {
       title: 'Solicitacoes - SAPH',
       solicitacoes:data,
@@ -23,7 +23,7 @@ router.get('/list',(req, res, next)=>{
 });
 
 router.get('/listar-enviadas',(req, res, next)=>{
-  client.get("http://localhost:8080/SAPH/saph/solicitacao-delegacao/parametros/SOLICITACAO/7", function (data, response) {
+  client.get("http://localhost:8080/SAPH/saph/solicitacao-delegacao/parametros/SOLICITACAO/"+req.query.funcionario, function (data, response) {
     res.render('listar-enviadas', {
       title: 'Solicitacoes - SAPH',
       solicitacoes:data,

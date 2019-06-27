@@ -188,14 +188,14 @@ $('#guardar').click(function(){
       id:tipoSolicitacao
     },
     solicitanteDelegante:{
-      id:7
+      id:1
     },
     status:"SALVA",
     itens:tipoItens,
   }
   dici = JSON.stringify(dici);
   console.log(dici);
-  $.post("http://localhost:3000/solicitacoes/cada",{'solicitacao':dici},function(data){
+  $.post("http://localhost:3000/solicitacoes/cadadastrar",{'solicitacao':dici},function(data){
     alert(data);
   });
 });

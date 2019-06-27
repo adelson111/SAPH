@@ -61,8 +61,8 @@ public class Organizacao {
         return persistencia.cadastrar(organizacao);
 
 //        System.out.println(json.substring(1, json.length()-1));
-//        
 //        return json.substring(1, json.length()-1);
+        
     }
 
     @POST

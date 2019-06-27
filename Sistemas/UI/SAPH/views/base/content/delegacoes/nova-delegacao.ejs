@@ -124,22 +124,22 @@
       if (tipo == '<%=delegacao.id%>'){
         $('.body-delegacao').html('');
         $('#itens').html('');
-        <% delegacao.tipoItem.forEach(function(item){%>
+        <% delegacao.tipoItens.forEach(function(item){%>
           <%var files = [];%>
-          <%for(i = 0; i < item.tipoCampo.length; i++){
-            if(item.tipoCampo[i].tipo=='file'){
-              files.push(item.tipoCampo[i]);
-              item.tipoCampo.splice(i, 1);
+          <%for(i = 0; i < item.tipoCampos.length; i++){
+            if(item.tipoCampos[i].tipo=='file'){
+              files.push(item.tipoCampos[i]);
+              item.tipoCampos.splice(i, 1);
             }
           }; %>
-          <%item.tipoCampo = item.tipoCampo.concat(files);%>
+          <%item.tipoCampos = item.tipoCampos.concat(files);%>
           htmlItem='<li><%=item.nome%></li>';
           htmlItem+='<ul>';
           htmlCampo='<hr>';
           htmlCampo+='<h3><%=item.nome%></h3>';
           htmlCampo+='<div class="form-row tipo-itens" id="<%=item.id%>">';
-          <% size = item.tipoCampo.length>3?'col-4':'col'%>
-          <%item.tipoCampo.forEach(function(campo){%>
+          <% size = item.tipoCampos.length>3?'col-4':'col'%>
+          <%item.tipoCampos.forEach(function(campo){%>
             <% size = campo.tipo=='textarea'?'col-12':size%>
             htmlCampo+='<div class="<%=size%> orm-group " >';
             htmlCampo+='<label"><%=campo.nome%></label>';

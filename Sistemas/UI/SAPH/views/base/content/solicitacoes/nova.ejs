@@ -12,14 +12,14 @@
                     <form class="text-left " style="color: #757575;" action="index.html" method="post" id="solicitacao" >
                       <div class="col">
                         <div class="md-form">
-                          
+
                             <select name="tipo" id="tipo" class="form-control form-control-lg"  required>
                               <%tipos.forEach(function(solicitacao){%>
                                 <option value="<%=solicitacao.id%>"><%=solicitacao.nome%></option> 1
                              <%}); %>
                             </select>
 
-                          
+
                         </div>
 
                         <div class="body-solicitacao max-height-50 overflow-auto" style="height:550px">
@@ -114,13 +114,13 @@ $('#imprimir').click(function(){
    window.print('new', '_blank');
 });
 $('#guardar').click(function(){
-  montarSolicitacao("cadadastrar");
+  montarSolicitacao("cadadastrar","SALVA");
 });
 $('#enviar').click(function(){
-  montarSolicitacao("enviar");
+  montarSolicitacao("enviar","EM_ESPERA");
 });
 
-function montarSolicitacao(acao){
+function montarSolicitacao(acao,status){
   var dici = new Map();
   tipoSolicitacao = $("select[name='tipo']").val();
   tipoItens = [];
@@ -148,7 +148,7 @@ function montarSolicitacao(acao){
     solicitanteDelegante:{
       id:1
     },
-    status:"SALVA",
+    status:status,
     itens:tipoItens,
   }
   dici = JSON.stringify(dici);

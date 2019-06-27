@@ -29,7 +29,8 @@ router.get('/login',(req, res, next)=>{
 });
 
 router.post('/login',(req, res, next)=>{
-
+  console.log(req.body.email);
+  console.log(req.body.senha);
   if(!req.body.email){
     usuarios.render(req, res, "preencha o email");
   }else if(!req.body.senha){

@@ -1,40 +1,27 @@
 <section class="py-5 bg-light">
-        <div class="container my-5 text-center">
-                <div class="container">
-
-                        <div class="row justify-content-center" method="post">
-                            <div class="col-12 col-md-8 col-lg-6 pb-5">
-                    
-                                    <form class="text-center border border-light p-5">
-
-                                            <p class="h4 mb-4">Login</p>
-                                        
-                                      
-                                            <input name="email" type="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="E-mail" value="<%= body.email" %>>
-            
-                                            <input name="senha" type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Senha" value="<%= body.senha" %>>
-                                        
-                                            <div class="d-flex justify-content-around">
-                                                
-                                                <div>
-                                                    <!-- Forgot password -->
-                                                    <a href="">Esqueceu sua senha?</a>
-                                                </div>
-                                            </div>
-                                        
-                                            <!-- Sign in button -->
-                                            <button class="btn btn-info btn-block my-4" type="submit">Entrar</button>
-            
-                                        </form>
-                    
-                                    </div>
-                        </div>
-                    </div>
-             
+  <div class="container my-5 text-center">
+    <div class="container">
+      <div class="row justify-content-center" method="post">
+        <div class="col-12 col-md-8 col-lg-6 pb-5">
+          <form action="/login" method="post" class="text-center border border-light p-5">
+            <p class="h4 mb-4">Login</p>
+            <input name="email" type="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="E-mail"">
+            <input name="senha" type="senha" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Senha">
+            <div class="d-flex justify-content-around">
+            <div>
+              <!-- Forgot password -->
+              <a href="">Esqueceu sua senha?</a>
+            </div>
+            <!-- Sign in button -->
+            <button class="btn btn-info btn-block my-4" type="submit">Entrar</button>
+          </form>
         </div>
-        </section>
+      </div>
+    </div>
+  </div>
+</section>
 <%- include('em-comum') -%>
 
 <%- include('em-comum') -%>
 
-value="<%= body.email" %>
+value="<%= "body.email" %>"

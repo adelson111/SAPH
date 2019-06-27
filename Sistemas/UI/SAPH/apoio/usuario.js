@@ -1,12 +1,10 @@
 var Client = require('node-rest-client').Client;
 var client = new Client();
 module.exports ={
-
     render(req, res , err){
         res.render('login', {
             title: 'Login - SAPH',
-            bosy: req.body,
-            err
+            body: req.body
           });
     },
 
@@ -25,7 +23,7 @@ module.exports ={
                             reject('Usuário o senha incorretos')
                         }else{
                             let row = results[0];
-                            
+
                             if (row.senha !== senha){
                                 reject('Usuário o senha incorretos');
                             }else{

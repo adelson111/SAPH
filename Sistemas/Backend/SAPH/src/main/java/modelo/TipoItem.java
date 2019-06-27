@@ -28,7 +28,7 @@ public class TipoItem implements Serializable {
     @Id
     private long id;
 
-    @Column(length = 80)
+    @Column(length = 80, nullable = false)
     private String nome;
 
     @ManyToMany(fetch = FetchType.EAGER)

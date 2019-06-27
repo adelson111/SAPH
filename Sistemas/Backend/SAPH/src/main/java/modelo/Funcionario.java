@@ -30,29 +30,33 @@ public class Funcionario implements Serializable {
     @Id
     private long id;
 
-    @Column(length = 80)
+    @Column(length = 80, nullable = true)
     private String nome;
 
-    @Column(length = 15)
+    @Column(length = 15, nullable = true)
     private String cpf;
 
-    @Column(length = 30)
+    @Column(length = 30, nullable = true)
     private String cargo;
 
-    @Column(length = 100)
+    @Column(length = 100, nullable = true)
     private String endereco;
 
-    @Column(length = 17)
+    @Column(length = 17, nullable = true)
     private String telefone;
 
-    @Column
+    @Column(nullable = false)
     private boolean ativo;
 
-    @Column(length = 100)
+    @Column(length = 100, nullable = true)
     private String foto;
 
+    @ManyToOne
+    @JoinColumn(name = "organizacao_id", nullable = false)
+    private Organizacao organizacao;
+
     @OneToOne
-    @JoinColumn(name = "usuaio_id")
+    @JoinColumn(name = "usuaio_id", nullable = false)
     private Usuario usuario;
 
     public long getId() {
@@ -117,6 +121,14 @@ public class Funcionario implements Serializable {
 
     public void setFoto(String foto) {
         this.foto = foto;
+    }
+
+    public Organizacao getOrganizacao() {
+        return organizacao;
+    }
+
+    public void setOrganizacao(Organizacao organizacao) {
+        this.organizacao = organizacao;
     }
 
     public Usuario getUsuario() {

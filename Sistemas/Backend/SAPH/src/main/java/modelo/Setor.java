@@ -29,20 +29,22 @@ public class Setor implements Serializable {
     @Id
     private long id;
 
-    @Column(length = 80)
+    @Column(length = 80, nullable = false)
     private String nome;
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "setor_funcionario", 
             joinColumns = {@JoinColumn(name = "setor_id")}, 
             inverseJoinColumns = {@JoinColumn(name = "funcionario_id")})
-    private List<Funcionario> funcionarios;
+    private List<Funcionario> funcionario;
 
     @ManyToOne
-    @JoinColumn(name = "gerente_id")
+    @JoinColumn(name = "gerente_id", nullable = false)
     private Funcionario gerente;
 
-    
+    @ManyToOne
+    @JoinColumn(name = "nivel_id", nullable = false)
+    private Nivel nivel;
 
     public long getId() {
         return id;
@@ -60,15 +62,13 @@ public class Setor implements Serializable {
         this.nome = nome;
     }
 
-    public List<Funcionario> getFuncionarios() {
-        return funcionarios;
+    public List<Funcionario> getFuncionario() {
+        return funcionario;
     }
 
-    public void setFuncionarios(List<Funcionario> funcionarios) {
-        this.funcionarios = funcionarios;
+    public void setFuncionario(List<Funcionario> funcionario) {
+        this.funcionario = funcionario;
     }
-
-   
 
     public Funcionario getGerente() {
         return gerente;
@@ -78,6 +78,12 @@ public class Setor implements Serializable {
         this.gerente = gerente;
     }
 
-   
+    public Nivel getNivel() {
+        return nivel;
+    }
+
+    public void setNivel(Nivel nivel) {
+        this.nivel = nivel;
+    }
     
 }

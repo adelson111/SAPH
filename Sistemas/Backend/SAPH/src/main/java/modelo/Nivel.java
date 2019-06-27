@@ -13,10 +13,8 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -31,7 +29,7 @@ public class Nivel implements Serializable {
     @Id
     private long id;
 
-    @Column(length = 80)
+    @Column(length = 80, nullable = false)
     private String nome;
 
 //    @ManyToOne(fetch = FetchType.LAZY)
@@ -45,28 +43,12 @@ public class Nivel implements Serializable {
     private long nivelInferior;
 
     @ManyToOne
-    @JoinColumn(name = "responsavel_id")
+    @JoinColumn(name = "responsavel_id", nullable = false)
     private Funcionario responsavel;
-    
-    @OneToMany(fetch = FetchType.EAGER)
-    @JoinColumn(name = "nivel_id")
-    private List<Setor> setores;
-    
-    @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(name = "tipo_solicitacao_delegacao_nivel", 
-            joinColumns = {@JoinColumn(name = "nivel_id")}, 
-            inverseJoinColumns = {@JoinColumn(name = "tipo_solicitacao_delegacao_id")})
-    private List<TipoSolicitacaoDelegacao> tipoSolicitacoesDelegacoes;
 
-    public List<Setor> getSetores() {
-        return setores;
-    }
-
-    public void setSetores(List<Setor> setores) {
-        this.setores = setores;
-    }
-
-    
+    @ManyToOne
+    @JoinColumn(name = "organizacao_id", nullable = false)
+    private Organizacao organizacao;
 
     public long getId() {
         return id;
@@ -108,15 +90,14 @@ public class Nivel implements Serializable {
         this.responsavel = responsavel;
     }
 
-    public List<TipoSolicitacaoDelegacao> getTipoSolicitacoesDelegacoes() {
-        return tipoSolicitacoesDelegacoes;
+    public Organizacao getOrganizacao() {
+        return organizacao;
     }
 
-    public void setTipoSolicitacoesDelegacoes(List<TipoSolicitacaoDelegacao> tipoSolicitacoesDelegacoes) {
-        this.tipoSolicitacoesDelegacoes = tipoSolicitacoesDelegacoes;
+    public void setOrganizacao(Organizacao organizacao) {
+        this.organizacao = organizacao;
     }
-
- 
+    
     
     
 }

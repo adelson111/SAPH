@@ -6,14 +6,9 @@
 package modelo;
 
 import java.io.Serializable;
-import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -27,39 +22,23 @@ public class Organizacao implements Serializable {
     @Id
     private long id;
 
-    @Column(length = 80)
+    @Column(length = 80, nullable = false)
     private String nome;
 
-    @Column(length = 19)
+    @Column(length = 19, nullable = false)
     private String cnpj;
 
-    @Column(length = 100)
+    @Column(length = 100, nullable = false)
     private String endereco;
 
-    @Column(length = 17)
+    @Column(length = 17, nullable = false)
     private String telefone;
 
-    @Column
+    @Column(nullable = false)
     private boolean situacao;
-    
-    @OneToMany(fetch = FetchType.EAGER)
-    @JoinColumn(name = "organizacao_id")
-    private List<Funcionario> funcionarios;
-    
-    @OneToMany(fetch = FetchType.EAGER)
-    @JoinColumn(name = "organizacao_id")
-    private List<Nivel> niveis;
 
     public long getId() {
         return id;
-    }
-
-    public List<Nivel> getNiveis() {
-        return niveis;
-    }
-
-    public void setNiveis(List<Nivel> niveis) {
-        this.niveis = niveis;
     }
 
     public void setId(long id) {
@@ -104,14 +83,6 @@ public class Organizacao implements Serializable {
 
     public void setSituacao(boolean situacao) {
         this.situacao = situacao;
-    }
-
-    public List<Funcionario> getFuncionarios() {
-        return funcionarios;
-    }
-
-    public void setFuncionarios(List<Funcionario> funcionarios) {
-        this.funcionarios = funcionarios;
     }
 
 }

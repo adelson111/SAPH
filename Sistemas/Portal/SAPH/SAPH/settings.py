@@ -44,8 +44,7 @@ INSTALLED_APPS = [
     'apps.nivel',
     'apps.solicitacao',
     'apps.delegacao',
-    'apps.item',
-    'rest_framework'
+    'apps.item'
 ]
 
 MIDDLEWARE = [

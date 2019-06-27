@@ -22,6 +22,15 @@ router.get('/list',(req, res, next)=>{
   });
 });
 
+router.get('/listar-enviadas',(req, res, next)=>{
+  client.get("http://localhost:8080/SAPH/saph/solicitacao-delegacao/parametros/SOLICITACAO/7", function (data, response) {
+    res.render('listar-enviadas', {
+      title: 'Solicitacoes - SAPH',
+      solicitacoes:data,
+    });
+  });
+});
+
 router.get('/confirmadas',(req, res, next)=>{
   res.render('confirmadas', {
     title: 'Solicitações - SAPH',

@@ -22,6 +22,17 @@ router.get('/listar-delegacoes',(req, res, next)=>{
   });
 });
 
+router.get('/listar-delegacoes-enviadas',(req, res, next)=>{
+  client.get("http://localhost:8080/SAPH/saph/solicitacao-delegacao/parametros/DELEGACAO/7", function (data, response) {
+    console.log(data);
+    res.render('listar-delegacoes-enviadas', {
+      title: 'Delegacoes - SAPH',
+      delegacoes:data,
+    });
+  });
+});
+
+
 
 router.get('/listar-delegacoes',(req, res, next)=>{
   res.render('listar-delegacoes', {

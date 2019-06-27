@@ -152,7 +152,7 @@ class Exportar(LoginRequiredMixin, View) :
 
 		lOrganizacao1.append(organizacaoDic)
 
-		# Envio das requests
+		# Envio da request
 		resp = requests.post(url='http://localhost:8080/SAPH/saph/organizacao/exportar/',
 									data=json.dumps(lOrganizacao1),
 									headers={'content-type': 'application/json'})

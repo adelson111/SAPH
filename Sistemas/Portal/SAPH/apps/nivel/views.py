@@ -11,7 +11,7 @@ from django.shortcuts import render, get_object_or_404
 from django.urls import reverse_lazy, reverse
 from django.views import View
 from django.views.generic import CreateView, ListView, UpdateView, DeleteView, DetailView
-from pip._vendor import requests
+
 
 from apps import organizacao, funcionario
 from apps.nivel.models import Nivel
@@ -175,33 +175,3 @@ class DetalharNivel(LoginRequiredMixin, View):
         setores = Setor.objects.filter(nivel_id=nivel_id)
         return render(request, 'nivel/setores_nivel.html', {'setores': setores} )
 
-
-class SubirNivel(LoginRequiredMixin, View):
-
-    def get(self, request):
-
-        niveis = Nivel.objects.values('id', 'nome', 'nivelSuperior', 'nivelInferior', 'funcionario')
-        lNivel = []
-        organizacao = self.request.user.funcionario.organizacao.pk
-        for nivel in niveis:
-            dicNivel = {
-                'id': nivel['id'],
-                'nome': nivel['nome'],
-                'nivelSuperior': nivel['nivelSuperior'],
-                'nivelInferior': nivel['nivelInferior'],
-                'responsavel': {
-                    'id': nivel['funcionario']},
-                'organizacao': {
-                    'id': organizacao}
-            }
-            lNivel.append(dicNivel)
-        #
-        resp = requests.post(url='http://localhost:8080/SAPH/saph/nivel/lista/',
-                             # data=lorganizacao[0],
-                             data=json.dumps(lNivel),
-                             headers={'content-type': 'application/json'})
-
-        if (resp.status_code == 200 or resp.status_code == 201):
-            return HttpResponse("ESSA MIZERA DEU CERTO")
-        else:
-            return HttpResponse("ESSA MIZERA DEU ERRADO")

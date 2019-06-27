@@ -149,7 +149,7 @@ $('#guardar').click(function(){
   }
   dici = JSON.stringify(dici);
   console.log(dici);
-  $.post("http://localhost:3000/solicitacoes/cada",{'solicitacao':dici},function(data){
+  $.post("http://localhost:3000/solicitacoes/cadadastrar",{'solicitacao':dici},function(data){
     alert(data);
   });
 });

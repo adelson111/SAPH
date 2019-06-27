@@ -4,7 +4,7 @@ from django.urls import path
 from .views import CadastrarFuncionario, \
     AtualizarFuncionario, ListarFuncionarios, \
     ListarFuncionarioBloqueado,\
-    BloquearFuncionario, PreCadastroFuncionario, PreUpdateFuncionario, SubirFuncionarios
+    BloquearFuncionario, PreCadastroFuncionario, PreUpdateFuncionario
 
 urlpatterns = [
     # path('cadastrar-funcionario/', CadastrarFuncionario.as_view(), name="cadasrtrar_funcionario"),
@@ -16,8 +16,6 @@ urlpatterns = [
 
 
     path('bloquear-funcionario/<int:pk>/', BloquearFuncionario.as_view(), name="bloquear_funcionario"),
-
-    path('subir/', SubirFuncionarios.as_view(), name="subir"),
 
     path('listar-funcionarios/', ListarFuncionarios.as_view(), name="listar_funcionarios"),
     path('listar-funcionarios-bloqueado/', ListarFuncionarioBloqueado.as_view(), name="listar_funcionarios_bloqueado"),

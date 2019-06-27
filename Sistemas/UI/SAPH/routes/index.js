@@ -14,8 +14,17 @@ router.get('/', function(req, res, next) {
 router.get('/contato',(req, res, next)=>{
   res.render('contato', {
     title: 'Contato - SAPH',
+    home : true
   });
 });
+
+router.get('/login',(req, res, next)=>{
+  res.render('login', {
+    title: 'Login - SAPH',
+    home : true
+  });
+});
+
 
 router.get('/sobre',(req, res, next)=>{
   res.render('sobre', {
@@ -30,19 +39,27 @@ router.get('/login',(req, res, next)=>{
   });
 });
 
+// router.get('/inicio',(req, res, next)=>{
+//   email = req.query.email;
+//   senha = req.query.senha;
+//   client.post("http://localhost:8080/SAPH/saph/usuario/autenticar/"+email+"/"+senha,function (data, response) {
+//     console.log(data);
+//     if(data!=null){
+//       res.render('inicio', {
+//         title: 'Home - SAPH',
+//         funcionario:data
+//       });
+//     }else{
+//       res.send("erro");
+//     }
+//   });
+// });
+
+//rota para testes
+
 router.get('/inicio',(req, res, next)=>{
-  email = req.query.email;
-  senha = req.query.senha;
-  client.post("http://localhost:8080/SAPH/saph/usuario/autenticar/"+email+"/"+senha,function (data, response) {
-    console.log(data);
-    if(data!=null){
-      res.render('inicio', {
-        title: 'Home - SAPH',
-        funcionario:data
-      });
-    }else{
-      res.send("erro");
-    }
+  res.render('inicio', {
+    title: 'Início - SAPH',
   });
 });
 

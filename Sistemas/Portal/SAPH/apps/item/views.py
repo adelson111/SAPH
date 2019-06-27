@@ -8,7 +8,6 @@ from django.shortcuts import render
 # Create your views here.
 from django.views import View
 from django.views.generic import CreateView
-from pip._vendor import requests
 
 from apps.item.forms import ItemForm, CampoForm
 from apps.item.models import Item
@@ -24,8 +23,6 @@ class  CadastrarCampo(LoginRequiredMixin, CreateView):
         descricoes = request.POST.getlist('descricao')
         data = dict()
         for tipo,nome,descricao in zip(tipos,nomes,descricoes):
-            print(tipo)
-            print(nome)
             form = CampoForm({
                 'nome':nome,
                 'descricao':descricao,
@@ -47,24 +44,7 @@ class  CadastrarItem(LoginRequiredMixin, CreateView):
             data['id'] = item.id
             for campo in Campos.campos:
                 item.campus.add(campo)
+            Campos.campos=[]
 
         return JsonResponse(data)
 
-
-class SubirItem(LoginRequiredMixin, View):
-
-    def get(self, request):
-        itens= Item.objects.all()
-        lItens = []
-
-        for iten in lItens:
-            lItens.append(model_to_dict(iten))
-
-        resp = requests.post(url='http://localhost:8080/SAPH/saph/organizacao/',
-                             data=json.dumps(lItens),
-                             headers={'content-type': 'application/json'})
-
-        if (resp.status_code == 200 or resp.status_code == 201):
-            return HttpResponse("ESSA MIZERA DEU CERTO")
-        else:
-            return HttpResponse("ESSA MIZERA DEU ERRADO")

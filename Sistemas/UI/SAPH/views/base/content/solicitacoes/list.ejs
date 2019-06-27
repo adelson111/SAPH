@@ -1,20 +1,268 @@
-<%- include('solicitacao-topo') -%>
-          <div class="card-body px-lg-5 pt-0 pt-30 overflow-auto"  id="cardSolici">
-            <form class="text-left " style="color: #757575;" action="index.html" method="post" id="solicitacao" >
-              <div class="col">
-                <div class="body-solicitacao" >
-                  <ul class="list-group" id="lista">
-                    <%solicitacoes.forEach(function(solicitacao){%>
-                      <li class="list-group-item bg-info text-light" style=" margin-bottom:10px;">
-                        <div class="text-dark font-weight-bold">
-                          <%=solicitacao.tipoSolicitacaoDelegacao.nome%><a class="btn float-right bg-warning text-light" data-toggle="modal" data-target="#largeModal"  href="" name="button">DESCRIÇÃO</a>
+
+
+<div class="content">
+  <div class="row">
+    <div class="col-md-12 ">
+      <div class="card">
+        <div class="card-header text-center">
+          <h4 class="card-title">Lista de solicitações</h4>
+        </div>
+        <div class="card-body" style="height:700px;">
+          <div class="row">
+            <div class="col-md-12 ">
+              <div class="card-body px-lg-5 pt-0 pt-30 "  id="cardSolici">
+                <div class="card fixed " style="height: 600px; text-align: right;" id="campos" >            
+                <div class="panel with-nav-tabs panel-default">
+                  <div class="panel-heading">
+                    <ul class="nav nav-tabs">
+                      <li class="active"><a href="#tab1default" data-toggle="tab">Todas</a></li>
+                      <li class=""><a href="#tab2default" data-toggle="tab">Confirmadas</a></li>
+                      <li class=""><a href="#tab3default" data-toggle="tab">Em análise</a></li>
+                      <li class=""><a href="#tab3default" data-toggle="tab">Recusadas</a></li>
+                      <li class=""><a href="#tab4default" data-toggle="tab">Salvas</a></li>
+                    </ul>
+                  </div>
+                  
+                    <div class="panel-body" >
+                      <div class="tab-content" width="auto">
+                        <div class="tab-pane fade  active in" id="tab1default">
+                          <%- include('todas') -%>
                         </div>
-                      </li>
-                    <%});%>
-                  </ul>
+                        <div class="tab-pane fade" id="tab2default">
+                          <%- include('confirmadas') -%>
+                        </div>
+                        <div class="tab-pane fade " id="tab3default">
+                          <%- include('analise') -%>
+                        </div>
+                        <div class="tab-pane fade " id="tab3default">
+                          <%- include('recusadas') -%>
+                        </div>
+                        <div class="tab-pane fade"  id="tab4default">
+                          <%- include('salvas') -%>
+                        </div>
+                      </div>
+                    </div>
+                  
+                </div>
                 </div>
               </div>
-            </form>
-            <hr>
+            </div>
+
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-body">
+          <div class="places-buttons">
+            <div class="row">
+              <div class="col-md-6 ml-auto mr-auto text-center">
+                <h4 class="card-title">
+                  Solicitações
+                </h4>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-8 ml-auto mr-auto">
+                <div class="card  overflow-auto" style="height: 300px; margin-bottom:0">
+                
+
+                    <div class="dropdown delega w-80">
+                      <span class="btn btn-secondary w-100 dropdown-toggle bg-dark text-light" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Cagar na pia
+                      </span>
+                      <div class="dropdown-menu w-50 " aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item text-center" href="#">Salvar</a>
+                        <a class="dropdown-item text-center"href="#">Clonar</a>
+                        <a class="dropdown-item text-center" href="#">Excluir</a>
+                      </div>
+                    </div> 
+  
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
 <%- include('solicitacao-baixo') -%>
+
+
+  <style type="text/css">
+
+.panel.with-nav-tabs .panel-heading{
+    padding: 5px 5px 0 5px;
+}
+.panel.with-nav-tabs .nav-tabs{
+	border-bottom: none;
+}
+.panel.with-nav-tabs .nav-justified{
+	margin-bottom: -1px;
+}
+/********************************************************************/
+/*** PANEL DEFAULT ***/
+.with-nav-tabs.panel-default .nav-tabs > li > a,
+.with-nav-tabs.panel-default .nav-tabs > li > a:hover,
+.with-nav-tabs.panel-default .nav-tabs > li > a:focus {
+    color: #777;
+}
+.with-nav-tabs.panel-default .nav-tabs > .open > a,
+.with-nav-tabs.panel-default .nav-tabs > .open > a:hover,
+.with-nav-tabs.panel-default .nav-tabs > .open > a:focus,
+.with-nav-tabs.panel-default .nav-tabs > li > a:hover,
+.with-nav-tabs.panel-default .nav-tabs > li > a:focus {
+    color: #777;
+	background-color: #ddd;
+	border-color: transparent;
+}
+.with-nav-tabs.panel-default .nav-tabs > li.active > a,
+.with-nav-tabs.panel-default .nav-tabs > li.active > a:hover,
+.with-nav-tabs.panel-default .nav-tabs > li.active > a:focus {
+	color: #555;
+	background-color: #fff;
+	border-color: #ddd;
+	border-bottom-color: transparent;
+}
+.with-nav-tabs.panel-default .nav-tabs > li.dropdown .dropdown-menu {
+    background-color: #f5f5f5;
+    border-color: #ddd;
+}
+.with-nav-tabs.panel-default .nav-tabs > li.dropdown .dropdown-menu > li > a {
+    color: #777;   
+}
+.with-nav-tabs.panel-default .nav-tabs > li.dropdown .dropdown-menu > li > a:hover,
+.with-nav-tabs.panel-default .nav-tabs > li.dropdown .dropdown-menu > li > a:focus {
+    background-color: #ddd;
+}
+.with-nav-tabs.panel-default .nav-tabs > li.dropdown .dropdown-menu > .active > a,
+.with-nav-tabs.panel-default .nav-tabs > li.dropdown .dropdown-menu > .active > a:hover,
+.with-nav-tabs.panel-default .nav-tabs > li.dropdown .dropdown-menu > .active > a:focus {
+    color: #fff;
+    background-color: #555;
+}
+.panel-default>.panel-heading {
+    color: #333;
+    background-color: #f5f5f5;
+    border-color: #ddd;
+}
+  .panel-default {
+      border-color: #ddd;
+  }
+  .panel.with-nav-tabs .nav-tabs {
+      border-bottom: none;
+  }
+  .panel.with-nav-tabs .panel-heading {
+      padding: 5px 5px 0 5px;
+  }
+
+  .panel-heading {
+      padding: 10px 15px;
+      border-bottom: 1px solid transparent;
+      border-top-left-radius: 3px;
+      border-top-right-radius: 3px;
+  }
+  .panel.with-nav-tabs .nav-tabs {
+      border-bottom: none;
+  }
+  .nav {
+      padding-left: 0;
+      margin-bottom: 0;
+      list-style: none;
+  }
+  ul {
+      display: block;
+      list-style-type: disc;
+      margin-block-start: 1em;
+      margin-block-end: 1em;
+      margin-inline-start: 0px;
+      margin-inline-end: 0px;
+      padding-inline-start: 40px;
+  }
+  .nav-tabs>li {
+      float: left;
+      margin-bottom: -1px;
+  }
+  .nav>li {
+      position: relative;
+      display: block;
+  }
+  .panel-default {
+      border-color: #ddd;
+  }
+  .panel {
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}
+
+  *{
+     -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+     box-sizing: border-box;
+  }
+  div {
+      display: block;
+  }
+  body {
+      font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+      font-size: 14px;
+      line-height: 1.42857143;
+      color: #333;
+      background-color: #fff;
+    }
+    .Portfolio {
+      position: relative;
+      margin: 5px;
+      border: 2px solid black;
+      float: left;
+      width: 80px;
+      transition-duration: 0.4s;
+      border-radius: 5px;
+      animation: winanim 0.5s ;
+      -webkit-backface-visibility:visible;
+      backface-visibility:visible;
+      box-shadow:0 3px 5px -1px rgba(0,0,0,.2),0 5px 8px 0 rgba(0,0,0,.14),0 1px 14px 0 rgba(0,0,0,.12)
+    }
+
+    .Portfolio:hover {
+      box-shadow: 0 12px 16px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
+    }
+
+    .Portfolio img {
+      width: 100%;
+      height: auto;
+      border-radius: 5px
+    }
+
+    .desc {
+      padding: 5px;
+      text-align: center;
+      font-size: 90%;
+      background:black;
+      color:white;
+      height: 50px;.
+    }
+
+    @keyframes winanim {
+      0%{opacity:0;transform:scale3d(.3,.3,.3)}
+      50%{opacity:1}
+
+    }
+    .posiciona{
+      width: 1px;
+      height: 1px;
+      position: absolute;
+      z-index: 1;
+    }
+  </style> 

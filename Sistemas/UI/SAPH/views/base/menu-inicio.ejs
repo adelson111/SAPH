@@ -1,6 +1,6 @@
 
 <div class="wrapper">
-  <div class="sidebar " data-color="black" data-active-color="danger">
+  <div class="sidebar "  id="sidebar" data-color="black" data-active-color="danger">
 
     <div class="logo">
       <h3 class="text-center text-info">SAPH</h3>
@@ -8,9 +8,9 @@
     <div class="sidebar-wrapper">
       <div class="w-100" >
         <img style="width:100px; margin-left:25%" src="../img/user.png" >
-        <p class="text-light" style="margin-left:25%"><%=funcionario.nome%></p>
+        <p class="text-light" style="margin-left:25%"><%="funcionario.nome"%></p>
       </div>
-      <ul class="nav">
+      <ul class="nav list-unstyled components">
         <li class="">
           <a class="text-info"href="/inicio">
             <i class=" text-info fas fa-home"></i>
@@ -29,32 +29,37 @@
             <p>Delegar</p>
           </a>
         </li>
+
         <li>
-          <a class="text-info" href="/solicitacoes/list">
-            <i class="text-success fas fa-envelope"></i>
-            <p>Minhas solicitações</p>
-          </a>
+          <a  data-toggle="collapse" data-target="#solicit" aria-expanded="false" class="text-info"> Solicitações <i class="text-success fas fa-envelope"></i></a>
+          <ul class="collapse list-unstyled bg-dark "  id="solicit">
+              <li><a href="/solicitacoes/list">Recebidas</a></li>
+              <li><a href="solicitacoes/listar-enviadas">Enviadas</a></li>
+          </ul>
         </li>
+
         <li>
-          <a class="text-info" href="/delegacoes/listar-delegacoes">
-            <i class="text-warning fas fa-envelope"></i>
-            <p>Minhas delegações</p>
-          </a>
+            <a  data-toggle="collapse" data-target="#deleg" aria-expanded="false" class="text-info"> Delegações <i class="text-warning fas fa-envelope"></i></a>
+            <ul class="collapse list-unstyled bg-dark"  id="deleg">
+                <li><a href="/delegacoes/listar-delegacoes">Recebidas</a></li>
+                <li><a href="delegacoes/listar-delegacoes-enviadas">Enviadas</a></li>
+            </ul>
         </li>
+
         <li>
-          <a class="text-info" href="./tables.html">
+          <a class="text-info" href="/visualizar">
             <i class="text-info fas fa-sitemap"></i>
-            <p>Nível hierárquico</p>
+            <p>Minha hierarquia</p>
           </a>
         </li>
         <li>
-          <a class="text-info" href="./tables.html">
+          <a class="text-info" href="/exportar">
             <i class="text-info fas fa-file-pdf"></i>
             <p>Exportar</p>
           </a>
         </li>
         <li>
-          <a class="text-info" href="./tables.html">
+          <a class="text-info" href="">
             <i class="text-danger fas fa-sign-out-alt"></i>
             <p>Sair</p>
           </a>
@@ -81,3 +86,7 @@
         demo.initChartsPages();
       });
     </script>
+
+    <style>
+   
+    </style>

@@ -44,7 +44,7 @@ public class TipoSolicitacaoDelegacao implements Serializable {
     @JoinTable(name = "tipo_solicitacao_delegacao_item", 
             joinColumns = {@JoinColumn(name = "tipo_solicitacao_delegacao_id")}, 
             inverseJoinColumns = {@JoinColumn(name = "tipo_item_id")})
-    private List<TipoItem> tipoItem;
+    private List<TipoItem> tipoItens;
     
     
 
@@ -80,12 +80,12 @@ public class TipoSolicitacaoDelegacao implements Serializable {
         this.tipo = tipo;
     }
 
-    public List<TipoItem> getTipoItem() {
-        return tipoItem;
+    public List<TipoItem> getTipoItens() {
+        return tipoItens;
     }
 
-    public void setTipoItem(List<TipoItem> tipoItem) {
-        this.tipoItem = tipoItem;
+    public void setTipoItens(List<TipoItem> tipoItens) {
+        this.tipoItens = tipoItens;
     }
 
     

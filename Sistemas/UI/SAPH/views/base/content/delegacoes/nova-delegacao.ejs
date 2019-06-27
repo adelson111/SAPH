@@ -3,7 +3,7 @@
     <div class="col-md-12 ">
       <div class="card">
         <div class="card-header text-center">
-          <h5 class="card-title">Nova delegação</h5>
+          <h2 class="card-title">Nova delegação</h2>
         </div>
         <div class="card-body" style="height:700px;">
           <div class="row">
@@ -12,48 +12,18 @@
                     <form class="text-left " style="color: #757575;" action="index.html" method="post" id="delegacao" >
                       <div class="col">
                         <div class="md-form">
-                          <div class="input-group mb-3">
-
-                            <span class="input-group-text " id="tipoSolicitacao" for="inputGroupSelect01">Tipos</span>
-
-                            <select name="tipo" id="tipo" class="custom-select form-control form-control-lg"  required>
+                          
+                            <select name="tipo" id="tipo" class="form-control form-control-lg"  required>
                               <%tipos.forEach(function(delegacao){%>
                                 <option value="<%=delegacao.id%>"><%=delegacao.nome%></option>
                               <%});%>
                             </select>
 
-                          </div>
+                          
                         </div>
 
                         <div class="body-delegacao max-height-50 overflow-auto" style="height:550px">
-                          <div class="itens"> <p>s</p> </div>
-                          <div class="itens"> <p>s</p> </div>
-                          <div class="itens"> <p>s</p> </div>
-                          <div class="itens"> <p>s</p> </div>
-                          <div class="itens"> <p>s</p> </div>
-                          <div class="itens"> <p>s</p> </div>
-                          <div class="itens"> <p>s</p> </div>
-                          <div class="itens"> <p>s</p> </div>
-                          <div class="itens"> <p>s</p> </div>
-                          <div class="itens"> <p>s</p> </div>
-                          <div class="itens"> <p>s</p> </div>
-                          <div class="itens"> <p>s</p> </div>
-                          <div class="itens"> <p>s</p> </div>
-                          <div class="itens"> <p>s</p> </div>
-                          <div class="itens"> <p>s</p> </div>
-                          <div class="itens"> <p>s</p> </div>
-                          <div class="itens"> <p>s</p> </div>
-                          <div class="itens"> <p>s</p> </div>
-                          <div class="itens"> <p>s</p> </div>
-                          <div class="itens"> <p>s</p> </div>
-                          <div class="itens"> <p>s</p> </div>
-                          <div class="itens"> <p>s</p> </div>
-                          <div class="itens"> <p>s</p> </div>
-                          <div class="itens"> <p>s</p> </div>
-                          <div class="itens"> <p>s</p> </div>
-                          <div class="itens"> <p>s</p> </div>
-                          <div class="itens"> <p>s</p> </div>
-                          <div class="itens"> <p>s</p> </div>
+                        
                         </div>
 
                       </div>

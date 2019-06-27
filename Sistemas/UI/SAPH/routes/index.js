@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var Client = require('node-rest-client').Client;
 var client = new Client();
+var usuarios = require('./../apoio/usuario');
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', {
@@ -19,10 +20,32 @@ router.get('/contato',(req, res, next)=>{
 });
 
 router.get('/login',(req, res, next)=>{
-  res.render('login', {
-    title: 'Login - SAPH',
-    home : true
-  });
+
+  usuarios.render(req, res, null);
+  // res.render('login', {
+  //   title: 'Login - SAPH',
+  //   home : true
+  // });
+});
+
+router.post('/login',(req, res, next)=>{
+
+  if(!req.body.email){
+    usuarios.render(req, res, "preencha o email");
+  }else if(!req.body.senha){
+    usuarios.render(req,res, "digite a senha");
+  }else{
+
+    usuarios.login(req.body.email, req.body.senha).then( usuario =>{
+
+      req.session.suer =usuarios;
+      res.redirect('/inicio');
+
+    }).catch(err =>{
+        console.log('erro');
+    })
+  }
+
 });
 
 
@@ -39,29 +62,29 @@ router.get('/login',(req, res, next)=>{
   });
 });
 
-// router.get('/inicio',(req, res, next)=>{
-//   email = req.query.email;
-//   senha = req.query.senha;
-//   client.post("http://localhost:8080/SAPH/saph/usuario/autenticar/"+email+"/"+senha,function (data, response) {
-//     console.log(data);
-//     if(data!=null){
-//       res.render('inicio', {
-//         title: 'Home - SAPH',
-//         funcionario:data
-//       });
-//     }else{
-//       res.send("erro");
-//     }
-//   });
-// });
+router.get('/inicio',(req, res, next)=>{
+  email = req.query.email;
+  senha = req.query.senha;
+  client.post("http://localhost:8080/SAPH/saph/usuario/autenticar/"+email+"/"+senha,function (data, response) {
+    console.log(data);
+    if(data!=null){
+      res.render('inicio', {
+        title: 'Home - SAPH',
+        funcionario:data
+      });
+    }else{
+      res.send("erro");
+    }
+  });
+});
 
 //rota para testes
 
-router.get('/inicio',(req, res, next)=>{
-  res.render('inicio', {
-    title: 'Início - SAPH',
-  });
-});
+// router.get('/inicio',(req, res, next)=>{
+//   res.render('inicio', {
+//     title: 'Início - SAPH',
+//   });
+// });
 
 router.get('/visualizar',(req, res, next)=>{
   res.render('visualizar', {

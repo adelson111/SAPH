@@ -6,17 +6,14 @@
 package modelo;
 
 import java.io.Serializable;
-import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import javax.persistence.Transient;
+
+import banco.Persistencia;
 
 /**
  *
@@ -125,5 +122,36 @@ public class Funcionario implements Serializable {
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }
+    
+    public Setor getSetor() {
+    	return new Persistencia().getSetorByFuncionario(this);
+    }
+    
+    public Nivel getNivel() {
+    	return getSetor().getNivel();
+    }
+    
+    public long getIdNivelSuperior() {
+    	return getNivel().getNivelSuperior();
+    }
+    
+    public long getIdNivelInferior() {
+    	return getNivel().getNivelInferior();
+    }
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Funcionario other = (Funcionario) obj;
+		if (id != other.id)
+			return false;
+		return true;
+	}
+    
+    
 
 }

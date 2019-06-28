@@ -10,6 +10,7 @@ class Solicitacao(models.Model):
     tipo = models.CharField(max_length=80)
     nivel = models.ManyToManyField(Nivel, related_name='nivel_solicitacao')
     descricao = models.CharField(max_length=300, null=False)
+    solicitacaoDelegacao = models.CharField(max_length=20, null=False)
     itens = models.ManyToManyField(Item, related_name='itens_solicitacao')
 
     def __str__(self):

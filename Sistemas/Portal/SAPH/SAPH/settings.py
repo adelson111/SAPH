@@ -43,7 +43,6 @@ INSTALLED_APPS = [
     'apps.core',
     'apps.nivel',
     'apps.solicitacao',
-    'apps.delegacao',
     'apps.item'
 ]
 

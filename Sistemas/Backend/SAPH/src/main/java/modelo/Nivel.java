@@ -53,7 +53,7 @@ public class Nivel implements Serializable {
     private List<Setor> setores;
     
     @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(name = "tipo_solicitacao_delegacao_nivel", 
+    @JoinTable(name = "tipo_nivel_solicitacao_delegacao", 
             joinColumns = {@JoinColumn(name = "nivel_id")}, 
             inverseJoinColumns = {@JoinColumn(name = "tipo_solicitacao_delegacao_id")})
     private List<TipoSolicitacaoDelegacao> tipoSolicitacoesDelegacoes;

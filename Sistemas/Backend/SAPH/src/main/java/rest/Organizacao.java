@@ -31,37 +31,36 @@ public class Organizacao {
     @Path("exportar")
     public String exportar(String json) {
 
-//        Persistencia persistencia = new Persistencia();
-//        modelo.Organizacao organizacao = new Gson().fromJson(json.substring(1, json.length() - 1), modelo.Organizacao.class);
-//
-//        for (modelo.Funcionario funcionarios : organizacao.getFuncionarios()) {
-//            persistencia.cadastrar(funcionarios.getUsuario());
-//            persistencia.cadastrar(funcionarios);
-//        }
-//        for (modelo.Nivel niveis : organizacao.getNiveis()) {
-//            for (modelo.Setor setores : niveis.getSetores()) {
-//                persistencia.cadastrar(setores);
-//            }
-//            for (modelo.TipoSolicitacaoDelegacao tipoSolicitacoesDelegacoes : niveis.getTipoSolicitacoesDelegacoes()) {
-//                for (modelo.TipoItem tipoItens : tipoSolicitacoesDelegacoes.getTipoItens()) {
-//                    for (modelo.TipoCampo tipoCampos : tipoItens.getTipoCampos()) {
-//                        if (!tipoCampos.equals(persistencia.selecionar(new modelo.TipoCampo(), tipoCampos.getId()))) {
-//                            persistencia.cadastrar(tipoCampos);
-//                        }
-//                    }
-//                    if (!tipoItens.equals(persistencia.selecionar(new modelo.TipoItem(), tipoItens.getId()))) {
-//                        persistencia.cadastrar(tipoItens);
-//                    }
-//                }
-//                persistencia.cadastrar(tipoSolicitacoesDelegacoes);
-//            }
-//            persistencia.cadastrar(niveis);
-//        }
-//
-//        return persistencia.cadastrar(organizacao);
+        Persistencia persistencia = new Persistencia();
+        modelo.Organizacao organizacao = new Gson().fromJson(json.substring(1, json.length() - 1), modelo.Organizacao.class);
 
-        System.out.println(json.substring(1, json.length()-1));
-        return json.substring(1, json.length()-1);
+        for (modelo.Funcionario funcionarios : organizacao.getFuncionarios()) {
+            persistencia.cadastrar(funcionarios.getUsuario());
+            persistencia.cadastrar(funcionarios);
+        }
+        for (modelo.Nivel niveis : organizacao.getNiveis()) {
+            for (modelo.Setor setores : niveis.getSetores()) {
+                persistencia.cadastrar(setores);
+            }
+            for (modelo.TipoSolicitacaoDelegacao tipoSolicitacoesDelegacoes : niveis.getTipoSolicitacoesDelegacoes()) {
+                for (modelo.TipoItem tipoItens : tipoSolicitacoesDelegacoes.getTipoItens()) {
+                    for (modelo.TipoCampo tipoCampos : tipoItens.getTipoCampos()) {
+                        if (!tipoCampos.equals(persistencia.selecionar(new modelo.TipoCampo(), tipoCampos.getId()))) {
+                            persistencia.cadastrar(tipoCampos);
+                        }
+                    }
+                    if (!tipoItens.equals(persistencia.selecionar(new modelo.TipoItem(), tipoItens.getId()))) {
+                        persistencia.cadastrar(tipoItens);
+                    }
+                }
+                persistencia.cadastrar(tipoSolicitacoesDelegacoes);
+            }
+            persistencia.cadastrar(niveis);
+        }
+
+        return persistencia.cadastrar(organizacao);
+
+//        return json.substring(1, json.length()-1);
         
     }
 

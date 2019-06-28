@@ -90,7 +90,16 @@ class Exportar(LoginRequiredMixin, View) :
             for solicitacao in solicitacoes:
                 ld = []
                 for item in solicitacao.itens.values('id', 'nome'):
-
+                    listaCampos = []
+                    campos = list(Solicitacao.objects.prefetch_related('itens__campus').filter(itens__campus__item=item['id']).values('itens__campus','itens__campus__descricao','itens__campus__tipo','itens__campus__nome').distinct())
+                    for campo in campos:
+                        dictCampo = {
+                            'id': campo['itens__campus'],
+                            'nome': campo['itens__campus__nome'],
+                            'descricao': campo['itens__campus__descricao'],
+                            'tipo': campo['itens__campus__tipo']
+                        }
+                        listaCampos.append(dictCampo)
                     dicitensdelegacao = {
                         'id': item['id'],
                         'nome': item['nome'],
@@ -104,8 +113,8 @@ class Exportar(LoginRequiredMixin, View) :
                         # 'tipoCampos': list(Item.objects.prefetch_related('campus').filter(itens_solicitacao__itens__campus__item=itens['id'], campus__item__itens_solicitacao__exact=solicitacao.pk).values('campus__pk', 'campus__nome', 'campus__descricao', 'campus__tipo').distinct())
                         # 'tipoCampos': list(solicitacao.itens.filter(pk=item['id']).values('campus__pk', 'campus__nome', 'campus__descricao', 'campus__tipo').distinct())
                         # 'tipoCampos': list(solicitacao.itens.filter(itens_solicitacao=solicitacao.pk, itens_solicitacao__itens=item['id']).values('campus__pk', 'campus__nome', 'campus__descricao', 'campus__tipo').distinct())
-                        #'tipoCampos': list(Solicitacao.objects.prefetch_related('itens__campus').filter(itens__campus__item=item['id']).values('itens__campus','itens__campus__descricao','itens__campus__item'))
-                        'tipoCampos': []
+                        # 'tipoCampos': list(Solicitacao.objects.prefetch_related('itens__campus').filter(itens__campus__item=item['id']).values('itens__campus','itens__campus__descricao','itens__campus__item'))
+                        'tipoCampos': listaCampos
                     }
                     ld.append(dicitensdelegacao)
                 dic = {
@@ -164,7 +173,7 @@ class Exportar(LoginRequiredMixin, View) :
         lOrganizacao1.append(organizacaoDic)
 
         # Envio da request
-        resp = requests.post(url='http://10.193.1.48:8080/SAPH/saph/organizacao/exportar/',
+        resp = requests.post(url='http://localhost:8080/SAPH/saph/organizacao/exportar/',
                              data=json.dumps(lOrganizacao1),
                              headers={'content-type': 'application/json'})
         if (resp.status_code == 200 or resp.status_code == 201):

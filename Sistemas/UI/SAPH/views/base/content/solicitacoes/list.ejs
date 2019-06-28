@@ -11,38 +11,42 @@
           <div class="row">
             <div class="col-md-12 ">
               <div class="card-body px-lg-5 pt-0 pt-30 "  id="cardSolici">
-                <div class="card fixed " style="height: 600px; text-align: right;" id="campos" >            
+                <div class="card fixed " style="height: 600px; text-align: right;" id="campos" >
                 <div class="panel with-nav-tabs panel-default">
                   <div class="panel-heading">
                     <ul class="nav nav-tabs">
                       <li class="active"><a href="#tab1default" data-toggle="tab">Todas</a></li>
-                      <li class=""><a href="#tab2default" data-toggle="tab">Confirmadas</a></li>
-                      <li class=""><a href="#tab3default" data-toggle="tab">Em análise</a></li>
-                      <li class=""><a href="#tab3default" data-toggle="tab">Recusadas</a></li>
-                      <li class=""><a href="#tab4default" data-toggle="tab">Salvas</a></li>
+                      <li class=""><a href="#tab2default" data-toggle="tab">Enviadas</a></li>
+                      <li class=""><a href="#tab3default" data-toggle="tab">Confirmadas</a></li>
+                      <li class=""><a href="#tab4default" data-toggle="tab">Em análise</a></li>
+                      <li class=""><a href="#tab5default" data-toggle="tab">Recusadas</a></li>
+                      <li class=""><a href="#tab6default" data-toggle="tab">Salvas</a></li>
                     </ul>
                   </div>
-                  
+
                     <div class="panel-body" >
                       <div class="tab-content" width="auto">
                         <div class="tab-pane fade  active in" id="tab1default">
                           <%- include('todas') -%>
                         </div>
                         <div class="tab-pane fade" id="tab2default">
+                          <%- include('enviadas') -%>
+                        </div>
+                        <div class="tab-pane fade" id="tab3default">
                           <%- include('confirmadas') -%>
                         </div>
-                        <div class="tab-pane fade " id="tab3default">
+                        <div class="tab-pane fade " id="tab4default">
                           <%- include('analise') -%>
                         </div>
-                        <div class="tab-pane fade " id="tab3default">
+                        <div class="tab-pane fade " id="tab5default">
                           <%- include('recusadas') -%>
                         </div>
-                        <div class="tab-pane fade"  id="tab4default">
+                        <div class="tab-pane fade"  id="tab6default">
                           <%- include('salvas') -%>
                         </div>
                       </div>
                     </div>
-                  
+
                 </div>
                 </div>
               </div>
@@ -68,7 +72,7 @@
             <div class="row">
               <div class="col-lg-8 ml-auto mr-auto">
                 <div class="card  overflow-auto" style="height: 300px; margin-bottom:0">
-                
+
 
                     <div class="dropdown delega w-80">
                       <span class="btn btn-secondary w-100 dropdown-toggle bg-dark text-light" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -79,8 +83,8 @@
                         <a class="dropdown-item text-center"href="#">Clonar</a>
                         <a class="dropdown-item text-center" href="#">Excluir</a>
                       </div>
-                    </div> 
-  
+                    </div>
+
               </div>
               </div>
             </div>
@@ -136,7 +140,7 @@
     border-color: #ddd;
 }
 .with-nav-tabs.panel-default .nav-tabs > li.dropdown .dropdown-menu > li > a {
-    color: #777;   
+    color: #777;
 }
 .with-nav-tabs.panel-default .nav-tabs > li.dropdown .dropdown-menu > li > a:hover,
 .with-nav-tabs.panel-default .nav-tabs > li.dropdown .dropdown-menu > li > a:focus {
@@ -265,4 +269,4 @@
       position: absolute;
       z-index: 1;
     }
-  </style> 
+  </style>

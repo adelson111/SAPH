@@ -1,0 +1,15 @@
+<%existe = false;%>
+<%delegacoes.forEach(function(delegacao){%>
+  <% if(delegacao.status == "ENVIADA"){%>
+    <%existe = true;%>
+    <div class="Portfolio">
+      <a href="#!" data-toggle="modal" data-target="#largeModal">
+        <img class="card-img" src="http://www.pngmart.com/files/7/Envelope-PNG-Transparent.png" alt="">
+      </a>
+      <div class="desc"><%=delegacao.tipoSolicitacaoDelegacao.nome%></div>
+    </div>
+  <%}%>
+<%});%>
+<%if(!existe){%>
+  <h1>0 delegações em enviadas</h1>
+<%}%>

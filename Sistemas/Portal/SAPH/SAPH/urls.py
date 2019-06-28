@@ -21,7 +21,6 @@ from apps.nivel import urls as urls_nivel
 from apps.core import urls as urls_core
 from apps.solicitacao import urls as urls_solicitacao
 from apps.funcionario import urls as urls_funcionarios
-from apps.delegacao import urls as urls_delegacao
 from apps.item import urls as urls_item
 from django.conf.urls.static import static
 from SAPH import settings
@@ -35,7 +34,6 @@ urlpatterns = [
     path('nivel/', include(urls_nivel)),
     path('funcionario/', include(urls_funcionarios)),
     path('solicitacao/', include(urls_solicitacao)),
-    # path('delegacao/', include(urls_delegacao)),
     path('item/', include(urls_item)),
     path('accounts/', include('django.contrib.auth.urls'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

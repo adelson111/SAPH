@@ -35,7 +35,7 @@ urlpatterns = [
     path('nivel/', include(urls_nivel)),
     path('funcionario/', include(urls_funcionarios)),
     path('solicitacao/', include(urls_solicitacao)),
-    path('delegacao/', include(urls_delegacao)),
+    # path('delegacao/', include(urls_delegacao)),
     path('item/', include(urls_item)),
     path('accounts/', include('django.contrib.auth.urls'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

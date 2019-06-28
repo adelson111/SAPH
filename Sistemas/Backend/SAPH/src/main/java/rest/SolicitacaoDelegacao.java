@@ -47,6 +47,21 @@ public class SolicitacaoDelegacao {
         return new Persistencia().cadastrar((List<Object>) new Gson().fromJson(json, new TypeToken<List<modelo.SolicitacaoDelegacao>>() {
         }.getType()));
     }
+    
+    
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Path("enviar")
+    public String enviar(String solicitacaoDelegacao) {
+    	modelo.SolicitacaoDelegacao sd = new Gson().fromJson(solicitacaoDelegacao, modelo.SolicitacaoDelegacao.class);
+    	Persistencia persistencia = new Persistencia();
+        if(!sd.equals(persistencia.selecionar(sd, sd.getId()))) {
+        	return cadastrar(solicitacaoDelegacao);
+        }else {
+        	return persistencia.atualizar(sd);
+        }
+    }
+
 
     @PUT
     @Consumes(MediaType.APPLICATION_JSON)
@@ -66,7 +81,12 @@ public class SolicitacaoDelegacao {
     public String selecionar() {
         return new Gson().toJson(new Persistencia().selecionar(new modelo.SolicitacaoDelegacao()));
     }
-
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("recebidas/{recebidas}")
+    public String recebidas(@PathParam("recebidas") String recebidas) {
+        return new Gson().toJson(new Persistencia().selecionar(new modelo.SolicitacaoDelegacao()));
+    }
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     @Path("{id}")

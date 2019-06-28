@@ -1,4 +1,4 @@
-{
+[{
     "id": 1,
     "nome": "11",
     "cnpj": "11",
@@ -19,6 +19,21 @@
                 "id": 1,
                 "email": "11",
                 "senha": "11"
+            }
+        },
+        {
+            "id": 2,
+            "nome": "22",
+            "cpf": "22",
+            "cargo": "22",
+            "endereco": "22",
+            "telefone": "22",
+            "ativo": true,
+            "foto": "2",
+            "usuario": {
+                "id": 2,
+                "email": "22",
+                "senha": "22"
             }
         }
     ],
@@ -62,6 +77,57 @@
                                 "email": "11",
                                 "senha": "11"
                             }
+                        },
+                        {
+				            "id": 2,
+				            "nome": "22",
+				            "cpf": "22",
+				            "cargo": "22",
+				            "endereco": "22",
+				            "telefone": "22",
+				            "ativo": true,
+				            "foto": "2",
+				            "usuario": {
+				                "id": 2,
+				                "email": "22",
+				                "senha": "22"
+				            }
+				        }
+                    ],
+                    "gerente": {
+                        "id": 1,
+                        "nome": "11",
+                        "cpf": "11",
+                        "cargo": "11",
+                        "endereco": "11",
+                        "telefone": "11",
+                        "ativo": true,
+                        "foto": "11",
+                        "usuario": {
+                            "id": 1,
+                            "email": "11",
+                            "senha": "11"
+                        }
+                    }
+                },
+                {
+                    "id": 2,
+                    "nome": "2",
+                    "funcionarios": [
+                        {
+                            "id": 1,
+                            "nome": "11",
+                            "cpf": "11",
+                            "cargo": "11",
+                            "endereco": "11",
+                            "telefone": "11",
+                            "ativo": true,
+                            "foto": "11",
+                            "usuario": {
+                                "id": 1,
+                                "email": "11",
+                                "senha": "11"
+                            }
                         }
                     ],
                     "gerente": {
@@ -87,11 +153,71 @@
                     "nome": "11",
                     "descricao": "11",
                     "tipo": "SOLICITACAO",
-                    "tipoItem": [
+                    "tipoItens": [
                         {
                             "id": 1,
                             "nome": "11",
-                            "tipoCampo": [
+                            "tipoCampos": [
+                                {
+                                    "id": 1,
+                                    "nome": "11",
+                                    "descricao": "11",
+                                    "tipo": "text"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": 2,
+                    "nome": "22",
+                    "descricao": "222",
+                    "tipo": "SOLICITACAO",
+                    "tipoItens": [
+                        {
+                            "id": 1,
+                            "nome": "11",
+                            "tipoCampos": [
+                                {
+                                    "id": 1,
+                                    "nome": "11",
+                                    "descricao": "11",
+                                    "tipo": "text"
+                                }
+                            ]
+                        }
+                    ]
+                },
+				{
+                    "id": 3,
+                    "nome": "33",
+                    "descricao": "33",
+                    "tipo": "DELEGACAO",
+                    "tipoItens": [
+                        {
+                            "id": 1,
+                            "nome": "11",
+                            "tipoCampos": [
+                                {
+                                    "id": 1,
+                                    "nome": "11",
+                                    "descricao": "11",
+                                    "tipo": "text"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": 4,
+                    "nome": "44",
+                    "descricao": "44",
+                    "tipo": "DELEGACAO",
+                    "tipoItens": [
+                        {
+                            "id": 1,
+                            "nome": "11",
+                            "tipoCampos": [
                                 {
                                     "id": 1,
                                     "nome": "11",
@@ -105,4 +231,4 @@
             ]
         }
     ]
-}
+}]

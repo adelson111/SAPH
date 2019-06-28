@@ -61,4 +61,22 @@ public class TipoItem implements Serializable {
         this.tipoCampos = tipoCampos;
     }
 
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final TipoItem other = (TipoItem) obj;
+        if (this.id != other.id) {
+            return false;
+        }
+        return true;
+    }
+    
+    
+
 }

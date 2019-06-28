@@ -3,7 +3,7 @@
     <div class="col-md-12 ">
       <div class="card">
         <div class="card-header text-center">
-          <h5 class="card-title">Nova solicitação</h5>
+          <h2 class="card-title">Nova solicitação</h2>
         </div>
         <div class="card-body" style="height:700px;">
           <div class="row">
@@ -12,17 +12,14 @@
                     <form class="text-left " style="color: #757575;" action="index.html" method="post" id="solicitacao" >
                       <div class="col">
                         <div class="md-form">
-                          <div class="input-group mb-3">
 
-                            <span class="input-group-text " id="tipoSolicitacao" for="inputGroupSelect01">Tipos</span>
-
-                            <select name="tipo" id="tipo" class="custom-select form-control form-control-lg"  required>
+                            <select name="tipo" id="tipo" class="form-control form-control-lg"  required>
                               <%tipos.forEach(function(solicitacao){%>
                                 <option value="<%=solicitacao.id%>"><%=solicitacao.nome%></option> 1
                              <%}); %>
                             </select>
 
-                          </div>
+
                         </div>
 
                         <div class="body-solicitacao max-height-50 overflow-auto" style="height:550px">
@@ -61,7 +58,7 @@
                   </div>
                   <div class="card-footer">
                     <div class="form-group float-right mr-5">
-                      <button type="button" class="btn btn-success btn-sm">
+                      <button type="button" class="btn btn-success btn-sm" id ="enviar">
                       <span class="glyphicon glyphicon-send"></span> Enviar</button>
                       <button type="submit" class="btn btn-success btn-sm" id ="guardar">
                       <span class="glyphicon glyphicon-floppy-disk" ></span> Guardar</button>
@@ -117,6 +114,13 @@ $('#imprimir').click(function(){
    window.print('new', '_blank');
 });
 $('#guardar').click(function(){
+  montarSolicitacao("cadadastrar","SALVA");
+});
+$('#enviar').click(function(){
+  montarSolicitacao("enviar","EM_ESPERA");
+});
+
+function montarSolicitacao(acao,status){
   var dici = new Map();
   tipoSolicitacao = $("select[name='tipo']").val();
   tipoItens = [];
@@ -142,16 +146,15 @@ $('#guardar').click(function(){
       id:tipoSolicitacao
     },
     solicitanteDelegante:{
-      id:7
+      id:1
     },
-    status:"SALVA",
+    status:status,
     itens:tipoItens,
   }
   dici = JSON.stringify(dici);
   console.log(dici);
-  $.post("http://localhost:3000/solicitacoes/cadadastrar",{'solicitacao':dici},function(data){
+  $.post("http://localhost:3000/solicitacoes/"+acao,{'solicitacao':dici},function(data){
     alert(data);
   });
-});
-
+}
 </script>

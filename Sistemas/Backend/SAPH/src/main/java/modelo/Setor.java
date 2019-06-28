@@ -72,8 +72,6 @@ public class Setor implements Serializable {
         this.funcionarios = funcionarios;
     }
 
-   
-
     public Funcionario getGerente() {
         return gerente;
     }
@@ -82,30 +80,24 @@ public class Setor implements Serializable {
         this.gerente = gerente;
     }
 
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + (int) (id ^ (id >>> 32));
-		return result;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Setor other = (Setor) obj;
-		if (id != other.id)
-			return false;
-		return true;
-	}
+	
 
     public modelo.Nivel getNivel(){
     	return new Persistencia().getNivelBySetor(this);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+            if (this == obj)
+                    return true;
+            if (obj == null)
+                    return false;
+            if (getClass() != obj.getClass())
+                    return false;
+            Setor other = (Setor) obj;
+            if (id != other.id)
+                    return false;
+            return true;
     }
   
     

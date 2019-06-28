@@ -1,0 +1,201 @@
+[
+    {
+        "id": 1,
+        "nome": "Organização",
+        "cnpj": "77.777.777/7777-77",
+        "endereco": "Rua da organização",
+        "telefone": "(77) 7 7777-7777",
+        "situacao": true,
+        "funcionarios": [
+            {
+                "id": 2,
+                "nome": "Funcionário",
+                "cpf": "333.333.333-33",
+                "cargo": "Vendedor",
+                "endereco": "Rua do funcionário",
+                "telefone": "(33) 3 3333-3333",
+                "ativo": true,
+                "foto": "Foto",
+                "usuario": {
+                    "id": 2,
+                    "email": "funcionario@gmail.com",
+                    "senha": "pbkdf2_sha256$150000$GfiVfcxwfUj9$BpMC1neuKPQ9RkfIYA67a/rERUQRK6Y9Xy9TMyptMxE="
+                }
+            },
+            {
+                "id": 1,
+                "nome": "Adelson",
+                "cpf": "111.111.111-11",
+                "cargo": "admin",
+                "endereco": "Rua do funcionário",
+                "telefone": "(11) 1 1111-1111",
+                "ativo": true,
+                "foto": "Foto",
+                "usuario": {
+                    "id": 1,
+                    "email": "adelson@gmail.com",
+                    "senha": "pbkdf2_sha256$150000$AjcYTD7Qebiu$UptSFeSwuRHw3z/dJirxsG21o14lv82EmRbEDrZM8Kg="
+                }
+            }
+        ],
+        "niveis": [
+            {
+                "id": 2,
+                "nome": "Nível 2",
+                "nivelSuperior": 1,
+                "nivelInferior": "0",
+                "responsavel": {
+                    "id": 1
+                },
+                "setores": [
+                    {
+                        "id": 2,
+                        "nome": "Setor 2",
+                        "funcionarios": [
+                            {
+                                "id": 2
+                            }
+                        ],
+                        "gerente": {
+                            "id": 1
+                        }
+                    }
+                ],
+                "tipoSolicitacoesDelegacoes": []
+            },
+            {
+                "id": 1,
+                "nome": "Nível 1",
+                "nivelSuperior": "0",
+                "nivelInferior": 2,
+                "responsavel": {
+                    "id": 1
+                },
+                "setores": [
+                    {
+                        "id": 1,
+                        "nome": "Setor 1",
+                        "funcionarios": [
+                            {
+                                "id": 1
+                            }
+                        ],
+                        "gerente": {
+                            "id": 1
+                        }
+                    }
+                ],
+                "tipoSolicitacoesDelegacoes": [
+                    {
+                        "id": 3,
+                        "nome": "Compra",
+                        "descricao": "Comprar caneta",
+                        "tipo": "SOLICITACAO",
+                        "tipoItens": [
+                            {
+                                "id": 1,
+                                "nome": "Orçamento",
+                                "tipoCampos": [
+                                    {
+                                        "id": 5,
+                                        "nome": "Foto",
+                                        "descricao": "Foto do produto",
+                                        "tipo": "file"
+                                    },
+                                    {
+                                        "id": 4,
+                                        "nome": "Peso",
+                                        "descricao": "Peso do produto",
+                                        "tipo": "number"
+                                    },
+                                    {
+                                        "id": 3,
+                                        "nome": "Valor",
+                                        "descricao": "Valor do Produto",
+                                        "tipo": "number"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": 2,
+                        "nome": "Todos",
+                        "descricao": "Orçamento e Dados",
+                        "tipo": "SOLICITACAO",
+                        "tipoItens": [
+                            {
+                                "id": 1,
+                                "nome": "Orçamento",
+                                "tipoCampos": [
+                                    {
+                                        "id": 5,
+                                        "nome": "Foto",
+                                        "descricao": "Foto do produto",
+                                        "tipo": "file"
+                                    },
+                                    {
+                                        "id": 4,
+                                        "nome": "Peso",
+                                        "descricao": "Peso do produto",
+                                        "tipo": "number"
+                                    },
+                                    {
+                                        "id": 3,
+                                        "nome": "Valor",
+                                        "descricao": "Valor do Produto",
+                                        "tipo": "number"
+                                    }
+                                ]
+                            },
+                            {
+                                "id": 2,
+                                "nome": "Dados pessoais",
+                                "tipoCampos": [
+                                    {
+                                        "id": 2,
+                                        "nome": "Idade",
+                                        "descricao": "Idade do funcionario",
+                                        "tipo": "number"
+                                    },
+                                    {
+                                        "id": 1,
+                                        "nome": "Nome",
+                                        "descricao": "Nome do funcionário",
+                                        "tipo": "text"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": 1,
+                        "nome": "Contratar",
+                        "descricao": "Contratar Funcionário",
+                        "tipo": "SOLICITACAO",
+                        "tipoItens": [
+                            {
+                                "id": 2,
+                                "nome": "Dados pessoais",
+                                "tipoCampos": [
+                                    {
+                                        "id": 2,
+                                        "nome": "Idade",
+                                        "descricao": "Idade do funcionario",
+                                        "tipo": "number"
+                                    },
+                                    {
+                                        "id": 1,
+                                        "nome": "Nome",
+                                        "descricao": "Nome do funcionário",
+                                        "tipo": "text"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]

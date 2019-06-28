@@ -20,6 +20,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import banco.Persistencia;
+
 /**
  *
  * @author adelson
@@ -115,8 +117,21 @@ public class Nivel implements Serializable {
     public void setTipoSolicitacoesDelegacoes(List<TipoSolicitacaoDelegacao> tipoSolicitacoesDelegacoes) {
         this.tipoSolicitacoesDelegacoes = tipoSolicitacoesDelegacoes;
     }
+    
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Nivel other = (Nivel) obj;
+		if (id != other.id)
+			return false;
+		return true;
+	}
 
- 
     
     
 }

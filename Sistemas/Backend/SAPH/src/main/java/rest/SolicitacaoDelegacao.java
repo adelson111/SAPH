@@ -83,9 +83,9 @@ public class SolicitacaoDelegacao {
     }
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    @Path("recebidas/{recebidas}")
-    public String recebidas(@PathParam("recebidas") String recebidas) {
-        return new Gson().toJson(new Persistencia().selecionar(new modelo.SolicitacaoDelegacao()));
+    @Path("recebidas/{funcionario}")
+    public String recebidas(@PathParam("funcionario") String funcionario) {
+        return new Gson().toJson(new Persistencia().recebidas(Long.parseLong(funcionario), true));
     }
     @GET
     @Produces(MediaType.APPLICATION_JSON)

@@ -223,8 +223,10 @@ public class Persistencia {
 		} catch (Exception e) {
 			System.out.println("Erro ao selecionar: " + e.getMessage());
 		} finally {
-			em.close();
-			emf.close();
+			if(em.isOpen())
+				em.close();
+			if(emf.isOpen())
+				emf.close();
 		}
 		return null;
 	}

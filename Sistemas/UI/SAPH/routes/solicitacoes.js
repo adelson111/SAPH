@@ -8,6 +8,7 @@ router.get('/new',(req, res, next)=>{
     res.render('new', {
       title: 'Solicitacoes - SAPH',
       tipos: data,
+      funcionario:req.session.usuario,
     });
   });
 
@@ -18,6 +19,7 @@ router.get('/list',(req, res, next)=>{
     res.render('list', {
       title: 'Solicitacoes - SAPH',
       solicitacoes:data,
+      funcionario:req.session.usuario,
     });
   });
 });

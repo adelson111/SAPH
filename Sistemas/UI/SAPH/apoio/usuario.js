@@ -10,31 +10,14 @@ module.exports ={
 
     login(email, senha){
         return new Promise((resolve, reject) =>{
-            client.query(
-                `  client.post("http://localhost:8080/SAPH/saph/usuario/autenticar/"+email+"/"+senha`
-                , [
-                    email
-                ], (err, results) =>{
-                    if (err){
-                        reject(err);
-                    } else {
-
-                        if(!results.length > 0){
-                            reject('Usuário o senha incorretos')
-                        }else{
-                            let row = results[0];
-
-                            if (row.senha !== senha){
-                                reject('Usuário o senha incorretos');
-                            }else{
-                                resolve(row);
-                            }
-                        }
-
-                    }
-                }
-            )
-        })
+          client.post("http://localhost:8080/SAPH/saph/usuario/autenticar/"+email+"/"+senha,function (data, response) {
+            if(data.nome!=null){
+              resolve(data);
+            }else{
+              reject(Error('testever:'));
+            }
+          });
+        });
     }
 
 };

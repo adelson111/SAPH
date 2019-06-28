@@ -36,31 +36,31 @@ import tipo.TipoStatus;
 @SequenceGenerator(name = "sequencia_solicitacao_delegacao", sequenceName = "sequencia_solicitacao_delegacao",
         initialValue = 1, allocationSize = 1)
 public class SolicitacaoDelegacao implements Serializable {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequencia_solicitacao_delegacao")
     private long id;
-    
+
     @Enumerated(EnumType.STRING)
     @Column(length = 10)
     private tipo.TipoStatus status;
-    
+
     @OneToOne
     @JoinColumn(name = "tipo_solicitacao_delegacao_id")
     private TipoSolicitacaoDelegacao tipoSolicitacaoDelegacao;
-    
+
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "data_envio")
     private Date dataEnvio = new java.sql.Date(System.currentTimeMillis());
-    
+
     @OneToMany(fetch = FetchType.EAGER)
     @JoinColumn(name = "solicitaca_delegacao_id")
     private List<modelo.Item> itens;
-    
+
     @OneToOne
     @JoinColumn(name = "solicitante_delegante_id")
     private Funcionario solicitanteDelegante;
-    
+
     public long getId() {
         return id;
     }
@@ -85,31 +85,28 @@ public class SolicitacaoDelegacao implements Serializable {
         this.tipoSolicitacaoDelegacao = tipoSolicitacaoDelegacao;
     }
 
-	public List<Item> getItens() {
-		return itens;
-	}
+    public List<Item> getItens() {
+        return itens;
+    }
 
-	public void setItens(List<Item> itens) {
-		this.itens = itens;
-	}
+    public void setItens(List<Item> itens) {
+        this.itens = itens;
+    }
 
-	public Date getDataEnvio() {
-		return dataEnvio;
-	}
+    public Date getDataEnvio() {
+        return dataEnvio;
+    }
 
-	public void setDataEnvio(Date dataEnvio) {
-		this.dataEnvio = dataEnvio;
-	}
+    public void setDataEnvio(Date dataEnvio) {
+        this.dataEnvio = dataEnvio;
+    }
 
-	public Funcionario getSolicitanteDelegante() {
-		return solicitanteDelegante;
-	}
+    public Funcionario getSolicitanteDelegante() {
+        return solicitanteDelegante;
+    }
 
-	public void setSolicitanteDelegante(Funcionario solicitanteDelegante) {
-		this.solicitanteDelegante = solicitanteDelegante;
-	}
-    
-	
-    
-    
+    public void setSolicitanteDelegante(Funcionario solicitanteDelegante) {
+        this.solicitanteDelegante = solicitanteDelegante;
+    }
+
 }

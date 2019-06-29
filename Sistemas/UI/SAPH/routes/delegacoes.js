@@ -8,6 +8,7 @@ router.get('/nova-delegacao',(req, res, next)=>{
     res.render('nova-delegacao', {
       title: 'Delegacoes - SAPH',
       tipos: data,
+      funcionario:req.session.usuario,
     });
   });
 });
@@ -18,6 +19,7 @@ router.get('/listar-delegacoes',(req, res, next)=>{
     res.render('listar-delegacoes', {
       title: 'Delegacoes - SAPH',
       delegacoes:data,
+      funcionario:req.session.usuario,
     });
   });
 });
@@ -28,6 +30,7 @@ router.get('/listar-delegacoes-enviadas',(req, res, next)=>{
     res.render('listar-delegacoes-enviadas', {
       title: 'Delegacoes - SAPH',
       delegacoes:data,
+      funcionario:req.session.usuario,
     });
   });
 });
@@ -37,27 +40,31 @@ router.get('/listar-delegacoes-enviadas',(req, res, next)=>{
 router.get('/listar-delegacoes',(req, res, next)=>{
   res.render('listar-delegacoes', {
     title: 'Solicitações - SAPH',
-    dele: true
+    dele: true,
+    funcionario:req.session.usuario,
   });
 });
 
 router.get('/d-confirmadas',(req, res, next)=>{
   res.render('d-confirmadas', {
     title: 'Solicitações - SAPH',
+    funcionario:req.session.usuario,
   });
 });
 
 router.get('/d-analise',(req, res, next)=>{
   res.render('d-analise', {
     title: 'Solicitações - SAPH',
-    dele: true
+    dele: true,
+    funcionario:req.session.usuario,
   });
 });
 
 router.get('/d-salvas',(req, res, next)=>{
   res.render('d-salvas', {
     title: 'Solicitações - SAPH',
-    dele: true
+    dele: true,
+    funcionario:req.session.usuario,
   });
 });
 

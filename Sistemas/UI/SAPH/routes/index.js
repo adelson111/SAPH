@@ -5,13 +5,7 @@ var client = new Client();
 var usuarios = require('./../apoio/usuario');
 /* GET home page. */
 
-router.use(function(req,res,next){
-  if(['/login'].indexOf(req.url) === -1 && !req.session.usuario){
-    req.redirect("/login");
-  }else{
-    next();
-  }
-});
+
 router.get('/', function(req, res, next) {
   res.render('index', {
      title: 'SAPH',
@@ -32,15 +26,6 @@ router.get('/logout',(req, res, next) =>{
   res.redirect('/login');
 });
 
-router.get('/login',(req, res, next)=>{
-
-  usuarios.render(req, res, null);
-  // res.render('login', {
-  //   title: 'Login - SAPH',
-  //   home : true
-  // });
-});
-
 router.post('/login',(req, res, next)=>{
   console.log(req.body.email);
   console.log(req.body.senha);
@@ -55,7 +40,10 @@ router.post('/login',(req, res, next)=>{
       res.redirect('/inicio');
 
     }).catch(err =>{
-        console.log('erro543');
+      console.log(req.session);
+      console.log(err);
+      res.redirect('/login');
+      console.log('erro543');
     })
   }
 
@@ -84,23 +72,17 @@ router.get('/inicio',(req, res, next)=>{
   });
 });
 
-//rota para testes
-
-// router.get('/inicio',(req, res, next)=>{
-//   res.render('inicio', {
-//     title: 'Início - SAPH',
-//   });
-// });
-
 router.get('/visualizar',(req, res, next)=>{
   res.render('visualizar', {
     title: 'Visualizar - SAPH',
+    funcionario:req.session.usuario,
   });
 });
 
 router.get('/exportar',(req, res, next)=>{
   res.render('exportar', {
     title: 'Exportar - SAPH',
+    funcionario:req.session.usuario,
   });
 
 });

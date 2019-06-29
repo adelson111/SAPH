@@ -151,13 +151,13 @@ public class Persistencia {
 		List<modelo.Funcionario> funcionarios =  selecionar(funcionario);
 		for(modelo.Funcionario f:funcionarios) {
 //			solicitacoesDelegacoes.add(f.getNivel().getId());
-			if(f.getNivel().getId() == funcionario.getIdNivelSuperior()) {
+			if(f.getIdNivelSuperior() == funcionario.getNivel().getId()) {
 				try {
 					em = getPersistencia();
 					solicitacoesDelegacoes.addAll(em
 							.createQuery(String.valueOf(
 									"select sd from SolicitacaoDelegacao sd where sd.solicitanteDelegante = :funcionario and sd.status != :status"))
-							.setParameter("funcionario", funcionario)
+							.setParameter("funcionario", f)
 							.setParameter("status", tipo.TipoStatus.SALVA)
 							.getResultList()
 					);
@@ -217,16 +217,15 @@ public class Persistencia {
 
 	public Funcionario selecionarUsuario(String email, String senha) {
 		try {
+			modelo.Usuario usuario = autenticar(email, senha);
 			em = getPersistencia();
 			return (Funcionario) em.createQuery("select f from Funcionario f where f.usuario = :usuario")
-					.setParameter("usuario", autenticar(email, senha)).getSingleResult();
+					.setParameter("usuario", usuario).getSingleResult();
 		} catch (Exception e) {
 			System.out.println("Erro ao selecionar: " + e.getMessage());
 		} finally {
-			if(em.isOpen())
-				em.close();
-			if(emf.isOpen())
-				emf.close();
+			em.close();
+			emf.close();
 		}
 		return null;
 	}

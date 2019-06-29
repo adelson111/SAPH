@@ -29,6 +29,7 @@ router.get('/listar-enviadas',(req, res, next)=>{
     res.render('listar-enviadas', {
       title: 'Solicitacoes - SAPH',
       solicitacoes:data,
+      funcionario:req.session.usuario,
     });
   });
 });
@@ -36,24 +37,28 @@ router.get('/listar-enviadas',(req, res, next)=>{
 router.get('/confirmadas',(req, res, next)=>{
   res.render('confirmadas', {
     title: 'Solicitações - SAPH',
+    funcionario:req.session.usuario,
   });
 });
 
 router.get('/analise',(req, res, next)=>{
   res.render('analise', {
     title: 'Solicitações - SAPH',
+    funcionario:req.session.usuario,
   });
 });
 
 router.get('/recusadas',(req, res, next)=>{
   res.render('recusadas', {
     title: 'Solicitações - SAPH',
+    funcionario:req.session.usuario,
   });
 });
 
 router.get('/salvas',(req, res, next)=>{
   res.render('salvas', {
     title: 'Solicitações - SAPH',
+    funcionario:req.session.usuario,
   });
 });
 

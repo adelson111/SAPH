@@ -11,7 +11,7 @@ module.exports ={
     login(email, senha){
         return new Promise((resolve, reject) =>{
           client.post("http://localhost:8080/SAPH/saph/usuario/autenticar/"+email+"/"+senha,function (data, response) {
-            if(data.nome!=null){
+            if(data!=null){
               resolve(data);
             }else{
               reject(Error('testever:'));

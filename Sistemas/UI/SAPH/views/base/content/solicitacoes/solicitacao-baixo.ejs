@@ -14,7 +14,7 @@
     <div class="panel bg-info text-light">
       <div class="panel-heading ">
         <h4 class="panel-title">
-          </span>DETALHES DA DELEGAÇÃO</a>
+          <a>DETALHES DA SOLICITAÇÃO</a>
         </h4>
       </div>
     </div><!-- /input-group image-preview [TO HERE]-->
@@ -27,7 +27,7 @@
       <div class="panel bg-dark text-light">
         <div class="panel-heading">
           <h4 class="panel-title text-center">
-            </span> Se Mate</a>
+            <a id="nome-solicitacao"> Se Mate</a>
           </h4>
         </div>
       </div><!-- /input-group image-preview [TO HERE]-->
@@ -38,21 +38,20 @@
           <div class="col">
             <div class="md-form">
               <div class="input-group mb-3">
-                <div class="input-group-prepend ">
-                </div>
-                  <select name="tipo" id="tipo" requerid class="custom-select w-100">
-                    <option value=""><span class="flag-icon flag-icon-gr"></span>Select Country</option>
-                </select>
+                <label for="">Solicitanate :</label>
+                <label id = "solicitante" for=""></label>
+                <br>
+                <label for="">Data e hora da solicitação:</label>
+                <label id = "data" for=""></label>
               </div>
             </div>
 
-            <div class="body-solicitacao">
+            <div class="body-solicitacao" id = "body-solicitacao">
               <div class="itens"></div>
             </div>
 
           </div>
         </form>
-        <hr>
       </div>
 
       <div class="form-group float-right mr-5">
@@ -92,7 +91,6 @@
               <div class="status-upload">
                 <form>
                   <textarea placeholder="Escreva o seu comentário?" ></textarea>
-
                   <button type="submit" class="btn btn-success green"><i class="fa fa-share"></i> Comentar</button>
                 </form>
               </div><!-- Status Upload  -->
@@ -295,4 +293,51 @@ console.log(data);
 });
 });
 
+</script>
+<script type="text/javascript">
+  function pars(solicitacao){
+    console.log(solicitacao);
+    $('#solicitante').html(solicitacao.solicitanteDelegante.nome);
+    $('#data').html(solicitacao.dataEnvio);
+    $('.body-solicitacao').html('');
+    $('#nome-solicitacao').html(solicitacao.tipoSolicitacaoDelegacao.nome);
+    solicitacao.itens.forEach((item)=>{
+      html =  '<hr>';
+      html += "<h3>"+item.tipoItem.nome+"</h3>";
+      html += '<div class="form-row tipo-itens" id="'+item.id+'">'
+        size = item.campos.length>3?'col-4':'col';
+        item.campos.forEach((campo)=>{
+          html += montarCampo(campo,size);
+        });
+      html += '</div>';
+    });
+    $('.body-solicitacao').append(html);
+  }
+
+  function moverInputFile(item){
+    var files = [];
+    for(i = 0; i < item.campos.tipoCampo.length; i++){
+      if(item.campos.tipoCampo[i].tipo=='file'){
+        files.push(item.campos.tipoCampo[i]);
+        item.campos.tipoCampo.splice(i, 1);
+      }
+    };
+    return item.tipoCampos.concat(files);
+  }
+
+  function montarCampo(campo,size){
+    size = campo.tipo=='textarea'?'col-12':size;
+    htmlCampo = '<div class="'+size+' orm-group " >';
+      htmlCampo+='<label>'+campo.tipoCampo.nome+'</label>';
+      tipo = campo.tipo=='file'?'-file':'';
+      htmlCampo +='<input name = "campo" data-id="'+campo.id+'" type="'+campo.tipoCampo.tipo+'" class="form-control'+tipo+' tipo-campos" value="'+campo.valor+'"';
+      if(solicitacao.status == "SALVA"){
+        htmlCampo += '>';
+      }else{
+        htmlCampo +=' disabled>'
+      }
+
+    htmlCampo += '</div>';
+    return htmlCampo;
+  }
 </script>

@@ -81,4 +81,10 @@ router.post('/enviar', function (req, res) {
     res.send(data);
   });
 });
+
+router.get('/get',(req,res)=>{
+  client.get("http://localhost:8080/SAPH/saph/solicitacao-delegacao/"+req.query.solicitacao,(data, response)=>{
+    res.send(data);
+  });
+});
 module.exports = router;

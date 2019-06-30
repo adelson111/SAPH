@@ -4,7 +4,7 @@ var Client = require('node-rest-client').Client;
 var client = new Client();
 
 router.get('/new',(req, res, next)=>{
-  client.get("http://localhost:8080/SAPH/saph/tipo-solicitacao-delegacao/tipo/SOLICITACAO", function (data, response) {
+  client.get("http://localhost:8080/SAPH/saph/tipo-solicitacao-delegacao/funcionario/"+req.session.usuario.id+"/SOLICITACAO", function (data, response) {
     res.render('new', {
       title: 'Solicitacoes - SAPH',
       tipos: data,
@@ -15,7 +15,7 @@ router.get('/new',(req, res, next)=>{
 });
 
 router.get('/list',(req, res, next)=>{
-  client.get("http://localhost:8080/SAPH/saph/solicitacao-delegacao/recebidas/"+req.query.funcionario, function (data, response) {
+  client.get("http://localhost:8080/SAPH/saph/solicitacao-delegacao/recebidas/"+req.session.usuario.id, function (data, response) {
     res.render('list', {
       title: 'Solicitacoes - SAPH',
       solicitacoes:data,
@@ -25,7 +25,7 @@ router.get('/list',(req, res, next)=>{
 });
 
 router.get('/listar-enviadas',(req, res, next)=>{
-  client.get("http://localhost:8080/SAPH/saph/solicitacao-delegacao/parametros/SOLICITACAO/"+req.query.funcionario, function (data, response) {
+  client.get("http://localhost:8080/SAPH/saph/solicitacao-delegacao/parametros/SOLICITACAO/"+req.session.usuario.id, function (data, response) {
     res.render('listar-enviadas', {
       title: 'Solicitacoes - SAPH',
       solicitacoes:data,
@@ -82,9 +82,4 @@ router.post('/enviar', function (req, res) {
   });
 });
 
-router.get('/get',(req,res)=>{
-  client.get("http://localhost:8080/SAPH/saph/solicitacao-delegacao/"+req.query.solicitacao,(data, response)=>{
-    res.send(data);
-  });
-});
 module.exports = router;

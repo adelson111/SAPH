@@ -253,7 +253,7 @@ public class Persistencia {
 		}
 		return null;
 	}
-
+	
 	public List<SolicitacaoDelegacao> getSolicitacaoDelegacao(String tipoSD, long solicitanteDelegante) {
 		try {
 			em = getPersistencia();

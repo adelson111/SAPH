@@ -6,6 +6,8 @@
 package rest;
 
 import banco.Persistencia;
+import modelo.Funcionario;
+
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import java.util.List;
@@ -70,6 +72,18 @@ public class TipoSolicitacaoDelegacao {
     @Path("tipo/{tipo}")
     public String selecionar(@PathParam("tipo") String tipo) {
         return new Gson().toJson(new Persistencia().getTipoSolicitacaoDelegacao(tipo));
+    }
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("funcionario/{funcionarioId}/{tipo}")
+    public String selecionarSolicitacoesDelegacoes(@PathParam("funcionarioId") long funcionarioId,@PathParam("tipo") tipo.TipoSolicitacaoDelegacao tipoSD) {
+    	Funcionario funcionario = (Funcionario) new Persistencia().selecionar(new Funcionario(),funcionarioId);
+    	if(tipoSD.equals(tipo.TipoSolicitacaoDelegacao.SOLICITACAO)) {
+    		return new Gson().toJson(funcionario.getNivel().getTipoSolicitacoes());
+    	}else {
+    		return new Gson().toJson(funcionario.getNivel().getTipoDelegacoes());
+    	}
+    	
     }
 
 }

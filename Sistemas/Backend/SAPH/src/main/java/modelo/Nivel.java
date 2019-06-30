@@ -6,6 +6,7 @@
 package modelo;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import javax.persistence.Column;
@@ -116,6 +117,25 @@ public class Nivel implements Serializable {
 
     public void setTipoSolicitacoesDelegacoes(List<TipoSolicitacaoDelegacao> tipoSolicitacoesDelegacoes) {
         this.tipoSolicitacoesDelegacoes = tipoSolicitacoesDelegacoes;
+    }
+    
+    public List<TipoSolicitacaoDelegacao> getTipoSolicitacoes(){
+    	List<TipoSolicitacaoDelegacao> solicitacoes = new ArrayList<TipoSolicitacaoDelegacao>();
+    	for(TipoSolicitacaoDelegacao solicitacao: this.tipoSolicitacoesDelegacoes) {
+    		if(solicitacao.getTipo().equals(tipo.TipoSolicitacaoDelegacao.SOLICITACAO)) {
+    			solicitacoes.add(solicitacao);
+    		}
+    	}
+    	return solicitacoes;
+    }
+    public List<TipoSolicitacaoDelegacao> getTipoDelegacoes(){
+    	List<TipoSolicitacaoDelegacao> delegacoes = new ArrayList<TipoSolicitacaoDelegacao>();
+    	for(TipoSolicitacaoDelegacao solicitacao: this.tipoSolicitacoesDelegacoes) {
+    		if(solicitacao.getTipo().equals(tipo.TipoSolicitacaoDelegacao.DELEGACAO)) {
+    			delegacoes.add(solicitacao);
+    		}
+    	}
+    	return delegacoes;
     }
     
 	@Override

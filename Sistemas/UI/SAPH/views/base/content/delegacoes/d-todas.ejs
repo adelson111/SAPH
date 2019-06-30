@@ -1,6 +1,6 @@
 <%delegacoes.forEach(function(delegacao){%>
   <div class="Portfolio">
-    <a href="#!" id='view' data-id = '<%delegacao.id%>' data-toggle="modal" data-target="#largeModal">
+    <a href="#!" id='view' onclick="pars(<%=JSON.stringify(delegacao)%>)" data-toggle="modal" data-target="#largeModal">
       <img class="card-img" src="http://www.pngmart.com/files/7/Envelope-PNG-Transparent.png" alt="">
     </a>
     <div class="desc"><%=delegacao.tipoSolicitacaoDelegacao.nome%></div>

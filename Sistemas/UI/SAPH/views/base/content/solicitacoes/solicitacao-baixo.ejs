@@ -307,7 +307,7 @@ console.log(data);
       html += '<div class="form-row tipo-itens" id="'+item.id+'">'
         size = item.campos.length>3?'col-4':'col';
         item.campos.forEach((campo)=>{
-          html += montarCampo(campo,size);
+          html += montarCampo(campo,size,solicitacao.status);
         });
       html += '</div>';
     });
@@ -325,13 +325,14 @@ console.log(data);
     return item.tipoCampos.concat(files);
   }
 
-  function montarCampo(campo,size){
+  function montarCampo(campo,size,status){
     size = campo.tipo=='textarea'?'col-12':size;
     htmlCampo = '<div class="'+size+' orm-group " >';
       htmlCampo+='<label>'+campo.tipoCampo.nome+'</label>';
       tipo = campo.tipo=='file'?'-file':'';
       htmlCampo +='<input name = "campo" data-id="'+campo.id+'" type="'+campo.tipoCampo.tipo+'" class="form-control'+tipo+' tipo-campos" value="'+campo.valor+'"';
-      if(solicitacao.status == "SALVA"){
+      console.log(status);
+      if(status == "SALVA"){
         htmlCampo += '>';
       }else{
         htmlCampo +=' disabled>'

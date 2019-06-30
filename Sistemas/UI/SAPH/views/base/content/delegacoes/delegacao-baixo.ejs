@@ -35,7 +35,7 @@
     </div>
 
       <div class="card-body px-lg-5 pt-0 pt-30 overflow-auto"  id="cardSolici">
-        <form class="text-left " style="color: #757575;" action="index.html" method="post" id="solicitacao" >
+        <form class="text-left " style="color: #757575;" action="index.html" method="post" id="delegacao" >
           <div class="col">
             <div class="md-form">
               <div class="input-group mb-3">
@@ -48,7 +48,7 @@
               </div>
             </div>
 
-            <div class="body-solicitacao">
+            <div class="body-delegacao">
               <div class="itens"></div>
             </div>
 
@@ -134,7 +134,7 @@
 .form-row {
 display: block;
 }
-.body-solicitacao{
+.body-delegacao{
 display: block;
 }
 }
@@ -292,4 +292,51 @@ window.print('new', '_blank');
 <script type="text/javascript">
   alert("oi");
 </script>
-<% include("script-modal") %>
+<script type="text/javascript">
+  function pars(delegacao){
+    console.log(delegacao);
+    $('#solicitante').html(delegacao.solicitanteDelegante.nome);
+    $('#data').html(delegacao.dataEnvio);
+    $('.body-delegacao').html('');
+    $('#nome-delegacao').html(delegacao.tipoSolicitacaoDelegacao.nome);
+    delegacao.itens.forEach((item)=>{
+      html =  '<hr>';
+      html += "<h3>"+item.tipoItem.nome+"</h3>";
+      html += '<div class="form-row tipo-itens" id="'+item.id+'">'
+        size = item.campos.length>3?'col-4':'col';
+        item.campos.forEach((campo)=>{
+          html += montarCampo(campo,size,delegacao.status);
+        });
+      html += '</div>';
+    });
+    $('.body-delegacao').append(html);
+  }
+
+  function moverInputFile(item){
+    var files = [];
+    for(i = 0; i < item.campos.tipoCampo.length; i++){
+      if(item.campos.tipoCampo[i].tipo=='file'){
+        files.push(item.campos.tipoCampo[i]);
+        item.campos.tipoCampo.splice(i, 1);
+      }
+    };
+    return item.tipoCampos.concat(files);
+  }
+
+  function montarCampo(campo,size,status){
+    size = campo.tipo=='textarea'?'col-12':size;
+    htmlCampo = '<div class="'+size+' orm-group " >';
+      htmlCampo+='<label>'+campo.tipoCampo.nome+'</label>';
+      tipo = campo.tipo=='file'?'-file':'';
+      htmlCampo +='<input name = "campo" data-id="'+campo.id+'" type="'+campo.tipoCampo.tipo+'" class="form-control'+tipo+' tipo-campos" value="'+campo.valor+'"';
+      console.log(status);
+      if(status == "SALVA"){
+        htmlCampo += '>';
+      }else{
+        htmlCampo +=' disabled>'
+      }
+
+    htmlCampo += '</div>';
+    return htmlCampo;
+  }
+</script>

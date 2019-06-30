@@ -4,7 +4,7 @@ var Client = require('node-rest-client').Client;
 var client = new Client();
 
 router.get('/nova-delegacao',(req, res, next)=>{
-  client.get("http://localhost:8080/SAPH/saph/tipo-solicitacao-delegacao/tipo/DELEGACAO", function (data, response) {
+  client.get("http://localhost:8080/SAPH/saph/tipo-solicitacao-delegacao/funcionario/"+req.session.usuario.id+"/DELEGACAO", function (data, response) {
     res.render('nova-delegacao', {
       title: 'Delegacoes - SAPH',
       tipos: data,
@@ -14,7 +14,7 @@ router.get('/nova-delegacao',(req, res, next)=>{
 });
 
 router.get('/listar-delegacoes',(req, res, next)=>{
-  client.get("http://localhost:8080/SAPH/saph/solicitacao-delegacao/parametros/DELEGACAO/"+req.query.funcionario, function (data, response) {
+  client.get("http://localhost:8080/SAPH/saph/solicitacao-delegacao/parametros/DELEGACAO/"+req.session.usuario.id, function (data, response) {
     console.log(data);
     res.render('listar-delegacoes', {
       title: 'Delegacoes - SAPH',
@@ -25,7 +25,7 @@ router.get('/listar-delegacoes',(req, res, next)=>{
 });
 
 router.get('/listar-delegacoes-enviadas',(req, res, next)=>{
-  client.get("http://localhost:8080/SAPH/saph/solicitacao-delegacao/parametros/DELEGACAO/"+req.query.funcionario, function (data, response) {
+  client.get("http://localhost:8080/SAPH/saph/solicitacao-delegacao/parametros/DELEGACAO/"+req.session.usuario.id, function (data, response) {
     console.log(data);
     res.render('listar-delegacoes-enviadas', {
       title: 'Delegacoes - SAPH',

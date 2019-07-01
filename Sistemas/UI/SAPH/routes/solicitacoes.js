@@ -3,7 +3,7 @@ var router = express.Router();
 var Client = require('node-rest-client').Client;
 var client = new Client();
 
-router.get('/new',(req, res, next)=>{
+router.get('/nova',(req, res, next)=>{
   client.get("http://localhost:8080/SAPH/saph/tipo-solicitacao-delegacao/funcionario/"+req.session.usuario.id+"/SOLICITACAO", function (data, response) {
     res.render('new', {
       title: 'Solicitacoes - SAPH',
@@ -14,22 +14,24 @@ router.get('/new',(req, res, next)=>{
 
 });
 
-router.get('/list',(req, res, next)=>{
-  client.get("http://localhost:8080/SAPH/saph/solicitacao-delegacao/recebidas/"+req.session.usuario.id, function (data, response) {
+router.get('/recebidas',(req, res, next)=>{
+  client.get("http://localhost:8080/SAPH/saph/solicitacao-delegacao/recebidas/"+req.session.usuario.id+"/"+true, function (data, response) {
     res.render('list', {
       title: 'Solicitacoes - SAPH',
       solicitacoes:data,
       funcionario:req.session.usuario,
+      tipo: 'Recebidas'
     });
   });
 });
 
-router.get('/listar-enviadas',(req, res, next)=>{
+router.get('/enviadas',(req, res, next)=>{
   client.get("http://localhost:8080/SAPH/saph/solicitacao-delegacao/parametros/SOLICITACAO/"+req.session.usuario.id, function (data, response) {
     res.render('listar-enviadas', {
       title: 'Solicitacoes - SAPH',
       solicitacoes:data,
       funcionario:req.session.usuario,
+      tipo: 'Enviadas'
     });
   });
 });

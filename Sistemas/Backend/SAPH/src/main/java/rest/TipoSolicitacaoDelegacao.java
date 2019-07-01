@@ -70,7 +70,7 @@ public class TipoSolicitacaoDelegacao {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     @Path("tipo/{tipo}")
-    public String selecionar(@PathParam("tipo") String tipo) {
+    public String selecionar(@PathParam("tipo")tipo.TipoSolicitacaoDelegacao tipo) {
         return new Gson().toJson(new Persistencia().getTipoSolicitacaoDelegacao(tipo));
     }
     @GET

@@ -13,29 +13,31 @@
                   <div class="panel-heading">
                     <ul class="nav nav-tabs">
                       <li class="active"><a href="#tab1default" data-toggle="tab">Todas</a></li>
-                      <li class=""><a href="#tab2default" data-toggle="tab">Enviadas</a></li>
+                      <li class=""><a href="#tab2default" data-toggle="tab"><%=tipo%></a></li>
                       <li class=""><a href="#tab3default" data-toggle="tab">Confirmadas</a></li>
                       <li class=""><a href="#tab4default" data-toggle="tab">Em análise</a></li>
-                      <li class=""><a href="#tab5default" data-toggle="tab">Salvas</a></li>
+                      <%if(tipo =="Enviadas"){%>
+                        <li class=""><a href="#tab6default" data-toggle="tab">Salvas</a></li>
+                      <%}%>
                     </ul>
                   </div>
                   <div class="panel with-nav-tabs panel-default overflow-auto">
                     <div class="panel-body" >
                       <div class="tab-content" width="auto">
                         <div class="tab-pane fade  active in" id="tab1default">
-                          <%- include('d-todas')-%>
+                          <%- include('todas')-%>
                         </div>
                         <div class="tab-pane fade"  id="tab2default">
-                          <%- include('d-salvas') -%>
+                          <%- include('salvas') -%>
                         </div>
                         <div class="tab-pane fade" id="tab3default">
-                          <%- include('d-confirmadas') -%>
+                          <%- include('confirmadas') -%>
                         </div>
                         <div class="tab-pane fade " id="tab4default">
-                          <%- include('d-analise') -%>
+                          <%- include('analise') -%>
                         </div>
                         <div class="tab-pane fade"  id="tab5default">
-                          <%- include('d-salvas') -%>
+                          <%- include('salvas') -%>
                         </div>
                       </div>
                     </div>

@@ -19,7 +19,6 @@ class Solicitacao(models.Model):
     def get_absolute_url(self):
         return reverse('cadasrtrar_solicitacao')
 
-
     class Meta:
         verbose_name_plural = 'Solicitações'
 

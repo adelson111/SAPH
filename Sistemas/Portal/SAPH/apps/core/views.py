@@ -7,7 +7,7 @@ from django.shortcuts import render
 
 # Create your views here.
 from django.views import View
-from pip._vendor import requests
+#from pip._vendor import requests
 from apps.funcionario.models import Funcionario
 from apps.item.models import Item
 from apps.nivel.models import Nivel
@@ -101,17 +101,6 @@ class Exportar(LoginRequiredMixin, View) :
                     dicitensdelegacao = {
                         'id': item['id'],
                         'nome': item['nome'],
-                        # 'tipoCampos': list(Item.objects.prefetch_related('campus').filter(itens_solicitacao__itens=itens['id']).values('campus__pk', 'campus__nome', 'campus__descricao', 'campus__tipo'))
-                        # 'tipoCampos': list(Item.objects.filter(campus__pk=itens['id']).values('campus__pk', 'campus__nome', 'campus__descricao', 'campus__tipo'))
-                        # 'tipoCampos': list(Item.objects.prefetch_related('campus').filter(itens_solicitacao__itens__campus__item__pk=itens['id']).values('campus__pk', 'campus__nome', 'campus__descricao', 'campus__tipo').distinct())
-                        # 'tipoCampos': list(Item.objects.prefetch_related('campus').filter(itens_solicitacao__itens__campus__item__pk=itens['id']).values('campus__pk', 'campus__nome', 'campus__descricao', 'campus__tipo').distinct())
-                        # 'tipoCampos': list(Item.objects.prefetch_related('campus').filter(itens_solicitacao__itens__campus__item=itens['id']).values('campus__pk', 'campus__nome', 'campus__descricao', 'campus__tipo').distinct())
-                        # 'tipoCampos': list(solicitacao.itens.filter(campus__item__pk=itens['id']).values('campus__pk', 'campus__nome').distinct())
-                        # 'tipoCampos': list(solicitacao.itens.filter(campus__item__pk=itens['id'], itens_solicitacao=solicitacao.pk).values('campus__pk', 'campus__nome').distinct())
-                        # 'tipoCampos': list(Item.objects.prefetch_related('campus').filter(itens_solicitacao__itens__campus__item=itens['id'], campus__item__itens_solicitacao__exact=solicitacao.pk).values('campus__pk', 'campus__nome', 'campus__descricao', 'campus__tipo').distinct())
-                        # 'tipoCampos': list(solicitacao.itens.filter(pk=item['id']).values('campus__pk', 'campus__nome', 'campus__descricao', 'campus__tipo').distinct())
-                        # 'tipoCampos': list(solicitacao.itens.filter(itens_solicitacao=solicitacao.pk, itens_solicitacao__itens=item['id']).values('campus__pk', 'campus__nome', 'campus__descricao', 'campus__tipo').distinct())
-                        # 'tipoCampos': list(Solicitacao.objects.prefetch_related('itens__campus').filter(itens__campus__item=item['id']).values('itens__campus','itens__campus__descricao','itens__campus__item'))
                         'tipoCampos': listaCampos
                     }
                     ld.append(dicitensdelegacao)
@@ -125,27 +114,6 @@ class Exportar(LoginRequiredMixin, View) :
 
                 lSocilitacoesDelegacoes.append(dic)
 
-            # delegacoes = Delegacao.objects.prefetch_related('nivel').filter(nivel__id=nivel['id'])
-            # for delegacao in delegacoes:
-            #     ld = []
-            #     for itens in delegacao.itens.values('id', 'nome'):
-            #         dicitensdelegacao = {
-            #             'id': itens['id'],
-            #             'nome': itens['nome'],
-            #             # 'tipoCampos': list(Item.objects.filter(campus__pk=itens['id']).values('campus__pk', 'campus__nome', 'campus__descricao', 'campus__tipo'))
-            #             # 'tipoCampos': []
-            #         }
-            #         ld.append(dicitensdelegacao)
-            #     dic = {
-            #         'id': delegacao.pk,
-            #         'nome': delegacao.tipo,
-            #         'descricao': delegacao.descricao,
-            #         'tipo': 'DELEGACAO',
-            #         'tipoItens': ld
-            #     }
-            #
-            #     lSocilitacoesDelegacoes.append(dic)
-
             dic = {
                 'id': nivel['id'],
                 'nome': nivel['nome'],
@@ -156,6 +124,7 @@ class Exportar(LoginRequiredMixin, View) :
                 'tipoSolicitacoesDelegacoes': lSocilitacoesDelegacoes
             }
             lNiveis.append(dic)
+
         for organizacao in organizacoes:
             organizacaoDic = {
                 'id': organizacao['id'],

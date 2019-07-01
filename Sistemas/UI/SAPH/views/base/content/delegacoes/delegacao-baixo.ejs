@@ -92,9 +92,8 @@
   <div class="col-md-6 mt-0">
               <div class="widget-area no-padding blank">
               <div class="status-upload">
-                <form>
-                  <textarea placeholder="Escreva o seu comentário?" ></textarea>
-
+                <form id = "form-comentario">
+                  <textarea id ="comentario"placeholder="Escreva o seu comentário?" ></textarea>
                   <button type="submit" class="btn btn-success green"><i class="fa fa-share"></i> Comentar</button>
                 </form>
               </div><!-- Status Upload  -->
@@ -276,7 +275,8 @@ margin-right: 7px;
 </style>
 
 <script type="text/javascript">
-$('#demo01').click(function(event) {
+
+  $('#demo01').click(function(event) {
 event.preventDefault();
 this.blur(); // Manually remove focus from clicked link.
 $.get(this.href, function(html) {
@@ -284,16 +284,13 @@ $(html).appendTo('body').animatedModal();
 });
 });
 
-$('#imprimir').click(function(){
-window.print('new', '_blank');
+  $('#imprimir').click(function(){
+  window.print('new', '_blank');
 });
 
-</script>
-<script type="text/javascript">
   function pars(delegacao){
     $('#solicitante').html(delegacao.solicitanteDelegante.nome);
     $('#data').html(delegacao.dataEnvio);
-    $('.body-delegacao').html('');
     $('#nome-delegacao').html(delegacao.tipoSolicitacaoDelegacao.nome);
     delegacao.itens.forEach((item)=>{
       html =  '<hr>';
@@ -306,6 +303,13 @@ window.print('new', '_blank');
       html += '</div>';
     });
     $('.body-delegacao').append(html);
+    $('#form-comentario').submit((event)=>{
+      event.preventDefault();
+      comentar(delegacao);
+    });
+    setInterval(()=>{
+      getComentario(delegacao);
+    }, 1000);
   }
 
   function moverInputFile(item){
@@ -334,5 +338,36 @@ window.print('new', '_blank');
 
     htmlCampo += '</div>';
     return htmlCampo;
+  }
+
+  function comentar(delegacao){
+    comentario = $('#comentario').val();
+    if(!comentario==''){
+      comentario = {
+        comentario:$('#comentario').val(),
+        solicitacaoDelegacao:{id:delegacao.id},
+        funcionario:{id:<%=funcionario.id%>},
+      };
+      comentario = JSON.stringify(comentario);
+      $.post('http://localhost:3000/solicitacoes/comentar',{comentario:comentario},()=>{
+        getComentario(delegacao);
+      });
+    }else{
+      alert("Escreva um comentário");
+    }
+  }
+
+  function getComentario(delegacao){
+    $.get('http://localhost:3000/solicitacoes/comentarios?solicitacao='+delegacao.id, (data)=>{
+      console.log(data);
+      html = '';
+      data.forEach((comentario)=>{
+        html += '<p>';
+        html += comentario.funcionario.nome+': ';
+        html += comentario.comentario;
+        html += '<p>';
+      });
+      $('#comentarios').html(html);
+    });
   }
 </script>

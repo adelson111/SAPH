@@ -4,6 +4,8 @@ var Client = require('node-rest-client').Client;
 var client = new Client();
 var usuarios = require('./../apoio/usuario');
 /* GET home page. */
+
+
 router.get('/', function(req, res, next) {
   res.render('index', {
      title: 'SAPH',
@@ -19,13 +21,9 @@ router.get('/contato',(req, res, next)=>{
   });
 });
 
-router.get('/login',(req, res, next)=>{
-
-  usuarios.render(req, res, null);
-  // res.render('login', {
-  //   title: 'Login - SAPH',
-  //   home : true
-  // });
+router.get('/logout',(req, res, next) =>{
+  delete req.session.usuario;
+  res.redirect('/login');
 });
 
 router.post('/login',(req, res, next)=>{
@@ -38,12 +36,14 @@ router.post('/login',(req, res, next)=>{
   }else{
 
     usuarios.login(req.body.email, req.body.senha).then( usuario =>{
-
-      req.session.suer =usuarios;
+      req.session.usuario = usuario;
       res.redirect('/inicio');
 
     }).catch(err =>{
-        console.log('erro');
+      console.log(req.session);
+      console.log(err);
+      res.redirect('/login');
+      console.log('erro543');
     })
   }
 
@@ -64,38 +64,25 @@ router.get('/login',(req, res, next)=>{
 });
 
 router.get('/inicio',(req, res, next)=>{
-  email = req.query.email;
-  senha = req.query.senha;
-  client.post("http://localhost:8080/SAPH/saph/usuario/autenticar/"+email+"/"+senha,function (data, response) {
-    console.log(data);
-    if(data!=null){
-      res.render('inicio', {
-        title: 'Home - SAPH',
-        funcionario:data
-      });
-    }else{
-      res.send("erro");
-    }
+  console.log("ala:" +req.session.usuario);
+  res.render('inicio', {
+    title: 'Home - SAPH',
+    funcionario:req.session.usuario,
+    //req.body
   });
 });
-
-//rota para testes
-
-// router.get('/inicio',(req, res, next)=>{
-//   res.render('inicio', {
-//     title: 'Início - SAPH',
-//   });
-// });
 
 router.get('/visualizar',(req, res, next)=>{
   res.render('visualizar', {
     title: 'Visualizar - SAPH',
+    funcionario:req.session.usuario,
   });
 });
 
 router.get('/exportar',(req, res, next)=>{
   res.render('exportar', {
     title: 'Exportar - SAPH',
+    funcionario:req.session.usuario,
   });
 
 });

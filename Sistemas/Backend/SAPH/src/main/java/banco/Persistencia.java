@@ -146,18 +146,19 @@ public class Persistencia {
 		return null;
 	}
 	
-	public List<modelo.SolicitacaoDelegacao> enviadasByFuncionario(modelo.Funcionario funcionario){
+	private List<modelo.SolicitacaoDelegacao> enviadasForFuncionario(modelo.Funcionario funcionario,boolean solicitaca){
 		List solicitacoesDelegacoes = new ArrayList();
 		List<modelo.Funcionario> funcionarios =  selecionar(funcionario);
+		
 		for(modelo.Funcionario f:funcionarios) {
-//			solicitacoesDelegacoes.add(f.getNivel().getId());
-			if(f.getNivel().getId() == funcionario.getIdNivelSuperior()) {
+			long nivel = solicitaca?f.getIdNivelSuperior():f.getIdNivelInferior();
+			if(nivel == funcionario.getNivel().getId()) {
 				try {
 					em = getPersistencia();
 					solicitacoesDelegacoes.addAll(em
 							.createQuery(String.valueOf(
 									"select sd from SolicitacaoDelegacao sd where sd.solicitanteDelegante = :funcionario and sd.status != :status"))
-							.setParameter("funcionario", funcionario)
+							.setParameter("funcionario", f)
 							.setParameter("status", tipo.TipoStatus.SALVA)
 							.getResultList()
 					);
@@ -176,29 +177,8 @@ public class Persistencia {
 	}
 	
 	public List<modelo.SolicitacaoDelegacao> recebidas(long id, boolean solicitacao) {
-		
-		if (solicitacao) {
-			modelo.Funcionario funcionario = (Funcionario) selecionar(new modelo.Funcionario(), id);
-			return enviadasByFuncionario(funcionario);
-		} else {
-			try {
-				em = getPersistencia();
-
-				return em
-						.createQuery(String.valueOf(
-								"select sd from SolicitacaoDelegacao sd where sd.solicitanteDelegante = :id"))
-						.setParameter("id", id).getResultList();
-
-			} catch (Exception e) {
-				System.out.println("Erro ao selecionar: " + e.getMessage());
-			} finally {
-				if (em.isOpen()) {
-					em.close();
-				}
-				emf.close();
-			}
-		}
-		return null;
+		modelo.Funcionario funcionario = (Funcionario) selecionar(new modelo.Funcionario(), id);
+		return enviadasForFuncionario(funcionario,solicitacao);
 	}
 
 	private Usuario autenticar(String email, String senha) {
@@ -217,9 +197,10 @@ public class Persistencia {
 
 	public Funcionario selecionarUsuario(String email, String senha) {
 		try {
+			modelo.Usuario usuario = autenticar(email, senha);
 			em = getPersistencia();
 			return (Funcionario) em.createQuery("select f from Funcionario f where f.usuario = :usuario")
-					.setParameter("usuario", autenticar(email, senha)).getSingleResult();
+					.setParameter("usuario", usuario).getSingleResult();
 		} catch (Exception e) {
 			System.out.println("Erro ao selecionar: " + e.getMessage());
 		} finally {
@@ -229,21 +210,11 @@ public class Persistencia {
 		return null;
 	}
 
-	private tipo.TipoSolicitacaoDelegacao getType(String tipoSD) {
-
-		if (tipoSD.equals("SOLICITACAO")) {
-			return tipo.TipoSolicitacaoDelegacao.SOLICITACAO;
-		} else if (tipoSD.equals("DELEGACAO")) {
-			return tipo.TipoSolicitacaoDelegacao.DELEGACAO;
-		}
-		return null;
-	}
-
-	public List<TipoSolicitacaoDelegacao> getTipoSolicitacaoDelegacao(String tipoSD) {
+	public List<TipoSolicitacaoDelegacao> getTipoSolicitacaoDelegacao(tipo.TipoSolicitacaoDelegacao tipo) {
 		try {
 			em = getPersistencia();
 			return em.createQuery("select tsd from TipoSolicitacaoDelegacao tsd where tsd.tipo = :tipo")
-					.setParameter("tipo", getType(tipoSD)).getResultList();
+					.setParameter("tipo", tipo).getResultList();
 		} catch (Exception e) {
 			System.out.println("Erro ao selecionar: " + e.getMessage());
 		} finally {
@@ -252,19 +223,29 @@ public class Persistencia {
 		}
 		return null;
 	}
-
-	public List<SolicitacaoDelegacao> getSolicitacaoDelegacao(String tipoSD, long solicitanteDelegante) {
+	
+	public List<SolicitacaoDelegacao> getSolicitacaoDelegacao(tipo.TipoSolicitacaoDelegacao tipo, long solicitanteDelegante) {
 		try {
 			em = getPersistencia();
-			tipo.TipoSolicitacaoDelegacao enumSD = null;
-			if (tipoSD.equals("SOLICITACAO")) {
-				enumSD = tipo.TipoSolicitacaoDelegacao.SOLICITACAO;
-			} else if (tipoSD.equals("DELEGACAO")) {
-				enumSD = tipo.TipoSolicitacaoDelegacao.DELEGACAO;
-			}
 			return em.createQuery(
 					"select sd from SolicitacaoDelegacao sd where sd.tipoSolicitacaoDelegacao.tipo = :tipo and sd.solicitanteDelegante.id = :solicitanteDelegante")
-					.setParameter("tipo", enumSD).setParameter("solicitanteDelegante", solicitanteDelegante)
+					.setParameter("tipo", tipo).setParameter("solicitanteDelegante", solicitanteDelegante)
+					.getResultList();
+		} catch (Exception e) {
+			System.out.println("Erro ao selecionar: " + e.getMessage());
+		} finally {
+			em.close();
+			emf.close();
+		}
+		return null;
+	}
+	
+	public List<modelo.Comentario> comentarios(modelo.SolicitacaoDelegacao solicitacaoDelegacao){
+		try {
+		em = getPersistencia();
+			return em.createQuery(
+					"select c from Comentario c where c.solicitacaoDelegacao = :solicitacaoDelegacao")
+					.setParameter("solicitacaoDelegacao", solicitacaoDelegacao)
 					.getResultList();
 		} catch (Exception e) {
 			System.out.println("Erro ao selecionar: " + e.getMessage());

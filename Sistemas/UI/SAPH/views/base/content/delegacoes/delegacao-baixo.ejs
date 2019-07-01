@@ -2,6 +2,7 @@
 </div>
 </div>
 </div>
+<!-- marcio -->
 <!-- large modal -->
 <div class="modal fade no-print" id="largeModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
 <div class="modal-dialog modal-lg" id="modal3" >
@@ -14,7 +15,7 @@
     <div class="panel bg-info text-light">
       <div class="panel-heading ">
         <h4 class="panel-title">
-          </span>DETALHES DA DELEGAÇÃO</a>
+          <a>DETALHES DA DELEGAÇÃO</a>
         </h4>
       </div>
     </div><!-- /input-group image-preview [TO HERE]-->
@@ -27,14 +28,14 @@
       <div class="panel bg-dark text-light">
         <div class="panel-heading">
           <h4 class="panel-title text-center">
-            </span> Se Mate</a>
+            <a> Se Mate</a>
           </h4>
         </div>
       </div><!-- /input-group image-preview [TO HERE]-->
     </div>
 
       <div class="card-body px-lg-5 pt-0 pt-30 overflow-auto"  id="cardSolici">
-        <form class="text-left " style="color: #757575;" action="index.html" method="post" id="solicitacao" >
+        <form class="text-left " style="color: #757575;" action="index.html" method="post" id="delegacao" >
           <div class="col">
             <div class="md-form">
               <div class="input-group mb-3">
@@ -47,7 +48,7 @@
               </div>
             </div>
 
-            <div class="body-solicitacao">
+            <div class="body-delegacao">
               <div class="itens"></div>
             </div>
 
@@ -91,9 +92,8 @@
   <div class="col-md-6 mt-0">
               <div class="widget-area no-padding blank">
               <div class="status-upload">
-                <form>
-                  <textarea placeholder="Escreva o seu comentário?" ></textarea>
-
+                <form id = "form-comentario">
+                  <textarea id ="comentario"placeholder="Escreva o seu comentário?" ></textarea>
                   <button type="submit" class="btn btn-success green"><i class="fa fa-share"></i> Comentar</button>
                 </form>
               </div><!-- Status Upload  -->
@@ -113,7 +113,6 @@
 </div>
 </div>
 </div>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
@@ -134,7 +133,7 @@
 .form-row {
 display: block;
 }
-.body-solicitacao{
+.body-delegacao{
 display: block;
 }
 }
@@ -276,7 +275,8 @@ margin-right: 7px;
 </style>
 
 <script type="text/javascript">
-$('#demo01').click(function(event) {
+
+  $('#demo01').click(function(event) {
 event.preventDefault();
 this.blur(); // Manually remove focus from clicked link.
 $.get(this.href, function(html) {
@@ -284,15 +284,90 @@ $(html).appendTo('body').animatedModal();
 });
 });
 
-$('#imprimir').click(function(){
-window.print('new', '_blank');
+  $('#imprimir').click(function(){
+  window.print('new', '_blank');
 });
 
-$('#guardar').click(function(){
-alert("data");
-$.post("http://localhost:3000/solicitacoes/cada",{'solicitacao':"vai q cola"},function(data){
-console.log(data);
-});
-});
+  function pars(delegacao){
+    $('#solicitante').html(delegacao.solicitanteDelegante.nome);
+    $('#data').html(delegacao.dataEnvio);
+    $('#nome-delegacao').html(delegacao.tipoSolicitacaoDelegacao.nome);
+    delegacao.itens.forEach((item)=>{
+      html =  '<hr>';
+      html += "<h3>"+item.tipoItem.nome+"</h3>";
+      html += '<div class="form-row tipo-itens" id="'+item.id+'">'
+        size = item.campos.length>3?'col-4':'col';
+        item.campos.forEach((campo)=>{
+          html += montarCampo(campo,size,delegacao.status);
+        });
+      html += '</div>';
+    });
+    $('.body-delegacao').append(html);
+    $('#form-comentario').submit((event)=>{
+      event.preventDefault();
+      comentar(delegacao);
+    });
+    setInterval(()=>{
+      getComentario(delegacao);
+    }, 1000);
+  }
 
+  function moverInputFile(item){
+    var files = [];
+    for(i = 0; i < item.campos.tipoCampo.length; i++){
+      if(item.campos.tipoCampo[i].tipo=='file'){
+        files.push(item.campos.tipoCampo[i]);
+        item.campos.tipoCampo.splice(i, 1);
+      }
+    };
+    return item.tipoCampos.concat(files);
+  }
+
+  function montarCampo(campo,size,status){
+    size = campo.tipo=='textarea'?'col-12':size;
+    htmlCampo = '<div class="'+size+' orm-group " >';
+      htmlCampo+='<label>'+campo.tipoCampo.nome+'</label>';
+      tipo = campo.tipo=='file'?'-file':'';
+      htmlCampo +='<input name = "campo" data-id="'+campo.id+'" type="'+campo.tipoCampo.tipo+'" class="form-control'+tipo+' tipo-campos" value="'+campo.valor+'"';
+      console.log(status);
+      if(status == "SALVA"){
+        htmlCampo += '>';
+      }else{
+        htmlCampo +=' disabled>'
+      }
+
+    htmlCampo += '</div>';
+    return htmlCampo;
+  }
+
+  function comentar(delegacao){
+    comentario = $('#comentario').val();
+    if(!comentario==''){
+      comentario = {
+        comentario:$('#comentario').val(),
+        solicitacaoDelegacao:{id:delegacao.id},
+        funcionario:{id:<%=funcionario.id%>},
+      };
+      comentario = JSON.stringify(comentario);
+      $.post('http://localhost:3000/solicitacoes/comentar',{comentario:comentario},()=>{
+        getComentario(delegacao);
+      });
+    }else{
+      alert("Escreva um comentário");
+    }
+  }
+
+  function getComentario(delegacao){
+    $.get('http://localhost:3000/solicitacoes/comentarios?solicitacao='+delegacao.id, (data)=>{
+      console.log(data);
+      html = '';
+      data.forEach((comentario)=>{
+        html += '<p>';
+        html += comentario.funcionario.nome+': ';
+        html += comentario.comentario;
+        html += '<p>';
+      });
+      $('#comentarios').html(html);
+    });
+  }
 </script>

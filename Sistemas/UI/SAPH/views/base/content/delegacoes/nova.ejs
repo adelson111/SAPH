@@ -14,6 +14,7 @@
                         <div class="md-form">
 
                             <select name="tipo" id="tipo" class="form-control form-control-lg"  required>
+                              <option>-------</option>
                               <%tipos.forEach(function(delegacao){%>
                                 <option value="<%=delegacao.id%>"><%=delegacao.nome%></option>
                               <%});%>
@@ -31,14 +32,13 @@
                   </div>
                   <div class="card-footer">
                     <div class="form-group float-right mr-5">
-                      <button type="button" class="btn btn-success btn-sm">
+                      <button type="button" class="btn btn-success btn-sm" id ="enviar">
                       <span class="glyphicon glyphicon-send"></span> Enviar</button>
                       <button type="submit" class="btn btn-success btn-sm" id ="guardar">
                       <span class="glyphicon glyphicon-floppy-disk" ></span> Guardar</button>
                       <button type="submit" class="btn btn-success btn-sm">
                       <span class="glyphicon glyphicon-print" id="imprimir"></span> Imprimir</button>
                     </div>
-
                   </div>
 
             </div>
@@ -132,9 +132,15 @@ $('#imprimir').click(function(){
 
 });
 $('#guardar').click(function(){
-  console.log("oi");
+  montarSolicitacao("cadadastrar","SALVA");
+});
+$('#enviar').click(function(){
+  montarSolicitacao("enviar","ENVIADA");
+});
+
+function montarSolicitacao(acao,status){
   var dici = new Map();
-  tipoSolicitacao = $("select[name='tipo']").val();
+  tipoDelegacao = $("select[name='tipo']").val();
   tipoItens = [];
   $(".tipo-itens").each(function(item){
     tipoCampos = [];
@@ -155,18 +161,18 @@ $('#guardar').click(function(){
   });
   dici = {
     tipoSolicitacaoDelegacao:{
-      id:tipoSolicitacao
+      id:tipoDelegacao
     },
     solicitanteDelegante:{
-      id:2
+      id:<%=funcionario.id%>
     },
-    status:"SALVA",
+    status:status,
     itens:tipoItens,
   }
   dici = JSON.stringify(dici);
   console.log(dici);
-  $.post("http://localhost:3000/solicitacoes/cadadastrar",{'solicitacao':dici},function(data){
+  $.post("http://localhost:3000/solicitacoes/"+acao,{'solicitacao':dici},function(data){
     alert(data);
   });
-});
+}
 </script>

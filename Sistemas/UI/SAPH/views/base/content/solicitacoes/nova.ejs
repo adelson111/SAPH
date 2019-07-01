@@ -14,6 +14,7 @@
                         <div class="md-form">
 
                             <select name="tipo" id="tipo" class="form-control form-control-lg"  required>
+                              <option>-------</option>
                               <%tipos.forEach(function(solicitacao){%>
                                 <option value="<%=solicitacao.id%>"><%=solicitacao.nome%></option> 1
                              <%}); %>
@@ -146,7 +147,7 @@ function montarSolicitacao(acao,status){
       id:tipoSolicitacao
     },
     solicitanteDelegante:{
-      id:1
+      id:<%=funcionario.id%>
     },
     status:status,
     itens:tipoItens,

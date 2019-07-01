@@ -8,7 +8,7 @@
     <div class="sidebar-wrapper">
       <div class="w-100" >
         <img style="width:100px; margin-left:25%" src="../img/user.png" >
-        <p class="text-light" style="margin-left:25%"><%="funcionario.nome"%></p>
+        <p class="text-light" style="margin-left:25%"><%=funcionario.nome%></p>
       </div>
       <ul class="nav list-unstyled components">
         <li class="">
@@ -18,13 +18,13 @@
           </a>
         </li>
         <li>
-          <a class="text-info"href="/solicitacoes/new">
+          <a class="text-info"href="/solicitacoes/nova">
             <i class="text-info fas fa-hand-point-up"></i>
             <p>Solicitar</p>
           </a>
         </li>
         <li>
-          <a class="text-info"href="/delegacoes/nova-delegacao">
+          <a class="text-info"href="/delegacoes/nova">
             <i class="text-info fas fa-hand-point-down"></i>
             <p>Delegar</p>
           </a>
@@ -33,16 +33,16 @@
         <li>
           <a  data-toggle="collapse" data-target="#solicit" aria-expanded="false" class="text-info">  <i class="text-success fas fa-envelope"></i><span>Solicitações </span>  <span><i class="float-right text-info fas fa-angle-down"></i></span></a>
           <ul class="collapse list-unstyled bg-dark "  id="solicit">
-              <li><a href="/solicitacoes/list?funcionario=2">Recebidas</a></li>
-              <li><a href="/solicitacoes/listar-enviadas?funcionario=2">Enviadas</a></li>
+              <li><a href="/solicitacoes/recebidas">Recebidas</a></li>
+              <li><a href="/solicitacoes/enviadas">Enviadas</a></li>
           </ul>
         </li>
 
         <li>
           <a  data-toggle="collapse" data-target="#deleg" aria-expanded="false" class="text-info">  <i class="text-warning fas fa-envelope"></i><span>Delegações </span>  <span><i class="float-right text-info fas fa-angle-down"></i></span></a>
             <ul class="collapse list-unstyled bg-dark"  id="deleg">
-                <li><a href="/delegacoes/listar-delegacoes?funcionario=2">Recebidas</a></li>
-                <li><a href="/delegacoes/listar-delegacoes-enviadas?funcionario=2">Enviadas</a></li>
+                <li><a href="/delegacoes/recebidas">Recebidas</a></li>
+                <li><a href="/delegacoes/enviadas">Enviadas</a></li>
             </ul>
         </li>
 

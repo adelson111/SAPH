@@ -239,5 +239,21 @@ public class Persistencia {
 		}
 		return null;
 	}
+	
+	public List<modelo.Comentario> comentarios(modelo.SolicitacaoDelegacao solicitacaoDelegacao){
+		try {
+		em = getPersistencia();
+			return em.createQuery(
+					"select c from Comentario c where c.solicitacaoDelegacao = :solicitacaoDelegacao")
+					.setParameter("solicitacaoDelegacao", solicitacaoDelegacao)
+					.getResultList();
+		} catch (Exception e) {
+			System.out.println("Erro ao selecionar: " + e.getMessage());
+		} finally {
+			em.close();
+			emf.close();
+		}
+		return null;
+	}
 
 }

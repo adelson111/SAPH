@@ -6,6 +6,8 @@
 package rest;
 
 import banco.Persistencia;
+import modelo.Comentario;
+
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import java.util.List;
@@ -61,6 +63,14 @@ public class SolicitacaoDelegacao {
         	return persistencia.atualizar(sd);
         }
     }
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Path("comentar")
+    public String comentar(String comentario) {
+    	System.out.println(comentario);
+    	new Persistencia().cadastrar(new Gson().fromJson(comentario, Comentario.class));
+    	return comentario;
+    }
 
 
     @PUT
@@ -99,5 +109,16 @@ public class SolicitacaoDelegacao {
     public String selecionar(@PathParam("tipo") tipo.TipoSolicitacaoDelegacao tipo,@PathParam("solicitanteDelegante") long solicitanteDelegante) {
         return new Gson().toJson(new Persistencia().getSolicitacaoDelegacao(tipo,solicitanteDelegante));
     }
+    
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("comentarios/{solicitacao}")
+    public String comentarios(@PathParam("solicitacao") String solicitacaoDelegacao) {
+    	System.out.println(solicitacaoDelegacao);
+    	modelo.SolicitacaoDelegacao sd = new Gson().fromJson(solicitacaoDelegacao, modelo.SolicitacaoDelegacao.class);
+        return new Gson().toJson(new Persistencia().comentarios(sd));
+    }
+    
+    
 
 }

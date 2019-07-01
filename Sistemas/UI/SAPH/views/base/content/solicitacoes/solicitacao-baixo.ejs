@@ -67,35 +67,17 @@
 <div class="">
   <div id="comentarios" class="card-body col-md-6 mt-5 float-right overflow-auto " style="background-color:#DCDCDC; height: 185px;">
     <p>k</p>
-    <p>k</p>
-    <p>k</p>
-    <p>k</p>
-    <p>k</p>
-    <p>k</p>
-    <p>k</p>
-    <p>k</p>
-    <p>k</p>
-    <p>k</p>
-    <p>k</p>
-    <p>k</p>
-    <p>k</p>
-    <p>k</p>
-    <p>k</p>
-    <p>k</p>
-
   </div>
-
-
   <div class="col-md-6 mt-0">
-              <div class="widget-area no-padding blank">
-              <div class="status-upload">
-                <form>
-                  <textarea placeholder="Escreva o seu comentário?" ></textarea>
-                  <button type="submit" class="btn btn-success green"><i class="fa fa-share"></i> Comentar</button>
-                </form>
-              </div><!-- Status Upload  -->
-            </div><!-- Widget Area -->
-          </div>
+    <div class="widget-area no-padding blank">
+      <div class="status-upload">
+        <form id="form-comentario">
+          <textarea id="comentario" placeholder="Escreva o seu comentário" ></textarea>
+          <button type="submit" class="btn btn-success green"><i class="fa fa-share"></i> Comentar</button>
+        </form>
+      </div><!-- Status Upload  -->
+    </div><!-- Widget Area -->
+  </div>
 </div>
 
 
@@ -274,29 +256,26 @@ margin-right: 7px;
 </style>
 
 <script type="text/javascript">
-$('#demo01').click(function(event) {
-event.preventDefault();
-this.blur(); // Manually remove focus from clicked link.
-$.get(this.href, function(html) {
-$(html).appendTo('body').animatedModal();
-});
+  $('#demo01').click((event) =>{
+  event.preventDefault();
+  this.blur(); // Manually remove focus from clicked link.
+  $.get(this.href, function(html) {
+    $(html).appendTo('body').animatedModal();
+  });
 });
 
-$('#imprimir').click(function(){
+  $('#imprimir').click(()=>{
 window.print('new', '_blank');
 });
 
-$('#guardar').click(function(){
-alert("data");
-$.post("http://localhost:3000/solicitacoes/cada",{'solicitacao':"vai q cola"},function(data){
-console.log(data);
-});
-});
+  $('#guardar').click(()=>{
+    alert("data");
+    $.post("http://localhost:3000/solicitacoes/cada",{'solicitacao':"vai q cola"},function(data){
+    console.log(data);
+    });
+  });
 
-</script>
-<script type="text/javascript">
   function pars(solicitacao){
-    console.log(solicitacao);
     $('#solicitante').html(solicitacao.solicitanteDelegante.nome);
     $('#data').html(solicitacao.dataEnvio);
     $('.body-solicitacao').html('');
@@ -312,6 +291,11 @@ console.log(data);
       html += '</div>';
     });
     $('.body-solicitacao').append(html);
+    $('#form-comentario').submit((event)=>{
+      event.preventDefault();
+      comentar(solicitacao);
+    });
+    getComentario(solicitacao);
   }
 
   function moverInputFile(item){
@@ -340,5 +324,35 @@ console.log(data);
 
     htmlCampo += '</div>';
     return htmlCampo;
+  }
+
+  function comentar(solicitacao){
+    comentario = $('#comentario').val();
+    if(!comentario==''){
+      comentario = {
+        comentario:$('#comentario').val(),
+        solicitacaoDelegacao:{id:solicitacao.id},
+        funcionario:{id:<%=funcionario.id%>},
+      };
+      comentario = JSON.stringify(comentario);
+      $.post('http://localhost:3000/solicitacoes/comentar',{comentario:comentario});
+      getComentario(solicitacao);
+    }else{
+      alert("Escreva um comentário");
+    }
+  }
+
+  function getComentario(solicitacao){
+    $.get('http://localhost:3000/solicitacoes/comentarios?solicitacao='+solicitacao.id, (data)=>{
+      console.log(data);
+      html = '';
+      data.forEach((comentario)=>{
+        html += '<p>';
+        html += comentario.funcionario.nome+': ';
+        html += comentario.comentario;
+        html += '<p>';
+      });
+      $('#comentarios').html(html);
+    });
   }
 </script>

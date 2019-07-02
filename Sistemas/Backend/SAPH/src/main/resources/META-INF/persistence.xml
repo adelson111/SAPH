@@ -4,7 +4,7 @@
     <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
     <properties>
       <property name="hibernate.cache.provider_class" value="org.hibernate.cache.NoCacheProvider"/>
-      <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://192.168.137.243:5432/backend"/>
+      <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://127.0.0.1:5432/backend"/>
       <property name="javax.persistence.jdbc.user" value="usersaph"/>
       <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
       <property name="javax.persistence.jdbc.password" value="12345"/>

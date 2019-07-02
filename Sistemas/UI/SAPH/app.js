@@ -30,9 +30,9 @@ app.use(session({
 app.use(function(req,res,next){
   urls = ['/login','/'];
   if(urls.indexOf(req.url) === -1 && !req.session.usuario){
-    req.redirect("/login");
+    res.redirect("/login");
   }else if(urls.indexOf(req.url) != -1 && req.session.usuario!=null){
-    req.redirect("/inicio");
+    res.redirect("/inicio");
   }else{
     next();
   }

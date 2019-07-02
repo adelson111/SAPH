@@ -8,7 +8,11 @@ package rest;
 import banco.Persistencia;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
@@ -71,8 +75,11 @@ public class Usuario {
     @Produces(MediaType.APPLICATION_JSON)
     @Path("autenticar/{email}/{senha}")
     public String entrar(@PathParam("email") String email, @PathParam("senha") String senha) {
-    	System.out.println(email+"-"+senha);
-        return new Gson().toJson(new Persistencia().selecionarUsuario(email, senha));
+    	Map<String,Object> data = new HashMap<String, Object>();
+    	modelo.Funcionario funcionario = new Persistencia().selecionarUsuario(email, senha);
+    	data.put("funcionario", funcionario);
+    	data.put("nivel", funcionario.getNivel());
+        return new Gson().toJson(data);
     }
 
 }

@@ -35,7 +35,9 @@ router.post('/login',(req, res, next)=>{
     usuarios.render(req,res, "digite a senha");
   }else{
 
-    usuarios.login(req.body.email, req.body.senha).then( usuario =>{
+    usuarios.login(req.body.email, req.body.senha).then( data =>{
+      usuario = data.funcionario;
+      usuario.nivel = data.nivel;
       req.session.usuario = usuario;
       res.redirect('/inicio');
 

@@ -309,9 +309,7 @@ $(html).appendTo('body').animatedModal();
       event.preventDefault();
       comentar(delegacao);
     });
-    setInterval(()=>{
-      getComentario(delegacao);
-    }, 1000);
+    getComentario(delegacao);
   }
 
   function moverInputFile(item){
@@ -352,7 +350,6 @@ $(html).appendTo('body').animatedModal();
       };
       comentario = JSON.stringify(comentario);
       $.post('http://localhost:3000/solicitacoes/comentar',{comentario:comentario},()=>{
-        getComentario(delegacao);
         $('#comentario').val('');
       });
     }else{
@@ -385,4 +382,9 @@ $(html).appendTo('body').animatedModal();
       $('#btn-aceitar').addClass('d-none');
     }
   }
+  let socket = io();
+  socket.on('comentar',(data)=>{
+    comentario = JSON.parse(data);
+    getComentario(comentario.solicitacaoDelegacao);
+  });
 </script>

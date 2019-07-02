@@ -9,8 +9,6 @@ var http = require('http');
 var socket = require('socket.io');
 
 var indexRouter = require('./routes/index');
-var solicitacoesRouter = require('./routes/solicitacoes');
-var delegacoesRouter = require('./routes/delegacoes');
 var ajustesRouter = require('./routes/ajustes');
 
 var app = express();
@@ -18,9 +16,11 @@ var app = express();
 var http = http.Server(app);
 var io = socket(http);
 
-io.on('conection',(socket)=>{
+io.on('connection',(socket)=>{
     console.log('Novo usuario');
 });
+var solicitacoesRouter = require('./routes/solicitacoes')(io);
+var delegacoesRouter = require('./routes/delegacoes')(io);
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');

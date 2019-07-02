@@ -300,11 +300,14 @@ window.print('new', '_blank');
       event.preventDefault();
       comentar(solicitacao);
     });
+    getComentario(solicitacao);
 
-    setInterval(()=>{
-      getComentario(solicitacao);
-    }, 1000);
   }
+
+  // let socket = io();
+  // socket.on('comentar',(data)=>{
+  //   console.log('comentou');
+  // });
 
   function moverInputFile(item){
     var files = [];
@@ -323,7 +326,6 @@ window.print('new', '_blank');
       htmlCampo+='<label>'+campo.tipoCampo.nome+'</label>';
       tipo = campo.tipo=='file'?'-file':'';
       htmlCampo +='<input name = "campo" data-id="'+campo.id+'" type="'+campo.tipoCampo.tipo+'" class="form-control'+tipo+' tipo-campos" value="'+campo.valor+'"';
-      console.log(status);
       if(status == "SALVA"){
         htmlCampo += '>';
       }else{
@@ -344,7 +346,6 @@ window.print('new', '_blank');
       };
       comentario = JSON.stringify(comentario);
       $.post('http://localhost:3000/solicitacoes/comentar',{comentario:comentario},()=>{
-        getComentario(solicitacao);
         $('#comentario').val('');
       });
     }else{
@@ -354,7 +355,6 @@ window.print('new', '_blank');
 
   function getComentario(solicitacao){
     $.get('http://localhost:3000/solicitacoes/comentarios?solicitacao='+solicitacao.id, (data)=>{
-      console.log(data);
       html = '';
       data.forEach((comentario)=>{
         html += '<p>';
@@ -381,4 +381,10 @@ window.print('new', '_blank');
   function analizar(solicitacao){
 
   }
+  let socket = io();
+  socket.on('comentar',(data)=>{
+    comentario = JSON.parse(data);
+    getComentario(comentario.solicitacaoDelegacao);
+  });
+
 </script>

@@ -62,6 +62,7 @@ router.get('/sobre',(req, res, next)=>{
 router.get('/login',(req, res, next)=>{
   res.render('login', {
     title: 'Login - SAPH',
+    home:true
   });
 });
 

@@ -5,6 +5,8 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var session = require('express-session');
 var RedisStore = require('connect-redis')(session);
+var http = require('http');
+var socket = require('socket.io');
 
 var indexRouter = require('./routes/index');
 var solicitacoesRouter = require('./routes/solicitacoes');
@@ -13,6 +15,12 @@ var ajustesRouter = require('./routes/ajustes');
 
 var app = express();
 
+var http = http.Server(app);
+var io = socket(http);
+
+io.on('conection',(socket)=>{
+    console.log('Novo usuario');
+});
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -63,4 +71,8 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-module.exports = app;
+http.listen(3000,()=>{
+  console.log('executando...');
+});
+
+// module.exports = app;

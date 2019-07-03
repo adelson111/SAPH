@@ -8,8 +8,6 @@ var server_tipo_solicitacao_delegacao = "http://localhost:8080/SAPH/saph/tipo-so
 module.exports = (io)=>{
   router.get('/nova',(req, res, next)=>{
     client.get(server_tipo_solicitacao_delegacao+"funcionario/"+req.session.usuario.id+"/DELEGACAO", function (data, response) {
-
-        console.log(data);
       res.render('nova-delegacao', {
         title: 'Delegacoes - SAPH',
         tipos: data,
@@ -20,7 +18,6 @@ module.exports = (io)=>{
 
   router.get('/recebidas',(req, res, next)=>{
     client.get(server_solicitacao_delegacao+"recebidas/"+req.session.usuario.id+"/"+false, function (data, response) {
-      console.log(data);
       res.render('listar-delegacoes', {
         title: 'Delegacoes - SAPH',
         delegacoes:data,

@@ -19,7 +19,6 @@ module.exports = (io)=>{
 
   router.get('/recebidas',(req, res, next)=>{
     client.get(server_solicitacao_delegacao+"recebidas/"+req.session.usuario.id+"/"+true, (data, response) => {
-      console.log(data);
       res.render('list', {
         title: 'Solicitacoes - SAPH',
         solicitacoes:data,
@@ -30,7 +29,6 @@ module.exports = (io)=>{
   });
 
   router.get('/enviadas',(req, res, next)=>{
-    console.log(server_solicitacao_delegacao);
     client.get(server_solicitacao_delegacao+"parametros/SOLICITACAO/"+req.session.usuario.id, (data, response)=> {
       res.render('listar-enviadas', {
         title: 'Solicitacoes - SAPH',
@@ -70,7 +68,6 @@ module.exports = (io)=>{
   });
 
   router.get('/comentarios',(req,res)=>{
-    console.log(req.query.solicitacao);
     client.get(server_solicitacao_delegacao+'comentarios/\{id:'+req.query.solicitacao+'\}',(data, response)=>{
       res.send(data);
     });
@@ -86,6 +83,16 @@ module.exports = (io)=>{
     });
   });
 
+  router.post('/alterar-status',(req, res) => {
+    var args = {
+        data: req.body.solicitacao,
+        headers: { "Content-Type": "application/json" }
+    };
+    client.post(server_solicitacao_delegacao+"alterar-status",args,(data, response) => {
+      res.send(data);
+    });
+  });
+
   router.post('/enviar',(req, res) => {
     var args = {
         data: req.body.solicitacao,
@@ -97,7 +104,6 @@ module.exports = (io)=>{
   });
 
   router.post('/comentar',(req,res)=>{
-    console.log(req.body);
     var args = {
         data: req.body.comentario,
         headers: { "Content-Type": "application/json" }

@@ -53,7 +53,7 @@ public class SolicitacaoDelegacao {
     
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
-    @Path("enviar")
+    @Path("alterar-status")
     public String enviar(String solicitacaoDelegacao) {
     	modelo.SolicitacaoDelegacao sd = new Gson().fromJson(solicitacaoDelegacao, modelo.SolicitacaoDelegacao.class);
     	Persistencia persistencia = new Persistencia();

@@ -56,14 +56,18 @@
         <hr>
       </div>
 
-      <div class="form-group float-right mr-5">
-        <button type="button" class="btn btn-success btn-sm" id="btn-enviar">
+      <div class="form-group float-right mr-5" id= 'btns'>
+        <button type="button" class="btn btn-success btn-sm d-none" id="btn-enviar">
         <span class="glyphicon glyphicon-send"></span> Enviar</button>
-        <button type="submit" class="btn btn-success btn-sm" id="btn-guardar">
-        <span class="glyphicon glyphicon-floppy-disk"></span> Guardar Alterações</button>
-        <button type="submit" class="btn btn-success btn-sm" id="btn-analizar">
-        <span class="glyphicon glyphicon glyphicon-pencil"></span>Analizar</button>
-        <button type="submit" class="btn btn-success btn-sm">
+        <button type="submit" class="btn btn-success btn-sm d-none" id="btn-guardar">
+        <span class="glyphicon glyphicon-floppy-disk"></span>Guardar Alterações</button>
+        <button type="submit" class="btn btn-success btn-sm  d-none" id="btn-analizar">
+        <span class="glyphicon glyphicon-pencil"></span>Analizar</button>
+        <button type="submit" class="btn btn-success btn-sm  d-none" id="btn-aceitar">
+        <span class="glyphicon glyphicon-floppy-disk"></span>Aceitar</button>
+        <button type="submit" class="btn btn-danger btn-sm  d-none" id="btn-recusar">
+        <span class="glyphicon glyphicon-floppy-disk"></span>Recusar</button>
+        <button type="submit" class="btn btn-success btn-sm" id="btn-imprimir">
         <span class="glyphicon glyphicon-print" id="imprimir"></span> Imprimir</button>
       </div>
 
@@ -304,10 +308,26 @@ $(html).appendTo('body').animatedModal();
         });
       html += '</div>';
     });
-    $('.body-delegacao').append(html);
+    $('.body-delegacao').html(html);
     $('#form-comentario').submit((event)=>{
       event.preventDefault();
       comentar(delegacao);
+    });
+    $('#btn-analizar').click(()=>{
+      delegacao.status = 'EM_ESPERA';
+      alterarStatus(delegacao);
+    });
+    $('#btn-aceitar').click(()=>{
+      delegacao.status = 'APROVADA';
+      alterarStatus(delegacao);
+    });
+    $('#btn-recusar').click(()=>{
+      delegacao.status = 'REPROVADA';
+      alterarStatus(delegacao);
+    });
+    $('#btn-enviar').click(()=>{
+      delegacao.status = 'ENVIADA';
+      alterarStatus(delegacao);
     });
     getComentario(delegacao);
   }
@@ -346,7 +366,7 @@ $(html).appendTo('body').animatedModal();
       comentario = {
         comentario:$('#comentario').val(),
         solicitacaoDelegacao:{id:delegacao.id},
-        funcionario:{id:<%=funcionario.id%>},
+        funcionario:{id:<%=funcionario.id;%>},
       };
       comentario = JSON.stringify(comentario);
       $.post('http://localhost:3000/solicitacoes/comentar',{comentario:comentario},()=>{
@@ -372,19 +392,35 @@ $(html).appendTo('body').animatedModal();
   }
 
   function hiddenAndShowButtons(delegacao){
-    if(delegacao.status != 'SALVA'){
-      $('#btn-enviar').addClass('d-none');
-      $('#btn-guardar').addClass('d-none');
-    }
-    if(delegacao.status != 'ENVIADA'){
-      $('#btn-analizar').addClass('d-none');
-    }else if(delegacao.status != 'EM_ESPERA'){
-      $('#btn-aceitar').addClass('d-none');
+    $('#btns  button').addClass('d-none');
+    $('#btn-imprimir').removeClass('d-none');
+    funcionario_id = <%=funcionario.id;%>;
+    if(delegacao.solicitanteDelegante.id != funcionario_id){
+      if (delegacao.status == 'ENVIADA') {
+        $('#btn-analizar').removeClass('d-none');
+      }else if(delegacao.status == 'EM_ESPERA'){
+        $('#btn-aceitar').removeClass('d-none');
+        $('#btn-recusar').removeClass('d-none');
+      }
+    }else if(delegacao.status == 'SALVA'){
+      $('#btn-guardar').removeClass('d-none');
+      $('#btn-enviar').removeClass('d-none');
     }
   }
+
+  function alterarStatus(delegacao){
+    delegacao = JSON.stringify(delegacao);
+    $.post('http://localhost:3000/solicitacoes/alterar-status',{ solicitacao:delegacao},(data)=>{
+      alert(data);
+    });
+  }
+
   let socket = io();
   socket.on('comentar',(data)=>{
     comentario = JSON.parse(data);
     getComentario(comentario.solicitacaoDelegacao);
   });
+  $('#largeModal').on('hide.bs.modal', function (event) {
+    location.reload();
+  })
 </script>

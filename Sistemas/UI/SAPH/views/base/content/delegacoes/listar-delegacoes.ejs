@@ -13,9 +13,10 @@
                   <div class="panel-heading">
                     <ul class="nav nav-tabs">
                       <li class="active"><a href="#tab1default" data-toggle="tab">Todas</a></li>
-                      <li class=""><a href="#tab2default" data-toggle="tab"><%=tipo%></a></li>
+                      <li class=""><a href="#tab2default" data-toggle="tab"><%=tipo;%></a></li>
                       <li class=""><a href="#tab3default" data-toggle="tab">Confirmadas</a></li>
                       <li class=""><a href="#tab4default" data-toggle="tab">Em análise</a></li>
+                      <li class=""><a href="#tab5default" data-toggle="tab">Recusadas</a></li>
                       <%if(tipo =="Enviadas"){%>
                         <li class=""><a href="#tab6default" data-toggle="tab">Salvas</a></li>
                       <%}%>
@@ -37,6 +38,9 @@
                           <%- include('analise') -%>
                         </div>
                         <div class="tab-pane fade"  id="tab5default">
+                          <%- include('recusadas') -%>
+                        </div>
+                        <div class="tab-pane fade"  id="tab6default">
                           <%- include('salvas') -%>
                         </div>
                       </div>

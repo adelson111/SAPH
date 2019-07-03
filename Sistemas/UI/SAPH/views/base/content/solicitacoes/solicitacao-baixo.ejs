@@ -34,7 +34,7 @@
     </div>
 
       <div class="card-body px-lg-5 pt-0 pt-30 overflow-auto"  id="cardSolici">
-        <form class="text-left " style="color: #757575;" action="index.html" method="post" id="solicitacao" >
+        <form class="text-left " style="color: #757575;" action="index.html" method="post" id="form-solicitacao" >
           <div class="col">
             <div class="md-form">
               <div class="input-group mb-3">
@@ -54,16 +54,18 @@
         </form>
       </div>
 
-      <div class="form-group float-right mr-5">
-        <button type="button" class="btn btn-success btn-sm" id="btn-enviar">
+      <div class="form-group float-right mr-5" id="btns">
+        <button type="button" class="btn btn-success btn-sm d-none" id="btn-enviar">
         <span class="glyphicon glyphicon-send"></span> Enviar</button>
-        <button type="submit" class="btn btn-success btn-sm" id="btn-guardar">
+        <button type="submit" class="btn btn-success btn-sm d-none" id="btn-guardar">
         <span class="glyphicon glyphicon-floppy-disk"></span>Guardar Alterações</button>
-        <button type="submit" class="btn btn-success btn-sm" id="btn-analizar">
+        <button type="submit" class="btn btn-success btn-sm  d-none" id="btn-analizar">
         <span class="glyphicon glyphicon-pencil"></span>Analizar</button>
-        <button type="submit" class="btn btn-success btn-sm" id="btn-aceitar">
+        <button type="submit" class="btn btn-success btn-sm  d-none" id="btn-aceitar">
         <span class="glyphicon glyphicon-floppy-disk"></span>Aceitar</button>
-        <button type="submit" class="btn btn-success btn-sm">
+        <button type="submit" class="btn btn-danger btn-sm  d-none" id="btn-recusar">
+        <span class="glyphicon glyphicon-floppy-disk"></span>Recusar</button>
+        <button type="submit" class="btn btn-success btn-sm" id="btn-imprimir">
         <span class="glyphicon glyphicon-print" id="imprimir"></span> Imprimir</button>
       </div>
 
@@ -300,10 +302,24 @@ window.print('new', '_blank');
       event.preventDefault();
       comentar(solicitacao);
     });
+    $('#btn-analizar').click(()=>{
+      solicitacao.status = 'EM_ESPERA';
+      alterarStatus(solicitacao);
+    });
+    $('#btn-aceitar').click(()=>{
+      solicitacao.status = 'APROVADA';
+      alterarStatus(solicitacao);
+    });
+    $('#btn-recusar').click(()=>{
+      solicitacao.status = 'REPROVADA';
+      alterarStatus(solicitacao);
+    });
+    $('#btn-enviar').click(()=>{
+      solicitacao.status = 'ENVIADA';
+      alterarStatus(solicitacao);
+    });
+    getComentario(solicitacao);
 
-    setInterval(()=>{
-      getComentario(solicitacao);
-    }, 1000);
   }
 
   function moverInputFile(item){
@@ -323,7 +339,6 @@ window.print('new', '_blank');
       htmlCampo+='<label>'+campo.tipoCampo.nome+'</label>';
       tipo = campo.tipo=='file'?'-file':'';
       htmlCampo +='<input name = "campo" data-id="'+campo.id+'" type="'+campo.tipoCampo.tipo+'" class="form-control'+tipo+' tipo-campos" value="'+campo.valor+'"';
-      console.log(status);
       if(status == "SALVA"){
         htmlCampo += '>';
       }else{
@@ -340,11 +355,10 @@ window.print('new', '_blank');
       comentario = {
         comentario:$('#comentario').val(),
         solicitacaoDelegacao:{id:solicitacao.id},
-        funcionario:{id:<%=funcionario.id%>},
+        funcionario:{id:<%=funcionario.id;%>},
       };
       comentario = JSON.stringify(comentario);
       $.post('http://localhost:3000/solicitacoes/comentar',{comentario:comentario},()=>{
-        getComentario(solicitacao);
         $('#comentario').val('');
       });
     }else{
@@ -354,7 +368,6 @@ window.print('new', '_blank');
 
   function getComentario(solicitacao){
     $.get('http://localhost:3000/solicitacoes/comentarios?solicitacao='+solicitacao.id, (data)=>{
-      console.log(data);
       html = '';
       data.forEach((comentario)=>{
         html += '<p>';
@@ -367,18 +380,37 @@ window.print('new', '_blank');
   }
 
   function hiddenAndShowButtons(solicitacao){
-    if(solicitacao.status != 'SALVA'){
-      $('#btn-enviar').addClass('d-none');
-      $('#btn-guardar').addClass('d-none');
-    }
-    if(solicitacao.status != 'ENVIADA'){
-      $('#btn-analizar').addClass('d-none');
-    }else if(solicitacao.status != 'EM_ESPERA'){
-      $('#btn-aceitar').addClass('d-none');
-    }
+      $('#btns  button').addClass('d-none');
+      $('#btn-imprimir').removeClass('d-none');
+      funcionario_id = <%=funcionario.id;%>;
+      if(solicitacao.solicitanteDelegante.id != funcionario_id){
+        if (solicitacao.status == 'ENVIADA') {
+         $('#btn-analizar').removeClass('d-none');
+        }else if(solicitacao.status == 'EM_ESPERA'){
+          $('#btn-aceitar').removeClass('d-none');
+          $('#btn-recusar').removeClass('d-none');
+        }
+      }else if(solicitacao.status == 'SALVA'){
+        $('#btn-guardar').removeClass('d-none');
+        $('#btn-enviar').removeClass('d-none');
+      }
   }
 
-  function analizar(solicitacao){
-
+  function alterarStatus(solicitacao){
+    solicitacao = JSON.stringify(solicitacao);
+    $.post('http://localhost:3000/solicitacoes/alterar-status',{
+      solicitacao:solicitacao
+    },(data)=>{
+      alert(data);
+    });
   }
+
+  let socket = io();
+  socket.on('comentar',(data)=>{
+    comentario = JSON.parse(data);
+    getComentario(comentario.solicitacaoDelegacao);
+  });
+  $('#largeModal').on('hide.bs.modal', function (event) {
+    location.reload();
+  })
 </script>

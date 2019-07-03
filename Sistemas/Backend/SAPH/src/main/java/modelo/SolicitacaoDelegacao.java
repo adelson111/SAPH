@@ -109,4 +109,19 @@ public class SolicitacaoDelegacao implements Serializable {
         this.solicitanteDelegante = solicitanteDelegante;
     }
 
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		SolicitacaoDelegacao other = (SolicitacaoDelegacao) obj;
+		if (id != other.id)
+			return false;
+		return true;
+	}
+    
+    
 }

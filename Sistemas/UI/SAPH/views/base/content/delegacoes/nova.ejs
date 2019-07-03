@@ -113,7 +113,7 @@
             <% size = campo.tipo=='textarea'?'col-12':size%>
             htmlCampo+='<div class="<%=size%> orm-group " >';
             htmlCampo+='<label"><%=campo.nome%></label>';
-            htmlCampo+='<input name = "campo" data-id="<%=campo.id%>"" type="<%=campo.tipo%>" class="form-control<%=campo.tipo=='file'?'-file':''%> tipo-campos" placeholder="<%=campo.nome%>...">';
+            htmlCampo+='<input name = "campo" data-id="<%=campo.id%>"" type="<%=campo.tipo%>" class="form-control<%=campo.tipo=='file'?'-file':''%> tipo-campos" placeholder="<%=campo.descricao%>...">';
             htmlCampo+='</div>';
             htmlItem+='<li><%=campo.nome%></li>';
           <%});%>

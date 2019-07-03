@@ -2,7 +2,7 @@
 <%delegacoes.forEach(function(delegacao){%>
   <% if(delegacao.status == "EM_ESPERA"){%>
     <%existe = true;%>
-    <div class="Portfolio">
+    <div class="Portfolio" id="<%=delegacao.id;%>">
       <a href="#!" id='view' onclick="pars(<%=JSON.stringify(delegacao)%>)" data-toggle="modal" data-target="#largeModal">
         <img class="card-img" src="http://www.pngmart.com/files/7/Envelope-PNG-Transparent.png" alt="">
       </a>

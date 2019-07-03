@@ -292,8 +292,25 @@ $(html).appendTo('body').animatedModal();
   $('#imprimir').click(function(){
   window.print('new', '_blank');
 });
-
+  var gdelegacao;
+  $('#btn-analizar').click(()=>{
+    gdelegacao.status = 'EM_ESPERA';
+    alterarStatus(gdelegacao);
+  });
+  $('#btn-aceitar').click(()=>{
+    gdelegacao.status = 'APROVADA';
+    alterarStatus(gdelegacao);
+  });
+  $('#btn-recusar').click(()=>{
+    gdelegacao.status = 'REPROVADA';
+    alterarStatus(gdelegacao);
+  });
+  $('#btn-enviar').click(()=>{
+    gdelegacao.status = 'ENVIADA';
+    alterarStatus(gdelegacao);
+  });
   function pars(delegacao){
+    gdelegacao = delegacao;
     $('#delegante').html(delegacao.solicitanteDelegante.nome);
     $('#data').html(delegacao.dataEnvio);
     $('#nome-delegacao').html(delegacao.tipoSolicitacaoDelegacao.nome);
@@ -312,22 +329,6 @@ $(html).appendTo('body').animatedModal();
     $('#form-comentario').submit((event)=>{
       event.preventDefault();
       comentar(delegacao);
-    });
-    $('#btn-analizar').click(()=>{
-      delegacao.status = 'EM_ESPERA';
-      alterarStatus(delegacao);
-    });
-    $('#btn-aceitar').click(()=>{
-      delegacao.status = 'APROVADA';
-      alterarStatus(delegacao);
-    });
-    $('#btn-recusar').click(()=>{
-      delegacao.status = 'REPROVADA';
-      alterarStatus(delegacao);
-    });
-    $('#btn-enviar').click(()=>{
-      delegacao.status = 'ENVIADA';
-      alterarStatus(delegacao);
     });
     getComentario(delegacao);
   }
@@ -409,18 +410,36 @@ $(html).appendTo('body').animatedModal();
   }
 
   function alterarStatus(delegacao){
-    delegacao = JSON.stringify(delegacao);
-    $.post('http://localhost:3000/solicitacoes/alterar-status',{ solicitacao:delegacao},(data)=>{
+    delegacao_json = JSON.stringify(delegacao);
+    $.post('http://localhost:3000/solicitacoes/alterar-status',{ solicitacao:delegacao_json},(data)=>{
       alert(data);
+      moverDelegacao(delegacao);
     });
   }
 
+  function moverDelegacao(delegacao){
+    div_delegacao = $('#'+delegacao.id);
+    $('#'+delegacao.id).remove();
+    if(delegacao.status == 'EM_ESPERA'){
+      $('#delegacoes-analise h1').remove();
+      $('#delegacoes-analise').append(div_delegacao);
+    }else if(delegacao.status == 'APROVADA'){
+      $('#delegacoes-confirmadas h1').remove();
+      $('#delegacoes-confirmadas').append(div_delegacao);
+    }
+    else if(delegacao.status == 'REPROVADA'){
+      $('#delegacoes-recusadas h1').remove();
+      $('#delegacoes-recusadas').append(div_delegacao);
+    }
+    else if(delegacao.status == 'ENVIADA'){
+      $('#delegacoes-enviadas h1').remove();
+      $('#delegacoes-enviadas').append(div_delegacao);
+    }
+
+  }
   let socket = io();
   socket.on('comentar',(data)=>{
     comentario = JSON.parse(data);
     getComentario(comentario.solicitacaoDelegacao);
   });
-  $('#largeModal').on('hide.bs.modal', function (event) {
-    location.reload();
-  })
 </script>

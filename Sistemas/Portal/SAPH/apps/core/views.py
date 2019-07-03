@@ -7,7 +7,7 @@ from django.shortcuts import render
 
 # Create your views here.
 from django.views import View
-#from pip._vendor import requests
+from pip._vendor import requests
 from apps.funcionario.models import Funcionario
 from apps.item.models import Item
 from apps.nivel.models import Nivel

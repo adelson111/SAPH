@@ -21,6 +21,12 @@ class CadastrarSolicitacao(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     form_class = CreateSolicitacao
     success_message = "%(nome)s foi Cadastrada com sucesso"
 
+    def get_form_kwargs(self, *args, **kwargs):
+        kwargs = super(CadastrarSolicitacao, self).get_form_kwargs()
+        kwargs.update({'organizacao': self.request.user.funcionario.organizacao.pk})
+        return kwargs
+
+
     def form_valid(self, form):
         solicitacao = form.save(commit=False)
         solicitacao.solicitacaoDelegacao = 'SOLICITACAO'
@@ -39,6 +45,11 @@ class CadastrarDelegacao(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     # fields = ['tipo', 'descricao', 'itens', 'nivel']
     form_class = CreateSolicitacao
     success_message = "%(nome)s foi Cadastrada com sucesso"
+
+    def get_form_kwargs(self, *args, **kwargs):
+        kwargs = super(CadastrarDelegacao, self).get_form_kwargs()
+        kwargs.update({'organizacao': self.request.user.funcionario.organizacao.pk})
+        return kwargs
 
     def form_valid(self, form):
         solicitacao = form.save(commit=False)
@@ -111,6 +122,7 @@ class AtualizarDelegacao(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
 class ApagarSolicitacao(LoginRequiredMixin, DeleteView):
     model = Solicitacao
     success_url = reverse_lazy('listar_solicitacao')
+
 
 class ApagarDelegacao(LoginRequiredMixin, DeleteView):
     model = Solicitacao

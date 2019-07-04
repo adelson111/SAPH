@@ -126,6 +126,7 @@ class PreCadastroFuncionario(CreateView):
 
         try:
             funcionario.user = User.objects.create_user(username=username, email=username, password='ifrn2018')
+            funcionario.cargo = 'admin'
             funcionario.save()
         except IntegrityError:
             return HttpResponse('FUDEU')

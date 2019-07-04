@@ -56,14 +56,18 @@
         <hr>
       </div>
 
-      <div class="form-group float-right mr-5">
-        <button type="button" class="btn btn-success btn-sm" id="btn-enviar">
+      <div class="form-group float-right mr-5" id= 'btns'>
+        <button type="button" class="btn btn-success btn-sm d-none" id="btn-enviar">
         <span class="glyphicon glyphicon-send"></span> Enviar</button>
-        <button type="submit" class="btn btn-success btn-sm" id="btn-guardar">
-        <span class="glyphicon glyphicon-floppy-disk"></span> Guardar Alterações</button>
-        <button type="submit" class="btn btn-success btn-sm" id="btn-analizar">
-        <span class="glyphicon glyphicon glyphicon-pencil"></span>Analizar</button>
-        <button type="submit" class="btn btn-success btn-sm">
+        <button type="submit" class="btn btn-success btn-sm d-none" id="btn-guardar">
+        <span class="glyphicon glyphicon-floppy-disk"></span>Guardar Alterações</button>
+        <button type="submit" class="btn btn-success btn-sm  d-none" id="btn-analizar">
+        <span class="glyphicon glyphicon-pencil"></span>Analizar</button>
+        <button type="submit" class="btn btn-success btn-sm  d-none" id="btn-aceitar">
+        <span class="glyphicon glyphicon-floppy-disk"></span>Aceitar</button>
+        <button type="submit" class="btn btn-danger btn-sm  d-none" id="btn-recusar">
+        <span class="glyphicon glyphicon-floppy-disk"></span>Recusar</button>
+        <button type="submit" class="btn btn-success btn-sm" id="btn-imprimir">
         <span class="glyphicon glyphicon-print" id="imprimir"></span> Imprimir</button>
       </div>
 
@@ -288,12 +292,29 @@ $(html).appendTo('body').animatedModal();
   $('#imprimir').click(function(){
   window.print('new', '_blank');
 });
-
+  var gdelegacao;
+  $('#btn-analizar').click(()=>{
+    gdelegacao.status = 'EM_ESPERA';
+    alterarStatus(gdelegacao);
+  });
+  $('#btn-aceitar').click(()=>{
+    gdelegacao.status = 'APROVADA';
+    alterarStatus(gdelegacao);
+  });
+  $('#btn-recusar').click(()=>{
+    gdelegacao.status = 'REPROVADA';
+    alterarStatus(gdelegacao);
+  });
+  $('#btn-enviar').click(()=>{
+    gdelegacao.status = 'ENVIADA';
+    alterarStatus(gdelegacao);
+  });
   function pars(delegacao){
+    hiddenAndShowButtons(gdelegacao?gdelegacao:delegacao);
+    gdelegacao = delegacao;
     $('#delegante').html(delegacao.solicitanteDelegante.nome);
     $('#data').html(delegacao.dataEnvio);
     $('#nome-delegacao').html(delegacao.tipoSolicitacaoDelegacao.nome);
-    hiddenAndShowButtons(delegacao);
     delegacao.itens.forEach((item)=>{
       html =  '<hr>';
       html += "<h3>"+item.tipoItem.nome+"</h3>";
@@ -304,14 +325,12 @@ $(html).appendTo('body').animatedModal();
         });
       html += '</div>';
     });
-    $('.body-delegacao').append(html);
+    $('.body-delegacao').html(html);
     $('#form-comentario').submit((event)=>{
       event.preventDefault();
       comentar(delegacao);
     });
-    setInterval(()=>{
-      getComentario(delegacao);
-    }, 1000);
+    getComentario(delegacao);
   }
 
   function moverInputFile(item){
@@ -348,11 +367,10 @@ $(html).appendTo('body').animatedModal();
       comentario = {
         comentario:$('#comentario').val(),
         solicitacaoDelegacao:{id:delegacao.id},
-        funcionario:{id:<%=funcionario.id%>},
+        funcionario:{id:<%=funcionario.id;%>},
       };
       comentario = JSON.stringify(comentario);
       $.post('http://localhost:3000/solicitacoes/comentar',{comentario:comentario},()=>{
-        getComentario(delegacao);
         $('#comentario').val('');
       });
     }else{
@@ -375,14 +393,54 @@ $(html).appendTo('body').animatedModal();
   }
 
   function hiddenAndShowButtons(delegacao){
-    if(delegacao.status != 'SALVA'){
-      $('#btn-enviar').addClass('d-none');
-      $('#btn-guardar').addClass('d-none');
-    }
-    if(delegacao.status != 'ENVIADA'){
-      $('#btn-analizar').addClass('d-none');
-    }else if(delegacao.status != 'EM_ESPERA'){
-      $('#btn-aceitar').addClass('d-none');
+    $('#btns  button').addClass('d-none');
+    $('#btn-imprimir').removeClass('d-none');
+    funcionario_id = <%=funcionario.id;%>;
+    if(delegacao.solicitanteDelegante.id != funcionario_id){
+      if (delegacao.status == 'ENVIADA') {
+        $('#btn-analizar').removeClass('d-none');
+      }else if(delegacao.status == 'EM_ESPERA'){
+        $('#btn-aceitar').removeClass('d-none');
+        $('#btn-recusar').removeClass('d-none');
+      }
+    }else if(delegacao.status == 'SALVA'){
+      $('#btn-guardar').removeClass('d-none');
+      $('#btn-enviar').removeClass('d-none');
     }
   }
+
+  function alterarStatus(delegacao){
+    delegacao_json = JSON.stringify(delegacao);
+    $.post('http://localhost:3000/solicitacoes/alterar-status',{ solicitacao:delegacao_json},(data)=>{
+      alert(data);
+      moverDelegacao(delegacao);
+    });
+  }
+
+  function moverDelegacao(delegacao){
+    div_delegacao = $('#'+delegacao.id);
+    $('#'+delegacao.id).remove();
+    hiddenAndShowButtons(delegacao);
+    if(delegacao.status == 'EM_ESPERA'){
+      $('#delegacoes-analise h1').remove();
+      $('#delegacoes-analise').append(div_delegacao);
+    }else if(delegacao.status == 'APROVADA'){
+      $('#delegacoes-confirmadas h1').remove();
+      $('#delegacoes-confirmadas').append(div_delegacao);
+    }
+    else if(delegacao.status == 'REPROVADA'){
+      $('#delegacoes-recusadas h1').remove();
+      $('#delegacoes-recusadas').append(div_delegacao);
+    }
+    else if(delegacao.status == 'ENVIADA'){
+      $('#delegacoes-enviadas h1').remove();
+      $('#delegacoes-enviadas').append(div_delegacao);
+    }
+
+  }
+  let socket = io();
+  socket.on('comentar',(data)=>{
+    comentario = JSON.parse(data);
+    getComentario(comentario.solicitacaoDelegacao);
+  });
 </script>

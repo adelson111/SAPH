@@ -1,6 +1,8 @@
 from django.db import models
 
 # Create your models here.
+from apps.organizacao.models import Organizacao
+
 TYPE = [
     ('int', 'Inteiro' ),
     ('double', 'Real' ),
@@ -23,5 +25,6 @@ class Campo(models.Model):
 class Item(models.Model):
     nome = models.CharField(max_length=80)
     campus = models.ManyToManyField(Campo)
+    organizacao = models.ForeignKey(Organizacao, on_delete=models.CASCADE)
     def __str__(self):
         return self.nome

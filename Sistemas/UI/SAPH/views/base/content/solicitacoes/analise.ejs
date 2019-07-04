@@ -2,7 +2,7 @@
 <%solicitacoes.forEach(function(solicitacao){%>
   <% if(solicitacao.status == "EM_ESPERA"){%>
     <%existe = true;%>
-    <div class="Portfolio">
+    <div class="Portfolio" id="<%=solicitacao.id;%>">
       <a href="#!" id='view' onclick="pars(<%=JSON.stringify(solicitacao)%>)" data-toggle="modal" data-target="#largeModal">
         <img class="card-img" src="http://www.pngmart.com/files/7/Envelope-PNG-Transparent.png" alt="">
       </a>

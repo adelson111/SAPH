@@ -17,15 +17,15 @@ class Campos(object):
     campos = []
 
 class  CadastrarCampo(LoginRequiredMixin, CreateView):
-    def  post(self, request):
+    def post(self, request, **kwargs):
         tipos = request.POST.getlist('tipo')
         nomes = request.POST.getlist('nome')
         descricoes = request.POST.getlist('descricao')
         data = dict()
-        for tipo,nome,descricao in zip(tipos,nomes,descricoes):
+        for tipo, nome, descricao in zip(tipos, nomes, descricoes):
             form = CampoForm({
-                'nome':nome,
-                'descricao':descricao,
+                'nome': nome,
+                'descricao': descricao,
                 'tipo': tipo
             })
             if form.is_valid():
@@ -35,16 +35,20 @@ class  CadastrarCampo(LoginRequiredMixin, CreateView):
         return JsonResponse(data)
 
 class  CadastrarItem(LoginRequiredMixin, CreateView):
-    def  post(self, request):
+    def post(self, request, **kwargs):
         data = dict()
         form = ItemForm(request.POST)
         if form.is_valid():
+            item_antes = form.save(commit=False)
+            item_antes.organizacao = self.request.user.funcionario.organizacao
             item = form.save()
             data['nome'] = item.nome
             data['id'] = item.id
+
             for campo in Campos.campos:
                 item.campus.add(campo)
-            Campos.campos=[]
+
+            Campos.campos = []
 
         return JsonResponse(data)
 

@@ -12,31 +12,35 @@
                 <div class="card fixed " style="height: 600px; text-align: right;" id="campos" >
                   <div class="panel-heading">
                     <ul class="nav nav-tabs">
-                      <li class="active"><a href="#tab1default" data-toggle="tab">Todas</a></li>
-                      <li class=""><a href="#tab2default" data-toggle="tab"><%=tipo%></a></li>
-                      <li class=""><a href="#tab3default" data-toggle="tab">Confirmadas</a></li>
-                      <li class=""><a href="#tab4default" data-toggle="tab">Em análise</a></li>
+                      <li class="active"><a href="#todas-delegacoes" data-toggle="tab">Todas</a></li>
+                      <li class=""><a href="#delegacoes-enviadas" data-toggle="tab"><%=tipo;%></a></li>
+                      <li class=""><a href="#delegacoes-confirmadas" data-toggle="tab">Confirmadas</a></li>
+                      <li class=""><a href="#delegacoes-analise" data-toggle="tab">Em análise</a></li>
+                      <li class=""><a href="#delegacoes-recusadas" data-toggle="tab">Recusadas</a></li>
                       <%if(tipo =="Enviadas"){%>
-                        <li class=""><a href="#tab6default" data-toggle="tab">Salvas</a></li>
+                        <li class=""><a href="#delegacoes-salvas" data-toggle="tab">Salvas</a></li>
                       <%}%>
                     </ul>
                   </div>
                   <div class="panel with-nav-tabs panel-default overflow-auto">
                     <div class="panel-body" >
                       <div class="tab-content" width="auto">
-                        <div class="tab-pane fade  active in" id="tab1default">
+                        <div class="tab-pane fade  active in" id="todas-delegacoes">
                           <%- include('todas')-%>
                         </div>
-                        <div class="tab-pane fade"  id="tab2default">
+                        <div class="tab-pane fade"  id="delegacoes-enviadas">
                           <%- include('enviadas') -%>
                         </div>
-                        <div class="tab-pane fade" id="tab3default">
+                        <div class="tab-pane fade" id="delegacoes-confirmadas">
                           <%- include('confirmadas') -%>
                         </div>
-                        <div class="tab-pane fade " id="tab4default">
+                        <div class="tab-pane fade " id="delegacoes-analise">
                           <%- include('analise') -%>
                         </div>
-                        <div class="tab-pane fade"  id="tab5default">
+                        <div class="tab-pane fade"  id="delegacoes-recusadas">
+                          <%- include('recusadas') -%>
+                        </div>
+                        <div class="tab-pane fade"  id="delegacoes-salvas">
                           <%- include('salvas') -%>
                         </div>
                       </div>

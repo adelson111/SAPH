@@ -126,7 +126,7 @@ function montarSolicitacao(acao,status){
   }
   dici = JSON.stringify(dici);
   console.log(dici);
-  $.post("http://localhost:3000/solicitacoes/"+acao,{'solicitacao':dici},function(data){
+  $.post("http://10.193.1.48:3000/solicitacoes/"+acao,{'solicitacao':dici},function(data){
     alert(data);
   });
 }

@@ -59,8 +59,8 @@
         <span class="glyphicon glyphicon-send"></span> Enviar</button>
         <button type="submit" class="btn btn-success btn-sm d-none" id="btn-guardar">
         <span class="glyphicon glyphicon-floppy-disk"></span>Guardar Alterações</button>
-        <button type="submit" class="btn btn-success btn-sm  d-none" id="btn-analizar">
-        <span class="glyphicon glyphicon-pencil"></span>Analizar</button>
+        <button type="submit" class="btn btn-success btn-sm  d-none" id="btn-analisar">
+        <span class="glyphicon glyphicon-pencil"></span>Analisar</button>
         <button type="submit" class="btn btn-success btn-sm  d-none" id="btn-aceitar">
         <span class="glyphicon glyphicon-floppy-disk"></span>Aceitar</button>
         <button type="submit" class="btn btn-danger btn-sm  d-none" id="btn-recusar">
@@ -275,7 +275,7 @@ window.print('new', '_blank');
 });
 
   var gsolicitacao;
-  $('#btn-analizar').click(()=>{
+  $('#btn-analisar').click(()=>{
     gsolicitacao.status = 'EM_ESPERA';
     alterarStatus(gsolicitacao);
   });
@@ -291,30 +291,43 @@ window.print('new', '_blank');
     gsolicitacao.status = 'ENVIADA';
     alterarStatus(gsolicitacao);
   });
+  $('#btn-guardar').click(()=>{
+    gsolicitacao.itens.forEach((item)=>{
+      item.campos.forEach((campo)=>{
+        campo.valor = $("#"+campo.id).val();
+      });
+    });
+    solicitacao_json = JSON.stringify(gsolicitacao);
+    $.post('http://10.193.1.48:3000/solicitacoes/altualizar',{
+      solicitacao:solicitacao_json
+    },(data)=>{
+      alert(data);
+    });
+  });
   $('#form-comentario').submit((event)=>{
     event.preventDefault();
     comentar(gsolicitacao);
   });
   function pars(solicitacao){
-    hiddenAndShowButtons(gsolicitacao?gsolicitacao:solicitacao);
+    hiddenAndShowButtons(solicitacao?solicitacao:gsolicitacao);
     gsolicitacao = solicitacao;
-    $('#solicitante').html(solicitacao.solicitanteDelegante.nome);
-    $('#data').html(solicitacao.dataEnvio);
+    $('#solicitante').html(gsolicitacao.solicitanteDelegante.nome);
+    $('#data').html(gsolicitacao.dataEnvio);
     $('.body-solicitacao').html('');
-    $('#nome-solicitacao').html(solicitacao.tipoSolicitacaoDelegacao.nome);
-    solicitacao.itens.forEach((item)=>{
+    $('#nome-solicitacao').html(gsolicitacao.tipoSolicitacaoDelegacao.nome);
+    gsolicitacao.itens.forEach((item)=>{
       html =  '<hr>';
       html += "<h3>"+item.tipoItem.nome+"</h3>";
       html += '<div class="form-row tipo-itens" id="'+item.id+'">'
         size = item.campos.length>3?'col-4':'col';
         item.campos.forEach((campo)=>{
-          html += montarCampo(campo,size,solicitacao.status);
+          html += montarCampo(campo,size,gsolicitacao.status);
         });
       html += '</div>';
     });
     $('.body-solicitacao').append(html);
 
-    getComentario(solicitacao);
+    getComentario(gsolicitacao);
 
   }
 
@@ -334,7 +347,7 @@ window.print('new', '_blank');
     htmlCampo = '<div class="'+size+' orm-group " >';
       htmlCampo+='<label>'+campo.tipoCampo.nome+'</label>';
       tipo = campo.tipo=='file'?'-file':'';
-      htmlCampo +='<input name = "campo" data-id="'+campo.id+'" type="'+campo.tipoCampo.tipo+'" class="form-control'+tipo+' tipo-campos" value="'+campo.valor+'"';
+      htmlCampo +='<input name = "campo" id="'+campo.id+'" type="'+campo.tipoCampo.tipo+'" class="form-control'+tipo+' tipo-campos" value="'+campo.valor+'"';
       if(status == "SALVA"){
         htmlCampo += '>';
       }else{
@@ -354,9 +367,8 @@ window.print('new', '_blank');
         funcionario:{id:<%=funcionario.id;%>},
       };
       comentario = JSON.stringify(comentario);
-      $.post('http://10.193.1.48:3000/solicitacoes/comentar',{comentario:comentario},()=>{
-        $('#comentario').val('');
-      });
+      $.post('http://10.193.1.48:3000/solicitacoes/comentar',{comentario:comentario});
+      $('#comentario').val('');
     }else{
       alert("Escreva um comentário");
     }
@@ -381,7 +393,7 @@ window.print('new', '_blank');
       funcionario_id = <%=funcionario.id;%>;
       if(solicitacao.solicitanteDelegante.id != funcionario_id){
         if (solicitacao.status == 'ENVIADA') {
-         $('#btn-analizar').removeClass('d-none');
+         $('#btn-analisar').removeClass('d-none');
         }else if(solicitacao.status == 'EM_ESPERA'){
           $('#btn-aceitar').removeClass('d-none');
           $('#btn-recusar').removeClass('d-none');
@@ -423,9 +435,18 @@ window.print('new', '_blank');
     }
 
   }
+
   let socket = io();
   socket.on('comentar',(data)=>{
     comentario = JSON.parse(data);
     getComentario(comentario.solicitacaoDelegacao);
   });
+  socket.on('notificar',(data)=>{
+    solicitacao = JSON.parse(data);
+    if(gsolicitacao.solicitanteDelegante.id == <%=funcionario.id;%>){
+      alert('Notificação');
+      moverSolicitacao(solicitacao);
+    }
+  });
+
 </script>

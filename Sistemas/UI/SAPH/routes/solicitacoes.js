@@ -80,6 +80,7 @@ module.exports = (io)=>{
     };
     client.post(server_solicitacao_delegacao,args,function (data, response) {
       res.send(data);
+      io.emit('notificar',req.body.solicitacao);
     });
   });
 
@@ -89,6 +90,16 @@ module.exports = (io)=>{
         headers: { "Content-Type": "application/json" }
     };
     client.post(server_solicitacao_delegacao+"alterar-status",args,(data, response) => {
+      res.send(data);
+      io.emit('notificar',req.body.solicitacao);
+    });
+  });
+  router.post('/altualizar',(req, res) => {
+    var args = {
+        data: req.body.solicitacao,
+        headers: { "Content-Type": "application/json" }
+    };
+    client.post(server_solicitacao_delegacao+"atualizar",args,(data, response) => {
       res.send(data);
     });
   });

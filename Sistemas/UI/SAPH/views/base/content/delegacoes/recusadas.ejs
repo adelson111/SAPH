@@ -1,6 +1,6 @@
 <%existe = false;%>
 <%delegacoes.forEach(function(delegacao){%>
-  <% if(delegacao.status == "APROVADA"){%>
+  <% if(delegacao.status == "REPROVADA"){%>
     <%existe = true;%>
     <div class="Portfolio" id="<%=delegacao.id;%>">
       <a href="#!" id='view' onclick="pars(<%=JSON.stringify(delegacao)%>)" data-toggle="modal" data-target="#largeModal">

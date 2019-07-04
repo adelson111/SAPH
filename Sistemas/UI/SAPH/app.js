@@ -36,7 +36,7 @@ app.use(session({
 }))
 
 app.use(function(req,res,next){
-  urls = ['/login','/'];
+  urls = ['/login','/','/contato', '/sobre'];
   if(urls.indexOf(req.url) === -1 && !req.session.usuario){
     res.redirect("/login");
   }else if(urls.indexOf(req.url) != -1 && req.session.usuario!=null){

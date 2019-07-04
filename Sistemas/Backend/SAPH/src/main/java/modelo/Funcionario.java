@@ -44,9 +44,6 @@ public class Funcionario implements Serializable {
     @Column
     private boolean ativo;
 
-    @Column(length = 100)
-    private String foto;
-
     @OneToOne
     @JoinColumn(name = "usuaio_id")
     private Usuario usuario;
@@ -105,14 +102,6 @@ public class Funcionario implements Serializable {
 
     public void setAtivo(boolean ativo) {
         this.ativo = ativo;
-    }
-
-    public String getFoto() {
-        return foto;
-    }
-
-    public void setFoto(String foto) {
-        this.foto = foto;
     }
 
     public Usuario getUsuario() {

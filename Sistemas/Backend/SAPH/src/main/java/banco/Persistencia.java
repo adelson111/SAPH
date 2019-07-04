@@ -48,7 +48,7 @@ public class Persistencia {
 		return "Erro ao cadastrar!";
 	}
 
-	public String cadastrar(List<Object> objeto) {
+	public String cadastrar(List objeto) {
 		try {
 			em = getPersistencia();
 			em.getTransaction().begin();
@@ -84,6 +84,26 @@ public class Persistencia {
 		return "Erro ao atualizar!";
 	}
 
+        public String atualizarLista(List objeto) {
+		try {
+                        System.out.println("Aqui");
+			em = getPersistencia();
+			em.getTransaction().begin();
+			for (Object o : objeto) {
+				em.merge(o);
+			}
+			em.getTransaction().commit();
+			return "Atualizado por lista com sucesso!";
+		} catch (Exception e) {
+			System.out.println("Erro ao atualizar: " + e.getMessage());
+			em.getTransaction().rollback();
+		} finally {
+			em.close();
+			emf.close();
+		}
+		return "Erro ao cadastrar por lista!";
+	}
+        
 	public String remover(Object objeto, long id) {
 		try {
 			em = getPersistencia();
@@ -113,6 +133,21 @@ public class Persistencia {
 			emf.close();
 		}
 		return null;
+	}
+        
+        public boolean existe(Object objeto, long id) {
+		try {
+			em = getPersistencia();
+                        if(em.find(objeto.getClass(), id) != null) {
+                            return true;
+                        }
+		} catch (Exception e) {
+			System.out.println("Erro ao selecionar por id: " + e.getMessage());
+		} finally {
+			em.close();
+			emf.close();
+		}
+		return false;
 	}
 
 	public List selecionar(Object objeto) {

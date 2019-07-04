@@ -7,7 +7,7 @@ from django.shortcuts import render
 
 # Create your views here.
 from django.views import View
-from pip._vendor import requests
+#from pip._vendor import requests
 from apps.funcionario.models import Funcionario
 from apps.item.models import Item
 from apps.nivel.models import Nivel
@@ -41,8 +41,6 @@ class Exportar(LoginRequiredMixin, View) :
                 'endereco': funcionario.endereco,
                 'telefone': funcionario.telefone,
                 'ativo': funcionario.ativo,
-                # 'foto': funcionario.foto,
-                'foto': "Foto",
                 'usuario': {
                     'id': funcionario.user.pk,
                     'email': funcionario.user.username,
@@ -83,7 +81,6 @@ class Exportar(LoginRequiredMixin, View) :
                 lSetores.append(dicSetor1)
 
             lSocilitacoesDelegacoes = []
-
             solicitacoes = Solicitacao.objects.prefetch_related('nivel').filter(nivel__id=nivel['id'])
             for solicitacao in solicitacoes:
                 ld = []
@@ -140,10 +137,11 @@ class Exportar(LoginRequiredMixin, View) :
         lOrganizacao1.append(organizacaoDic)
 
         # Envio da request
-        resp = requests.post(url='http://localhost:8080/SAPH/saph/organizacao/exportar/',
+        resp = requests.post(url='http://127.0.0.1:8080/SAPH/saph/organizacao/exportar/',
                              data=json.dumps(lOrganizacao1),
                              headers={'content-type': 'application/json'})
         if (resp.status_code == 200 or resp.status_code == 201):
             return HttpResponse("sim")
+
         else:
             return HttpResponse("nao")

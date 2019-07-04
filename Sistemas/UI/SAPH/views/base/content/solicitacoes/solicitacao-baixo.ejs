@@ -298,7 +298,7 @@ window.print('new', '_blank');
       });
     });
     solicitacao_json = JSON.stringify(gsolicitacao);
-    $.post('http://10.193.1.48:3000/solicitacoes/altualizar',{
+    $.post('http://192.168.137.240:3000/solicitacoes/altualizar',{
       solicitacao:solicitacao_json
     },(data)=>{
       alert(data);
@@ -367,7 +367,7 @@ window.print('new', '_blank');
         funcionario:{id:<%=funcionario.id;%>},
       };
       comentario = JSON.stringify(comentario);
-      $.post('http://10.193.1.48:3000/solicitacoes/comentar',{comentario:comentario});
+      $.post('http://192.168.137.240:3000/solicitacoes/comentar',{comentario:comentario});
       $('#comentario').val('');
     }else{
       alert("Escreva um comentário");
@@ -375,7 +375,7 @@ window.print('new', '_blank');
   }
 
   function getComentario(solicitacao){
-    $.get('http://10.193.1.48:3000/solicitacoes/comentarios?solicitacao='+solicitacao.id, (data)=>{
+    $.get('http://192.168.137.240:3000/solicitacoes/comentarios?solicitacao='+solicitacao.id, (data)=>{
       html = '';
       data.forEach((comentario)=>{
         html += '<p>';
@@ -406,7 +406,7 @@ window.print('new', '_blank');
 
   function alterarStatus(solicitacao){
     solicitacao_json = JSON.stringify(solicitacao);
-    $.post('http://10.193.1.48:3000/solicitacoes/alterar-status',{
+    $.post('http://192.168.137.240:3000/solicitacoes/alterar-status',{
       solicitacao:solicitacao_json
     },(data)=>{
       alert(data);

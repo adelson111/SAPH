@@ -115,7 +115,7 @@
             htmlCampo+='<label"><%=campo.nome%></label>';
             htmlCampo+='<input name = "campo" data-id="<%=campo.id%>"" type="<%=campo.tipo%>" class="form-control<%=campo.tipo=='file'?'-file':''%> tipo-campos" placeholder="<%=campo.descricao%>...">';
             htmlCampo+='</div>';
-            htmlItem+='<li><%=campo.nome%></li>';
+            htmlItem+='<li><%=campo.descricao%></li>';
           <%});%>
           htmlCampo+='</div>';
           htmlItem+='</ul>';
@@ -171,7 +171,7 @@ function montarSolicitacao(acao,status){
   }
   dici = JSON.stringify(dici);
   console.log(dici);
-  $.post("http://10.193.1.48:3000/solicitacoes/"+acao,{'solicitacao':dici},function(data){
+  $.post("http://192.168.137.240:3000/solicitacoes/"+acao,{'solicitacao':dici},function(data){
     alert(data);
   });
 }

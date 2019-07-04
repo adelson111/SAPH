@@ -4,7 +4,7 @@ var Client = require('node-rest-client').Client;
 var client = new Client();
 var usuarios = require('./../apoio/usuario');
 /* GET home page. */
-
+var server_funcionario = "http://192.168.137.240:8080/SAPH/saph/funcionario/";
 
 router.get('/', function(req, res, next) {
   res.render('index', {
@@ -24,6 +24,16 @@ router.get('/contato',(req, res, next)=>{
 router.get('/logout',(req, res, next) =>{
   delete req.session.usuario;
   res.redirect('/login');
+});
+
+router.post('/atualizar-funcionario',(req , res)=>{
+  var args = {
+      data: req.body.funcionario,
+      headers: { "Content-Type": "application/json" }
+  };
+  client.put(server_funcionario,args,function (data, response) {
+    res.send(data);
+  });
 });
 
 router.post('/login',(req, res, next)=>{

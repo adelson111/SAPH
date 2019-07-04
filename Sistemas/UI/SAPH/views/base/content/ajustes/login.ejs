@@ -1,17 +1,17 @@
 <div class="col-12  pl-md-5 bd-content">
-               
-    
+
+
             <div class="card-body px-lg-5 pt-0 pt-30 overflow-auto"  id="cardSolici">
-            
+
               <form action="" method="post">
                 <div class="form-group">
                     <label>email:</label>
-                    <input class="form-control" type="email" name="fullname" value="ifudido@gmail.com"/>
+                    <input class="form-control" type="email" name="fullname" value="<%=funcionario.usuario.email;%>"/>
                     <span class="Error"></span>
                 </div>
                 <div class="form-group">
                   <label>Senha:</label>
-                  <input class="form-control" type="password" name="fullname" value="bosta123"/>
+                  <input class="form-control" type="password" name="fullname" value="<%=funcionario.usuario.senha;%>"/>
                   <span class="Error"></span>
                 </div>
                 <div class="form-group">
@@ -19,16 +19,14 @@
                     <input class="form-control" type="password" name="fullname" value=""/>
                     <span class="Error"></span>
                 </div>
-    
+
                 <div class="form-group text-center">
                     <input class="btn btn-info " type="submit" value="Salvar alterações"/>
                 </div>
             </form>
-    
+
             </div>
-    
+
     </div>
-    
+
     <%- include('cssdoscoisa') -%>
-    
-    

@@ -1,25 +1,25 @@
 <div class="col-12 pl-md-5 bd-content">
-    <form action="" method="post">
+    <form action="/ajustes/atualizar-funcionario" method="post" id = "form-usuario">
           <div class="preview text-center">
               <img class="preview-img" src="http://simpleicon.com/wp-content/uploads/account.png" alt="Preview Image" width="120" height="120"/>
               <div class="browse-button">
-                  <input class="browse-input" type="file" required name="UploadedFile" id="UploadedFile"/>
+                  <input class="browse-input" type="file"  name="UploadedFile" id="UploadedFile"/>
               </div>
               <span class="Error"></span>
           </div>
           <div class="form-group">
               <label>Nome:</label>
-              <input class="form-control" type="text" name="fullname" value="<%=funcionario.nome;%>"/>
+              <input class="form-control" type="text" name="nome" value="<%=funcionario.nome;%>"/>
               <span class="Error"></span>
           </div>
           <div class="form-group">
             <label>Telefone:</label>
-            <input class="form-control" type="text" name="fullname" value="<%=funcionario.telefone;%>"/>
+            <input class="form-control" type="text" name="telefone" value="<%=funcionario.telefone;%>"/>
             <span class="Error"></span>
           </div>
           <div class="form-group">
               <label>CPF:</label>
-              <input class="form-control" type="text" name="fullname" value="<%=funcionario.cpf%>"/>
+              <input class="form-control" type="text" name="fullname" value="<%=funcionario.cpf;%>" disabled/>
               <span class="Error"></span>
             </div>
 

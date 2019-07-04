@@ -309,6 +309,10 @@ $(html).appendTo('body').animatedModal();
     gdelegacao.status = 'ENVIADA';
     alterarStatus(gdelegacao);
   });
+  $('#form-comentario').submit((event)=>{
+    event.preventDefault();
+    comentar(gdelegacao);
+  });
   function pars(delegacao){
     hiddenAndShowButtons(gdelegacao?gdelegacao:delegacao);
     gdelegacao = delegacao;
@@ -326,10 +330,6 @@ $(html).appendTo('body').animatedModal();
       html += '</div>';
     });
     $('.body-delegacao').html(html);
-    $('#form-comentario').submit((event)=>{
-      event.preventDefault();
-      comentar(delegacao);
-    });
     getComentario(delegacao);
   }
 
@@ -370,7 +370,7 @@ $(html).appendTo('body').animatedModal();
         funcionario:{id:<%=funcionario.id;%>},
       };
       comentario = JSON.stringify(comentario);
-      $.post('http://localhost:3000/solicitacoes/comentar',{comentario:comentario},()=>{
+      $.post('http://10.193.1.48:3000/solicitacoes/comentar',{comentario:comentario},()=>{
         $('#comentario').val('');
       });
     }else{
@@ -379,7 +379,7 @@ $(html).appendTo('body').animatedModal();
   }
 
   function getComentario(delegacao){
-    $.get('http://localhost:3000/solicitacoes/comentarios?solicitacao='+delegacao.id, (data)=>{
+    $.get('http://10.193.1.48:3000/solicitacoes/comentarios?solicitacao='+delegacao.id, (data)=>{
       console.log(data);
       html = '';
       data.forEach((comentario)=>{
@@ -411,7 +411,7 @@ $(html).appendTo('body').animatedModal();
 
   function alterarStatus(delegacao){
     delegacao_json = JSON.stringify(delegacao);
-    $.post('http://localhost:3000/solicitacoes/alterar-status',{ solicitacao:delegacao_json},(data)=>{
+    $.post('http://10.193.1.48:3000/solicitacoes/alterar-status',{ solicitacao:delegacao_json},(data)=>{
       alert(data);
       moverDelegacao(delegacao);
     });

@@ -291,7 +291,10 @@ window.print('new', '_blank');
     gsolicitacao.status = 'ENVIADA';
     alterarStatus(gsolicitacao);
   });
-
+  $('#form-comentario').submit((event)=>{
+    event.preventDefault();
+    comentar(gsolicitacao);
+  });
   function pars(solicitacao){
     hiddenAndShowButtons(gsolicitacao?gsolicitacao:solicitacao);
     gsolicitacao = solicitacao;
@@ -310,10 +313,7 @@ window.print('new', '_blank');
       html += '</div>';
     });
     $('.body-solicitacao').append(html);
-    $('#form-comentario').submit((event)=>{
-      event.preventDefault();
-      comentar(solicitacao);
-    });
+
     getComentario(solicitacao);
 
   }
@@ -354,7 +354,7 @@ window.print('new', '_blank');
         funcionario:{id:<%=funcionario.id;%>},
       };
       comentario = JSON.stringify(comentario);
-      $.post('http://localhost:3000/solicitacoes/comentar',{comentario:comentario},()=>{
+      $.post('http://10.193.1.48:3000/solicitacoes/comentar',{comentario:comentario},()=>{
         $('#comentario').val('');
       });
     }else{
@@ -363,7 +363,7 @@ window.print('new', '_blank');
   }
 
   function getComentario(solicitacao){
-    $.get('http://localhost:3000/solicitacoes/comentarios?solicitacao='+solicitacao.id, (data)=>{
+    $.get('http://10.193.1.48:3000/solicitacoes/comentarios?solicitacao='+solicitacao.id, (data)=>{
       html = '';
       data.forEach((comentario)=>{
         html += '<p>';
@@ -394,7 +394,7 @@ window.print('new', '_blank');
 
   function alterarStatus(solicitacao){
     solicitacao_json = JSON.stringify(solicitacao);
-    $.post('http://localhost:3000/solicitacoes/alterar-status',{
+    $.post('http://10.193.1.48:3000/solicitacoes/alterar-status',{
       solicitacao:solicitacao_json
     },(data)=>{
       alert(data);

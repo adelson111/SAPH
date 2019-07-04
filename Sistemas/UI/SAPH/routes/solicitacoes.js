@@ -2,8 +2,8 @@ var express = require('express');
 var router = express.Router();
 var Client = require('node-rest-client').Client;
 var client = new Client();
-var server_solicitacao_delegacao = "http://localhost:8080/SAPH/saph/solicitacao-delegacao/";
-var server_tipo_solicitacao_delegacao = "http://localhost:8080/SAPH/saph/tipo-solicitacao-delegacao/";
+var server_solicitacao_delegacao = "http://10.193.1.48:8080/SAPH/saph/solicitacao-delegacao/";
+var server_tipo_solicitacao_delegacao = "http://10.193.1.48:8080/SAPH/saph/tipo-solicitacao-delegacao/";
 
 module.exports = (io)=>{
   router.get('/nova',(req, res, next)=>{

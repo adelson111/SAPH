@@ -310,11 +310,11 @@ $(html).appendTo('body').animatedModal();
     alterarStatus(gdelegacao);
   });
   function pars(delegacao){
+    hiddenAndShowButtons(gdelegacao?gdelegacao:delegacao);
     gdelegacao = delegacao;
     $('#delegante').html(delegacao.solicitanteDelegante.nome);
     $('#data').html(delegacao.dataEnvio);
     $('#nome-delegacao').html(delegacao.tipoSolicitacaoDelegacao.nome);
-    hiddenAndShowButtons(delegacao);
     delegacao.itens.forEach((item)=>{
       html =  '<hr>';
       html += "<h3>"+item.tipoItem.nome+"</h3>";
@@ -420,6 +420,7 @@ $(html).appendTo('body').animatedModal();
   function moverDelegacao(delegacao){
     div_delegacao = $('#'+delegacao.id);
     $('#'+delegacao.id).remove();
+    hiddenAndShowButtons(delegacao);
     if(delegacao.status == 'EM_ESPERA'){
       $('#delegacoes-analise h1').remove();
       $('#delegacoes-analise').append(div_delegacao);

@@ -274,19 +274,31 @@ margin-right: 7px;
 window.print('new', '_blank');
 });
 
-  $('#guardar').click(()=>{
-    alert("data");
-    $.post("http://localhost:3000/solicitacoes/cada",{'solicitacao':"vai q cola"},function(data){
-    console.log(data);
-    });
+  var gsolicitacao;
+  $('#btn-analizar').click(()=>{
+    gsolicitacao.status = 'EM_ESPERA';
+    alterarStatus(gsolicitacao);
+  });
+  $('#btn-aceitar').click(()=>{
+    gsolicitacao.status = 'APROVADA';
+    alterarStatus(gsolicitacao);
+  });
+  $('#btn-recusar').click(()=>{
+    gsolicitacao.status = 'REPROVADA';
+    alterarStatus(gsolicitacao);
+  });
+  $('#btn-enviar').click(()=>{
+    gsolicitacao.status = 'ENVIADA';
+    alterarStatus(gsolicitacao);
   });
 
   function pars(solicitacao){
+    hiddenAndShowButtons(gsolicitacao?gsolicitacao:solicitacao);
+    gsolicitacao = solicitacao;
     $('#solicitante').html(solicitacao.solicitanteDelegante.nome);
     $('#data').html(solicitacao.dataEnvio);
     $('.body-solicitacao').html('');
     $('#nome-solicitacao').html(solicitacao.tipoSolicitacaoDelegacao.nome);
-    hiddenAndShowButtons(solicitacao);
     solicitacao.itens.forEach((item)=>{
       html =  '<hr>';
       html += "<h3>"+item.tipoItem.nome+"</h3>";
@@ -301,22 +313,6 @@ window.print('new', '_blank');
     $('#form-comentario').submit((event)=>{
       event.preventDefault();
       comentar(solicitacao);
-    });
-    $('#btn-analizar').click(()=>{
-      solicitacao.status = 'EM_ESPERA';
-      alterarStatus(solicitacao);
-    });
-    $('#btn-aceitar').click(()=>{
-      solicitacao.status = 'APROVADA';
-      alterarStatus(solicitacao);
-    });
-    $('#btn-recusar').click(()=>{
-      solicitacao.status = 'REPROVADA';
-      alterarStatus(solicitacao);
-    });
-    $('#btn-enviar').click(()=>{
-      solicitacao.status = 'ENVIADA';
-      alterarStatus(solicitacao);
     });
     getComentario(solicitacao);
 
@@ -397,20 +393,39 @@ window.print('new', '_blank');
   }
 
   function alterarStatus(solicitacao){
-    solicitacao = JSON.stringify(solicitacao);
+    solicitacao_json = JSON.stringify(solicitacao);
     $.post('http://localhost:3000/solicitacoes/alterar-status',{
-      solicitacao:solicitacao
+      solicitacao:solicitacao_json
     },(data)=>{
       alert(data);
+      moverSolicitacao(solicitacao);
     });
   }
 
+  function moverSolicitacao(solicitacao){
+    div_solicitacao = $('#'+solicitacao.id);
+    $('#'+solicitacao.id).remove();
+    hiddenAndShowButtons(solicitacao);
+    if(solicitacao.status == 'EM_ESPERA'){
+      $('#solicitacoes-analise h1').remove();
+      $('#solicitacoes-analise').append(div_solicitacao);
+    }else if(solicitacao.status == 'APROVADA'){
+      $('#solicitacoes-confirmadas h1').remove();
+      $('#solicitacoes-confirmadas').append(div_solicitacao);
+    }
+    else if(solicitacao.status == 'REPROVADA'){
+      $('#solicitacoes-recusadas h1').remove();
+      $('#solicitacoes-recusadas').append(div_solicitacao);
+    }
+    else if(solicitacao.status == 'ENVIADA'){
+      $('#solicitacoes-enviadas h1').remove();
+      $('#solicitacoes-enviadas').append(div_solicitacao);
+    }
+
+  }
   let socket = io();
   socket.on('comentar',(data)=>{
     comentario = JSON.parse(data);
     getComentario(comentario.solicitacaoDelegacao);
   });
-  $('#largeModal').on('hide.bs.modal', function (event) {
-    location.reload();
-  })
 </script>

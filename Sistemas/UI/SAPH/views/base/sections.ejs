@@ -9,7 +9,8 @@
 
             <div class="row">
               <%if(funcionario.nivel.nivelInferior != 0){%>
-                <div class="col-md-6 col-xl-6 seinao">
+                <div class="col seinao">
+                  <a href="solicitacoes/recebidas">
                     <div class="card mb-3 widget-content bg-success">
                         <div class="widget-content-wrapper text-white">
                             <div class="widget-content-left">
@@ -20,10 +21,12 @@
                             </div>
                         </div>
                     </div>
+                    </a>
                 </div>
               <%}%>
               <%if(funcionario.nivel.nivelSuperior != 0){%>
-              <div class="col-md-6 col-xl-6 seinao">
+              <div class="col seinao">
+                <a href="delegacoes/recebidas">
                 <div class="card mb-3 widget-content bg-warning">
                     <div class="widget-content-wrapper text-white">
                         <div class="widget-content-left">
@@ -34,13 +37,15 @@
                         </div>
                     </div>
                 </div>
+                </a>
             </div>
             <%}%>
           </div>
 
           <div class="row">
             <%if(funcionario.nivel.nivelInferior != 0){%>
-              <div class="col-md-6 col-xl-6 seinao">
+              <div class="col seinao">
+                <a href="solicitacoes/recebidas">
                   <div class="card mb-3 widget-content bg-success">
                       <div class="widget-content-wrapper text-white">
                           <div class="widget-content-left">
@@ -51,10 +56,12 @@
                           </div>
                       </div>
                   </div>
+                </a>
               </div>
             <%}%>
             <%if(funcionario.nivel.nivelSuperior != 0){%>
-              <div class="col-md-6 col-xl-6 seinao">
+              <div class="col seinao">
+                <a href="delegacoes/recebidas">
                 <div class="card mb-3 widget-content bg-warning">
                     <div class="widget-content-wrapper text-white">
                         <div class="widget-content-left">
@@ -65,27 +72,33 @@
                         </div>
                     </div>
                 </div>
+                </a>
             </div>
           <%}%>
         </div>
 
         <div class="row">
           <%if(funcionario.nivel.nivelInferior != 0){%>
-            <div class="col-md-6 col-xl-6 seinao">
-                <div class="card mb-3 widget-content bg-success">
-                    <div class="widget-content-wrapper text-white">
-                        <div class="widget-content-left">
-                            <div class="widget-heading p-2">Solicitações em análise</div>
-                        </div>
-                        <div class="widget-content-right">
-                            <div class="widget-numbers text-white"><span class="badge badge-primary badge-pill">4</span></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+              <div class=" col seinao">
+                <a href="solicitacoes/recebidas">
+                  <div class="card mb-3 widget-content bg-success">
+                      <div class="widget-content-wrapper text-white">
+                          <div class="widget-content-left">
+                              <div class="widget-heading p-2">Solicitações em análise</div>
+                          </div>
+                          <div class="widget-content-right">
+                              <div class="widget-numbers text-white"><span class="badge badge-primary badge-pill">4</span></div>
+                          </div>
+                      </div>
+
+                  </div>
+                  </a>
+              </div>
           <%}%>
           <%if(funcionario.nivel.nivelSuperior != 0){%>
-          <div class="col-md-6 col-xl-6 seinao">
+
+          <div class="col seinao">
+            <a href="delegacoes/recebidas">
             <div class="card mb-3 widget-content bg-warning">
                 <div class="widget-content-wrapper text-white">
                     <div class="widget-content-left">
@@ -96,7 +109,9 @@
                     </div>
                 </div>
             </div>
+            </a>
         </div>
+
         <%}%>
       </div>
 

@@ -9,6 +9,7 @@ global.erro = null;
 /* GET home page. */
 
 router.get('/', function(req, res, next) {
+  erro = null;
   res.render('index', {
      title: 'SAPH',
      home : true
@@ -17,6 +18,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/contato',(req, res, next)=>{
+  erro = null;
   res.render('contato', {
     title: 'Contato - SAPH',
     home : true
@@ -53,6 +55,7 @@ router.post('/login',(req, res, next)=>{
 
 
 router.get('/sobre',(req, res, next)=>{
+  erro = null;
   res.render('sobre', {
     title: 'Sobre - SAPH',
     home : true
@@ -67,6 +70,7 @@ router.get('/login',(req, res, next)=>{
 });
 
 router.get('/inicio',(req, res, next)=>{
+  erro = null;
   res.render('inicio', {
     title: 'Home - SAPH',
     funcionario:req.session.usuario,

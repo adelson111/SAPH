@@ -10,7 +10,7 @@ module.exports ={
 
     login(email, senha){
         return new Promise((resolve, reject) =>{
-          client.post("http://192.168.137.240:8080/SAPH/saph/usuario/autenticar/"+email+"/"+senha,function (data, response) {
+          client.post(server_backend+"usuario/autenticar/"+email+"/"+senha,function (data, response) {
             if(data!=null){
               resolve(data);
             }else{

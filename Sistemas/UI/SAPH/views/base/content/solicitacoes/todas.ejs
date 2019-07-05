@@ -2,7 +2,7 @@
 <%solicitacoes.forEach(function(solicitacao){%>
     <%existe = true;%>
     <div class="Portfolio">
-      <a href="#!" id='view' onclick="pars(<%=JSON.stringify(solicitacao)%>)" data-toggle="modal" data-target="#largeModal">
+      <a href="#!" id='view' onclick="pars(<%=JSON.stringify(solicitacao);%>)" data-toggle="modal" data-target="#largeModal">
         <img class="card-img" src="http://www.pngmart.com/files/7/Envelope-PNG-Transparent.png" alt="">
       </a>
       <div class="desc"><%=solicitacao.tipoSolicitacaoDelegacao.nome%></div>

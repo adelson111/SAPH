@@ -125,8 +125,7 @@ function montarSolicitacao(acao,status){
     itens:tipoItens,
   }
   dici = JSON.stringify(dici);
-  console.log(dici);
-  $.post("http://192.168.137.240:3000/solicitacoes/"+acao,{'solicitacao':dici},function(data){
+  $.post("<%=server_ui%>solicitacoes/"+acao,{'solicitacao':dici},function(data){
     alert(data);
   });
 }

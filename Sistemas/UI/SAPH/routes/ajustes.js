@@ -4,7 +4,7 @@ var Client = require('node-rest-client').Client;
 var client = new Client();
 
 
-var server_funcionario = "http://192.168.137.240:8080/SAPH/saph/funcionario/";
+var server_funcionario = server_backend+"funcionario/";
 
 router.get('/',(req, res, next)=>{
         res.render('dados', {
@@ -29,7 +29,7 @@ router.post('/atualizar-funcionario',(req , res)=>{
       headers: { "Content-Type": "application/json" }
   };
   client.put(server_funcionario,args,function (data, response) {
-    res.redirect('/ajustes/dados');
+    res.redirect('/ajustes/login-ajustes');
   });
 });
 

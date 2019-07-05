@@ -36,7 +36,9 @@
         <li>
           <a  data-toggle="collapse" data-target="#solicit" aria-expanded="false" class="text-info">  <i class="text-success fas fa-envelope"></i><span>Solicitações </span>  <span><i class="float-right text-info fas fa-angle-down"></i></span></a>
           <ul class="collapse list-unstyled bg-dark "  id="solicit">
-            <li><a href="/solicitacoes/recebidas">Recebidas</a></li>
+            <%if(funcionario.nivel.nivelInferior != 0){%>
+              <li><a href="/solicitacoes/recebidas">Recebidas</a></li>
+            <%}%>
             <%if(funcionario.nivel.nivelSuperior != 0){%>
               <li><a href="/solicitacoes/enviadas">Enviadas</a></li>
             <%}%>
@@ -45,7 +47,9 @@
         <li>
           <a  data-toggle="collapse" data-target="#deleg" aria-expanded="false" class="text-info">  <i class="text-warning fas fa-envelope"></i><span>Delegações </span>  <span><i class="float-right text-info fas fa-angle-down"></i></span></a>
             <ul class="collapse list-unstyled bg-dark"  id="deleg">
-                <li><a href="/delegacoes/recebidas">Recebidas</a></li>
+                <%if(funcionario.nivel.nivelSuperior != 0){%>
+                  <li><a href="/delegacoes/recebidas">Recebidas</a></li>
+                <%}%>
                 <%if(funcionario.nivel.nivelInferior != 0){%>
                   <li><a href="/delegacoes/enviadas">Enviadas</a></li>
                 <%}%>

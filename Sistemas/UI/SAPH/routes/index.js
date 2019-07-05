@@ -3,9 +3,13 @@ var router = express.Router();
 var Client = require('node-rest-client').Client;
 var client = new Client();
 var usuarios = require('./../apoio/usuario');
+global.server_backend = 'http://10.193.1.48:8080/SAPH/saph/';
+global.server_ui = 'http://10.193.1.48:3000/';
+global.erro = null;
 /* GET home page. */
 
 router.get('/', function(req, res, next) {
+  erro = null;
   res.render('index', {
      title: 'SAPH',
      home : true
@@ -14,6 +18,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/contato',(req, res, next)=>{
+  erro = null;
   res.render('contato', {
     title: 'Contato - SAPH',
     home : true
@@ -21,6 +26,7 @@ router.get('/contato',(req, res, next)=>{
 });
 
 router.get('/logout',(req, res, next) =>{
+  erro = null;
   delete req.session.usuario;
   res.redirect('/login');
 });
@@ -28,6 +34,7 @@ router.get('/logout',(req, res, next) =>{
 
 
 router.post('/login',(req, res, next)=>{
+  erro = null;
   console.log(req.body.email);
   console.log(req.body.senha);
   if(!req.body.email){
@@ -43,10 +50,8 @@ router.post('/login',(req, res, next)=>{
       res.redirect('/inicio');
 
     }).catch(err =>{
-      console.log(req.session);
-      console.log(err);
+      erro = 'Email  ou senha incorreto';
       res.redirect('/login');
-      console.log('erro543');
     })
   }
 
@@ -54,6 +59,7 @@ router.post('/login',(req, res, next)=>{
 
 
 router.get('/sobre',(req, res, next)=>{
+  erro = null;
   res.render('sobre', {
     title: 'Sobre - SAPH',
     home : true
@@ -61,6 +67,7 @@ router.get('/sobre',(req, res, next)=>{
 });
 
 router.get('/login',(req, res, next)=>{
+  erro = null;
   res.render('login', {
     title: 'Login - SAPH',
     home:true
@@ -68,7 +75,7 @@ router.get('/login',(req, res, next)=>{
 });
 
 router.get('/inicio',(req, res, next)=>{
-  console.log("ala:" +req.session.usuario);
+  erro = null;
   res.render('inicio', {
     title: 'Home - SAPH',
     funcionario:req.session.usuario,
@@ -77,6 +84,7 @@ router.get('/inicio',(req, res, next)=>{
 });
 
 router.get('/visualizar',(req, res, next)=>{
+  erro = null;
   res.render('visualizar', {
     title: 'Visualizar - SAPH',
     funcionario:req.session.usuario,
@@ -84,6 +92,7 @@ router.get('/visualizar',(req, res, next)=>{
 });
 
 router.get('/exportar',(req, res, next)=>{
+  erro = null;
   res.render('exportar', {
     title: 'Exportar - SAPH',
     funcionario:req.session.usuario,

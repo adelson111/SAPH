@@ -65,5 +65,12 @@ public class Funcionario {
     public String selecionar(@PathParam("id") long id) {
         return new Gson().toJson(new Persistencia().selecionar(new modelo.Funcionario(), id));
     }
-
+    
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("ativo/{ativo}")
+    public String selecionar(@PathParam("ativo") boolean ativo) {
+        return new Gson().toJson(new Persistencia().getFuncionarioByStatus(ativo));
+    }
+    
 }

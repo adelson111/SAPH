@@ -3,7 +3,7 @@ import json
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.models import User
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 
 # Create your views here.
 from django.views import View
@@ -130,6 +130,8 @@ class Exportar(LoginRequiredMixin, View) :
                 'endereco': organizacao['endereco'],
                 'telefone': organizacao['telefone'],
                 'situacao': organizacao['situacao'],
+                'enviado': True,
+                'pedido': organizacao['pedido'],
                 'funcionarios': lFuncionarios,
                 'niveis': lNiveis,
             }
@@ -141,7 +143,9 @@ class Exportar(LoginRequiredMixin, View) :
                              data=json.dumps(lOrganizacao1),
                              headers={'content-type': 'application/json'})
         if (resp.status_code == 200 or resp.status_code == 201):
+            org = get_object_or_404(Organizacao, pk=organizacoes[0]['id'])
+            org.enviado = True
+            org.save()
             return HttpResponse("sim")
-
         else:
             return HttpResponse("nao")

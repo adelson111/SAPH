@@ -42,6 +42,12 @@ public class Organizacao implements Serializable {
     @Column
     private boolean situacao;
     
+    @Column
+    private boolean enviado;
+    
+    @Column
+    private boolean pedido;
+    
     @OneToMany(fetch = FetchType.EAGER)
     @JoinColumn(name = "organizacao_id")
     private List<Funcionario> funcionarios;
@@ -106,6 +112,14 @@ public class Organizacao implements Serializable {
         this.situacao = situacao;
     }
 
+    public boolean isEnviado() {
+        return enviado;
+    }
+
+    public void setEnviado(boolean enviado) {
+        this.enviado = enviado;
+    }
+    
     public List<Funcionario> getFuncionarios() {
         return funcionarios;
     }

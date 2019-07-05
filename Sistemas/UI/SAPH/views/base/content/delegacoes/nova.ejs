@@ -12,9 +12,9 @@
                     <form class="text-left " style="color: #757575;" action="index.html" method="post" id="delegacao" >
                       <div class="col">
                         <div class="md-form">
-
+                          <label for="exampleFormControlSelect2">Tipo de Delegação</label>
                             <select name="tipo" id="tipo" class="form-control form-control-lg"  required>
-                              <option>-------</option>
+                              <option value="default">-------</option>
                               <%tipos.forEach(function(delegacao){%>
                                 <option value="<%=delegacao.id%>"><%=delegacao.nome%></option>
                               <%});%>
@@ -23,7 +23,7 @@
 
                         </div>
 
-                        <div class="body-delegacao max-height-50 overflow-auto" style="height:550px">
+                        <div class="body-delegacao max-height-50" style="height:550px">
 
                         </div>
 
@@ -31,13 +31,13 @@
                     </form>
                   </div>
                   <div class="card-footer">
-                    <div class="form-group float-right mr-5">
-                      <button type="button" class="btn btn-success btn-sm" id ="enviar">
+                    <div class="form-group float-right mr-5" id="btns-nova">
+                      <button type="button" class="btn btn-success btn-sm" id ="enviar" disabled>
                       <span class="glyphicon glyphicon-send"></span> Enviar</button>
-                      <button type="submit" class="btn btn-success btn-sm" id ="guardar">
+                      <button type="submit" class="btn btn-success btn-sm" id ="guardar" disabled>
                       <span class="glyphicon glyphicon-floppy-disk" ></span> Guardar</button>
-                      <button type="submit" class="btn btn-success btn-sm">
-                      <span class="glyphicon glyphicon-print" id="imprimir"></span> Imprimir</button>
+                      <button type="submit" class="btn btn-success btn-sm" disabled>
+                      <span class="glyphicon glyphicon-print" id="imprimir" ></span> Imprimir</button>
                     </div>
                   </div>
 
@@ -84,6 +84,8 @@
 <script type="text/javascript">
   //Seleção do tipo de delegação
   $( "#tipo" ).change(function() {
+    $('select option[value="default"]').remove();
+    $("#btns-nova button").prop("disabled", false);
     tipo = $('#tipo option:selected').val();
     render(tipo);
   });

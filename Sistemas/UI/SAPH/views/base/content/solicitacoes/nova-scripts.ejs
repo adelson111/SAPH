@@ -1,5 +1,7 @@
 <script type="text/javascript">
   $( "#tipo" ).change(function() {
+    $('select option[value="default"]').remove();
+    $("#btns-nova button").prop("disabled", false);
     tipo = $('#tipo option:selected').val();
     <% tipos.forEach(function(solicitacao){%>
       if (tipo == '<%=solicitacao.id%>'){

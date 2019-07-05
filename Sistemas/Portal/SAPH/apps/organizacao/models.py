@@ -9,6 +9,8 @@ class Organizacao(models.Model):
     endereco = models.CharField(max_length=100)
     telefone = models.CharField(max_length=17)
     situacao = models.BooleanField(default=True)
+    enviado = models.BooleanField(default=False)
+    pedido = models.BooleanField(default=False)
 
     def __str__(self):
         return 'Empresa: '+ self.nome + ' - CNPJ: ' + self.cnpj

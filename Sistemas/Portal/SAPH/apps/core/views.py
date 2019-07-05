@@ -3,7 +3,7 @@ import json
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.models import User
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 
 # Create your views here.
 from django.views import View
@@ -41,8 +41,6 @@ class Exportar(LoginRequiredMixin, View) :
                 'endereco': funcionario.endereco,
                 'telefone': funcionario.telefone,
                 'ativo': funcionario.ativo,
-                # 'foto': funcionario.foto,
-                'foto': "Foto",
                 'usuario': {
                     'id': funcionario.user.pk,
                     'email': funcionario.user.username,
@@ -83,7 +81,6 @@ class Exportar(LoginRequiredMixin, View) :
                 lSetores.append(dicSetor1)
 
             lSocilitacoesDelegacoes = []
-
             solicitacoes = Solicitacao.objects.prefetch_related('nivel').filter(nivel__id=nivel['id'])
             for solicitacao in solicitacoes:
                 ld = []
@@ -133,6 +130,8 @@ class Exportar(LoginRequiredMixin, View) :
                 'endereco': organizacao['endereco'],
                 'telefone': organizacao['telefone'],
                 'situacao': organizacao['situacao'],
+                'enviado': True,
+                'pedido': organizacao['pedido'],
                 'funcionarios': lFuncionarios,
                 'niveis': lNiveis,
             }
@@ -140,10 +139,13 @@ class Exportar(LoginRequiredMixin, View) :
         lOrganizacao1.append(organizacaoDic)
 
         # Envio da request
-        resp = requests.post(url='http://localhost:8080/SAPH/saph/organizacao/exportar/',
+        resp = requests.post(url='http://127.0.0.1:8080/SAPH/saph/organizacao/exportar/',
                              data=json.dumps(lOrganizacao1),
                              headers={'content-type': 'application/json'})
         if (resp.status_code == 200 or resp.status_code == 201):
+            org = get_object_or_404(Organizacao, pk=organizacoes[0]['id'])
+            org.enviado = True
+            org.save()
             return HttpResponse("sim")
         else:
             return HttpResponse("nao")

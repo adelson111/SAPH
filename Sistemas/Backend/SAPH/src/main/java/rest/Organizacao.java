@@ -7,6 +7,8 @@ package rest;
 
 import banco.Persistencia;
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import java.util.List;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
@@ -24,13 +26,8 @@ import javax.ws.rs.core.MediaType;
 @Path("organizacao")
 public class Organizacao {
 
-    @POST
-    @Consumes(MediaType.APPLICATION_JSON)
-    @Path("exportar")
-    public String exportar(String json) {
-
+    private String exportarC(modelo.Organizacao organizacao) {
         Persistencia persistencia = new Persistencia();
-        modelo.Organizacao organizacao = new Gson().fromJson(json.substring(1, json.length() - 1), modelo.Organizacao.class);
 
         for (modelo.Funcionario funcionarios : organizacao.getFuncionarios()) {
             persistencia.cadastrar(funcionarios.getUsuario());
@@ -57,9 +54,60 @@ public class Organizacao {
         }
 
         return persistencia.cadastrar(organizacao);
+    }
 
-//        return json.substring(1, json.length()-1);
-        
+    private String exportarA(modelo.Organizacao organizacao) {
+        Persistencia persistencia = new Persistencia();
+
+        for (modelo.Funcionario funcionarios : organizacao.getFuncionarios()) {
+            persistencia.atualizar(funcionarios.getUsuario());
+            persistencia.atualizar(funcionarios);
+        }
+        persistencia.atualizar(organizacao.getFuncionarios());
+        for (modelo.Nivel niveis : organizacao.getNiveis()) {
+            for (modelo.Setor setores : niveis.getSetores()) {
+                persistencia.atualizar(setores);
+            }
+            for (modelo.TipoSolicitacaoDelegacao tipoSolicitacoesDelegacoes : niveis.getTipoSolicitacoesDelegacoes()) {
+                for (modelo.TipoItem tipoItens : tipoSolicitacoesDelegacoes.getTipoItens()) {
+                    for (modelo.TipoCampo tipoCampos : tipoItens.getTipoCampos()) {
+                        if (!tipoCampos.equals(persistencia.selecionar(new modelo.TipoCampo(), tipoCampos.getId()))) {
+                            persistencia.atualizar(tipoCampos);
+                        }
+                    }
+                    if (!tipoItens.equals(persistencia.selecionar(new modelo.TipoItem(), tipoItens.getId()))) {
+                        persistencia.atualizar(tipoItens);
+                    }
+                }
+                persistencia.atualizar(tipoSolicitacoesDelegacoes);
+            }
+            persistencia.atualizar(niveis);
+        }
+
+        return persistencia.atualizar(organizacao);
+    }
+
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Path("exportar")
+    public String exportar(String json) {
+
+        Persistencia persistencia = new Persistencia();
+        modelo.Organizacao organizacao = new Gson().fromJson(json.substring(1, json.length() - 1), modelo.Organizacao.class);
+
+        if (persistencia.existe(organizacao, organizacao.getId())) {
+            return exportarA(organizacao);
+        } else {
+            return exportarC(organizacao);
+        }
+
+    }
+    
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Path("configuracao")
+    public String configuracao(String json) {
+        return new Persistencia().atualizar(new Gson().fromJson(json, modelo.Organizacao.class));
     }
 
     @POST
@@ -101,6 +149,13 @@ public class Organizacao {
     @Path("{id}")
     public String selecionar(@PathParam("id") long id) {
         return new Gson().toJson(new Persistencia().selecionar(new modelo.Organizacao(), id));
+    }
+    
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("situacao/{situacao}")
+    public String selecionarO(@PathParam("situacao") boolean situacao) {
+        return new Gson().toJson(new Persistencia().getOrganizacaoByStatus(situacao));
     }
 
 }

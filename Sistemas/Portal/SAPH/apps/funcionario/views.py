@@ -56,7 +56,7 @@ class CadastrarFuncionario(LoginRequiredMixin, SuccessMessageMixin, CreateView):
 
 class AtualizarFuncionario(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     model = Funcionario
-    fields = ['nome', 'cpf', 'cargo', 'endereco', 'telefone', 'foto']
+    fields = ['nome', 'cpf', 'cargo', 'endereco', 'telefone']
 
     # message_data = {
     #     'mens': 'USUÁRIO ATUALIZADO COM SUCESSO',
@@ -89,7 +89,7 @@ class ListarFuncionarios(LoginRequiredMixin, ListView):
         con = serializers.serialize('json', a)
         # b = model_to_dict(a)
         # print(b)
-        print(con)
+        #print(con)
         return Funcionario.objects.filter(organizacao=self.request.user.funcionario.organizacao.pk)
 
 
@@ -137,7 +137,7 @@ class PreCadastroFuncionario(CreateView):
 
 class PreUpdateFuncionario(LoginRequiredMixin, UpdateView):
     model = Funcionario
-    fields = ['nome', 'cpf', 'cargo', 'endereco', 'telefone', 'foto']
+    fields = ['nome', 'cpf', 'cargo', 'endereco', 'telefone']
     # form_class = FuncionarioEd    it
     def get_queryset(self):
         return Funcionario.objects.filter(pk=self.kwargs['pk'])

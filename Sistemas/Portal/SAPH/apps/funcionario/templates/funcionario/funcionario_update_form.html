@@ -37,11 +37,13 @@
             <!--<input type="text" name="cpf" maxlength="14" id="id_cpf" required>-->
             <label>CPF</label>
         </div>
+        {% if form.cargo.value != "admin" %}
         <div class="inputBox">
             {{form.cargo}}
             <!--<input type="text" name="endereco" maxlength="100" id="id_endereco" required>-->
             <label>Cargo</label>
         </div>
+        {% endif %}
         <div class="inputBox">
             {{form.endereco}}
             <!--<input type="text" name="endereco" maxlength="100" id="id_endereco" required>-->

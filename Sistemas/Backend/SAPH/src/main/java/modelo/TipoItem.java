@@ -32,7 +32,7 @@ public class TipoItem implements Serializable {
     private String nome;
 
     @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(name = "tipo_item_campo", 
+    @JoinTable(name = "tipo_item_tipo_campo", 
             joinColumns = {@JoinColumn(name = "tipo_item_id")}, 
             inverseJoinColumns = {@JoinColumn(name = "tipo_campo_id")})
     private List<TipoCampo> tipoCampos;

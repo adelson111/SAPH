@@ -7,6 +7,7 @@
     <div class="collapse navbar-collapse" id="menu">
         {% if user.username %}
         <ul class="navbar-nav mr-auto ">
+        {% if user.funcionario.organizacao.enviado == False %}
             {% if not user.funcionario.organizacao %}
             <a class="nav-link" href="{% url 'cadastrar_organizacao' %}">CADASTRAR ORGANIZAÇÃO</a>
             {% else %}
@@ -55,17 +56,25 @@
                 </div>
             </li>
             {% endif%}
+        {% endif%}
         </ul>
         <div class="my-2 my-lg-0">
             <div class="dropdown">
-                {%if user.funcionario.foto %}
-                <img src="{{user.funcionario.foto.url}}" data-toggle="dropdown" class="rounded-circle imagem_perfil" alt="Imagem do usuário">
-                {% else %}
                 <img src="{% static '/imagem/sem_foto.png' %}" data-toggle="dropdown" class="rounded-circle imagem_perfil" alt="Imagem do usuário">
-                {% endif %}
                 <div class="dropdown-menu dropdown-menu-right">
-                    <a class="dropdown-item" href="" data-toggle="modal" data-target="#modalExportar">Exportar</a>
+                    <a class="dropdown-item" href="">{{user.funcionario.email}}</a>
                     <div class="dropdown-divider"></div>
+                    {% if user.funcionario.organizacao.enviado == True %}
+                        {% if user.funcionario.organizacao.pedido == False %}
+                            <a class="dropdown-item" href="{% url 'solicitar_reabertura'%}">Solicitar Reabertura</a>
+                        {% else %}
+                            <a class="dropdown-item" href="{% url 'cancelar_reabertura'%}">Cancelar Reabertura</a>
+                        {% endif %}
+                        <div class="dropdown-divider"></div>
+                    {% else %}
+                        <a class="dropdown-item" href="" data-toggle="modal" data-target="#modalExportar">Exportar</a>
+                        <div class="dropdown-divider"></div>
+                    {% endif %}
                     <a class="dropdown-item" href="{% url 'logout'%}">Sair</a>
                 </div>
             </div>

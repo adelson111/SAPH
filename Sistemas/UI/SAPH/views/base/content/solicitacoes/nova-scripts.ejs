@@ -29,7 +29,7 @@
                 <% size = campo.tipo=='textarea'?'col-12':size%>
                 '<div class="<%=size%> orm-group " >'+
                   '<label"><%=campo.nome%></label>'+
-                  '<input name = "campo" data-id="<%=campo.id%>"" type="<%=campo.tipo%>" class="form-control<%=campo.tipo=='file'?'-file':''%> tipo-campos" placeholder="<%=campo.nome%>...">'+
+                  '<input name = "campo" data-id="<%=campo.id%>"" type="<%=campo.tipo%>" class="form-control<%=campo.tipo=='file'?'-file':''%> tipo-campos" placeholder="<%=campo.descricao%>...">'+
                 '</div>'+
               <%});%>
             '</div>'

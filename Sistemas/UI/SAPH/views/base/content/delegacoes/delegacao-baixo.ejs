@@ -61,8 +61,8 @@
         <span class="glyphicon glyphicon-send"></span> Enviar</button>
         <button type="submit" class="btn btn-success btn-sm d-none" id="btn-guardar">
         <span class="glyphicon glyphicon-floppy-disk"></span>Guardar Alterações</button>
-        <button type="submit" class="btn btn-success btn-sm  d-none" id="btn-analizar">
-        <span class="glyphicon glyphicon-pencil"></span>Analizar</button>
+        <button type="submit" class="btn btn-success btn-sm  d-none" id="btn-analisar">
+        <span class="glyphicon glyphicon-pencil"></span>Analisar</button>
         <button type="submit" class="btn btn-success btn-sm  d-none" id="btn-aceitar">
         <span class="glyphicon glyphicon-floppy-disk"></span>Aceitar</button>
         <button type="submit" class="btn btn-danger btn-sm  d-none" id="btn-recusar">
@@ -293,7 +293,8 @@ $(html).appendTo('body').animatedModal();
   window.print('new', '_blank');
 });
   var gdelegacao;
-  $('#btn-analizar').click(()=>{
+  var server = 'http://192.168.137.240:3000/';
+  $('#btn-analisar').click(()=>{
     gdelegacao.status = 'EM_ESPERA';
     alterarStatus(gdelegacao);
   });
@@ -308,6 +309,23 @@ $(html).appendTo('body').animatedModal();
   $('#btn-enviar').click(()=>{
     gdelegacao.status = 'ENVIADA';
     alterarStatus(gdelegacao);
+  });
+  $('#btn-guardar').click(()=>{
+    gdelegacao.itens.forEach((item)=>{
+      item.campos.forEach((campo)=>{
+        campo.valor = $("#"+campo.id).val();
+      });
+    });
+    delegacao_json = JSON.stringify(gdelegacao);
+    $.post('solicitacoes/altualizar',{
+      solicitacao:delegacao_json
+    },(data)=>{
+      alert(data);
+    });
+  });
+  $('#form-comentario').submit((event)=>{
+    event.preventDefault();
+    comentar(gdelegacao);
   });
   function pars(delegacao){
     hiddenAndShowButtons(gdelegacao?gdelegacao:delegacao);
@@ -326,10 +344,6 @@ $(html).appendTo('body').animatedModal();
       html += '</div>';
     });
     $('.body-delegacao').html(html);
-    $('#form-comentario').submit((event)=>{
-      event.preventDefault();
-      comentar(delegacao);
-    });
     getComentario(delegacao);
   }
 
@@ -370,17 +384,15 @@ $(html).appendTo('body').animatedModal();
         funcionario:{id:<%=funcionario.id;%>},
       };
       comentario = JSON.stringify(comentario);
-      $.post('http://localhost:3000/solicitacoes/comentar',{comentario:comentario},()=>{
-        $('#comentario').val('');
-      });
+      $.post(server+'solicitacoes/comentar',{comentario:comentario});
+      $('#comentario').val('');
     }else{
       alert("Escreva um comentário");
     }
   }
 
   function getComentario(delegacao){
-    $.get('http://localhost:3000/solicitacoes/comentarios?solicitacao='+delegacao.id, (data)=>{
-      console.log(data);
+    $.get(server+'solicitacoes/comentarios?solicitacao='+delegacao.id, (data)=>{
       html = '';
       data.forEach((comentario)=>{
         html += '<p>';
@@ -398,7 +410,7 @@ $(html).appendTo('body').animatedModal();
     funcionario_id = <%=funcionario.id;%>;
     if(delegacao.solicitanteDelegante.id != funcionario_id){
       if (delegacao.status == 'ENVIADA') {
-        $('#btn-analizar').removeClass('d-none');
+        $('#btn-analisar').removeClass('d-none');
       }else if(delegacao.status == 'EM_ESPERA'){
         $('#btn-aceitar').removeClass('d-none');
         $('#btn-recusar').removeClass('d-none');
@@ -411,7 +423,7 @@ $(html).appendTo('body').animatedModal();
 
   function alterarStatus(delegacao){
     delegacao_json = JSON.stringify(delegacao);
-    $.post('http://localhost:3000/solicitacoes/alterar-status',{ solicitacao:delegacao_json},(data)=>{
+    $.post(server+'solicitacoes/alterar-status',{ solicitacao:delegacao_json},(data)=>{
       alert(data);
       moverDelegacao(delegacao);
     });
@@ -442,5 +454,12 @@ $(html).appendTo('body').animatedModal();
   socket.on('comentar',(data)=>{
     comentario = JSON.parse(data);
     getComentario(comentario.solicitacaoDelegacao);
+  });
+  socket.on('notificar',(data)=>{
+    delegacao = JSON.parse(data);
+    if(gdelegacao.solicitanteDelegante.id == <%=funcionario.id;%>){
+      alert('Notificação');
+      moverDelegacao(delegacao);
+    }
   });
 </script>

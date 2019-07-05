@@ -63,6 +63,8 @@ public class SolicitacaoDelegacao {
         	return persistencia.atualizar(sd);
         }
     }
+    
+    
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Path("comentar")
@@ -77,6 +79,20 @@ public class SolicitacaoDelegacao {
     @Consumes(MediaType.APPLICATION_JSON)
     public String atualizar(String json) {
         return new Persistencia().atualizar(new Gson().fromJson(json, modelo.SolicitacaoDelegacao.class));
+    }
+    
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Path("atualizar")
+    public String atualizarSD(String json) {
+    	Persistencia persistencia = new Persistencia();
+    	modelo.SolicitacaoDelegacao solicitacaoDelegacao = new Gson().fromJson(json, modelo.SolicitacaoDelegacao.class);
+    	for(modelo.Item item:solicitacaoDelegacao.getItens()) {
+    		for(modelo.Campo campo:item.getCampos()) {
+    			persistencia.atualizar(campo);
+    		}
+    	}
+        return "Ataualizado com sucesso";
     }
 
     @DELETE

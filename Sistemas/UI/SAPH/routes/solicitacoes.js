@@ -2,8 +2,8 @@ var express = require('express');
 var router = express.Router();
 var Client = require('node-rest-client').Client;
 var client = new Client();
-var server_solicitacao_delegacao = "http://localhost:8080/SAPH/saph/solicitacao-delegacao/";
-var server_tipo_solicitacao_delegacao = "http://localhost:8080/SAPH/saph/tipo-solicitacao-delegacao/";
+var server_solicitacao_delegacao = "http://192.168.137.240:8080/SAPH/saph/solicitacao-delegacao/";
+var server_tipo_solicitacao_delegacao = "http://192.168.137.240:8080/SAPH/saph/tipo-solicitacao-delegacao/";
 
 module.exports = (io)=>{
   router.get('/nova',(req, res, next)=>{
@@ -80,6 +80,7 @@ module.exports = (io)=>{
     };
     client.post(server_solicitacao_delegacao,args,function (data, response) {
       res.send(data);
+      io.emit('notificar',req.body.solicitacao);
     });
   });
 
@@ -89,6 +90,16 @@ module.exports = (io)=>{
         headers: { "Content-Type": "application/json" }
     };
     client.post(server_solicitacao_delegacao+"alterar-status",args,(data, response) => {
+      res.send(data);
+      io.emit('notificar',req.body.solicitacao);
+    });
+  });
+  router.post('/altualizar',(req, res) => {
+    var args = {
+        data: req.body.solicitacao,
+        headers: { "Content-Type": "application/json" }
+    };
+    client.post(server_solicitacao_delegacao+"atualizar",args,(data, response) => {
       res.send(data);
     });
   });

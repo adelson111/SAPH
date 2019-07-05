@@ -5,7 +5,6 @@ var client = new Client();
 var usuarios = require('./../apoio/usuario');
 /* GET home page. */
 
-
 router.get('/', function(req, res, next) {
   res.render('index', {
      title: 'SAPH',
@@ -25,6 +24,8 @@ router.get('/logout',(req, res, next) =>{
   delete req.session.usuario;
   res.redirect('/login');
 });
+
+
 
 router.post('/login',(req, res, next)=>{
   console.log(req.body.email);

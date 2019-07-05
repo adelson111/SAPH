@@ -4,6 +4,8 @@ var Client = require('node-rest-client').Client;
 var client = new Client();
 
 
+var server_funcionario = "http://192.168.137.240:8080/SAPH/saph/funcionario/";
+
 router.get('/',(req, res, next)=>{
         res.render('dados', {
         title: 'Configurações - SAPH',
@@ -16,6 +18,19 @@ router.get('/dados',(req, res, next)=>{
         title: 'Configurações - SAPH',
         funcionario:req.session.usuario,
     });
+});
+
+router.post('/atualizar-funcionario',(req , res)=>{
+  funcionario = req.session.usuario;
+  funcionario.nome = req.body.nome;
+  funcionario.telefon = req.body.telefone;
+  var args = {
+      data: funcionario,
+      headers: { "Content-Type": "application/json" }
+  };
+  client.put(server_funcionario,args,function (data, response) {
+    res.redirect('/ajustes/dados');
+  });
 });
 
 router.get('/login-ajustes',(req, res, next)=>{

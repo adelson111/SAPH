@@ -3,10 +3,13 @@
     <div class="container">
       <div class="row justify-content-center" method="post">
         <div class="col-12 col-md-8 col-lg-6 pb-5">
+          <%if(erro!=null){%>
+            <span class="alert alert-danger" role="alert"><%=erro%></span>
+          <%}%>
           <form action="/login" method="post" class="text-center border border-light p-5">
             <p class="h4 mb-4">Login</p>
-            <input name="email" type="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="E-mail"">
-            <input name="senha" type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Senha">
+            <input name="email" type="email" id="defaultLoginFormEmail" required class="form-control mb-4" placeholder="E-mail"">
+            <input name="senha" type="password" id="defaultLoginFormPassword" required class="form-control mb-4" placeholder="Senha">
             <div class="d-flex justify-content-around">
             <div>
               <!-- Forgot password -->

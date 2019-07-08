@@ -293,7 +293,7 @@ $(html).appendTo('body').animatedModal();
   window.print('new', '_blank');
 });
   var gdelegacao;
-  var server = 'http://192.168.137.240:3000/';
+  var server = '<%=server_ui;%>';
   $('#btn-analisar').click(()=>{
     gdelegacao.status = 'EM_ESPERA';
     alterarStatus(gdelegacao);

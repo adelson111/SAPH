@@ -8,20 +8,25 @@
           <div class="card-body" style="height:700px;">
 
             <div class="row">
-              <div class="col-md-6 col-xl-6 seinao">
-                  <div class="card mb-3 widget-content bg-success">
-                      <div class="widget-content-wrapper text-white">
-                          <div class="widget-content-left">
-                              <div class="widget-heading p-2">Novas solicitações</div>
-                          </div>
-                          <div class="widget-content-right">
-                              <div class="widget-numbers text-white"><span class="badge badge-primary badge-pill">14</span></div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-
-              <div class="col-md-6 col-xl-6 seinao">
+              <%if(funcionario.nivel.nivelInferior != 0){%>
+                <div class="col seinao">
+                  <a href="solicitacoes/recebidas">
+                    <div class="card mb-3 widget-content bg-success">
+                        <div class="widget-content-wrapper text-white">
+                            <div class="widget-content-left">
+                                <div class="widget-heading p-2">Novas solicitações</div>
+                            </div>
+                            <div class="widget-content-right">
+                                <div class="widget-numbers text-white"><span class="badge badge-primary badge-pill">14</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+              <%}%>
+              <%if(funcionario.nivel.nivelSuperior != 0){%>
+              <div class="col seinao">
+                <a href="delegacoes/recebidas">
                 <div class="card mb-3 widget-content bg-warning">
                     <div class="widget-content-wrapper text-white">
                         <div class="widget-content-left">
@@ -32,54 +37,68 @@
                         </div>
                     </div>
                 </div>
+                </a>
             </div>
-
+            <%}%>
           </div>
 
           <div class="row">
-            <div class="col-md-6 col-xl-6 seinao">
-                <div class="card mb-3 widget-content bg-success">
+            <%if(funcionario.nivel.nivelInferior != 0){%>
+              <div class="col seinao">
+                <a href="solicitacoes/recebidas">
+                  <div class="card mb-3 widget-content bg-success">
+                      <div class="widget-content-wrapper text-white">
+                          <div class="widget-content-left">
+                              <div class="widget-heading p-2">Solicitações confirmadas</div>
+                          </div>
+                          <div class="widget-content-right">
+                              <div class="widget-numbers text-white"><span class="badge badge-primary badge-pill">44</span></div>
+                          </div>
+                      </div>
+                  </div>
+                </a>
+              </div>
+            <%}%>
+            <%if(funcionario.nivel.nivelSuperior != 0){%>
+              <div class="col seinao">
+                <a href="delegacoes/recebidas">
+                <div class="card mb-3 widget-content bg-warning">
                     <div class="widget-content-wrapper text-white">
                         <div class="widget-content-left">
-                            <div class="widget-heading p-2">Solicitações confirmadas</div>
+                            <div class="widget-heading p-2">Delegações confirmadas</div>
                         </div>
                         <div class="widget-content-right">
-                            <div class="widget-numbers text-white"><span class="badge badge-primary badge-pill">44</span></div>
+                            <div class="widget-numbers text-white"><span class="badge badge-primary badge-pill">1</span></div>
                         </div>
                     </div>
                 </div>
+                </a>
             </div>
-
-            <div class="col-md-6 col-xl-6 seinao">
-              <div class="card mb-3 widget-content bg-warning">
-                  <div class="widget-content-wrapper text-white">
-                      <div class="widget-content-left">
-                          <div class="widget-heading p-2">Delegações confirmadas</div>
-                      </div>
-                      <div class="widget-content-right">
-                          <div class="widget-numbers text-white"><span class="badge badge-primary badge-pill">1</span></div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-
+          <%}%>
         </div>
 
         <div class="row">
-          <div class="col-md-6 col-xl-6 seinao">
-              <div class="card mb-3 widget-content bg-success">
-                  <div class="widget-content-wrapper text-white">
-                      <div class="widget-content-left">
-                          <div class="widget-heading p-2">Solicitações em análise</div>
+          <%if(funcionario.nivel.nivelInferior != 0){%>
+              <div class=" col seinao">
+                <a href="solicitacoes/recebidas">
+                  <div class="card mb-3 widget-content bg-success">
+                      <div class="widget-content-wrapper text-white">
+                          <div class="widget-content-left">
+                              <div class="widget-heading p-2">Solicitações em análise</div>
+                          </div>
+                          <div class="widget-content-right">
+                              <div class="widget-numbers text-white"><span class="badge badge-primary badge-pill">4</span></div>
+                          </div>
                       </div>
-                      <div class="widget-content-right">
-                          <div class="widget-numbers text-white"><span class="badge badge-primary badge-pill">4</span></div>
-                      </div>
-                  </div>
-              </div>
-          </div>
 
-          <div class="col-md-6 col-xl-6 seinao">
+                  </div>
+                  </a>
+              </div>
+          <%}%>
+          <%if(funcionario.nivel.nivelSuperior != 0){%>
+
+          <div class="col seinao">
+            <a href="delegacoes/recebidas">
             <div class="card mb-3 widget-content bg-warning">
                 <div class="widget-content-wrapper text-white">
                     <div class="widget-content-left">
@@ -90,8 +109,10 @@
                     </div>
                 </div>
             </div>
+            </a>
         </div>
 
+        <%}%>
       </div>
 
           <div class="row mt-4">
@@ -113,48 +134,49 @@
               <h2 class="card-title">Arquivos salvos</h2>
             </div>
             <div class="card-body" style="height:700px;">
-
-              <div class="card">
-                <div class="card-header text-center bg-success text-white">
-                  <h4 class="card-title">Solicitações</h4>
-                </div>
-                <div class="card-body overflow-auto" style="height:260px;">
-
-                  <div class="list-group">
-                    <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
-                    <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
-                    <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
-                    <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
-                    <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
-                    <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
-                    <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
-                  </div>
-
-                </div>
-
-                </div>
-
+              <%if(funcionario.nivel.nivelSuperior != 0){%>
                 <div class="card">
-                  <div class="card-header text-center bg-warning text-white">
-                    <h4 class="card-title">Delegações</h4>
+                  <div class="card-header text-center bg-success text-white">
+                    <h4 class="card-title">Solicitações</h4>
                   </div>
                   <div class="card-body overflow-auto" style="height:260px;">
 
                     <div class="list-group">
-                      <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
-                      <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
-                      <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
-                      <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
-                      <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
-                      <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
-                      <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
-                      <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
+                      <a href="solicitacoes/enviadas" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
+                      <a href="solicitacoes/enviadas" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
+                      <a href="solicitacoes/enviadas" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
+                      <a href="solicitacoes/enviadas" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
+                      <a href="solicitacoes/enviadas" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
+                      <a href="solicitacoes/enviadas" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
+                      <a href="solicitacoes/enviadas" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
                     </div>
 
                   </div>
 
                   </div>
+                <%}%>
+                <%if(funcionario.nivel.nivelInferior != 0){%>
+                  <div class="card">
+                    <div class="card-header text-center bg-warning text-white">
+                      <h4 class="card-title">Delegações</h4>
+                    </div>
+                    <div class="card-body overflow-auto" style="height:260px;">
 
+                      <div class="list-group">
+                        <a href="delegacoes/enviadas" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
+                        <a href="delegacoes/enviadas" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
+                        <a href="delegacoes/enviadas" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
+                        <a href="delegacoes/enviadas" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
+                        <a href="delegacoes/enviadas" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
+                        <a href="delegacoes/enviadas" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
+                        <a href="delegacoes/enviadas" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
+                        <a href="delegacoes/enviadas" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
+                      </div>
+
+                    </div>
+
+                    </div>
+                  <%}%>
             </div>
 
             </div>

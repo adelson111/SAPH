@@ -115,3 +115,39 @@ class CancelarReabertura(LoginRequiredMixin, View):
             return HttpResponseRedirect(reverse("page_home"))
         else:
             return HttpResponseRedirect(reverse("page_home"))
+
+
+class ConsultarOrganizacao(LoginRequiredMixin, View):
+
+    def get(self, request):
+        organizacoes = Organizacao.objects.filter(pk=request.user.funcionario.organizacao.pk).values()
+        org = get_object_or_404(Organizacao, pk=organizacoes[0]['id'])
+
+
+        # Envio da request
+        resp = requests.get(url='http://127.0.0.1:8080/SAPH/saph/organizacao/enviado/'+str(org.id),
+                             headers={'content-type': 'application/json'})
+        resp2 = requests.get(url='http://127.0.0.1:8080/SAPH/saph/organizacao/bloquado/' + str(org.id),
+                            headers={'content-type': 'application/json'})
+        resp3 = requests.get(url='http://127.0.0.1:8080/SAPH/saph/funcionario/bloquado/' + str(org.id),
+                             headers={'content-type': 'application/json'})
+        if (resp.status_code == 200 or resp.status_code == 201 and resp2.status_code == 200 or resp2.status_code == 201 and resp3.status_code == 200 or resp3.status_code == 201):
+            if (org.enviado!=resp.text):
+                if (resp.text=='true'):
+                    org.enviado= True
+                    org.pedido= True
+                    org.save()
+                else:
+                    org.enviado = False
+                    org.pedido = False
+                    org.save()
+            if (org.situacao!=resp2.text):
+                if (resp2.text=='true'):
+                    org.situacao= True
+                    org.save()
+                else:
+                    org.situacao = False
+                    org.save()
+            return HttpResponseRedirect(reverse("page_home"))
+        else:
+            return HttpResponseRedirect(reverse("page_home"))

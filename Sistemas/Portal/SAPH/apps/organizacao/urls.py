@@ -1,6 +1,6 @@
 from django.urls import path
 
-from apps.organizacao.views import SolicitarReabertura, CancelarReabertura
+from apps.organizacao.views import SolicitarReabertura, CancelarReabertura, ConsultarOrganizacao
 from .views import CadastrarOrganizacao, AtualizarOrganizacao, ListarOrganizacao
 
 urlpatterns = [
@@ -9,6 +9,8 @@ urlpatterns = [
     path('listar-organizacao/', ListarOrganizacao.as_view(), name="listar_organizacao"),
 
     path('solicitar-reabertura/', SolicitarReabertura.as_view(), name="solicitar_reabertura"),
-    path('cancelar-reabertura/', CancelarReabertura.as_view(), name="cancelar_reabertura")
+    path('cancelar-reabertura/', CancelarReabertura.as_view(), name="cancelar_reabertura"),
+
+    path('consultar/', ConsultarOrganizacao.as_view(), name="consultar")
 
 ]

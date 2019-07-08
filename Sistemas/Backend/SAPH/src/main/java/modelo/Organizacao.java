@@ -128,4 +128,13 @@ public class Organizacao implements Serializable {
         this.funcionarios = funcionarios;
     }
 
+    public boolean isPedido() {
+        return pedido;
+    }
+
+    public void setPedido(boolean pedido) {
+        this.pedido = pedido;
+    }
+    
+    
 }

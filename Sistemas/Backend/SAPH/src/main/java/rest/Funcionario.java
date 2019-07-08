@@ -43,8 +43,11 @@ public class Funcionario {
     @PUT
     @Consumes(MediaType.APPLICATION_JSON)
     public String atualizar(String json) {
-        return new Persistencia().atualizar(new Gson().fromJson(json, modelo.Funcionario.class));
+    	modelo.Funcionario func = new Gson().fromJson(json, modelo.Funcionario.class);
+    	func.setAtivo(!func.isAtivo());
+        return new Persistencia().atualizar(func);
     }
+    
 
     @DELETE
     @Consumes(MediaType.TEXT_PLAIN)
@@ -72,5 +75,12 @@ public class Funcionario {
     public String selecionar(@PathParam("ativo") boolean ativo) {
         return new Gson().toJson(new Persistencia().getFuncionarioByStatus(ativo));
     }
+    
+    @GET
+    @Path("bloquado/{id}")
+    public boolean getBloqueado(@PathParam("id") long id) {
+        return new Persistencia().getBloqueadoFuncionario(id);
+    }
+    
     
 }

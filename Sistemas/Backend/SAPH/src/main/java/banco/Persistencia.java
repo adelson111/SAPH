@@ -187,6 +187,54 @@ public class Persistencia {
         }
         return null;
     }
+    
+    public boolean getEnviado(long id) {
+        try {
+            em = getPersistencia();
+            Organizacao org =  em.find(modelo.Organizacao.class, id);
+            if(org.isEnviado()) {
+                return true;
+            }
+        } catch (Exception e) {
+            System.out.println("Erro ao selecionar por id: " + e.getMessage());
+        } finally {
+            em.close();
+            emf.close();
+        }
+        return false;
+    }
+    
+    public boolean getBloqueado(long id) {
+        try {
+            em = getPersistencia();
+            Organizacao org =  em.find(modelo.Organizacao.class, id);
+            if(org.isSituacao()) {
+                return true;
+            }
+        } catch (Exception e) {
+            System.out.println("Erro ao selecionar por id: " + e.getMessage());
+        } finally {
+            em.close();
+            emf.close();
+        }
+        return false;
+    }
+    
+    public boolean getBloqueadoFuncionario(long id) {
+        try {
+            em = getPersistencia();
+            Funcionario fun =  em.find(modelo.Funcionario.class, id);
+            if(fun.isAtivo()) {
+                return true;
+            }
+        } catch (Exception e) {
+            System.out.println("Erro ao selecionar por id: " + e.getMessage());
+        } finally {
+            em.close();
+            emf.close();
+        }
+        return false;
+    }
 
     public boolean existe(Object objeto, long id) {
         try {
@@ -368,6 +416,22 @@ public class Persistencia {
             return em.createQuery(
                     "select org from Organizacao org where org.situacao = :situacao")
                     .setParameter("situacao", situacao)
+                    .getResultList();
+        } catch (Exception e) {
+            System.out.println("Erro ao selecionar: " + e.getMessage());
+        } finally {
+            em.close();
+            emf.close();
+        }
+        return null;
+    }
+    
+    public List<modelo.Organizacao> getOrganizacaoByPedido(boolean pedido) {
+        try {
+            em = getPersistencia();
+            return em.createQuery(
+                    "select org from Organizacao org where org.pedido = :pedido")
+                    .setParameter("pedido", pedido)
                     .getResultList();
         } catch (Exception e) {
             System.out.println("Erro ao selecionar: " + e.getMessage());

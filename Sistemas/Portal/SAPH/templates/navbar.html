@@ -1,91 +1,100 @@
 {% load static %}
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark centralizar">
-    <a class="navbar-brand" href="{% url 'page_home'%}">SAPH</a>
+    <!--<a class="navbar-brand" href="{% url 'page_home'%}">SAPH</a>-->
+    <a class="navbar-brand" href="{% url 'consultar'%}">SAPH</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Menu Colapso">
         <span class="navbar-toggler-icon text-light"></span>
     </button>
     <div class="collapse navbar-collapse" id="menu">
         {% if user.username %}
-        <ul class="navbar-nav mr-auto ">
-        {% if user.funcionario.organizacao.enviado == False %}
-            {% if not user.funcionario.organizacao %}
-            <a class="nav-link" href="{% url 'cadastrar_organizacao' %}">CADASTRAR ORGANIZAÇÃO</a>
-            {% else %}
-            {%if user.funcionario.cargo == 'admin' %}
-            <li class="nav-item dropdown">
-                <a class="nav-link cursor_clique" href="{% url 'atualizar_organizacao' user.funcionario.organizacao.pk%}" id="navbardrop">Editar Organização</a>
-            </li>
-            {% endif %}
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'organograma_nivel'%}" id="navbardrop10">Organograma</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle cursor_clique" id="navbardrop1" data-toggle="dropdown">Funcionário</a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="{% url 'cadasrtrar_funcionario' user.funcionario.organizacao.pk %}">Cadastrar</a>
-                    <a class="dropdown-item" href="{% url 'listar_funcionarios' %}">Listar</a>
-                    <a class="dropdown-item" href="{% url 'listar_funcionarios_bloqueado' %}">Bloqueados</a>
-                </div>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle cursor_clique" id="navbardrop3" data-toggle="dropdown">Nível</a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="{% url 'cadastrar_nivel' user.funcionario.organizacao.pk %}">Cadastrar</a>
-                    <a class="dropdown-item" href="{% url 'listar_nivel' %}">Listar</a>
-                </div>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle cursor_clique" id="navbardrop2" data-toggle="dropdown">Setor</a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="{% url 'cadastrar_setor' user.funcionario.organizacao.pk %}">Cadastrar</a>
-                    <a class="dropdown-item" href="{% url 'listar_setor' %}">Listar</a>
-                </div>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle cursor_clique" id="navbardrop4" data-toggle="dropdown">Solicitação</a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="{% url 'cadasrtrar_solicitacao' %}">Cadastrar</a>
-                    <a class="dropdown-item" href="{% url 'listar_solicitacao' %}">Listar</a>
-                </div>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle cursor_clique" id="navbardrop5" data-toggle="dropdown">Delegação</a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="{% url 'cadastrar_delegacao' %}">Cadastrar</a>
-                    <a class="dropdown-item" href="{% url 'listar_delegacao' %}">Listar</a>
-                </div>
-            </li>
-            {% endif%}
-        {% endif%}
-        </ul>
-        <div class="my-2 my-lg-0">
-            <div class="dropdown">
-                <img src="{% static '/imagem/sem_foto.png' %}" data-toggle="dropdown" class="rounded-circle imagem_perfil" alt="Imagem do usuário">
-                <div class="dropdown-menu dropdown-menu-right">
-                    <a class="dropdown-item" href="">{{user.funcionario.email}}</a>
-                    <div class="dropdown-divider"></div>
-                    {% if user.funcionario.organizacao.enviado == True %}
-                        {% if user.funcionario.organizacao.pedido == False %}
-                            <a class="dropdown-item" href="{% url 'solicitar_reabertura'%}">Solicitar Reabertura</a>
-                        {% else %}
-                            <a class="dropdown-item" href="{% url 'cancelar_reabertura'%}">Cancelar Reabertura</a>
+            <ul class="navbar-nav mr-auto ">
+                {% if not user.funcionario.organizacao %}
+                    <a class="nav-link" href="{% url 'cadastrar_organizacao' %}">CADASTRAR ORGANIZAÇÃO</a>
+                {% else %}
+                    {% if user.funcionario.organizacao.enviado == False %}
+                        {% if user.funcionario.organizacao.situacao == True %}
+                            {%if user.funcionario.cargo == 'admin' %}
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link cursor_clique" href="{% url 'atualizar_organizacao' user.funcionario.organizacao.pk%}" id="navbardrop">Editar Organização</a>
+                                </li>
+                            {% endif %}
                         {% endif %}
-                        <div class="dropdown-divider"></div>
-                    {% else %}
-                        <a class="dropdown-item" href="" data-toggle="modal" data-target="#modalExportar">Exportar</a>
-                        <div class="dropdown-divider"></div>
                     {% endif %}
-                    <a class="dropdown-item" href="{% url 'logout'%}">Sair</a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'organograma_nivel'%}" id="navbardrop10">Organograma</a>
+                        </li>
+                    {% if user.funcionario.organizacao.enviado == False  %}
+                        {% if user.funcionario.organizacao.situacao == True %}
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle cursor_clique" id="navbardrop1" data-toggle="dropdown">Funcionário</a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="{% url 'cadasrtrar_funcionario' user.funcionario.organizacao.pk %}">Cadastrar</a>
+                                    <a class="dropdown-item" href="{% url 'listar_funcionarios' %}">Listar</a>
+                                    <a class="dropdown-item" href="{% url 'listar_funcionarios_bloqueado' %}">Bloqueados</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle cursor_clique" id="navbardrop3" data-toggle="dropdown">Nível</a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="{% url 'cadastrar_nivel' user.funcionario.organizacao.pk %}">Cadastrar</a>
+                                    <a class="dropdown-item" href="{% url 'listar_nivel' %}">Listar</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle cursor_clique" id="navbardrop2" data-toggle="dropdown">Setor</a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="{% url 'cadastrar_setor' user.funcionario.organizacao.pk %}">Cadastrar</a>
+                                    <a class="dropdown-item" href="{% url 'listar_setor' %}">Listar</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle cursor_clique" id="navbardrop4" data-toggle="dropdown">Solicitação</a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="{% url 'cadasrtrar_solicitacao' %}">Cadastrar</a>
+                                    <a class="dropdown-item" href="{% url 'listar_solicitacao' %}">Listar</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle cursor_clique" id="navbardrop5" data-toggle="dropdown">Delegação</a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="{% url 'cadastrar_delegacao' %}">Cadastrar</a>
+                                    <a class="dropdown-item" href="{% url 'listar_delegacao' %}">Listar</a>
+                                </div>
+                            </li>
+                        {% endif%}
+                    {% endif%}
+                {% endif%}
+            </ul>
+            <div class="my-2 my-lg-0">
+                <div class="dropdown">
+                    <img src="{% static '/imagem/sem_foto.png' %}" data-toggle="dropdown" class="rounded-circle imagem_perfil" alt="Imagem do usuário">
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a class="dropdown-item" href="">{{user.funcionario.email}}</a>
+                        <div class="dropdown-divider"></div>
+                        {% if user.funcionario.organizacao.enviado == True %}
+                            {% if user.funcionario.organizacao.pedido == False %}
+                                <a class="dropdown-item" href="{% url 'solicitar_reabertura'%}">Solicitar Reabertura</a>
+                            {% else %}
+                                <a class="dropdown-item" href="{% url 'cancelar_reabertura'%}">Cancelar Reabertura</a>
+                            {% endif %}
+                            <div class="dropdown-divider"></div>
+                        {% else %}
+                            {% if user.funcionario.organizacao.situacao == True %}
+                                <a class="dropdown-item" href="" data-toggle="modal" data-target="#modalExportar">Exportar</a>
+                                <div class="dropdown-divider"></div>
+                            {% endif %}
+                        {% endif %}
+                        <a class="dropdown-item" href="{% url 'logout'%}">Sair</a>
+                    </div>
                 </div>
             </div>
-        </div>
         {% else %}
-        <div class="botao_menu">
-            <button type="button" class="btn btn-dark menu_navbar">Contato</button>
-            <button type="button" class="btn btn-dark menu_navbar">Sobre</button>
-            <button type="button" class="btn btn-dark menu_navbar" data-toggle="modal" data-target="#ModalCadastrar">Cadastre-se</button>
-            <button type="button" class="btn btn-dark menu_navbar" data-toggle="modal" data-target="#ModalLogin">Entrar</button>
-        </div>
+            <div class="botao_menu">
+                <button type="button" class="btn btn-dark menu_navbar">Contato</button>
+                <button type="button" class="btn btn-dark menu_navbar">Sobre</button>
+                <button type="button" class="btn btn-dark menu_navbar" data-toggle="modal" data-target="#ModalCadastrar">Cadastre-se</button>
+                <button type="button" class="btn btn-dark menu_navbar" data-toggle="modal" data-target="#ModalLogin">Entrar</button>
+            </div>
         {% endif %}
     </div>
 </nav>

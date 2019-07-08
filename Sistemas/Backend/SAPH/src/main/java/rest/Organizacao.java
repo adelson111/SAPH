@@ -109,6 +109,18 @@ public class Organizacao {
     public String configuracao(String json) {
         return new Persistencia().atualizar(new Gson().fromJson(json, modelo.Organizacao.class));
     }
+    
+    @GET
+    @Path("enviado/{id}")
+    public boolean getEnviado(@PathParam("id") long id) {
+        return new Persistencia().getEnviado(id);
+    }
+    
+    @GET
+    @Path("bloquado/{id}")
+    public boolean getBloqueado(@PathParam("id") long id) {
+        return new Persistencia().getBloqueado(id);
+    }
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
@@ -127,8 +139,21 @@ public class Organizacao {
 
     @PUT
     @Consumes(MediaType.APPLICATION_JSON)
-    public String atualizar(String json) {
-        return new Persistencia().atualizar(new Gson().fromJson(json, modelo.Organizacao.class));
+    @Path("situacao")
+    public String atualizarSituacao(String json) {
+    	modelo.Organizacao  org = new Gson().fromJson(json, modelo.Organizacao.class);
+    	org.setSituacao(!org.isSituacao());
+    	return new Persistencia().atualizar(org);
+    }
+    
+    @PUT
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Path("configuracao")
+    public String atualizarConfiguracao(String json) {
+    	modelo.Organizacao org = new Gson().fromJson(json, modelo.Organizacao.class);
+    	org.setPedido(!org.isPedido());
+        org.setEnviado(!org.isEnviado());
+    	return new Persistencia().atualizar(org);
     }
 
     @DELETE
@@ -156,6 +181,13 @@ public class Organizacao {
     @Path("situacao/{situacao}")
     public String selecionarO(@PathParam("situacao") boolean situacao) {
         return new Gson().toJson(new Persistencia().getOrganizacaoByStatus(situacao));
+    }
+    
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("pedido/{pedido}")
+    public String selecionarPedido(@PathParam("pedido") boolean pedido) {
+        return new Gson().toJson(new Persistencia().getOrganizacaoByPedido(pedido));
     }
 
 }
